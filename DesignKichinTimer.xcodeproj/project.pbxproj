@@ -22,6 +22,7 @@
 		5E6F4B5918117F7700312CCD /* DesignKichinTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F4B5818117F7700312CCD /* DesignKichinTimerTests.m */; };
 		5EA2C0A01811865E00B0FC3D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5EA2C09F1811865E00B0FC3D /* .gitignore */; };
 		5EF6B9FB181406EF00A17226 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EF6B9FD181406EF00A17226 /* Localizable.strings */; };
+		5EF6BA001814366500A17226 /* bg01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5EF6B9FF1814366500A17226 /* bg01.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		5EF6B9F81814060300A17226 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5EF6B9FC181406EF00A17226 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5EF6B9FE181406F700A17226 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5EF6B9FF1814366500A17226 /* bg01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg01.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 		5E6F4B3118117F7600312CCD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5EF6B9FF1814366500A17226 /* bg01.jpg */,
 				5E6F4B3218117F7600312CCD /* DesignKichinTimer-Info.plist */,
 				5E6F4B3318117F7600312CCD /* InfoPlist.strings */,
 				5E6F4B3618117F7600312CCD /* main.m */,
@@ -237,6 +240,7 @@
 			files = (
 				5EA2C0A01811865E00B0FC3D /* .gitignore in Resources */,
 				5EF6B9FB181406EF00A17226 /* Localizable.strings in Resources */,
+				5EF6BA001814366500A17226 /* bg01.jpg in Resources */,
 				5E6F4B4618117F7600312CCD /* Images.xcassets in Resources */,
 				5E6F4B3518117F7600312CCD /* InfoPlist.strings in Resources */,
 			);
