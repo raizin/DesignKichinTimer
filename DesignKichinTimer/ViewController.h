@@ -8,6 +8,27 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController {
+
+//  UILabel *nowDate;
+//  UIView  *nowDateView;
+  //  NSString *dispStr;
+//  UIButton *setBtn;
+  //  BOOL flgViewSeco;
+  //  BOOL flgViewDate;
+  //  BOOL flgBlink;
+//  BOOL blinkCanma;
+  
+//  CGPoint centerLocation_Date;
+//  CGPoint centerLocation_Time;
+
+  
+  // カウンター表示エリア横幅
+  int cntW;
+  
+  // カウンター表示エリア
+  CALayer *sublayer;
+
+}
 
 @end

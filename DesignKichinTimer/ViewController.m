@@ -15,6 +15,7 @@
 @implementation ViewController
 
 
+// View が表示される直前に呼ばれる定義済み関数（画面が再表示されるたびに呼び出されます。）
 - (void)viewWillAppear:(BOOL)animated
 {
   // 全体背景枠
@@ -37,9 +38,7 @@
   
   
   // カウント表示エリア生成
-  int cntW = 200; // width
-  
-  CALayer *sublayer = [CALayer layer];
+  sublayer = [CALayer layer];
 //  sublayer.backgroundColor = [UIColor grayColor].CGColor;
   sublayer.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0].CGColor; // 薄いグレイ
   sublayer.shadowOffset = CGSizeMake(0, 3);
@@ -75,6 +74,37 @@
 
 
 
+
+
+// デバイスが回転した際に、呼び出されるメソッド(※自作)
+- (void) didRotate:(NSNotification *)notification {
+  UIDeviceOrientation o = [[notification object] orientation];
+  
+  // 横向き
+  if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
+    // Viewの位置とサイズを補正してセット
+    sublayer.frame = CGRectMake([self arignCenter:cntW], 60, cntW, 100); // x y w h
+    
+    // 縦向き
+  } else if (o == UIDeviceOrientationPortrait) {
+    // Viewの位置とサイズを補正してセット
+    sublayer.frame = CGRectMake([self arignCenter:cntW], 60, cntW, 100); // x y w h
+    
+    
+    // 縦向き 逆さ InfoPlist側でDefaultなし
+  } else if (o == UIDeviceOrientationPortraitUpsideDown) {
+    // なにもしない
+    
+    // 向きが不明な場合
+  } else {
+    // NSLog(@"device orientation is Unkown.");
+  }
+}
+
+
+
+
+
 // 中央寄せ用 X座標算出
 - (int)arignCenter:(int)w
 {
@@ -84,22 +114,35 @@
   
   // 現在が横向きの場合の対処
   UIDeviceOrientation o = [UIDevice currentDevice].orientation;
-  
   if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
-    NSLog(@"height=%f",rect.size.height);
-    return ( rect.size.height - w ) / 2;
+//    NSLog(@"height=%f",rect.size.height);
+    return ( rect.size.height - w ) / 2; // X座標を返す
   }else{
-    NSLog(@"width=%f",rect.size.width);
-    return ( rect.size.width - w ) / 2;
+//    NSLog(@"width=%f",rect.size.width);
+    return ( rect.size.width - w ) / 2; // X座標を返す
   }
 }
 
 
-
+// View が初めて呼び出される時に1回だけ呼ばれる定義済み関数
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+  
+  // カウンター表示エリアの横幅を定義
+  cntW = 200;
+
+  
+  
+  // デバイスの回転をサポート デバイスが回転した際に、呼び出してほしいメソッドを指定
+  [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(didRotate:)
+                                               name:UIDeviceOrientationDidChangeNotification
+                                             object:nil];
+
+  
 }
 
 - (void)didReceiveMemoryWarning
