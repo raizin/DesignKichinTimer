@@ -54,8 +54,8 @@
   UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(550,550,300,30)]; // x y w h
   //  label.text = [NSString stringWithFormat:@"%@",NSLocalizedString(@"AppName", nil)];
   label.text = NSLocalizedString(@"AppName", nil);
-  label.layer.borderWidth = 2.0;
-  label.layer.borderColor = [UIColor blueColor].CGColor;
+//  label.layer.borderWidth = 2.0;
+//  label.layer.borderColor = [UIColor blueColor].CGColor;
   
 //  NSLog(@"%@", NSLocalizedString(@"AppName", nil));
   
