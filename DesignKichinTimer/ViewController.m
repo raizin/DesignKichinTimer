@@ -17,6 +17,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+  // 全体背景枠
   self.view.layer.backgroundColor = [UIColor whiteColor].CGColor;
   self.view.layer.cornerRadius = 50.0;
   self.view.layer.frame = CGRectInset(self.view.layer.frame, 20, 20);
@@ -31,17 +32,27 @@
 //  sublayer.frame = CGRectMake(30, 30, 128, 192);
 //  [self.view.layer addSublayer:sublayer];
 
+  // 表示エリアの外側デザイン枠
+  
+  
+  
+  // カウント表示エリア生成
+  int cntW = 200; // width
+  
   CALayer *sublayer = [CALayer layer];
-  sublayer.backgroundColor = [UIColor grayColor].CGColor;
+//  sublayer.backgroundColor = [UIColor grayColor].CGColor;
+  sublayer.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0].CGColor; // 薄いグレイ
   sublayer.shadowOffset = CGSizeMake(0, 3);
   sublayer.shadowRadius = 5.0;
   sublayer.shadowColor = [UIColor blueColor].CGColor;
   sublayer.shadowOpacity = 0.8;
-  sublayer.frame = CGRectMake(60, 60, 269*2, 206*2); // x y w h
+  sublayer.frame = CGRectMake([self arignCenter:cntW], 60, cntW, 100); // x y w h
   sublayer.borderColor = [UIColor blackColor].CGColor;
   sublayer.borderWidth = 2.0;
   sublayer.cornerRadius = 10.0;
   [self.view.layer addSublayer:sublayer];
+  
+  
 //  CALayer *imageLayer = [CALayer layer];
 //  imageLayer.frame = sublayer.bounds;
 //  imageLayer.cornerRadius = 10.0;
@@ -71,9 +82,16 @@
   UIScreen *sc = [UIScreen mainScreen];
   CGRect rect = sc.bounds;
   
-  //  NSLog(@"%f",rect.size.width);
+  // 現在が横向きの場合の対処
+  UIDeviceOrientation o = [UIDevice currentDevice].orientation;
   
-  return ( rect.size.width - w ) / 2;
+  if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
+    NSLog(@"height=%f",rect.size.height);
+    return ( rect.size.height - w ) / 2;
+  }else{
+    NSLog(@"width=%f",rect.size.width);
+    return ( rect.size.width - w ) / 2;
+  }
 }
 
 
