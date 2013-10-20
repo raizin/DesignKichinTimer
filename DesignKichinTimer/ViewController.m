@@ -83,12 +83,12 @@
   // 横向き
   if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
     // Viewの位置とサイズを補正してセット
-    sublayer.frame = CGRectMake([self arignCenter:cntW], 60, cntW, 100); // x y w h
+    sublayer.frame = CGRectMake([self arignCenter:cntW], 60, cntW, cntH); // x y w h
     
     // 縦向き
   } else if (o == UIDeviceOrientationPortrait) {
     // Viewの位置とサイズを補正してセット
-    sublayer.frame = CGRectMake([self arignCenter:cntW], 60, cntW, 100); // x y w h
+    sublayer.frame = CGRectMake([self arignCenter:cntW], 60, cntW, cntH); // x y w h
     
     
     // 縦向き 逆さ InfoPlist側でDefaultなし
@@ -128,10 +128,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+  //画面情報(横幅)取得
+  UIScreen *sc = [UIScreen mainScreen];
+  CGRect rect = sc.bounds;
+  CGFloat screenWidth = rect.size.width;
+  CGFloat screenHeight = rect.size.height;
+
+  NSLog(@"w=%f h=%f",screenWidth,screenHeight); // ipad mini 768x1024, iphone4s 320x480
   
   // カウンター表示エリアの横幅を定義
-  cntW = 300;
+  cntW = screenWidth -20;  //300;
+  cntH = (screenWidth -20) / 3;
+  //cntH = (screenWidth -20) / 1.618; // 黄金比
+  
+  
+  
 
   
   

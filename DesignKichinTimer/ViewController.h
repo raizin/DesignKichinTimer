@@ -23,8 +23,9 @@
 //  CGPoint centerLocation_Time;
 
   
-  // カウンター表示エリア横幅
+  // カウンター表示エリア横幅,縦幅
   int cntW;
+  int cntH;
   
   // カウンター表示エリア
   CALayer *sublayer;
