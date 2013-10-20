@@ -23,6 +23,7 @@
 		5EA2C0A01811865E00B0FC3D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5EA2C09F1811865E00B0FC3D /* .gitignore */; };
 		5EF6B9FB181406EF00A17226 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EF6B9FD181406EF00A17226 /* Localizable.strings */; };
 		5EF6BA001814366500A17226 /* bg01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5EF6B9FF1814366500A17226 /* bg01.jpg */; };
+		5EF6BA04181441F000A17226 /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = 5EF6BA03181441F000A17226 /* .gitattributes */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		5EF6B9FC181406EF00A17226 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5EF6B9FE181406F700A17226 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5EF6B9FF1814366500A17226 /* bg01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg01.jpg; sourceTree = "<group>"; };
+		5EF6BA01181440ED00A17226 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5EF6BA03181441F000A17226 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,7 @@
 		5E6F4B1E18117F7600312CCD = {
 			isa = PBXGroup;
 			children = (
+				5EF6BA03181441F000A17226 /* .gitattributes */,
 				5EA2C09F1811865E00B0FC3D /* .gitignore */,
 				5E6F4B3018117F7600312CCD /* DesignKichinTimer */,
 				5E6F4B5218117F7700312CCD /* DesignKichinTimerTests */,
@@ -109,6 +113,7 @@
 		5E6F4B2918117F7600312CCD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5EF6BA01181440ED00A17226 /* QuartzCore.framework */,
 				5E6F4B2A18117F7600312CCD /* Foundation.framework */,
 				5E6F4B2C18117F7600312CCD /* CoreGraphics.framework */,
 				5E6F4B2E18117F7600312CCD /* UIKit.framework */,
@@ -239,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EA2C0A01811865E00B0FC3D /* .gitignore in Resources */,
+				5EF6BA04181441F000A17226 /* .gitattributes in Resources */,
 				5EF6B9FB181406EF00A17226 /* Localizable.strings in Resources */,
 				5EF6BA001814366500A17226 /* bg01.jpg in Resources */,
 				5E6F4B4618117F7600312CCD /* Images.xcassets in Resources */,

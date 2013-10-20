@@ -37,7 +37,7 @@
   sublayer.shadowRadius = 5.0;
   sublayer.shadowColor = [UIColor blackColor].CGColor;
   sublayer.shadowOpacity = 0.8;
-  sublayer.frame = CGRectMake(30, 30, 128, 192);
+  sublayer.frame = CGRectMake(60, 60, 269*2, 206*2); // x y w h
   sublayer.borderColor = [UIColor blackColor].CGColor;
   sublayer.borderWidth = 2.0;
   sublayer.cornerRadius = 10.0;
@@ -45,17 +45,19 @@
   CALayer *imageLayer = [CALayer layer];
   imageLayer.frame = sublayer.bounds;
   imageLayer.cornerRadius = 10.0;
-  imageLayer.contents = (id) [UIImage imageNamed:@"bg01.jpg"].CGImage;
+  imageLayer.contents = (id) [UIImage imageNamed:@"xxxbg01.jpg"].CGImage;
   imageLayer.masksToBounds = YES;
   [sublayer addSublayer:imageLayer];
   
   
   // ローカライズ Sample
-  UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(250,250,300,30)]; // x y w h
+  UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(550,550,300,30)]; // x y w h
   //  label.text = [NSString stringWithFormat:@"%@",NSLocalizedString(@"AppName", nil)];
   label.text = NSLocalizedString(@"AppName", nil);
+  label.layer.borderWidth = 2.0;
+  label.layer.borderColor = [UIColor blueColor].CGColor;
   
-  NSLog(@"%@", NSLocalizedString(@"AppName", nil));
+//  NSLog(@"%@", NSLocalizedString(@"AppName", nil));
   
   [self.view addSubview:label];
 }
