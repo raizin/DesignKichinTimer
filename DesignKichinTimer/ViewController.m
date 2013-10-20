@@ -40,14 +40,14 @@
   // カウント表示エリア生成
   sublayer = [CALayer layer];
 //  sublayer.backgroundColor = [UIColor grayColor].CGColor;
-  sublayer.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0].CGColor; // 薄いグレイ
+  sublayer.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0].CGColor;//薄いグレイ
   sublayer.shadowOffset = CGSizeMake(0, 3);
   sublayer.shadowRadius = 5.0;
   sublayer.shadowColor = [UIColor blueColor].CGColor;
   sublayer.shadowOpacity = 0.8;
   sublayer.frame = CGRectMake([self arignCenter:cntW], 60, cntW, 100); // x y w h
-  sublayer.borderColor = [UIColor blackColor].CGColor;
-  sublayer.borderWidth = 2.0;
+  sublayer.borderColor = [UIColor colorWithRed:0.5 green:0.5 blue:1.0 alpha:1.0].CGColor;//薄い青
+  sublayer.borderWidth = 6.0;
   sublayer.cornerRadius = 10.0;
   [self.view.layer addSublayer:sublayer];
   
@@ -131,7 +131,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
   
   // カウンター表示エリアの横幅を定義
-  cntW = 200;
+  cntW = 300;
 
   
   
