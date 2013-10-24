@@ -135,7 +135,7 @@
   cntLabel.textAlignment = NSTextAlignmentCenter;
   cntLabel.font = [UIFont systemFontOfSize:185];// ipad:185 iphone4s:70  = 6 digits + "M S"
   cntLabel.adjustsFontSizeToFitWidth = YES;
-//  cntLabel.autoresizesSubviews = YES;
+//  cntLabel.autoresizesSubviews = YES; //
 //  cntLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight; // w h
 //  cntLabel.contentMode = UIViewContentModeCenter;
   cntLabel.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0.5 alpha:0];
