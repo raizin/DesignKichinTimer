@@ -22,6 +22,9 @@
   //  CGPoint centerLocation_Date;
   //  CGPoint centerLocation_Time;
   
+  // カウンター表示View定義
+  UIView *cntView;
+
   // カウンター表示ラベル定義
   UILabel *cntLabel;
   

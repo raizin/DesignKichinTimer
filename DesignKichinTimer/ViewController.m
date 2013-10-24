@@ -37,6 +37,11 @@
   
   
   
+  //カウント表示View生成
+  cntView = [[UIView alloc] initWithFrame:CGRectMake([self arignCenter:cntW], 60, cntW, 100)];// x y w h
+  [self.view addSubview:cntView];
+
+  
   // カウント表示エリア生成
   sublayer = [CALayer layer];
   //  sublayer.backgroundColor = [UIColor grayColor].CGColor;
@@ -45,18 +50,20 @@
   sublayer.shadowRadius = 5.0;
   sublayer.shadowColor = [UIColor blueColor].CGColor;
   sublayer.shadowOpacity = 0.8;
-  sublayer.frame = CGRectMake([self arignCenter:cntW], 60, cntW, 100); // x y w h
+//  sublayer.frame = CGRectMake([self arignCenter:cntW], 60, cntW, cntH); // x y w h
+  sublayer.frame = CGRectMake(0, 0, cntW, cntH); // x y w h
   sublayer.borderColor = [UIColor colorWithRed:0.5 green:0.5 blue:1.0 alpha:1.0].CGColor;//薄い青
   sublayer.borderWidth = 6.0;
   sublayer.cornerRadius = 10.0;
-  [self.view.layer addSublayer:sublayer];
+  [cntView.layer addSublayer:sublayer];
   
   
+  // カウント表示Label
+  cntLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,cntW,cntH)];// x y w h
+  cntLabel.textAlignment = NSTextAlignmentCenter;
   
-  // ====== カウンター表示用のView定義 ここから ======
-  cntLabel = [[UILabel alloc] initWithFrame:CGRectMake(550,550,300,30)];// x y w h
   cntLabel.text = [NSString stringWithFormat:@"%@",NSLocalizedString(@"AppName", nil)];
-  [self.view addSubview:cntLabel];
+  [cntView addSubview:cntLabel];
   
   
   //  CALayer *imageLayer = [CALayer layer];
@@ -90,12 +97,12 @@
   // 横向き
   if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
     // Viewの位置とサイズを補正してセット
-    sublayer.frame = CGRectMake([self arignCenter:cntW], 60, cntW, cntH); // x y w h
+    cntView.frame = CGRectMake([self arignCenter:cntW], 60, cntW, cntH); // x y w h
     
   // 縦向き
   } else if (o == UIDeviceOrientationPortrait || o == UIDeviceOrientationPortraitUpsideDown) {
     // Viewの位置とサイズを補正してセット
-    sublayer.frame = CGRectMake([self arignCenter:cntW], 60, cntW, cntH); // x y w h
+    cntView.frame = CGRectMake([self arignCenter:cntW], 60, cntW, cntH); // x y w h
     
     // 向きが不明な場合
   } else {
