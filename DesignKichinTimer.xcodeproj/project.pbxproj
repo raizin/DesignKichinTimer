@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E42589718192B7F00171F1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E42589918192B7F00171F1F /* Localizable.strings */; };
 		5E6F4B2B18117F7600312CCD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E6F4B2A18117F7600312CCD /* Foundation.framework */; };
 		5E6F4B2D18117F7600312CCD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E6F4B2C18117F7600312CCD /* CoreGraphics.framework */; };
 		5E6F4B2F18117F7600312CCD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E6F4B2E18117F7600312CCD /* UIKit.framework */; };
@@ -37,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E42589418192B2600171F1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5E42589818192B7F00171F1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5E42589A18192B8800171F1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = file; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E6F4B2718117F7600312CCD /* DesignKichinTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignKichinTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6F4B2A18117F7600312CCD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5E6F4B2C18117F7600312CCD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -139,6 +143,7 @@
 				5E6F4B3318117F7600312CCD /* InfoPlist.strings */,
 				5E6F4B3618117F7600312CCD /* main.m */,
 				5E6F4B3818117F7600312CCD /* DesignKichinTimer-Prefix.pch */,
+				5E42589918192B7F00171F1F /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 5E6F4B1E18117F7600312CCD;
 			productRefGroup = 5E6F4B2818117F7600312CCD /* Products */;
@@ -240,6 +246,7 @@
 				5EA2C0A01811865E00B0FC3D /* .gitignore in Resources */,
 				5E711E4618191B0000E7AA83 /* .gitattributes in Resources */,
 				5E6F4B4118117F7600312CCD /* Main_iPad.storyboard in Resources */,
+				5E42589718192B7F00171F1F /* Localizable.strings in Resources */,
 				5E6F4B4618117F7600312CCD /* Images.xcassets in Resources */,
 				5E6F4B3E18117F7600312CCD /* Main_iPhone.storyboard in Resources */,
 				5E6F4B3518117F7600312CCD /* InfoPlist.strings in Resources */,
@@ -286,10 +293,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		5E42589918192B7F00171F1F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5E42589818192B7F00171F1F /* Base */,
+				5E42589A18192B8800171F1F /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		5E6F4B3318117F7600312CCD /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				5E6F4B3418117F7600312CCD /* en */,
+				5E42589418192B2600171F1F /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
