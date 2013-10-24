@@ -22,6 +22,7 @@
 		5E6F4B4F18117F7700312CCD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E6F4B2E18117F7600312CCD /* UIKit.framework */; };
 		5E6F4B5718117F7700312CCD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E6F4B5518117F7700312CCD /* InfoPlist.strings */; };
 		5E6F4B5918117F7700312CCD /* DesignKichinTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F4B5818117F7700312CCD /* DesignKichinTimerTests.m */; };
+		5E711E4618191B0000E7AA83 /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = 5E711E4518191B0000E7AA83 /* .gitattributes */; };
 		5EA2C0A01811865E00B0FC3D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5EA2C09F1811865E00B0FC3D /* .gitignore */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		5E6F4B5418117F7700312CCD /* DesignKichinTimerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DesignKichinTimerTests-Info.plist"; sourceTree = "<group>"; };
 		5E6F4B5618117F7700312CCD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5E6F4B5818117F7700312CCD /* DesignKichinTimerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DesignKichinTimerTests.m; sourceTree = "<group>"; };
+		5E711E4518191B0000E7AA83 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 		5EA2C09F1811865E00B0FC3D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = DesignKichinTimer/.gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 		5E6F4B1E18117F7600312CCD = {
 			isa = PBXGroup;
 			children = (
+				5E711E4518191B0000E7AA83 /* .gitattributes */,
 				5EA2C09F1811865E00B0FC3D /* .gitignore */,
 				5E6F4B3018117F7600312CCD /* DesignKichinTimer */,
 				5E6F4B5218117F7700312CCD /* DesignKichinTimerTests */,
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EA2C0A01811865E00B0FC3D /* .gitignore in Resources */,
+				5E711E4618191B0000E7AA83 /* .gitattributes in Resources */,
 				5E6F4B4118117F7600312CCD /* Main_iPad.storyboard in Resources */,
 				5E6F4B4618117F7600312CCD /* Images.xcassets in Resources */,
 				5E6F4B3E18117F7600312CCD /* Main_iPhone.storyboard in Resources */,
