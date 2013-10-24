@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>416FD2C8-A974-46D9-A80B-3C7D9B8593A5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DesignKichinTimer</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>07A98388-A7CF-40AB-8C6F-8C46E20ECBED</key>
+		<string>https://github.com/raizin/DesignKichinTimer.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DesignKichinTimer.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>07A98388-A7CF-40AB-8C6F-8C46E20ECBED</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/raizin/DesignKichinTimer.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>07A98388-A7CF-40AB-8C6F-8C46E20ECBED</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>07A98388-A7CF-40AB-8C6F-8C46E20ECBED</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DesignKichinTimer</string>
+		</dict>
+	</array>
+</dict>
+</plist>
