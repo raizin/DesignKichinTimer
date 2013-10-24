@@ -13,6 +13,8 @@
 		5E6F4B3518117F7600312CCD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E6F4B3318117F7600312CCD /* InfoPlist.strings */; };
 		5E6F4B3718117F7600312CCD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F4B3618117F7600312CCD /* main.m */; };
 		5E6F4B3B18117F7600312CCD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F4B3A18117F7600312CCD /* AppDelegate.m */; };
+		5E6F4B3E18117F7600312CCD /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E6F4B3C18117F7600312CCD /* Main_iPhone.storyboard */; };
+		5E6F4B4118117F7600312CCD /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E6F4B3F18117F7600312CCD /* Main_iPad.storyboard */; };
 		5E6F4B4418117F7600312CCD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F4B4318117F7600312CCD /* ViewController.m */; };
 		5E6F4B4618117F7600312CCD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E6F4B4518117F7600312CCD /* Images.xcassets */; };
 		5E6F4B4D18117F7600312CCD /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E6F4B4C18117F7600312CCD /* XCTest.framework */; };
@@ -21,9 +23,6 @@
 		5E6F4B5718117F7700312CCD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E6F4B5518117F7700312CCD /* InfoPlist.strings */; };
 		5E6F4B5918117F7700312CCD /* DesignKichinTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F4B5818117F7700312CCD /* DesignKichinTimerTests.m */; };
 		5EA2C0A01811865E00B0FC3D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5EA2C09F1811865E00B0FC3D /* .gitignore */; };
-		5EF6B9FB181406EF00A17226 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EF6B9FD181406EF00A17226 /* Localizable.strings */; };
-		5EF6BA001814366500A17226 /* bg01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5EF6B9FF1814366500A17226 /* bg01.jpg */; };
-		5EF6BA04181441F000A17226 /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = 5EF6BA03181441F000A17226 /* .gitattributes */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +46,8 @@
 		5E6F4B3818117F7600312CCD /* DesignKichinTimer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DesignKichinTimer-Prefix.pch"; sourceTree = "<group>"; };
 		5E6F4B3918117F7600312CCD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5E6F4B3A18117F7600312CCD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5E6F4B3D18117F7600312CCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		5E6F4B4018117F7600312CCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		5E6F4B4218117F7600312CCD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		5E6F4B4318117F7600312CCD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5E6F4B4518117F7600312CCD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -56,13 +57,6 @@
 		5E6F4B5618117F7700312CCD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5E6F4B5818117F7700312CCD /* DesignKichinTimerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DesignKichinTimerTests.m; sourceTree = "<group>"; };
 		5EA2C09F1811865E00B0FC3D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = DesignKichinTimer/.gitignore; sourceTree = "<group>"; };
-		5EF6B9F71814060300A17226 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5EF6B9F81814060300A17226 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5EF6B9FC181406EF00A17226 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		5EF6B9FE181406F700A17226 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
-		5EF6B9FF1814366500A17226 /* bg01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg01.jpg; sourceTree = "<group>"; };
-		5EF6BA01181440ED00A17226 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		5EF6BA03181441F000A17226 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +86,6 @@
 		5E6F4B1E18117F7600312CCD = {
 			isa = PBXGroup;
 			children = (
-				5EF6BA03181441F000A17226 /* .gitattributes */,
 				5EA2C09F1811865E00B0FC3D /* .gitignore */,
 				5E6F4B3018117F7600312CCD /* DesignKichinTimer */,
 				5E6F4B5218117F7700312CCD /* DesignKichinTimerTests */,
@@ -113,7 +106,6 @@
 		5E6F4B2918117F7600312CCD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5EF6BA01181440ED00A17226 /* QuartzCore.framework */,
 				5E6F4B2A18117F7600312CCD /* Foundation.framework */,
 				5E6F4B2C18117F7600312CCD /* CoreGraphics.framework */,
 				5E6F4B2E18117F7600312CCD /* UIKit.framework */,
@@ -127,6 +119,8 @@
 			children = (
 				5E6F4B3918117F7600312CCD /* AppDelegate.h */,
 				5E6F4B3A18117F7600312CCD /* AppDelegate.m */,
+				5E6F4B3C18117F7600312CCD /* Main_iPhone.storyboard */,
+				5E6F4B3F18117F7600312CCD /* Main_iPad.storyboard */,
 				5E6F4B4218117F7600312CCD /* ViewController.h */,
 				5E6F4B4318117F7600312CCD /* ViewController.m */,
 				5E6F4B4518117F7600312CCD /* Images.xcassets */,
@@ -138,12 +132,10 @@
 		5E6F4B3118117F7600312CCD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5EF6B9FF1814366500A17226 /* bg01.jpg */,
 				5E6F4B3218117F7600312CCD /* DesignKichinTimer-Info.plist */,
 				5E6F4B3318117F7600312CCD /* InfoPlist.strings */,
 				5E6F4B3618117F7600312CCD /* main.m */,
 				5E6F4B3818117F7600312CCD /* DesignKichinTimer-Prefix.pch */,
-				5EF6B9FD181406EF00A17226 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -225,7 +217,6 @@
 			knownRegions = (
 				en,
 				Base,
-				ja,
 			);
 			mainGroup = 5E6F4B1E18117F7600312CCD;
 			productRefGroup = 5E6F4B2818117F7600312CCD /* Products */;
@@ -244,10 +235,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EA2C0A01811865E00B0FC3D /* .gitignore in Resources */,
-				5EF6BA04181441F000A17226 /* .gitattributes in Resources */,
-				5EF6B9FB181406EF00A17226 /* Localizable.strings in Resources */,
-				5EF6BA001814366500A17226 /* bg01.jpg in Resources */,
+				5E6F4B4118117F7600312CCD /* Main_iPad.storyboard in Resources */,
 				5E6F4B4618117F7600312CCD /* Images.xcassets in Resources */,
+				5E6F4B3E18117F7600312CCD /* Main_iPhone.storyboard in Resources */,
 				5E6F4B3518117F7600312CCD /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,27 +286,32 @@
 			isa = PBXVariantGroup;
 			children = (
 				5E6F4B3418117F7600312CCD /* en */,
-				5EF6B9F71814060300A17226 /* ja */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5E6F4B3C18117F7600312CCD /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5E6F4B3D18117F7600312CCD /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		5E6F4B3F18117F7600312CCD /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5E6F4B4018117F7600312CCD /* Base */,
+			);
+			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		5E6F4B5518117F7700312CCD /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				5E6F4B5618117F7700312CCD /* en */,
-				5EF6B9F81814060300A17226 /* ja */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		5EF6B9FD181406EF00A17226 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5EF6B9FC181406EF00A17226 /* en */,
-				5EF6B9FE181406F700A17226 /* ja */,
-			);
-			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
