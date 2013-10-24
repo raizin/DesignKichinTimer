@@ -18,70 +18,6 @@
 // View が表示される直前に呼ばれる定義済み関数（画面が再表示されるたびに呼び出されます。）
 - (void)viewWillAppear:(BOOL)animated
 {
-  // 全体背景枠
-  self.view.layer.backgroundColor = [UIColor whiteColor].CGColor;
-  self.view.layer.cornerRadius = 50.0;
-  self.view.layer.frame = CGRectInset(self.view.layer.frame, 20, 20);
-  
-  //  self.view.layer.contents = (id)[UIImage imageNamed:@"bg01.jpg"].CGImage;
-  //  CALayer *sublayer = [CALayer layer];
-  //  sublayer.backgroundColor = [UIColor blueColor].CGColor;
-  //  sublayer.shadowOffset = CGSizeMake(0, 3);
-  //  sublayer.shadowRadius = 5.0;
-  //  sublayer.shadowColor = [UIColor blackColor].CGColor;
-  //  sublayer.shadowOpacity = 0.8;
-  //  sublayer.frame = CGRectMake(30, 30, 128, 192);
-  //  [self.view.layer addSublayer:sublayer];
-  
-  // 表示エリアの外側デザイン枠
-  
-  
-  
-  //カウント表示View生成
-  cntView = [[UIView alloc] initWithFrame:CGRectMake([self arignCenter:cntW], 60, cntW, 100)];// x y w h
-  [self.view addSubview:cntView];
-
-  
-  // カウント表示エリア生成
-  sublayer = [CALayer layer];
-  //  sublayer.backgroundColor = [UIColor grayColor].CGColor;
-  sublayer.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0].CGColor;//薄いグレイ
-  sublayer.shadowOffset = CGSizeMake(0, 3);
-  sublayer.shadowRadius = 5.0;
-  sublayer.shadowColor = [UIColor blueColor].CGColor;
-  sublayer.shadowOpacity = 0.8;
-//  sublayer.frame = CGRectMake([self arignCenter:cntW], 60, cntW, cntH); // x y w h
-  sublayer.frame = CGRectMake(0, 0, cntW, cntH); // x y w h
-  sublayer.borderColor = [UIColor colorWithRed:0.5 green:0.5 blue:1.0 alpha:1.0].CGColor;//薄い青
-  sublayer.borderWidth = 6.0;
-  sublayer.cornerRadius = 10.0;
-  [cntView.layer addSublayer:sublayer];
-  
-  
-  // カウント表示Label
-  cntLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,cntW,cntH)];// x y w h
-  cntLabel.textAlignment = NSTextAlignmentCenter;
-  
-  cntLabel.text = [NSString stringWithFormat:@"%@",NSLocalizedString(@"AppName", nil)];
-  [cntView addSubview:cntLabel];
-  
-  
-  //  CALayer *imageLayer = [CALayer layer];
-  //  imageLayer.frame = sublayer.bounds;
-  //  imageLayer.cornerRadius = 10.0;
-  //  imageLayer.contents = (id) [UIImage imageNamed:@"xxxbg01.jpg"].CGImage;
-  //  imageLayer.masksToBounds = YES;
-  //  [sublayer addSublayer:imageLayer];
-  
-  
-  //  // ローカライズ Sample
-  //  UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(550,550,300,30)]; // x y w h
-  //  //  label.text = [NSString stringWithFormat:@"%@",NSLocalizedString(@"AppName", nil)];
-  //  label.text = NSLocalizedString(@"AppName", nil);
-  //  label.layer.borderWidth = 2.0;
-  //  label.layer.borderColor = [UIColor blueColor].CGColor;
-  ////  NSLog(@"%@", NSLocalizedString(@"AppName", nil));
-  //  [self.view addSubview:label];
 }
 
 
@@ -150,6 +86,90 @@
   cntW = screenWidth -20;  //300;
   cntH = (screenWidth -20) / 3;
   //cntH = (screenWidth -20) / 1.618; // 黄金比
+  
+
+  
+  
+  // 全体背景枠
+  self.view.layer.backgroundColor = [UIColor whiteColor].CGColor;
+  self.view.layer.cornerRadius = 50.0;
+  self.view.layer.frame = CGRectInset(self.view.layer.frame, 20, 20);
+  
+  //  self.view.layer.contents = (id)[UIImage imageNamed:@"bg01.jpg"].CGImage;
+  //  CALayer *sublayer = [CALayer layer];
+  //  sublayer.backgroundColor = [UIColor blueColor].CGColor;
+  //  sublayer.shadowOffset = CGSizeMake(0, 3);
+  //  sublayer.shadowRadius = 5.0;
+  //  sublayer.shadowColor = [UIColor blackColor].CGColor;
+  //  sublayer.shadowOpacity = 0.8;
+  //  sublayer.frame = CGRectMake(30, 30, 128, 192);
+  //  [self.view.layer addSublayer:sublayer];
+  
+  // 表示エリアの外側デザイン枠
+  
+  
+  
+  //カウント表示View生成
+  cntView = [[UIView alloc] initWithFrame:CGRectMake([self arignCenter:cntW], 60, cntW, 100)];// x y w h
+  [self.view addSubview:cntView];
+  
+  
+  // カウント表示エリア生成
+  sublayer = [CALayer layer];
+  //  sublayer.backgroundColor = [UIColor grayColor].CGColor;
+  sublayer.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0].CGColor;//薄いグレイ
+  sublayer.shadowOffset = CGSizeMake(0, 3);
+  sublayer.shadowRadius = 5.0;
+  sublayer.shadowColor = [UIColor blueColor].CGColor;
+  sublayer.shadowOpacity = 0.8;
+  //  sublayer.frame = CGRectMake([self arignCenter:cntW], 60, cntW, cntH); // x y w h
+  sublayer.frame = CGRectMake(0, 0, cntW, cntH); // x y w h
+  sublayer.borderColor = [UIColor colorWithRed:0.5 green:0.5 blue:1.0 alpha:1.0].CGColor;//薄い青
+  sublayer.borderWidth = 6.0;
+  sublayer.cornerRadius = 10.0;
+  [cntView.layer addSublayer:sublayer];
+  
+  
+  // カウント表示Label
+  cntLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,cntW,cntH)];// x y w h
+  cntLabel.textAlignment = NSTextAlignmentCenter;
+  cntLabel.font = [UIFont systemFontOfSize:185];// ipad:185 iphone4s:70  = 6 digits + "M S"
+  cntLabel.adjustsFontSizeToFitWidth = YES;
+//  cntLabel.autoresizesSubviews = YES;
+//  cntLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight; // w h
+//  cntLabel.contentMode = UIViewContentModeCenter;
+  cntLabel.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0.5 alpha:0];
+  cntLabel.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8];
+//  cntLabel.text = [NSString stringWithFormat:@"%@",NSLocalizedString(@"AppName", nil)];
+  cntLabel.text = nil;
+  [cntView addSubview:cntLabel];
+  
+  
+  //  CALayer *imageLayer = [CALayer layer];
+  //  imageLayer.frame = sublayer.bounds;
+  //  imageLayer.cornerRadius = 10.0;
+  //  imageLayer.contents = (id) [UIImage imageNamed:@"xxxbg01.jpg"].CGImage;
+  //  imageLayer.masksToBounds = YES;
+  //  [sublayer addSublayer:imageLayer];
+  
+  
+  //  // ローカライズ Sample
+  //  UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(550,550,300,30)]; // x y w h
+  //  //  label.text = [NSString stringWithFormat:@"%@",NSLocalizedString(@"AppName", nil)];
+  //  label.text = NSLocalizedString(@"AppName", nil);
+  //  label.layer.borderWidth = 2.0;
+  //  label.layer.borderColor = [UIColor blueColor].CGColor;
+  ////  NSLog(@"%@", NSLocalizedString(@"AppName", nil));
+  //  [self.view addSubview:label];
+  
+  
+  // ボタン表示
+  
+  
+  
+  
+  
+  
   
   
   // デバイスの回転をサポート デバイスが回転した際に、呼び出してほしいメソッドを指定
