@@ -59,8 +59,6 @@
   [self.view addSubview:cntLabel];
   
   
-  
-  
   //  CALayer *imageLayer = [CALayer layer];
   //  imageLayer.frame = sublayer.bounds;
   //  imageLayer.cornerRadius = 10.0;
