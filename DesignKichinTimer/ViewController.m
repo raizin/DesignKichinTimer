@@ -94,15 +94,10 @@
     // Viewの位置とサイズを補正してセット
     sublayer.frame = CGRectMake([self arignCenter:cntW], 60, cntW, cntH); // x y w h
     
-    // 縦向き
-  } else if (o == UIDeviceOrientationPortrait) {
+  // 縦向き
+  } else if (o == UIDeviceOrientationPortrait || o == UIDeviceOrientationPortraitUpsideDown) {
     // Viewの位置とサイズを補正してセット
     sublayer.frame = CGRectMake([self arignCenter:cntW], 60, cntW, cntH); // x y w h
-    
-    
-    // 縦向き 逆さ InfoPlist側でDefaultなし
-  } else if (o == UIDeviceOrientationPortraitUpsideDown) {
-    // なにもしない
     
     // 向きが不明な場合
   } else {
