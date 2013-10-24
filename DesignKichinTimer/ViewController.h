@@ -22,6 +22,8 @@
 //  CGPoint centerLocation_Date;
 //  CGPoint centerLocation_Time;
 
+  // カウンター表示ラベル定義
+  UILabel *cntLabel;
   
   // カウンター表示エリア横幅,縦幅
   int cntW;

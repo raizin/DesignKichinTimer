@@ -51,6 +51,15 @@
   sublayer.cornerRadius = 10.0;
   [self.view.layer addSublayer:sublayer];
   
+
+  
+  // ====== カウンター表示用のView定義 ここから ======
+  cntLabel = [[UILabel alloc] initWithFrame:CGRectMake(550,550,300,30)];// x y w h
+  cntLabel.text = [NSString stringWithFormat:@"%@",NSLocalizedString(@"AppName", nil)];
+  [self.view addSubview:cntLabel];
+
+  
+  
   
 //  CALayer *imageLayer = [CALayer layer];
 //  imageLayer.frame = sublayer.bounds;
@@ -143,19 +152,59 @@
   //cntH = (screenWidth -20) / 1.618; // 黄金比
   
   
-  
-
-  
-  
   // デバイスの回転をサポート デバイスが回転した際に、呼び出してほしいメソッドを指定
   [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(didRotate:)
                                                name:UIDeviceOrientationDidChangeNotification
                                              object:nil];
+  
+
+  
+  //タイマーのセット（一秒）
+  [NSTimer scheduledTimerWithTimeInterval:1.0 //タイマーを発生させる間隔（1.0秒毎）
+                                   target:self //メソッドがあるオブジェクト
+                                 selector:@selector(driveClock:) //呼び出すメソッド
+                                 userInfo:nil //メソッドに渡すパラメータ
+                                  repeats:YES]; //繰り返し
+
 
   
 }
+
+
+
+// 時計(現在時)表示用関数
+- (void)driveClock:(NSTimer *)timer
+{
+  NSDate *today = [NSDate date]; //現在時刻を取得
+  NSCalendar *calender = [NSCalendar currentCalendar]; //現在時刻の時分秒を取得
+  unsigned flags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+  NSDateComponents *todayComponents = [calender components:flags fromDate:today];
+//  int nenn = [todayComponents year];
+//  int tuki = [todayComponents month];
+//  int niti = [todayComponents day];
+//  int weekIndex = [todayComponents weekday];
+  
+  int hour = [todayComponents hour];
+  int min = [todayComponents minute];
+  int sec = [todayComponents second];
+  
+//  // 年月日,曜日表示
+//  nowDate.text = [NSString stringWithFormat:@"%04d/%02d/%02d (%@)",nenn,tuki,niti,[self stringShortweekday:weekIndex]];
+
+  // 時間を表示
+  cntLabel.text = [NSString stringWithFormat:@"%02d:%02d:%02d",hour,min,sec];
+}
+
+
+
+
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning
 {
