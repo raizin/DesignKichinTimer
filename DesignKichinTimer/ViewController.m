@@ -80,7 +80,8 @@
   CGFloat screenWidth = rect.size.width;
   CGFloat screenHeight = rect.size.height;
   
-  NSLog(@"w=%f h=%f",screenWidth,screenHeight); // ipad mini 768x1024, iphone4s 320x480
+  NSLog(@"w=%f h=%f",screenWidth,screenHeight); // iphone4s 320x480, ipad mini 768x1024
+                                                // iphone5s 320x568
   
   // カウンター表示エリアの横幅を定義
   cntW = screenWidth -20;  //300;
@@ -133,7 +134,6 @@
   // カウント表示Label
   cntLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,cntW,cntH)];// x y w h
   cntLabel.textAlignment = NSTextAlignmentCenter;
-  cntLabel.font = [UIFont systemFontOfSize:185];// ipad:185 iphone4s:70  = 6 digits + "M S"
   cntLabel.adjustsFontSizeToFitWidth = YES;
 //  cntLabel.autoresizesSubviews = YES; //
 //  cntLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight; // w h
@@ -142,6 +142,16 @@
   cntLabel.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8];
 //  cntLabel.text = [NSString stringWithFormat:@"%@",NSLocalizedString(@"AppName", nil)];
   cntLabel.text = nil;
+  
+  // 表示フォントサイズ ipad:185 iphone:70  = 6 digits + "M S"
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+    //NSLog(@"iPhoneの処理");
+    cntLabel.font = [UIFont systemFontOfSize:70];
+  }
+  else{
+    //NSLog(@"iPadの処理");
+    cntLabel.font = [UIFont systemFontOfSize:185];
+  }
   [cntView addSubview:cntLabel];
   
   
@@ -163,7 +173,7 @@
   //  [self.view addSubview:label];
   
   
-  // ボタン表示
+  // ボタン配置
   
   
   
