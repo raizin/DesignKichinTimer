@@ -97,14 +97,14 @@
   self.view.layer.frame = CGRectInset(self.view.layer.frame, 20, 20);
   
   //  self.view.layer.contents = (id)[UIImage imageNamed:@"bg01.jpg"].CGImage;
-  //  CALayer *sublayer = [CALayer layer];
-  //  sublayer.backgroundColor = [UIColor blueColor].CGColor;
-  //  sublayer.shadowOffset = CGSizeMake(0, 3);
-  //  sublayer.shadowRadius = 5.0;
-  //  sublayer.shadowColor = [UIColor blackColor].CGColor;
-  //  sublayer.shadowOpacity = 0.8;
-  //  sublayer.frame = CGRectMake(30, 30, 128, 192);
-  //  [self.view.layer addSublayer:sublayer];
+  //  CALayer *cntlayer = [CALayer layer];
+  //  cntlayer.backgroundColor = [UIColor blueColor].CGColor;
+  //  cntlayer.shadowOffset = CGSizeMake(0, 3);
+  //  cntlayer.shadowRadius = 5.0;
+  //  cntlayer.shadowColor = [UIColor blackColor].CGColor;
+  //  cntlayer.shadowOpacity = 0.8;
+  //  cntlayer.frame = CGRectMake(30, 30, 128, 192);
+  //  [self.view.layer addSublayer:cntlayer];
   
   // 表示エリアの外側デザイン枠
   
@@ -116,19 +116,19 @@
   
   
   // カウント表示エリア生成
-  sublayer = [CALayer layer];
-  //  sublayer.backgroundColor = [UIColor grayColor].CGColor;
-  sublayer.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0].CGColor;//薄いグレイ
-  sublayer.shadowOffset = CGSizeMake(0, 3);
-  sublayer.shadowRadius = 5.0;
-  sublayer.shadowColor = [UIColor blueColor].CGColor;
-  sublayer.shadowOpacity = 0.8;
-  //  sublayer.frame = CGRectMake([self arignCenter:cntW], 60, cntW, cntH); // x y w h
-  sublayer.frame = CGRectMake(0, 0, cntW, cntH); // x y w h
-  sublayer.borderColor = [UIColor colorWithRed:0.5 green:0.5 blue:1.0 alpha:1.0].CGColor;//薄い青
-  sublayer.borderWidth = 6.0;
-  sublayer.cornerRadius = 10.0;
-  [cntView.layer addSublayer:sublayer];
+  cntlayer = [CALayer layer];
+  //  cntlayer.backgroundColor = [UIColor grayColor].CGColor;
+  cntlayer.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0].CGColor;//薄いグレイ
+  cntlayer.shadowOffset = CGSizeMake(0, 3);
+  cntlayer.shadowRadius = 5.0;
+  cntlayer.shadowColor = [UIColor blueColor].CGColor;
+  cntlayer.shadowOpacity = 0.8;
+  //  cntlayer.frame = CGRectMake([self arignCenter:cntW], 60, cntW, cntH); // x y w h
+  cntlayer.frame = CGRectMake(0, 0, cntW, cntH); // x y w h
+  cntlayer.borderColor = [UIColor colorWithRed:0.5 green:0.5 blue:1.0 alpha:1.0].CGColor;//薄い青
+  cntlayer.borderWidth = 6.0;
+  cntlayer.cornerRadius = 10.0;
+  [cntView.layer addSublayer:cntlayer];
   
   
   // カウント表示Label
@@ -156,11 +156,11 @@
   
   
   //  CALayer *imageLayer = [CALayer layer];
-  //  imageLayer.frame = sublayer.bounds;
+  //  imageLayer.frame = cntlayer.bounds;
   //  imageLayer.cornerRadius = 10.0;
   //  imageLayer.contents = (id) [UIImage imageNamed:@"xxxbg01.jpg"].CGImage;
   //  imageLayer.masksToBounds = YES;
-  //  [sublayer addSublayer:imageLayer];
+  //  [cntlayer addSublayer:imageLayer];
   
   
   //  // ローカライズ Sample
@@ -174,7 +174,24 @@
   
   
   // ボタン配置
+//  int btnW = 50;
   
+  setBtn01 = [UIButton buttonWithType:UIButtonTypeCustom];
+//  setBtn01.frame = CGRectMake(([self arignCenter:btnW] - 50),50,50,450);// x y w h
+  setBtn01.frame = CGRectMake(500,500,100,50);// x y w h
+//  setBtn01.titleLabel.text = @"hoge";
+  [setBtn01 setTitle:@"1min" forState:UIControlStateNormal];
+  [[setBtn01 layer] setBackgroundColor:
+   [[UIColor colorWithRed:0.9 green:0.9 blue:0.0 alpha:0.6] CGColor]];
+  
+  
+  [setBtn01 setTitleColor:[UIColor blueColor] forState:UIControlStateNormal]; //有効時
+  [setBtn01 setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted]; //ハイライト時
+  [setBtn01 setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled]; //無効時
+
+  
+//  [setBtn addTarget:self action:@selector(moveSettingView) forControlEvents:UIControlEventTouchUpInside];
+  [self.view addSubview:setBtn01];
   
   
   

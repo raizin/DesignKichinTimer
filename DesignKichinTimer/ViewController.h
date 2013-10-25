@@ -33,7 +33,17 @@
   int cntH;
   
   // カウンター表示エリア
-  CALayer *sublayer;
+  CALayer *cntlayer;
+  
+  // Button
+  UIButton *setBtn60;//60 min
+  UIButton *setBtn10;//10 min
+  UIButton *setBtn05;//5 min
+  UIButton *setBtn03;//3 min
+  UIButton *setBtn01;//1 min
+  UIButton *setBtn001;//10 s
+  UIButton *setBtn0001;//1 s
+
   
 }
 
