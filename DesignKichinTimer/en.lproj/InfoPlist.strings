@@ -1,5 +1,5 @@
 /* Localized versions of Info.plist keys */
 
 CFBundleName = "Japanese Kichin Timer";
-CFBundleDisplayName = "Japanese Kichin Timer";
-
+CFBundleDisplayName = "JapaneseTimer"; // iphone ipod
+"CFBundleDisplayName~ipad" = "Japanese Kichin Timer"; // ipad ipadmini
