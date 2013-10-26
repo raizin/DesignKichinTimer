@@ -172,8 +172,66 @@
   ////  NSLog(@"%@", NSLocalizedString(@"AppName", nil));
   //  [self.view addSubview:label];
   
+
   
-  // ボタン配置
+  //ボタン内文字列用 影の定義 1:blue 2:red 3:gray
+  NSShadow *shadow1 = [[NSShadow alloc] init];
+  shadow1.shadowOffset = CGSizeMake(1.f, 1.f);
+  shadow1.shadowColor = [UIColor blueColor];
+  shadow1.shadowBlurRadius = 5.f;
+  NSDictionary *attr1 = @{NSShadowAttributeName:shadow1,NSForegroundColorAttributeName:[UIColor blueColor]};
+
+  NSShadow *shadow2 = [[NSShadow alloc] init];
+  shadow2.shadowOffset = CGSizeMake(1.f, 1.f);
+  shadow2.shadowColor = [UIColor redColor];
+  shadow2.shadowBlurRadius = 5.f;
+  NSDictionary *attr2 = @{NSShadowAttributeName:shadow2,NSForegroundColorAttributeName:[UIColor redColor]};
+  
+  NSShadow *shadow3 = [[NSShadow alloc] init];
+  shadow3.shadowOffset = CGSizeMake(1.f, 1.f);
+  shadow3.shadowColor = [UIColor grayColor];
+  shadow3.shadowBlurRadius = 5.f;
+  NSDictionary *attr3 = @{NSShadowAttributeName:shadow3,NSForegroundColorAttributeName:[UIColor grayColor]};
+
+  
+  // 表示切り替え(ボタン)配置
+  NSString *clockTitle = @"▷現在時表示";
+  UIButton *clockSelectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+  clockSelectBtn.frame = CGRectMake(15,5,120,50);// x y w h
+  
+  NSAttributedString *attrClockTitle3 = [[NSAttributedString alloc] initWithString:clockTitle attributes:attr3];
+  [clockSelectBtn setAttributedTitle:attrClockTitle3 forState:UIControlStateNormal]; // 有効時
+  
+  NSAttributedString *attrClockTitle2 = [[NSAttributedString alloc] initWithString:clockTitle attributes:attr2];
+  [clockSelectBtn setAttributedTitle:attrClockTitle2 forState:UIControlStateHighlighted]; // タッチ中
+  
+  NSAttributedString *attrClockTitle1 = [[NSAttributedString alloc] initWithString:clockTitle attributes:attr1];
+  [clockSelectBtn setAttributedTitle:attrClockTitle1 forState:UIControlStateDisabled]; // 無効時
+  
+  [cntView addSubview:clockSelectBtn];
+  
+  [clockSelectBtn setEnabled:NO];
+
+  
+  
+  NSString *timerTitle = @"▷タイマー表示";
+  UIButton *timerSelectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+  timerSelectBtn.frame = CGRectMake(145,5,135,50);// x y w h
+
+  NSAttributedString *attrTimerTitle3 = [[NSAttributedString alloc] initWithString:timerTitle attributes:attr3];
+  [timerSelectBtn setAttributedTitle:attrTimerTitle3 forState:UIControlStateNormal]; // 有効時
+  
+  NSAttributedString *attrTimerTitle2 = [[NSAttributedString alloc] initWithString:timerTitle attributes:attr2];
+  [timerSelectBtn setAttributedTitle:attrTimerTitle2 forState:UIControlStateHighlighted]; // タッチ中
+
+  NSAttributedString *attrTimerTitle1 = [[NSAttributedString alloc] initWithString:timerTitle attributes:attr1];
+  [timerSelectBtn setAttributedTitle:attrTimerTitle1 forState:UIControlStateDisabled]; // 無効時
+
+  [cntView addSubview:timerSelectBtn];
+  
+  
+  
+  // 設定ボタン配置
 //  int btnW = 50;
   
   setBtn01 = [UIButton buttonWithType:UIButtonTypeCustom];
