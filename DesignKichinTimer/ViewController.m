@@ -110,8 +110,8 @@
   
   
   
-  //カウント表示View生成
-  cntView = [[UIView alloc] initWithFrame:CGRectMake([self arignCenter:cntW], 60, cntW, 100)];// x y w h
+  //カウント表示View生成 ////// TODO
+  cntView = [[UIView alloc] initWithFrame:CGRectMake([self arignCenter:cntW], 60, cntW, cntH)];// x y w h
   [self.view addSubview:cntView];
   
   
@@ -119,16 +119,27 @@
   cntlayer = [CALayer layer];
   //  cntlayer.backgroundColor = [UIColor grayColor].CGColor;
   cntlayer.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0].CGColor;//薄いグレイ
-  cntlayer.shadowOffset = CGSizeMake(0, 3);
-  cntlayer.shadowRadius = 5.0;
-  cntlayer.shadowColor = [UIColor blueColor].CGColor;
-  cntlayer.shadowOpacity = 0.8;
+//  cntlayer.shadowOffset = CGSizeMake(0, 3);
+//  cntlayer.shadowRadius = 5.0;
+//  cntlayer.shadowColor = [UIColor blueColor].CGColor;
+//  cntlayer.shadowOpacity = 0.8;
   //  cntlayer.frame = CGRectMake([self arignCenter:cntW], 60, cntW, cntH); // x y w h
   cntlayer.frame = CGRectMake(0, 0, cntW, cntH); // x y w h
   cntlayer.borderColor = [UIColor colorWithRed:0.5 green:0.5 blue:1.0 alpha:1.0].CGColor;//薄い青
-  cntlayer.borderWidth = 6.0;
+  cntlayer.borderWidth = 7.0;
   cntlayer.cornerRadius = 10.0;
+//  UIBezierPath* path = [UIBezierPath bezierPathWithRect:
+//                        CGRectMake(-1.0, -1.0, cntlayer.bounds.size.width+10.0, 10.0)];
+//  cntlayer.shadowPath = [path CGPath];
   [cntView.layer addSublayer:cntlayer];
+
+  
+  
+  // Viewの表示順序を設定
+//  [cntView bringSubviewToFront:cntlayer]; //最前面
+  //  [self.view sendSubviewToBack:nowTimeView]; //最背面
+
+  
   
   
   // カウント表示Label
@@ -138,21 +149,39 @@
 //  cntLabel.autoresizesSubviews = YES; //
 //  cntLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight; // w h
 //  cntLabel.contentMode = UIViewContentModeCenter;
-  cntLabel.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0.5 alpha:0];
-  cntLabel.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8];
+  cntLabel.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0.5 alpha:0]; //
+//  cntLabel.backgroundColor = [UIColor greenColor];
+  cntLabel.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8]; // Light Gray
 //  cntLabel.text = [NSString stringWithFormat:@"%@",NSLocalizedString(@"AppName", nil)];
   cntLabel.text = nil;
   
-  // 表示フォントサイズ ipad:185 iphone:70  = 6 digits + "M S"
+  // 表示フォントサイズ ipad:180 iphone:70  = 6 digits + "M S"
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
     //NSLog(@"iPhoneの処理");
     cntLabel.font = [UIFont systemFontOfSize:70];
   }
   else{
     //NSLog(@"iPadの処理");
-    cntLabel.font = [UIFont systemFontOfSize:185];
+    cntLabel.font = [UIFont systemFontOfSize:180];
   }
   [cntView addSubview:cntLabel];
+  
+  [self _addDropShadowToView:cntView]; // 内影生成
+
+  // 内側に影をつくるテスト
+//  CALayer* subLayer = [CALayer layer];
+//  subLayer.frame = cntView.bounds;
+//  [cntView.layer addSublayer:subLayer];
+//  subLayer.masksToBounds = YES;
+//  UIBezierPath* path = [UIBezierPath bezierPathWithRect:
+//                        CGRectMake(2.0, 1.0, subLayer.bounds.size.width-9.0, 10.0)];// x y w h
+//  subLayer.shadowOffset = CGSizeMake(2.5, 2.5);
+//  subLayer.shadowColor = [[UIColor blackColor] CGColor];
+//  subLayer.shadowOpacity = 0.5;
+//  subLayer.shadowPath = [path CGPath];
+  
+  
+  
   
   
   //  CALayer *imageLayer = [CALayer layer];
@@ -194,10 +223,17 @@
   NSDictionary *attr3 = @{NSShadowAttributeName:shadow3,NSForegroundColorAttributeName:[UIColor grayColor]};
 
   
-  // 表示切り替え(ボタン)配置
+  /*** 表示切り替え(ボタン)配置 ***/
+  
+  // 表示位置(高さ)分岐 iphone ipad
+  int selecterY = 7;
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+    selecterY = -42;
+  }
+  
   NSString *clockTitle = @"▷現在時表示";
   UIButton *clockSelectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-  clockSelectBtn.frame = CGRectMake(15,5,120,50);// x y w h
+  clockSelectBtn.frame = CGRectMake(15,selecterY,120,50);// x y w h
   
   NSAttributedString *attrClockTitle3 = [[NSAttributedString alloc] initWithString:clockTitle attributes:attr3];
   [clockSelectBtn setAttributedTitle:attrClockTitle3 forState:UIControlStateNormal]; // 有効時
@@ -210,13 +246,13 @@
   
   [cntView addSubview:clockSelectBtn];
   
-  [clockSelectBtn setEnabled:NO];
+  [clockSelectBtn setEnabled:NO];// default
 
   
   
   NSString *timerTitle = @"▷タイマー表示";
   UIButton *timerSelectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-  timerSelectBtn.frame = CGRectMake(145,5,135,50);// x y w h
+  timerSelectBtn.frame = CGRectMake(145,selecterY,135,50);// x y w h
 
   NSAttributedString *attrTimerTitle3 = [[NSAttributedString alloc] initWithString:timerTitle attributes:attr3];
   [timerSelectBtn setAttributedTitle:attrTimerTitle3 forState:UIControlStateNormal]; // 有効時
@@ -306,8 +342,94 @@
 
 
 
+// L字型(『)の内影
+- (void)_addDropShadowToView:(UIView*)toView
+{
+  CALayer* subLayer = [CALayer layer];
+  subLayer.frame = toView.bounds;
+  [toView.layer addSublayer:subLayer];
+  subLayer.masksToBounds = YES;
+  
+  CGSize size = subLayer.bounds.size;
+  CGFloat x = 3.0;
+  CGFloat y = 3.0;
+  CGMutablePathRef pathRef = CGPathCreateMutable(); // polygon create
 
+  CGPathMoveToPoint(pathRef, NULL, x, y); // start
 
+  x += size.width - 5.0;
+  CGPathAddLineToPoint(pathRef, NULL, x, y); // 1
+  
+  y += 10.0;
+  CGPathAddLineToPoint(pathRef, NULL, x, y); // 2
+  
+  x -= size.width - 15.0;
+  CGPathAddLineToPoint(pathRef, NULL, x, y); // 3
+  
+  y += size.height - 15.0;
+  CGPathAddLineToPoint(pathRef, NULL, x, y); // 4
+  
+  x -= 5.0;   // (*)10
+  CGPathAddLineToPoint(pathRef, NULL, x, y); // 5
+  
+  y -= 5.0;   // (*)size.height+10
+  CGPathAddLineToPoint(pathRef, NULL, x, y); // 6
+  
+  CGPathAddLineToPoint(pathRef, NULL, 3.0, 3.0); // end
+  
+  CGPathCloseSubpath(pathRef);
+  
+  subLayer.shadowOffset = CGSizeMake(0.0, 0.0);
+  subLayer.shadowColor = [[UIColor blackColor] CGColor];
+  subLayer.shadowOpacity = 0.2; // 不透明度
+  subLayer.shadowPath = pathRef;
+  
+  CGPathRelease(pathRef);
+}
+
+- (void)_addDropShadowToView2:(UIView*)toView
+{
+  CALayer* subLayer = [CALayer layer];
+  subLayer.frame = toView.bounds;
+  [toView.layer addSublayer:subLayer];
+  subLayer.masksToBounds = YES;
+  
+  CGSize size = subLayer.bounds.size;
+  CGFloat x = 3.0;
+  CGFloat y = 3.0;
+  CGMutablePathRef pathRef = CGPathCreateMutable(); // polygon create
+  
+  CGPathMoveToPoint(pathRef, NULL, x, y); // start
+  
+  x += size.width - 5.0;
+  CGPathAddLineToPoint(pathRef, NULL, x, y); // 1
+  
+  y += 10.0;
+  CGPathAddLineToPoint(pathRef, NULL, x, y); // 2
+  
+  x -= size.width - 15.0;
+  CGPathAddLineToPoint(pathRef, NULL, x, y); // 3
+  
+  y += size.height - 15.0;
+  CGPathAddLineToPoint(pathRef, NULL, x, y); // 4
+  
+  x -= 5.0;   // (*)10
+  CGPathAddLineToPoint(pathRef, NULL, x, y); // 5
+  
+  y -= 5.0;   // (*)size.height+10
+  CGPathAddLineToPoint(pathRef, NULL, x, y); // 6
+  
+  CGPathAddLineToPoint(pathRef, NULL, 3.0, 3.0); // end
+  
+  CGPathCloseSubpath(pathRef);
+  
+  subLayer.shadowOffset = CGSizeMake(0.0, 0.0);
+  subLayer.shadowColor = [[UIColor blackColor] CGColor];
+  subLayer.shadowOpacity = 0.2; // 不透明度
+  subLayer.shadowPath = pathRef;
+  
+  CGPathRelease(pathRef);
+}
 
 
 
