@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ViewController ()
 
@@ -267,25 +268,109 @@
   
   
   
+  
   // 設定ボタン配置
-//  int btnW = 50;
-  
-  setBtn01 = [UIButton buttonWithType:UIButtonTypeCustom];
-//  setBtn01.frame = CGRectMake(([self arignCenter:btnW] - 50),50,50,450);// x y w h
-  setBtn01.frame = CGRectMake(500,500,100,50);// x y w h
-//  setBtn01.titleLabel.text = @"hoge";
-  [setBtn01 setTitle:@"1min" forState:UIControlStateNormal];
-  [[setBtn01 layer] setBackgroundColor:
-   [[UIColor colorWithRed:0.9 green:0.9 blue:0.0 alpha:0.6] CGColor]];
-  
-  
-  [setBtn01 setTitleColor:[UIColor blueColor] forState:UIControlStateNormal]; //有効時
-  [setBtn01 setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted]; //ハイライト時
-  [setBtn01 setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled]; //無効時
+////  int btnW = 50;
+//  
+//  setBtn01 = [UIButton buttonWithType:UIButtonTypeCustom];
+////  setBtn01.frame = CGRectMake(([self arignCenter:btnW] - 50),50,50,450);// x y w h
+//  setBtn01.frame = CGRectMake(500,500,100,50);// x y w h
+////  setBtn01.titleLabel.text = @"hoge";
+//  [setBtn01 setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btn01", nil)] forState:UIControlStateNormal];
+//  [[setBtn01 layer] setBackgroundColor:
+//   [[UIColor colorWithRed:0.9 green:0.9 blue:0.0 alpha:0.6] CGColor]];
+//  
+//  [[setBtn01 layer] setCornerRadius:30.0]; // 丸くする
+//  [setBtn01 setClipsToBounds:YES];
+//
+//  [[setBtn01 layer] setBorderColor:[[UIColor lightGrayColor] CGColor]];
+//  [[setBtn01 layer] setBorderWidth:1.0];
+//  
+//  [setBtn01 setTitleColor:[UIColor blueColor] forState:UIControlStateNormal]; //有効時
+//  [setBtn01 setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted]; //タッチ(ハイライト？)時
+//  [setBtn01 setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled]; //無効時
+////  [setBtn addTarget:self action:@selector(moveSettingView) forControlEvents:UIControlEventTouchUpInside];
+//  [self.view addSubview:setBtn01];
 
   
-//  [setBtn addTarget:self action:@selector(moveSettingView) forControlEvents:UIControlEventTouchUpInside];
-  [self.view addSubview:setBtn01];
+  setBtn01 = [UIButton buttonWithType:UIButtonTypeCustom];
+  [setBtn01 setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btn01", nil)] forState:UIControlStateNormal];
+  setBtn01.frame = CGRectMake(590, 400, 170, 100); // x y w h
+  [setBtn01.titleLabel setFont:[UIFont boldSystemFontOfSize:50]];
+  [self myBtnCreate:setBtn01];
+
+  setBtn03 = [UIButton buttonWithType:UIButtonTypeCustom];
+  [setBtn03 setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btn03", nil)] forState:UIControlStateNormal];
+  setBtn03.frame = CGRectMake(400, 400, 170, 100); // x y w h
+  [setBtn03.titleLabel setFont:[UIFont boldSystemFontOfSize:50]];
+  [self myBtnCreate:setBtn03];
+  
+  setBtn05 = [UIButton buttonWithType:UIButtonTypeCustom];
+  [setBtn05 setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btn05", nil)] forState:UIControlStateNormal];
+  setBtn05.frame = CGRectMake(210, 400, 170, 100); // x y w h
+  [setBtn05.titleLabel setFont:[UIFont boldSystemFontOfSize:50]];
+  [self myBtnCreate:setBtn05];
+  
+  setBtn10 = [UIButton buttonWithType:UIButtonTypeCustom];
+  [setBtn10 setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btn10", nil)] forState:UIControlStateNormal];
+  setBtn10.frame = CGRectMake( 20, 400, 170, 100); // x y w h
+  [setBtn10.titleLabel setFont:[UIFont boldSystemFontOfSize:50]];
+  [self myBtnCreate:setBtn10];
+  
+  setBtn001 = [UIButton buttonWithType:UIButtonTypeCustom];
+  [setBtn001 setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btn001", nil)] forState:UIControlStateNormal];
+  setBtn001.frame = CGRectMake( 299, 550, 170, 100); // x y w h
+  [setBtn001.titleLabel setFont:[UIFont boldSystemFontOfSize:50]];
+  [self myBtnCreate:setBtn001];
+
+  setBtnStart = [UIButton buttonWithType:UIButtonTypeCustom];
+  [setBtnStart setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btnStart", nil)] forState:UIControlStateNormal];
+  setBtnStart.frame = CGRectMake( 499, 550, 170, 100); // x y w h
+  [setBtnStart.titleLabel setFont:[UIFont boldSystemFontOfSize:25]];
+  [self myBtnCreate:setBtnStart];
+  
+  
+  
+  setBtnReset = [UIButton buttonWithType:UIButtonTypeCustom];
+
+  NSString *_StopReset = [NSString stringWithFormat:@"%@",NSLocalizedString(@"btnReset", nil)];
+  NSMutableString *str= [NSMutableString stringWithCapacity:1];
+  [str appendFormat:@"%@\n",[_StopReset substringWithRange:NSMakeRange(0,4)]];
+//  [str appendString:[_StopReset substringWithRange: NSMakeRange(3,[_StopReset length]-1)]];
+  [str appendString:[_StopReset substringWithRange: NSMakeRange(4,4)]];
+
+  ((UILabel*)setBtnReset).lineBreakMode = NSLineBreakByWordWrapping;
+
+  [setBtnReset setTitle:str forState:UIControlStateNormal];
+  setBtnReset.frame = CGRectMake(  99, 550, 170, 100); // x y w h
+  [setBtnReset.titleLabel setFont:[UIFont boldSystemFontOfSize:25]];
+  [self myBtnCreate:setBtnReset];
+  
+  
+//  [myBtn setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btn01", nil)] forState:UIControlStateNormal];
+//  myBtn.frame = CGRectMake(400, 400, 100, 50);
+//  [myBtn setBackgroundColor:[UIColor colorWithRed:0.9 green:0.9 blue:0.0 alpha:0.8]];
+////  [myBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
+////  [myBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:10]];
+//  [myBtn.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
+//  [myBtn.layer setBorderWidth:1.0f];
+//  //    [myBtn.layer setMasksToBounds:YES];
+//  [myBtn.layer setCornerRadius:30.0f];
+//  [myBtn.layer setShadowOpacity:0.5f];
+//  [myBtn.layer setShadowOffset:CGSizeMake(2, 2)];
+//
+//  [myBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal]; //有効時
+//  [myBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted]; //タッチ(ハイライト？)時
+//  [myBtn setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled]; //無効時
+//  
+//  [myBtn addTarget:self action:@selector(myBtnTouchDown:) forControlEvents:UIControlEventTouchDown]; // タッチ中
+//  [myBtn addTarget:self action:@selector(myBtnTouchUpInside:) forControlEvents:UIControlEventTouchUpInside]; // タッチリリース時
+//  [self.view addSubview:myBtn];
+//  
+  
+  
+  
+  
   
   
   
@@ -312,6 +397,68 @@
   
   
 }
+
+
+
+/*
+ * ボタン生成関数
+ */
+- (void)myBtnCreate:(id)sender
+{
+//  UIButton *myBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+  UIButton *myBtn = (UIButton *)sender;
+//  [myBtn setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btn01", nil)] forState:UIControlStateNormal];
+//  myBtn.frame = CGRectMake(400, 400, 100, 50);
+  [myBtn setBackgroundColor:[UIColor colorWithRed:0.9 green:0.9 blue:0.0 alpha:0.8]];
+  //  [myBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
+//  [myBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:50]];
+  [myBtn.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
+  [myBtn.layer setBorderWidth:1.0f];
+  //    [myBtn.layer setMasksToBounds:YES];
+  [myBtn.layer setCornerRadius:50.0f]; // iphone:25 ipad:50
+  [myBtn.layer setShadowOpacity:0.5f];
+  [myBtn.layer setShadowOffset:CGSizeMake(2, 2)];
+  
+  [myBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal]; //有効時
+  [myBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted]; //タッチ(ハイライト？)時
+  [myBtn setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled]; //無効時
+  
+  [myBtn addTarget:self action:@selector(myBtnTouchDown:) forControlEvents:UIControlEventTouchDown]; // タッチ中
+  [myBtn addTarget:self action:@selector(myBtnTouchUpInside:) forControlEvents:UIControlEventTouchUpInside]; // タッチリリース時
+  [self.view addSubview:myBtn];
+
+}
+
+
+
+/*
+ * ボタン押下時にボタンを下に少しずらす
+ */
+- (void)myBtnTouchDown:(id)sender
+{
+  UIButton *btnView   = (UIButton *)sender;
+  btnView.layer.frame = CGRectMake(btnView.layer.frame.origin.x+3, btnView.layer.frame.origin.y+3, btnView.frame.size.width, btnView.frame.size.height);
+  [btnView setBackgroundColor:[UIColor brownColor]];
+}
+
+/*
+ * ボタンを押し離した時にボタンを元に戻す
+ */
+- (void)myBtnTouchUpInside:(id)sender
+{
+  UIButton *btnView   = (UIButton *)sender;
+  btnView.layer.frame = CGRectMake(btnView.layer.frame.origin.x-3, btnView.layer.frame.origin.y-3, btnView.frame.size.width, btnView.frame.size.height);
+  [btnView setBackgroundColor:[UIColor colorWithRed:0.9 green:0.9 blue:0.0 alpha:0.8]];
+
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -387,49 +534,6 @@
   CGPathRelease(pathRef);
 }
 
-- (void)_addDropShadowToView2:(UIView*)toView
-{
-  CALayer* subLayer = [CALayer layer];
-  subLayer.frame = toView.bounds;
-  [toView.layer addSublayer:subLayer];
-  subLayer.masksToBounds = YES;
-  
-  CGSize size = subLayer.bounds.size;
-  CGFloat x = 3.0;
-  CGFloat y = 3.0;
-  CGMutablePathRef pathRef = CGPathCreateMutable(); // polygon create
-  
-  CGPathMoveToPoint(pathRef, NULL, x, y); // start
-  
-  x += size.width - 5.0;
-  CGPathAddLineToPoint(pathRef, NULL, x, y); // 1
-  
-  y += 10.0;
-  CGPathAddLineToPoint(pathRef, NULL, x, y); // 2
-  
-  x -= size.width - 15.0;
-  CGPathAddLineToPoint(pathRef, NULL, x, y); // 3
-  
-  y += size.height - 15.0;
-  CGPathAddLineToPoint(pathRef, NULL, x, y); // 4
-  
-  x -= 5.0;   // (*)10
-  CGPathAddLineToPoint(pathRef, NULL, x, y); // 5
-  
-  y -= 5.0;   // (*)size.height+10
-  CGPathAddLineToPoint(pathRef, NULL, x, y); // 6
-  
-  CGPathAddLineToPoint(pathRef, NULL, 3.0, 3.0); // end
-  
-  CGPathCloseSubpath(pathRef);
-  
-  subLayer.shadowOffset = CGSizeMake(0.0, 0.0);
-  subLayer.shadowColor = [[UIColor blackColor] CGColor];
-  subLayer.shadowOpacity = 0.2; // 不透明度
-  subLayer.shadowPath = pathRef;
-  
-  CGPathRelease(pathRef);
-}
 
 
 

@@ -5,4 +5,13 @@
   Created by z on 2013/10/24.
   Copyright (c) 2013 FoceSystemSolution. All rights reserved.
 */
-"AppName"="デザイン キッチンタイマー";
+//"AppName"="デザイン キッチンタイマー";
+"btn0001"="1秒";
+"btn001"="10秒";
+"btn01"="1分";
+"btn03"="3分";
+"btn05"="5分";
+"btn10"="10分";
+"btn60"="60分";
+"btnStart"="スタート";
+"btnReset"="ストップリセット";

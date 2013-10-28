@@ -10,10 +10,7 @@
 
 @interface ViewController : UIViewController {
   
-  //  UILabel *nowDate;
-  //  UIView  *nowDateView;
   //  NSString *dispStr;
-  //  UIButton *setBtn;
   //  BOOL flgViewSeco;
   //  BOOL flgViewDate;
   //  BOOL flgBlink;
@@ -43,6 +40,8 @@
   UIButton *setBtn01;//1 min
   UIButton *setBtn001;//10 s
   UIButton *setBtn0001;//1 s
+  UIButton *setBtnStart;
+  UIButton *setBtnReset;//Reset & Stop
 
   
 }

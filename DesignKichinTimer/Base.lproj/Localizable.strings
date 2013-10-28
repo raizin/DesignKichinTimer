@@ -6,3 +6,20 @@
   Copyright (c) 2013 FoceSystemSolution. All rights reserved.
 */
 "AppName"="Japanese Kichin Timer";
+"btn0001"="1s";
+"btn001"="10s";
+"btn01"="1min";
+"btn03"="3min";
+"btn05"="5min";
+"btn10"="10min";
+"btn60"="60min";
+"btnStart"="Start";
+"btnReset"="Stop Reset";
+
+//UIButton *setBtn60;//60 min
+//UIButton *setBtn10;//10 min
+//UIButton *setBtn05;//5 min
+//UIButton *setBtn03;//3 min
+//UIButton *setBtn01;//1 min
+//UIButton *setBtn001;//10 s
+//UIButton *setBtn0001;//1 s
