@@ -51,24 +51,6 @@
 
 
 
-// 中央寄せ用 X座標算出
-- (int)arignCenter:(int)w
-{
-  //画面情報(横幅)取得
-  UIScreen *sc = [UIScreen mainScreen];
-  CGRect rect = sc.bounds;
-  
-  // 現在が横向きの場合の対処
-  UIDeviceOrientation o = [UIDevice currentDevice].orientation;
-  if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
-    //    NSLog(@"height=%f",rect.size.height);
-    return ( rect.size.height - w ) / 2; // X座標を返す
-  }else{
-    //    NSLog(@"width=%f",rect.size.width);
-    return ( rect.size.width - w ) / 2; // X座標を返す
-  }
-}
-
 
 // View が初めて呼び出される時に1回だけ呼ばれる定義済み関数
 - (void)viewDidLoad
@@ -232,7 +214,7 @@
     selecterY = -42;
   }
   
-  NSString *clockTitle = @"▷現在時表示";
+  NSString *clockTitle = [NSString stringWithFormat:@"%@",NSLocalizedString(@"btnClock", nil)];
   UIButton *clockSelectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
   clockSelectBtn.frame = CGRectMake(15,selecterY,120,50);// x y w h
   
@@ -251,7 +233,7 @@
 
   
   
-  NSString *timerTitle = @"▷タイマー表示";
+  NSString *timerTitle = [NSString stringWithFormat:@"%@",NSLocalizedString(@"btnTimer", nil)];
   UIButton *timerSelectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
   timerSelectBtn.frame = CGRectMake(145,selecterY,135,50);// x y w h
 
@@ -292,6 +274,10 @@
 ////  [setBtn addTarget:self action:@selector(moveSettingView) forControlEvents:UIControlEventTouchUpInside];
 //  [self.view addSubview:setBtn01];
 
+  
+  //X軸の中心を取得
+  int centerPoint = [self arignCenter:0];
+//  NSLog(@"%d",centerPoint);
   
   setBtn01 = [UIButton buttonWithType:UIButtonTypeCustom];
   [setBtn01 setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btn01", nil)] forState:UIControlStateNormal];
@@ -534,6 +520,24 @@
   CGPathRelease(pathRef);
 }
 
+
+// 中央寄せ用 X座標算出
+- (int)arignCenter:(int)w
+{
+  //画面情報(横幅)取得
+  UIScreen *sc = [UIScreen mainScreen];
+  CGRect rect = sc.bounds;
+  
+  // 現在が横向きの場合の対処
+  UIDeviceOrientation o = [UIDevice currentDevice].orientation;
+  if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
+    //    NSLog(@"height=%f",rect.size.height);
+    return ( rect.size.height - w ) / 2; // X座標を返す
+  }else{
+    //    NSLog(@"width=%f",rect.size.width);
+    return ( rect.size.width - w ) / 2; // X座標を返す
+  }
+}
 
 
 

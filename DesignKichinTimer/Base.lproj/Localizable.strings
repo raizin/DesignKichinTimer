@@ -16,6 +16,9 @@
 "btnStart"="Start";
 "btnReset"="Stop Reset";
 
+"btnClock"="▷Clock Mode";
+"btnTimer"="▷Timer Mode";
+
 //UIButton *setBtn60;//60 min
 //UIButton *setBtn10;//10 min
 //UIButton *setBtn05;//5 min
