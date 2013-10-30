@@ -14,7 +14,7 @@
 "btn10"="10min";
 "btn60"="60min";
 "btnStart"="Start";
-"btnReset"="Stop Reset";
+"btnReset"="Stop&Reset";
 
 "btnClock"="▷Clock Mode";
 "btnTimer"="▷Timer Mode";
