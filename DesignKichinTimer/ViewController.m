@@ -247,30 +247,55 @@
 
   
   setBtnReset = [UIButton buttonWithType:UIButtonTypeCustom];
-  NSString *_StopReset = [NSString stringWithFormat:@"%@",NSLocalizedString(@"btnReset", nil)];
-  NSMutableString *str= [NSMutableString stringWithCapacity:1.0f];
-  [str appendFormat:@"%@\n",[_StopReset substringWithRange:NSMakeRange(0,4)]];
-  //  [str appendString:[_StopReset substringWithRange: NSMakeRange(3,[_StopReset length]-1)]];
-  [str appendString:[_StopReset substringWithRange: NSMakeRange(4,[_StopReset length]-4)]];
+  NSString *_btnReset = [NSString stringWithFormat:@"%@",NSLocalizedString(@"btnReset", nil)];
+  NSMutableString *__btnReset = [NSMutableString stringWithCapacity:1.0f];
+  [__btnReset appendFormat:@"%@\n",[_btnReset substringWithRange:NSMakeRange(0,4)]];
+  [__btnReset appendString:[_btnReset substringWithRange: NSMakeRange(4,[_btnReset length]-4)]];
   ((UILabel*)setBtnReset).lineBreakMode = NSLineBreakByWordWrapping; // 改行モードON
-  [setBtnReset setTitle:str forState:UIControlStateNormal];
+  [setBtnReset setTitle:__btnReset forState:UIControlStateNormal];
   [setBtnReset.titleLabel setFont:[UIFont boldSystemFontOfSize:btnFontSize/2]];
   [self myBtnCreate:setBtnReset];
   
-  setBtn001 = [UIButton buttonWithType:UIButtonTypeCustom];
-  [setBtn001 setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btn001", nil)] forState:UIControlStateNormal];
-  [setBtn001.titleLabel setFont:[UIFont boldSystemFontOfSize:btnFontSize]];
-  [self myBtnCreate:setBtn001];
+  
 
+  
+  NSDictionary *fontDigit = @{ NSForegroundColorAttributeName : [UIColor blueColor],
+                               NSFontAttributeName : [UIFont boldSystemFontOfSize:btnFontSize] };
+  NSDictionary *fontUnit = @{ NSForegroundColorAttributeName : [UIColor blueColor],
+                               NSFontAttributeName : [UIFont boldSystemFontOfSize:btnFontSize/2] };
+  
+//  UIFont *fontDigit = [UIFont boldSystemFontOfSize:btnFontSize/2];
+//  UIFont *fontUnit  = [UIFont boldSystemFontOfSize:btnFontSize/3];
+  
+  setBtn001 = [UIButton buttonWithType:UIButtonTypeCustom];
+  NSString *_btn001 = [NSString stringWithFormat:@"%@",NSLocalizedString(@"btn001", nil)];
+
+
+  NSAttributedString *btn001Dig = [[NSAttributedString alloc]
+                                  initWithString:[_btn001 substringWithRange:NSMakeRange(0,2)]
+                                  attributes:fontDigit];
+  NSAttributedString *btn001Uni = [[NSAttributedString alloc]
+                                  initWithString:[_btn001 substringWithRange:NSMakeRange(2,1)]
+                                  attributes:fontUnit];
+
+  NSMutableAttributedString *__btn001 = [[NSMutableAttributedString alloc] initWithAttributedString:btn001Dig];//Total String
+  [__btn001 appendAttributedString:btn001Uni];
+  [setBtn001 setAttributedTitle:__btn001 forState:UIControlStateNormal];
+//  [setBtn001.titleLabel setFont:[UIFont boldSystemFontOfSize:btnFontSize]];
+  [self myBtnCreate:setBtn001];
+  
+  
+  [setBtn001 setTitleColor:[UIColor blueColor] forState:UIControlStateNormal]; //有効時
+  [setBtn001 setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted]; //タッチ(ハイライト？)時
+  [setBtn001 setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled]; //無効時
+  
+
+  
   setBtnStart = [UIButton buttonWithType:UIButtonTypeCustom];
   [setBtnStart setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btnStart", nil)] forState:UIControlStateNormal];
   [setBtnStart.titleLabel setFont:[UIFont boldSystemFontOfSize:btnFontSize/2]];
   [self myBtnCreate:setBtnStart];
 
-  
-  
-  
-  
   
   
   
