@@ -5,14 +5,9 @@
   Created by z on 2013/10/24.
   Copyright (c) 2013 FoceSystemSolution. All rights reserved.
 */
-"AppName"="Japanese Kichin Timer";
-"btn0001"="1s";
-"btn001"="10s";
-"btn01"="1min";
-"btn03"="3min";
-"btn05"="5min";
-"btn10"="10min";
-"btn60"="60min";
+//"AppName"="Japanese Kichin Timer";
+"hun"="min";
+"byo"="s";
 "btnStart"="Start";
 "btnReset"="Stop&Reset";
 

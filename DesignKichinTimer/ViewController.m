@@ -226,16 +226,16 @@
   
   
   setBtn10 = [UIButton buttonWithType:UIButtonTypeCustom];
-  [self myMutableBtnCreate:setBtn10 btnTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btn10", nil)] ];
+  [self myMutableBtnCreate:setBtn10 btnNum:10 minFlag:YES];
   
   setBtn05 = [UIButton buttonWithType:UIButtonTypeCustom];
-  [self myMutableBtnCreate:setBtn05 btnTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btn05", nil)] ];
+  [self myMutableBtnCreate:setBtn05 btnNum:5 minFlag:YES];
   
   setBtn03 = [UIButton buttonWithType:UIButtonTypeCustom];
-  [self myMutableBtnCreate:setBtn03 btnTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btn03", nil)] ];
+  [self myMutableBtnCreate:setBtn03 btnNum:3 minFlag:YES];
   
   setBtn01 = [UIButton buttonWithType:UIButtonTypeCustom];
-  [self myMutableBtnCreate:setBtn01 btnTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btn01", nil)] ];
+  [self myMutableBtnCreate:setBtn01 btnNum:1 minFlag:YES];
 
   
   setBtnReset = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -250,7 +250,7 @@
   
   
   setBtn001 = [UIButton buttonWithType:UIButtonTypeCustom];
-  [self myMutableBtnCreate:setBtn001 btnTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btn001", nil)] ];
+  [self myMutableBtnCreate:setBtn001 btnNum:10 minFlag:NO];
 
   
   setBtnStart = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -271,7 +271,7 @@
   
   
   //タイマーのセット（一秒）
-  [NSTimer scheduledTimerWithTimeInterval:1.0 //タイマーを発生させる間隔（1.0秒毎）
+  [NSTimer scheduledTimerWithTimeInterval:1.f //タイマーを発生させる間隔（1.0秒毎）
                                    target:self //メソッドがあるオブジェクト
                                  selector:@selector(driveClock:) //呼び出すメソッド
                                  userInfo:nil //メソッドに渡すパラメータ
@@ -284,49 +284,62 @@
 
 
 /*
- * ボタン生成関数
+ * ボタンタイトル(文字列)生成関数
  */
-- (NSMutableAttributedString*)myBtnColorCtl:(UIColor*)cl btnTitle:(NSString*)lb
+- (NSMutableAttributedString*)myBtnColorCtl:(UIColor*)cl btnNum:(NSInteger)num unit:(NSString*)unit
 {
   NSDictionary *fontDigit = @{ NSForegroundColorAttributeName:cl,
                                NSFontAttributeName : [UIFont boldSystemFontOfSize:btnFontSize] };
   NSDictionary *fontUnit = @{ NSForegroundColorAttributeName:cl,
                               NSFontAttributeName : [UIFont boldSystemFontOfSize:btnFontSize/1.5f] };
   
+  
+  NSAttributedString *btnPlusLabel = [[NSAttributedString alloc]
+                                      initWithString:@"＋"
+                                      attributes:fontUnit];
   NSAttributedString *btnDigiLabel = [[NSAttributedString alloc]
-                                      initWithString:[lb substringWithRange:NSMakeRange(0,[lb length]-1)]
+                                      initWithString:[NSString stringWithFormat:@"%d",num]
                                       attributes:fontDigit];
   NSAttributedString *btnUnitLabel = [[NSAttributedString alloc]
-                                      initWithString:[lb substringWithRange:NSMakeRange([lb length]-1,1)]
+                                      initWithString:unit
                                       attributes:fontUnit];
   
-  NSMutableAttributedString *_btn = [[NSMutableAttributedString alloc] initWithAttributedString:btnDigiLabel];//Total String
+  NSMutableAttributedString *_btn = [[NSMutableAttributedString alloc] initWithAttributedString:btnPlusLabel];//Total String
+  [_btn appendAttributedString:btnDigiLabel];
   [_btn appendAttributedString:btnUnitLabel];
   
   return _btn;
 }
 
-- (void)myMutableBtnCreate:(id)sender btnTitle:(NSString*)lb
+/*
+ * ボタン生成関数
+ */
+- (void)myMutableBtnCreate:(id)sender btnNum:(NSInteger)num minFlag:(BOOL)unitFlag
 {
   UIButton *myBtn = (UIButton *)sender;
-  [myBtn setBackgroundColor:[UIColor colorWithRed:0.9f green:0.9f blue:0.0f alpha:0.8f]];
+  [myBtn setBackgroundColor:[UIColor colorWithRed:0.9f green:0.9f blue:0.f alpha:0.8f]];
   [myBtn.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
-  [myBtn.layer setBorderWidth:1.0f];
+  [myBtn.layer setBorderWidth:1.f];
+  
+  NSString *unit = [NSString stringWithFormat:@"%@",NSLocalizedString(@"hun", nil)];
+  if (unitFlag == NO) {
+    unit = [NSString stringWithFormat:@"%@",NSLocalizedString(@"byo", nil)];
+  }
 
   // UIControlStateNormal
-  [myBtn setAttributedTitle:[self myBtnColorCtl:[UIColor blueColor] btnTitle:lb] forState:UIControlStateNormal];
+  [myBtn setAttributedTitle:[self myBtnColorCtl:[UIColor blueColor ] btnNum:num unit:unit] forState:UIControlStateNormal];
   // UIControlStateHighlighted
-  [myBtn setAttributedTitle:[self myBtnColorCtl:[UIColor whiteColor] btnTitle:lb] forState:UIControlStateHighlighted];
+  [myBtn setAttributedTitle:[self myBtnColorCtl:[UIColor whiteColor] btnNum:num unit:unit] forState:UIControlStateHighlighted];
   // UIControlStateDisabled
-  [myBtn setAttributedTitle:[self myBtnColorCtl:[UIColor grayColor] btnTitle:lb] forState:UIControlStateDisabled];
+  [myBtn setAttributedTitle:[self myBtnColorCtl:[UIColor grayColor ] btnNum:num unit:unit] forState:UIControlStateDisabled];
   
   
   // ボタンの角丸ぐあい 端末分岐 iphone:25 ipad:50
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    [myBtn.layer setCornerRadius:25.0f];
+    [myBtn.layer setCornerRadius:25.f];
   }
   else{
-    [myBtn.layer setCornerRadius:50.0f];
+    [myBtn.layer setCornerRadius:50.f];
   }
   
   [myBtn.layer setShadowOpacity:0.5f];
@@ -340,16 +353,16 @@
 - (void)myBtnCreate:(id)sender
 {
   UIButton *myBtn = (UIButton *)sender;
-  [myBtn setBackgroundColor:[UIColor colorWithRed:0.9 green:0.9 blue:0.0 alpha:0.8]];
+  [myBtn setBackgroundColor:[UIColor colorWithRed:0.9f green:0.9f blue:0.f alpha:0.8f]];
   [myBtn.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
-  [myBtn.layer setBorderWidth:1.0f];
+  [myBtn.layer setBorderWidth:1.f];
   
   // ボタンの角丸ぐあい 端末分岐 iphone:25 ipad:50
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    [myBtn.layer setCornerRadius:25.0f];
+    [myBtn.layer setCornerRadius:25.f];
   }
   else{
-    [myBtn.layer setCornerRadius:50.0f];
+    [myBtn.layer setCornerRadius:50.f];
   }
   
   [myBtn.layer setShadowOpacity:0.5f];
