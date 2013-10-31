@@ -42,7 +42,7 @@
     setBtn05.frame    = CGRectMake(centerPoint -74 -3.5, 180, 74, 50); // x y w h
     setBtn03.frame    = CGRectMake(centerPoint     +3.5, 180, 74, 50); // x y w h
     setBtn01.frame    = CGRectMake(centerPoint      +85, 180, 74, 50); // x y w h
-    setBtnReset.frame = CGRectMake(centerPoint  -80 -55, 250, 80, 60); // x y w h
+    setBtnReset.frame = CGRectMake(centerPoint  -135.0f, 250.0f, 80.0f, 60.0f); // x y w h
     setBtn001.frame   = CGRectMake(centerPoint  -(74/2), 255, 74, 50); // x y w h
     setBtnStart.frame = CGRectMake(centerPoint      +55, 250, 80, 60); // x y w h
   }
@@ -101,7 +101,7 @@
   
   // 全体背景枠
   self.view.layer.backgroundColor = [UIColor whiteColor].CGColor;
-  self.view.layer.cornerRadius = 50.0;
+  self.view.layer.cornerRadius = 50.0f;
   self.view.layer.frame = CGRectInset(self.view.layer.frame, 20, 20);
   
   
@@ -136,12 +136,12 @@
   // 表示フォントサイズ 端末分岐 ipad:180 iphone:70  = 6 digits + "M S"
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
     //NSLog(@"iPhone");
-    cntFontSize = 70;
+    cntFontSize = 70.0f;
     
   }
   else{
     //NSLog(@"iPad");
-    cntFontSize = 180;
+    cntFontSize = 180.0f;
 
   }
   cntLabel.font = [UIFont systemFontOfSize:cntFontSize];
@@ -154,21 +154,21 @@
   
   //ボタン内文字列用 影の定義 1:blue 2:red 3:gray
   NSShadow *shadow1 = [[NSShadow alloc] init];
-  shadow1.shadowOffset = CGSizeMake(1.f, 1.f);
+  shadow1.shadowOffset = CGSizeMake(1.0f, 1.0f);
   shadow1.shadowColor = [UIColor blueColor];
-  shadow1.shadowBlurRadius = 5.f;
+  shadow1.shadowBlurRadius = 5.0f;
   NSDictionary *attr1 = @{NSShadowAttributeName:shadow1,NSForegroundColorAttributeName:[UIColor blueColor]};
 
   NSShadow *shadow2 = [[NSShadow alloc] init];
-  shadow2.shadowOffset = CGSizeMake(1.f, 1.f);
+  shadow2.shadowOffset = CGSizeMake(1.0f, 1.0f);
   shadow2.shadowColor = [UIColor redColor];
-  shadow2.shadowBlurRadius = 5.f;
+  shadow2.shadowBlurRadius = 5.0f;
   NSDictionary *attr2 = @{NSShadowAttributeName:shadow2,NSForegroundColorAttributeName:[UIColor redColor]};
   
   NSShadow *shadow3 = [[NSShadow alloc] init];
-  shadow3.shadowOffset = CGSizeMake(1.f, 1.f);
+  shadow3.shadowOffset = CGSizeMake(1.0f, 1.0f);
   shadow3.shadowColor = [UIColor grayColor];
-  shadow3.shadowBlurRadius = 5.f;
+  shadow3.shadowBlurRadius = 5.0f;
   NSDictionary *attr3 = @{NSShadowAttributeName:shadow3,NSForegroundColorAttributeName:[UIColor grayColor]};
 
   
@@ -217,11 +217,11 @@
   // 表示フォントサイズ 端末分岐 ipad:50 iphone:20
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
     //NSLog(@"iPhoneの処理");
-    btnFontSize = 25;
+    btnFontSize = 25.0f;
   }
   else{
     //NSLog(@"iPadの処理");
-    btnFontSize = 50;
+    btnFontSize = 50.0f;
   }
   
   
@@ -248,7 +248,7 @@
   
   setBtnReset = [UIButton buttonWithType:UIButtonTypeCustom];
   NSString *_StopReset = [NSString stringWithFormat:@"%@",NSLocalizedString(@"btnReset", nil)];
-  NSMutableString *str= [NSMutableString stringWithCapacity:1];
+  NSMutableString *str= [NSMutableString stringWithCapacity:1.0f];
   [str appendFormat:@"%@\n",[_StopReset substringWithRange:NSMakeRange(0,4)]];
   //  [str appendString:[_StopReset substringWithRange: NSMakeRange(3,[_StopReset length]-1)]];
   [str appendString:[_StopReset substringWithRange: NSMakeRange(4,[_StopReset length]-4)]];
