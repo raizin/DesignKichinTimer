@@ -1,6 +1,8 @@
 # OS X Finder
 .DS_Store
 
+
+# "プロジェクト名".xcodeproj/project.xcworkspace/xcuserdata/"ユーザー名".xcuserdatad/UserInterfaceState.xcuserstate
 *.xcuserstate
 project.xcworkspace
 xcuserdata
@@ -8,6 +10,7 @@ UserInterfaceState.xcuserstate
 project.xcworkspace/
 xcuserdata/
 UserInterface.xcuserstate
+
 
 # Xcode per-user config
 *.mode1
