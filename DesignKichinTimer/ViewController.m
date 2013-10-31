@@ -22,24 +22,32 @@
 }
 
 
-
-
-
-
-
 // デバイスが回転した際に、呼び出されるメソッド(※自作)
 - (void) didRotate:(NSNotification *)notification {
   UIDeviceOrientation o = [[notification object] orientation];
   
+  //X軸の中心を取得
+  int centerPoint = [self arignCenter:0];
+
+  // Viewの位置とサイズを補正してセット
+  cntView.frame     = CGRectMake([self arignCenter:cntW], 60, cntW, cntH); // x y w h
+  setBtn10.frame    = CGRectMake(centerPoint -170 -200, 400, 170, 100); // x y w h
+  setBtn05.frame    = CGRectMake(centerPoint  -170 -10, 400, 170, 100); // x y w h
+  setBtn03.frame    = CGRectMake(centerPoint       +10, 400, 170, 100); // x y w h
+  setBtn01.frame    = CGRectMake(centerPoint      +200, 400, 170, 100); // x y w h
+  setBtnReset.frame = CGRectMake(centerPoint -190 -115, 550, 190, 110); // x y w h
+  setBtn001.frame   = CGRectMake(centerPoint  -(170/2), 550, 170, 100); // x y w h
+  setBtnStart.frame = CGRectMake(centerPoint      +115, 550, 190, 110); // x y w h
+
+  
+  
+  
+  
   // 横向き
   if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
-    // Viewの位置とサイズを補正してセット
-    cntView.frame = CGRectMake([self arignCenter:cntW], 60, cntW, cntH); // x y w h
-    
+
   // 縦向き
   } else if (o == UIDeviceOrientationPortrait || o == UIDeviceOrientationPortraitUpsideDown) {
-    // Viewの位置とサイズを補正してセット
-    cntView.frame = CGRectMake([self arignCenter:cntW], 60, cntW, cntH); // x y w h
     
     // 向きが不明な場合
   } else {
@@ -281,30 +289,26 @@
   
   setBtn10 = [UIButton buttonWithType:UIButtonTypeCustom];
   [setBtn10 setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btn10", nil)] forState:UIControlStateNormal];
-  setBtn10.frame = CGRectMake(centerPoint -170 -200, 400, 170, 100); // x y w h
   [setBtn10.titleLabel setFont:[UIFont boldSystemFontOfSize:50]];
   [self myBtnCreate:setBtn10];
 
   setBtn05 = [UIButton buttonWithType:UIButtonTypeCustom];
   [setBtn05 setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btn05", nil)] forState:UIControlStateNormal];
-  setBtn05.frame = CGRectMake(centerPoint -170 -10, 400, 170, 100); // x y w h
   [setBtn05.titleLabel setFont:[UIFont boldSystemFontOfSize:50]];
   [self myBtnCreate:setBtn05];
  
   setBtn03 = [UIButton buttonWithType:UIButtonTypeCustom];
   [setBtn03 setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btn03", nil)] forState:UIControlStateNormal];
-  setBtn03.frame = CGRectMake(centerPoint      +10, 400, 170, 100); // x y w h
   [setBtn03.titleLabel setFont:[UIFont boldSystemFontOfSize:50]];
   [self myBtnCreate:setBtn03];
 
   setBtn01 = [UIButton buttonWithType:UIButtonTypeCustom];
   [setBtn01 setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btn01", nil)] forState:UIControlStateNormal];
-  setBtn01.frame = CGRectMake(centerPoint      +200, 400, 170, 100); // x y w h
   [setBtn01.titleLabel setFont:[UIFont boldSystemFontOfSize:50]];
   [self myBtnCreate:setBtn01];
 
   
-  
+
 
   
   setBtnReset = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -316,7 +320,6 @@
   
   ((UILabel*)setBtnReset).lineBreakMode = NSLineBreakByWordWrapping; // 改行モードON
   [setBtnReset setTitle:str forState:UIControlStateNormal];
-  setBtnReset.frame = CGRectMake(centerPoint -190 -115, 550, 190, 110); // x y w h
   [setBtnReset.titleLabel setFont:[UIFont boldSystemFontOfSize:25]];
   [self myBtnCreate:setBtnReset];
 
@@ -324,14 +327,12 @@
   
   setBtn001 = [UIButton buttonWithType:UIButtonTypeCustom];
   [setBtn001 setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btn001", nil)] forState:UIControlStateNormal];
-  setBtn001.frame = CGRectMake( centerPoint -(170/2), 550, 170, 100); // x y w h
   [setBtn001.titleLabel setFont:[UIFont boldSystemFontOfSize:50]];
   [self myBtnCreate:setBtn001];
 
 
   setBtnStart = [UIButton buttonWithType:UIButtonTypeCustom];
   [setBtnStart setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btnStart", nil)] forState:UIControlStateNormal];
-  setBtnStart.frame = CGRectMake( centerPoint +115, 550, 190, 110); // x y w h
   [setBtnStart.titleLabel setFont:[UIFont boldSystemFontOfSize:25]];
   [self myBtnCreate:setBtnStart];
   
