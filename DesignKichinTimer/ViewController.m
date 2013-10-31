@@ -38,18 +38,18 @@
   // 端末によりボタンの配置／大きさの調整
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
     //NSLog(@"iPhoneの処理");
-    setBtn10.frame    = CGRectMake(centerPoint -170 -200, 400, 170, 100); // x y w h
-    setBtn05.frame    = CGRectMake(centerPoint  -170 -10, 400, 170, 100); // x y w h
-    setBtn03.frame    = CGRectMake(centerPoint       +10, 400, 170, 100); // x y w h
-    setBtn01.frame    = CGRectMake(centerPoint      +200, 400, 170, 100); // x y w h
-    setBtnReset.frame = CGRectMake(centerPoint -190 -115, 550, 190, 110); // x y w h
-    setBtn001.frame   = CGRectMake(centerPoint  -(170/2), 550, 170, 100); // x y w h
-    setBtnStart.frame = CGRectMake(centerPoint      +115, 550, 190, 110); // x y w h
+    setBtn10.frame    = CGRectMake(centerPoint -74  -85, 180, 74, 50); // x y w h
+    setBtn05.frame    = CGRectMake(centerPoint -74 -3.5, 180, 74, 50); // x y w h
+    setBtn03.frame    = CGRectMake(centerPoint     +3.5, 180, 74, 50); // x y w h
+    setBtn01.frame    = CGRectMake(centerPoint      +85, 180, 74, 50); // x y w h
+    setBtnReset.frame = CGRectMake(centerPoint  -80 -55, 250, 80, 60); // x y w h
+    setBtn001.frame   = CGRectMake(centerPoint  -(74/2), 255, 74, 50); // x y w h
+    setBtnStart.frame = CGRectMake(centerPoint      +55, 250, 80, 60); // x y w h
   }
   else{
     //NSLog(@"iPadの処理");
     setBtn10.frame    = CGRectMake(centerPoint -170 -200, 400, 170, 100); // x y w h
-    setBtn05.frame    = CGRectMake(centerPoint  -170 -10, 400, 170, 100); // x y w h
+    setBtn05.frame    = CGRectMake(centerPoint -170  -10, 400, 170, 100); // x y w h
     setBtn03.frame    = CGRectMake(centerPoint       +10, 400, 170, 100); // x y w h
     setBtn01.frame    = CGRectMake(centerPoint      +200, 400, 170, 100); // x y w h
     setBtnReset.frame = CGRectMake(centerPoint -190 -115, 550, 190, 110); // x y w h
@@ -217,7 +217,7 @@
   // 表示フォントサイズ 端末分岐 ipad:50 iphone:20
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
     //NSLog(@"iPhoneの処理");
-    btnFontSize = 50;
+    btnFontSize = 25;
   }
   else{
     //NSLog(@"iPadの処理");
@@ -227,22 +227,22 @@
   
   setBtn10 = [UIButton buttonWithType:UIButtonTypeCustom];
   [setBtn10 setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btn10", nil)] forState:UIControlStateNormal];
-  [setBtn10.titleLabel setFont:[UIFont boldSystemFontOfSize:50]];
+  [setBtn10.titleLabel setFont:[UIFont boldSystemFontOfSize:btnFontSize]];
   [self myBtnCreate:setBtn10];
 
   setBtn05 = [UIButton buttonWithType:UIButtonTypeCustom];
   [setBtn05 setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btn05", nil)] forState:UIControlStateNormal];
-  [setBtn05.titleLabel setFont:[UIFont boldSystemFontOfSize:50]];
+  [setBtn05.titleLabel setFont:[UIFont boldSystemFontOfSize:btnFontSize]];
   [self myBtnCreate:setBtn05];
  
   setBtn03 = [UIButton buttonWithType:UIButtonTypeCustom];
   [setBtn03 setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btn03", nil)] forState:UIControlStateNormal];
-  [setBtn03.titleLabel setFont:[UIFont boldSystemFontOfSize:50]];
+  [setBtn03.titleLabel setFont:[UIFont boldSystemFontOfSize:btnFontSize]];
   [self myBtnCreate:setBtn03];
 
   setBtn01 = [UIButton buttonWithType:UIButtonTypeCustom];
   [setBtn01 setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btn01", nil)] forState:UIControlStateNormal];
-  [setBtn01.titleLabel setFont:[UIFont boldSystemFontOfSize:50]];
+  [setBtn01.titleLabel setFont:[UIFont boldSystemFontOfSize:btnFontSize]];
   [self myBtnCreate:setBtn01];
 
   
@@ -254,17 +254,17 @@
   [str appendString:[_StopReset substringWithRange: NSMakeRange(4,[_StopReset length]-4)]];
   ((UILabel*)setBtnReset).lineBreakMode = NSLineBreakByWordWrapping; // 改行モードON
   [setBtnReset setTitle:str forState:UIControlStateNormal];
-  [setBtnReset.titleLabel setFont:[UIFont boldSystemFontOfSize:25]];
+  [setBtnReset.titleLabel setFont:[UIFont boldSystemFontOfSize:btnFontSize/2]];
   [self myBtnCreate:setBtnReset];
   
   setBtn001 = [UIButton buttonWithType:UIButtonTypeCustom];
   [setBtn001 setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btn001", nil)] forState:UIControlStateNormal];
-  [setBtn001.titleLabel setFont:[UIFont boldSystemFontOfSize:50]];
+  [setBtn001.titleLabel setFont:[UIFont boldSystemFontOfSize:btnFontSize]];
   [self myBtnCreate:setBtn001];
 
   setBtnStart = [UIButton buttonWithType:UIButtonTypeCustom];
   [setBtnStart setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btnStart", nil)] forState:UIControlStateNormal];
-  [setBtnStart.titleLabel setFont:[UIFont boldSystemFontOfSize:25]];
+  [setBtnStart.titleLabel setFont:[UIFont boldSystemFontOfSize:btnFontSize/2]];
   [self myBtnCreate:setBtnStart];
 
   
@@ -305,7 +305,15 @@
   [myBtn setBackgroundColor:[UIColor colorWithRed:0.9 green:0.9 blue:0.0 alpha:0.8]];
   [myBtn.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
   [myBtn.layer setBorderWidth:1.0f];
-  [myBtn.layer setCornerRadius:50.0f]; // iphone:25 ipad:50
+
+  // ボタンの角丸ぐあい 端末分岐 iphone:25 ipad:50
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+    [myBtn.layer setCornerRadius:25.0f];
+  }
+  else{
+    [myBtn.layer setCornerRadius:50.0f];
+  }
+
   [myBtn.layer setShadowOpacity:0.5f];
   [myBtn.layer setShadowOffset:CGSizeMake(2, 2)];
   
