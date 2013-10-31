@@ -2,15 +2,15 @@
 .DS_Store
 
 
-DesignKichinTimer.xcodeproj/project.xcworkspace/xcuserdata/zzz.xcuserdatad/UserInterfaceState.xcuserstate
-*.xcuserstate
-project.xcworkspace
-xcuserdata
+# DesignKichinTimer.xcodeproj/project.xcworkspace/xcuserdata/zzz.xcuserdatad/UserInterfaceState.xcuserstate
+# *.xcuserstate
+# project.xcworkspace
+# xcuserdata
+# UserInterfaceState.xcuserstate
+# project.xcworkspace/
+# xcuserdata/
+# UserInterface.xcuserstate
 UserInterfaceState.xcuserstate
-project.xcworkspace/
-xcuserdata/
-UserInterface.xcuserstate
-
 
 # Xcode per-user config
 *.mode1
