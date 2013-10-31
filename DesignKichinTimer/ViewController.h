@@ -24,6 +24,9 @@
 
   // カウンター表示ラベル定義
   UILabel *cntLabel;
+
+  // カウンター表示ラベル フォントサイズ定義
+  int cntFontSize;
   
   // カウンター表示エリア横幅,縦幅
   int cntW;
@@ -43,6 +46,8 @@
   UIButton *setBtnStart;
   UIButton *setBtnReset;//Reset & Stop
 
+  // Button フォントサイズ定義
+  int btnFontSize;
   
 }
 

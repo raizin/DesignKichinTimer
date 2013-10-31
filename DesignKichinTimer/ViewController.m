@@ -28,16 +28,36 @@
   
   //X軸の中心を取得
   int centerPoint = [self arignCenter:0];
+  NSLog(@"%d",centerPoint);
+
 
   // Viewの位置とサイズを補正してセット
-  cntView.frame     = CGRectMake([self arignCenter:cntW], 60, cntW, cntH); // x y w h
-  setBtn10.frame    = CGRectMake(centerPoint -170 -200, 400, 170, 100); // x y w h
-  setBtn05.frame    = CGRectMake(centerPoint  -170 -10, 400, 170, 100); // x y w h
-  setBtn03.frame    = CGRectMake(centerPoint       +10, 400, 170, 100); // x y w h
-  setBtn01.frame    = CGRectMake(centerPoint      +200, 400, 170, 100); // x y w h
-  setBtnReset.frame = CGRectMake(centerPoint -190 -115, 550, 190, 110); // x y w h
-  setBtn001.frame   = CGRectMake(centerPoint  -(170/2), 550, 170, 100); // x y w h
-  setBtnStart.frame = CGRectMake(centerPoint      +115, 550, 190, 110); // x y w h
+  cntView.frame = CGRectMake([self arignCenter:cntW], 60, cntW, cntH); // x y w h
+  
+  
+  // 端末によりボタンの配置／大きさの調整
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+    //NSLog(@"iPhoneの処理");
+    setBtn10.frame    = CGRectMake(centerPoint -170 -200, 400, 170, 100); // x y w h
+    setBtn05.frame    = CGRectMake(centerPoint  -170 -10, 400, 170, 100); // x y w h
+    setBtn03.frame    = CGRectMake(centerPoint       +10, 400, 170, 100); // x y w h
+    setBtn01.frame    = CGRectMake(centerPoint      +200, 400, 170, 100); // x y w h
+    setBtnReset.frame = CGRectMake(centerPoint -190 -115, 550, 190, 110); // x y w h
+    setBtn001.frame   = CGRectMake(centerPoint  -(170/2), 550, 170, 100); // x y w h
+    setBtnStart.frame = CGRectMake(centerPoint      +115, 550, 190, 110); // x y w h
+  }
+  else{
+    //NSLog(@"iPadの処理");
+    setBtn10.frame    = CGRectMake(centerPoint -170 -200, 400, 170, 100); // x y w h
+    setBtn05.frame    = CGRectMake(centerPoint  -170 -10, 400, 170, 100); // x y w h
+    setBtn03.frame    = CGRectMake(centerPoint       +10, 400, 170, 100); // x y w h
+    setBtn01.frame    = CGRectMake(centerPoint      +200, 400, 170, 100); // x y w h
+    setBtnReset.frame = CGRectMake(centerPoint -190 -115, 550, 190, 110); // x y w h
+    setBtn001.frame   = CGRectMake(centerPoint  -(170/2), 550, 170, 100); // x y w h
+    setBtnStart.frame = CGRectMake(centerPoint      +115, 550, 190, 110); // x y w h
+  }
+  
+  
 
   
   
@@ -113,15 +133,19 @@
   cntLabel.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8]; // Light Gray
   cntLabel.text = nil;
   
-  // 表示フォントサイズ ipad:180 iphone:70  = 6 digits + "M S"
+  // 表示フォントサイズ 端末分岐 ipad:180 iphone:70  = 6 digits + "M S"
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    //NSLog(@"iPhoneの処理");
-    cntLabel.font = [UIFont systemFontOfSize:70];
+    //NSLog(@"iPhone");
+    cntFontSize = 70;
+    
   }
   else{
-    //NSLog(@"iPadの処理");
-    cntLabel.font = [UIFont systemFontOfSize:180];
+    //NSLog(@"iPad");
+    cntFontSize = 180;
+
   }
+  cntLabel.font = [UIFont systemFontOfSize:cntFontSize];
+
   [cntView addSubview:cntLabel];
   
   [self _addDropShadowToView:cntView]; // 内影生成
@@ -190,12 +214,16 @@
 
   [cntView addSubview:timerSelectBtn];
   
+  // 表示フォントサイズ 端末分岐 ipad:50 iphone:20
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+    //NSLog(@"iPhoneの処理");
+    btnFontSize = 50;
+  }
+  else{
+    //NSLog(@"iPadの処理");
+    btnFontSize = 50;
+  }
   
-  
-
-  //X軸の中心を取得
-  int centerPoint = [self arignCenter:0];
-  NSLog(@"%d",centerPoint);
   
   setBtn10 = [UIButton buttonWithType:UIButtonTypeCustom];
   [setBtn10 setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btn10", nil)] forState:UIControlStateNormal];
