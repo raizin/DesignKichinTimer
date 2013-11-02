@@ -19,6 +19,10 @@
   //  CGPoint centerLocation_Date;
   //  CGPoint centerLocation_Time;
   
+  // タイマー定義
+  NSTimer *clockTm;
+  
+  
   // カウンター表示View定義
   UIView *cntView;
 
@@ -36,6 +40,8 @@
   CALayer *cntlayer;
   
   // Button
+  UIButton *timerSelectBtn; //「タイマー設定」切替ボタン
+  UIButton *clockSelectBtn; //「現在時表示」切替ボタン
   UIButton *setBtn60;//60 min
   UIButton *setBtn10;//10 min
   UIButton *setBtn05;//5 min

@@ -152,25 +152,6 @@
   
 
   
-  //ボタン内文字列用 影の定義 1:blue 2:red 3:gray
-  NSShadow *shadow1 = [[NSShadow alloc] init];
-  shadow1.shadowOffset = CGSizeMake(1.0f, 1.0f);
-  shadow1.shadowColor = [UIColor blueColor];
-  shadow1.shadowBlurRadius = 5.0f;
-  NSDictionary *attr1 = @{NSShadowAttributeName:shadow1,NSForegroundColorAttributeName:[UIColor blueColor]};
-
-  NSShadow *shadow2 = [[NSShadow alloc] init];
-  shadow2.shadowOffset = CGSizeMake(1.0f, 1.0f);
-  shadow2.shadowColor = [UIColor redColor];
-  shadow2.shadowBlurRadius = 5.0f;
-  NSDictionary *attr2 = @{NSShadowAttributeName:shadow2,NSForegroundColorAttributeName:[UIColor redColor]};
-  
-  NSShadow *shadow3 = [[NSShadow alloc] init];
-  shadow3.shadowOffset = CGSizeMake(1.0f, 1.0f);
-  shadow3.shadowColor = [UIColor grayColor];
-  shadow3.shadowBlurRadius = 5.0f;
-  NSDictionary *attr3 = @{NSShadowAttributeName:shadow3,NSForegroundColorAttributeName:[UIColor grayColor]};
-
   
   /*** 表示切り替え(ボタン)配置 ***/
   
@@ -180,39 +161,43 @@
     selecterY = -42;
   }
   
+  // ====== 「現在時表示」ボタン（リンクテキスト風）ここから ======
   NSString *clockTitle = [NSString stringWithFormat:@"%@",NSLocalizedString(@"btnClock", nil)];
-  UIButton *clockSelectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+  clockSelectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
   clockSelectBtn.frame = CGRectMake(15,selecterY,120,50);// x y w h
   
-  NSAttributedString *attrClockTitle3 = [[NSAttributedString alloc] initWithString:clockTitle attributes:attr3];
-  [clockSelectBtn setAttributedTitle:attrClockTitle3 forState:UIControlStateNormal]; // 有効時
-  
-  NSAttributedString *attrClockTitle2 = [[NSAttributedString alloc] initWithString:clockTitle attributes:attr2];
-  [clockSelectBtn setAttributedTitle:attrClockTitle2 forState:UIControlStateHighlighted]; // タッチ中
-  
-  NSAttributedString *attrClockTitle1 = [[NSAttributedString alloc] initWithString:clockTitle attributes:attr1];
-  [clockSelectBtn setAttributedTitle:attrClockTitle1 forState:UIControlStateDisabled]; // 無効時
+  [clockSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor grayColor] btnTitle:clockTitle] forState:UIControlStateNormal]; // 有効時
+  [clockSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor redColor] btnTitle:clockTitle] forState:UIControlStateHighlighted]; // タッチ中
+  [clockSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor blueColor] btnTitle:clockTitle] forState:UIControlStateDisabled]; // 無効時
   
   [cntView addSubview:clockSelectBtn];
   
-  [clockSelectBtn setEnabled:NO];// default
+  [clockSelectBtn addTarget:self action:@selector(clockSelectBtnTouchUpInside:) forControlEvents:UIControlEventTouchUpInside]; // タッチリリース時
+  
+  // ====== 「現在時表示」ボタン（リンクテキスト風）ここまで ======
 
   
   
+  
+  // ====== 「タイマー設定」ボタン（リンクテキスト風）ここから ======
   NSString *timerTitle = [NSString stringWithFormat:@"%@",NSLocalizedString(@"btnTimer", nil)];
-  UIButton *timerSelectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-  timerSelectBtn.frame = CGRectMake(145,selecterY,135,50);// x y w h
-
-  NSAttributedString *attrTimerTitle3 = [[NSAttributedString alloc] initWithString:timerTitle attributes:attr3];
-  [timerSelectBtn setAttributedTitle:attrTimerTitle3 forState:UIControlStateNormal]; // 有効時
+  timerSelectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+  timerSelectBtn.frame = CGRectMake(145,selecterY,135,50); // x y w h
   
-  NSAttributedString *attrTimerTitle2 = [[NSAttributedString alloc] initWithString:timerTitle attributes:attr2];
-  [timerSelectBtn setAttributedTitle:attrTimerTitle2 forState:UIControlStateHighlighted]; // タッチ中
-
-  NSAttributedString *attrTimerTitle1 = [[NSAttributedString alloc] initWithString:timerTitle attributes:attr1];
-  [timerSelectBtn setAttributedTitle:attrTimerTitle1 forState:UIControlStateDisabled]; // 無効時
-
+  [timerSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor grayColor] btnTitle:timerTitle] forState:UIControlStateNormal]; // 有効時
+  [timerSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor redColor] btnTitle:timerTitle] forState:UIControlStateHighlighted]; // タッチ中
+  [timerSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor blueColor] btnTitle:timerTitle] forState:UIControlStateDisabled]; // 無効時
+  
   [cntView addSubview:timerSelectBtn];
+
+  [timerSelectBtn setEnabled:NO]; // default
+  
+  [timerSelectBtn addTarget:self action:@selector(timerSelectBtnTouchUpInside:) forControlEvents:UIControlEventTouchUpInside]; // タッチリリース時
+
+  // ====== 「タイマー設定」ボタン（リンクテキスト風）ここまで ======
+  
+  
+  
   
   // 表示フォントサイズ 端末分岐 ipad:50 iphone:20
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
@@ -270,16 +255,79 @@
   
   
   
-  //タイマーのセット（一秒）
-  [NSTimer scheduledTimerWithTimeInterval:1.f //タイマーを発生させる間隔（1.0秒毎）
-                                   target:self //メソッドがあるオブジェクト
-                                 selector:@selector(driveClock:) //呼び出すメソッド
-                                 userInfo:nil //メソッドに渡すパラメータ
-                                  repeats:YES]; //繰り返し
   
   
   
 }
+
+
+
+/*
+ * 「タイマー設定」「現在時表示」切り替え ボタン内文字列用 影の定義関数
+ */
+- (NSAttributedString*)myColorShadowAttr:(UIColor*)clr btnTitle:(NSString*)lb
+{
+  NSShadow *shadow = [[NSShadow alloc] init];
+  shadow.shadowOffset = CGSizeMake(1.0f, 1.0f);
+  shadow.shadowColor = clr;
+  shadow.shadowBlurRadius = 5.0f;
+  NSDictionary *attr = @{NSShadowAttributeName:shadow,NSForegroundColorAttributeName:clr};
+  
+  NSAttributedString *attrTitle = [[NSAttributedString alloc] initWithString:lb attributes:attr];
+
+  return attrTitle;
+}
+
+
+/*
+ * 「現在時表示」ボタン用イベント
+ */
+- (void)clockSelectBtnTouchUpInside:(id)sender
+{
+  [clockSelectBtn setEnabled:NO];
+  [timerSelectBtn setEnabled:YES];
+
+  //すべてのボタンをDisableにする
+  [setBtn60 setEnabled:NO];
+  [setBtn10 setEnabled:NO];
+  [setBtn05 setEnabled:NO];
+  [setBtn03 setEnabled:NO];
+  [setBtn01 setEnabled:NO];
+  [setBtn001 setEnabled:NO];
+  [setBtn0001 setEnabled:NO];
+  [setBtnStart setEnabled:NO];
+  [setBtnReset setEnabled:NO];
+  
+  //現在時表示用タイマーのセット（一秒）
+  clockTm = [NSTimer scheduledTimerWithTimeInterval:1.f //タイマーを発生させる間隔（1.0秒毎）
+                                   target:self //メソッドがあるオブジェクト
+                                 selector:@selector(driveClock:) //呼び出すメソッド
+                                 userInfo:nil //メソッドに渡すパラメータ
+                                  repeats:YES]; //繰り返し
+}
+
+/*
+ * 「タイマー設定」ボタン用イベント
+ */
+- (void) timerSelectBtnTouchUpInside:(id)sender
+{
+  [clockSelectBtn setEnabled:YES];
+  [timerSelectBtn setEnabled:NO];
+  
+  //すべてのボタンをEnableにする
+  [setBtn60 setEnabled:YES];
+  [setBtn10 setEnabled:YES];
+  [setBtn05 setEnabled:YES];
+  [setBtn03 setEnabled:YES];
+  [setBtn01 setEnabled:YES];
+  [setBtn001 setEnabled:YES];
+  [setBtn0001 setEnabled:YES];
+  [setBtnStart setEnabled:YES];
+  [setBtnReset setEnabled:YES];
+
+  
+}
+
 
 
 
@@ -322,7 +370,7 @@
   [myBtn.layer setBorderWidth:1.f];
   
   NSString *unit = [NSString stringWithFormat:@"%@",NSLocalizedString(@"hun", nil)];
-  NSLog(@"%@",NSLocalizedString(@"hun", nil));
+//  NSLog(@"%@",NSLocalizedString(@"hun", nil));
   if (unitFlag == NO) {
     unit = [NSString stringWithFormat:@"%@",NSLocalizedString(@"byo", nil)];
   }
