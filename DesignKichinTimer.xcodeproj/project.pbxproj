@@ -39,9 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E243BD9182504DC005C31D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5E243BDA182504E7005C31D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5E42589418192B2600171F1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5E42589818192B7F00171F1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		5E42589A18192B8800171F1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = file; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5E42589818192B7F00171F1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5E42589A18192B8800171F1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E42589B181CF29300171F1F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5E6F4B2718117F7600312CCD /* DesignKichinTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignKichinTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6F4B2A18117F7600312CCD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -302,6 +304,7 @@
 			children = (
 				5E42589818192B7F00171F1F /* Base */,
 				5E42589A18192B8800171F1F /* ja */,
+				5E243BD9182504DC005C31D2 /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 			children = (
 				5E6F4B3418117F7600312CCD /* en */,
 				5E42589418192B2600171F1F /* ja */,
+				5E243BDA182504E7005C31D2 /* Base */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

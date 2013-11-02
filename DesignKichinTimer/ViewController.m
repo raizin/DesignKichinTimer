@@ -322,6 +322,7 @@
   [myBtn.layer setBorderWidth:1.f];
   
   NSString *unit = [NSString stringWithFormat:@"%@",NSLocalizedString(@"hun", nil)];
+  NSLog(@"%@",NSLocalizedString(@"hun", nil));
   if (unitFlag == NO) {
     unit = [NSString stringWithFormat:@"%@",NSLocalizedString(@"byo", nil)];
   }
@@ -343,7 +344,7 @@
   }
   
   [myBtn.layer setShadowOpacity:0.5f];
-  [myBtn.layer setShadowOffset:CGSizeMake(2, 2)];
+  [myBtn.layer setShadowOffset:CGSizeMake(2.f, 2.f)];
   
   [myBtn addTarget:self action:@selector(myBtnTouchDown:) forControlEvents:UIControlEventTouchDown]; // タッチ中 イベント
   [myBtn addTarget:self action:@selector(myBtnTouchUpInside:) forControlEvents:UIControlEventTouchUpInside]; // タッチリリース時
@@ -366,7 +367,7 @@
   }
   
   [myBtn.layer setShadowOpacity:0.5f];
-  [myBtn.layer setShadowOffset:CGSizeMake(2, 2)];
+  [myBtn.layer setShadowOffset:CGSizeMake(2.f, 2.f)];
   
   [myBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal]; //有効時
   [myBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted]; //タッチ(ハイライト？)時
