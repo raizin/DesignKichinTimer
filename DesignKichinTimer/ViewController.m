@@ -153,27 +153,6 @@
   
   
 
-  // キッチンタイマー用 初期表示
-  cntLabel.text = @"00 00";
-  
-  //分・秒のラベルを作成して表示
-  hunLabel = [[UILabel alloc] initWithFrame:CGRectMake(345,60,45,45)];// x y w h
-  hunLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:30.f];
-  hunLabel.textAlignment = NSTextAlignmentCenter;
-  hunLabel.adjustsFontSizeToFitWidth = YES;
-  hunLabel.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8]; // Light Black
-  hunLabel.text = [NSString stringWithFormat:@"%@",NSLocalizedString(@"hunn", nil)];
-  hunLabel.backgroundColor= [UIColor colorWithRed:0.0 green:0.5 blue:0.5 alpha:0.3];
-  [cntView addSubview:hunLabel];
-  
-  byoLabel = [[UILabel alloc] initWithFrame:CGRectMake(590,60,45,45)];// x y w h
-  byoLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:30.f];
-  byoLabel.textAlignment = NSTextAlignmentCenter;
-  byoLabel.adjustsFontSizeToFitWidth = YES;
-  byoLabel.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8]; // Light Black
-  byoLabel.text = [NSString stringWithFormat:@"%@",NSLocalizedString(@"byoo", nil)];
-  byoLabel.backgroundColor= [UIColor colorWithRed:0.0 green:0.5 blue:0.5 alpha:0.3];
-  [cntView addSubview:byoLabel];
   
   
   
@@ -281,7 +260,7 @@
   
   
   
-  
+  [self timerInitDisp];
   
 }
 
@@ -343,9 +322,16 @@
   [setBtnStart setEnabled:NO];
   [setBtnReset setEnabled:NO];
 
+  //タイマーモード用ラベルクリア
+  hunLabel.text = @"";
+  byoLabel.text = @"";
+  cntLabel.text = @"";
+
   //現在時表示用タイマー開始
   [self startClockTimer];
 
+ 
+  
 }
 
 /*
@@ -370,9 +356,43 @@
   //現在時表示用タイマー停止(クリア)
   [self stopClockTimer];
   
+  // 初期状態表示
+  [self timerInitDisp];
+  
+  
 }
 
+- (void)timerInitDisp {
 
+  // キッチンタイマー用 初期表示
+  cntLabel.text = @"00 00";
+  [cntLabel.layer setShadowOpacity:0.5f];
+  [cntLabel.layer setShadowOffset:CGSizeMake(2.f, 2.f)];
+  
+  //分・秒のラベルを作成して表示
+  hunLabel = [[UILabel alloc] initWithFrame:CGRectMake(345,60,45,45)];// x y w h
+  hunLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:30.f];
+  hunLabel.textAlignment = NSTextAlignmentCenter;
+  hunLabel.adjustsFontSizeToFitWidth = YES;
+  hunLabel.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8]; // Light Black
+  hunLabel.text = [NSString stringWithFormat:@"%@",NSLocalizedString(@"hunn", nil)];
+  //  hunLabel.backgroundColor= [UIColor colorWithRed:0.0 green:0.5 blue:0.5 alpha:0.3];
+  [hunLabel.layer setShadowOpacity:0.5f];
+  [hunLabel.layer setShadowOffset:CGSizeMake(2.f, 2.f)];
+  [cntView addSubview:hunLabel];
+  
+  byoLabel = [[UILabel alloc] initWithFrame:CGRectMake(590,60,45,45)];// x y w h
+  byoLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:30.f];
+  byoLabel.textAlignment = NSTextAlignmentCenter;
+  byoLabel.adjustsFontSizeToFitWidth = YES;
+  byoLabel.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8]; // Light Black
+  byoLabel.text = [NSString stringWithFormat:@"%@",NSLocalizedString(@"byoo", nil)];
+  //  byoLabel.backgroundColor= [UIColor colorWithRed:0.0 green:0.5 blue:0.5 alpha:0.3];
+  [byoLabel.layer setShadowOpacity:0.5f];
+  [byoLabel.layer setShadowOffset:CGSizeMake(2.f, 2.f)];
+  [cntView addSubview:byoLabel];
+
+}
 
 
 /*
