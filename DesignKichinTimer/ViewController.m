@@ -150,7 +150,32 @@
   
   [self _addDropShadowToView:cntView]; // 内影生成
   
+  
+  
 
+  // キッチンタイマー用 初期表示
+  cntLabel.text = @"00 00";
+  
+  //分・秒のラベルを作成して表示
+  hunLabel = [[UILabel alloc] initWithFrame:CGRectMake(345,60,45,45)];// x y w h
+  hunLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:30.f];
+  hunLabel.textAlignment = NSTextAlignmentCenter;
+  hunLabel.adjustsFontSizeToFitWidth = YES;
+  hunLabel.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8]; // Light Black
+  hunLabel.text = [NSString stringWithFormat:@"%@",NSLocalizedString(@"hunn", nil)];
+  hunLabel.backgroundColor= [UIColor colorWithRed:0.0 green:0.5 blue:0.5 alpha:0.3];
+  [cntView addSubview:hunLabel];
+  
+  byoLabel = [[UILabel alloc] initWithFrame:CGRectMake(590,60,45,45)];// x y w h
+  byoLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:30.f];
+  byoLabel.textAlignment = NSTextAlignmentCenter;
+  byoLabel.adjustsFontSizeToFitWidth = YES;
+  byoLabel.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8]; // Light Black
+  byoLabel.text = [NSString stringWithFormat:@"%@",NSLocalizedString(@"byoo", nil)];
+  byoLabel.backgroundColor= [UIColor colorWithRed:0.0 green:0.5 blue:0.5 alpha:0.3];
+  [cntView addSubview:byoLabel];
+  
+  
   
   
   /*** 表示切り替え(ボタン)配置 ***/
@@ -261,6 +286,26 @@
 }
 
 
+/*
+ * 現在時表示用タイマー開始関数
+ */
+- (void)startClockTimer {
+  clockTm = [NSTimer scheduledTimerWithTimeInterval:1.f //タイマーを発生させる間隔（1.0秒毎）
+                                              target:self //メソッドがあるオブジェクト
+                                            selector:@selector(driveClock:) //呼び出すメソッド
+                                            userInfo:nil //メソッドに渡すパラメータ
+                                              repeats:YES]; //繰り返し
+}
+/*
+ * 現在時表示用タイマー停止関数
+ */
+- (void)stopClockTimer {
+  if ([clockTm isValid]) {
+    [clockTm invalidate];
+  }
+  cntLabel.text = @""; // 表示テキストもクリア
+}
+
 
 /*
  * 「タイマー設定」「現在時表示」切り替え ボタン内文字列用 影の定義関数
@@ -297,13 +342,10 @@
   [setBtn0001 setEnabled:NO];
   [setBtnStart setEnabled:NO];
   [setBtnReset setEnabled:NO];
-  
-  //現在時表示用タイマーのセット（一秒）
-  clockTm = [NSTimer scheduledTimerWithTimeInterval:1.f //タイマーを発生させる間隔（1.0秒毎）
-                                   target:self //メソッドがあるオブジェクト
-                                 selector:@selector(driveClock:) //呼び出すメソッド
-                                 userInfo:nil //メソッドに渡すパラメータ
-                                  repeats:YES]; //繰り返し
+
+  //現在時表示用タイマー開始
+  [self startClockTimer];
+
 }
 
 /*
@@ -325,6 +367,8 @@
   [setBtnStart setEnabled:YES];
   [setBtnReset setEnabled:YES];
 
+  //現在時表示用タイマー停止(クリア)
+  [self stopClockTimer];
   
 }
 
@@ -462,6 +506,8 @@
 // 時計(現在時)表示用関数
 - (void)driveClock:(NSTimer *)timer
 {
+//  NSLog(@"driveClock Start!");
+  
   NSDate *today = [NSDate date]; //現在時刻を取得
   NSCalendar *calender = [NSCalendar currentCalendar]; //現在時刻の時分秒を取得
   unsigned flags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;

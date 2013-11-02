@@ -21,13 +21,16 @@
   
   // タイマー定義
   NSTimer *clockTm;
-  
+  NSTimer *timerTm;
+
   
   // カウンター表示View定義
   UIView *cntView;
 
   // カウンター表示ラベル定義
   UILabel *cntLabel;
+  UILabel *hunLabel;//use minits unit character display
+  UILabel *byoLabel;//use seconds unit character display
 
   // カウンター表示ラベル フォントサイズ定義
   float cntFontSize;
