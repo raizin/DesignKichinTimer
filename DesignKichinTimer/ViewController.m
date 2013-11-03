@@ -85,6 +85,13 @@
 {
   [super viewDidLoad];
   
+  //初期化
+  globalSec = 0;
+  globalMin = 0;
+  cntUpFlag = NO;
+
+  
+  
   //画面情報(横幅)取得
   UIScreen *sc = [UIScreen mainScreen];
   CGRect rect = sc.bounds;
@@ -176,7 +183,7 @@
   
   [cntView addSubview:clockSelectBtn];
   
-  [clockSelectBtn addTarget:self action:@selector(clockSelectBtnTouchUpInside:) forControlEvents:UIControlEventTouchUpInside]; // タッチリリース時
+  [clockSelectBtn addTarget:self action:@selector(clockSelectBtnTouch:) forControlEvents:UIControlEventTouchUpInside]; // タッチリリース時
   
   // ====== 「現在時表示」ボタン（リンクテキスト風）ここまで ======
 
@@ -196,7 +203,7 @@
 
   [timerSelectBtn setEnabled:NO]; // default
   
-  [timerSelectBtn addTarget:self action:@selector(timerSelectBtnTouchUpInside:) forControlEvents:UIControlEventTouchUpInside]; // タッチリリース時
+  [timerSelectBtn addTarget:self action:@selector(timerSelectBtnTouch:) forControlEvents:UIControlEventTouchUpInside]; // タッチリリース時
 
   // ====== 「タイマー設定」ボタン（リンクテキスト風）ここまで ======
   
@@ -246,6 +253,9 @@
   [setBtnStart setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btnStart", nil)] forState:UIControlStateNormal];
   [setBtnStart.titleLabel setFont:[UIFont boldSystemFontOfSize:btnFontSize/2]];
   [self myBtnCreate:setBtnStart];
+  [setBtnStart addTarget:self action:@selector(startBtnTouch:) forControlEvents:UIControlEventTouchUpInside]; // タッチリリース時
+
+  
 
   
   
@@ -263,6 +273,34 @@
   [self timerInitDisp];
   
 }
+
+/*
+ * タイマー用タイマー開始関数
+ */
+- (void)startTimerTimer {
+  timerTm = [NSTimer scheduledTimerWithTimeInterval:1.f //タイマーを発生させる間隔（1.0秒毎）
+                                             target:self //メソッドがあるオブジェクト
+                                           selector:@selector(timerTimer:) //呼び出すメソッド
+                                           userInfo:nil //メソッドに渡すパラメータ
+                                            repeats:YES]; //繰り返し
+}
+/*
+ * タイマー用タイマー停止(リセット)関数
+ */
+- (void)stopTimerTimer {
+  if ([timerTm isValid]) {
+    [timerTm invalidate];
+  }
+  
+  // Reset処理
+  globalSec = 0;
+  globalMin = 0;
+  
+  cntLabel.text = @"00 00"; // 表示テキストもクリア
+  
+}
+
+
 
 
 /*
@@ -303,10 +341,17 @@
 }
 
 
+
+- (void)startBtnTouch:(id)sender
+{
+  [self startTimerTimer];
+}
+
+
 /*
  * 「現在時表示」ボタン用イベント
  */
-- (void)clockSelectBtnTouchUpInside:(id)sender
+- (void)clockSelectBtnTouch:(id)sender
 {
   [clockSelectBtn setEnabled:NO];
   [timerSelectBtn setEnabled:YES];
@@ -337,7 +382,7 @@
 /*
  * 「タイマー設定」ボタン用イベント
  */
-- (void) timerSelectBtnTouchUpInside:(id)sender
+- (void) timerSelectBtnTouch:(id)sender
 {
   [clockSelectBtn setEnabled:YES];
   [timerSelectBtn setEnabled:NO];
@@ -523,30 +568,6 @@
 
 
 
-// 時計(現在時)表示用関数
-- (void)driveClock:(NSTimer *)timer
-{
-//  NSLog(@"driveClock Start!");
-  
-  NSDate *today = [NSDate date]; //現在時刻を取得
-  NSCalendar *calender = [NSCalendar currentCalendar]; //現在時刻の時分秒を取得
-  unsigned flags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
-  NSDateComponents *todayComponents = [calender components:flags fromDate:today];
-  //  int nenn = [todayComponents year];
-  //  int tuki = [todayComponents month];
-  //  int niti = [todayComponents day];
-  //  int weekIndex = [todayComponents weekday];
-  
-  int hour = [todayComponents hour];
-  int min = [todayComponents minute];
-  int sec = [todayComponents second];
-  
-  //  // 年月日,曜日表示
-  //  nowDate.text = [NSString stringWithFormat:@"%04d/%02d/%02d (%@)",nenn,tuki,niti,[self stringShortweekday:weekIndex]];
-  
-  // 時間を表示
-  cntLabel.text = [NSString stringWithFormat:@"%02d:%02d:%02d",hour,min,sec];
-}
 
 
 
@@ -615,6 +636,68 @@
     return ( rect.size.width - w ) / 2; // X座標を返す
   }
 }
+
+
+
+
+
+// 時計(現在時)表示用関数
+- (void)driveClock:(NSTimer *)timer
+{
+  //  NSLog(@"driveClock Start!");
+  
+  NSDate *today = [NSDate date]; //現在時刻を取得
+  NSCalendar *calender = [NSCalendar currentCalendar]; //現在時刻の時分秒を取得
+  unsigned flags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+  NSDateComponents *todayComponents = [calender components:flags fromDate:today];
+  //  int nenn = [todayComponents year];
+  //  int tuki = [todayComponents month];
+  //  int niti = [todayComponents day];
+  //  int weekIndex = [todayComponents weekday];
+  
+  int hour = [todayComponents hour];
+  int min = [todayComponents minute];
+  int sec = [todayComponents second];
+  
+  //  // 年月日,曜日表示
+  //  nowDate.text = [NSString stringWithFormat:@"%04d/%02d/%02d (%@)",nenn,tuki,niti,[self stringShortweekday:weekIndex]];
+  
+  // 時間を表示
+  cntLabel.text = [NSString stringWithFormat:@"%02d:%02d:%02d",hour,min,sec];
+}
+
+
+
+// タイマー表示用関数
+- (void)timerTimer:(NSTimer *)timer
+{
+  NSLog(@"timerTimer Start!");
+  
+  if (globalSec == 0 && globalMin == 0) {
+    NSLog(@"Count UP Start!");
+    cntUpFlag = YES;
+  }
+  
+  if (cntUpFlag) {
+    globalSec++;
+  }else{
+    globalSec--;
+  }
+
+  
+  
+  
+  NSLog(@"%02d %02d",globalMin,globalSec);
+
+  //
+  cntLabel.text = [NSString stringWithFormat:@"%02d %02d",globalMin,globalSec];
+}
+
+
+
+
+
+
 
 
 

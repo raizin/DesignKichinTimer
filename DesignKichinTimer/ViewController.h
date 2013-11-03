@@ -10,19 +10,15 @@
 
 @interface ViewController : UIViewController {
   
-  //  NSString *dispStr;
-  //  BOOL flgViewSeco;
-  //  BOOL flgViewDate;
-  //  BOOL flgBlink;
-  //  BOOL blinkCanma;
-  
-  //  CGPoint centerLocation_Date;
-  //  CGPoint centerLocation_Time;
-  
   // タイマー定義
   NSTimer *clockTm;
   NSTimer *timerTm;
 
+  int globalMin;// 00~999
+  int globalSec;// 00~59
+  
+  BOOL cntUpFlag; // YES:up NO:down
+  
   
   // カウンター表示View定義
   UIView *cntView;
