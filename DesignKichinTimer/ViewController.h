@@ -22,6 +22,11 @@
   
   BOOL cntMode; // YES:キッチンタイマー NO:現在時表示
   
+  // modeボタンリンク配置用 X Y
+  int selecterX;
+  int selecterY;
+  
+  
   // カウンター表示View定義
   UIView *cntView;
 
