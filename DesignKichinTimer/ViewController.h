@@ -18,7 +18,9 @@
   int globalSec;// 00~59
   
   BOOL cntUpFlag; // YES:up NO:down
+//  BOOL pauseFlag; // YES:Pause NO:Reset
   
+  BOOL cntMode; // YES:キッチンタイマー NO:現在時表示
   
   // カウンター表示View定義
   UIView *cntView;
@@ -54,6 +56,11 @@
   // Button フォントサイズ定義
   float btnFontSize;
   
+  // 単位 「M」「S」フォントサイズ定義
+  float unitFontSize;
+  CGRect unitRectM;
+  CGRect unitRectS;
+
 }
 
 @end

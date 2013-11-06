@@ -139,8 +139,11 @@
   cntLabel.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0.5 alpha:0]; //
   cntLabel.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8]; // Light Gray
   cntLabel.text = nil;
+  [cntLabel.layer setShadowOpacity:0.5f];
+  [cntLabel.layer setShadowOffset:CGSizeMake(2.f, 2.f)];
   
-  // 表示フォントサイズ 端末分岐 ipad:180 iphone:70  = 6 digits + "M S"
+  
+  // 表示フォントサイズ 端末分岐 ipad:180 iphone:70  = 5 digits + "M S"
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
     //NSLog(@"iPhone");
     cntFontSize = 70.0f;
@@ -184,7 +187,6 @@
   [cntView addSubview:clockSelectBtn];
   
   [clockSelectBtn addTarget:self action:@selector(clockSelectBtnTouch:) forControlEvents:UIControlEventTouchUpInside]; // タッチリリース時
-  
   // ====== 「現在時表示」ボタン（リンクテキスト風）ここまで ======
 
   
@@ -223,15 +225,19 @@
   
   setBtn10 = [UIButton buttonWithType:UIButtonTypeCustom];
   [self myMutableBtnCreate:setBtn10 btnNum:10 minFlag:YES];
-  
+  [setBtn10 addTarget:self action:@selector(btn10Touch:) forControlEvents:UIControlEventTouchUpInside]; // タッチ
+ 
   setBtn05 = [UIButton buttonWithType:UIButtonTypeCustom];
   [self myMutableBtnCreate:setBtn05 btnNum:5 minFlag:YES];
+  [setBtn05 addTarget:self action:@selector(btn05Touch:) forControlEvents:UIControlEventTouchUpInside]; // タッチ
   
   setBtn03 = [UIButton buttonWithType:UIButtonTypeCustom];
   [self myMutableBtnCreate:setBtn03 btnNum:3 minFlag:YES];
+  [setBtn03 addTarget:self action:@selector(btn03Touch:) forControlEvents:UIControlEventTouchUpInside]; // タッチ
   
   setBtn01 = [UIButton buttonWithType:UIButtonTypeCustom];
   [self myMutableBtnCreate:setBtn01 btnNum:1 minFlag:YES];
+  [setBtn01 addTarget:self action:@selector(btn01Touch:) forControlEvents:UIControlEventTouchUpInside]; // タッチ
 
   
   setBtnReset = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -243,17 +249,19 @@
   [setBtnReset setTitle:__btnReset forState:UIControlStateNormal];
   [setBtnReset.titleLabel setFont:[UIFont boldSystemFontOfSize:btnFontSize/2]];
   [self myBtnCreate:setBtnReset];
+  [setBtnReset addTarget:self action:@selector(resetBtnTouch:) forControlEvents:UIControlEventTouchUpInside]; // タッチ
   
   
   setBtn001 = [UIButton buttonWithType:UIButtonTypeCustom];
   [self myMutableBtnCreate:setBtn001 btnNum:10 minFlag:NO];
+  [setBtn001 addTarget:self action:@selector(btn001Touch:) forControlEvents:UIControlEventTouchUpInside]; // タッチ
 
   
   setBtnStart = [UIButton buttonWithType:UIButtonTypeCustom];
   [setBtnStart setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btnStart", nil)] forState:UIControlStateNormal];
   [setBtnStart.titleLabel setFont:[UIFont boldSystemFontOfSize:btnFontSize/2]];
   [self myBtnCreate:setBtnStart];
-  [setBtnStart addTarget:self action:@selector(startBtnTouch:) forControlEvents:UIControlEventTouchUpInside]; // タッチリリース時
+  [setBtnStart addTarget:self action:@selector(startBtnTouch:) forControlEvents:UIControlEventTouchUpInside]; // タッチ時
 
   
 
@@ -287,7 +295,7 @@
 /*
  * タイマー用タイマー停止(リセット)関数
  */
-- (void)stopTimerTimer {
+- (void)resetTimerTimer {
   if ([timerTm isValid]) {
     [timerTm invalidate];
   }
@@ -296,10 +304,15 @@
   globalSec = 0;
   globalMin = 0;
   
-  cntLabel.text = @"00 00"; // 表示テキストもクリア
-  
+  cntLabel.text = @"000 00"; // 表示テキストもクリア
 }
 
+/*
+ * タイマー用タイマーStop(一時停止)関数
+ */
+- (void)pauseTimerTimer {
+  [timerTm invalidate];
+}
 
 
 
@@ -341,10 +354,118 @@
 }
 
 
+- (void)btnDisabledAll
+{
+  [setBtn60 setEnabled:NO];
+  [setBtn10 setEnabled:NO];
+  [setBtn05 setEnabled:NO];
+  [setBtn03 setEnabled:NO];
+  [setBtn01 setEnabled:NO];
+  [setBtn001 setEnabled:NO];
+  [setBtn0001 setEnabled:NO];
+  [setBtnStart setEnabled:NO];
+  [setBtnReset setEnabled:NO];
+}
+- (void)btnEnabledAll
+{
+  [setBtn60 setEnabled:YES];
+  [setBtn10 setEnabled:YES];
+  [setBtn05 setEnabled:YES];
+  [setBtn03 setEnabled:YES];
+  [setBtn01 setEnabled:YES];
+  [setBtn001 setEnabled:YES];
+  [setBtn0001 setEnabled:YES];
+  [setBtnStart setEnabled:YES];
+  [setBtnReset setEnabled:YES];
+}
+- (void)btnEnableOnlyReset
+{
+  [setBtn60 setEnabled:NO];
+  [setBtn10 setEnabled:NO];
+  [setBtn05 setEnabled:NO];
+  [setBtn03 setEnabled:NO];
+  [setBtn01 setEnabled:NO];
+  [setBtn001 setEnabled:NO];
+  [setBtn0001 setEnabled:NO];
+  [setBtnStart setEnabled:NO];
+  [setBtnReset setEnabled:YES];
+}
+- (void)btnEnableOnlyStartReset
+{
+  [setBtn60 setEnabled:NO];
+  [setBtn10 setEnabled:NO];
+  [setBtn05 setEnabled:NO];
+  [setBtn03 setEnabled:NO];
+  [setBtn01 setEnabled:NO];
+  [setBtn001 setEnabled:NO];
+  [setBtn0001 setEnabled:NO];
+  [setBtnStart setEnabled:YES];
+  [setBtnReset setEnabled:YES];
+}
+
+- (void)cntPlusChk
+{
+  if (globalSec >= 60) {
+    globalMin++;
+
+    if (globalMin >= 999) {
+      globalSec = 59;
+    }else{
+      globalSec -= 60;
+    }
+  }
+  if (globalMin >= 999) {
+    globalMin = 999;
+  }
+
+  [self chkDisp];
+}
+
+- (void)btn001Touch:(id)sender
+{
+  globalSec += 10;
+  [self cntPlusChk];
+}
+
+- (void)btn01Touch:(id)sender
+{
+  globalMin += 1;
+  [self cntPlusChk];
+}
+- (void)btn03Touch:(id)sender
+{
+  globalMin += 3;
+  [self cntPlusChk];
+}
+- (void)btn05Touch:(id)sender
+{
+  globalMin += 5;
+  [self cntPlusChk];
+}
+- (void)btn10Touch:(id)sender
+{
+  globalMin += 10;
+  [self cntPlusChk];
+}
+
+
+- (void)resetBtnTouch:(id)sender
+{
+  if ([timerTm isValid]) {
+    // タイマーが動いている場合は、一時停止
+    [self pauseTimerTimer];
+    [self btnEnableOnlyStartReset];
+  } else {
+    [self resetTimerTimer];
+    [self btnEnabledAll];
+    cntUpFlag = NO;
+  }
+}
 
 - (void)startBtnTouch:(id)sender
 {
   [self startTimerTimer];
+  [self btnEnableOnlyReset];
 }
 
 
@@ -357,15 +478,7 @@
   [timerSelectBtn setEnabled:YES];
 
   //すべてのボタンをDisableにする
-  [setBtn60 setEnabled:NO];
-  [setBtn10 setEnabled:NO];
-  [setBtn05 setEnabled:NO];
-  [setBtn03 setEnabled:NO];
-  [setBtn01 setEnabled:NO];
-  [setBtn001 setEnabled:NO];
-  [setBtn0001 setEnabled:NO];
-  [setBtnStart setEnabled:NO];
-  [setBtnReset setEnabled:NO];
+  [self btnDisabledAll];
 
   //タイマーモード用ラベルクリア
   hunLabel.text = @"";
@@ -375,8 +488,8 @@
   //現在時表示用タイマー開始
   [self startClockTimer];
 
- 
-  
+  // 現在時表示モード
+  cntMode = NO;
 }
 
 /*
@@ -387,52 +500,70 @@
   [clockSelectBtn setEnabled:YES];
   [timerSelectBtn setEnabled:NO];
   
-  //すべてのボタンをEnableにする
-  [setBtn60 setEnabled:YES];
-  [setBtn10 setEnabled:YES];
-  [setBtn05 setEnabled:YES];
-  [setBtn03 setEnabled:YES];
-  [setBtn01 setEnabled:YES];
-  [setBtn001 setEnabled:YES];
-  [setBtn0001 setEnabled:YES];
-  [setBtnStart setEnabled:YES];
-  [setBtnReset setEnabled:YES];
+
+  if ([timerTm isValid]) {
+    // タイマーが動いている場合はリセットボタンのみ活性化
+    [self btnEnableOnlyReset];
+  } else {
+    
+    if (globalMin > 0 || globalSec > 0) {
+      [self btnEnableOnlyStartReset];
+    }else{
+    
+      //すべてのボタンをEnableにする
+      [self btnEnabledAll];
+    }
+  }
 
   //現在時表示用タイマー停止(クリア)
   [self stopClockTimer];
   
   // 初期状態表示
   [self timerInitDisp];
-  
-  
 }
 
 - (void)timerInitDisp {
+  
+  // キッチンタイマーモード
+  cntMode = YES;
 
   // キッチンタイマー用 初期表示
-  cntLabel.text = @"00 00";
-  [cntLabel.layer setShadowOpacity:0.5f];
-  [cntLabel.layer setShadowOffset:CGSizeMake(2.f, 2.f)];
+//  cntLabel.text = @"000 00";
+  [self chkDisp];
+
   
-  //分・秒のラベルを作成して表示
-  hunLabel = [[UILabel alloc] initWithFrame:CGRectMake(345,60,45,45)];// x y w h
-  hunLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:30.f];
+  /*** 分・秒のラベルを作成して表示 ***/
+  
+  // 表示フォントサイズ 端末分岐 ipad:30 iphone:15
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+    //NSLog(@"iPhoneの処理");
+    unitFontSize = 15.f;
+    unitRectM = CGRectMake(146,9,45,45); // x y w h
+    unitRectS = CGRectMake(244,9,45,45); // x y w h
+  }
+  else{
+    //NSLog(@"iPadの処理");
+    unitFontSize = 30.f;
+    unitRectM = CGRectMake(388,60,45,45); // x y w h
+    unitRectS = CGRectMake(633,60,45,45); // x y w h
+  }
+  
+  hunLabel = [[UILabel alloc] initWithFrame:unitRectM];// x y w h
+  hunLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:unitFontSize];
   hunLabel.textAlignment = NSTextAlignmentCenter;
   hunLabel.adjustsFontSizeToFitWidth = YES;
   hunLabel.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8]; // Light Black
   hunLabel.text = [NSString stringWithFormat:@"%@",NSLocalizedString(@"hunn", nil)];
-  //  hunLabel.backgroundColor= [UIColor colorWithRed:0.0 green:0.5 blue:0.5 alpha:0.3];
   [hunLabel.layer setShadowOpacity:0.5f];
   [hunLabel.layer setShadowOffset:CGSizeMake(2.f, 2.f)];
   [cntView addSubview:hunLabel];
   
-  byoLabel = [[UILabel alloc] initWithFrame:CGRectMake(590,60,45,45)];// x y w h
-  byoLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:30.f];
+  byoLabel = [[UILabel alloc] initWithFrame:unitRectS];// x y w h
+  byoLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:unitFontSize];
   byoLabel.textAlignment = NSTextAlignmentCenter;
   byoLabel.adjustsFontSizeToFitWidth = YES;
   byoLabel.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8]; // Light Black
   byoLabel.text = [NSString stringWithFormat:@"%@",NSLocalizedString(@"byoo", nil)];
-  //  byoLabel.backgroundColor= [UIColor colorWithRed:0.0 green:0.5 blue:0.5 alpha:0.3];
   [byoLabel.layer setShadowOpacity:0.5f];
   [byoLabel.layer setShadowOffset:CGSizeMake(2.f, 2.f)];
   [cntView addSubview:byoLabel];
@@ -639,8 +770,6 @@
 
 
 
-
-
 // 時計(現在時)表示用関数
 - (void)driveClock:(NSTimer *)timer
 {
@@ -671,7 +800,7 @@
 // タイマー表示用関数
 - (void)timerTimer:(NSTimer *)timer
 {
-  NSLog(@"timerTimer Start!");
+//  NSLog(@"timerTimer Start!");
   
   if (globalSec == 0 && globalMin == 0) {
     NSLog(@"Count UP Start!");
@@ -679,25 +808,62 @@
   }
   
   if (cntUpFlag) {
-    globalSec++;
+    [self cntUpTimer];
+  }else{
+    [self cntDnTimer];
+  }
+  
+}
+
+// カウントアップ用関数
+- (void)cntUpTimer
+{
+  globalSec++;
+    
+  if (globalSec > 59) {
+    globalSec = 0;
+    globalMin++;
+    
+    if (globalMin > 999) {
+      [self pauseTimerTimer];
+      globalMin = 999;
+      globalSec = 59;
+    }
+  }
+  [self chkDisp];
+}
+
+// カウントダウン用関数
+- (void)cntDnTimer
+{
+  if (globalSec == 0) {
+    globalMin--;
+    globalSec = 59;
   }else{
     globalSec--;
   }
-
+  
+  if (globalSec == 0 && globalMin == 0) {
+    cntUpFlag = YES;
+  }
   
   
+  [self chkDisp];
   
-  NSLog(@"%02d %02d",globalMin,globalSec);
-
-  //
-  cntLabel.text = [NSString stringWithFormat:@"%02d %02d",globalMin,globalSec];
 }
 
 
-
-
-
-
+// 表示反映関数
+- (void)chkDisp
+{
+  
+//  NSLog(@"cntMode = %hhd",cntMode);
+  
+  // Check is Mode
+  if (cntMode) {
+    cntLabel.text = [NSString stringWithFormat:@"%03d %02d",globalMin,globalSec];
+  }
+}
 
 
 
