@@ -65,6 +65,9 @@
   float unitFontSize;
   CGRect unitRectM;
   CGRect unitRectS;
+  
+  // フェードインを一回だけ成功させるフラグ YES:実行 NO:実行しない
+  BOOL fadeinFlag;
 
 }
 

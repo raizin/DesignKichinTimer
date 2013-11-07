@@ -26,9 +26,17 @@
 - (void) didRotate:(NSNotification *)notification {
   UIDeviceOrientation o = [[notification object] orientation];
   
+  
+  // iphone かつ Home button top の場合のみ 動作がおかしいので止める
+  if (o == UIDeviceOrientationPortraitUpsideDown && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+    NSLog(@"return void");
+    return;
+  }
+  
+  
   //X軸の中心を取得
   int centerPoint = [self arignCenter:0];
-  NSLog(@"%d",centerPoint);
+  NSLog(@"centerPoint=%d",centerPoint);
 
 
   // Viewの位置とサイズを補正してセット
@@ -45,6 +53,10 @@
     setBtnReset.frame = CGRectMake(centerPoint  -135.0f, 250.0f, 80.0f, 60.0f); // x y w h
     setBtn001.frame   = CGRectMake(centerPoint  -(74/2), 255, 74, 50); // x y w h
     setBtnStart.frame = CGRectMake(centerPoint      +55, 250, 80, 60); // x y w h
+    
+    clockSelectBtn.frame = CGRectMake(centerPoint - 150     , 22,120,50);
+    timerSelectBtn.frame = CGRectMake(centerPoint - 150 +130, 22,145,50);
+    
   }
   else{
     //NSLog(@"iPadの処理");
@@ -73,18 +85,12 @@
 /*** 表示切り替え(ボタン)配置 関数 ***/
 - (void)btnLinkSelect
 {
-  // 表示位置(高さ)分岐 iphone ipad
-  selecterX = 15;
-  selecterY = 7;
-  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    selecterX = 90;
-    selecterY = 22;
-  }
   
   // ====== 「現在時表示」ボタン（リンクテキスト風）ここから ======
   NSString *clockTitle = [NSString stringWithFormat:@"%@",NSLocalizedString(@"btnClock", nil)];
   clockSelectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-  clockSelectBtn.frame = CGRectMake(selecterX,selecterY,120,50);// x y w h
+  clockSelectBtn.frame = CGRectMake(15,7,120,50);// x y w h
+  NSLog(@"selecterX=%d",selecterX);
   
   [clockSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor grayColor] btnTitle:clockTitle] forState:UIControlStateNormal]; // 有効時
   [clockSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor redColor] btnTitle:clockTitle] forState:UIControlStateHighlighted]; // タッチ中
@@ -107,7 +113,7 @@
   // ====== 「タイマー設定」ボタン（リンクテキスト風）ここから ======
   NSString *timerTitle = [NSString stringWithFormat:@"%@",NSLocalizedString(@"btnTimer", nil)];
   timerSelectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-  timerSelectBtn.frame = CGRectMake(selecterX +130, selecterY,135,50); // x y w h
+  timerSelectBtn.frame = CGRectMake(145,7,145,50); // x y w h
   
   [timerSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor grayColor] btnTitle:timerTitle] forState:UIControlStateNormal]; // 有効時
   [timerSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor redColor] btnTitle:timerTitle] forState:UIControlStateHighlighted]; // タッチ中
@@ -337,7 +343,7 @@
   if ([clockTm isValid]) {
     [clockTm invalidate];
   }
-  cntLabel.text = @""; // 表示テキストもクリア
+//  cntLabel.text = @""; // 表示テキストもクリア
 }
 
 
@@ -478,22 +484,55 @@
  */
 - (void)clockSelectBtnTouch:(id)sender
 {
+  // フェードアウトしてfadeinフラグをたてる
+  [self lbFadeout:cntLabel];
+  [self lbFadeout:hunLabel];
+  [self lbFadeout:byoLabel];
+
+  fadeinFlag = YES;
+
+  
   [clockSelectBtn setEnabled:NO];
   [timerSelectBtn setEnabled:YES];
 
   //すべてのボタンをDisableにする
   [self btnDisabledAll];
 
-  //タイマーモード用ラベルクリア
-  hunLabel.text = @"";
-  byoLabel.text = @"";
-  cntLabel.text = @"";
 
   //現在時表示用タイマー開始
   [self startClockTimer];
+  
 
   // 現在時表示モード
   cntMode = NO;
+  
+  
+  
+}
+
+/*
+ * UILabel fadeout method
+ */
+- (void)lbFadeout:(UILabel *)lb
+{
+  [UIView beginAnimations:nil context:nil];
+  [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+  [UIView setAnimationDuration:1.f];
+  lb.alpha = 0.f;
+  [UIView commitAnimations];
+}
+/*
+ * UILabel fadein method
+ */
+- (void)lbFadein:(UILabel *)lb
+{
+  if (fadeinFlag) {
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+    [UIView setAnimationDuration:1.f];
+    lb.alpha = 8.f;
+    [UIView commitAnimations];
+  }
 }
 
 /*
@@ -501,6 +540,11 @@
  */
 - (void) timerSelectBtnTouch:(id)sender
 {
+  // キッチンタイマーモード
+  cntMode = YES;
+  [self chkDisp];
+  cntLabel.alpha = 0.f;
+
   [clockSelectBtn setEnabled:YES];
   [timerSelectBtn setEnabled:NO];
   
@@ -522,15 +566,18 @@
   //現在時表示用タイマー停止(クリア)
   [self stopClockTimer];
   
-  // 初期状態表示
-  [self timerInitDisp];
+  // 表示
+//  [self timerInitDisp];
+  [self lbFadein:hunLabel];
+  [self lbFadein:byoLabel];
+  [self lbFadein:cntLabel];
+  
 }
 
 - (void)timerInitDisp {
-  
-  // キッチンタイマーモード
-  cntMode = YES;
 
+  cntMode = YES; // Timer Mode
+  
   // キッチンタイマー用 初期表示
 //  cntLabel.text = @"000 00";
   [self chkDisp];
@@ -796,6 +843,8 @@
   
   // 時間を表示
   cntLabel.text = [NSString stringWithFormat:@"%02d:%02d:%02d",hour,min,sec];
+
+  [self lbFadein:cntLabel];
 }
 
 
