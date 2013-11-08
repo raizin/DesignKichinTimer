@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import <AudioToolbox/AudioServices.h>
+
 
 @interface ViewController ()
 
@@ -896,6 +898,11 @@
   }
   
   if (globalSec == 0 && globalMin == 0) {
+    
+    
+    
+    
+    
     cntUpFlag = YES;
   }
   
