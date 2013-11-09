@@ -41,34 +41,40 @@
   NSLog(@"centerPoint=%d",centerPoint);
 
 
-  // Viewの位置とサイズを補正してセット
-  cntView.frame = CGRectMake([self arignCenter:cntW], 60, cntW, cntH); // x y w h
   
+  if (   o == UIDeviceOrientationLandscapeLeft
+      || o == UIDeviceOrientationLandscapeRight
+      || o == UIDeviceOrientationPortrait
+      || o == UIDeviceOrientationPortraitUpsideDown) {
+
+    // Viewの位置とサイズを補正してセット
+    cntView.frame = CGRectMake([self arignCenter:cntW], 60, cntW, cntH); // x y w h
   
-  // 端末によりボタンの配置／大きさの調整
-  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    //NSLog(@"iPhoneの処理");
-    setBtn10.frame    = CGRectMake(centerPoint -74  -85, 180, 74, 50); // x y w h
-    setBtn05.frame    = CGRectMake(centerPoint -74 -3.5, 180, 74, 50); // x y w h
-    setBtn03.frame    = CGRectMake(centerPoint     +3.5, 180, 74, 50); // x y w h
-    setBtn01.frame    = CGRectMake(centerPoint      +85, 180, 74, 50); // x y w h
-    setBtnReset.frame = CGRectMake(centerPoint  -135.0f, 250.0f, 80.0f, 60.0f); // x y w h
-    setBtn001.frame   = CGRectMake(centerPoint  -(74/2), 255, 74, 50); // x y w h
-    setBtnStart.frame = CGRectMake(centerPoint      +55, 250, 80, 60); // x y w h
-    
-    clockSelectBtn.frame = CGRectMake(centerPoint - 150     , 22,120,50);
-    timerSelectBtn.frame = CGRectMake(centerPoint - 150 +130, 22,145,50);
-    
-  }
-  else{
-    //NSLog(@"iPadの処理");
-    setBtn10.frame    = CGRectMake(centerPoint -170 -200, 400, 170, 100); // x y w h
-    setBtn05.frame    = CGRectMake(centerPoint -170  -10, 400, 170, 100); // x y w h
-    setBtn03.frame    = CGRectMake(centerPoint       +10, 400, 170, 100); // x y w h
-    setBtn01.frame    = CGRectMake(centerPoint      +200, 400, 170, 100); // x y w h
-    setBtnReset.frame = CGRectMake(centerPoint -190 -115, 550, 190, 110); // x y w h
-    setBtn001.frame   = CGRectMake(centerPoint  -(170/2), 550, 170, 100); // x y w h
-    setBtnStart.frame = CGRectMake(centerPoint      +115, 550, 190, 110); // x y w h
+    // 端末によりボタンの配置／大きさの調整
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+      //NSLog(@"iPhoneの処理");
+      setBtn10.frame    = CGRectMake(centerPoint -74  -85, 180, 74, 50); // x y w h
+      setBtn05.frame    = CGRectMake(centerPoint -74 -3.5, 180, 74, 50); // x y w h
+      setBtn03.frame    = CGRectMake(centerPoint     +3.5, 180, 74, 50); // x y w h
+      setBtn01.frame    = CGRectMake(centerPoint      +85, 180, 74, 50); // x y w h
+      setBtnReset.frame = CGRectMake(centerPoint  -135.0f, 250.0f, 80.0f, 60.0f); // x y w h
+      setBtn001.frame   = CGRectMake(centerPoint  -(74/2), 255, 74, 50); // x y w h
+      setBtnStart.frame = CGRectMake(centerPoint      +55, 250, 80, 60); // x y w h
+      
+      clockSelectBtn.frame = CGRectMake(centerPoint - 150     , 22,120,50);
+      timerSelectBtn.frame = CGRectMake(centerPoint - 150 +130, 22,145,50);
+      
+    }else{
+      //NSLog(@"iPadの処理");
+      setBtn10.frame    = CGRectMake(centerPoint -170 -200, 400, 170, 100); // x y w h
+      setBtn05.frame    = CGRectMake(centerPoint -170  -10, 400, 170, 100); // x y w h
+      setBtn03.frame    = CGRectMake(centerPoint       +10, 400, 170, 100); // x y w h
+      setBtn01.frame    = CGRectMake(centerPoint      +200, 400, 170, 100); // x y w h
+      setBtnReset.frame = CGRectMake(centerPoint -190 -115, 550, 190, 110); // x y w h
+      setBtn001.frame   = CGRectMake(centerPoint  -(170/2), 550, 170, 100); // x y w h
+      setBtnStart.frame = CGRectMake(centerPoint      +115, 550, 190, 110); // x y w h
+    }
+  
   }
   
   // 横向き
@@ -898,11 +904,73 @@
   }
   
   if (globalSec == 0 && globalMin == 0) {
+    AudioServicesPlaySystemSound(1000);  //Eメール着信 1
+    [NSThread sleepForTimeInterval:3.0f];
+    
+    AudioServicesPlaySystemSound(1001);  //Eメール着信 0
+    [NSThread sleepForTimeInterval:3.0f];
+
+    AudioServicesPlaySystemSound(1002);  //SMSやノーティフィケーションの着信 1
+    [NSThread sleepForTimeInterval:3.0f];
+
+    AudioServicesPlaySystemSound(1003);  //SMS着信(SMSアプリ内) 2
+    [NSThread sleepForTimeInterval:3.0f];
+
+    AudioServicesPlaySystemSound(1004);  //SMS送信 0
+    [NSThread sleepForTimeInterval:3.0f];
+    
+    AudioServicesPlaySystemSound(1005);  //ピポピポ 1
+    [NSThread sleepForTimeInterval:3.0f];
+    
+    AudioServicesPlaySystemSound(1006);  //缶を叩いたような音 0
+    [NSThread sleepForTimeInterval:3.0f];
+    
+    AudioServicesPlaySystemSound(1007);  //SMSやノーティフィケーションの着信 2
+    [NSThread sleepForTimeInterval:3.0f];
+    
+    AudioServicesPlaySystemSound(1008);  //チリーン 2
+    [NSThread sleepForTimeInterval:3.0f];
+    
+    AudioServicesPlaySystemSound(1009);  //トライアングルのような音 2
+    [NSThread sleepForTimeInterval:3.0f];
+    
+    AudioServicesPlaySystemSound(1010);  //パフパフ 2
+    [NSThread sleepForTimeInterval:3.0f];
+    
+    AudioServicesPlaySystemSound(1011);  //なし	2
+    [NSThread sleepForTimeInterval:3.0f];
+    
+    AudioServicesPlaySystemSound(1012);  //1007とおなじ 2
+    [NSThread sleepForTimeInterval:3.0f];
+    
+    AudioServicesPlaySystemSound(1013);  //カーン 2
+    [NSThread sleepForTimeInterval:3.0f];
+    
+    AudioServicesPlaySystemSound(1014);  //ピポポポポ 2
+    [NSThread sleepForTimeInterval:3.0f];
+    
+    AudioServicesPlaySystemSound(1015);  //1002と同じ 1
+    [NSThread sleepForTimeInterval:3.0f];
+    
+    AudioServicesPlaySystemSound(1016);  //フィフー 0
+    [NSThread sleepForTimeInterval:3.0f];
+    
+    AudioServicesPlaySystemSound(1017);  //ピポピポ 1長め
+    [NSThread sleepForTimeInterval:3.0f];
+    
+    AudioServicesPlaySystemSound(1018);  //ショワー 0
+    [NSThread sleepForTimeInterval:3.0f];
+    
+    AudioServicesPlaySystemSound(1019);  //
+    [NSThread sleepForTimeInterval:3.0f];
+    
+    AudioServicesPlaySystemSound(1020);  //
+    [NSThread sleepForTimeInterval:3.0f];
+    
+   
     
     
-    
-    
-    
+    AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
     cntUpFlag = YES;
   }
   
