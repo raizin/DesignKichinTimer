@@ -172,6 +172,11 @@
 {
   [super viewDidLoad];
   
+  //自動スリープの解除
+//  UIApplication *application = [UIApplication sharedApplication];
+//  application.idleTimerDisabled = YES;
+
+  
   //初期化
   globalSec = 0;
   globalMin = 0;
@@ -333,6 +338,7 @@
                                            selector:@selector(timerTimer:) //呼び出すメソッド
                                            userInfo:nil //メソッドに渡すパラメータ
                                             repeats:YES]; //繰り返し
+//  [[NSRunLoop mainRunLoop] addTimer:timerTm forMode:NSRunLoopCommonModes];// 画面が消えても起動しつづける
 }
 /*
  * タイマー用タイマー停止(リセット)関数
@@ -962,73 +968,11 @@
   }
   
   if (globalSec == 0 && globalMin == 0) {
-    AudioServicesPlaySystemSound(1000);  //Eメール着信 1
-    [NSThread sleepForTimeInterval:3.0f];
-    
-    AudioServicesPlaySystemSound(1001);  //Eメール着信 0
-    [NSThread sleepForTimeInterval:3.0f];
-
-    AudioServicesPlaySystemSound(1002);  //SMSやノーティフィケーションの着信 1
-    [NSThread sleepForTimeInterval:3.0f];
-
-    AudioServicesPlaySystemSound(1003);  //SMS着信(SMSアプリ内) 2
-    [NSThread sleepForTimeInterval:3.0f];
-
-    AudioServicesPlaySystemSound(1004);  //SMS送信 0
-    [NSThread sleepForTimeInterval:3.0f];
-    
-    AudioServicesPlaySystemSound(1005);  //ピポピポ 1
-    [NSThread sleepForTimeInterval:3.0f];
-    
-    AudioServicesPlaySystemSound(1006);  //缶を叩いたような音 0
-    [NSThread sleepForTimeInterval:3.0f];
-    
-    AudioServicesPlaySystemSound(1007);  //SMSやノーティフィケーションの着信 2
-    [NSThread sleepForTimeInterval:3.0f];
-    
-    AudioServicesPlaySystemSound(1008);  //チリーン 2
-    [NSThread sleepForTimeInterval:3.0f];
-    
-    AudioServicesPlaySystemSound(1009);  //トライアングルのような音 2
-    [NSThread sleepForTimeInterval:3.0f];
-    
-    AudioServicesPlaySystemSound(1010);  //パフパフ 2
-    [NSThread sleepForTimeInterval:3.0f];
-    
-    AudioServicesPlaySystemSound(1011);  //なし	2
-    [NSThread sleepForTimeInterval:3.0f];
-    
-    AudioServicesPlaySystemSound(1012);  //1007とおなじ 2
-    [NSThread sleepForTimeInterval:3.0f];
-    
-    AudioServicesPlaySystemSound(1013);  //カーン 2
-    [NSThread sleepForTimeInterval:3.0f];
-    
-    AudioServicesPlaySystemSound(1014);  //ピポポポポ 2
-    [NSThread sleepForTimeInterval:3.0f];
-    
-    AudioServicesPlaySystemSound(1015);  //1002と同じ 1
-    [NSThread sleepForTimeInterval:3.0f];
-    
-    AudioServicesPlaySystemSound(1016);  //フィフー 0
-    [NSThread sleepForTimeInterval:3.0f];
-    
-    AudioServicesPlaySystemSound(1017);  //ピポピポ 1長め
-    [NSThread sleepForTimeInterval:3.0f];
-    
-    AudioServicesPlaySystemSound(1018);  //ショワー 0
-    [NSThread sleepForTimeInterval:3.0f];
-    
-    AudioServicesPlaySystemSound(1019);  //
-    [NSThread sleepForTimeInterval:3.0f];
-    
-    AudioServicesPlaySystemSound(1020);  //
-    [NSThread sleepForTimeInterval:3.0f];
-    
    
     
+    // Vibrate
+//    AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
     
-    AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
     cntUpFlag = YES;
   }
   
