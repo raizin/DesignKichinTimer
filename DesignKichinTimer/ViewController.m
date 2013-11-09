@@ -21,6 +21,12 @@
 // View が表示される直前に呼ばれる定義済み関数（画面が再表示されるたびに呼び出されます。）
 - (void)viewWillAppear:(BOOL)animated
 {
+  // MARK:
+  // TODO:
+  // FIXME:
+  // !!!:
+  // ???:
+
 }
 
 
@@ -98,7 +104,6 @@
   NSString *clockTitle = [NSString stringWithFormat:@"%@",NSLocalizedString(@"btnClock", nil)];
   clockSelectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
   clockSelectBtn.frame = CGRectMake(15,7,120,50);// x y w h
-  NSLog(@"selecterX=%d",selecterX);
   
   [clockSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor grayColor] btnTitle:clockTitle] forState:UIControlStateNormal]; // 有効時
   [clockSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor redColor] btnTitle:clockTitle] forState:UIControlStateHighlighted]; // タッチ中
@@ -135,8 +140,27 @@
   }else{
     [cntView addSubview:timerSelectBtn];   // ipad
   }
-  
   // ====== 「タイマー設定」ボタン（リンクテキスト風）ここまで ======
+
+  // ====== 「Sound ON/OFF」Button From here ======
+  NSString *sndBtnTitle = [NSString stringWithFormat:@"[ %@ ]",NSLocalizedString(@"btnSound", nil)];
+  soundSelectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+  soundSelectBtn.frame = CGRectMake(260,7,145,50); // x y w h
+  
+  [soundSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor blueColor] btnTitle:sndBtnTitle] forState:UIControlStateNormal];
+  [soundSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor redColor] btnTitle:sndBtnTitle] forState:UIControlStateHighlighted];
+  
+  [soundSelectBtn addTarget:self action:@selector(soundSelectBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
+  
+  soundOn = YES; // Default
+  
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+    [self.view addSubview:soundSelectBtn]; // iphone
+  }else{
+    [cntView addSubview:soundSelectBtn];   // ipad
+  }
+  // ====== 「Sound ON/OFF」Button To here ======
+
 }
 
 
@@ -486,6 +510,40 @@
   [self btnEnableOnlyReset];
 }
 
+/*
+ * 音のON/OFFボタン用イベント
+ */
+- (void)soundSelectBtnTouch:(id)sender
+{
+  UIButton *myBtn = (UIButton *)sender;
+  NSString *sndBtnTitle = [NSString stringWithFormat:@"[ %@ ]",NSLocalizedString(@"btnSound", nil)];
+
+  // アラート
+  UIAlertView *alert = [[UIAlertView alloc] init];
+  
+  if (soundOn) {
+    [myBtn setAttributedTitle:[self myColorShadowAttr:[UIColor grayColor] btnTitle:sndBtnTitle] forState:UIControlStateNormal];
+    soundOn = NO;
+
+    alert.title = @"[消音]";
+    alert.message = @"アラーム音をオフにしました。";
+    [alert addButtonWithTitle:@" O K "];
+    
+  }else{
+    [myBtn setAttributedTitle:[self myColorShadowAttr:[UIColor blueColor] btnTitle:sndBtnTitle] forState:UIControlStateNormal];
+    soundOn = YES;
+
+    alert.title = @"[サウンド設定]";
+    alert.message = @"アラーム音をオンにしました。";
+    [alert addButtonWithTitle:@" O K "];
+  }
+
+  [alert show];
+
+//  [cntView addSubview:soundSelectBtn];   // ipad
+
+
+}
 
 /*
  * 「現在時表示」ボタン用イベント

@@ -18,14 +18,8 @@
   int globalSec;// 00~59
   
   BOOL cntUpFlag; // YES:up NO:down
-//  BOOL pauseFlag; // YES:Pause NO:Reset
-  
-  BOOL cntMode; // YES:キッチンタイマー NO:現在時表示
-  
-  // modeボタンリンク配置用 X Y
-  int selecterX;
-  int selecterY;
-  
+  BOOL cntMode;   // YES:キッチンタイマー NO:現在時表示
+
   
   // カウンター表示View定義
   UIView *cntView;
@@ -48,6 +42,8 @@
   // Button
   UIButton *timerSelectBtn; //「タイマー設定」切替ボタン
   UIButton *clockSelectBtn; //「現在時表示」切替ボタン
+  UIButton *soundSelectBtn; // Sound On/Off
+  
   UIButton *setBtn60;//60 min
   UIButton *setBtn10;//10 min
   UIButton *setBtn05;//5 min
@@ -68,6 +64,8 @@
   
   // フェードインを一回だけ成功させるフラグ YES:実行 NO:実行しない
   BOOL fadeinFlag;
+  
+  BOOL soundOn;
 
 }
 
