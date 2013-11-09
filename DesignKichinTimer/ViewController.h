@@ -65,7 +65,11 @@
   // フェードインを一回だけ成功させるフラグ YES:実行 NO:実行しない
   BOOL fadeinFlag;
   
-  BOOL soundOn;
+  // サウンドの状態
+  BOOL soundOn; // YES:ON NO:OFF
+  
+  // サウンドON/OFF ボタンの表示文字列
+  NSString *sndBtnTitle;
 
 }
 
