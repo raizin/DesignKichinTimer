@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import <AVFoundation/AVFoundation.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface ViewController : UIViewController {
+  
+  //Sound
+  AVAudioPlayer *pressBtnSnd;
   
   // タイマー定義
   NSTimer *clockTm;

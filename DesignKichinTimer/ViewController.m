@@ -8,8 +8,6 @@
 
 #import "ViewController.h"
 #import <QuartzCore/QuartzCore.h>
-//#import <AudioToolbox/AudioServices.h>
-#import <AVFoundation/AVFoundation.h>
 
 
 @interface ViewController ()
@@ -176,6 +174,19 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  
+  /*** Sound Setting ***/
+  
+  //ボタン音
+  NSURL *pi = [[NSBundle mainBundle] URLForResource:@"pi" withExtension:@"mp3"];
+  pressBtnSnd = [[AVAudioPlayer alloc] initWithContentsOfURL:pi error:NULL];
+  [pressBtnSnd prepareToPlay];
+  pressBtnSnd.volume = 0.4;
+  pressBtnSnd.numberOfLoops = 1; // 再生回数 -1:ループ再生
+
+  
+  
+  
   
   //自動スリープの解除
 //  UIApplication *application = [UIApplication sharedApplication];
@@ -505,14 +516,7 @@
 - (void)resetBtnTouch:(id)sender
 {
   
-//  NSURL *bgmURLPlay = [[NSBundle mainBundle] URLForResource:@"291" withExtension:@"mp3"];
-//  bgmPlay = [[AVAudioPlayer alloc] initWithContentsOfURL:bgmURLPlay error:NULL];
-//  [bgmPlay prepareToPlay];
-//  bgmPlay.volume = 0.4;
-//  bgmPlay.numberOfLoops = -1; // 再生回数 -1:ループ再生
-//  [bgmPlay play]; // 再生開始
-  
-  
+  [pressBtnSnd play]; // 再生開始
   
   if ([timerTm isValid]) {
     // タイマーが動いている場合は、一時停止
