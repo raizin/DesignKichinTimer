@@ -487,27 +487,37 @@
 
 - (void)btn001Touch:(id)sender
 {
+  [self btnSndChkPlay];//効果音再生
+  
   globalSec += 10;
   [self cntPlusChk];
 }
 
 - (void)btn01Touch:(id)sender
 {
+  [self btnSndChkPlay];//効果音再生
+  
   globalMin += 1;
   [self cntPlusChk];
 }
 - (void)btn03Touch:(id)sender
 {
+  [self btnSndChkPlay];//効果音再生
+  
   globalMin += 3;
   [self cntPlusChk];
 }
 - (void)btn05Touch:(id)sender
 {
+  [self btnSndChkPlay];//効果音再生
+  
   globalMin += 5;
   [self cntPlusChk];
 }
 - (void)btn10Touch:(id)sender
 {
+  [self btnSndChkPlay];//効果音再生
+  
   globalMin += 10;
   [self cntPlusChk];
 }
@@ -515,8 +525,7 @@
 
 - (void)resetBtnTouch:(id)sender
 {
-  
-  [pressBtnSnd play]; // 再生開始
+  [self btnSndChkPlay];//効果音再生
   
   if ([timerTm isValid]) {
     // タイマーが動いている場合は、一時停止
@@ -531,9 +540,33 @@
 
 - (void)startBtnTouch:(id)sender
 {
+  [self btnSndChkPlay];//効果音再生
+  
   [self startTimerTimer];
   [self btnEnableOnlyReset];
 }
+
+
+/*
+ * フラグをチェックしてボタン音再生
+ */
+- (void)btnSndChkPlay
+{
+  if (soundOn) {
+    [pressBtnSnd play]; // 再生開始
+  }
+}
+
+/*
+ * フラグをチェックしてアラーム再生
+ */
+- (void)almSndChkPlay
+{
+  if (soundOn) {
+    [pressBtnSnd play]; // 再生開始
+  }
+}
+
 
 /*
  * 音のON/OFFボタン用イベント
