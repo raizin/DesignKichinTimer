@@ -8,7 +8,8 @@
 
 #import "ViewController.h"
 #import <QuartzCore/QuartzCore.h>
-#import <AudioToolbox/AudioServices.h>
+//#import <AudioToolbox/AudioServices.h>
+#import <AVFoundation/AVFoundation.h>
 
 
 @interface ViewController ()
@@ -32,7 +33,8 @@
 
 // デバイスが回転した際に、呼び出されるメソッド(※自作)
 - (void) didRotate:(NSNotification *)notification {
-  UIDeviceOrientation o = [[notification object] orientation];
+//  UIDeviceOrientation o = [[notification object] orientation];
+    UIDeviceOrientation o = [[UIDevice currentDevice] orientation];
   
   
   // iphone かつ Home button top の場合のみ 動作がおかしいので止める
@@ -502,6 +504,16 @@
 
 - (void)resetBtnTouch:(id)sender
 {
+  
+//  NSURL *bgmURLPlay = [[NSBundle mainBundle] URLForResource:@"291" withExtension:@"mp3"];
+//  bgmPlay = [[AVAudioPlayer alloc] initWithContentsOfURL:bgmURLPlay error:NULL];
+//  [bgmPlay prepareToPlay];
+//  bgmPlay.volume = 0.4;
+//  bgmPlay.numberOfLoops = -1; // 再生回数 -1:ループ再生
+//  [bgmPlay play]; // 再生開始
+  
+  
+  
   if ([timerTm isValid]) {
     // タイマーが動いている場合は、一時停止
     [self pauseTimerTimer];
