@@ -181,10 +181,15 @@
   NSURL *pi = [[NSBundle mainBundle] URLForResource:@"pi" withExtension:@"mp3"];
   pressBtnSnd = [[AVAudioPlayer alloc] initWithContentsOfURL:pi error:NULL];
   [pressBtnSnd prepareToPlay];
-  pressBtnSnd.volume = 0.4;
+//  pressBtnSnd.volume = 0.4;
   pressBtnSnd.numberOfLoops = 1; // 再生回数 -1:ループ再生
 
-  
+  //Alerm音
+  NSURL *alerm = [[NSBundle mainBundle] URLForResource:@"pi" withExtension:@"mp3"];
+  alermSound = [[AVAudioPlayer alloc] initWithContentsOfURL:alerm error:NULL];
+  [alermSound prepareToPlay];
+//  alermSound.volume = 0.4;
+  alermSound.numberOfLoops = 60; // 再生回数 -1:ループ再生
   
   
   
@@ -526,6 +531,8 @@
 - (void)resetBtnTouch:(id)sender
 {
   [self btnSndChkPlay];//効果音再生
+  [alermSound stop]; // 再生停止
+
   
   if ([timerTm isValid]) {
     // タイマーが動いている場合は、一時停止
@@ -563,7 +570,7 @@
 - (void)almSndChkPlay
 {
   if (soundOn) {
-    [pressBtnSnd play]; // 再生開始
+    [alermSound play]; // 再生開始
   }
 }
 
@@ -596,10 +603,6 @@
   }
 
   [alert show];
-
-//  [cntView addSubview:soundSelectBtn];   // ipad
-
-
 }
 
 /*
@@ -611,6 +614,7 @@
   [self lbFadeout:cntLabel];
   [self lbFadeout:hunLabel];
   [self lbFadeout:byoLabel];
+  [self btnFadeout:soundSelectBtn];
 
   fadeinFlag = YES;
 
@@ -658,6 +662,34 @@
   }
 }
 
+
+/*
+ * UIButton fadeout method
+ */
+- (void)btnFadeout:(UIButton *)btn
+{
+  [UIView beginAnimations:nil context:nil];
+  [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+  [UIView setAnimationDuration:1.f];
+  btn.alpha = 0.f;
+  [UIView commitAnimations];
+}
+/*
+ * UIButton fadein method
+ */
+- (void)btnFadein:(UIButton *)btn
+{
+  if (fadeinFlag) {
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+    [UIView setAnimationDuration:1.f];
+    btn.alpha = 8.f;
+    [UIView commitAnimations];
+  }
+}
+
+
+
 /*
  * 「タイマー設定」ボタン用イベント
  */
@@ -694,7 +726,8 @@
   [self lbFadein:hunLabel];
   [self lbFadein:byoLabel];
   [self lbFadein:cntLabel];
-  
+  [self btnFadein:soundSelectBtn];
+
 }
 
 - (void)timerInitDisp {
@@ -1023,6 +1056,9 @@
     
     // Vibrate
 //    AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+    
+    [self almSndChkPlay];
+    
     
     cntUpFlag = YES;
   }

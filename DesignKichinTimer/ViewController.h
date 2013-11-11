@@ -13,6 +13,7 @@
   
   //Sound
   AVAudioPlayer *pressBtnSnd;
+  AVAudioPlayer *alermSound;
   
   // タイマー定義
   NSTimer *clockTm;
