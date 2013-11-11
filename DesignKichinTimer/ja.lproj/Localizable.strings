@@ -20,3 +20,8 @@
 //"btnSound"="🎵";
 "btnSound"="♬";
 //"btnSound"="♫";
+
+"SndTtlOn" ="[サウンド設定]";
+"SndTtlOff"="[消音]";
+"SndMsgOn" ="アラーム音/効果音をオンにしました。";
+"SndMsgOff"="アラーム音/効果音をオフにしました。";

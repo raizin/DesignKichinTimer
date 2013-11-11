@@ -27,8 +27,9 @@
 		5E711E4618191B0000E7AA83 /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = 5E711E4518191B0000E7AA83 /* .gitattributes */; };
 		5EA2C0A01811865E00B0FC3D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5EA2C09F1811865E00B0FC3D /* .gitignore */; };
 		5EC2DCC6182C77B1003E1D5C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC2DCC5182C77B1003E1D5C /* AudioToolbox.framework */; };
-		5EC2DCC8182E489A003E1D5C /* pi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5EC2DCC7182E489A003E1D5C /* pi.mp3 */; };
 		5EC2DCCA182FCEB8003E1D5C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC2DCC9182FCEB8003E1D5C /* AVFoundation.framework */; };
+		5EC2DCD01830A4C4003E1D5C /* pi4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5EC2DCCF1830A4C4003E1D5C /* pi4.mp3 */; };
+		5EC2DCD21830A52A003E1D5C /* pi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5EC2DCD11830A52A003E1D5C /* pi.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +72,9 @@
 		5E711E4518191B0000E7AA83 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 		5EA2C09F1811865E00B0FC3D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = DesignKichinTimer/.gitignore; sourceTree = "<group>"; };
 		5EC2DCC5182C77B1003E1D5C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		5EC2DCC7182E489A003E1D5C /* pi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = pi.mp3; path = ../../../pi.mp3; sourceTree = "<group>"; };
 		5EC2DCC9182FCEB8003E1D5C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5EC2DCCF1830A4C4003E1D5C /* pi4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pi4.mp3; sourceTree = "<group>"; };
+		5EC2DCD11830A52A003E1D5C /* pi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pi.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,7 +157,8 @@
 		5E6F4B3118117F7600312CCD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5EC2DCC7182E489A003E1D5C /* pi.mp3 */,
+				5EC2DCD11830A52A003E1D5C /* pi.mp3 */,
+				5EC2DCCF1830A4C4003E1D5C /* pi4.mp3 */,
 				5E6F4B3218117F7600312CCD /* DesignKichinTimer-Info.plist */,
 				5E6F4B3318117F7600312CCD /* InfoPlist.strings */,
 				5E6F4B3618117F7600312CCD /* main.m */,
@@ -262,10 +265,11 @@
 			files = (
 				5EA2C0A01811865E00B0FC3D /* .gitignore in Resources */,
 				5E711E4618191B0000E7AA83 /* .gitattributes in Resources */,
+				5EC2DCD21830A52A003E1D5C /* pi.mp3 in Resources */,
+				5EC2DCD01830A4C4003E1D5C /* pi4.mp3 in Resources */,
 				5E6F4B4118117F7600312CCD /* Main_iPad.storyboard in Resources */,
 				5E42589718192B7F00171F1F /* Localizable.strings in Resources */,
 				5E6F4B4618117F7600312CCD /* Images.xcassets in Resources */,
-				5EC2DCC8182E489A003E1D5C /* pi.mp3 in Resources */,
 				5E6F4B3E18117F7600312CCD /* Main_iPhone.storyboard in Resources */,
 				5E6F4B3518117F7600312CCD /* InfoPlist.strings in Resources */,
 			);

@@ -18,3 +18,8 @@
 "btnClock"="▷Clock Mode";
 "btnTimer"="▷Timer Mode";
 "btnSound"="♬";
+
+"SndTtlOn" ="[Sound]";
+"SndTtlOff"="[Mute]";
+"SndMsgOn" ="Sound On";
+"SndMsgOff"="Sound Off";

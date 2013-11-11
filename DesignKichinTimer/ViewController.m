@@ -589,16 +589,16 @@
     [myBtn setAttributedTitle:[self myColorShadowAttr:[UIColor grayColor] btnTitle:sndBtnTitle] forState:UIControlStateNormal];
     soundOn = NO;
 
-    alert.title = @"[消音]";
-    alert.message = @"アラーム音をオフにしました。";
+    alert.title   = [NSString stringWithFormat:@"%@",NSLocalizedString(@"SndTtlOff", nil)];
+    alert.message = [NSString stringWithFormat:@"%@",NSLocalizedString(@"SndMsgOff", nil)];
     [alert addButtonWithTitle:@" O K "];
     
   }else{
     [myBtn setAttributedTitle:[self myColorShadowAttr:[UIColor blueColor] btnTitle:sndBtnTitle] forState:UIControlStateNormal];
     soundOn = YES;
 
-    alert.title = @"[サウンド設定]";
-    alert.message = @"アラーム音をオンにしました。";
+    alert.title   = [NSString stringWithFormat:@"%@",NSLocalizedString(@"SndTtlOn", nil)];
+    alert.message = [NSString stringWithFormat:@"%@",NSLocalizedString(@"SndMsgOn", nil)];
     [alert addButtonWithTitle:@" O K "];
   }
 
