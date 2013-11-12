@@ -30,6 +30,7 @@
 		5EC2DCCA182FCEB8003E1D5C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC2DCC9182FCEB8003E1D5C /* AVFoundation.framework */; };
 		5EC2DCD21830A52A003E1D5C /* pi_old.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5EC2DCD11830A52A003E1D5C /* pi_old.mp3 */; };
 		5ECB0D271832038400103C18 /* piLong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5ECB0D261832038400103C18 /* piLong.mp3 */; };
+		5ECB0D371832173700103C18 /* pi_mono.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5ECB0D361832173700103C18 /* pi_mono.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		5EC2DCC9182FCEB8003E1D5C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5EC2DCD11830A52A003E1D5C /* pi_old.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pi_old.mp3; sourceTree = "<group>"; };
 		5ECB0D261832038400103C18 /* piLong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = piLong.mp3; sourceTree = "<group>"; };
+		5ECB0D361832173700103C18 /* pi_mono.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pi_mono.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 		5E6F4B3118117F7600312CCD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5ECB0D361832173700103C18 /* pi_mono.mp3 */,
 				5ECB0D261832038400103C18 /* piLong.mp3 */,
 				5EC2DCD11830A52A003E1D5C /* pi_old.mp3 */,
 				5E6F4B3218117F7600312CCD /* DesignKichinTimer-Info.plist */,
@@ -263,6 +266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ECB0D371832173700103C18 /* pi_mono.mp3 in Resources */,
 				5EA2C0A01811865E00B0FC3D /* .gitignore in Resources */,
 				5E711E4618191B0000E7AA83 /* .gitattributes in Resources */,
 				5EC2DCD21830A52A003E1D5C /* pi_old.mp3 in Resources */,

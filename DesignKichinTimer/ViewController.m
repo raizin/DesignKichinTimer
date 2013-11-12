@@ -178,11 +178,11 @@
   /*** Sound Setting ***/
   
   //ボタン音
-  NSURL *pi = [[NSBundle mainBundle] URLForResource:@"pi" withExtension:@"mp3"];
+  NSURL *pi = [[NSBundle mainBundle] URLForResource:@"pi_old" withExtension:@"mp3"];
   pressBtnSnd = [[AVAudioPlayer alloc] initWithContentsOfURL:pi error:NULL];
   [pressBtnSnd prepareToPlay];
 //  pressBtnSnd.volume = 0.4;
-  pressBtnSnd.numberOfLoops = 1; // 再生回数 -1:ループ再生
+  pressBtnSnd.numberOfLoops = 0; // 再生回数 -1:ループ再生
 
   //Alerm音
   NSURL *alerm = [[NSBundle mainBundle] URLForResource:@"piLong" withExtension:@"mp3"];
