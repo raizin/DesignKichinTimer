@@ -185,11 +185,11 @@
   pressBtnSnd.numberOfLoops = 1; // 再生回数 -1:ループ再生
 
   //Alerm音
-  NSURL *alerm = [[NSBundle mainBundle] URLForResource:@"pi" withExtension:@"mp3"];
+  NSURL *alerm = [[NSBundle mainBundle] URLForResource:@"piLong" withExtension:@"mp3"];
   alermSound = [[AVAudioPlayer alloc] initWithContentsOfURL:alerm error:NULL];
   [alermSound prepareToPlay];
 //  alermSound.volume = 0.4;
-  alermSound.numberOfLoops = 60; // 再生回数 -1:ループ再生
+  alermSound.numberOfLoops = 0; // 再生回数 -1:ループ再生
   
   
   
