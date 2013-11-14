@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "GADBannerView.h"
 
 @interface ViewController : UIViewController {
+  
+  //AdMob用View
+  GADBannerView *bannerView;
   
   //Sound
   AVAudioPlayer *pressBtnSnd;

@@ -169,11 +169,15 @@
 
 
 
-
 // View が初めて呼び出される時に1回だけ呼ばれる定義済み関数
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  
+
+
+  
+  
   
   /*** Sound Setting ***/
   
@@ -347,6 +351,57 @@
   
   
   [self timerInitDisp];
+  
+  
+  /*** AdMob用 広告表示 ここから ***/
+  // 画面下部に標準サイズのビューを作成する
+//    bannerView = [[GADBannerView alloc]
+//                  initWithFrame:CGRectMake(0.f,
+//                                           0.f,
+//                                           320,
+//                                           500)]; // x y w h
+  bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeSmartBannerPortrait];
+  
+  // 広告の「ユニット ID」を指定する。AdMob パブリッシャー ID
+  bannerView.adUnitID = @"pub-8799115520187072";
+  
+  
+  // ユーザーに広告を表示した場所に後で復元する UIViewController をランタイムに知らせて
+  // ビュー階層に追加する。
+  bannerView.rootViewController = self;
+  [self.view addSubview:bannerView];
+  
+  
+  // 広告をビューの一番下に表示する場合は
+  [bannerView setCenter:CGPointMake(self.view.bounds.size.width/2,
+                                    self.view.bounds.size.height-bannerView.bounds.size.height/2)];
+  
+//  [bannerView setBackgroundColor:[UIColor brownColor]];
+  [bannerView setBackgroundColor:[UIColor colorWithRed:0.1f green:0.1f blue:0.8f alpha:0.8f]];
+
+  
+  GADRequest *request = [GADRequest request];
+  request.testDevices = [NSArray arrayWithObjects:
+                         GAD_SIMULATOR_ID,                     // シミュレータ
+                         @"5660dff51d784577e22957e2eb62650781e29fc1", // iPad mini
+                         @"5d94d53ec5305b722393fc8484ad6e23eae0c371", // iphone4S
+                         nil];
+
+//  GADRequest *request = [[GADRequest alloc] init];
+//  request.additionalParameters =
+//  [NSMutableDictionary dictionaryWithObjectsAndKeys:
+//   @"AAAAFF", @"color_bg",
+//   @"FFFFFF", @"color_bg_top",
+//   @"FFFFFF", @"color_border",
+//   @"000080", @"color_link",
+//   @"808080", @"color_text",
+//   @"008000", @"color_url",
+//   nil];
+
+  // 一般的なリクエストを行って広告を読み込む。
+  [bannerView loadRequest:[GADRequest request]];
+
+  /*** AdMob用 広告表示 ここまで ***/
   
 }
 
