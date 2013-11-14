@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E1E11D51834F7D300307C8F /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1E11D41834F7D300307C8F /* libGoogleAdMobAds.a */; };
+		5E1E11D71834F81500307C8F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1E11D61834F81500307C8F /* MessageUI.framework */; };
+		5E1E11D91834F82600307C8F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1E11D81834F82600307C8F /* SystemConfiguration.framework */; };
 		5E42589718192B7F00171F1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E42589918192B7F00171F1F /* Localizable.strings */; };
 		5E42589C181CF29300171F1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E42589B181CF29300171F1F /* QuartzCore.framework */; };
 		5E6F4B2B18117F7600312CCD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E6F4B2A18117F7600312CCD /* Foundation.framework */; };
@@ -44,6 +47,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E1E11CB1834F7D300307C8F /* GADAdMobExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdMobExtras.h; sourceTree = "<group>"; };
+		5E1E11CC1834F7D300307C8F /* GADAdNetworkExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdNetworkExtras.h; sourceTree = "<group>"; };
+		5E1E11CD1834F7D300307C8F /* GADAdSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdSize.h; sourceTree = "<group>"; };
+		5E1E11CE1834F7D300307C8F /* GADBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerView.h; sourceTree = "<group>"; };
+		5E1E11CF1834F7D300307C8F /* GADBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerViewDelegate.h; sourceTree = "<group>"; };
+		5E1E11D01834F7D300307C8F /* GADInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitial.h; sourceTree = "<group>"; };
+		5E1E11D11834F7D300307C8F /* GADInterstitialDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitialDelegate.h; sourceTree = "<group>"; };
+		5E1E11D21834F7D300307C8F /* GADRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequest.h; sourceTree = "<group>"; };
+		5E1E11D31834F7D300307C8F /* GADRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequestError.h; sourceTree = "<group>"; };
+		5E1E11D41834F7D300307C8F /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAdMobAds.a; sourceTree = "<group>"; };
+		5E1E11D61834F81500307C8F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		5E1E11D81834F82600307C8F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5E243BD9182504DC005C31D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E243BDA182504E7005C31D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5E42589418192B2600171F1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -84,10 +99,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E1E11D91834F82600307C8F /* SystemConfiguration.framework in Frameworks */,
+				5E1E11D71834F81500307C8F /* MessageUI.framework in Frameworks */,
 				5EC2DCCA182FCEB8003E1D5C /* AVFoundation.framework in Frameworks */,
 				5EC2DCC6182C77B1003E1D5C /* AudioToolbox.framework in Frameworks */,
 				5E42589C181CF29300171F1F /* QuartzCore.framework in Frameworks */,
 				5E6F4B2D18117F7600312CCD /* CoreGraphics.framework in Frameworks */,
+				5E1E11D51834F7D300307C8F /* libGoogleAdMobAds.a in Frameworks */,
 				5E6F4B2F18117F7600312CCD /* UIKit.framework in Frameworks */,
 				5E6F4B2B18117F7600312CCD /* Foundation.framework in Frameworks */,
 			);
@@ -130,6 +148,8 @@
 		5E6F4B2918117F7600312CCD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5E1E11D81834F82600307C8F /* SystemConfiguration.framework */,
+				5E1E11D61834F81500307C8F /* MessageUI.framework */,
 				5EC2DCC9182FCEB8003E1D5C /* AVFoundation.framework */,
 				5EC2DCC5182C77B1003E1D5C /* AudioToolbox.framework */,
 				5E42589B181CF29300171F1F /* QuartzCore.framework */,
@@ -159,6 +179,16 @@
 		5E6F4B3118117F7600312CCD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5E1E11CB1834F7D300307C8F /* GADAdMobExtras.h */,
+				5E1E11CC1834F7D300307C8F /* GADAdNetworkExtras.h */,
+				5E1E11CD1834F7D300307C8F /* GADAdSize.h */,
+				5E1E11CE1834F7D300307C8F /* GADBannerView.h */,
+				5E1E11CF1834F7D300307C8F /* GADBannerViewDelegate.h */,
+				5E1E11D01834F7D300307C8F /* GADInterstitial.h */,
+				5E1E11D11834F7D300307C8F /* GADInterstitialDelegate.h */,
+				5E1E11D21834F7D300307C8F /* GADRequest.h */,
+				5E1E11D31834F7D300307C8F /* GADRequestError.h */,
+				5E1E11D41834F7D300307C8F /* libGoogleAdMobAds.a */,
 				5ECB0D361832173700103C18 /* pi_mono.mp3 */,
 				5ECB0D261832038400103C18 /* piLong.mp3 */,
 				5EC2DCD11830A52A003E1D5C /* pi_old.mp3 */,
@@ -449,6 +479,10 @@
 				GCC_PREFIX_HEADER = "DesignKichinTimer/DesignKichinTimer-Prefix.pch";
 				INFOPLIST_FILE = "DesignKichinTimer/DesignKichinTimer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/zzz/Documents/DesignKichinTimer/DesignKichinTimer,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -463,6 +497,10 @@
 				GCC_PREFIX_HEADER = "DesignKichinTimer/DesignKichinTimer-Prefix.pch";
 				INFOPLIST_FILE = "DesignKichinTimer/DesignKichinTimer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/zzz/Documents/DesignKichinTimer/DesignKichinTimer,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
