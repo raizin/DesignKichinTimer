@@ -792,7 +792,7 @@
                                       initWithString:@"＋"
                                       attributes:fontUnit];
   NSAttributedString *btnDigiLabel = [[NSAttributedString alloc]
-                                      initWithString:[NSString stringWithFormat:@"%d",num]
+                                      initWithString:[NSString stringWithFormat:@"%ld",(long)num]
                                       attributes:fontDigit];
   NSAttributedString *btnUnitLabel = [[NSAttributedString alloc]
                                       initWithString:unit
@@ -990,9 +990,9 @@
   //  int niti = [todayComponents day];
   //  int weekIndex = [todayComponents weekday];
   
-  int hour = [todayComponents hour];
-  int min = [todayComponents minute];
-  int sec = [todayComponents second];
+  int hour = (int)[todayComponents hour];
+  int min  = (int)[todayComponents minute];
+  int sec  = (int)[todayComponents second];
   
   //  // 年月日,曜日表示
   //  nowDate.text = [NSString stringWithFormat:@"%04d/%02d/%02d (%@)",nenn,tuki,niti,[self stringShortweekday:weekIndex]];
