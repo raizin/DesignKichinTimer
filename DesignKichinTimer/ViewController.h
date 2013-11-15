@@ -9,8 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "GADBannerView.h"
+#import <iAd/iAd.h>
+
 
 @interface ViewController : UIViewController {
+  
+  // iAd用View
+  ADBannerView *adView;
+  BOOL bannerIsVisible;
   
   //AdMob用View
   GADBannerView *bannerView;

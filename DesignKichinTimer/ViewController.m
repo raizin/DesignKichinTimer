@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import <iAd/iAd.h>
 
 
 @interface ViewController ()
@@ -377,7 +378,7 @@
                                     self.view.bounds.size.height-bannerView.bounds.size.height/2)];
   
 //  [bannerView setBackgroundColor:[UIColor brownColor]];
-  [bannerView setBackgroundColor:[UIColor colorWithRed:0.1f green:0.1f blue:0.8f alpha:0.8f]];
+  [bannerView setBackgroundColor:[UIColor colorWithRed:0.1f green:0.1f blue:0.8f alpha:0.5f]];
 
   
   GADRequest *request = [GADRequest request];
@@ -399,11 +400,58 @@
 //   nil];
 
   // 一般的なリクエストを行って広告を読み込む。
-  [bannerView loadRequest:[GADRequest request]];
+//  [bannerView loadRequest:[GADRequest request]];
 
   /*** AdMob用 広告表示 ここまで ***/
   
+  
+  /*** iAd用 広告表示 ここから ***/
+  adView = [[ADBannerView alloc] init];
+  adView.frame = CGRectMake(0, -adView.frame.size.height, adView.frame.size.width, adView.frame.size.height);
+  adView.delegate = self;
+  adView.autoresizesSubviews = YES;
+  adView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
+  [self.view addSubview:adView];
+  adView.alpha = 0.0;
+
+  
+  /*** iAd用 広告表示 ここまで ***/
+  
 }
+
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+  NSLog(@"iAd取得成功");
+  
+  if (!bannerIsVisible) {
+    [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
+    [UIView setAnimationDuration:0.3];
+    
+    banner.frame = CGRectOffset(banner.frame, 0, CGRectGetHeight(banner.frame));
+    banner.alpha = 1.0;
+    
+    [UIView commitAnimations];
+    bannerIsVisible = YES;
+  }
+}
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+  NSLog(@"iAd取得失敗");
+  
+  if (bannerIsVisible) {
+    [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
+    [UIView setAnimationDuration:0.3];
+    
+    banner.frame = CGRectOffset(banner.frame, 0, -CGRectGetHeight(banner.frame));
+    banner.alpha = 0.0;
+    
+    [UIView commitAnimations];
+    bannerIsVisible = NO;
+  }
+}
+
+
 
 /*
  * タイマー用タイマー開始関数
