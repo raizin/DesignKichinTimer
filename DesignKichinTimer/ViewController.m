@@ -8,12 +8,12 @@
 
 #import "ViewController.h"
 #import <QuartzCore/QuartzCore.h>
-#import <iAd/iAd.h>
 
 
-@interface ViewController ()
+@interface ViewController()
 
 @end
+
 
 @implementation ViewController
 
@@ -408,7 +408,8 @@
   /*** iAd用 広告表示 ここから ***/
   adView = [[ADBannerView alloc] init];
   adView.frame = CGRectMake(0, -adView.frame.size.height, adView.frame.size.width, adView.frame.size.height);
-  adView.delegate = self;
+//  adView.delegate = self;
+  adView.delegate = (id<ADBannerViewDelegate>)self;
   adView.autoresizesSubviews = YES;
   adView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
   [self.view addSubview:adView];

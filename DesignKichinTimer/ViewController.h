@@ -12,6 +12,7 @@
 #import <iAd/iAd.h>
 
 
+//@interface ViewController : UIViewController <ADBannerViewDelegate> {
 @interface ViewController : UIViewController {
   
   // iAd用View
