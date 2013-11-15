@@ -15,6 +15,7 @@
 		5E1E11EC18350EBA00307C8F /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1E11EA18350EBA00307C8F /* libGoogleAdMobAds.a */; };
 		5E1E11ED18350EBB00307C8F /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5E1E11EB18350EBA00307C8F /* README.txt */; };
 		5E1E11EF18350F1100307C8F /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1E11EE18350F1100307C8F /* AdSupport.framework */; };
+		5E1E11F11836A4AD00307C8F /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1E11F01836A4AD00307C8F /* iAd.framework */; };
 		5E42589718192B7F00171F1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E42589918192B7F00171F1F /* Localizable.strings */; };
 		5E42589C181CF29300171F1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E42589B181CF29300171F1F /* QuartzCore.framework */; };
 		5E6F4B2B18117F7600312CCD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E6F4B2A18117F7600312CCD /* Foundation.framework */; };
@@ -69,6 +70,7 @@
 		5E1E11EA18350EBA00307C8F /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAdMobAds.a; sourceTree = "<group>"; };
 		5E1E11EB18350EBA00307C8F /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		5E1E11EE18350F1100307C8F /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		5E1E11F01836A4AD00307C8F /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		5E243BD9182504DC005C31D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E243BDA182504E7005C31D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5E42589418192B2600171F1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E1E11F11836A4AD00307C8F /* iAd.framework in Frameworks */,
 				5E1E11EF18350F1100307C8F /* AdSupport.framework in Frameworks */,
 				5E1E11DF18350D3100307C8F /* StoreKit.framework in Frameworks */,
 				5E1E11DD18350D1500307C8F /* MediaPlayer.framework in Frameworks */,
@@ -181,6 +184,7 @@
 		5E6F4B2918117F7600312CCD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5E1E11F01836A4AD00307C8F /* iAd.framework */,
 				5E1E11EE18350F1100307C8F /* AdSupport.framework */,
 				5E1E11DE18350D3100307C8F /* StoreKit.framework */,
 				5E1E11DC18350D1500307C8F /* MediaPlayer.framework */,
