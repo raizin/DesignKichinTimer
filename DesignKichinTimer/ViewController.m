@@ -197,12 +197,12 @@
   
   // 表示フォントサイズ 端末分岐 ipad:180 iphone:70  = 5 digits + "M S"
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    //NSLog(@"iPhone");
+    //NSLog(@"%d: iPhone",__LINE__);
     cntFontSize = 70.0f;
     
   }
   else{
-    //NSLog(@"iPad");
+    //NSLog(@"%d: iPad",__LINE__);
     cntFontSize = 180.0f;
 
   }
@@ -221,11 +221,11 @@
   
   // 表示フォントサイズ 端末分岐 ipad:50 iphone:20
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    //NSLog(@"iPhoneの処理");
+    //NSLog(@"%d: iPhoneの処理",__LINE__);
     btnFontSize = 25.0f;
   }
   else{
-    //NSLog(@"iPadの処理");
+    //NSLog(@"%d: iPadの処理",__LINE__);
     btnFontSize = 50.0f;
   }
   
@@ -337,7 +337,7 @@
   
   /*** iAd用 広告表示 ここから ***/
   adView = [[ADBannerView alloc] initWithFrame:CGRectZero];
-  [adView setBackgroundColor:[UIColor colorWithRed:0.1f green:0.1f blue:0.8f alpha:0.5f]];
+//  [adView setBackgroundColor:[UIColor colorWithRed:0.1f green:0.1f blue:0.8f alpha:0.5f]];
 
   
 //  adView.requiredContentSizeIdentifiers = [NSSet
@@ -346,22 +346,33 @@
   
 //  adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
   
-  NSLog(@"1 w=%d h=%d",(int)adView.frame.size.width,(int)adView.frame.size.height);
+  NSLog(@"%d: w=%d h=%d",__LINE__,(int)adView.frame.size.width,(int)adView.frame.size.height);
   
   //画面下部へ表示
+  
+  int adViewHeightMargin = 30; // iphone
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    adViewHeightMargin = 66;
+  }
+  
   adView.frame = CGRectMake(0, // x
-                            self.view.bounds.size.height-adView.frame.size.height, // y
+                            screenWidth - adViewHeightMargin, // y
                             adView.frame.size.width,   // w
                             adView.frame.size.height); // h
-
+  
+  
+  
   adView.delegate = (id<ADBannerViewDelegate>)self;
-  adView.autoresizesSubviews = NO;
+  adView.autoresizesSubviews = YES;
 //  adView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
-//
-//  NSLog(@"2 w=%d h=%d",(int)adView.frame.size.width,(int)adView.frame.size.height);
+  adView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
+//  adView.autoresizingMask = UIViewAutoresizingNone;
+
+//  NSLog(@"%d: w=%d h=%d",__LINE__,(int)adView.frame.size.width,(int)adView.frame.size.height);
   
   
   adView.alpha = 0.5f;
+
   [self.view addSubview:adView];
   
   /*** iAd用 広告表示 ここまで ***/
@@ -370,7 +381,7 @@
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
-  NSLog(@"iAd取得成功");
+  NSLog(@"%d: iAd取得成功",__LINE__);
   
   if (!bannerIsVisible) {
     [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
@@ -385,7 +396,7 @@
 }
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
 {
-  NSLog(@"iAd取得失敗");
+  NSLog(@"%d: iAd取得失敗",__LINE__);
   
   if (bannerIsVisible) {
     [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
@@ -400,6 +411,15 @@
 }
 
 
+- (BOOL)shouldAutorotate
+{
+  if(YES){
+    return YES;
+  } else {
+    return NO;
+  }
+}
+
 // デバイスが回転した際に、呼び出されるメソッド(※自作)
 - (void) didRotate:(NSNotification *)notification {
   //  UIDeviceOrientation o = [[notification object] orientation];
@@ -411,40 +431,19 @@
     NSLog(@"%d: return void",__LINE__);
     return;
   }
+
   
   
   //X軸の中心を取得
   int centerPoint = [self arignCenter:0];
   NSLog(@"%d: centerPoint=%d",__LINE__,centerPoint);
   
-  if (   o == UIDeviceOrientationLandscapeLeft
-      || o == UIDeviceOrientationLandscapeRight) {
-    // 横向きの場合のみの対応
-    
-//    NSLog(@"%d: w=%d h=%d",__LINE__,(int)adView.frame.size.width,(int)adView.frame.size.height);
-//    adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierLandscape;
-    
-//    adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
-    
-//    adView.frame = CGRectMake(0,0,                      // x,y
-//                              768, // w
-//                              1024); // h
-//    adView.frame.size.height, // w
-//    adView.frame.size.width); // h
-
-//    adView.delegate = (id<ADBannerViewDelegate>)self;
-//    adView.autoresizesSubviews = YES;
-//    adView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
-    
-    NSLog(@"%d: w=%d h=%d",__LINE__,(int)adView.frame.size.width,(int)adView.frame.size.height);
-    
-    
-  }
   
   if (   o == UIDeviceOrientationLandscapeLeft
       || o == UIDeviceOrientationLandscapeRight
       || o == UIDeviceOrientationPortrait
       || o == UIDeviceOrientationPortraitUpsideDown) {
+    
     
     // Viewの位置とサイズを補正してセット
     cntView.frame = CGRectMake([self arignCenter:cntW], 60, cntW, cntH); // x y w h
@@ -475,6 +474,38 @@
     }
     
   }
+
+  
+//  int adViewHeightMargin = 30; // iphone
+//  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+//    adViewHeightMargin = 66;
+//  }
+//
+//  if (   o == UIDeviceOrientationLandscapeLeft
+//      || o == UIDeviceOrientationLandscapeRight ) {
+//    NSLog(@"%d: ヨコヨコ",__LINE__);
+//    
+//    //広告を画面下部へ表示
+//    adView.frame = CGRectMake(0, // x
+//                              self.view.bounds.size.width - adViewHeightMargin, // y
+//                              adView.frame.size.width,   // w
+//                              adView.frame.size.height); // h
+//  }
+//  if ( o == UIDeviceOrientationPortrait
+//      || o == UIDeviceOrientationPortraitUpsideDown) {
+//    NSLog(@"%d: タテタテ",__LINE__);
+//    
+//    //広告を画面下部へ表示
+//    adView.frame = CGRectMake(0, // x
+//                              self.view.bounds.size.height - adViewHeightMargin, // y
+//                              adView.frame.size.width,   // w
+//                              adView.frame.size.height); // h
+//    
+//    
+//  }
+  
+  
+  
   
   // 横向き
   if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
