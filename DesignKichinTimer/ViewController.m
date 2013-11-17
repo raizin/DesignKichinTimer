@@ -712,7 +712,7 @@
   
   if ([timerTm isValid]) {
     // タイマーが動いている場合は、一時停止
-    NSLog(@"%d: aaa",__LINE__);
+//    NSLog(@"%d: aaa",__LINE__);
     
     [self pauseTimerTimer];
     [self btnEnableOnlyStartReset];
@@ -723,11 +723,12 @@
       [self chkDisp];
       [self btnEnabledAll];
       
+      cntUpFlag = NO;
       timeUpOk = NO;
     }
     
   } else {
-    NSLog(@"%d: bbb",__LINE__);
+//    NSLog(@"%d: bbb",__LINE__);
 
     [self resetTimerTimer];
     [self btnEnabledAll];
@@ -757,6 +758,7 @@
 - (void)btnSndChkPlay
 {
   if (soundOn) {
+    [pressBtnSnd setCurrentTime:0.f]; // 開始位置をもどす
     [pressBtnSnd play]; // 再生開始
   }
 }
@@ -767,6 +769,7 @@
 - (void)almSndChkPlay
 {
   if (soundOn) {
+    alermSound.currentTime = 0.f; // 開始位置をもどす
     [alermSound play]; // 再生開始
   }
 }
@@ -1208,7 +1211,7 @@
 //  NSLog(@"%d: timerTimer Start!",__LINE__);
   
   if (globalSec == 0 && globalMin == 0) {
-    NSLog(@"%d: Count UP Start!",__LINE__);
+//    NSLog(@"%d: Count UP Start!",__LINE__);
     cntUpFlag = YES;
   }
   
