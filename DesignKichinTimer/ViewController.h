@@ -22,6 +22,11 @@
   //AdMob用View
 //  GADBannerView *bannerView;
   
+  //NSUserDefaults領域を使用
+  NSUserDefaults *ud;
+
+  
+  
   //Sound
   AVAudioPlayer *pressBtnSnd;
   AVAudioPlayer *alermSound;
@@ -86,6 +91,9 @@
   
   // サウンドON/OFF ボタンの表示文字列
   NSString *sndBtnTitle;
+  
+  // タイマー完了(到達)フラグ
+  BOOL timeUpOk;
 
 }
 

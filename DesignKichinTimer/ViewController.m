@@ -103,7 +103,14 @@
 {
   [super viewDidLoad];
   
+  //NSUserDefaults 初期化
+  ud = [NSUserDefaults standardUserDefaults];
 
+
+  //UserDefaults 初期値
+  [ud setInteger:0 forKey:@"globalMinData"]; // M
+  [ud setInteger:0 forKey:@"globalSecData"]; // S
+  [ud setBool:YES  forKey:@"soundOnFlag"];   // Sound
 
   
   
@@ -135,6 +142,7 @@
   globalSec = 0;
   globalMin = 0;
   cntUpFlag = NO;
+  timeUpOk = NO;
 
   
   
@@ -142,7 +150,7 @@
   UIScreen *sc = [UIScreen mainScreen];
   CGRect rect = sc.bounds;
   CGFloat screenWidth = rect.size.width;
-  CGFloat screenHeight = rect.size.height;
+//  CGFloat screenHeight = rect.size.height;
   
 //  NSLog(@"%d: w=%d h=%d",__LINE__,(int)screenWidth,(int)screenHeight); // iphone4s 320x480, ipad mini 768x1024
                                                 // iphone5s 320x568
@@ -701,11 +709,26 @@
   [alermSound stop]; // 再生停止
 
   
+  
   if ([timerTm isValid]) {
     // タイマーが動いている場合は、一時停止
+    NSLog(@"%d: aaa",__LINE__);
+    
     [self pauseTimerTimer];
     [self btnEnableOnlyStartReset];
+
+    if (timeUpOk) {
+      globalMin = [ud integerForKey:@"globalMinData"];
+      globalSec = [ud integerForKey:@"globalSecData"];
+      [self chkDisp];
+      [self btnEnabledAll];
+      
+      timeUpOk = NO;
+    }
+    
   } else {
+    NSLog(@"%d: bbb",__LINE__);
+
     [self resetTimerTimer];
     [self btnEnabledAll];
     cntUpFlag = NO;
@@ -715,6 +738,13 @@
 - (void)startBtnTouch:(id)sender
 {
   [self btnSndChkPlay];//効果音再生
+ 
+  //Set Data Memory
+  [ud setInteger:globalMin forKey:@"globalMinData"];  // M
+  [ud setInteger:globalSec forKey:@"globalSecData"];  // S
+  [ud synchronize];
+
+  
   
   [self startTimerTimer];
   [self btnEnableOnlyReset];
@@ -1226,7 +1256,7 @@
     
     [self almSndChkPlay];
     
-    
+    timeUpOk = YES;
     cntUpFlag = YES;
   }
   
