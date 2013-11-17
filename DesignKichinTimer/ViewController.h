@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-#import "GADBannerView.h"
+//#import "GADBannerView.h"
 #import <iAd/iAd.h>
 
 
@@ -20,7 +20,7 @@
   BOOL bannerIsVisible;
   
   //AdMob用View
-  GADBannerView *bannerView;
+//  GADBannerView *bannerView;
   
   //Sound
   AVAudioPlayer *pressBtnSnd;

@@ -21,12 +21,6 @@
 // View が表示される直前に呼ばれる定義済み関数（画面が再表示されるたびに呼び出されます。）
 - (void)viewWillAppear:(BOOL)animated
 {
-  // MARK:
-  // TODO:
-  // FIXME:
-  // !!!:
-  // ???:
-
 }
 
 
@@ -150,7 +144,7 @@
   CGFloat screenWidth = rect.size.width;
   CGFloat screenHeight = rect.size.height;
   
-  NSLog(@"%d: w=%d h=%d",__LINE__,(int)screenWidth,(int)screenHeight); // iphone4s 320x480, ipad mini 768x1024
+//  NSLog(@"%d: w=%d h=%d",__LINE__,(int)screenWidth,(int)screenHeight); // iphone4s 320x480, ipad mini 768x1024
                                                 // iphone5s 320x568
   
   // カウンター表示エリアの横幅を定義
@@ -346,7 +340,7 @@
   
 //  adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
   
-  NSLog(@"%d: w=%d h=%d",__LINE__,(int)adView.frame.size.width,(int)adView.frame.size.height);
+//  NSLog(@"%d: w=%d h=%d",__LINE__,(int)adView.frame.size.width,(int)adView.frame.size.height);
   
   //画面下部へ表示
   
@@ -381,7 +375,7 @@
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
-  NSLog(@"%d: iAd取得成功",__LINE__);
+//  NSLog(@"%d: iAd取得成功",__LINE__);
   
   if (!bannerIsVisible) {
     [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
@@ -396,7 +390,7 @@
 }
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
 {
-  NSLog(@"%d: iAd取得失敗",__LINE__);
+//  NSLog(@"%d: iAd取得失敗",__LINE__);
   
   if (bannerIsVisible) {
     [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
@@ -428,7 +422,7 @@
   
   // iphone かつ Home button top の場合のみ 動作がおかしいので止める
   if (o == UIDeviceOrientationPortraitUpsideDown && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-    NSLog(@"%d: return void",__LINE__);
+//    NSLog(@"%d: return void",__LINE__);
     return;
   }
 
@@ -436,7 +430,7 @@
   
   //X軸の中心を取得
   int centerPoint = [self arignCenter:0];
-  NSLog(@"%d: centerPoint=%d",__LINE__,centerPoint);
+//  NSLog(@"%d: centerPoint=%d",__LINE__,centerPoint);
   
   
   if (   o == UIDeviceOrientationLandscapeLeft
