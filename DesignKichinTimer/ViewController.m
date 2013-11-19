@@ -726,8 +726,8 @@
     [self btnEnableOnlyStartReset];
 
     if (timeUpOk) {
-      globalMin = [ud integerForKey:@"globalMinData"];
-      globalSec = [ud integerForKey:@"globalSecData"];
+      globalMin = (int)[ud integerForKey:@"globalMinData"];
+      globalSec = (int)[ud integerForKey:@"globalSecData"];
       [self chkDisp];
       [self btnEnabledAll];
       

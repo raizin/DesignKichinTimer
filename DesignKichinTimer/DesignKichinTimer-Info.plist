@@ -16,7 +16,7 @@
 		<string>Icon-76@2x.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>jp.mydns.seiryu.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>jp.mydns.seiryu.designkichintimer</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
