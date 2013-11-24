@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MySetBtn : UIButton
-
+@interface MySetBtn : UIButton{
+  
+}
+- (void)setNum:(int)number minFlag:(BOOL)unitFlag;
 @end
