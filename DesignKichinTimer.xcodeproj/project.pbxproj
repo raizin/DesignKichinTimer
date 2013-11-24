@@ -17,6 +17,7 @@
 		5E1E11EF18350F1100307C8F /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1E11EE18350F1100307C8F /* AdSupport.framework */; };
 		5E1E11F11836A4AD00307C8F /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1E11F01836A4AD00307C8F /* iAd.framework */; };
 		5E220DC71842411600D2ACB0 /* CustomButton01.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E220DC61842411600D2ACB0 /* CustomButton01.m */; };
+		5E220DCD18425F3900D2ACB0 /* SoundOnFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E220DCC18425F3900D2ACB0 /* SoundOnFlag.m */; };
 		5E42589718192B7F00171F1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E42589918192B7F00171F1F /* Localizable.strings */; };
 		5E42589C181CF29300171F1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E42589B181CF29300171F1F /* QuartzCore.framework */; };
 		5E6F4B2B18117F7600312CCD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E6F4B2A18117F7600312CCD /* Foundation.framework */; };
@@ -78,6 +79,8 @@
 		5E1E11F01836A4AD00307C8F /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		5E220DC51842411600D2ACB0 /* CustomButton01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomButton01.h; path = ../CustomButton01.h; sourceTree = "<group>"; };
 		5E220DC61842411600D2ACB0 /* CustomButton01.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomButton01.m; path = ../CustomButton01.m; sourceTree = "<group>"; };
+		5E220DCB18425F3900D2ACB0 /* SoundOnFlag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundOnFlag.h; sourceTree = "<group>"; };
+		5E220DCC18425F3900D2ACB0 /* SoundOnFlag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundOnFlag.m; sourceTree = "<group>"; };
 		5E243BD9182504DC005C31D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E243BDA182504E7005C31D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5E42589418192B2600171F1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -220,6 +223,8 @@
 		5E6F4B3018117F7600312CCD /* DesignKichinTimer */ = {
 			isa = PBXGroup;
 			children = (
+				5E220DCB18425F3900D2ACB0 /* SoundOnFlag.h */,
+				5E220DCC18425F3900D2ACB0 /* SoundOnFlag.m */,
 				5E220DC51842411600D2ACB0 /* CustomButton01.h */,
 				5E220DC61842411600D2ACB0 /* CustomButton01.m */,
 				5E6F4B3918117F7600312CCD /* AppDelegate.h */,
@@ -378,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E6F4B4418117F7600312CCD /* ViewController.m in Sources */,
+				5E220DCD18425F3900D2ACB0 /* SoundOnFlag.m in Sources */,
 				5E6F4B3B18117F7600312CCD /* AppDelegate.m in Sources */,
 				5E6F4B3718117F7600312CCD /* main.m in Sources */,
 				5E220DC71842411600D2ACB0 /* CustomButton01.m in Sources */,

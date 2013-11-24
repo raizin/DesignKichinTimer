@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "SoundOnFlag.h"
+
 
 @interface ViewController()
 
@@ -87,15 +89,12 @@
   
   [soundSelectBtn addTarget:self action:@selector(soundSelectBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
   
-  
-  if ([ud boolForKey:@"soundOffFlag"]) {
-    soundOn = NO;
-    [soundSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor grayColor] btnTitle:sndBtnTitle] forState:UIControlStateNormal];
 
+  if ([SoundOnFlag val]) {
+    [soundSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor blueColor] btnTitle:sndBtnTitle] forState:UIControlStateNormal];
   
   }else{
-    soundOn = YES;
-    [soundSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor blueColor] btnTitle:sndBtnTitle] forState:UIControlStateNormal];
+    [soundSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor grayColor] btnTitle:sndBtnTitle] forState:UIControlStateNormal];
 
   }
   
@@ -114,12 +113,13 @@
   
   //NSUserDefaults 初期化
   ud = [NSUserDefaults standardUserDefaults];
+  
 
 
   //UserDefaults 初期値
   [ud setInteger:0 forKey:@"globalMinData"]; // M
   [ud setInteger:0 forKey:@"globalSecData"]; // S
-  
+
   
   /*** Sound Setting ***/
   
@@ -763,7 +763,7 @@
  */
 - (void)btnSndChkPlay
 {
-  if (soundOn) {
+  if ([SoundOnFlag val]) {
     [pressBtnSnd setCurrentTime:0.f]; // 開始位置をもどす
     [pressBtnSnd play]; // 再生開始
   }
@@ -774,7 +774,7 @@
  */
 - (void)almSndChkPlay
 {
-  if (soundOn) {
+  if ([SoundOnFlag val]) {
     alermSound.currentTime = 0.f; // 開始位置をもどす
     [alermSound play]; // 再生開始
   }
@@ -791,10 +791,10 @@
   // アラート
   UIAlertView *alert = [[UIAlertView alloc] init];
   
-  if (soundOn) {
+  if ([SoundOnFlag val]) {
     [myBtn setAttributedTitle:[self myColorShadowAttr:[UIColor grayColor] btnTitle:sndBtnTitle] forState:UIControlStateNormal];
-    soundOn = NO;
-    [ud setBool:YES forKey:@"soundOffFlag"];
+    [SoundOnFlag setValue:NO];
+    [SoundOnFlag sync];
     
     [alermSound stop];//鳴っている途中なら止める
 
@@ -804,8 +804,8 @@
     
   }else{
     [myBtn setAttributedTitle:[self myColorShadowAttr:[UIColor blueColor] btnTitle:sndBtnTitle] forState:UIControlStateNormal];
-    soundOn = YES;
-    [ud setBool:NO forKey:@"soundOffFlag"];
+    [SoundOnFlag setValue:YES];
+    [SoundOnFlag sync];
 
     alert.title   = [NSString stringWithFormat:@"%@",NSLocalizedString(@"SndTtlOn", nil)];
     alert.message = [NSString stringWithFormat:@"%@",NSLocalizedString(@"SndMsgOn", nil)];
