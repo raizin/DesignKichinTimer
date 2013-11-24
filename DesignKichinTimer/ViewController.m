@@ -88,14 +88,14 @@
   [soundSelectBtn addTarget:self action:@selector(soundSelectBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
   
   
-  if ([ud boolForKey:@"soundOnFlag"]) {
-    soundOn = YES;
-    [soundSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor blueColor] btnTitle:sndBtnTitle] forState:UIControlStateNormal];
+  if ([ud boolForKey:@"soundOffFlag"]) {
+    soundOn = NO;
+    [soundSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor grayColor] btnTitle:sndBtnTitle] forState:UIControlStateNormal];
 
   
   }else{
-    soundOn = NO;
-    [soundSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor grayColor] btnTitle:sndBtnTitle] forState:UIControlStateNormal];
+    soundOn = YES;
+    [soundSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor blueColor] btnTitle:sndBtnTitle] forState:UIControlStateNormal];
 
   }
   
@@ -119,7 +119,6 @@
   //UserDefaults 初期値
   [ud setInteger:0 forKey:@"globalMinData"]; // M
   [ud setInteger:0 forKey:@"globalSecData"]; // S
-  
   
   
   /*** Sound Setting ***/
@@ -795,7 +794,7 @@
   if (soundOn) {
     [myBtn setAttributedTitle:[self myColorShadowAttr:[UIColor grayColor] btnTitle:sndBtnTitle] forState:UIControlStateNormal];
     soundOn = NO;
-    [ud setBool:NO forKey:@"soundOnFlag"];
+    [ud setBool:YES forKey:@"soundOffFlag"];
     
     [alermSound stop];//鳴っている途中なら止める
 
@@ -806,7 +805,7 @@
   }else{
     [myBtn setAttributedTitle:[self myColorShadowAttr:[UIColor blueColor] btnTitle:sndBtnTitle] forState:UIControlStateNormal];
     soundOn = YES;
-    [ud setBool:YES forKey:@"soundOnFlag"];
+    [ud setBool:NO forKey:@"soundOffFlag"];
 
     alert.title   = [NSString stringWithFormat:@"%@",NSLocalizedString(@"SndTtlOn", nil)];
     alert.message = [NSString stringWithFormat:@"%@",NSLocalizedString(@"SndMsgOn", nil)];
