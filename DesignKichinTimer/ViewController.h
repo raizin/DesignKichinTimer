@@ -10,7 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 //#import "GADBannerView.h"
 #import <iAd/iAd.h>
-#import "CustomButton01.h"
+//#import "CustomButton01.h"
 
 
 //@interface ViewController : UIViewController <ADBannerViewDelegate> {
@@ -66,12 +66,12 @@
   UIButton *clockSelectBtn; //「現在時表示」切替ボタン
   UIButton *soundSelectBtn; // Sound On/Off
   
-  CustomButton01 *setBtn01;
+//  CustomButton01 *setBtn01;
   UIButton *setBtn60;//60 min
   UIButton *setBtn10;//10 min
   UIButton *setBtn05;//5 min
   UIButton *setBtn03;//3 min
-//  UIButton *setBtn01;//1 min
+  UIButton *setBtn01;//1 min
   UIButton *setBtn001;//10 s
   UIButton *setBtn0001;//1 s
   UIButton *setBtnStart;

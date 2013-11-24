@@ -1,14 +1,14 @@
 //
-//  CustomButton01.m
+//  MySetBtn.m
 //  DesignKichinTimer
 //
-//  Created by z on 2013/11/24.
+//  Created by z on 2013/11/25.
 //  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
 //
 
-#import "CustomButton01.h"
+#import "MySetBtn.h"
 
-@implementation CustomButton01
+@implementation MySetBtn
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -18,7 +18,8 @@
       
       
       [self setBackgroundColor:[UIColor colorWithRed:0.9f green:0.9f blue:0.f alpha:0.8f]];
-
+      
+      
     }
     return self;
 }

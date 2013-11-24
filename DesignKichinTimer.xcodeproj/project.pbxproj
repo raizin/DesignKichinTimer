@@ -16,8 +16,8 @@
 		5E1E11ED18350EBB00307C8F /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5E1E11EB18350EBA00307C8F /* README.txt */; };
 		5E1E11EF18350F1100307C8F /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1E11EE18350F1100307C8F /* AdSupport.framework */; };
 		5E1E11F11836A4AD00307C8F /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1E11F01836A4AD00307C8F /* iAd.framework */; };
-		5E220DC71842411600D2ACB0 /* CustomButton01.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E220DC61842411600D2ACB0 /* CustomButton01.m */; };
 		5E220DCD18425F3900D2ACB0 /* SoundOnFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E220DCC18425F3900D2ACB0 /* SoundOnFlag.m */; };
+		5E220DD0184261F100D2ACB0 /* MySetBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E220DCF184261F100D2ACB0 /* MySetBtn.m */; };
 		5E42589718192B7F00171F1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E42589918192B7F00171F1F /* Localizable.strings */; };
 		5E42589C181CF29300171F1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E42589B181CF29300171F1F /* QuartzCore.framework */; };
 		5E6F4B2B18117F7600312CCD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E6F4B2A18117F7600312CCD /* Foundation.framework */; };
@@ -77,10 +77,10 @@
 		5E1E11EB18350EBA00307C8F /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		5E1E11EE18350F1100307C8F /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		5E1E11F01836A4AD00307C8F /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
-		5E220DC51842411600D2ACB0 /* CustomButton01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomButton01.h; path = ../CustomButton01.h; sourceTree = "<group>"; };
-		5E220DC61842411600D2ACB0 /* CustomButton01.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomButton01.m; path = ../CustomButton01.m; sourceTree = "<group>"; };
-		5E220DCB18425F3900D2ACB0 /* SoundOnFlag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundOnFlag.h; sourceTree = "<group>"; };
-		5E220DCC18425F3900D2ACB0 /* SoundOnFlag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundOnFlag.m; sourceTree = "<group>"; };
+		5E220DCB18425F3900D2ACB0 /* SoundOnFlag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoundOnFlag.h; path = DesignKichinTimer/SoundOnFlag.h; sourceTree = "<group>"; };
+		5E220DCC18425F3900D2ACB0 /* SoundOnFlag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SoundOnFlag.m; path = DesignKichinTimer/SoundOnFlag.m; sourceTree = "<group>"; };
+		5E220DCE184261F100D2ACB0 /* MySetBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MySetBtn.h; path = DesignKichinTimer/MySetBtn.h; sourceTree = "<group>"; };
+		5E220DCF184261F100D2ACB0 /* MySetBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MySetBtn.m; path = DesignKichinTimer/MySetBtn.m; sourceTree = "<group>"; };
 		5E243BD9182504DC005C31D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E243BDA182504E7005C31D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5E42589418192B2600171F1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -95,8 +95,8 @@
 		5E6F4B3418117F7600312CCD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5E6F4B3618117F7600312CCD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5E6F4B3818117F7600312CCD /* DesignKichinTimer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DesignKichinTimer-Prefix.pch"; sourceTree = "<group>"; };
-		5E6F4B3918117F7600312CCD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		5E6F4B3A18117F7600312CCD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5E6F4B3918117F7600312CCD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = DesignKichinTimer/AppDelegate.h; sourceTree = "<group>"; };
+		5E6F4B3A18117F7600312CCD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = DesignKichinTimer/AppDelegate.m; sourceTree = "<group>"; };
 		5E6F4B3D18117F7600312CCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		5E6F4B4018117F7600312CCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		5E6F4B4218117F7600312CCD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5E1E11E018350DF000307C8F /* New Group */ = {
+		5E1E11E018350DF000307C8F /* AdMob */ = {
 			isa = PBXGroup;
 			children = (
 				5E1E11E118350EBA00307C8F /* GADAdMobExtras.h */,
@@ -170,19 +170,51 @@
 				5E1E11EA18350EBA00307C8F /* libGoogleAdMobAds.a */,
 				5E1E11EB18350EBA00307C8F /* README.txt */,
 			);
-			name = "New Group";
+			name = AdMob;
 			sourceTree = "<group>";
 		};
-		5E6F4B1E18117F7600312CCD = {
+		5E220DD11842624A00D2ACB0 /* CustomClass */ = {
+			isa = PBXGroup;
+			children = (
+				5E220DCB18425F3900D2ACB0 /* SoundOnFlag.h */,
+				5E220DCC18425F3900D2ACB0 /* SoundOnFlag.m */,
+				5E220DCE184261F100D2ACB0 /* MySetBtn.h */,
+				5E220DCF184261F100D2ACB0 /* MySetBtn.m */,
+			);
+			name = CustomClass;
+			sourceTree = "<group>";
+		};
+		5E220DD21842630700D2ACB0 /* IconPng */ = {
 			isa = PBXGroup;
 			children = (
 				5EF21EC41839260C00C079F0 /* Icon-76.png */,
 				5EF21EC51839260C00C079F0 /* Icon-76@2x.png */,
 				5EF21EC61839260C00C079F0 /* Icon-60.png */,
 				5EF21EC71839260C00C079F0 /* Icon-60@2x.png */,
-				5E1E11E018350DF000307C8F /* New Group */,
+			);
+			name = IconPng;
+			sourceTree = "<group>";
+		};
+		5E220DD31842637900D2ACB0 /* DefaultClass */ = {
+			isa = PBXGroup;
+			children = (
+				5E6F4B3C18117F7600312CCD /* Main_iPhone.storyboard */,
+				5E6F4B3F18117F7600312CCD /* Main_iPad.storyboard */,
+				5E6F4B3918117F7600312CCD /* AppDelegate.h */,
+				5E6F4B3A18117F7600312CCD /* AppDelegate.m */,
+			);
+			name = DefaultClass;
+			sourceTree = "<group>";
+		};
+		5E6F4B1E18117F7600312CCD = {
+			isa = PBXGroup;
+			children = (
 				5E711E4518191B0000E7AA83 /* .gitattributes */,
 				5EA2C09F1811865E00B0FC3D /* .gitignore */,
+				5E220DD31842637900D2ACB0 /* DefaultClass */,
+				5E220DD21842630700D2ACB0 /* IconPng */,
+				5E220DD11842624A00D2ACB0 /* CustomClass */,
+				5E1E11E018350DF000307C8F /* AdMob */,
 				5E6F4B3018117F7600312CCD /* DesignKichinTimer */,
 				5E6F4B5218117F7700312CCD /* DesignKichinTimerTests */,
 				5E6F4B2918117F7600312CCD /* Frameworks */,
@@ -223,14 +255,6 @@
 		5E6F4B3018117F7600312CCD /* DesignKichinTimer */ = {
 			isa = PBXGroup;
 			children = (
-				5E220DCB18425F3900D2ACB0 /* SoundOnFlag.h */,
-				5E220DCC18425F3900D2ACB0 /* SoundOnFlag.m */,
-				5E220DC51842411600D2ACB0 /* CustomButton01.h */,
-				5E220DC61842411600D2ACB0 /* CustomButton01.m */,
-				5E6F4B3918117F7600312CCD /* AppDelegate.h */,
-				5E6F4B3A18117F7600312CCD /* AppDelegate.m */,
-				5E6F4B3C18117F7600312CCD /* Main_iPhone.storyboard */,
-				5E6F4B3F18117F7600312CCD /* Main_iPad.storyboard */,
 				5E6F4B4218117F7600312CCD /* ViewController.h */,
 				5E6F4B4318117F7600312CCD /* ViewController.m */,
 				5E6F4B4518117F7600312CCD /* Images.xcassets */,
@@ -385,8 +409,8 @@
 				5E6F4B4418117F7600312CCD /* ViewController.m in Sources */,
 				5E220DCD18425F3900D2ACB0 /* SoundOnFlag.m in Sources */,
 				5E6F4B3B18117F7600312CCD /* AppDelegate.m in Sources */,
+				5E220DD0184261F100D2ACB0 /* MySetBtn.m in Sources */,
 				5E6F4B3718117F7600312CCD /* main.m in Sources */,
-				5E220DC71842411600D2ACB0 /* CustomButton01.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +459,7 @@
 				5E6F4B3D18117F7600312CCD /* Base */,
 			);
 			name = Main_iPhone.storyboard;
+			path = DesignKichinTimer;
 			sourceTree = "<group>";
 		};
 		5E6F4B3F18117F7600312CCD /* Main_iPad.storyboard */ = {
@@ -443,6 +468,7 @@
 				5E6F4B4018117F7600312CCD /* Base */,
 			);
 			name = Main_iPad.storyboard;
+			path = DesignKichinTimer;
 			sourceTree = "<group>";
 		};
 		5E6F4B5518117F7700312CCD /* InfoPlist.strings */ = {
