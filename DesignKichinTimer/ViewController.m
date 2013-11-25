@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "SoundOnFlag.h"
+#import "GADBannerView.h"
+
 
 @interface ViewController()
 
@@ -54,7 +56,8 @@
   static float BTN_FONT_SIZE_IPHONE = 25.f;
   static float BTN_FONT_SIZE_IPAD   = 50.f;
 
-  
+  // Google AdMob 広告ユニットID
+  static NSString *MY_UNIT_ID = @"ca-app-pub-8799115520187072/6215156947";
   
   
   //NSUserDefaults 初期化
@@ -221,69 +224,66 @@
   [self timerInitDisp];
   
   
+  
+  
+  
+  
   /*** AdMob用 広告表示 ここから ***/
-  // 画面下部に標準サイズのビューを作成する
-//    bannerView = [[GADBannerView alloc]
-//                  initWithFrame:CGRectMake(0.f,
-//                                           0.f,
-//                                           320,
-//                                           500)]; // x y w h
-//  bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeSmartBannerPortrait];
-//  
-//  // 広告の「ユニット ID」を指定する。AdMob パブリッシャー ID
-//  bannerView.adUnitID = @"pub-8799115520187072";
-//  
-//  
-//  // ユーザーに広告を表示した場所に後で復元する UIViewController をランタイムに知らせて
-//  // ビュー階層に追加する。
-//  bannerView.rootViewController = self;
-//  [self.view addSubview:bannerView];
+  adViewHeightMargin = 30; // iphone
+  CGRect adRect = CGRectMake(0.0,
+                             self.view.frame.size.height - GAD_SIZE_320x50.height,
+                             GAD_SIZE_320x50.width,
+                             GAD_SIZE_320x50.height);
   
-  
-  // 広告をビューの一番下に表示
-//  [bannerView setCenter:CGPointMake(bannerView.bounds.size.width/2,
-//                                     self.view.bounds.size.height-bannerView.bounds.size.height)];
-//  bannerView.frame = CGRectMake([self arignCenter:bannerView.bounds.size.width],
-//                                 self.view.bounds.size.height-bannerView.bounds.size.height,
-//                                 bannerView.bounds.size.width,
-//                                 bannerView.bounds.size.height); // x y w h
-  
-  
-  
-//  [bannerView setBackgroundColor:[UIColor brownColor]];
-//  [bannerView setBackgroundColor:[UIColor colorWithRed:0.1f green:0.1f blue:0.8f alpha:0.5f]];
-//
-//  
-//  GADRequest *request = [GADRequest request];
-//  request.testDevices = [NSArray arrayWithObjects:
-//                         GAD_SIMULATOR_ID,                     // シミュレータ
-//                         @"5660dff51d784577e22957e2eb62650781e29fc1", // iPad mini
-//                         @"5d94d53ec5305b722393fc8484ad6e23eae0c371", // iphone4S
-//                         nil];
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    // iPad用定義
+    
+    adViewHeightMargin = 66;
 
+    adRect = CGRectMake(0.0,
+                        self.view.frame.size.height - GAD_SIZE_728x90.height,
+                        GAD_SIZE_728x90.width,
+                        GAD_SIZE_728x90.height);
+  
+  }
+  
+  
+  mobView = [[GADBannerView alloc] initWithFrame:adRect];
+  
+  mobView.adUnitID = MY_UNIT_ID;
+  mobView.delegate = (id<GADBannerViewDelegate>)self;
+  mobView.rootViewController = self;
 
-  // 一般的なリクエストを行って広告を読み込む。
-//  [bannerView loadRequest:[GADRequest request]];
+  
+  //画面下部へ表示
+  mobView.frame = CGRectMake(0, // x
+                            screenWidth - adViewHeightMargin, // y
+                            mobView.frame.size.width,   // w
+                            mobView.frame.size.height); // h
+  
+  [self.view addSubview:mobView];
+  
+  [mobView loadRequest:[self createRequest]];
 
+  mobView.hidden = NO;
   /*** AdMob用 広告表示 ここまで ***/
+  
+  
+  
+  
   
   
   /*** iAd用 広告表示 ここから ***/
   adView = [[ADBannerView alloc] initWithFrame:CGRectZero];
+
+  // use debug
 //  [adView setBackgroundColor:[UIColor colorWithRed:0.1f green:0.1f blue:0.8f alpha:0.5f]];
 
-  
-//  adView.requiredContentSizeIdentifiers = [NSSet
-//                                           setWithObject:ADBannerContentSizeIdentifierLandscape];
-//  adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierLandscape;
-  
-//  adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
-  
 //  NSLog(@"%d: w=%d h=%d",__LINE__,(int)adView.frame.size.width,(int)adView.frame.size.height);
+
   
   //画面下部へ表示
-  
-  int adViewHeightMargin = 30; // iphone
+  adViewHeightMargin = 30; // iphone
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
     adViewHeightMargin = 66;
   }
@@ -302,10 +302,8 @@
 
 //  NSLog(@"%d: w=%d h=%d",__LINE__,(int)adView.frame.size.width,(int)adView.frame.size.height);
   
-  // TODO: use debug
-  [adView setBackgroundColor:[UIColor colorWithRed:0.1f green:0.1f blue:0.8f alpha:0.5f]];
   
-  adView.alpha = 0.0f;
+  adView.alpha = 0.5f;
 
   [self.view addSubview:adView];
   
@@ -313,9 +311,24 @@
 }
 
 
+
+- (GADRequest *)createRequest {
+  GADRequest *request = [GADRequest request];
+  
+  //Make the request for a test ad
+//  request.testDevices = [NSArray arrayWithObjects:
+//                         GAD_SIMULATOR_ID,// Simulator
+//                         @"5d94d53ec5305b722393fc8484ad6e23eae0c371",
+//                         nil];
+  
+  
+  return request;
+}
+
+
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
-  NSLog(@"%d: iAd取得成功",__LINE__);
+//  NSLog(@"%d: iAd Get Success!!",__LINE__);
   
   if (!bannerIsVisible) {
     [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
@@ -323,14 +336,18 @@
     
 //    banner.frame = CGRectOffset(banner.frame, 0, CGRectGetHeight(banner.frame));
     banner.alpha = 1.0f;
+    banner.hidden = NO;
     
     [UIView commitAnimations];
     bannerIsVisible = YES;
+    
+    
+    mobView.hidden = YES;
   }
 }
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
 {
-  NSLog(@"%d: iAd取得失敗",__LINE__);
+//  NSLog(@"%d: iAd get NG??",__LINE__);
   
   if (bannerIsVisible) {
     [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
@@ -338,9 +355,13 @@
     
 //    banner.frame = CGRectOffset(banner.frame, 0, -CGRectGetHeight(banner.frame));
     banner.alpha = 0.0f;
+    banner.hidden = YES;
     
     [UIView commitAnimations];
     bannerIsVisible = NO;
+    
+    
+    mobView.hidden = NO;
   }
 }
 
@@ -424,42 +445,19 @@
   }
 
   
-//  int adViewHeightMargin = 30; // iphone
-//  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-//    adViewHeightMargin = 66;
-//  }
-//
-//  if (   o == UIDeviceOrientationLandscapeLeft
-//      || o == UIDeviceOrientationLandscapeRight ) {
-//    NSLog(@"%d: ヨコヨコ",__LINE__);
-//    
-//    //広告を画面下部へ表示
-//    adView.frame = CGRectMake(0, // x
-//                              self.view.bounds.size.width - adViewHeightMargin, // y
-//                              adView.frame.size.width,   // w
-//                              adView.frame.size.height); // h
-//  }
-//  if ( o == UIDeviceOrientationPortrait
-//      || o == UIDeviceOrientationPortraitUpsideDown) {
-//    NSLog(@"%d: タテタテ",__LINE__);
-//    
-//    //広告を画面下部へ表示
-//    adView.frame = CGRectMake(0, // x
-//                              self.view.bounds.size.height - adViewHeightMargin, // y
-//                              adView.frame.size.width,   // w
-//                              adView.frame.size.height); // h
-//    
-//    
-//  }
   
-  
-  
+  /*** 広告表示位置制御 ***/
   
   // 横向き
   if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
     
-    // 縦向き
+    mobView.center = CGPointMake(centerPoint, mobView.center.y);
+
+  // 縦向き
   } else if (o == UIDeviceOrientationPortrait || o == UIDeviceOrientationPortraitUpsideDown) {
+    
+    mobView.center = CGPointMake(centerPoint, mobView.center.y);
+  
     
     // 向きが不明な場合
   } else {
