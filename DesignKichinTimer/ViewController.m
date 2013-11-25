@@ -297,12 +297,13 @@
   
   adView.delegate = (id<ADBannerViewDelegate>)self;
   adView.autoresizesSubviews = YES;
-//  adView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
   adView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
 //  adView.autoresizingMask = UIViewAutoresizingNone;
 
 //  NSLog(@"%d: w=%d h=%d",__LINE__,(int)adView.frame.size.width,(int)adView.frame.size.height);
   
+  // TODO: use debug
+  [adView setBackgroundColor:[UIColor colorWithRed:0.1f green:0.1f blue:0.8f alpha:0.5f]];
   
   adView.alpha = 0.0f;
 
@@ -314,7 +315,7 @@
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
-//  NSLog(@"%d: iAd取得成功",__LINE__);
+  NSLog(@"%d: iAd取得成功",__LINE__);
   
   if (!bannerIsVisible) {
     [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
@@ -329,7 +330,7 @@
 }
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
 {
-//  NSLog(@"%d: iAd取得失敗",__LINE__);
+  NSLog(@"%d: iAd取得失敗",__LINE__);
   
   if (bannerIsVisible) {
     [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
@@ -352,6 +353,12 @@
     return NO;
   }
 }
+
+
+
+
+
+
 
 // デバイスが回転した際に、呼び出されるメソッド(※自作)
 - (void) didRotate:(NSNotification *)notification {
@@ -378,25 +385,33 @@
       || o == UIDeviceOrientationPortraitUpsideDown) {
     
     
-    // Viewの位置とサイズを補正してセット
-    cntView.frame = CGRectMake([self arignCenter:cntW], 60, cntW, cntH); // x y w h
     
     // 端末によりボタンの配置／大きさの調整
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
       //NSLog(@"%d: iPhoneの処理",__LINE__);
-      setBtn10.frame    = CGRectMake(centerPoint -74  -85, 180, 74, 50); // x y w h
-      setBtn05.frame    = CGRectMake(centerPoint -74 -3.5, 180, 74, 50); // x y w h
-      setBtn03.frame    = CGRectMake(centerPoint     +3.5, 180, 74, 50); // x y w h
-      setBtn01.frame    = CGRectMake(centerPoint      +85, 180, 74, 50); // x y w h
-      setBtnReset.frame = CGRectMake(centerPoint  -135.0f, 250.0f, 80.0f, 60.0f); // x y w h
-      setBtn001.frame   = CGRectMake(centerPoint  -(74/2), 255, 74, 50); // x y w h
-      setBtnStart.frame = CGRectMake(centerPoint      +55, 250, 80, 60); // x y w h
       
-      clockSelectBtn.frame = CGRectMake(centerPoint - 150     , 22,120,50);
-      timerSelectBtn.frame = CGRectMake(centerPoint - 150 +130, 22,145,50);
+      // Viewの位置とサイズを補正してセット
+      cntView.frame = CGRectMake([self arignCenter:cntW], 35, cntW, cntH); // x y w h
+      
+      
+      setBtn10.frame    = CGRectMake(centerPoint -74  -85, 150, 74, 50); // x y w h
+      setBtn05.frame    = CGRectMake(centerPoint -74 -3.5, 150, 74, 50); // x y w h
+      setBtn03.frame    = CGRectMake(centerPoint     +3.5, 150, 74, 50); // x y w h
+      setBtn01.frame    = CGRectMake(centerPoint      +85, 150, 74, 50); // x y w h
+      setBtnReset.frame = CGRectMake(centerPoint  -135.0f, 220.0f, 80.0f, 60.0f); // x y w h
+      setBtn001.frame   = CGRectMake(centerPoint  -(74/2), 225, 74, 50); // x y w h
+      setBtnStart.frame = CGRectMake(centerPoint      +55, 220, 80, 60); // x y w h
+      
+      clockSelectBtn.frame = CGRectMake(centerPoint - 150     , -3,120,50);
+      timerSelectBtn.frame = CGRectMake(centerPoint - 150 +130, -3,145,50);
       
     }else{
       //NSLog(@"%d: iPadの処理",__LINE__);
+
+      // Viewの位置とサイズを補正してセット
+      cntView.frame = CGRectMake([self arignCenter:cntW], 60, cntW, cntH); // x y w h
+
+      
       setBtn10.frame    = CGRectMake(centerPoint -170 -200, 400, 170, 100); // x y w h
       setBtn05.frame    = CGRectMake(centerPoint -170  -10, 400, 170, 100); // x y w h
       setBtn03.frame    = CGRectMake(centerPoint       +10, 400, 170, 100); // x y w h
