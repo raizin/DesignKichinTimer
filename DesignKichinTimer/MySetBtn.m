@@ -25,6 +25,8 @@
   // UIControlStateDisabled
   [self setAttributedTitle:[self myBtnColorCtl:[UIColor grayColor ] num:number unit:unit] forState:UIControlStateDisabled];
 
+  [self addTarget:self action:@selector(myBtnTouchDown:) forControlEvents:UIControlEventTouchDown]; // タッチ中 イベント
+  [self addTarget:self action:@selector(myBtnTouchUpInside:) forControlEvents:UIControlEventTouchUpInside]; // タッチリリース時
   
 }
 
@@ -61,17 +63,6 @@
 }
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
-
-
-
-/*
  * ボタンタイトル(文字列)生成関数
  */
 - (NSMutableAttributedString*)myBtnColorCtl:(UIColor*)cl num:(int)num unit:(NSString*)unit
@@ -87,8 +78,6 @@
     //NSLog(@"%d: iPadの処理",__LINE__);
     btnFontSize = 50.0f;
   }
-
-  
   
   NSDictionary *fontDigit = @{ NSForegroundColorAttributeName:cl,
                                NSFontAttributeName : [UIFont boldSystemFontOfSize:btnFontSize] };
@@ -112,6 +101,39 @@
   
   return _btn;
 }
+
+
+
+/*
+ * ボタン押下時にボタンを下に少しずらす
+ */
+- (void)myBtnTouchDown:(id)sender
+{
+  UIButton *btnView   = (UIButton *)sender;
+  btnView.layer.frame = CGRectMake(btnView.layer.frame.origin.x+3, btnView.layer.frame.origin.y+3, btnView.frame.size.width, btnView.frame.size.height);
+  [btnView setBackgroundColor:[UIColor brownColor]];
+}
+
+/*
+ * ボタンを押し離した時にボタンを元に戻す
+ */
+- (void)myBtnTouchUpInside:(id)sender
+{
+  UIButton *btnView   = (UIButton *)sender;
+  btnView.layer.frame = CGRectMake(btnView.layer.frame.origin.x-3, btnView.layer.frame.origin.y-3, btnView.frame.size.width, btnView.frame.size.height);
+  [btnView setBackgroundColor:[UIColor colorWithRed:0.9 green:0.9 blue:0.0 alpha:0.8]];
+  
+}
+
+/*
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect
+ {
+ // Drawing code
+ }
+ */
+
 
 
 @end

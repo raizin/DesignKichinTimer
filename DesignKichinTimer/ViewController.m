@@ -240,25 +240,22 @@
   
   setBtn10 = [MySetBtn buttonWithType:UIButtonTypeCustom];
   [setBtn10 setNum:10 minFlag:YES];
-  [self myMutableBtnCreate:setBtn10 btnNum:10 minFlag:YES];
   [setBtn10 addTarget:self action:@selector(btn10Touch:) forControlEvents:UIControlEventTouchUpInside]; // タッチ
+  [self.view addSubview:setBtn10];
  
   setBtn05 = [MySetBtn buttonWithType:UIButtonTypeCustom];
   [setBtn05 setNum:5 minFlag:YES];
-  [self myMutableBtnCreate:setBtn05 btnNum:5 minFlag:YES];
   [setBtn05 addTarget:self action:@selector(btn05Touch:) forControlEvents:UIControlEventTouchUpInside]; // タッチ
+  [self.view addSubview:setBtn05];
   
   setBtn03 = [MySetBtn buttonWithType:UIButtonTypeCustom];
   [setBtn03 setNum:3 minFlag:YES];
-  [self myMutableBtnCreate:setBtn03 btnNum:3 minFlag:YES];
   [setBtn03 addTarget:self action:@selector(btn03Touch:) forControlEvents:UIControlEventTouchUpInside]; // タッチ
+  [self.view addSubview:setBtn03];
   
   setBtn01 = [MySetBtn buttonWithType:UIButtonTypeCustom];
   [setBtn01 setNum:1 minFlag:YES];
-//  [self myMutableBtnCreate:setBtn01 btnNum:1 minFlag:YES];
   [setBtn01 addTarget:self action:@selector(btn01Touch:) forControlEvents:UIControlEventTouchUpInside]; // タッチ
-  [setBtn01 addTarget:self action:@selector(myBtnTouchDown:) forControlEvents:UIControlEventTouchDown]; // タッチ中 イベント
-  [setBtn01 addTarget:self action:@selector(myBtnTouchUpInside:) forControlEvents:UIControlEventTouchUpInside]; // タッチリリース時
   [self.view addSubview:setBtn01];
 
   
@@ -276,8 +273,8 @@
   
   setBtn001 = [MySetBtn buttonWithType:UIButtonTypeCustom];
   [setBtn001 setNum:10 minFlag:NO];
-  [self myMutableBtnCreate:setBtn001 btnNum:10 minFlag:NO];
   [setBtn001 addTarget:self action:@selector(btn001Touch:) forControlEvents:UIControlEventTouchUpInside]; // タッチ
+  [self.view addSubview:setBtn001];
 
   
   setBtnStart = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -995,72 +992,6 @@
 }
 
 
-/*
- * ボタンタイトル(文字列)生成関数
- */
-- (NSMutableAttributedString*)myBtnColorCtl:(UIColor*)cl btnNum:(NSInteger)num unit:(NSString*)unit
-{
-  NSDictionary *fontDigit = @{ NSForegroundColorAttributeName:cl,
-                               NSFontAttributeName : [UIFont boldSystemFontOfSize:btnFontSize] };
-  NSDictionary *fontUnit = @{ NSForegroundColorAttributeName:cl,
-                              NSFontAttributeName : [UIFont boldSystemFontOfSize:btnFontSize/1.5f] };
-  
-  
-  NSAttributedString *btnPlusLabel = [[NSAttributedString alloc]
-                                      initWithString:@"＋"
-                                      attributes:fontUnit];
-  NSAttributedString *btnDigiLabel = [[NSAttributedString alloc]
-                                      initWithString:[NSString stringWithFormat:@"%ld",(long)num]
-                                      attributes:fontDigit];
-  NSAttributedString *btnUnitLabel = [[NSAttributedString alloc]
-                                      initWithString:unit
-                                      attributes:fontUnit];
-  
-  NSMutableAttributedString *_btn = [[NSMutableAttributedString alloc] initWithAttributedString:btnPlusLabel];//Total String
-  [_btn appendAttributedString:btnDigiLabel];
-  [_btn appendAttributedString:btnUnitLabel];
-  
-  return _btn;
-}
-
-/*
- * ボタン生成関数
- */
-- (void)myMutableBtnCreate:(id)sender btnNum:(NSInteger)num minFlag:(BOOL)unitFlag
-{
-  UIButton *myBtn = (UIButton *)sender;
-//  [myBtn setBackgroundColor:[UIColor colorWithRed:0.9f green:0.9f blue:0.f alpha:0.8f]];
-//  [myBtn.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
-//  [myBtn.layer setBorderWidth:1.f];
-//  
-//  NSString *unit = [NSString stringWithFormat:@"%@",NSLocalizedString(@"hun", nil)];
-//  if (unitFlag == NO) {
-//    unit = [NSString stringWithFormat:@"%@",NSLocalizedString(@"byo", nil)];
-//  }
-//
-//  // UIControlStateNormal
-//  [myBtn setAttributedTitle:[self myBtnColorCtl:[UIColor blueColor ] btnNum:num unit:unit] forState:UIControlStateNormal];
-//  // UIControlStateHighlighted
-//  [myBtn setAttributedTitle:[self myBtnColorCtl:[UIColor whiteColor] btnNum:num unit:unit] forState:UIControlStateHighlighted];
-//  // UIControlStateDisabled
-//  [myBtn setAttributedTitle:[self myBtnColorCtl:[UIColor grayColor ] btnNum:num unit:unit] forState:UIControlStateDisabled];
-//  
-//  
-//  // ボタンの角丸ぐあい 端末分岐 iphone:25 ipad:50
-//  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-//    [myBtn.layer setCornerRadius:25.f];
-//  }
-//  else{
-//    [myBtn.layer setCornerRadius:50.f];
-//  }
-//  
-//  [myBtn.layer setShadowOpacity:0.5f];
-//  [myBtn.layer setShadowOffset:CGSizeMake(2.f, 2.f)];
-  
-  [myBtn addTarget:self action:@selector(myBtnTouchDown:) forControlEvents:UIControlEventTouchDown]; // タッチ中 イベント
-  [myBtn addTarget:self action:@selector(myBtnTouchUpInside:) forControlEvents:UIControlEventTouchUpInside]; // タッチリリース時
-  [self.view addSubview:myBtn];
-}
 
 - (void)myBtnCreate:(id)sender
 {
@@ -1111,15 +1042,6 @@
   [btnView setBackgroundColor:[UIColor colorWithRed:0.9 green:0.9 blue:0.0 alpha:0.8]];
 
 }
-
-
-
-
-
-
-
-
-
 
 
 
