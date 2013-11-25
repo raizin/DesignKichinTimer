@@ -21,6 +21,8 @@
 		5E42589718192B7F00171F1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E42589918192B7F00171F1F /* Localizable.strings */; };
 		5E42589C181CF29300171F1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E42589B181CF29300171F1F /* QuartzCore.framework */; };
 		5E5DF025184327510098499A /* MyModeBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DF024184327510098499A /* MyModeBtn.m */; };
+		5E5DF028184377EC0098499A /* MyCntLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DF027184377EC0098499A /* MyCntLabel.m */; };
+		5E5DF02B184381F90098499A /* MyCntView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DF02A184381F90098499A /* MyCntView.m */; };
 		5E6F4B2B18117F7600312CCD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E6F4B2A18117F7600312CCD /* Foundation.framework */; };
 		5E6F4B2D18117F7600312CCD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E6F4B2C18117F7600312CCD /* CoreGraphics.framework */; };
 		5E6F4B2F18117F7600312CCD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E6F4B2E18117F7600312CCD /* UIKit.framework */; };
@@ -90,6 +92,10 @@
 		5E42589B181CF29300171F1F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5E5DF023184327510098499A /* MyModeBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyModeBtn.h; sourceTree = "<group>"; };
 		5E5DF024184327510098499A /* MyModeBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyModeBtn.m; sourceTree = "<group>"; };
+		5E5DF026184377EC0098499A /* MyCntLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCntLabel.h; sourceTree = "<group>"; };
+		5E5DF027184377EC0098499A /* MyCntLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCntLabel.m; sourceTree = "<group>"; };
+		5E5DF029184381F90098499A /* MyCntView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCntView.h; sourceTree = "<group>"; };
+		5E5DF02A184381F90098499A /* MyCntView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCntView.m; sourceTree = "<group>"; };
 		5E6F4B2718117F7600312CCD /* DesignKichinTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignKichinTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6F4B2A18117F7600312CCD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5E6F4B2C18117F7600312CCD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -185,6 +191,10 @@
 				5E220DCF184261F100D2ACB0 /* MySetBtn.m */,
 				5E5DF023184327510098499A /* MyModeBtn.h */,
 				5E5DF024184327510098499A /* MyModeBtn.m */,
+				5E5DF026184377EC0098499A /* MyCntLabel.h */,
+				5E5DF027184377EC0098499A /* MyCntLabel.m */,
+				5E5DF029184381F90098499A /* MyCntView.h */,
+				5E5DF02A184381F90098499A /* MyCntView.m */,
 			);
 			name = CustomClass;
 			sourceTree = "<group>";
@@ -411,9 +421,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E5DF028184377EC0098499A /* MyCntLabel.m in Sources */,
 				5E6F4B4418117F7600312CCD /* ViewController.m in Sources */,
 				5E220DCD18425F3900D2ACB0 /* SoundOnFlag.m in Sources */,
 				5E6F4B3B18117F7600312CCD /* AppDelegate.m in Sources */,
+				5E5DF02B184381F90098499A /* MyCntView.m in Sources */,
 				5E5DF025184327510098499A /* MyModeBtn.m in Sources */,
 				5E220DD0184261F100D2ACB0 /* MySetBtn.m in Sources */,
 				5E6F4B3718117F7600312CCD /* main.m in Sources */,

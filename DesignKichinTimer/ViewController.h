@@ -12,7 +12,7 @@
 #import <iAd/iAd.h>
 #import "MySetBtn.h"
 #import "MyModeBtn.h"
-
+#import "MyCntLabel.h"
 
 //@interface ViewController : UIViewController <ADBannerViewDelegate> {
 @interface ViewController : UIViewController {
@@ -48,9 +48,9 @@
   UIView *cntView;
 
   // カウンター表示ラベル定義
-  UILabel *cntLabel;
-  UILabel *hunLabel;//use minits unit character display
-  UILabel *byoLabel;//use seconds unit character display
+  MyCntLabel *cntLabel;
+  MyCntLabel *hunLabel;//use minits unit character display
+  MyCntLabel *byoLabel;//use seconds unit character display
 
   // カウンター表示ラベル フォントサイズ定義
   float cntFontSize;

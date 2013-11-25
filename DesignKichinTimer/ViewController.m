@@ -9,7 +9,6 @@
 #import "ViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "SoundOnFlag.h"
-#import "MySetBtn.h"
 
 @interface ViewController()
 
@@ -19,70 +18,10 @@
 @implementation ViewController
 
 
-// View が表示される直前に呼ばれる定義済み関数（画面が再表示されるたびに呼び出されます。）
+// View が表示される直前に呼ばれる定義済み関数（*画面再描画毎）
 - (void)viewWillAppear:(BOOL)animated
 {
 }
-
-
-
-/*** 表示切り替え(ボタン)配置 関数 ***/
-- (void)btnLinkSelect
-{
-  
-  // ====== 「現在時表示」ボタン（リンクテキスト風）ここから ======
-  clockSelectBtn = [MyModeBtn buttonWithType:UIButtonTypeCustom];
-  
-  [clockSelectBtn ModeSelect:CGRectMake(15,7,120,50)    // x y w h // use ipad positioning
-                   btnTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btnClock", nil)]];
-
-  [clockSelectBtn setEnabled:YES]; // default
-  
-  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    [self.view addSubview:clockSelectBtn]; // iphone
-  }else{
-    [cntView addSubview:clockSelectBtn];   // ipad
-  }
-  [clockSelectBtn addTarget:self action:@selector(clockSelectBtnTouch:) forControlEvents:UIControlEventTouchUpInside]; // タッチリリース時
-  // ====== 「現在時表示」ボタン（リンクテキスト風）ここまで ======
-
-  
-  // ====== 「タイマー設定」ボタン（リンクテキスト風）ここから ======
-  timerSelectBtn = [MyModeBtn buttonWithType:UIButtonTypeCustom];
-  
-  [timerSelectBtn ModeSelect:CGRectMake(145,7,145,50)    // x y w h // use ipad positioning
-                      btnTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btnTimer", nil)]];
-  
-  [timerSelectBtn setEnabled:NO]; // not default
-  
-  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    [self.view addSubview:timerSelectBtn]; // iphone
-  }else{
-    [cntView addSubview:timerSelectBtn];   // ipad
-  }
-  [timerSelectBtn addTarget:self action:@selector(timerSelectBtnTouch:) forControlEvents:UIControlEventTouchUpInside]; // タッチリリース時
-  // ====== 「タイマー設定」ボタン（リンクテキスト風）ここまで ======
-
-  
-  // ====== 「Sound ON/OFF」Button From here ======
-  soundSelectBtn = [MyModeBtn buttonWithType:UIButtonTypeCustom];
-  
-  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    sndBtnTitle = [NSString stringWithFormat:@"%@",NSLocalizedString(@"btnSound", nil)];
-    sndBtnRect  = CGRectMake(cntView.bounds.size.width -40,cntView.bounds.size.height -40,35,35);
-  }else{
-    sndBtnTitle = [NSString stringWithFormat:@"[ %@ ]",NSLocalizedString(@"btnSound", nil)];
-    sndBtnRect  = CGRectMake(cntView.bounds.size.width -60,cntView.bounds.size.height -40,50,35);
-  }
-  
-  [soundSelectBtn SwitchIcon:sndBtnRect btnTitle:sndBtnTitle stateFlag:[SoundOnFlag val]];
-  [soundSelectBtn addTarget:self action:@selector(soundSelectBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
-  [cntView addSubview:soundSelectBtn];
-  // ====== 「Sound ON/OFF」Button To here ======
-
-}
-
-
 
 
 // View が初めて呼び出される時に1回だけ呼ばれる定義済み関数
@@ -184,29 +123,14 @@
 
   
   // カウント表示Label
-  cntLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,cntW,cntH)];// x y w h
-  cntLabel.textAlignment = NSTextAlignmentCenter;
-  cntLabel.adjustsFontSizeToFitWidth = YES;
-  cntLabel.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0.5 alpha:0]; //
-  cntLabel.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8]; // Light Gray
-  cntLabel.text = nil;
-  [cntLabel.layer setShadowOpacity:0.5f];
-  [cntLabel.layer setShadowOffset:CGSizeMake(2.f, 2.f)];
-
+  cntLabel = [[MyCntLabel alloc] initWithFrame:CGRectMake(0,0,cntW,cntH)];// x y w h
   
   // 表示フォントサイズ 端末分岐 ipad:180 iphone:70  = 5 digits + "M S"
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    //NSLog(@"%d: iPhone",__LINE__);
-    cntFontSize = CNT_FONT_SIZE_IPHONE;
-    
+    [cntLabel setCnt:CNT_FONT_SIZE_IPHONE];
+  }else{
+    [cntLabel setCnt:CNT_FONT_SIZE_IPAD];
   }
-  else{
-    //NSLog(@"%d: iPad",__LINE__);
-    cntFontSize = CNT_FONT_SIZE_IPAD;
-
-  }
-  cntLabel.font = [UIFont systemFontOfSize:cntFontSize];
-
   [cntView addSubview:cntLabel];
   
   [self _addDropShadowToView:cntView]; // 内影生成
@@ -950,24 +874,12 @@
     unitRectS = CGRectMake(633,60,45,45); // x y w h
   }
   
-  hunLabel = [[UILabel alloc] initWithFrame:unitRectM];// x y w h
-  hunLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:unitFontSize];
-  hunLabel.textAlignment = NSTextAlignmentCenter;
-  hunLabel.adjustsFontSizeToFitWidth = YES;
-  hunLabel.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8]; // Light Black
-  hunLabel.text = [NSString stringWithFormat:@"%@",NSLocalizedString(@"hunn", nil)];
-  [hunLabel.layer setShadowOpacity:0.5f];
-  [hunLabel.layer setShadowOffset:CGSizeMake(2.f, 2.f)];
+  hunLabel = [[MyCntLabel alloc] initWithFrame:unitRectM];// x y w h
+  [hunLabel setHun:unitFontSize];
   [cntView addSubview:hunLabel];
   
-  byoLabel = [[UILabel alloc] initWithFrame:unitRectS];// x y w h
-  byoLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:unitFontSize];
-  byoLabel.textAlignment = NSTextAlignmentCenter;
-  byoLabel.adjustsFontSizeToFitWidth = YES;
-  byoLabel.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8]; // Light Black
-  byoLabel.text = [NSString stringWithFormat:@"%@",NSLocalizedString(@"byoo", nil)];
-  [byoLabel.layer setShadowOpacity:0.5f];
-  [byoLabel.layer setShadowOffset:CGSizeMake(2.f, 2.f)];
+  byoLabel = [[MyCntLabel alloc] initWithFrame:unitRectS];// x y w h
+  [byoLabel setByo:unitFontSize];
   [cntView addSubview:byoLabel];
 }
 
@@ -1142,6 +1054,63 @@
   if (cntMode) {
     cntLabel.text = [NSString stringWithFormat:@"%03d %02d",globalMin,globalSec];
   }
+}
+
+
+/*** 表示切り替え(ボタン)配置 関数 ***/
+- (void)btnLinkSelect
+{
+  
+  // ====== 「現在時表示」ボタン（リンクテキスト風）ここから ======
+  clockSelectBtn = [MyModeBtn buttonWithType:UIButtonTypeCustom];
+  
+  [clockSelectBtn ModeSelect:CGRectMake(15,7,120,50)    // x y w h // use ipad positioning
+                    btnTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btnClock", nil)]];
+  
+  [clockSelectBtn setEnabled:YES]; // default
+  
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+    [self.view addSubview:clockSelectBtn]; // iphone
+  }else{
+    [cntView addSubview:clockSelectBtn];   // ipad
+  }
+  [clockSelectBtn addTarget:self action:@selector(clockSelectBtnTouch:) forControlEvents:UIControlEventTouchUpInside]; // タッチリリース時
+  // ====== 「現在時表示」ボタン（リンクテキスト風）ここまで ======
+  
+  
+  // ====== 「タイマー設定」ボタン（リンクテキスト風）ここから ======
+  timerSelectBtn = [MyModeBtn buttonWithType:UIButtonTypeCustom];
+  
+  [timerSelectBtn ModeSelect:CGRectMake(145,7,145,50)    // x y w h // use ipad positioning
+                    btnTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btnTimer", nil)]];
+  
+  [timerSelectBtn setEnabled:NO]; // not default
+  
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+    [self.view addSubview:timerSelectBtn]; // iphone
+  }else{
+    [cntView addSubview:timerSelectBtn];   // ipad
+  }
+  [timerSelectBtn addTarget:self action:@selector(timerSelectBtnTouch:) forControlEvents:UIControlEventTouchUpInside]; // タッチリリース時
+  // ====== 「タイマー設定」ボタン（リンクテキスト風）ここまで ======
+  
+  
+  // ====== 「Sound ON/OFF」Button From here ======
+  soundSelectBtn = [MyModeBtn buttonWithType:UIButtonTypeCustom];
+  
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+    sndBtnTitle = [NSString stringWithFormat:@"%@",NSLocalizedString(@"btnSound", nil)];
+    sndBtnRect  = CGRectMake(cntView.bounds.size.width -40,cntView.bounds.size.height -40,35,35);
+  }else{
+    sndBtnTitle = [NSString stringWithFormat:@"[ %@ ]",NSLocalizedString(@"btnSound", nil)];
+    sndBtnRect  = CGRectMake(cntView.bounds.size.width -60,cntView.bounds.size.height -40,50,35);
+  }
+  
+  [soundSelectBtn SwitchIcon:sndBtnRect btnTitle:sndBtnTitle stateFlag:[SoundOnFlag val]];
+  [soundSelectBtn addTarget:self action:@selector(soundSelectBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
+  [cntView addSubview:soundSelectBtn];
+  // ====== 「Sound ON/OFF」Button To here ======
+  
 }
 
 
