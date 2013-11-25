@@ -14,6 +14,7 @@
 #import "MyModeBtn.h"
 #import "MyCntLabel.h"
 
+
 //@interface ViewController : UIViewController <ADBannerViewDelegate> {
 @interface ViewController : UIViewController {
   
@@ -46,6 +47,7 @@
   
   // カウンター表示View定義
   UIView *cntView;
+  
 
   // カウンター表示ラベル定義
   MyCntLabel *cntLabel;
