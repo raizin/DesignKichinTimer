@@ -11,6 +11,7 @@
 //#import "GADBannerView.h"
 #import <iAd/iAd.h>
 #import "MySetBtn.h"
+#import "MyModeBtn.h"
 
 
 //@interface ViewController : UIViewController <ADBannerViewDelegate> {
@@ -62,9 +63,9 @@
   CALayer *cntlayer;
   
   // Button
-  UIButton *timerSelectBtn; //「タイマー設定」切替ボタン
-  UIButton *clockSelectBtn; //「現在時表示」切替ボタン
-  UIButton *soundSelectBtn; // Sound On/Off
+  MyModeBtn *timerSelectBtn; //「タイマー設定」切替ボタン
+  MyModeBtn *clockSelectBtn; //「現在時表示」切替ボタン
+  MyModeBtn *soundSelectBtn; // Sound On/Off
   
   MySetBtn *setBtn60;//60 min
   MySetBtn *setBtn10;//10 min
@@ -92,6 +93,7 @@
   
   // サウンドON/OFF ボタンの表示文字列
   NSString *sndBtnTitle;
+  CGRect sndBtnRect; // x y w h
   
   // タイマー完了(到達)フラグ
   BOOL timeUpOk;

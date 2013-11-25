@@ -31,73 +31,52 @@
 {
   
   // ====== 「現在時表示」ボタン（リンクテキスト風）ここから ======
-  NSString *clockTitle = [NSString stringWithFormat:@"%@",NSLocalizedString(@"btnClock", nil)];
-  clockSelectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-  clockSelectBtn.frame = CGRectMake(15,7,120,50);// x y w h // use ipad
+  clockSelectBtn = [MyModeBtn buttonWithType:UIButtonTypeCustom];
   
-  [clockSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor grayColor] btnTitle:clockTitle] forState:UIControlStateNormal]; // 有効時
-  [clockSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor redColor] btnTitle:clockTitle] forState:UIControlStateHighlighted]; // タッチ中
-  [clockSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor blueColor] btnTitle:clockTitle] forState:UIControlStateDisabled]; // 無効時
-  
-  [clockSelectBtn setEnabled:YES];// default
-  
-  [clockSelectBtn addTarget:self action:@selector(clockSelectBtnTouch:) forControlEvents:UIControlEventTouchUpInside]; // タッチリリース時
+  [clockSelectBtn ModeSelect:CGRectMake(15,7,120,50)    // x y w h // use ipad positioning
+                   btnTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btnClock", nil)]];
+
+  [clockSelectBtn setEnabled:YES]; // default
   
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
     [self.view addSubview:clockSelectBtn]; // iphone
   }else{
     [cntView addSubview:clockSelectBtn];   // ipad
   }
+  [clockSelectBtn addTarget:self action:@selector(clockSelectBtnTouch:) forControlEvents:UIControlEventTouchUpInside]; // タッチリリース時
   // ====== 「現在時表示」ボタン（リンクテキスト風）ここまで ======
-  
-  
-  
+
   
   // ====== 「タイマー設定」ボタン（リンクテキスト風）ここから ======
-  NSString *timerTitle = [NSString stringWithFormat:@"%@",NSLocalizedString(@"btnTimer", nil)];
-  timerSelectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-  timerSelectBtn.frame = CGRectMake(145,7,145,50); // x y w h // use ipad
+  timerSelectBtn = [MyModeBtn buttonWithType:UIButtonTypeCustom];
   
-  [timerSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor grayColor] btnTitle:timerTitle] forState:UIControlStateNormal]; // 有効時
-  [timerSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor redColor] btnTitle:timerTitle] forState:UIControlStateHighlighted]; // タッチ中
-  [timerSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor blueColor] btnTitle:timerTitle] forState:UIControlStateDisabled]; // 無効時
-  [timerSelectBtn setEnabled:NO]; // default
+  [timerSelectBtn ModeSelect:CGRectMake(145,7,145,50)    // x y w h // use ipad positioning
+                      btnTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btnTimer", nil)]];
   
-  [timerSelectBtn addTarget:self action:@selector(timerSelectBtnTouch:) forControlEvents:UIControlEventTouchUpInside]; // タッチリリース時
+  [timerSelectBtn setEnabled:NO]; // not default
   
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
     [self.view addSubview:timerSelectBtn]; // iphone
   }else{
     [cntView addSubview:timerSelectBtn];   // ipad
   }
+  [timerSelectBtn addTarget:self action:@selector(timerSelectBtnTouch:) forControlEvents:UIControlEventTouchUpInside]; // タッチリリース時
   // ====== 「タイマー設定」ボタン（リンクテキスト風）ここまで ======
 
+  
   // ====== 「Sound ON/OFF」Button From here ======
-  soundSelectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+  soundSelectBtn = [MyModeBtn buttonWithType:UIButtonTypeCustom];
+  
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
     sndBtnTitle = [NSString stringWithFormat:@"%@",NSLocalizedString(@"btnSound", nil)];
-    soundSelectBtn.frame = CGRectMake(cntView.bounds.size.width -40,cntView.bounds.size.height -40,35,35); // x y w h
+    sndBtnRect  = CGRectMake(cntView.bounds.size.width -40,cntView.bounds.size.height -40,35,35);
   }else{
     sndBtnTitle = [NSString stringWithFormat:@"[ %@ ]",NSLocalizedString(@"btnSound", nil)];
-    soundSelectBtn.frame = CGRectMake(cntView.bounds.size.width -60,cntView.bounds.size.height -40,50,35); // x y w h
+    sndBtnRect  = CGRectMake(cntView.bounds.size.width -60,cntView.bounds.size.height -40,50,35);
   }
   
-//  [soundSelectBtn setBackgroundColor:[UIColor greenColor]];
-  
-  [soundSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor blueColor] btnTitle:sndBtnTitle] forState:UIControlStateNormal];
-  [soundSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor redColor] btnTitle:sndBtnTitle] forState:UIControlStateHighlighted];
-  
+  [soundSelectBtn SwitchIcon:sndBtnRect btnTitle:sndBtnTitle stateFlag:[SoundOnFlag val]];
   [soundSelectBtn addTarget:self action:@selector(soundSelectBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
-  
-
-  if ([SoundOnFlag val]) {
-    [soundSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor blueColor] btnTitle:sndBtnTitle] forState:UIControlStateNormal];
-  
-  }else{
-    [soundSelectBtn setAttributedTitle:[self myColorShadowAttr:[UIColor grayColor] btnTitle:sndBtnTitle] forState:UIControlStateNormal];
-
-  }
-  
   [cntView addSubview:soundSelectBtn];
   // ====== 「Sound ON/OFF」Button To here ======
 
@@ -792,13 +771,12 @@
  */
 - (void)soundSelectBtnTouch:(id)sender
 {
-  UIButton *myBtn = (UIButton *)sender;
-
   // アラート
   UIAlertView *alert = [[UIAlertView alloc] init];
   
   if ([SoundOnFlag val]) {
-    [myBtn setAttributedTitle:[self myColorShadowAttr:[UIColor grayColor] btnTitle:sndBtnTitle] forState:UIControlStateNormal];
+    [soundSelectBtn SwitchIcon:sndBtnRect btnTitle:sndBtnTitle stateFlag:NO];
+
     [SoundOnFlag setValue:NO];
     [SoundOnFlag sync];
     
@@ -809,7 +787,8 @@
     [alert addButtonWithTitle:@" O K "];
     
   }else{
-    [myBtn setAttributedTitle:[self myColorShadowAttr:[UIColor blueColor] btnTitle:sndBtnTitle] forState:UIControlStateNormal];
+    [soundSelectBtn SwitchIcon:sndBtnRect btnTitle:sndBtnTitle stateFlag:YES];
+
     [SoundOnFlag setValue:YES];
     [SoundOnFlag sync];
 

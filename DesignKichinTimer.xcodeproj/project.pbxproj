@@ -20,6 +20,7 @@
 		5E220DD0184261F100D2ACB0 /* MySetBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E220DCF184261F100D2ACB0 /* MySetBtn.m */; };
 		5E42589718192B7F00171F1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E42589918192B7F00171F1F /* Localizable.strings */; };
 		5E42589C181CF29300171F1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E42589B181CF29300171F1F /* QuartzCore.framework */; };
+		5E5DF025184327510098499A /* MyModeBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DF024184327510098499A /* MyModeBtn.m */; };
 		5E6F4B2B18117F7600312CCD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E6F4B2A18117F7600312CCD /* Foundation.framework */; };
 		5E6F4B2D18117F7600312CCD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E6F4B2C18117F7600312CCD /* CoreGraphics.framework */; };
 		5E6F4B2F18117F7600312CCD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E6F4B2E18117F7600312CCD /* UIKit.framework */; };
@@ -87,6 +88,8 @@
 		5E42589818192B7F00171F1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E42589A18192B8800171F1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E42589B181CF29300171F1F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5E5DF023184327510098499A /* MyModeBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyModeBtn.h; sourceTree = "<group>"; };
+		5E5DF024184327510098499A /* MyModeBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyModeBtn.m; sourceTree = "<group>"; };
 		5E6F4B2718117F7600312CCD /* DesignKichinTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignKichinTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6F4B2A18117F7600312CCD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5E6F4B2C18117F7600312CCD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -155,7 +158,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5E1E11E018350DF000307C8F /* AdMob */ = {
+		5E1E11E018350DF000307C8F /* AdMobLiblary */ = {
 			isa = PBXGroup;
 			children = (
 				5E1E11E118350EBA00307C8F /* GADAdMobExtras.h */,
@@ -170,7 +173,7 @@
 				5E1E11EA18350EBA00307C8F /* libGoogleAdMobAds.a */,
 				5E1E11EB18350EBA00307C8F /* README.txt */,
 			);
-			name = AdMob;
+			name = AdMobLiblary;
 			sourceTree = "<group>";
 		};
 		5E220DD11842624A00D2ACB0 /* CustomClass */ = {
@@ -180,6 +183,8 @@
 				5E220DCC18425F3900D2ACB0 /* SoundOnFlag.m */,
 				5E220DCE184261F100D2ACB0 /* MySetBtn.h */,
 				5E220DCF184261F100D2ACB0 /* MySetBtn.m */,
+				5E5DF023184327510098499A /* MyModeBtn.h */,
+				5E5DF024184327510098499A /* MyModeBtn.m */,
 			);
 			name = CustomClass;
 			sourceTree = "<group>";
@@ -214,7 +219,7 @@
 				5E220DD31842637900D2ACB0 /* DefaultClass */,
 				5E220DD21842630700D2ACB0 /* IconPng */,
 				5E220DD11842624A00D2ACB0 /* CustomClass */,
-				5E1E11E018350DF000307C8F /* AdMob */,
+				5E1E11E018350DF000307C8F /* AdMobLiblary */,
 				5E6F4B3018117F7600312CCD /* DesignKichinTimer */,
 				5E6F4B5218117F7700312CCD /* DesignKichinTimerTests */,
 				5E6F4B2918117F7600312CCD /* Frameworks */,
@@ -409,6 +414,7 @@
 				5E6F4B4418117F7600312CCD /* ViewController.m in Sources */,
 				5E220DCD18425F3900D2ACB0 /* SoundOnFlag.m in Sources */,
 				5E6F4B3B18117F7600312CCD /* AppDelegate.m in Sources */,
+				5E5DF025184327510098499A /* MyModeBtn.m in Sources */,
 				5E220DD0184261F100D2ACB0 /* MySetBtn.m in Sources */,
 				5E6F4B3718117F7600312CCD /* main.m in Sources */,
 			);
