@@ -73,8 +73,8 @@
   MySetBtn *setBtn01;//1 min
   MySetBtn *setBtn001;//10 s
   MySetBtn *setBtn0001;//1 s
-  UIButton *setBtnStart;
-  UIButton *setBtnReset;//Reset & Stop
+  MySetBtn *setBtnStart;
+  MySetBtn *setBtnReset;//Reset & Stop
 
   // Button フォントサイズ定義
   float btnFontSize;

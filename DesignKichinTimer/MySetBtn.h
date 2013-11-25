@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface MySetBtn : UIButton{
-  
+
 }
-- (void)setNum:(int)number minFlag:(BOOL)unitFlag;
+- (void)setNum:(int)number minFlag:(BOOL)unitFlag fontSize:(float)fontSize;
+- (void)setStart:(float)fontSize;
+- (void)setReset:(float)fontSize;
 @end

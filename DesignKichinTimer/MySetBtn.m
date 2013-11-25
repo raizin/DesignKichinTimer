@@ -10,8 +10,8 @@
 
 @implementation MySetBtn
 
-
-- (void)setNum:(int)number minFlag:(BOOL)unitFlag
+// Number Button
+- (void)setNum:(int)number minFlag:(BOOL)unitFlag fontSize:(float)fontSize
 {
   NSString *unit = [NSString stringWithFormat:@"%@",NSLocalizedString(@"hun", nil)];
   if (unitFlag == NO) {
@@ -19,16 +19,43 @@
   }
   
   // UIControlStateNormal
-  [self setAttributedTitle:[self myBtnColorCtl:[UIColor blueColor ] num:number unit:unit] forState:UIControlStateNormal];
+  [self setAttributedTitle:[self myBtnColorCtl:[UIColor blueColor ] num:number unit:unit fontSize:fontSize] forState:UIControlStateNormal];
   // UIControlStateHighlighted
-  [self setAttributedTitle:[self myBtnColorCtl:[UIColor whiteColor] num:number unit:unit] forState:UIControlStateHighlighted];
+  [self setAttributedTitle:[self myBtnColorCtl:[UIColor whiteColor] num:number unit:unit fontSize:fontSize] forState:UIControlStateHighlighted];
   // UIControlStateDisabled
-  [self setAttributedTitle:[self myBtnColorCtl:[UIColor grayColor ] num:number unit:unit] forState:UIControlStateDisabled];
-
-  [self addTarget:self action:@selector(myBtnTouchDown:) forControlEvents:UIControlEventTouchDown]; // タッチ中 イベント
-  [self addTarget:self action:@selector(myBtnTouchUpInside:) forControlEvents:UIControlEventTouchUpInside]; // タッチリリース時
-  
+  [self setAttributedTitle:[self myBtnColorCtl:[UIColor grayColor ] num:number unit:unit fontSize:fontSize] forState:UIControlStateDisabled];
 }
+
+// Start Button
+- (void)setStart:(float)fontSize
+{
+  [self setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btnStart", nil)] forState:UIControlStateNormal];
+  [self.titleLabel setFont:[UIFont boldSystemFontOfSize:fontSize/2]];
+  
+  [self setTitleColor:[UIColor blueColor] forState:UIControlStateNormal]; //有効時
+  [self setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted]; //タッチ(ハイライト？)時
+  [self setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled]; //無効時
+}
+
+// Stop & Reset Button
+- (void)setReset:(float)fontSize
+{
+  NSString *_btnReset = [NSString stringWithFormat:@"%@",NSLocalizedString(@"btnReset", nil)];
+  NSMutableString *__btnReset = [NSMutableString stringWithCapacity:1.0f];
+  [__btnReset appendFormat:@"%@\n",[_btnReset substringWithRange:NSMakeRange(0,4)]];
+  [__btnReset appendString:[_btnReset substringWithRange: NSMakeRange(4,[_btnReset length]-4)]];
+  ((UILabel*)self).lineBreakMode = NSLineBreakByWordWrapping; // 改行モードON
+  [self setTitle:__btnReset forState:UIControlStateNormal];
+  [self.titleLabel setFont:[UIFont boldSystemFontOfSize:fontSize/2]];
+
+  
+  [self setTitleColor:[UIColor blueColor] forState:UIControlStateNormal]; //有効時
+  [self setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted]; //タッチ(ハイライト？)時
+  [self setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled]; //無効時
+}
+
+
+
 
 
 - (id)initWithFrame:(CGRect)frame
@@ -53,36 +80,28 @@
       
       [self.layer setShadowOpacity:0.5f];
       [self.layer setShadowOffset:CGSizeMake(2.f, 2.f)];
+
       
-      
-      
+      [self addTarget:self action:@selector(myBtnTouchDown:) forControlEvents:UIControlEventTouchDown]; // タッチ中 イベント
+      [self addTarget:self action:@selector(myBtnTouchUpInside:) forControlEvents:UIControlEventTouchUpInside]; // タッチリリース時
       
       
     }
     return self;
 }
 
+
+
+
 /*
  * ボタンタイトル(文字列)生成関数
  */
-- (NSMutableAttributedString*)myBtnColorCtl:(UIColor*)cl num:(int)num unit:(NSString*)unit
+- (NSMutableAttributedString*)myBtnColorCtl:(UIColor*)cl num:(int)num unit:(NSString*)unit fontSize:(float)fontSize
 {
-  // 表示フォントサイズ 端末分岐 ipad:50 iphone:20
-  float btnFontSize;
-  
-  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    //NSLog(@"%d: iPhoneの処理",__LINE__);
-    btnFontSize = 25.0f;
-  }
-  else{
-    //NSLog(@"%d: iPadの処理",__LINE__);
-    btnFontSize = 50.0f;
-  }
-  
   NSDictionary *fontDigit = @{ NSForegroundColorAttributeName:cl,
-                               NSFontAttributeName : [UIFont boldSystemFontOfSize:btnFontSize] };
+                               NSFontAttributeName : [UIFont boldSystemFontOfSize:fontSize] };
   NSDictionary *fontUnit = @{ NSForegroundColorAttributeName:cl,
-                              NSFontAttributeName : [UIFont boldSystemFontOfSize:btnFontSize/1.5f] };
+                              NSFontAttributeName : [UIFont boldSystemFontOfSize:fontSize/1.5f] };
   
   
   NSAttributedString *btnPlusLabel = [[NSAttributedString alloc]
