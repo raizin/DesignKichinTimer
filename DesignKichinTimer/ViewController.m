@@ -306,6 +306,7 @@
   adView.alpha = 0.5f;
 
   [self.view addSubview:adView];
+  bannerIsVisible = NO;
   
   /*** iAd用 広告表示 ここまで ***/
 }
@@ -328,8 +329,8 @@
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
-//  NSLog(@"%d: iAd Get Success!!",__LINE__);
-  
+  NSLog(@"%d: iAd Get Success!!",__LINE__);
+/*
   if (!bannerIsVisible) {
     [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
     [UIView setAnimationDuration:0.3];
@@ -344,10 +345,11 @@
     
     mobView.hidden = YES;
   }
+*/
 }
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
 {
-//  NSLog(@"%d: iAd get NG??",__LINE__);
+  NSLog(@"%d: iAd get NG??",__LINE__);
   
   if (bannerIsVisible) {
     [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
