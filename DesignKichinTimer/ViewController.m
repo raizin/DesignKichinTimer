@@ -23,7 +23,24 @@
 // View が表示される直前に呼ばれる定義済み関数（*画面再描画毎）
 - (void)viewWillAppear:(BOOL)animated
 {
+	[super viewWillAppear:animated];
+//	self.adview = [[AdstirView alloc]initWithOrigin:CGPointMake(0, 0)];
+//	self.adview.media = @"MEDIA-e0c497ff";
+//	self.adview.spot = 1;
+//	self.adview.rootViewController = self;
+//	[self.adview start];
+//	[self.view addSubview:self.adview];
 }
+- (void)viewWillDisappear:(BOOL)animated
+{
+//	[self.adview stop];
+//	[self.adview removeFromSuperview];
+//	self.adview.rootViewController = nil;
+//	self.adview = nil;
+	[super viewWillDisappear:animated];
+}
+
+
 
 // Statusbar non-display setting
 - (BOOL)prefersStatusBarHidden
@@ -306,7 +323,8 @@
   adView.alpha = 0.5f;
 
   [self.view addSubview:adView];
-  bannerIsVisible = NO;
+  bannerIsVisible = YES;
+  mobView.hidden = YES;
   
   /*** iAd用 広告表示 ここまで ***/
 }
@@ -330,7 +348,7 @@
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
   NSLog(@"%d: iAd Get Success!!",__LINE__);
-/*
+
   if (!bannerIsVisible) {
     [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
     [UIView setAnimationDuration:0.3];
@@ -340,12 +358,17 @@
     banner.hidden = NO;
     
     [UIView commitAnimations];
+
     bannerIsVisible = YES;
-    
+    [self.view bringSubviewToFront:adView];//再背面に移動
+    [self.view addSubview:adView];
     
     mobView.hidden = YES;
+    [self.view sendSubviewToBack:mobView];//最前面に移動
+    [mobView removeFromSuperview];
+    
   }
-*/
+
 }
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
 {
@@ -360,10 +383,14 @@
     banner.hidden = YES;
     
     [UIView commitAnimations];
+
     bannerIsVisible = NO;
-    
-    
+    [self.view sendSubviewToBack:adView];//再背面に移動
+    [adView removeFromSuperview];
+  
     mobView.hidden = NO;
+    [self.view bringSubviewToFront:mobView];//最前面に移動
+    [self.view addSubview:mobView];
   }
 }
 
