@@ -41,21 +41,6 @@
 		5EA2C0A01811865E00B0FC3D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5EA2C09F1811865E00B0FC3D /* .gitignore */; };
 		5EA9DA32184E4CB9004378E0 /* libNendAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA9DA2D184E4CB9004378E0 /* libNendAd.a */; };
 		5EA9DA33184E4CB9004378E0 /* NADView_readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5EA9DA31184E4CB9004378E0 /* NADView_readme.txt */; };
-		5EA9DA46184E4D8C004378E0 /* libAdStir-Adlantis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA9DA39184E4D8C004378E0 /* libAdStir-Adlantis.a */; };
-		5EA9DA47184E4D8C004378E0 /* libAdStir-AMoAD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA9DA3A184E4D8C004378E0 /* libAdStir-AMoAD.a */; };
-		5EA9DA48184E4D8C004378E0 /* libAdStir-GoogleAdMob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA9DA3B184E4D8C004378E0 /* libAdStir-GoogleAdMob.a */; };
-		5EA9DA49184E4D8C004378E0 /* libAdStir-iAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA9DA3C184E4D8C004378E0 /* libAdStir-iAd.a */; };
-		5EA9DA4A184E4D8C004378E0 /* libAdStir-imobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA9DA3D184E4D8C004378E0 /* libAdStir-imobile.a */; };
-		5EA9DA4B184E4D8C004378E0 /* libAdStir-InMobi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA9DA3E184E4D8C004378E0 /* libAdStir-InMobi.a */; };
-		5EA9DA4C184E4D8C004378E0 /* libAdStir-MedibaAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA9DA3F184E4D8C004378E0 /* libAdStir-MedibaAd.a */; };
-		5EA9DA4D184E4D8C004378E0 /* libAdStir-nend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA9DA40184E4D8C004378E0 /* libAdStir-nend.a */; };
-		5EA9DA4E184E4D8C004378E0 /* libAdStir.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA9DA41184E4D8C004378E0 /* libAdStir.a */; };
-		5EA9DA4F184E4D8C004378E0 /* AdStir_readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5EA9DA42184E4D8C004378E0 /* AdStir_readme.txt */; };
-		5EA9DA50184E4D8C004378E0 /* libAdstirWebView-AdMobMediation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA9DA43184E4D8C004378E0 /* libAdstirWebView-AdMobMediation.a */; };
-		5EA9DA51184E4D8C004378E0 /* libAdstirWebView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA9DA44184E4D8C004378E0 /* libAdstirWebView.a */; };
-		5EA9DA57184E4E29004378E0 /* JSONKit_CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 5EA9DA53184E4E29004378E0 /* JSONKit_CHANGELOG.md */; };
-		5EA9DA58184E4E29004378E0 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA9DA55184E4E29004378E0 /* JSONKit.m */; };
-		5EA9DA59184E4E29004378E0 /* JSONKit_README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5EA9DA56184E4E29004378E0 /* JSONKit_README.md */; };
 		5EC2DCC6182C77B1003E1D5C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC2DCC5182C77B1003E1D5C /* AudioToolbox.framework */; };
 		5EC2DCCA182FCEB8003E1D5C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC2DCC9182FCEB8003E1D5C /* AVFoundation.framework */; };
 		5EC2DCD21830A52A003E1D5C /* pi_old.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5EC2DCD11830A52A003E1D5C /* pi_old.mp3 */; };
@@ -137,27 +122,6 @@
 		5EA9DA2F184E4CB9004378E0 /* NADIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconView.h; sourceTree = "<group>"; };
 		5EA9DA30184E4CB9004378E0 /* NADView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADView.h; sourceTree = "<group>"; };
 		5EA9DA31184E4CB9004378E0 /* NADView_readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NADView_readme.txt; sourceTree = "<group>"; };
-		5EA9DA35184E4D8C004378E0 /* AdstirAdBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdstirAdBase.h; sourceTree = "<group>"; };
-		5EA9DA36184E4D8C004378E0 /* AdstirInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdstirInterstitial.h; sourceTree = "<group>"; };
-		5EA9DA37184E4D8C004378E0 /* AdStirRTBView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdStirRTBView.h; sourceTree = "<group>"; };
-		5EA9DA38184E4D8C004378E0 /* AdstirView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdstirView.h; sourceTree = "<group>"; };
-		5EA9DA39184E4D8C004378E0 /* libAdStir-Adlantis.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libAdStir-Adlantis.a"; sourceTree = "<group>"; };
-		5EA9DA3A184E4D8C004378E0 /* libAdStir-AMoAD.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libAdStir-AMoAD.a"; sourceTree = "<group>"; };
-		5EA9DA3B184E4D8C004378E0 /* libAdStir-GoogleAdMob.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libAdStir-GoogleAdMob.a"; sourceTree = "<group>"; };
-		5EA9DA3C184E4D8C004378E0 /* libAdStir-iAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libAdStir-iAd.a"; sourceTree = "<group>"; };
-		5EA9DA3D184E4D8C004378E0 /* libAdStir-imobile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libAdStir-imobile.a"; sourceTree = "<group>"; };
-		5EA9DA3E184E4D8C004378E0 /* libAdStir-InMobi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libAdStir-InMobi.a"; sourceTree = "<group>"; };
-		5EA9DA3F184E4D8C004378E0 /* libAdStir-MedibaAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libAdStir-MedibaAd.a"; sourceTree = "<group>"; };
-		5EA9DA40184E4D8C004378E0 /* libAdStir-nend.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libAdStir-nend.a"; sourceTree = "<group>"; };
-		5EA9DA41184E4D8C004378E0 /* libAdStir.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdStir.a; sourceTree = "<group>"; };
-		5EA9DA42184E4D8C004378E0 /* AdStir_readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AdStir_readme.txt; sourceTree = "<group>"; };
-		5EA9DA43184E4D8C004378E0 /* libAdstirWebView-AdMobMediation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libAdstirWebView-AdMobMediation.a"; sourceTree = "<group>"; };
-		5EA9DA44184E4D8C004378E0 /* libAdstirWebView.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdstirWebView.a; sourceTree = "<group>"; };
-		5EA9DA45184E4D8C004378E0 /* AdstirWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdstirWebView.h; sourceTree = "<group>"; };
-		5EA9DA53184E4E29004378E0 /* JSONKit_CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JSONKit_CHANGELOG.md; sourceTree = "<group>"; };
-		5EA9DA54184E4E29004378E0 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
-		5EA9DA55184E4E29004378E0 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
-		5EA9DA56184E4E29004378E0 /* JSONKit_README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JSONKit_README.md; sourceTree = "<group>"; };
 		5EC2DCC5182C77B1003E1D5C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5EC2DCC9182FCEB8003E1D5C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5EC2DCD11830A52A003E1D5C /* pi_old.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pi_old.mp3; sourceTree = "<group>"; };
@@ -174,13 +138,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EA9DA47184E4D8C004378E0 /* libAdStir-AMoAD.a in Frameworks */,
-				5EA9DA48184E4D8C004378E0 /* libAdStir-GoogleAdMob.a in Frameworks */,
-				5EA9DA50184E4D8C004378E0 /* libAdstirWebView-AdMobMediation.a in Frameworks */,
-				5EA9DA4A184E4D8C004378E0 /* libAdStir-imobile.a in Frameworks */,
 				5E1E11DD18350D1500307C8F /* MediaPlayer.framework in Frameworks */,
 				5E1E11F11836A4AD00307C8F /* iAd.framework in Frameworks */,
-				5EA9DA49184E4D8C004378E0 /* libAdStir-iAd.a in Frameworks */,
 				5EA9DA32184E4CB9004378E0 /* libNendAd.a in Frameworks */,
 				5E1E11EF18350F1100307C8F /* AdSupport.framework in Frameworks */,
 				5E1E11DF18350D3100307C8F /* StoreKit.framework in Frameworks */,
@@ -190,15 +149,9 @@
 				5EC2DCCA182FCEB8003E1D5C /* AVFoundation.framework in Frameworks */,
 				5EC2DCC6182C77B1003E1D5C /* AudioToolbox.framework in Frameworks */,
 				5E42589C181CF29300171F1F /* QuartzCore.framework in Frameworks */,
-				5EA9DA51184E4D8C004378E0 /* libAdstirWebView.a in Frameworks */,
-				5EA9DA4D184E4D8C004378E0 /* libAdStir-nend.a in Frameworks */,
-				5EA9DA4E184E4D8C004378E0 /* libAdStir.a in Frameworks */,
 				5E6F4B2D18117F7600312CCD /* CoreGraphics.framework in Frameworks */,
 				5E5DF03818438FB50098499A /* libGoogleAdMobAds.a in Frameworks */,
-				5EA9DA4B184E4D8C004378E0 /* libAdStir-InMobi.a in Frameworks */,
 				5E6F4B2F18117F7600312CCD /* UIKit.framework in Frameworks */,
-				5EA9DA4C184E4D8C004378E0 /* libAdStir-MedibaAd.a in Frameworks */,
-				5EA9DA46184E4D8C004378E0 /* libAdStir-Adlantis.a in Frameworks */,
 				5E6F4B2B18117F7600312CCD /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,23 +332,6 @@
 		5EA9DA34184E4D2E004378E0 /* AdStirSDK */ = {
 			isa = PBXGroup;
 			children = (
-				5EA9DA35184E4D8C004378E0 /* AdstirAdBase.h */,
-				5EA9DA36184E4D8C004378E0 /* AdstirInterstitial.h */,
-				5EA9DA37184E4D8C004378E0 /* AdStirRTBView.h */,
-				5EA9DA38184E4D8C004378E0 /* AdstirView.h */,
-				5EA9DA39184E4D8C004378E0 /* libAdStir-Adlantis.a */,
-				5EA9DA3A184E4D8C004378E0 /* libAdStir-AMoAD.a */,
-				5EA9DA3B184E4D8C004378E0 /* libAdStir-GoogleAdMob.a */,
-				5EA9DA3C184E4D8C004378E0 /* libAdStir-iAd.a */,
-				5EA9DA3D184E4D8C004378E0 /* libAdStir-imobile.a */,
-				5EA9DA3E184E4D8C004378E0 /* libAdStir-InMobi.a */,
-				5EA9DA3F184E4D8C004378E0 /* libAdStir-MedibaAd.a */,
-				5EA9DA40184E4D8C004378E0 /* libAdStir-nend.a */,
-				5EA9DA41184E4D8C004378E0 /* libAdStir.a */,
-				5EA9DA42184E4D8C004378E0 /* AdStir_readme.txt */,
-				5EA9DA43184E4D8C004378E0 /* libAdstirWebView-AdMobMediation.a */,
-				5EA9DA44184E4D8C004378E0 /* libAdstirWebView.a */,
-				5EA9DA45184E4D8C004378E0 /* AdstirWebView.h */,
 			);
 			name = AdStirSDK;
 			sourceTree = "<group>";
@@ -403,10 +339,6 @@
 		5EA9DA52184E4DA9004378E0 /* JSONKit */ = {
 			isa = PBXGroup;
 			children = (
-				5EA9DA53184E4E29004378E0 /* JSONKit_CHANGELOG.md */,
-				5EA9DA54184E4E29004378E0 /* JSONKit.h */,
-				5EA9DA55184E4E29004378E0 /* JSONKit.m */,
-				5EA9DA56184E4E29004378E0 /* JSONKit_README.md */,
 			);
 			name = JSONKit;
 			sourceTree = "<group>";
@@ -495,14 +427,11 @@
 				5E5DF03918438FB50098499A /* AdMob_README.txt in Resources */,
 				5EF21EC91839260C00C079F0 /* Icon-76@2x.png in Resources */,
 				5EC2DCD21830A52A003E1D5C /* pi_old.mp3 in Resources */,
-				5EA9DA57184E4E29004378E0 /* JSONKit_CHANGELOG.md in Resources */,
 				5E6F4B4118117F7600312CCD /* Main_iPad.storyboard in Resources */,
 				5E42589718192B7F00171F1F /* Localizable.strings in Resources */,
 				5E6F4B4618117F7600312CCD /* Images.xcassets in Resources */,
 				5ECB0D271832038400103C18 /* piLong.mp3 in Resources */,
 				5EA9DA33184E4CB9004378E0 /* NADView_readme.txt in Resources */,
-				5EA9DA59184E4E29004378E0 /* JSONKit_README.md in Resources */,
-				5EA9DA4F184E4D8C004378E0 /* AdStir_readme.txt in Resources */,
 				5E6F4B3E18117F7600312CCD /* Main_iPhone.storyboard in Resources */,
 				5EF21ECA1839260C00C079F0 /* Icon-60.png in Resources */,
 				5EF21ECB1839260C00C079F0 /* Icon-60@2x.png in Resources */,
@@ -531,7 +460,6 @@
 				5E6F4B3B18117F7600312CCD /* AppDelegate.m in Sources */,
 				5E5DF025184327510098499A /* MyModeBtn.m in Sources */,
 				5E220DD0184261F100D2ACB0 /* MySetBtn.m in Sources */,
-				5EA9DA58184E4E29004378E0 /* JSONKit.m in Sources */,
 				5E6F4B3718117F7600312CCD /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

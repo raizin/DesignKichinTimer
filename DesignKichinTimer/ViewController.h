@@ -13,9 +13,10 @@
 #import "MyModeBtn.h"
 #import "MyCntLabel.h"
 #import "GADBannerView.h"
-
+//#import "AdstirView.h"
 
 //@interface ViewController : UIViewController <ADBannerViewDelegate> {
+//@interface ViewController : UIViewController <AdstirViewDelegate> {
 @interface ViewController : UIViewController {
   
   // iAd用View
@@ -102,5 +103,6 @@
   BOOL timeUpOk;
 
 }
+//@property (nonatomic, retain) AdstirView* adview; //プロパティーで宣言すると、管理が簡単になります。
 
 @end
