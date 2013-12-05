@@ -286,10 +286,6 @@
   /*** AdMob用 広告表示 ここまで ***/
   
   
-  
-  
-  
-  
   /*** iAd用 広告表示 ここから ***/
   adView = [[ADBannerView alloc] initWithFrame:CGRectZero];
 
