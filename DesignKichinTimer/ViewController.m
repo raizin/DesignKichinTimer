@@ -264,13 +264,11 @@
   
   }
   
-  
   mobView = [[GADBannerView alloc] initWithFrame:adRect];
   
   mobView.adUnitID = MY_UNIT_ID;
   mobView.delegate = (id<GADBannerViewDelegate>)self;
   mobView.rootViewController = self;
-
   
   //画面下部へ表示
   mobView.frame = CGRectMake(0, // x
@@ -280,24 +278,14 @@
   
   [self.view addSubview:mobView];
   
-  [mobView loadRequest:[self createRequest]];
+  [mobView loadRequest:[GADRequest request]];
 
-  mobView.hidden = NO;
+  mobView.hidden = YES;
   /*** AdMob用 広告表示 ここまで ***/
-  
-  
-  
-  
-  
-  
+
+
   /*** iAd用 広告表示 ここから ***/
   adView = [[ADBannerView alloc] initWithFrame:CGRectZero];
-
-  // use debug
-//  [adView setBackgroundColor:[UIColor colorWithRed:0.1f green:0.1f blue:0.8f alpha:0.5f]];
-
-//  NSLog(@"%d: w=%d h=%d",__LINE__,(int)adView.frame.size.width,(int)adView.frame.size.height);
-
   
   //画面下部へ表示
   adViewHeightMargin = 30; // iphone
@@ -315,33 +303,10 @@
   adView.delegate = (id<ADBannerViewDelegate>)self;
   adView.autoresizesSubviews = YES;
   adView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
-//  adView.autoresizingMask = UIViewAutoresizingNone;
-
-//  NSLog(@"%d: w=%d h=%d",__LINE__,(int)adView.frame.size.width,(int)adView.frame.size.height);
-  
-  
-  adView.alpha = 0.5f;
 
   [self.view addSubview:adView];
   bannerIsVisible = YES;
-  mobView.hidden = YES;
-  
   /*** iAd用 広告表示 ここまで ***/
-}
-
-
-
-- (GADRequest *)createRequest {
-  GADRequest *request = [GADRequest request];
-  
-  //Make the request for a test ad
-//  request.testDevices = [NSArray arrayWithObjects:
-//                         GAD_SIMULATOR_ID,// Simulator
-//                         @"5d94d53ec5305b722393fc8484ad6e23eae0c371",
-//                         nil];
-  
-  
-  return request;
 }
 
 
@@ -360,11 +325,11 @@
     [UIView commitAnimations];
 
     bannerIsVisible = YES;
-    [self.view bringSubviewToFront:adView];//再背面に移動
+//    [self.view bringSubviewToFront:adView];//再背面に移動
     [self.view addSubview:adView];
     
     mobView.hidden = YES;
-    [self.view sendSubviewToBack:mobView];//最前面に移動
+//    [self.view sendSubviewToBack:mobView];//最前面に移動
     [mobView removeFromSuperview];
     
   }
@@ -385,11 +350,11 @@
     [UIView commitAnimations];
 
     bannerIsVisible = NO;
-    [self.view sendSubviewToBack:adView];//再背面に移動
+//    [self.view sendSubviewToBack:adView];//再背面に移動
     [adView removeFromSuperview];
   
     mobView.hidden = NO;
-    [self.view bringSubviewToFront:mobView];//最前面に移動
+//    [self.view bringSubviewToFront:mobView];//最前面に移動
     [self.view addSubview:mobView];
   }
 }
