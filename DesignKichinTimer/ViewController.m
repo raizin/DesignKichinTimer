@@ -390,7 +390,6 @@
 
 
 
-
 // デバイスが回転した際に、呼び出されるメソッド(※自作)
 - (void) didRotate:(NSNotification *)notification {
   //  UIDeviceOrientation o = [[notification object] orientation];
