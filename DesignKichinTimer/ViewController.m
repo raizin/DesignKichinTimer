@@ -84,6 +84,9 @@
   //UserDefaults 初期値
   [ud setInteger:0 forKey:@"globalMinData"]; // M
   [ud setInteger:0 forKey:@"globalSecData"]; // S
+  
+//  [ud setInteger:0 forKey:@"appLauchedCount"]; // 起動回数
+  
 
   
   /*** Sound Setting ***/

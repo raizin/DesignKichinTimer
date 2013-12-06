@@ -23,3 +23,8 @@
 "SndTtlOff"="[Mute]";
 "SndMsgOn" ="Sound On";
 "SndMsgOff"="Sound Off";
+
+"AlertTtl"="Thanks!";
+"AlertMsg"="Please write a review if it is good.";
+"AlertNG"="Cancel";
+"AlertOK"="Go To Move";
