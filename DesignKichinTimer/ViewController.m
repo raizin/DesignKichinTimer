@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "SoundOnFlag.h"
 #import "GADBannerView.h"
+//#import "Appirater.h"
 
 
 @interface ViewController()
@@ -62,8 +63,6 @@
     [self prefersStatusBarHidden];
     [self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];
   }
-  
-  
   
   // カウント部分 フォントサイズ ipad:180 iphone:70 = 5 digits + "M S"
   static float CNT_FONT_SIZE_IPHONE = 70.f;
