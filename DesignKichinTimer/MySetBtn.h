@@ -14,4 +14,5 @@
 - (void)setNum:(int)number minFlag:(BOOL)unitFlag fontSize:(float)fontSize;
 - (void)setStart:(float)fontSize;
 - (void)setReset:(float)fontSize;
+- (void)setHis:(int)number fontSize:(float)btnFontSize;
 @end

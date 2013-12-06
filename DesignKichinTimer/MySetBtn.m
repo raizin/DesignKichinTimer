@@ -55,6 +55,18 @@
 }
 
 
+//履歴ボタン
+- (void)setHis:(int)number fontSize:(float)fontSize
+{
+  [self.layer setCornerRadius:20];
+
+  [self setTitle:[NSString stringWithFormat:@"H%d",number] forState:UIControlStateNormal];
+  [self.titleLabel setFont:[UIFont boldSystemFontOfSize:fontSize/2]];
+  
+  [self setTitleColor:[UIColor blueColor] forState:UIControlStateNormal]; //有効時
+  [self setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted]; //タッチ(ハイライト？)時
+  [self setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled]; //無効時
+}
 
 
 

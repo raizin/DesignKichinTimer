@@ -72,6 +72,11 @@
   static float BTN_FONT_SIZE_IPHONE = 25.f;
   static float BTN_FONT_SIZE_IPAD   = 50.f;
 
+  // History Label Font Size
+  static float HIS_LABEL_FONT_SIZE_IPHONE = 10.f;
+  static float HIS_LABEL_FONT_SIZE_IPAD   = 20.f;
+  
+  
   // Google AdMob 広告ユニットID
   static NSString *MY_UNIT_ID = @"ca-app-pub-8799115520187072/6215156947";
   
@@ -84,6 +89,14 @@
   //UserDefaults 初期値
   [ud setInteger:0 forKey:@"globalMinData"]; // M
   [ud setInteger:0 forKey:@"globalSecData"]; // S
+
+  // History
+  [ud setInteger:0 forKey:@"historyMinData1"];
+  [ud setInteger:0 forKey:@"historySecData1"];
+  [ud setInteger:0 forKey:@"historyMinData2"];
+  [ud setInteger:0 forKey:@"historySecData2"];
+  [ud setInteger:0 forKey:@"historyMinData3"];
+  [ud setInteger:0 forKey:@"historySecData3"];
   
 //  [ud setInteger:0 forKey:@"appLauchedCount"]; // 起動回数
   
@@ -173,6 +186,16 @@
   
   [self _addDropShadowToView:cntView]; // 内影生成
   
+  // History Label
+  hisLabel = [[MyCntLabel alloc] initWithFrame:CGRectMake(0,0,0,0)];// x y w h
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+    [hisLabel setHis:HIS_LABEL_FONT_SIZE_IPHONE];
+  }else{
+    [hisLabel setHis:HIS_LABEL_FONT_SIZE_IPAD];
+  }
+  [self.view addSubview:hisLabel];
+
+  
   
   
   /*** 表示切り替え(ボタン)配置 ***/
@@ -225,6 +248,20 @@
   [setBtnStart addTarget:self action:@selector(startBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:setBtnStart];
 
+  setBtnHis1 = [MySetBtn buttonWithType:UIButtonTypeCustom];
+  [setBtnHis1 setHis:1 fontSize:btnFontSize];
+//  [setBtnHis1 addTarget:self action:@selector(btnHis1Touch:) forControlEvents:UIControlEventTouchUpInside];
+  [self.view addSubview:setBtnHis1];
+  
+  setBtnHis2 = [MySetBtn buttonWithType:UIButtonTypeCustom];
+  [setBtnHis2 setHis:2 fontSize:btnFontSize];
+//  [setBtnHis2 addTarget:self action:@selector(btnHis2Touch:) forControlEvents:UIControlEventTouchUpInside];
+  [self.view addSubview:setBtnHis2];
+  
+  setBtnHis3 = [MySetBtn buttonWithType:UIButtonTypeCustom];
+  [setBtnHis3 setHis:3 fontSize:btnFontSize];
+//  [setBtnHis3 addTarget:self action:@selector(btnHis3Touch:) forControlEvents:UIControlEventTouchUpInside];
+  [self.view addSubview:setBtnHis3];
   
 
   
@@ -330,7 +367,7 @@
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
-  NSLog(@"%d: iAd Get Success!!",__LINE__);
+//  NSLog(@"%d: iAd Get Success!!",__LINE__);
 
   if (!bannerIsVisible) {
     [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
@@ -355,7 +392,7 @@
 }
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
 {
-  NSLog(@"%d: iAd get NG??",__LINE__);
+//  NSLog(@"%d: iAd get NG??",__LINE__);
   
   if (bannerIsVisible) {
     [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
@@ -436,6 +473,7 @@
       
       clockSelectBtn.frame = CGRectMake(centerPoint - 150     , -3,120,50);
       timerSelectBtn.frame = CGRectMake(centerPoint - 150 +130, -3,145,50);
+
       
     }else{
       //NSLog(@"%d: iPadの処理",__LINE__);
@@ -451,6 +489,20 @@
       setBtnReset.frame = CGRectMake(centerPoint -190 -115, 550, 190, 110); // x y w h
       setBtn001.frame   = CGRectMake(centerPoint  -(170/2), 550, 170, 100); // x y w h
       setBtnStart.frame = CGRectMake(centerPoint      +115, 550, 190, 110); // x y w h
+      
+      // 横向きのみ履歴ボタン表示
+      if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
+        setBtnHis1.frame = CGRectMake(centerPoint     +385, 110, 65, 40 ); // x y w h
+        setBtnHis2.frame = CGRectMake(centerPoint     +385, 170, 65, 40 ); // x y w h
+        setBtnHis3.frame = CGRectMake(centerPoint     +385, 230, 65, 40 ); // x y w h
+        
+        // History Label
+        hisLabel.frame   = CGRectMake(0,0, 90, 20 ); // x y w h
+        hisLabel.center  = CGPointMake(centerPoint +417, 80); // x y
+
+      }
+      
+      
     }
     
   }
@@ -463,6 +515,7 @@
   if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
     
     mobView.center = CGPointMake(centerPoint, mobView.center.y);
+    
 
   // 縦向き
   } else if (o == UIDeviceOrientationPortrait || o == UIDeviceOrientationPortraitUpsideDown) {

@@ -14,4 +14,6 @@
 - (void)setCnt:(float)fontSize;
 - (void)setHun:(float)fontSize;
 - (void)setByo:(float)fontSize;
+
+- (void)setHis:(float)fontSize;
 @end

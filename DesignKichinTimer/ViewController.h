@@ -43,6 +43,14 @@
   int globalMin;// 00~999
   int globalSec;// 00~59
   
+  int historyMin1;
+  int historySec1;
+  int historyMin2;
+  int historySec2;
+  int historyMin3;
+  int historySec3;
+
+  
   BOOL cntUpFlag; // YES:up NO:down
   BOOL cntMode;   // YES:キッチンタイマー NO:現在時表示
 
@@ -55,6 +63,8 @@
   MyCntLabel *cntLabel;
   MyCntLabel *hunLabel;//use minits unit character display
   MyCntLabel *byoLabel;//use seconds unit character display
+  
+  MyCntLabel *hisLabel;//履歴
 
   // カウンター表示ラベル フォントサイズ定義
   float cntFontSize;
@@ -80,6 +90,11 @@
   MySetBtn *setBtn0001;//1 s
   MySetBtn *setBtnStart;
   MySetBtn *setBtnReset;//Reset & Stop
+  
+  MySetBtn *setBtnHis1;//History
+  MySetBtn *setBtnHis2;//History
+  MySetBtn *setBtnHis3;//History
+  
 
   // Button フォントサイズ定義
   float btnFontSize;
