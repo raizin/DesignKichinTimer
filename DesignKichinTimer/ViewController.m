@@ -188,10 +188,15 @@
   
   // History Label
   hisLabel = [[MyCntLabel alloc] initWithFrame:CGRectMake(0,0,0,0)];// x y w h
+  BOOL hisLabelEnableFlag = YES;
+  if ((int)[ud integerForKey:@"historySecData1"] + (int)[ud integerForKey:@"historyMinData1"] == 0) {
+    hisLabelEnableFlag = NO;
+  }
+  
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    [hisLabel setHis:HIS_LABEL_FONT_SIZE_IPHONE];
+    [hisLabel setHis:HIS_LABEL_FONT_SIZE_IPHONE enableFlg:hisLabelEnableFlag];
   }else{
-    [hisLabel setHis:HIS_LABEL_FONT_SIZE_IPAD];
+    [hisLabel setHis:HIS_LABEL_FONT_SIZE_IPAD enableFlg:hisLabelEnableFlag];
   }
   [self.view addSubview:hisLabel];
 
@@ -248,18 +253,32 @@
   [setBtnStart addTarget:self action:@selector(startBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:setBtnStart];
 
+  
+  BOOL his1BtnEnableFlag = YES;
+  if ((int)[ud integerForKey:@"historySecData1"] + (int)[ud integerForKey:@"historyMinData1"] == 0) {
+    his1BtnEnableFlag = NO;
+  }
+  BOOL his2BtnEnableFlag = YES;
+  if ((int)[ud integerForKey:@"historySecData2"] + (int)[ud integerForKey:@"historyMinData2"] == 0) {
+    his2BtnEnableFlag = NO;
+  }
+  BOOL his3BtnEnableFlag = YES;
+  if ((int)[ud integerForKey:@"historySecData3"] + (int)[ud integerForKey:@"historyMinData3"] == 0) {
+    his3BtnEnableFlag = NO;
+  }
+  
   setBtnHis1 = [MySetBtn buttonWithType:UIButtonTypeCustom];
-  [setBtnHis1 setHis:1 fontSize:btnFontSize];
+  [setBtnHis1 setHis:1 fontSize:btnFontSize enableFlg:his1BtnEnableFlag];
 //  [setBtnHis1 addTarget:self action:@selector(btnHis1Touch:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:setBtnHis1];
   
   setBtnHis2 = [MySetBtn buttonWithType:UIButtonTypeCustom];
-  [setBtnHis2 setHis:2 fontSize:btnFontSize];
+  [setBtnHis2 setHis:2 fontSize:btnFontSize enableFlg:his2BtnEnableFlag];
 //  [setBtnHis2 addTarget:self action:@selector(btnHis2Touch:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:setBtnHis2];
   
   setBtnHis3 = [MySetBtn buttonWithType:UIButtonTypeCustom];
-  [setBtnHis3 setHis:3 fontSize:btnFontSize];
+  [setBtnHis3 setHis:3 fontSize:btnFontSize enableFlg:his3BtnEnableFlag];
 //  [setBtnHis3 addTarget:self action:@selector(btnHis3Touch:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:setBtnHis3];
   
