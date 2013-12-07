@@ -56,7 +56,7 @@
 
 
 //履歴ボタン
-- (void)setHis:(int)number fontSize:(float)fontSize enableFlg:(BOOL)enable
+- (void)setHis:(int)number fontSize:(float)fontSize
 {
   [self.layer setCornerRadius:20];
 
@@ -66,10 +66,7 @@
   [self setTitleColor:[UIColor blueColor] forState:UIControlStateNormal]; //有効時
   [self setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted]; //タッチ(ハイライト？)時
   [self setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled]; //無効時
-  
-  [self setEnabled:NO];
 }
-
 
 
 - (id)initWithFrame:(CGRect)frame

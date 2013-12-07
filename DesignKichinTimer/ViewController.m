@@ -91,12 +91,12 @@
   [ud setInteger:0 forKey:@"globalSecData"]; // S
 
   // History
-  [ud setInteger:0 forKey:@"historyMinData1"];
-  [ud setInteger:0 forKey:@"historySecData1"];
-  [ud setInteger:0 forKey:@"historyMinData2"];
-  [ud setInteger:0 forKey:@"historySecData2"];
-  [ud setInteger:0 forKey:@"historyMinData3"];
-  [ud setInteger:0 forKey:@"historySecData3"];
+//  [ud setInteger:0 forKey:@"historyMinData1"];
+//  [ud setInteger:0 forKey:@"historySecData1"];
+//  [ud setInteger:0 forKey:@"historyMinData2"];
+//  [ud setInteger:0 forKey:@"historySecData2"];
+//  [ud setInteger:0 forKey:@"historyMinData3"];
+//  [ud setInteger:0 forKey:@"historySecData3"];
   
 //  [ud setInteger:0 forKey:@"appLauchedCount"]; // 起動回数
   
@@ -188,18 +188,19 @@
   
   // History Label
   hisLabel = [[MyCntLabel alloc] initWithFrame:CGRectMake(0,0,0,0)];// x y w h
-  BOOL hisLabelEnableFlag = YES;
-  if ((int)[ud integerForKey:@"historySecData1"] + (int)[ud integerForKey:@"historyMinData1"] == 0) {
-    hisLabelEnableFlag = NO;
-  }
   
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    [hisLabel setHis:HIS_LABEL_FONT_SIZE_IPHONE enableFlg:hisLabelEnableFlag];
+    [hisLabel setHis:HIS_LABEL_FONT_SIZE_IPHONE];
   }else{
-    [hisLabel setHis:HIS_LABEL_FONT_SIZE_IPAD enableFlg:hisLabelEnableFlag];
+    [hisLabel setHis:HIS_LABEL_FONT_SIZE_IPAD];
+  }
+  [hisLabel setHisEnable:YES];
+  if ((int)[ud integerForKey:@"historySecData1"] + (int)[ud integerForKey:@"historyMinData1"] < 1) {
+    [hisLabel setHisEnable:NO];
   }
   [self.view addSubview:hisLabel];
 
+  NSLog(@"line=%d value=%d",__LINE__,(int)[ud integerForKey:@"historySecData1"] + (int)[ud integerForKey:@"historyMinData1"]);
   
   
   
@@ -253,33 +254,28 @@
   [setBtnStart addTarget:self action:@selector(startBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:setBtnStart];
 
-  
-  BOOL his1BtnEnableFlag = YES;
-  if ((int)[ud integerForKey:@"historySecData1"] + (int)[ud integerForKey:@"historyMinData1"] == 0) {
-    his1BtnEnableFlag = NO;
-  }
-  BOOL his2BtnEnableFlag = YES;
-  if ((int)[ud integerForKey:@"historySecData2"] + (int)[ud integerForKey:@"historyMinData2"] == 0) {
-    his2BtnEnableFlag = NO;
-  }
-  BOOL his3BtnEnableFlag = YES;
-  if ((int)[ud integerForKey:@"historySecData3"] + (int)[ud integerForKey:@"historyMinData3"] == 0) {
-    his3BtnEnableFlag = NO;
-  }
-  
   setBtnHis1 = [MySetBtn buttonWithType:UIButtonTypeCustom];
-  [setBtnHis1 setHis:1 fontSize:btnFontSize enableFlg:his1BtnEnableFlag];
-//  [setBtnHis1 addTarget:self action:@selector(btnHis1Touch:) forControlEvents:UIControlEventTouchUpInside];
+  [setBtnHis1 setHis:1 fontSize:btnFontSize];
+  [setBtnHis1 addTarget:self action:@selector(btnHis1Touch:) forControlEvents:UIControlEventTouchUpInside];
+  if ((int)[ud integerForKey:@"historySecData1"] + (int)[ud integerForKey:@"historyMinData1"] == 0) {
+    [setBtnHis1 setEnabled:NO];
+  }
   [self.view addSubview:setBtnHis1];
   
   setBtnHis2 = [MySetBtn buttonWithType:UIButtonTypeCustom];
-  [setBtnHis2 setHis:2 fontSize:btnFontSize enableFlg:his2BtnEnableFlag];
-//  [setBtnHis2 addTarget:self action:@selector(btnHis2Touch:) forControlEvents:UIControlEventTouchUpInside];
+  [setBtnHis2 setHis:2 fontSize:btnFontSize];
+  [setBtnHis2 addTarget:self action:@selector(btnHis2Touch:) forControlEvents:UIControlEventTouchUpInside];
+  if ((int)[ud integerForKey:@"historySecData2"] + (int)[ud integerForKey:@"historyMinData2"] == 0) {
+    [setBtnHis2 setEnabled:NO];
+  }
   [self.view addSubview:setBtnHis2];
   
   setBtnHis3 = [MySetBtn buttonWithType:UIButtonTypeCustom];
-  [setBtnHis3 setHis:3 fontSize:btnFontSize enableFlg:his3BtnEnableFlag];
-//  [setBtnHis3 addTarget:self action:@selector(btnHis3Touch:) forControlEvents:UIControlEventTouchUpInside];
+  [setBtnHis3 setHis:3 fontSize:btnFontSize];
+  [setBtnHis3 addTarget:self action:@selector(btnHis3Touch:) forControlEvents:UIControlEventTouchUpInside];
+  if ((int)[ud integerForKey:@"historySecData3"] + (int)[ud integerForKey:@"historyMinData3"] == 0) {
+    [setBtnHis3 setEnabled:NO];
+  }
   [self.view addSubview:setBtnHis3];
   
 
@@ -636,6 +632,10 @@
   [setBtn0001 setEnabled:NO];
   [setBtnStart setEnabled:NO];
   [setBtnReset setEnabled:NO];
+  [hisLabel setHisEnable:NO];
+  [setBtnHis1 setEnabled:NO];
+  [setBtnHis2 setEnabled:NO];
+  [setBtnHis3 setEnabled:NO];
 }
 - (void)btnEnabledAll
 {
@@ -648,6 +648,21 @@
   [setBtn0001 setEnabled:YES];
   [setBtnStart setEnabled:YES];
   [setBtnReset setEnabled:YES];
+  
+  if ((int)[ud integerForKey:@"historySecData1"] + (int)[ud integerForKey:@"historyMinData1"] >= 1) {
+    [hisLabel setHisEnable:YES];
+  }
+  if ((int)[ud integerForKey:@"historySecData1"] + (int)[ud integerForKey:@"historyMinData1"] >= 1) {
+    [setBtnHis1 setEnabled:YES];
+  }
+  if ((int)[ud integerForKey:@"historySecData2"] + (int)[ud integerForKey:@"historyMinData2"] >= 1) {
+    [setBtnHis2 setEnabled:YES];
+  }
+  if ((int)[ud integerForKey:@"historySecData3"] + (int)[ud integerForKey:@"historyMinData3"] >= 1) {
+    [setBtnHis3 setEnabled:YES];
+  }
+  
+  
 }
 - (void)btnEnableOnlyReset
 {
@@ -660,6 +675,10 @@
   [setBtn0001 setEnabled:NO];
   [setBtnStart setEnabled:NO];
   [setBtnReset setEnabled:YES];
+  [hisLabel setHisEnable:NO];
+  [setBtnHis1 setEnabled:NO];
+  [setBtnHis2 setEnabled:NO];
+  [setBtnHis3 setEnabled:NO];
 }
 - (void)btnEnableOnlyStartReset
 {
@@ -672,6 +691,10 @@
   [setBtn0001 setEnabled:NO];
   [setBtnStart setEnabled:YES];
   [setBtnReset setEnabled:YES];
+  [hisLabel setHisEnable:NO];
+  [setBtnHis1 setEnabled:NO];
+  [setBtnHis2 setEnabled:NO];
+  [setBtnHis3 setEnabled:NO];
 }
 
 - (void)cntPlusChk
@@ -770,6 +793,40 @@
   //Set Data Memory
   [ud setInteger:globalMin forKey:@"globalMinData"];  // M
   [ud setInteger:globalSec forKey:@"globalSecData"];  // S
+
+
+  BOOL his1BtnEnableFlag = YES;
+  if ((int)[ud integerForKey:@"historySecData1"] + (int)[ud integerForKey:@"historyMinData1"] == 0) {
+    his1BtnEnableFlag = NO;
+  }
+  BOOL his2BtnEnableFlag = YES;
+  if ((int)[ud integerForKey:@"historySecData2"] + (int)[ud integerForKey:@"historyMinData2"] == 0) {
+    his2BtnEnableFlag = NO;
+  }
+  BOOL his3BtnEnableFlag = YES;
+  if ((int)[ud integerForKey:@"historySecData3"] + (int)[ud integerForKey:@"historyMinData3"] == 0) {
+    his3BtnEnableFlag = NO;
+  }
+  
+
+  if (globalMin + globalSec > 0) {
+    
+    // 履歴２を履歴３へ移す
+    [ud setInteger:(int)[ud integerForKey:@"historyMinData2"] forKey:@"historyMinData3"];  // M
+    [ud setInteger:(int)[ud integerForKey:@"historySecData2"] forKey:@"historySecData3"];  // S
+    
+    // 履歴１を履歴２へ移す
+    [ud setInteger:(int)[ud integerForKey:@"historyMinData1"] forKey:@"historyMinData2"];  // M
+    [ud setInteger:(int)[ud integerForKey:@"historySecData1"] forKey:@"historySecData2"];  // S
+    
+    // セットを履歴１へ残す
+    [ud setInteger:globalMin forKey:@"historyMinData1"];  // M
+    [ud setInteger:globalSec forKey:@"historySecData1"];  // S
+  }
+  
+  
+  
+  
   [ud synchronize];
 
   
@@ -777,6 +834,39 @@
   [self startTimerTimer];
   [self btnEnableOnlyReset];
 }
+
+
+
+- (void)btnHis1Touch:(id)sender
+{
+  [self btnSndChkPlay];//効果音再生
+  
+  globalMin = (int)[ud integerForKey:@"historyMinData1"];
+  globalSec = (int)[ud integerForKey:@"historySecData1"];
+
+  [self cntPlusChk];
+}
+- (void)btnHis2Touch:(id)sender
+{
+  [self btnSndChkPlay];//効果音再生
+  
+  globalMin = (int)[ud integerForKey:@"historyMinData2"];
+  globalSec = (int)[ud integerForKey:@"historySecData2"];
+  
+  [self cntPlusChk];
+}
+- (void)btnHis3Touch:(id)sender
+{
+  [self btnSndChkPlay];//効果音再生
+  
+  globalMin = (int)[ud integerForKey:@"historyMinData3"];
+  globalSec = (int)[ud integerForKey:@"historySecData3"];
+  
+  [self cntPlusChk];
+}
+
+
+
 
 
 /*

@@ -15,5 +15,6 @@
 - (void)setHun:(float)fontSize;
 - (void)setByo:(float)fontSize;
 
-- (void)setHis:(float)fontSize enableFlg:(BOOL)enable;
+- (void)setHis:(float)fontSize;
+- (void)setHisEnable:(BOOL)enable;
 @end

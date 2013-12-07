@@ -66,7 +66,6 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
 //      NSString *templateReviewURLiOS7 = @"itms-apps://itunes.apple.com/app/idAPP_ID";
       NSString *templateReviewURLiOS7 = @"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=APP_ID";
       
-      
       NSString *reviewURL = [templateReviewURL stringByReplacingOccurrencesOfString:@"APP_ID" withString:[NSString stringWithFormat:@"%@", _appId]];
       
       if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {

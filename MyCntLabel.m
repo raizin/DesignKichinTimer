@@ -32,20 +32,23 @@
   self.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8]; // Light Gray
 }
 
-- (void)setHis:(float)fontSize enableFlg:(BOOL)enable
+- (void)setHis:(float)fontSize
 {
   self.font = [UIFont systemFontOfSize:fontSize];
   self.text = [NSString stringWithFormat:@"%@",NSLocalizedString(@"history", nil)];
   self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0.5 alpha:0]; //
   self.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8]; // Light Gray
   
+}
+- (void)setHisEnable:(BOOL)enable
+{
   if (enable) {
     self.textColor = [UIColor redColor];
+  }else{
+    self.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8]; // Light Gray
   }
-  
-//  self.backgroundColor = [UIColor purpleColor];
-  
 }
+
 
 - (id)initWithFrame:(CGRect)frame
 {
