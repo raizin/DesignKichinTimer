@@ -10,10 +10,10 @@
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>Icon-60.png</string>
-		<string>Icon-60@2x.png</string>
-		<string>Icon-76.png</string>
-		<string>Icon-76@2x.png</string>
+		<string>IconFree-60.png</string>
+		<string>IconFree-60@2x.png</string>
+		<string>IconFree-76.png</string>
+		<string>IconFree-76@2x.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
 	<string>jp.mydns.seiryu.designkichintimer</string>
