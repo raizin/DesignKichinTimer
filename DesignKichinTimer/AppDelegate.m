@@ -15,7 +15,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   // アプリ毎に割り振られる９桁のID
-  APP_ID = @"756181891";
+  APP_ID = @"776800295";
   
   
   //Sound play setting
