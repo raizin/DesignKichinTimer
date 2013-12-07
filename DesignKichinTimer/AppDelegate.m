@@ -53,26 +53,20 @@
 // アラートのボタンが押された時に呼ばれるデリゲート
 -(void)alertView:(UIAlertView*)alertView
 clickedButtonAtIndex:(NSInteger)buttonIndex {
-  
+
+//  NSString *reviewURLiOS6 = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=APPID";
+  NSString *reviewURL = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@",APP_ID];
+
   switch (buttonIndex) {
     case 0: // キャンセル (なにもしない)
-      NSLog(@"buttonIndex = %d", (int)buttonIndex);
+//      NSLog(@"buttonIndex = %d", (int)buttonIndex);
       break;
+      
     case 1:
-      NSLog(@"buttonIndex = %d", (int)buttonIndex);
-      
-      NSString *templateReviewURL = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=_APP_ID_";
-      NSString *templateReviewURLiOS7 = @"itms-apps://itunes.apple.com/app/id_APP_ID_";
-      
-      NSString *reviewURL = [templateReviewURL stringByReplacingOccurrencesOfString:@"_APP_ID_" withString:[NSString stringWithFormat:@"%@", APP_ID]];
-      
-      if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
-        reviewURL = [templateReviewURLiOS7 stringByReplacingOccurrencesOfString:@"_APP_ID_" withString:[NSString stringWithFormat:@"%@", APP_ID]];
-      }
+//      NSLog(@"buttonIndex = %d", (int)buttonIndex);
       
       [[UIApplication sharedApplication] openURL:[NSURL URLWithString:reviewURL]];
 
-      
     break;
   }
   
