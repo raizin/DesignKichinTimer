@@ -24,11 +24,14 @@
   [audioSession setActive:YES error:NULL];
   
   NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-  int appLaunchedCountValue = [ud integerForKey:@"appLauchedCount"];
+  int appLaunchedCountValue = (int)[ud integerForKey:@"appLauchedCount"];
   appLaunchedCountValue++;
 //  NSLog(@"appLaunchedCountValue = %d", appLaunchedCountValue);
   [ud setInteger:appLaunchedCountValue forKey:@"appLauchedCount"];
   [ud synchronize];
+
+  if ( appLaunchedCountValue == 3 ) {
+  }
   
   if ( appLaunchedCountValue == 3 ) {
     UIAlertView *alertView = [[UIAlertView alloc]
@@ -39,13 +42,6 @@
                           otherButtonTitles:[NSString stringWithFormat:@"%@",NSLocalizedString(@"AlertOK", nil)],nil];
     [alertView show];
   }
-  
-  
-  
-  
-  // Appirater (レビューを促すメッセージを表示ライブラリ)
-//  [Appirater setAppId:@"756181891"]; // アプリを追加したときに与えられる9桁の数字(Apple ID)
-
   
   // Override point for customization after application launch.
   return YES;
@@ -58,27 +54,24 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
   
   switch (buttonIndex) {
     case 0: // キャンセル (なにもしない)
-      NSLog(@"buttonIndex = %d", buttonIndex);
-      
+      NSLog(@"buttonIndex = %d", (int)buttonIndex);
       break;
     case 1:
-      NSLog(@"buttonIndex = %d", buttonIndex);
+      NSLog(@"buttonIndex = %d", (int)buttonIndex);
       
+      NSString *templateReviewURL = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=_APP_ID_";
+      NSString *templateReviewURLiOS7 = @"itms-apps://itunes.apple.com/app/id_APP_ID_";
       
-      NSString *templateReviewURL = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=APP_ID";
-      NSString *templateReviewURLiOS7 = @"itms-apps://itunes.apple.com/app/idAPP_ID";
-//      NSString *templateReviewURLiOS7 = @"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=APP_ID";
-      
-      NSString *reviewURL = [templateReviewURL stringByReplacingOccurrencesOfString:@"APP_ID" withString:[NSString stringWithFormat:@"%@", APP_ID]];
+      NSString *reviewURL = [templateReviewURL stringByReplacingOccurrencesOfString:@"_APP_ID_" withString:[NSString stringWithFormat:@"%@", APP_ID]];
       
       if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
-        reviewURL = [templateReviewURLiOS7 stringByReplacingOccurrencesOfString:@"APP_ID" withString:[NSString stringWithFormat:@"%@", APP_ID]];
+        reviewURL = [templateReviewURLiOS7 stringByReplacingOccurrencesOfString:@"_APP_ID_" withString:[NSString stringWithFormat:@"%@", APP_ID]];
       }
       
       [[UIApplication sharedApplication] openURL:[NSURL URLWithString:reviewURL]];
 
       
-      break;
+    break;
   }
   
 }
