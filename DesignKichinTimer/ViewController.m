@@ -73,7 +73,7 @@
   static float BTN_FONT_SIZE_IPAD   = 50.f;
 
   // History Label Font Size
-  static float HIS_LABEL_FONT_SIZE_IPHONE = 10.f;
+  static float HIS_LABEL_FONT_SIZE_IPHONE = 15.f;
   static float HIS_LABEL_FONT_SIZE_IPAD   = 20.f;
   
   
@@ -200,7 +200,7 @@
   }
   [self.view addSubview:hisLabel];
 
-  NSLog(@"line=%d value=%d",__LINE__,(int)[ud integerForKey:@"historySecData1"] + (int)[ud integerForKey:@"historyMinData1"]);
+//  NSLog(@"line=%d value=%d",__LINE__,(int)[ud integerForKey:@"historySecData1"] + (int)[ud integerForKey:@"historyMinData1"]);
   
   
   
@@ -490,6 +490,17 @@
       timerSelectBtn.frame = CGRectMake(centerPoint - 150 +130, -3,145,50);
 
       
+      // 横向きのみ履歴ボタン表示
+      if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
+        setBtnHis1.frame = CGRectMake(centerPoint     +158,  55, 60, 18 ); // x y w h
+        setBtnHis2.frame = CGRectMake(centerPoint     +158,  80, 60, 18 ); // x y w h
+        setBtnHis3.frame = CGRectMake(centerPoint     +158, 105, 60, 18 ); // x y w h
+        
+        // History Label
+        hisLabel.frame   = CGRectMake(0,0, 55, 20 ); // x y w h
+        hisLabel.center  = CGPointMake(centerPoint +185, 40); // x y
+      }
+      
     }else{
       //NSLog(@"%d: iPadの処理",__LINE__);
 
@@ -514,7 +525,6 @@
         // History Label
         hisLabel.frame   = CGRectMake(0,0, 90, 20 ); // x y w h
         hisLabel.center  = CGPointMake(centerPoint +417, 80); // x y
-
       }
       
       
@@ -795,21 +805,18 @@
   [ud setInteger:globalSec forKey:@"globalSecData"];  // S
 
 
-  BOOL his1BtnEnableFlag = YES;
-  if ((int)[ud integerForKey:@"historySecData1"] + (int)[ud integerForKey:@"historyMinData1"] == 0) {
-    his1BtnEnableFlag = NO;
-  }
-  BOOL his2BtnEnableFlag = YES;
-  if ((int)[ud integerForKey:@"historySecData2"] + (int)[ud integerForKey:@"historyMinData2"] == 0) {
-    his2BtnEnableFlag = NO;
-  }
-  BOOL his3BtnEnableFlag = YES;
-  if ((int)[ud integerForKey:@"historySecData3"] + (int)[ud integerForKey:@"historyMinData3"] == 0) {
-    his3BtnEnableFlag = NO;
+  BOOL addHistoryFlag = YES;
+  if (
+      globalMin == (int)[ud integerForKey:@"historyMinData1"] &&
+      globalSec == (int)[ud integerForKey:@"historySecData1"]
+      ) {
+    addHistoryFlag = NO;
+    
+    // 履歴１と同じ内容であれば追加しない。
   }
   
 
-  if (globalMin + globalSec > 0) {
+  if (globalMin + globalSec > 0 && addHistoryFlag) {
     
     // 履歴２を履歴３へ移す
     [ud setInteger:(int)[ud integerForKey:@"historyMinData2"] forKey:@"historyMinData3"];  // M

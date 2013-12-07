@@ -11,8 +11,12 @@
 
 @implementation AppDelegate
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  // アプリ毎に割り振られる９桁のID
+  APP_ID = @"756181891";
+  
   
   //Sound play setting
   AVAudioSession *audioSession = [AVAudioSession sharedInstance];
@@ -22,7 +26,7 @@
   NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
   int appLaunchedCountValue = [ud integerForKey:@"appLauchedCount"];
   appLaunchedCountValue++;
-  NSLog(@"appLaunchedCountValue = %d", appLaunchedCountValue);
+//  NSLog(@"appLaunchedCountValue = %d", appLaunchedCountValue);
   [ud setInteger:appLaunchedCountValue forKey:@"appLauchedCount"];
   [ud synchronize];
   
@@ -60,16 +64,15 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
     case 1:
       NSLog(@"buttonIndex = %d", buttonIndex);
       
-      NSString *_appId = @"756181891";
-
-      NSString *templateReviewURL = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=APP_ID";
-//      NSString *templateReviewURLiOS7 = @"itms-apps://itunes.apple.com/app/idAPP_ID";
-      NSString *templateReviewURLiOS7 = @"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=APP_ID";
       
-      NSString *reviewURL = [templateReviewURL stringByReplacingOccurrencesOfString:@"APP_ID" withString:[NSString stringWithFormat:@"%@", _appId]];
+      NSString *templateReviewURL = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=APP_ID";
+      NSString *templateReviewURLiOS7 = @"itms-apps://itunes.apple.com/app/idAPP_ID";
+//      NSString *templateReviewURLiOS7 = @"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=APP_ID";
+      
+      NSString *reviewURL = [templateReviewURL stringByReplacingOccurrencesOfString:@"APP_ID" withString:[NSString stringWithFormat:@"%@", APP_ID]];
       
       if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
-        reviewURL = [templateReviewURLiOS7 stringByReplacingOccurrencesOfString:@"APP_ID" withString:[NSString stringWithFormat:@"%@", _appId]];
+        reviewURL = [templateReviewURLiOS7 stringByReplacingOccurrencesOfString:@"APP_ID" withString:[NSString stringWithFormat:@"%@", APP_ID]];
       }
       
       [[UIApplication sharedApplication] openURL:[NSURL URLWithString:reviewURL]];

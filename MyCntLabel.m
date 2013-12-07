@@ -43,7 +43,7 @@
 - (void)setHisEnable:(BOOL)enable
 {
   if (enable) {
-    self.textColor = [UIColor redColor];
+    self.textColor = [UIColor orangeColor];
   }else{
     self.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8]; // Light Gray
   }
