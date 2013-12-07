@@ -24,10 +24,15 @@
   [audioSession setActive:YES error:NULL];
   
   NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-  int appLaunchedCountValue = [ud integerForKey:@"appLauchedCount"];
+  int appLaunchedCountValue = (int)[ud integerForKey:@"appLauchedCount"];
   appLaunchedCountValue++;
 //  NSLog(@"appLaunchedCountValue = %d", appLaunchedCountValue);
   [ud setInteger:appLaunchedCountValue forKey:@"appLauchedCount"];
+
+  // 一万回起動に到達したら 5 にもどす。
+  if ( appLaunchedCountValue >= 9999 ) {
+    [ud setInteger:5 forKey:@"appLauchedCount"];
+  }
   [ud synchronize];
   
   if ( appLaunchedCountValue == 3 ) {
@@ -40,13 +45,6 @@
     [alertView show];
   }
   
-  
-  
-  
-  // Appirater (レビューを促すメッセージを表示ライブラリ)
-//  [Appirater setAppId:@"756181891"]; // アプリを追加したときに与えられる9桁の数字(Apple ID)
-
-  
   // Override point for customization after application launch.
   return YES;
 }
@@ -58,11 +56,11 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
   
   switch (buttonIndex) {
     case 0: // キャンセル (なにもしない)
-      NSLog(@"buttonIndex = %d", buttonIndex);
+      NSLog(@"buttonIndex = %d", (int)buttonIndex);
       
       break;
     case 1:
-      NSLog(@"buttonIndex = %d", buttonIndex);
+      NSLog(@"buttonIndex = %d", (int)buttonIndex);
       
       
       NSString *templateReviewURL = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=APP_ID";
