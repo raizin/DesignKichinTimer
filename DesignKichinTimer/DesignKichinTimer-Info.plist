@@ -16,7 +16,7 @@
 		<string>Icon-76@2x.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>jp.mydns.seiryu.designkichintimer</string>
+	<string>jp.mydns.seiryu.designkichintimer.pro</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
