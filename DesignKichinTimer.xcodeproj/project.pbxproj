@@ -158,7 +158,7 @@
 			name = CustomClass;
 			sourceTree = "<group>";
 		};
-		5E220DD21842630700D2ACB0 /* IconPng */ = {
+		5E220DD21842630700D2ACB0 /* IconProPng */ = {
 			isa = PBXGroup;
 			children = (
 				5EF21EC41839260C00C079F0 /* Icon-76.png */,
@@ -166,7 +166,7 @@
 				5EF21EC61839260C00C079F0 /* Icon-60.png */,
 				5EF21EC71839260C00C079F0 /* Icon-60@2x.png */,
 			);
-			name = IconPng;
+			name = IconProPng;
 			sourceTree = "<group>";
 		};
 		5E220DD31842637900D2ACB0 /* DefaultClass */ = {
@@ -185,8 +185,8 @@
 			children = (
 				5E711E4518191B0000E7AA83 /* .gitattributes */,
 				5EA2C09F1811865E00B0FC3D /* .gitignore */,
+				5E220DD21842630700D2ACB0 /* IconProPng */,
 				5E220DD31842637900D2ACB0 /* DefaultClass */,
-				5E220DD21842630700D2ACB0 /* IconPng */,
 				5E220DD11842624A00D2ACB0 /* CustomClass */,
 				5E6F4B3018117F7600312CCD /* DesignKichinTimer */,
 				5E6F4B5218117F7700312CCD /* DesignKichinTimerTests */,
