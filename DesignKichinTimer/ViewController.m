@@ -524,7 +524,7 @@
         
         // History Label
         hisLabel.frame   = CGRectMake(0,0, 90, 20 ); // x y w h
-        hisLabel.center  = CGPointMake(centerPoint +417, 80); // x y
+        hisLabel.center  = CGPointMake(centerPoint +420, 80); // x y
       }
       
       
