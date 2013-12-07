@@ -28,10 +28,12 @@
   appLaunchedCountValue++;
 //  NSLog(@"appLaunchedCountValue = %d", appLaunchedCountValue);
   [ud setInteger:appLaunchedCountValue forKey:@"appLauchedCount"];
-  [ud synchronize];
 
-  if ( appLaunchedCountValue == 3 ) {
+  // 一万回起動に到達したら 5 にもどす。
+  if ( appLaunchedCountValue >= 9999 ) {
+    [ud setInteger:5 forKey:@"appLauchedCount"];
   }
+  [ud synchronize];
   
   if ( appLaunchedCountValue == 3 ) {
     UIAlertView *alertView = [[UIAlertView alloc]
