@@ -17,6 +17,12 @@
 		5E220DCD18425F3900D2ACB0 /* SoundOnFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E220DCC18425F3900D2ACB0 /* SoundOnFlag.m */; };
 		5E220DD0184261F100D2ACB0 /* MySetBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E220DCF184261F100D2ACB0 /* MySetBtn.m */; };
 		5E24806118558F9F0032AF77 /* VibrateOnFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E24806018558F9F0032AF77 /* VibrateOnFlag.m */; };
+		5E2480671856ED3E0032AF77 /* IconVibOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E2480651856ED3E0032AF77 /* IconVibOn.png */; };
+		5E2480681856ED3E0032AF77 /* IconVibOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E2480661856ED3E0032AF77 /* IconVibOff.png */; };
+		5E2480701856F5D80032AF77 /* IconVibTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E24806C1856F5D80032AF77 /* IconVibTouch.png */; };
+		5E2480721856FD4D0032AF77 /* IconSndOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E2480711856FD4D0032AF77 /* IconSndOn.png */; };
+		5E2480751856FE6B0032AF77 /* IconSndOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E2480731856FE6B0032AF77 /* IconSndOff.png */; };
+		5E2480761856FE6B0032AF77 /* IconSndTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E2480741856FE6B0032AF77 /* IconSndTouch.png */; };
 		5E42589718192B7F00171F1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E42589918192B7F00171F1F /* Localizable.strings */; };
 		5E42589C181CF29300171F1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E42589B181CF29300171F1F /* QuartzCore.framework */; };
 		5E5DF025184327510098499A /* MyModeBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DF024184327510098499A /* MyModeBtn.m */; };
@@ -83,6 +89,12 @@
 		5E243BDA182504E7005C31D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5E24805F18558F9F0032AF77 /* VibrateOnFlag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VibrateOnFlag.h; sourceTree = "<group>"; };
 		5E24806018558F9F0032AF77 /* VibrateOnFlag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VibrateOnFlag.m; sourceTree = "<group>"; };
+		5E2480651856ED3E0032AF77 /* IconVibOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconVibOn.png; sourceTree = "<group>"; };
+		5E2480661856ED3E0032AF77 /* IconVibOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconVibOff.png; sourceTree = "<group>"; };
+		5E24806C1856F5D80032AF77 /* IconVibTouch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconVibTouch.png; sourceTree = "<group>"; };
+		5E2480711856FD4D0032AF77 /* IconSndOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconSndOn.png; sourceTree = "<group>"; };
+		5E2480731856FE6B0032AF77 /* IconSndOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconSndOff.png; sourceTree = "<group>"; };
+		5E2480741856FE6B0032AF77 /* IconSndTouch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconSndTouch.png; sourceTree = "<group>"; };
 		5E42589418192B2600171F1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5E42589818192B7F00171F1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E42589A18192B8800171F1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -304,6 +316,12 @@
 		5E6F4B3118117F7600312CCD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5E2480731856FE6B0032AF77 /* IconSndOff.png */,
+				5E2480741856FE6B0032AF77 /* IconSndTouch.png */,
+				5E2480711856FD4D0032AF77 /* IconSndOn.png */,
+				5E24806C1856F5D80032AF77 /* IconVibTouch.png */,
+				5E2480651856ED3E0032AF77 /* IconVibOn.png */,
+				5E2480661856ED3E0032AF77 /* IconVibOff.png */,
 				5ECB0D361832173700103C18 /* pi_mono.mp3 */,
 				5ECB0D261832038400103C18 /* piLong.mp3 */,
 				5EC2DCD11830A52A003E1D5C /* pi_old.mp3 */,
@@ -466,6 +484,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E2480701856F5D80032AF77 /* IconVibTouch.png in Resources */,
+				5E2480751856FE6B0032AF77 /* IconSndOff.png in Resources */,
+				5E2480681856ED3E0032AF77 /* IconVibOff.png in Resources */,
 				5ECB0D371832173700103C18 /* pi_mono.mp3 in Resources */,
 				5EF21EC81839260C00C079F0 /* Icon-76.png in Resources */,
 				5EA2C0A01811865E00B0FC3D /* .gitignore in Resources */,
@@ -473,14 +494,17 @@
 				5E711E4618191B0000E7AA83 /* .gitattributes in Resources */,
 				5E5DF03918438FB50098499A /* AdMob_README.txt in Resources */,
 				5EF21EC91839260C00C079F0 /* Icon-76@2x.png in Resources */,
+				5E2480721856FD4D0032AF77 /* IconSndOn.png in Resources */,
 				5EC2DCD21830A52A003E1D5C /* pi_old.mp3 in Resources */,
 				5E80FDD018530EFB0011AB75 /* IconFree-76@2x.png in Resources */,
 				5E6F4B4118117F7600312CCD /* Main_iPad.storyboard in Resources */,
 				5E42589718192B7F00171F1F /* Localizable.strings in Resources */,
+				5E2480671856ED3E0032AF77 /* IconVibOn.png in Resources */,
 				5E80FDCD18530EFB0011AB75 /* IconFree-60.png in Resources */,
 				5E6F4B4618117F7600312CCD /* Images.xcassets in Resources */,
 				5ECB0D271832038400103C18 /* piLong.mp3 in Resources */,
 				5EA9DA33184E4CB9004378E0 /* NADView_readme.txt in Resources */,
+				5E2480761856FE6B0032AF77 /* IconSndTouch.png in Resources */,
 				5E6F4B3E18117F7600312CCD /* Main_iPhone.storyboard in Resources */,
 				5EF21ECA1839260C00C079F0 /* Icon-60.png in Resources */,
 				5EF21ECB1839260C00C079F0 /* Icon-60@2x.png in Resources */,
