@@ -1225,7 +1225,7 @@ int vibCount;
     [cntView addSubview:vibBtn];
     
   }else{
-    sndBtn.frame = CGRectMake(cntView.bounds.size.width -60,cntView.bounds.size.height -40,50,35); // x y w h
+    sndBtn.frame = CGRectMake(cntView.bounds.size.width -60,cntView.bounds.size.height -60,50,50); // x y w h
   }
   
   //  [sndBtn setBackgroundColor:[UIColor purpleColor]];
