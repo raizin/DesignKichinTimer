@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "SoundOnFlag.h"
+#import "VibrateOnFlag.h"
+//#import <AudioToolbox/AudioServices.h>
 
 
 @interface ViewController()
@@ -1073,6 +1075,36 @@
   [self chkDisp];
   
 }
+
+
+NSTimer* vibTimer;
+
+- (void) vibrateRoop {
+  if ([VibrateOnFlag val]==NO) {
+    return;
+  }
+  
+  vibCount = 0;
+  vibTimer = [NSTimer
+              scheduledTimerWithTimeInterval:1.0f
+              target: self
+              selector:@selector(vibrateRepeat:)
+              userInfo:nil
+              repeats:YES];
+}
+
+int vibCount;
+
+- (void) vibrateRepeat:(CFRunLoopTimerRef *)timer {
+  NSLog(@"実行!!!");
+  AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+  vibCount++;
+  
+  if (vibCount > 2) {
+    [vibTimer invalidate]; // timerをストップ
+  }
+}
+
 
 
 // 表示反映関数

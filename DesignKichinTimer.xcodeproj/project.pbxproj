@@ -14,6 +14,7 @@
 		5E1E11DF18350D3100307C8F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1E11DE18350D3100307C8F /* StoreKit.framework */; };
 		5E220DCD18425F3900D2ACB0 /* SoundOnFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E220DCC18425F3900D2ACB0 /* SoundOnFlag.m */; };
 		5E220DD0184261F100D2ACB0 /* MySetBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E220DCF184261F100D2ACB0 /* MySetBtn.m */; };
+		5E2480641856B0CB0032AF77 /* VibrateOnFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2480621856B0CB0032AF77 /* VibrateOnFlag.m */; };
 		5E42589718192B7F00171F1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E42589918192B7F00171F1F /* Localizable.strings */; };
 		5E42589C181CF29300171F1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E42589B181CF29300171F1F /* QuartzCore.framework */; };
 		5E5DF025184327510098499A /* MyModeBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DF024184327510098499A /* MyModeBtn.m */; };
@@ -70,6 +71,8 @@
 		5E220DCF184261F100D2ACB0 /* MySetBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MySetBtn.m; path = DesignKichinTimer/MySetBtn.m; sourceTree = "<group>"; };
 		5E243BD9182504DC005C31D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E243BDA182504E7005C31D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5E2480621856B0CB0032AF77 /* VibrateOnFlag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VibrateOnFlag.m; sourceTree = "<group>"; };
+		5E2480631856B0CB0032AF77 /* VibrateOnFlag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VibrateOnFlag.h; sourceTree = "<group>"; };
 		5E42589418192B2600171F1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5E42589818192B7F00171F1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E42589A18192B8800171F1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 		5E220DD11842624A00D2ACB0 /* CustomClass */ = {
 			isa = PBXGroup;
 			children = (
+				5E2480621856B0CB0032AF77 /* VibrateOnFlag.m */,
+				5E2480631856B0CB0032AF77 /* VibrateOnFlag.h */,
 				5E220DCB18425F3900D2ACB0 /* SoundOnFlag.h */,
 				5E220DCC18425F3900D2ACB0 /* SoundOnFlag.m */,
 				5E220DCE184261F100D2ACB0 /* MySetBtn.h */,
@@ -158,7 +163,7 @@
 			name = CustomClass;
 			sourceTree = "<group>";
 		};
-		5E220DD21842630700D2ACB0 /* IconProPng */ = {
+		5E220DD21842630700D2ACB0 /* IconPng-Professional */ = {
 			isa = PBXGroup;
 			children = (
 				5EF21EC41839260C00C079F0 /* Icon-76.png */,
@@ -166,7 +171,7 @@
 				5EF21EC61839260C00C079F0 /* Icon-60.png */,
 				5EF21EC71839260C00C079F0 /* Icon-60@2x.png */,
 			);
-			name = IconProPng;
+			name = "IconPng-Professional";
 			sourceTree = "<group>";
 		};
 		5E220DD31842637900D2ACB0 /* DefaultClass */ = {
@@ -185,7 +190,7 @@
 			children = (
 				5E711E4518191B0000E7AA83 /* .gitattributes */,
 				5EA2C09F1811865E00B0FC3D /* .gitignore */,
-				5E220DD21842630700D2ACB0 /* IconProPng */,
+				5E220DD21842630700D2ACB0 /* IconPng-Professional */,
 				5E220DD31842637900D2ACB0 /* DefaultClass */,
 				5E220DD11842624A00D2ACB0 /* CustomClass */,
 				5E6F4B3018117F7600312CCD /* DesignKichinTimer */,
@@ -413,6 +418,7 @@
 				5E6F4B3B18117F7600312CCD /* AppDelegate.m in Sources */,
 				5E5DF025184327510098499A /* MyModeBtn.m in Sources */,
 				5E220DD0184261F100D2ACB0 /* MySetBtn.m in Sources */,
+				5E2480641856B0CB0032AF77 /* VibrateOnFlag.m in Sources */,
 				5E6F4B3718117F7600312CCD /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
