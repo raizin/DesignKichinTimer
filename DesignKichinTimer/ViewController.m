@@ -178,7 +178,7 @@
 
   
   // カウント表示Label
-  cntLabel = [[MyCntLabel alloc] initWithFrame:CGRectMake(0,0,cntW,cntH)];// x y w h
+  cntLabel = [[MyCntLabel alloc] initWithFrame:CGRectMake(-15,0,cntView.frame.size.width,cntView.frame.size.height)];// x y w h
   
   // 表示フォントサイズ 端末分岐 ipad:180 iphone:70  = 5 digits + "M S"
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
@@ -994,23 +994,17 @@
 
   fadeinFlag = YES;
 
-  
   [clockSelectBtn setEnabled:NO];
   [timerSelectBtn setEnabled:YES];
 
   //すべてのボタンをDisableにする
   [self btnDisabledAll];
 
-
   //現在時表示用タイマー開始
   [self startClockTimer];
   
-
   // 現在時表示モード
   cntMode = NO;
-  
-  
-  
 }
 
 /*
@@ -1071,6 +1065,10 @@
  */
 - (void) timerSelectBtnTouch:(id)sender
 {
+  // カウンター数値 表示位置補正
+  cntLabel.frame = CGRectMake(-15, 0, cntView.frame.size.width, cntView.frame.size.height); //x y w h
+
+  
   // キッチンタイマーモード
   cntMode = YES;
   [self chkDisp];
@@ -1122,14 +1120,14 @@
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
     //NSLog(@"%d: iPhoneの処理",__LINE__);
     unitFontSize = 15.f;
-    unitRectM = CGRectMake(146,9,45,45); // x y w h
-    unitRectS = CGRectMake(244,9,45,45); // x y w h
+    unitRectM = CGRectMake(131,9,45,45); // x y w h
+    unitRectS = CGRectMake(229,9,45,45); // x y w h
   }
   else{
     //NSLog(@"%d: iPadの処理",__LINE__);
     unitFontSize = 30.f;
-    unitRectM = CGRectMake(388,60,45,45); // x y w h
-    unitRectS = CGRectMake(633,60,45,45); // x y w h
+    unitRectM = CGRectMake(378,60,45,45); // x y w h
+    unitRectS = CGRectMake(623,60,45,45); // x y w h
   }
   
   hunLabel = [[MyCntLabel alloc] initWithFrame:unitRectM];// x y w h
@@ -1232,6 +1230,9 @@
   
   // 時間を表示
   cntLabel.text = [NSString stringWithFormat:@"%02d:%02d:%02d",hour,min,sec];
+  
+  // カウンター数値 表示位置補正
+  cntLabel.frame = CGRectMake(0, 0, cntView.frame.size.width, cntView.frame.size.height);
 
   [self lbFadein:cntLabel];
 }
