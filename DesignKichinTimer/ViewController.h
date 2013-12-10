@@ -119,6 +119,8 @@
   // タイマー完了(到達)フラグ
   BOOL timeUpOk;
 
+  // リセットボタン 拡大フラグ
+  BOOL resetBtnScaleFlag;  
 }
 //@property (nonatomic, retain) AdstirView* adview; //プロパティーで宣言すると、管理が簡単になります。
 

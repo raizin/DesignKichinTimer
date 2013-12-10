@@ -133,6 +133,8 @@
   cntUpFlag = NO;
   timeUpOk = NO;
 
+  // リセットボタン 拡大フラグ
+  resetBtnScaleFlag = NO;
   
   
   //画面情報(横幅)取得
@@ -471,6 +473,9 @@
       || o == UIDeviceOrientationPortraitUpsideDown) {
     
     
+    // 回転したら拡大から戻るので、フラグを切る
+    resetBtnScaleFlag = NO;
+
     
     // 端末によりボタンの配置／大きさの調整
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
@@ -674,7 +679,7 @@
     [setBtnHis3 setEnabled:YES];
   }
   
-  
+  [self btnScaleOrg:setBtnReset]; //縮小アニメ
 }
 - (void)btnEnableOnlyReset
 {
@@ -691,6 +696,7 @@
   [setBtnHis1 setEnabled:NO];
   [setBtnHis2 setEnabled:NO];
   [setBtnHis3 setEnabled:NO];
+  [self btnScaleUp:setBtnReset]; //拡大アニメ
 }
 - (void)btnEnableOnlyStartReset
 {
@@ -707,6 +713,7 @@
   [setBtnHis1 setEnabled:NO];
   [setBtnHis2 setEnabled:NO];
   [setBtnHis3 setEnabled:NO];
+  [self btnScaleOrg:setBtnReset]; //縮小アニメ
 }
 
 - (void)cntPlusChk
@@ -1407,6 +1414,67 @@ int vibCount;
   [cntView addSubview:vibBtn];
   // ====== 「Sound & Vibrator ON/OFF」Button To here ======
 }
+
+
+/*
+ * UIButton scale up method
+ */
+- (void)btnScaleUp:(UIButton *)btn
+{
+  if (resetBtnScaleFlag == NO) {
+    [self.view bringSubviewToFront:btn]; //最前面
+
+    //元の配置を覚える
+    [ud setFloat:btn.frame.origin.x    forKey:@"ResetBtnOrgX"];
+    [ud setFloat:btn.frame.origin.y    forKey:@"ResetBtnOrgY"];
+    [ud setFloat:btn.frame.size.width  forKey:@"ResetBtnOrgW"];
+    [ud setFloat:btn.frame.size.height forKey:@"ResetBtnOrgH"];
+
+    //拡大アニメーション
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+    [UIView setAnimationDuration:1.f];
+    
+    int direction = self.interfaceOrientation;
+    if(direction == UIInterfaceOrientationPortrait || direction == UIInterfaceOrientationPortraitUpsideDown){
+//      NSLog(@"縦 Portrait ");
+      btn.frame = CGRectMake(3, // x
+                             cntView.frame.size.height + cntView.frame.origin.y +3, // y
+                             self.view.frame.size.width -6, // w
+                             self.view.frame.size.height - (cntView.frame.size.height + cntView.frame.origin.y) -6 ); // h
+    }
+    else if(direction == UIInterfaceOrientationLandscapeLeft || direction == UIInterfaceOrientationLandscapeRight){
+//      NSLog(@"横 Landscape");
+      btn.frame = CGRectMake(3, // x
+                             cntView.frame.size.height + cntView.frame.origin.y +3, // y
+                             self.view.frame.size.height -6, // w
+                             self.view.frame.size.width - (cntView.frame.size.height + cntView.frame.origin.y) -6 ); // h
+    }
+    
+    [UIView commitAnimations];
+    
+    resetBtnScaleFlag = YES;
+  }
+}
+/*
+ * UIButton scale org method
+ */
+- (void)btnScaleOrg:(UIButton *)btn
+{
+  if (resetBtnScaleFlag) {
+
+    //元に戻す アニメーション
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+    [UIView setAnimationDuration:0.5f];
+    
+    btn.frame = CGRectMake([ud floatForKey:@"ResetBtnOrgX"], [ud floatForKey:@"ResetBtnOrgY"], [ud floatForKey:@"ResetBtnOrgW"], [ud floatForKey:@"ResetBtnOrgH"]);
+    [UIView commitAnimations];
+    
+    resetBtnScaleFlag = NO;
+  }
+}
+
 
 
 
