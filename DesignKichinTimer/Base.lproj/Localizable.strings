@@ -26,6 +26,11 @@
 "SndMsgOn" ="Sound On";
 "SndMsgOff"="Sound Off";
 
+"VibTtlOn" ="[vibration]";
+"VibTtlOff"="[vibration]";
+"VibMsgOn" ="On";
+"VibMsgOff"="Off";
+
 "AlertTtl"="Thanks!";
 "AlertMsg"="Please write a review if it is good.";
 "AlertNG"="Cancel";

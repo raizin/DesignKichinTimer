@@ -726,34 +726,70 @@
 /*
  * 音のON/OFFボタン用イベント
  */
-- (void)soundSelectBtnTouch:(id)sender
+- (void)sndBtnTouch:(id)sender
 {
+  UIButton *btn = sender;
+  
   // アラート
   UIAlertView *alert = [[UIAlertView alloc] init];
   
   if ([SoundOnFlag val]) {
-    [soundSelectBtn SwitchIcon:sndBtnRect btnTitle:sndBtnTitle stateFlag:NO];
-
+    [btn setImage:[UIImage imageNamed:@"IconSndOff.png"] forState:UIControlStateNormal];
+    
     [SoundOnFlag setValue:NO];
     [SoundOnFlag sync];
     
     [alermSound stop];//鳴っている途中なら止める
-
+    
     alert.title   = [NSString stringWithFormat:@"%@",NSLocalizedString(@"SndTtlOff", nil)];
     alert.message = [NSString stringWithFormat:@"%@",NSLocalizedString(@"SndMsgOff", nil)];
     [alert addButtonWithTitle:@" O K "];
     
   }else{
-    [soundSelectBtn SwitchIcon:sndBtnRect btnTitle:sndBtnTitle stateFlag:YES];
-
+    [btn setImage:[UIImage imageNamed:@"IconSndOn.png"] forState:UIControlStateNormal];
+    
     [SoundOnFlag setValue:YES];
     [SoundOnFlag sync];
-
+    
     alert.title   = [NSString stringWithFormat:@"%@",NSLocalizedString(@"SndTtlOn", nil)];
     alert.message = [NSString stringWithFormat:@"%@",NSLocalizedString(@"SndMsgOn", nil)];
     [alert addButtonWithTitle:@" O K "];
   }
+  
+  [alert show];
+}
 
+/*
+ * バイブレーションのON/OFFボタン用イベント
+ */
+- (void)vibBtnTouch:(id)sender
+{
+  UIButton *btn = sender;
+  
+  // アラート
+  UIAlertView *alert = [[UIAlertView alloc] init];
+  
+  if ([VibrateOnFlag val]) {
+    [btn setImage:[UIImage imageNamed:@"IconVibOff.png"] forState:UIControlStateNormal];
+    
+    [VibrateOnFlag setValue:NO];
+    [VibrateOnFlag sync];
+    
+    alert.title   = [NSString stringWithFormat:@"%@",NSLocalizedString(@"VibTtlOff", nil)];
+    alert.message = [NSString stringWithFormat:@"%@",NSLocalizedString(@"VibMsgOff", nil)];
+    [alert addButtonWithTitle:@" O K "];
+    
+  }else{
+    [btn setImage:[UIImage imageNamed:@"IconVibOn.png"] forState:UIControlStateNormal];
+    
+    [VibrateOnFlag setValue:YES];
+    [VibrateOnFlag sync];
+    
+    alert.title   = [NSString stringWithFormat:@"%@",NSLocalizedString(@"VibTtlOn", nil)];
+    alert.message = [NSString stringWithFormat:@"%@",NSLocalizedString(@"VibMsgOn", nil)];
+    [alert addButtonWithTitle:@" O K "];
+  }
+  
   [alert show];
 }
 
@@ -766,7 +802,8 @@
   [self lbFadeout:cntLabel];
   [self lbFadeout:hunLabel];
   [self lbFadeout:byoLabel];
-  [self btnFadeout:soundSelectBtn];
+  [self btnFadeout:sndBtn];
+  [self btnFadeout:vibBtn];
 
   fadeinFlag = YES;
 
@@ -878,8 +915,8 @@
   [self lbFadein:hunLabel];
   [self lbFadein:byoLabel];
   [self lbFadein:cntLabel];
-  [self btnFadein:soundSelectBtn];
-
+  [self btnFadein:sndBtn];
+  [self btnFadein:vibBtn];
 }
 
 - (void)timerInitDisp {
@@ -1063,7 +1100,7 @@
    
     
     // Vibrate
-//    AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+    [self vibrateRoop];
     
     [self almSndChkPlay];
     
@@ -1096,7 +1133,7 @@ NSTimer* vibTimer;
 int vibCount;
 
 - (void) vibrateRepeat:(CFRunLoopTimerRef *)timer {
-  NSLog(@"実行!!!");
+  //  NSLog(@"%d Vibration %s",__LINE__,__func__);
   AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
   vibCount++;
   
@@ -1104,6 +1141,7 @@ int vibCount;
     [vibTimer invalidate]; // timerをストップ
   }
 }
+
 
 
 
@@ -1158,22 +1196,35 @@ int vibCount;
   // ====== 「タイマー設定」ボタン（リンクテキスト風）ここまで ======
   
   
-  // ====== 「Sound ON/OFF」Button From here ======
-  soundSelectBtn = [MyModeBtn buttonWithType:UIButtonTypeCustom];
+  // ====== 「Sound & Vibrator ON/OFF」Button From here ======
+  sndBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+  vibBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+  
+  [sndBtn setImage:[UIImage imageNamed:@"IconSndOn.png"]    forState:UIControlStateNormal];
+  [sndBtn setImage:[UIImage imageNamed:@"IconSndTouch.png"] forState:UIControlStateHighlighted];
   
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    sndBtnTitle = [NSString stringWithFormat:@"%@",NSLocalizedString(@"btnSound", nil)];
-    sndBtnRect  = CGRectMake(cntView.bounds.size.width -40,cntView.bounds.size.height -40,35,35);
+    sndBtn.frame = CGRectMake(cntView.bounds.size.width -37,cntView.bounds.size.height -35,30,30); // x y w h
+    
+    [vibBtn setImage:[UIImage imageNamed:@"IconVibOn.png"]    forState:UIControlStateNormal];
+    [vibBtn setImage:[UIImage imageNamed:@"IconVibTouch.png"] forState:UIControlStateHighlighted];
+    vibBtn.frame = CGRectMake(cntView.bounds.size.width -66,cntView.bounds.size.height -36,32,32); // x y w h
+    [cntView addSubview:vibBtn];
+    
   }else{
-    sndBtnTitle = [NSString stringWithFormat:@"[ %@ ]",NSLocalizedString(@"btnSound", nil)];
-    sndBtnRect  = CGRectMake(cntView.bounds.size.width -60,cntView.bounds.size.height -40,50,35);
+    sndBtn.frame = CGRectMake(cntView.bounds.size.width -60,cntView.bounds.size.height -40,50,35); // x y w h
   }
   
-  [soundSelectBtn SwitchIcon:sndBtnRect btnTitle:sndBtnTitle stateFlag:[SoundOnFlag val]];
-  [soundSelectBtn addTarget:self action:@selector(soundSelectBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
-  [cntView addSubview:soundSelectBtn];
-  // ====== 「Sound ON/OFF」Button To here ======
+  //  [sndBtn setBackgroundColor:[UIColor purpleColor]];
+  [sndBtn setImageEdgeInsets:UIEdgeInsetsMake(6.f, 6.f, 6.f, 6.f)]; // 上 左 下 右
+  [sndBtn addTarget:self action:@selector(sndBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
+  [cntView addSubview:sndBtn];
   
+  //  [vibBtn setBackgroundColor:[UIColor yellowColor]];
+  [vibBtn setImageEdgeInsets:UIEdgeInsetsMake(6.f, 6.f, 6.f, 6.f)]; // 上 左 下 右
+  [vibBtn addTarget:self action:@selector(vibBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
+  [cntView addSubview:vibBtn];
+  // ====== 「Sound & Vibrator ON/OFF」Button To here ======
 }
 
 
