@@ -19,14 +19,17 @@
 
 "btnClock"="▷現在時表示";
 "btnTimer"="▷タイマー表示";
-//"btnSound"="🎵";
 "btnSound"="♬";
-//"btnSound"="♫";
 
 "SndTtlOn" ="[サウンド設定]";
 "SndTtlOff"="[消音]";
 "SndMsgOn" ="アラーム音/効果音 On(有効)";
 "SndMsgOff"="アラーム音/効果音 Off(消音)";
+
+"VibTtlOn" ="[バイブレーション設定]";
+"VibTtlOff"="[バイブレーション設定]";
+"VibMsgOn" ="On(有効)";
+"VibMsgOff"="Off(消音)";
 
 "AlertTtl"="ありがとうございます";
 "AlertMsg"="よろしければ評価をお願いします。　　　(これ以降は表示されません。)";

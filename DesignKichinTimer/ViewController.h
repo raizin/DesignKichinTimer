@@ -77,9 +77,11 @@
   CALayer *cntlayer;
   
   // Button
+  UIButton *sndBtn; // Sound On / Off
+  UIButton *vibBtn; // Vibrate On / Off
+  
   MyModeBtn *timerSelectBtn; //「タイマー設定」切替ボタン
   MyModeBtn *clockSelectBtn; //「現在時表示」切替ボタン
-  MyModeBtn *soundSelectBtn; // Sound On/Off
   
   MySetBtn *setBtn60;//60 min
   MySetBtn *setBtn10;//10 min
