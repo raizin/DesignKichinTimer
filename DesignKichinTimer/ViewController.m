@@ -10,10 +10,6 @@
 #import <QuartzCore/QuartzCore.h>
 #import "SoundOnFlag.h"
 #import "VibrateOnFlag.h"
-//#import "GADBannerView.h"
-
-//#import "Appirater.h"
-//#import <AudioToolbox/AudioServices.h>
 
 @interface ViewController()
 
@@ -30,8 +26,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
   [super viewWillAppear:animated];
-//	_adStirView = [[AdstirView alloc]initWithFrame:CGRectMake(0, 0, 320, 30)];
-//	_adStirView = [[AdstirView alloc]initWithOrigin:CGPointMake(0, self.view.frame.size.width)]; // x y
 	_adStirView = [[AdstirView alloc]initWithOrigin:CGPointMake(0, self.view.frame.size.width)]; // x y
 	_adStirView.media = @"MEDIA-e0c497ff";
 	_adStirView.spot = 1;
@@ -94,10 +88,6 @@
   static float HIS_LABEL_FONT_SIZE_IPAD   = 20.f;
   
   
-  // Google AdMob 広告ユニットID
-//  static NSString *MY_UNIT_ID = @"ca-app-pub-8799115520187072/6215156947";
-  
-  
   //NSUserDefaults 初期化
   ud = [NSUserDefaults standardUserDefaults];
   
@@ -106,16 +96,6 @@
   //UserDefaults 初期値
   [ud setInteger:0 forKey:@"globalMinData"]; // M
   [ud setInteger:0 forKey:@"globalSecData"]; // S
-
-  // History
-//  [ud setInteger:0 forKey:@"historyMinData1"];
-//  [ud setInteger:0 forKey:@"historySecData1"];
-//  [ud setInteger:0 forKey:@"historyMinData2"];
-//  [ud setInteger:0 forKey:@"historySecData2"];
-//  [ud setInteger:0 forKey:@"historyMinData3"];
-//  [ud setInteger:0 forKey:@"historySecData3"];
-  
-//  [ud setInteger:0 forKey:@"appLauchedCount"]; // 起動回数
   
 
   
@@ -312,138 +292,8 @@
   
   
   [self timerInitDisp];
-  
-  
-  
-  
-  
-  
-  /*** AdMob用 広告表示 ここから ***
-  adViewHeightMargin = 30; // iphone
-  CGRect adRect = CGRectMake(0.0,
-                             self.view.frame.size.height - GAD_SIZE_320x50.height,
-                             GAD_SIZE_320x50.width,
-                             GAD_SIZE_320x50.height);
-  
-  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-    // iPad用定義
-    
-    adViewHeightMargin = 66;
-
-    adRect = CGRectMake(0.0,
-                        self.view.frame.size.height - GAD_SIZE_728x90.height,
-                        GAD_SIZE_728x90.width,
-                        GAD_SIZE_728x90.height);
-  
-  }
-  
-  mobView = [[GADBannerView alloc] initWithFrame:adRect];
-  
-  mobView.adUnitID = MY_UNIT_ID;
-  mobView.delegate = (id<GADBannerViewDelegate>)self;
-  mobView.rootViewController = self;
-  
-  //画面下部へ表示
-  mobView.frame = CGRectMake(0, // x
-                            screenWidth - adViewHeightMargin, // y
-                            mobView.frame.size.width,   // w
-                            mobView.frame.size.height); // h
-  
-  [self.view addSubview:mobView];
-  
-  [mobView loadRequest:[GADRequest request]];
-
-  mobView.hidden = YES;
-  *** AdMob用 広告表示 ここまで ***/
-  
-  
-  /*** iAd用 広告表示 ここから ***
-  adView = [[ADBannerView alloc] initWithFrame:CGRectZero];
-  
-  //画面下部へ表示
-  adViewHeightMargin = 30; // iphone
-  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-    adViewHeightMargin = 66;
-  }
-  
-  adView.frame = CGRectMake(0, // x
-                            screenWidth - adViewHeightMargin, // y
-                            adView.frame.size.width,   // w
-                            adView.frame.size.height); // h
-  
-  
-  
-  adView.delegate = (id<ADBannerViewDelegate>)self;
-  adView.autoresizesSubviews = YES;
-  adView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
-
-  [self.view addSubview:adView];
-  bannerIsVisible = YES;
-  *** iAd用 広告表示 ここまで ***/
 }
 
-
-
-/*
-- (GADRequest *)createRequest {
-  GADRequest *request = [GADRequest request];
-  
-  //Make the request for a test ad
-//  request.testDevices = [NSArray arrayWithObjects:
-//                         GAD_SIMULATOR_ID,// Simulator
-//                         @"5d94d53ec5305b722393fc8484ad6e23eae0c371",
-//                         nil];
-  
-  
-  return request;
-}
-*/
-/*
-- (void)bannerViewDidLoadAd:(ADBannerView *)banner
-{
-//  NSLog(@"%d: iAd Get Success!!",__LINE__);
-
-  if (!bannerIsVisible) {
-    [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
-    [UIView setAnimationDuration:0.3];
-    
-//    banner.frame = CGRectOffset(banner.frame, 0, CGRectGetHeight(banner.frame));
-    banner.alpha = 1.0f;
-    banner.hidden = NO;
-    
-    [UIView commitAnimations];
-
-    bannerIsVisible = YES;
-    [self.view addSubview:adView];
-    
-//    mobView.hidden = YES;
-//    [mobView removeFromSuperview];
-    
-  }
-
-}
-- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
-{
-//  NSLog(@"%d: iAd get NG??",__LINE__);
-  
-  if (bannerIsVisible) {
-    [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
-    [UIView setAnimationDuration:0.3];
-    
-//    banner.frame = CGRectOffset(banner.frame, 0, -CGRectGetHeight(banner.frame));
-    banner.alpha = 0.0f;
-    banner.hidden = YES;
-    
-    [UIView commitAnimations];
-
-    bannerIsVisible = NO;
-    [adView removeFromSuperview];
-  
-//    mobView.hidden = NO;
-//    [self.view addSubview:mobView];
-  }
-}
-*/
 
 - (BOOL)shouldAutorotate
 {
@@ -453,10 +303,6 @@
     return NO;
   }
 }
-
-
-
-
 
 
 // デバイスが回転した際に、呼び出されるメソッド(※自作)
@@ -557,17 +403,13 @@
   // 横向き
   if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
     
-    NSLog(@"%d,x=%d y=%d",__LINE__,(int)_adStirView.frame.origin.x,(int)_adStirView.frame.origin.y);
-    
-//    mobView.center = CGPointMake(centerPoint, mobView.center.y);
+//    NSLog(@"%d,x=%d y=%d",__LINE__,(int)_adStirView.frame.origin.x,(int)_adStirView.frame.origin.y);
     _adStirView.center = CGPointMake(self.view.frame.size.height/2, _adStirView.center.y); // x y
 
   // 縦向き
   } else if (o == UIDeviceOrientationPortrait || o == UIDeviceOrientationPortraitUpsideDown) {
     
-    NSLog(@"%d,x=%d y=%d",__LINE__,(int)_adStirView.frame.origin.x,(int)_adStirView.frame.origin.y);
-
-//    mobView.center = CGPointMake(centerPoint, mobView.center.y);
+//    NSLog(@"%d,x=%d y=%d",__LINE__,(int)_adStirView.frame.origin.x,(int)_adStirView.frame.origin.y);
     _adStirView.frame = CGRectMake(0, _adStirView.center.y -25, 320, 50); // x y w h
     
     // 向きが不明な場合

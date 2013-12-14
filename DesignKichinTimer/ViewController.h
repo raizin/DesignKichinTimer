@@ -8,25 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-//#import <iAd/iAd.h>
 #import "MySetBtn.h"
 #import "MyModeBtn.h"
 #import "MyCntLabel.h"
-//#import "GADBannerView.h"
 #import "AdstirView.h"
 
-//@interface ViewController : UIViewController <ADBannerViewDelegate> {
 @interface ViewController : UIViewController <AdstirViewDelegate> {
-//@interface ViewController : UIViewController {
-  
-  // iAd用View
-//  ADBannerView *adView;
-//  BOOL bannerIsVisible;
-//  int adViewHeightMargin;
-  
-  //Google AdMob用View
-//  GADBannerView *mobView;
-  
+
   //NSUserDefaults領域を使用
   NSUserDefaults *ud;
 
