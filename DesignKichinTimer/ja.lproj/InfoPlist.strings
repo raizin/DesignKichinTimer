@@ -1,5 +1,5 @@
 /* Localized versions of Info.plist keys */
 
 CFBundleName = "電子型キッチンタイマー";//こちらは使われない?
-CFBundleDisplayName = "料理タイマー"; // iphone ipod
+CFBundleDisplayName = "便利タイマー"; // iphone ipod
 "CFBundleDisplayName~ipad" = "キッチンタイマー"; // ipad ipadmini
