@@ -12,7 +12,7 @@
 #import "MySetBtn.h"
 #import "MyModeBtn.h"
 #import "MyCntLabel.h"
-#import "GADBannerView.h"
+//#import "GADBannerView.h"
 #import "AdstirView.h"
 
 //@interface ViewController : UIViewController <ADBannerViewDelegate> {
@@ -25,7 +25,7 @@
   int adViewHeightMargin;
   
   //Google AdMob用View
-  GADBannerView *mobView;
+//  GADBannerView *mobView;
   
   //NSUserDefaults領域を使用
   NSUserDefaults *ud;
