@@ -13,11 +13,11 @@
 #import "MyModeBtn.h"
 #import "MyCntLabel.h"
 #import "GADBannerView.h"
-//#import "AdstirView.h"
+#import "AdstirView.h"
 
 //@interface ViewController : UIViewController <ADBannerViewDelegate> {
-//@interface ViewController : UIViewController <AdstirViewDelegate> {
-@interface ViewController : UIViewController {
+@interface ViewController : UIViewController <AdstirViewDelegate> {
+//@interface ViewController : UIViewController {
   
   // iAd用View
   ADBannerView *adView;
@@ -122,6 +122,6 @@
   // リセットボタン 拡大フラグ
   BOOL resetBtnScaleFlag;  
 }
-//@property (nonatomic, retain) AdstirView* adview; //プロパティーで宣言すると、管理が簡単になります。
+@property (nonatomic, retain) AdstirView* adview; //プロパティーで宣言すると、管理が簡単になります。
 
 @end

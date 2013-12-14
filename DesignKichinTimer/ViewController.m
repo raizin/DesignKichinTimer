@@ -27,19 +27,19 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-//	self.adview = [[AdstirView alloc]initWithOrigin:CGPointMake(0, 0)];
-//	self.adview.media = @"MEDIA-e0c497ff";
-//	self.adview.spot = 1;
-//	self.adview.rootViewController = self;
-//	[self.adview start];
-//	[self.view addSubview:self.adview];
+	self.adview = [[AdstirView alloc]initWithOrigin:CGPointMake(0, 0)];
+	self.adview.media = @"MEDIA-e0c497ff";
+	self.adview.spot = 1;
+	self.adview.rootViewController = self;
+	[self.adview start];
+	[self.view addSubview:self.adview];
 }
 - (void)viewWillDisappear:(BOOL)animated
 {
-//	[self.adview stop];
-//	[self.adview removeFromSuperview];
-//	self.adview.rootViewController = nil;
-//	self.adview = nil;
+	[self.adview stop];
+	[self.adview removeFromSuperview];
+	self.adview.rootViewController = nil;
+	self.adview = nil;
 	[super viewWillDisappear:animated];
 }
 
