@@ -27,12 +27,13 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-	self.adview = [[AdstirView alloc]initWithOrigin:CGPointMake(0, 0)];
+	self.adview = [[AdstirView alloc]initWithFrame:CGRectMake(0, 0, 320, 30)];
 	self.adview.media = @"MEDIA-e0c497ff";
 	self.adview.spot = 1;
 	self.adview.rootViewController = self;
 	[self.adview start];
 	[self.view addSubview:self.adview];
+  self.adview.delegate = self;
 }
 - (void)viewWillDisappear:(BOOL)animated
 {
@@ -41,8 +42,16 @@
 	self.adview.rootViewController = nil;
 	self.adview = nil;
 	[super viewWillDisappear:animated];
+  self.adview.delegate = nil;
 }
-
+- (void)adstirDidReceiveAd:(AdstirView*)adstirview{
+	//広告取得に成功した時
+  NSLog(@"OK! %d",__LINE__);
+}
+- (void)adstirDidFailToReceiveAd:(AdstirView*)adstirview{
+	//広告取得に失敗した時
+  NSLog(@"NG! %d",__LINE__);
+}
 
 
 // Statusbar non-display setting
