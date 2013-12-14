@@ -23,35 +23,42 @@
 @implementation ViewController
 
 
+
+/****** Use AdStir Mediation Code From Here ******/
+
 // View が表示される直前に呼ばれる定義済み関数（*画面再描画毎）
 - (void)viewWillAppear:(BOOL)animated
 {
+  
+  
+  
 	[super viewWillAppear:animated];
-	self.adview = [[AdstirView alloc]initWithFrame:CGRectMake(0, 0, 320, 30)];
-	self.adview.media = @"MEDIA-e0c497ff";
-	self.adview.spot = 1;
-	self.adview.rootViewController = self;
-	[self.adview start];
-	[self.view addSubview:self.adview];
-  self.adview.delegate = self;
+	_adStirView = [[AdstirView alloc]initWithFrame:CGRectMake(0, 0, 320, 30)];
+	_adStirView.media = @"MEDIA-e0c497ff";
+	_adStirView.spot = 1;
+	_adStirView.rootViewController = self;
+	[_adStirView start];
+	[_view addSubview:_adStirView];
+  _adStirView.delegate = self;
 }
 - (void)viewWillDisappear:(BOOL)animated
 {
-	[self.adview stop];
-	[self.adview removeFromSuperview];
-	self.adview.rootViewController = nil;
-	self.adview = nil;
+	[_adStirView stop];
+	[_adStirView removeFromSuperview];
+	_adStirView.rootViewController = nil;
+	_adStirView = nil;
 	[super viewWillDisappear:animated];
-  self.adview.delegate = nil;
+  _adStirView.delegate = nil;
 }
 - (void)adstirDidReceiveAd:(AdstirView*)adstirview{
 	//広告取得に成功した時
-  NSLog(@"OK! %d",__LINE__);
+//  NSLog(@"OK! %d",__LINE__);
 }
 - (void)adstirDidFailToReceiveAd:(AdstirView*)adstirview{
 	//広告取得に失敗した時
-  NSLog(@"NG! %d",__LINE__);
+//  NSLog(@"NG! %d",__LINE__);
 }
+/****** Use AdStir Mediation Code To Here ******/
 
 
 // Statusbar non-display setting
@@ -161,14 +168,14 @@
   //cntH = (screenWidth -20) / 1.618; // 黄金比
   
   // 全体背景枠
-  self.view.layer.backgroundColor = [UIColor whiteColor].CGColor;
-  self.view.layer.cornerRadius = 50.0f;
-  self.view.layer.frame = CGRectInset(self.view.layer.frame, 20, 20);
+  _view.layer.backgroundColor = [UIColor whiteColor].CGColor;
+  _view.layer.cornerRadius = 50.0f;
+  _view.layer.frame = CGRectInset(_view.layer.frame, 20, 20);
   
   
   //カウント表示View生成
   cntView = [[UIView alloc] initWithFrame:CGRectMake([self arignCenter:cntW], 60, cntW, cntH)];// x y w h
-  [self.view addSubview:cntView];
+  [_view addSubview:cntView];
   
   
   // カウント表示エリア生成
@@ -183,7 +190,7 @@
   
   // Viewの表示順序を設定
   //  [cntView bringSubviewToFront:cntlayer]; //最前面
-  //  [self.view sendSubviewToBack:nowTimeView]; //最背面
+  //  [_view sendSubviewToBack:nowTimeView]; //最背面
 
   
   // カウント表示Label
@@ -211,7 +218,7 @@
   if ((int)[ud integerForKey:@"historySecData1"] + (int)[ud integerForKey:@"historyMinData1"] < 1) {
     [hisLabel setHisEnable:NO];
   }
-  [self.view addSubview:hisLabel];
+  [_view addSubview:hisLabel];
 
 //  NSLog(@"line=%d value=%d",__LINE__,(int)[ud integerForKey:@"historySecData1"] + (int)[ud integerForKey:@"historyMinData1"]);
   
@@ -235,37 +242,37 @@
   setBtn10 = [MySetBtn buttonWithType:UIButtonTypeCustom];
   [setBtn10 setNum:10 minFlag:YES fontSize:btnFontSize];
   [setBtn10 addTarget:self action:@selector(btn10Touch:) forControlEvents:UIControlEventTouchUpInside];
-  [self.view addSubview:setBtn10];
+  [_view addSubview:setBtn10];
  
   setBtn05 = [MySetBtn buttonWithType:UIButtonTypeCustom];
   [setBtn05 setNum:5 minFlag:YES fontSize:btnFontSize];
   [setBtn05 addTarget:self action:@selector(btn05Touch:) forControlEvents:UIControlEventTouchUpInside];
-  [self.view addSubview:setBtn05];
+  [_view addSubview:setBtn05];
   
   setBtn03 = [MySetBtn buttonWithType:UIButtonTypeCustom];
   [setBtn03 setNum:3 minFlag:YES fontSize:btnFontSize];
   [setBtn03 addTarget:self action:@selector(btn03Touch:) forControlEvents:UIControlEventTouchUpInside];
-  [self.view addSubview:setBtn03];
+  [_view addSubview:setBtn03];
   
   setBtn01 = [MySetBtn buttonWithType:UIButtonTypeCustom];
   [setBtn01 setNum:1 minFlag:YES fontSize:btnFontSize];
   [setBtn01 addTarget:self action:@selector(btn01Touch:) forControlEvents:UIControlEventTouchUpInside];
-  [self.view addSubview:setBtn01];
+  [_view addSubview:setBtn01];
 
   setBtnReset = [MySetBtn buttonWithType:UIButtonTypeCustom];
   [setBtnReset setReset:btnFontSize];
   [setBtnReset addTarget:self action:@selector(resetBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
-  [self.view addSubview:setBtnReset];
+  [_view addSubview:setBtnReset];
   
   setBtn001 = [MySetBtn buttonWithType:UIButtonTypeCustom];
   [setBtn001 setNum:10 minFlag:NO fontSize:btnFontSize];
   [setBtn001 addTarget:self action:@selector(btn001Touch:) forControlEvents:UIControlEventTouchUpInside];
-  [self.view addSubview:setBtn001];
+  [_view addSubview:setBtn001];
 
   setBtnStart = [MySetBtn buttonWithType:UIButtonTypeCustom];
   [setBtnStart setStart:btnFontSize];
   [setBtnStart addTarget:self action:@selector(startBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
-  [self.view addSubview:setBtnStart];
+  [_view addSubview:setBtnStart];
 
   setBtnHis1 = [MySetBtn buttonWithType:UIButtonTypeCustom];
   [setBtnHis1 setHis:1 fontSize:btnFontSize];
@@ -273,7 +280,7 @@
   if ((int)[ud integerForKey:@"historySecData1"] + (int)[ud integerForKey:@"historyMinData1"] == 0) {
     [setBtnHis1 setEnabled:NO];
   }
-  [self.view addSubview:setBtnHis1];
+  [_view addSubview:setBtnHis1];
   
   setBtnHis2 = [MySetBtn buttonWithType:UIButtonTypeCustom];
   [setBtnHis2 setHis:2 fontSize:btnFontSize];
@@ -281,7 +288,7 @@
   if ((int)[ud integerForKey:@"historySecData2"] + (int)[ud integerForKey:@"historyMinData2"] == 0) {
     [setBtnHis2 setEnabled:NO];
   }
-  [self.view addSubview:setBtnHis2];
+  [_view addSubview:setBtnHis2];
   
   setBtnHis3 = [MySetBtn buttonWithType:UIButtonTypeCustom];
   [setBtnHis3 setHis:3 fontSize:btnFontSize];
@@ -289,7 +296,7 @@
   if ((int)[ud integerForKey:@"historySecData3"] + (int)[ud integerForKey:@"historyMinData3"] == 0) {
     [setBtnHis3 setEnabled:NO];
   }
-  [self.view addSubview:setBtnHis3];
+  [_view addSubview:setBtnHis3];
   
 
   
@@ -315,7 +322,7 @@
   /*** AdMob用 広告表示 ここから ***/
   adViewHeightMargin = 30; // iphone
   CGRect adRect = CGRectMake(0.0,
-                             self.view.frame.size.height - GAD_SIZE_320x50.height,
+                             _view.frame.size.height - GAD_SIZE_320x50.height,
                              GAD_SIZE_320x50.width,
                              GAD_SIZE_320x50.height);
   
@@ -325,7 +332,7 @@
     adViewHeightMargin = 66;
 
     adRect = CGRectMake(0.0,
-                        self.view.frame.size.height - GAD_SIZE_728x90.height,
+                        _view.frame.size.height - GAD_SIZE_728x90.height,
                         GAD_SIZE_728x90.width,
                         GAD_SIZE_728x90.height);
   
@@ -343,7 +350,7 @@
                             mobView.frame.size.width,   // w
                             mobView.frame.size.height); // h
   
-  [self.view addSubview:mobView];
+  [_view addSubview:mobView];
   
   [mobView loadRequest:[GADRequest request]];
 
@@ -371,7 +378,7 @@
   adView.autoresizesSubviews = YES;
   adView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
 
-  [self.view addSubview:adView];
+  [_view addSubview:adView];
   bannerIsVisible = YES;
   /*** iAd用 広告表示 ここまで ***/
 }
@@ -408,11 +415,11 @@
     [UIView commitAnimations];
 
     bannerIsVisible = YES;
-//    [self.view bringSubviewToFront:adView];//再背面に移動
-    [self.view addSubview:adView];
+//    [_view bringSubviewToFront:adView];//再背面に移動
+    [_view addSubview:adView];
     
     mobView.hidden = YES;
-//    [self.view sendSubviewToBack:mobView];//最前面に移動
+//    [_view sendSubviewToBack:mobView];//最前面に移動
     [mobView removeFromSuperview];
     
   }
@@ -433,12 +440,12 @@
     [UIView commitAnimations];
 
     bannerIsVisible = NO;
-//    [self.view sendSubviewToBack:adView];//再背面に移動
+//    [_view sendSubviewToBack:adView];//再背面に移動
     [adView removeFromSuperview];
   
     mobView.hidden = NO;
-//    [self.view bringSubviewToFront:mobView];//最前面に移動
-    [self.view addSubview:mobView];
+//    [_view bringSubviewToFront:mobView];//最前面に移動
+    [_view addSubview:mobView];
   }
 }
 
@@ -556,12 +563,14 @@
   if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
     
     mobView.center = CGPointMake(centerPoint, mobView.center.y);
+    _adStirView.center = CGPointMake(centerPoint, _adStirView.center.y);
     
 
   // 縦向き
   } else if (o == UIDeviceOrientationPortrait || o == UIDeviceOrientationPortraitUpsideDown) {
     
     mobView.center = CGPointMake(centerPoint, mobView.center.y);
+    _adStirView.center = CGPointMake(centerPoint, _adStirView.center.y);
   
     
     // 向きが不明な場合
@@ -1369,7 +1378,7 @@ int vibCount;
   [clockSelectBtn setEnabled:YES]; // default
   
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    [self.view addSubview:clockSelectBtn]; // iphone
+    [_view addSubview:clockSelectBtn]; // iphone
   }else{
     [cntView addSubview:clockSelectBtn];   // ipad
   }
@@ -1386,7 +1395,7 @@ int vibCount;
   [timerSelectBtn setEnabled:NO]; // not default
   
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    [self.view addSubview:timerSelectBtn]; // iphone
+    [_view addSubview:timerSelectBtn]; // iphone
   }else{
     [cntView addSubview:timerSelectBtn];   // ipad
   }
@@ -1432,7 +1441,7 @@ int vibCount;
 - (void)btnScaleUp:(UIButton *)btn
 {
   if (resetBtnScaleFlag == NO) {
-    [self.view bringSubviewToFront:btn]; //最前面
+    [_view bringSubviewToFront:btn]; //最前面
 
     //元の配置を覚える
     [ud setFloat:btn.frame.origin.x    forKey:@"ResetBtnOrgX"];
@@ -1450,15 +1459,15 @@ int vibCount;
 //      NSLog(@"縦 Portrait ");
       btn.frame = CGRectMake(3, // x
                              cntView.frame.size.height + cntView.frame.origin.y +3, // y
-                             self.view.frame.size.width -6, // w
-                             self.view.frame.size.height - (cntView.frame.size.height + cntView.frame.origin.y) -6 ); // h
+                             _view.frame.size.width -6, // w
+                             _view.frame.size.height - (cntView.frame.size.height + cntView.frame.origin.y) -6 ); // h
     }
     else if(direction == UIInterfaceOrientationLandscapeLeft || direction == UIInterfaceOrientationLandscapeRight){
 //      NSLog(@"横 Landscape");
       btn.frame = CGRectMake(3, // x
                              cntView.frame.size.height + cntView.frame.origin.y +3, // y
-                             self.view.frame.size.height -6, // w
-                             self.view.frame.size.width - (cntView.frame.size.height + cntView.frame.origin.y) -6 ); // h
+                             _view.frame.size.height -6, // w
+                             _view.frame.size.width - (cntView.frame.size.height + cntView.frame.origin.y) -6 ); // h
     }
     
     [UIView commitAnimations];

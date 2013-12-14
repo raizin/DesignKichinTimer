@@ -122,6 +122,6 @@
   // リセットボタン 拡大フラグ
   BOOL resetBtnScaleFlag;  
 }
-@property (nonatomic, retain) AdstirView* adview; //プロパティーで宣言すると、管理が簡単になります。
+@property (nonatomic, retain) AdstirView* adStirView; //プロパティで宣言した場合,使用時は _ or self
 
 @end
