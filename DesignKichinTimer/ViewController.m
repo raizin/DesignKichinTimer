@@ -10,7 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "SoundOnFlag.h"
 #import "VibrateOnFlag.h"
-#import "GADBannerView.h"
+//#import "GADBannerView.h"
 
 //#import "Appirater.h"
 //#import <AudioToolbox/AudioServices.h>
@@ -29,11 +29,10 @@
 // View が表示される直前に呼ばれる定義済み関数（*画面再描画毎）
 - (void)viewWillAppear:(BOOL)animated
 {
-  
-  
-  
-	[super viewWillAppear:animated];
-	_adStirView = [[AdstirView alloc]initWithFrame:CGRectMake(0, 0, 320, 30)];
+  [super viewWillAppear:animated];
+//	_adStirView = [[AdstirView alloc]initWithFrame:CGRectMake(0, 0, 320, 30)];
+//	_adStirView = [[AdstirView alloc]initWithOrigin:CGPointMake(0, self.view.frame.size.width)]; // x y
+	_adStirView = [[AdstirView alloc]initWithOrigin:CGPointMake(0, self.view.frame.size.width)]; // x y
 	_adStirView.media = @"MEDIA-e0c497ff";
 	_adStirView.spot = 1;
 	_adStirView.rootViewController = self;
@@ -358,7 +357,7 @@
   *** AdMob用 広告表示 ここまで ***/
   
   
-  /*** iAd用 広告表示 ここから ***/
+  /*** iAd用 広告表示 ここから ***
   adView = [[ADBannerView alloc] initWithFrame:CGRectZero];
   
   //画面下部へ表示
@@ -380,7 +379,7 @@
 
   [self.view addSubview:adView];
   bannerIsVisible = YES;
-  /*** iAd用 広告表示 ここまで ***/
+  *** iAd用 広告表示 ここまで ***/
 }
 
 
@@ -399,7 +398,7 @@
   return request;
 }
 */
-
+/*
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
 //  NSLog(@"%d: iAd Get Success!!",__LINE__);
@@ -444,7 +443,7 @@
 //    [self.view addSubview:mobView];
   }
 }
-
+*/
 
 - (BOOL)shouldAutorotate
 {
@@ -558,16 +557,18 @@
   // 横向き
   if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
     
-//    mobView.center = CGPointMake(centerPoint, mobView.center.y);
-    _adStirView.center = CGPointMake(centerPoint, _adStirView.center.y);
+    NSLog(@"%d,x=%d y=%d",__LINE__,(int)_adStirView.frame.origin.x,(int)_adStirView.frame.origin.y);
     
+//    mobView.center = CGPointMake(centerPoint, mobView.center.y);
+    _adStirView.center = CGPointMake(self.view.frame.size.height/2, _adStirView.center.y); // x y
 
   // 縦向き
   } else if (o == UIDeviceOrientationPortrait || o == UIDeviceOrientationPortraitUpsideDown) {
     
+    NSLog(@"%d,x=%d y=%d",__LINE__,(int)_adStirView.frame.origin.x,(int)_adStirView.frame.origin.y);
+
 //    mobView.center = CGPointMake(centerPoint, mobView.center.y);
-    _adStirView.center = CGPointMake(centerPoint, _adStirView.center.y);
-  
+    _adStirView.frame = CGRectMake(0, _adStirView.center.y -25, 320, 50); // x y w h
     
     // 向きが不明な場合
   } else {

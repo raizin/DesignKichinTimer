@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-#import <iAd/iAd.h>
+//#import <iAd/iAd.h>
 #import "MySetBtn.h"
 #import "MyModeBtn.h"
 #import "MyCntLabel.h"
@@ -20,9 +20,9 @@
 //@interface ViewController : UIViewController {
   
   // iAd用View
-  ADBannerView *adView;
-  BOOL bannerIsVisible;
-  int adViewHeightMargin;
+//  ADBannerView *adView;
+//  BOOL bannerIsVisible;
+//  int adViewHeightMargin;
   
   //Google AdMob用View
 //  GADBannerView *mobView;
