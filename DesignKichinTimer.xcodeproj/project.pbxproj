@@ -36,7 +36,7 @@
 		5E26A2FD185C977800763D48 /* libAdstirWebView-AdMobMediation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E26A2F0185C977800763D48 /* libAdstirWebView-AdMobMediation.a */; };
 		5E26A2FE185C977800763D48 /* libAdstirWebView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E26A2F1185C977800763D48 /* libAdstirWebView.a */; };
 		5E26A303185C984600763D48 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 5E26A2FF185C984600763D48 /* CHANGELOG.md */; };
-		5E26A304185C984600763D48 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E26A301185C984600763D48 /* JSONKit.m */; };
+		5E26A304185C984600763D48 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E26A301185C984600763D48 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5E26A305185C984600763D48 /* JSONKit-README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5E26A302185C984600763D48 /* JSONKit-README.md */; };
 		5E42589718192B7F00171F1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E42589918192B7F00171F1F /* Localizable.strings */; };
 		5E42589C181CF29300171F1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E42589B181CF29300171F1F /* QuartzCore.framework */; };
