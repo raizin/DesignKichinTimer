@@ -47,6 +47,7 @@
 		5EC2DCD21830A52A003E1D5C /* pi_old.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5EC2DCD11830A52A003E1D5C /* pi_old.mp3 */; };
 		5ECB0D271832038400103C18 /* piLong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5ECB0D261832038400103C18 /* piLong.mp3 */; };
 		5ECB0D371832173700103C18 /* pi_mono.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5ECB0D361832173700103C18 /* pi_mono.mp3 */; };
+		5EDE090A185CC89A00660FF9 /* ResetBtnScaleOnFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDE0909185CC89A00660FF9 /* ResetBtnScaleOnFlag.m */; };
 		5EF21EC81839260C00C079F0 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EF21EC41839260C00C079F0 /* Icon-76.png */; };
 		5EF21EC91839260C00C079F0 /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EF21EC51839260C00C079F0 /* Icon-76@2x.png */; };
 		5EF21ECA1839260C00C079F0 /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EF21EC61839260C00C079F0 /* Icon-60.png */; };
@@ -120,6 +121,8 @@
 		5EC2DCD11830A52A003E1D5C /* pi_old.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pi_old.mp3; sourceTree = "<group>"; };
 		5ECB0D261832038400103C18 /* piLong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = piLong.mp3; sourceTree = "<group>"; };
 		5ECB0D361832173700103C18 /* pi_mono.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pi_mono.mp3; sourceTree = "<group>"; };
+		5EDE0908185CC89A00660FF9 /* ResetBtnScaleOnFlag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetBtnScaleOnFlag.h; sourceTree = "<group>"; };
+		5EDE0909185CC89A00660FF9 /* ResetBtnScaleOnFlag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetBtnScaleOnFlag.m; sourceTree = "<group>"; };
 		5EF21EC41839260C00C079F0 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
 		5EF21EC51839260C00C079F0 /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
 		5EF21EC61839260C00C079F0 /* Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60.png"; sourceTree = "<group>"; };
@@ -165,6 +168,8 @@
 				5E2480631856B0CB0032AF77 /* VibrateOnFlag.h */,
 				5E220DCB18425F3900D2ACB0 /* SoundOnFlag.h */,
 				5E220DCC18425F3900D2ACB0 /* SoundOnFlag.m */,
+				5EDE0908185CC89A00660FF9 /* ResetBtnScaleOnFlag.h */,
+				5EDE0909185CC89A00660FF9 /* ResetBtnScaleOnFlag.m */,
 				5E220DCE184261F100D2ACB0 /* MySetBtn.h */,
 				5E220DCF184261F100D2ACB0 /* MySetBtn.m */,
 				5E5DF023184327510098499A /* MyModeBtn.h */,
@@ -442,6 +447,7 @@
 				5E6F4B3B18117F7600312CCD /* AppDelegate.m in Sources */,
 				5E5DF025184327510098499A /* MyModeBtn.m in Sources */,
 				5E220DD0184261F100D2ACB0 /* MySetBtn.m in Sources */,
+				5EDE090A185CC89A00660FF9 /* ResetBtnScaleOnFlag.m in Sources */,
 				5E2480641856B0CB0032AF77 /* VibrateOnFlag.m in Sources */,
 				5E6F4B3718117F7600312CCD /* main.m in Sources */,
 			);

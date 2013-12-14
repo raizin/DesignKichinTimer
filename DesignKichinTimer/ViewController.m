@@ -10,8 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "SoundOnFlag.h"
 #import "VibrateOnFlag.h"
-//#import <AudioToolbox/AudioServices.h>
-
+#import "ResetBtnScaleOnFlag.h"
 
 @interface ViewController()
 
@@ -58,22 +57,13 @@
   //NSUserDefaults 初期化
   ud = [NSUserDefaults standardUserDefaults];
   
-
-
   //UserDefaults 初期値
   [ud setInteger:0 forKey:@"globalMinData"]; // M
   [ud setInteger:0 forKey:@"globalSecData"]; // S
 
-  // History
-//  [ud setInteger:0 forKey:@"historyMinData1"];
-//  [ud setInteger:0 forKey:@"historySecData1"];
-//  [ud setInteger:0 forKey:@"historyMinData2"];
-//  [ud setInteger:0 forKey:@"historySecData2"];
-//  [ud setInteger:0 forKey:@"historyMinData3"];
-//  [ud setInteger:0 forKey:@"historySecData3"];
-  
-//  [ud setInteger:0 forKey:@"appLauchedCount"]; // 起動回数
-  
+  // リセットボタン 拡大中フラグ
+  [ResetBtnScaleOnFlag setValue:NO];
+  [ResetBtnScaleOnFlag sync];
 
   
   /*** Sound Setting ***/
@@ -93,7 +83,6 @@
   alermSound.numberOfLoops = 0; // 再生回数 -1:ループ再生
   
   
-  
   //自動スリープの解除
 //  UIApplication *application = [UIApplication sharedApplication];
 //  application.idleTimerDisabled = YES;
@@ -104,9 +93,6 @@
   globalMin = 0;
   cntUpFlag = NO;
   timeUpOk = NO;
-
-  // リセットボタン 拡大フラグ
-  resetBtnScaleFlag = NO;
   
   
   //画面情報(横幅)取得
@@ -314,10 +300,6 @@
       || o == UIDeviceOrientationPortraitUpsideDown) {
     
 
-    // 回転したら拡大から戻るので、フラグを切る
-    resetBtnScaleFlag = NO;
-    
-    
     // 端末によりボタンの配置／大きさの調整
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
       //NSLog(@"%d: iPhoneの処理",__LINE__);
@@ -347,6 +329,14 @@
         // History Label
         hisLabel.frame   = CGRectMake(0,0, 55, 20 ); // x y w h
         hisLabel.center  = CGPointMake(centerPoint +185, 40); // x y
+
+        if ([ResetBtnScaleOnFlag val]) {
+          [self btnScaleUpYoko:setBtnReset];
+        }
+      }else{
+        if ([ResetBtnScaleOnFlag val]) {
+          [self btnScaleUpTate:setBtnReset];
+        }
       }
       
     }else{
@@ -373,6 +363,14 @@
         // History Label
         hisLabel.frame   = CGRectMake(0,0, 90, 20 ); // x y w h
         hisLabel.center  = CGPointMake(centerPoint +420, 80); // x y
+
+        if ([ResetBtnScaleOnFlag val]) {
+          [self btnScaleUpYoko:setBtnReset];
+        }
+      }else{
+        if ([ResetBtnScaleOnFlag val]) {
+          [self btnScaleUpTate:setBtnReset];
+        }
       }
       
       
@@ -1242,43 +1240,55 @@ int vibCount;
 
 
 /*
+ * ボタン拡大アニメ(横)
+ */
+- (void)btnScaleUpYoko:(UIButton *)btn
+{
+  //拡大アニメーション
+  [UIView beginAnimations:nil context:nil];
+  [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+  [UIView setAnimationDuration:1.f];
+  btn.frame = CGRectMake(3, // x
+                         cntView.frame.size.height + cntView.frame.origin.y +3, // y
+                         self.view.frame.size.height -6, // w
+                         self.view.frame.size.width - (cntView.frame.size.height + cntView.frame.origin.y) -6 ); // h
+  [UIView commitAnimations];
+}
+/*
+ * ボタン拡大アニメ(縦)
+ */
+- (void)btnScaleUpTate:(UIButton *)btn
+{
+  //拡大アニメーション
+  [UIView beginAnimations:nil context:nil];
+  [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+  [UIView setAnimationDuration:1.f];
+  btn.frame = CGRectMake(3, // x
+                         cntView.frame.size.height + cntView.frame.origin.y +3, // y
+                         self.view.frame.size.width -6, // w
+                         self.view.frame.size.height - (cntView.frame.size.height + cntView.frame.origin.y) -6 ); // h
+  [UIView commitAnimations];
+}
+
+
+/*
  * UIButton scale up method
  */
 - (void)btnScaleUp:(UIButton *)btn
 {
-  if (resetBtnScaleFlag == NO) {
+  if ([ResetBtnScaleOnFlag val] == NO) {
     [self.view bringSubviewToFront:btn]; //最前面
-    
-    //元の配置を覚える
-    [ud setFloat:btn.frame.origin.x    forKey:@"ResetBtnOrgX"];
-    [ud setFloat:btn.frame.origin.y    forKey:@"ResetBtnOrgY"];
-    [ud setFloat:btn.frame.size.width  forKey:@"ResetBtnOrgW"];
-    [ud setFloat:btn.frame.size.height forKey:@"ResetBtnOrgH"];
-    
-    //拡大アニメーション
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
-    [UIView setAnimationDuration:1.f];
     
     int direction = self.interfaceOrientation;
     if(direction == UIInterfaceOrientationPortrait || direction == UIInterfaceOrientationPortraitUpsideDown){
-      //      NSLog(@"縦 Portrait ");
-      btn.frame = CGRectMake(3, // x
-                             cntView.frame.size.height + cntView.frame.origin.y +3, // y
-                             self.view.frame.size.width -6, // w
-                             self.view.frame.size.height - (cntView.frame.size.height + cntView.frame.origin.y) -6 ); // h
+      [self btnScaleUpTate:btn];
     }
     else if(direction == UIInterfaceOrientationLandscapeLeft || direction == UIInterfaceOrientationLandscapeRight){
-      //      NSLog(@"横 Landscape");
-      btn.frame = CGRectMake(3, // x
-                             cntView.frame.size.height + cntView.frame.origin.y +3, // y
-                             self.view.frame.size.height -6, // w
-                             self.view.frame.size.width - (cntView.frame.size.height + cntView.frame.origin.y) -6 ); // h
+      [self btnScaleUpYoko:btn];
     }
     
-    [UIView commitAnimations];
-    
-    resetBtnScaleFlag = YES;
+    [ResetBtnScaleOnFlag setValue:YES];
+    [ResetBtnScaleOnFlag sync];
   }
 }
 /*
@@ -1286,17 +1296,24 @@ int vibCount;
  */
 - (void)btnScaleOrg:(UIButton *)btn
 {
-  if (resetBtnScaleFlag) {
+  if ([ResetBtnScaleOnFlag val]) {
     
     //元に戻す アニメーション
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
     [UIView setAnimationDuration:0.5f];
     
-    btn.frame = CGRectMake([ud floatForKey:@"ResetBtnOrgX"], [ud floatForKey:@"ResetBtnOrgY"], [ud floatForKey:@"ResetBtnOrgW"], [ud floatForKey:@"ResetBtnOrgH"]);
-    [UIView commitAnimations];
+    //X軸の中心を取得
+    int centerPoint = [self arignCenter:0];
     
-    resetBtnScaleFlag = NO;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+      setBtnReset.frame = CGRectMake(centerPoint -135.0f, 220.0f, 80.0f, 60.0f); // x y w h
+    }else{
+      setBtnReset.frame = CGRectMake(centerPoint -190 -115, 550, 190, 110); // x y w h
+    }
+    
+    [ResetBtnScaleOnFlag setValue:NO];
+    [ResetBtnScaleOnFlag sync];
   }
 }
 
