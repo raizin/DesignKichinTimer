@@ -192,8 +192,12 @@
   
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
     [hisLabel setHis:HIS_LABEL_FONT_SIZE_IPHONE];
+    hisLabel.frame   = CGRectMake(0,0, 55, 20 ); // x y w h
+    hisLabel.center  = CGPointMake([self arignCenter:0] +185, 40); // x y
   }else{
     [hisLabel setHis:HIS_LABEL_FONT_SIZE_IPAD];
+    hisLabel.frame   = CGRectMake(0,0, 90, 20 ); // x y w h
+    hisLabel.center  = CGPointMake([self arignCenter:0] +420, 80); // x y
   }
   [hisLabel setHisEnable:YES];
   if ((int)[ud integerForKey:@"historySecData1"] + (int)[ud integerForKey:@"historyMinData1"] < 1) {
