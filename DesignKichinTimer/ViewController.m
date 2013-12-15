@@ -29,7 +29,11 @@
   [super viewWillAppear:animated];
 	_adStirView = [[AdstirView alloc]initWithOrigin:CGPointMake(0, self.view.frame.size.width)]; // x y
 	_adStirView.media = @"MEDIA-e0c497ff";
-	_adStirView.spot = 1;
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+    _adStirView.spot = 1;
+  }else{
+    _adStirView.spot = 2;
+  }
 	_adStirView.rootViewController = self;
 	[_adStirView start];
 	[self.view addSubview:_adStirView];
@@ -426,7 +430,12 @@
   } else if (o == UIDeviceOrientationPortrait || o == UIDeviceOrientationPortraitUpsideDown) {
     
 //    NSLog(@"%d,x=%d y=%d",__LINE__,(int)_adStirView.frame.origin.x,(int)_adStirView.frame.origin.y);
-    _adStirView.frame = CGRectMake(0, _adStirView.center.y -25, 320, 50); // x y w h
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+      _adStirView.frame = CGRectMake(0, _adStirView.center.y -25, 320, 50); // x y w h
+    }else{
+      _adStirView.frame = CGRectMake(0, _adStirView.center.y -25, 320, 100); // x y w h
+    }
     
     // 向きが不明な場合
   } else {
