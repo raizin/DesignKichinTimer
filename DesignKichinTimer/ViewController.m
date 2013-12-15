@@ -11,52 +11,12 @@
 #import "SoundOnFlag.h"
 #import "VibrateOnFlag.h"
 #import "ResetBtnScaleOnFlag.h"
+#import "GADBannerView.h"
 
 @interface ViewController()
-
 @end
 
-
 @implementation ViewController
-
-
-
-/****** Use AdStir Mediation Code From Here ******/
-
-// View が表示される直前に呼ばれる定義済み関数（*画面再描画毎）
-- (void)viewWillAppear:(BOOL)animated
-{
-  [super viewWillAppear:animated];
-	_adStirView = [[AdstirView alloc]initWithOrigin:CGPointMake(0, self.view.frame.size.width)]; // x y
-	_adStirView.media = @"MEDIA-e0c497ff";
-  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    _adStirView.spot = 1;
-  }else{
-    _adStirView.spot = 2;
-  }
-	_adStirView.rootViewController = self;
-	[_adStirView start];
-	[self.view addSubview:_adStirView];
-  _adStirView.delegate = self;
-}
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[_adStirView stop];
-	[_adStirView removeFromSuperview];
-	_adStirView.rootViewController = nil;
-	_adStirView = nil;
-	[super viewWillDisappear:animated];
-  _adStirView.delegate = nil;
-}
-- (void)adstirDidReceiveAd:(AdstirView*)adstirview{
-	//広告取得に成功した時
-//  NSLog(@"OK! %d",__LINE__);
-}
-- (void)adstirDidFailToReceiveAd:(AdstirView*)adstirview{
-	//広告取得に失敗した時
-//  NSLog(@"NG! %d",__LINE__);
-}
-/****** Use AdStir Mediation Code To Here ******/
 
 
 // Statusbar non-display setting
@@ -79,6 +39,11 @@
     [self prefersStatusBarHidden];
     [self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];
   }
+  
+  
+  // Google AdMob 広告ユニットID
+  static NSString *MY_UNIT_ID = @"ca-app-pub-8799115520187072/6215156947";
+
   
   // カウント部分 フォントサイズ ipad:180 iphone:70 = 5 digits + "M S"
   static float CNT_FONT_SIZE_IPHONE = 70.f;
@@ -299,9 +264,139 @@
                                              object:nil];
   
   
-  
-  
   [self timerInitDisp];
+  
+  
+  
+  
+  /*** AdMob用 広告表示 ここから ***/
+  adViewHeightMargin = 30; // iphone
+  CGRect adRect = CGRectMake(0.0,
+                             self.view.frame.size.height - GAD_SIZE_320x50.height,
+                             GAD_SIZE_320x50.width,
+                             GAD_SIZE_320x50.height);
+  
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    // iPad用定義
+    
+    adViewHeightMargin = 66;
+    
+    adRect = CGRectMake(0.0,
+                        self.view.frame.size.height - GAD_SIZE_728x90.height,
+                        GAD_SIZE_728x90.width,
+                        GAD_SIZE_728x90.height);
+    
+  }
+  
+  mobView = [[GADBannerView alloc] initWithFrame:adRect];
+  
+  mobView.adUnitID = MY_UNIT_ID;
+  mobView.delegate = (id<GADBannerViewDelegate>)self;
+  mobView.rootViewController = self;
+  
+  //画面下部へ表示
+  mobView.frame = CGRectMake(0, // x
+                             screenWidth - adViewHeightMargin, // y
+                             mobView.frame.size.width,   // w
+                             mobView.frame.size.height); // h
+  
+  [self.view addSubview:mobView];
+  
+  [mobView loadRequest:[GADRequest request]];
+  
+  mobView.hidden = YES;
+  /*** AdMob用 広告表示 ここまで ***/
+  
+  
+  /*** iAd用 広告表示 ここから ***/
+  adView = [[ADBannerView alloc] initWithFrame:CGRectZero];
+  
+  //画面下部へ表示
+  adViewHeightMargin = 30; // iphone
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    adViewHeightMargin = 66;
+  }
+  
+  adView.frame = CGRectMake(0, // x
+                            screenWidth - adViewHeightMargin, // y
+                            adView.frame.size.width,   // w
+                            adView.frame.size.height); // h
+  
+  
+  
+  adView.delegate = (id<ADBannerViewDelegate>)self;
+  adView.autoresizesSubviews = YES;
+  adView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
+  
+  [self.view addSubview:adView];
+  bannerIsVisible = YES;
+  /*** iAd用 広告表示 ここまで ***/
+}
+
+
+
+
+- (GADRequest *)createRequest {
+  GADRequest *request = [GADRequest request];
+  
+  //Make the request for a test ad
+  //  request.testDevices = [NSArray arrayWithObjects:
+  //                         GAD_SIMULATOR_ID,// Simulator
+  //                         @"5d94d53ec5305b722393fc8484ad6e23eae0c371",
+  //                         nil];
+  
+  
+  return request;
+}
+
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+  //  NSLog(@"%d: iAd Get Success!!",__LINE__);
+  
+  if (!bannerIsVisible) {
+    [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
+    [UIView setAnimationDuration:0.3];
+    
+    //    banner.frame = CGRectOffset(banner.frame, 0, CGRectGetHeight(banner.frame));
+    banner.alpha = 1.0f;
+    banner.hidden = NO;
+    
+    [UIView commitAnimations];
+    
+    bannerIsVisible = YES;
+    //    [self.view bringSubviewToFront:adView];//再背面に移動
+    [self.view addSubview:adView];
+    
+    mobView.hidden = YES;
+    //    [self.view sendSubviewToBack:mobView];//最前面に移動
+    [mobView removeFromSuperview];
+    
+  }
+  
+}
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+  //  NSLog(@"%d: iAd get NG??",__LINE__);
+  
+  if (bannerIsVisible) {
+    [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
+    [UIView setAnimationDuration:0.3];
+    
+    //    banner.frame = CGRectOffset(banner.frame, 0, -CGRectGetHeight(banner.frame));
+    banner.alpha = 0.0f;
+    banner.hidden = YES;
+    
+    [UIView commitAnimations];
+    
+    bannerIsVisible = NO;
+    //    [self.view sendSubviewToBack:adView];//再背面に移動
+    [adView removeFromSuperview];
+    
+    mobView.hidden = NO;
+    //    [self.view bringSubviewToFront:mobView];//最前面に移動
+    [self.view addSubview:mobView];
+  }
 }
 
 
@@ -423,19 +518,13 @@
   // 横向き
   if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
     
-//    NSLog(@"%d,x=%d y=%d",__LINE__,(int)_adStirView.frame.origin.x,(int)_adStirView.frame.origin.y);
-    _adStirView.center = CGPointMake(self.view.frame.size.height/2, _adStirView.center.y); // x y
+    mobView.center = CGPointMake(centerPoint, mobView.center.y);
 
   // 縦向き
   } else if (o == UIDeviceOrientationPortrait || o == UIDeviceOrientationPortraitUpsideDown) {
     
-//    NSLog(@"%d,x=%d y=%d",__LINE__,(int)_adStirView.frame.origin.x,(int)_adStirView.frame.origin.y);
-    
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-      _adStirView.frame = CGRectMake(0, _adStirView.center.y -25, 320, 50); // x y w h
-    }else{
-      _adStirView.frame = CGRectMake(0, _adStirView.center.y -25, 320, 100); // x y w h
-    }
+    mobView.center = CGPointMake(centerPoint, mobView.center.y);
+
     
     // 向きが不明な場合
   } else {
