@@ -149,17 +149,15 @@
   [self _addDropShadowToView:cntView]; // 内影生成
   
   // History Label
-  hisLabel = [[MyCntLabel alloc] initWithFrame:CGRectMake(0,0,0,0)];// x y w h
+  hisLabel = [[MyCntLabel alloc] init];// x y w h
   
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
     [hisLabel setHis:HIS_LABEL_FONT_SIZE_IPHONE];
-    hisLabel.frame   = CGRectMake(0,0, 55, 20 ); // x y w h
-    hisLabel.center  = CGPointMake([self arignCenter:0] +185, 40); // x y
+    hisLabel.frame   = CGRectMake( 397, 40, 55, 20 ); // x y w h
     
   }else{
     [hisLabel setHis:HIS_LABEL_FONT_SIZE_IPAD];
-    hisLabel.frame   = CGRectMake(0,0, 90, 20 ); // x y w h
-    hisLabel.center  = CGPointMake([self arignCenter:0] +420, 80); // x y
+    hisLabel.frame   = CGRectMake( 887, 80, 90, 20 ); // x y w h
     
   }
   [hisLabel setHisEnable:YES];
@@ -168,8 +166,6 @@
   }
   [self.view addSubview:hisLabel];
 
-//  NSLog(@"line=%d value=%d",__LINE__,(int)[ud integerForKey:@"historySecData1"] + (int)[ud integerForKey:@"historyMinData1"]);
-  
   
   
   /*** 表示切り替え(ボタン)配置 ***/
@@ -294,17 +290,13 @@
   }
 
   
-  
-  //X軸の中心を取得
-  int centerPoint = [self arignCenter:0];
-//  NSLog(@"%d: centerPoint=%d",__LINE__,centerPoint);
-  
-  
   if (   o == UIDeviceOrientationLandscapeLeft
       || o == UIDeviceOrientationLandscapeRight
       || o == UIDeviceOrientationPortrait
       || o == UIDeviceOrientationPortraitUpsideDown) {
     
+    //X軸の中心を取得
+    int centerPoint = [self arignCenter:0];
 
     // 端末によりボタンの配置／大きさの調整
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
@@ -333,8 +325,7 @@
         setBtnHis3.frame = CGRectMake(centerPoint     +158, 105, 60, 18 ); // x y w h
         
         // History Label
-        hisLabel.frame   = CGRectMake(0,0, 55, 20 ); // x y w h
-        hisLabel.center  = CGPointMake(centerPoint +185, 40); // x y
+        hisLabel.frame   = CGRectMake( 397, 40, 55, 20 ); // x y w h
 
         if ([ResetBtnScaleOnFlag val]) {
           [self btnScaleUpYoko:setBtnReset];
@@ -367,8 +358,7 @@
         setBtnHis3.frame = CGRectMake(centerPoint     +385, 230, 65, 40 ); // x y w h
         
         // History Label
-        hisLabel.frame   = CGRectMake(0,0, 90, 20 ); // x y w h
-        hisLabel.center  = CGPointMake(centerPoint +420, 80); // x y
+        hisLabel.frame   = CGRectMake(887, 80, 90, 20 ); // x y w h
 
         if ([ResetBtnScaleOnFlag val]) {
           [self btnScaleUpYoko:setBtnReset];
@@ -1023,14 +1013,20 @@
   CGRect rect = sc.bounds;
   
   // 現在が横向きの場合の対処
-  UIDeviceOrientation o = [UIDevice currentDevice].orientation;
-  if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
-    //    NSLog(@"%d: height=%f",__LINE__,rect.size.height);
-    return ( rect.size.height - w ) / 2; // X座標を返す
-  }else{
+  //  int direction = self.interfaceOrientation;
+  UIDeviceOrientation o = [[UIDevice currentDevice] orientation];
+  
+  if(o == UIInterfaceOrientationPortrait || o == UIInterfaceOrientationPortraitUpsideDown){
+    //Tate
     //    NSLog(@"%d: width=%f",__LINE__,rect.size.width);
     return ( rect.size.width - w ) / 2; // X座標を返す
+  }else if(o == UIInterfaceOrientationLandscapeLeft || o == UIInterfaceOrientationLandscapeRight){
+    //Yoko
+    //    NSLog(@"%d: height=%f",__LINE__,rect.size.height);
+    return ( rect.size.height - w ) / 2; // X座標を返す
   }
+  
+  return 0;
 }
 
 
@@ -1308,14 +1304,11 @@ int vibCount;
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
     [UIView setAnimationDuration:0.5f];
-    
-    //X軸の中心を取得
-    int centerPoint = [self arignCenter:0];
-    
+
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-      setBtnReset.frame = CGRectMake(centerPoint -135.0f, 220.0f, 80.0f, 60.0f); // x y w h
+      setBtnReset.frame = CGRectMake([self arignCenter:0] -135, 220, 80, 60); // x y w h
     }else{
-      setBtnReset.frame = CGRectMake(centerPoint -190 -115, 550, 190, 110); // x y w h
+      setBtnReset.frame = CGRectMake([self arignCenter:0] -190 -115, 550, 190, 110); // x y w h
     }
     
     [ResetBtnScaleOnFlag setValue:NO];
