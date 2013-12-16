@@ -65,6 +65,7 @@
   // Button
   UIButton *sndBtn; // Sound On / Off
   UIButton *vibBtn; // Vibrate On / Off
+  UIButton *bigBtn; // Button Zoom On / Off
   
   MyModeBtn *timerSelectBtn; //「タイマー設定」切替ボタン
   MyModeBtn *clockSelectBtn; //「現在時表示」切替ボタン

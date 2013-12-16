@@ -31,6 +31,11 @@
 "VibMsgOn" ="On";
 "VibMsgOff"="Off";
 
+"BigTtlOn" ="[Button Zoom Anime]";
+"BigTtlOff"="[Button Zoom Anime]";
+"BigMsgOn" ="On";
+"BigMsgOff"="Off";
+
 "AlertTtl"="Thanks!";
 "AlertMsg"="Please write a review if it is good.";
 "AlertNG"="Cancel";

@@ -1,10 +1,10 @@
-/* 
-  Localizable.strings
-  DesignKichinTimer
-
-  Created by z on 2013/10/24.
-  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
-*/
+/*
+ Localizable.strings
+ DesignKichinTimer
+ 
+ Created by z on 2013/10/24.
+ Copyright (c) 2013 FoceSystemSolution. All rights reserved.
+ */
 //"AppName"="デザイン キッチンタイマー";
 "hun"="分";
 "byo"="秒";
@@ -19,9 +19,7 @@
 
 "btnClock"="▷現在時表示";
 "btnTimer"="▷タイマー表示";
-//"btnSound"="🎵";
-"btnSound"="♬";
-//"btnSound"="♫";
+//"btnSound"="♬";
 
 "SndTtlOn" ="[サウンド設定]";
 "SndTtlOff"="[消音]";
@@ -31,7 +29,12 @@
 "VibTtlOn" ="[バイブレーション設定]";
 "VibTtlOff"="[バイブレーション設定]";
 "VibMsgOn" ="On(有効)";
-"VibMsgOff"="Off(消音)";
+"VibMsgOff"="Off(無効)";
+
+"BigTtlOn" ="[ボタン拡大設定]";
+"BigTtlOff"="[ボタン拡大設定]";
+"BigMsgOn" ="On(有効)";
+"BigMsgOff"="Off(無効)";
 
 "AlertTtl"="ありがとうございます";
 "AlertMsg"="よろしければ評価をお願いします。　　　(これ以降は表示されません。)";

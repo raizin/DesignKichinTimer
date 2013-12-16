@@ -41,6 +41,10 @@
 		5E6F4B5718117F7700312CCD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E6F4B5518117F7700312CCD /* InfoPlist.strings */; };
 		5E6F4B5918117F7700312CCD /* DesignKichinTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F4B5818117F7700312CCD /* DesignKichinTimerTests.m */; };
 		5E711E4618191B0000E7AA83 /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = 5E711E4518191B0000E7AA83 /* .gitattributes */; };
+		5E8BC376185EE6D300C2802E /* BtnZoomOnFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8BC375185EE6D300C2802E /* BtnZoomOnFlag.m */; };
+		5E8BC37A185EE75400C2802E /* IconBigTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E8BC377185EE75400C2802E /* IconBigTouch.png */; };
+		5E8BC37B185EE75400C2802E /* IconBigOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E8BC378185EE75400C2802E /* IconBigOff.png */; };
+		5E8BC37C185EE75400C2802E /* IconBigOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E8BC379185EE75400C2802E /* IconBigOn.png */; };
 		5EA2C0A01811865E00B0FC3D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5EA2C09F1811865E00B0FC3D /* .gitignore */; };
 		5EC2DCC6182C77B1003E1D5C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC2DCC5182C77B1003E1D5C /* AudioToolbox.framework */; };
 		5EC2DCCA182FCEB8003E1D5C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC2DCC9182FCEB8003E1D5C /* AVFoundation.framework */; };
@@ -115,6 +119,11 @@
 		5E6F4B5618117F7700312CCD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5E6F4B5818117F7700312CCD /* DesignKichinTimerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DesignKichinTimerTests.m; sourceTree = "<group>"; };
 		5E711E4518191B0000E7AA83 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
+		5E8BC374185EE6D300C2802E /* BtnZoomOnFlag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BtnZoomOnFlag.h; sourceTree = "<group>"; };
+		5E8BC375185EE6D300C2802E /* BtnZoomOnFlag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BtnZoomOnFlag.m; sourceTree = "<group>"; };
+		5E8BC377185EE75400C2802E /* IconBigTouch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconBigTouch.png; sourceTree = "<group>"; };
+		5E8BC378185EE75400C2802E /* IconBigOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconBigOff.png; sourceTree = "<group>"; };
+		5E8BC379185EE75400C2802E /* IconBigOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconBigOn.png; sourceTree = "<group>"; };
 		5EA2C09F1811865E00B0FC3D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = DesignKichinTimer/.gitignore; sourceTree = "<group>"; };
 		5EC2DCC5182C77B1003E1D5C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5EC2DCC9182FCEB8003E1D5C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -168,6 +177,8 @@
 				5E2480631856B0CB0032AF77 /* VibrateOnFlag.h */,
 				5E220DCB18425F3900D2ACB0 /* SoundOnFlag.h */,
 				5E220DCC18425F3900D2ACB0 /* SoundOnFlag.m */,
+				5E8BC374185EE6D300C2802E /* BtnZoomOnFlag.h */,
+				5E8BC375185EE6D300C2802E /* BtnZoomOnFlag.m */,
 				5EDE0908185CC89A00660FF9 /* ResetBtnScaleOnFlag.h */,
 				5EDE0909185CC89A00660FF9 /* ResetBtnScaleOnFlag.m */,
 				5E220DCE184261F100D2ACB0 /* MySetBtn.h */,
@@ -261,6 +272,9 @@
 		5E6F4B3118117F7600312CCD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5E8BC377185EE75400C2802E /* IconBigTouch.png */,
+				5E8BC378185EE75400C2802E /* IconBigOff.png */,
+				5E8BC379185EE75400C2802E /* IconBigOn.png */,
 				5E24808018571ADE0032AF77 /* IconVibTouch.png */,
 				5E24808118571ADE0032AF77 /* IconVibOn.png */,
 				5E24808218571ADE0032AF77 /* IconVibOff.png */,
@@ -405,12 +419,14 @@
 			files = (
 				5ECB0D371832173700103C18 /* pi_mono.mp3 in Resources */,
 				5EF21EC81839260C00C079F0 /* Icon-76.png in Resources */,
+				5E8BC37C185EE75400C2802E /* IconBigOn.png in Resources */,
 				5EA2C0A01811865E00B0FC3D /* .gitignore in Resources */,
 				5E711E4618191B0000E7AA83 /* .gitattributes in Resources */,
 				5E24807E18571ACD0032AF77 /* IconSndTouch.png in Resources */,
 				5EF21EC91839260C00C079F0 /* Icon-76@2x.png in Resources */,
 				5EC2DCD21830A52A003E1D5C /* pi_old.mp3 in Resources */,
 				5E6F4B4118117F7600312CCD /* Main_iPad.storyboard in Resources */,
+				5E8BC37A185EE75400C2802E /* IconBigTouch.png in Resources */,
 				5E24808418571ADE0032AF77 /* IconVibOn.png in Resources */,
 				5E42589718192B7F00171F1F /* Localizable.strings in Resources */,
 				5E6F4B4618117F7600312CCD /* Images.xcassets in Resources */,
@@ -419,6 +435,7 @@
 				5E24808318571ADE0032AF77 /* IconVibTouch.png in Resources */,
 				5E24807F18571ACD0032AF77 /* IconSndOn.png in Resources */,
 				5E24807D18571ACD0032AF77 /* IconSndOff.png in Resources */,
+				5E8BC37B185EE75400C2802E /* IconBigOff.png in Resources */,
 				5EF21ECA1839260C00C079F0 /* Icon-60.png in Resources */,
 				5EF21ECB1839260C00C079F0 /* Icon-60@2x.png in Resources */,
 				5E24808518571ADE0032AF77 /* IconVibOff.png in Resources */,
@@ -447,6 +464,7 @@
 				5E6F4B3B18117F7600312CCD /* AppDelegate.m in Sources */,
 				5E5DF025184327510098499A /* MyModeBtn.m in Sources */,
 				5E220DD0184261F100D2ACB0 /* MySetBtn.m in Sources */,
+				5E8BC376185EE6D300C2802E /* BtnZoomOnFlag.m in Sources */,
 				5EDE090A185CC89A00660FF9 /* ResetBtnScaleOnFlag.m in Sources */,
 				5E2480641856B0CB0032AF77 /* VibrateOnFlag.m in Sources */,
 				5E6F4B3718117F7600312CCD /* main.m in Sources */,
