@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "SoundOnFlag.h"
 #import "VibrateOnFlag.h"
+#import "BtnZoomOnFlag.h"
 #import "ResetBtnScaleOnFlag.h"
 #import "GADBannerView.h"
 
@@ -161,10 +162,13 @@
   
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
     [hisLabel setHis:HIS_LABEL_FONT_SIZE_IPHONE];
-    hisLabel.frame   = CGRectMake( 397, 40, 55, 20 ); // x y w h
+//    hisLabel.frame   = CGRectMake( 397, 30, 55, 20 ); // x y w h
+    hisLabel.frame = CGRectMake((int)cntView.frame.origin.x +307, 30, 55, 20 ); // x y w h
+
   }else{
     [hisLabel setHis:HIS_LABEL_FONT_SIZE_IPAD];
-    hisLabel.frame   = CGRectMake( 887, 80, 90, 20 ); // x y w h
+//    hisLabel.frame   = CGRectMake( 887, 80, 90, 20 ); // x y w h
+    hisLabel.frame = CGRectMake((int)cntView.frame.origin.x +749, 70, 90, 20 ); // x y w h
   }
   [hisLabel setHisEnable:YES];
   if ((int)[ud integerForKey:@"historySecData1"] + (int)[ud integerForKey:@"historyMinData1"] < 1) {
@@ -342,7 +346,7 @@
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
-  NSLog(@"%d: iAd Get Success!!",__LINE__);
+//  NSLog(@"%d: iAd Get Success!!",__LINE__);
   
   if (!bannerIsVisible) {
     [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
@@ -365,7 +369,7 @@
 }
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
 {
-  NSLog(@"%d: iAd get NG??",__LINE__);
+//  NSLog(@"%d: iAd get NG??",__LINE__);
   
   if (bannerIsVisible) {
     [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
@@ -429,7 +433,7 @@
       setBtn05.frame    = CGRectMake(centerPoint -74 -3.5, 150, 74, 50); // x y w h
       setBtn03.frame    = CGRectMake(centerPoint     +3.5, 150, 74, 50); // x y w h
       setBtn01.frame    = CGRectMake(centerPoint      +85, 150, 74, 50); // x y w h
-      setBtnReset.frame = CGRectMake(centerPoint  -135.0f, 220.0f, 80.0f, 60.0f); // x y w h
+      setBtnReset.frame = CGRectMake(centerPoint     -135, 220, 80, 60); // x y w h
       setBtn001.frame   = CGRectMake(centerPoint  -(74/2), 225, 74, 50); // x y w h
       setBtnStart.frame = CGRectMake(centerPoint      +55, 220, 80, 60); // x y w h
       
@@ -444,7 +448,8 @@
         setBtnHis3.frame = CGRectMake(centerPoint     +158, 105, 60, 18 ); // x y w h
         
         // History Label
-        hisLabel.frame   = CGRectMake( 397, 40, 55, 20 ); // x y w h
+        hisLabel.frame   = CGRectMake((int)cntView.frame.origin.x +307, 30, 55, 20 ); // x y w h
+//        NSLog(@"%d x=%d",__LINE__,(int)cntView.frame.origin.x);
         
         if ([ResetBtnScaleOnFlag val]) {
           [self btnScaleUpYoko:setBtnReset];
@@ -476,7 +481,8 @@
         setBtnHis3.frame = CGRectMake(centerPoint     +385, 230, 65, 40 ); // x y w h
         
         // History Label
-        hisLabel.frame   = CGRectMake(887, 80, 90, 20 ); // x y w h
+        hisLabel.frame   = CGRectMake((int)cntView.frame.origin.x +749, 70, 90, 20 ); // x y w h
+//        NSLog(@"%d x=%d",__LINE__,(int)cntView.frame.origin.x);
         
         if ([ResetBtnScaleOnFlag val]) {
           [self btnScaleUpYoko:setBtnReset];
@@ -509,7 +515,7 @@
     
     // 向きが不明な場合
   } else {
-    NSLog(@"%d: device orientation is Unkown.",__LINE__);
+//    NSLog(@"%d: device orientation is Unkown.",__LINE__);
   }
 }
 
@@ -631,7 +637,9 @@
     [setBtnHis3 setEnabled:YES];
   }
   
-  [self btnScaleOrg:setBtnReset]; //縮小アニメ
+  if ([BtnZoomOnFlag val]) {
+    [self btnScaleOrg:setBtnReset]; //縮小アニメ
+  }
 }
 - (void)btnEnableOnlyReset
 {
@@ -648,7 +656,9 @@
   [setBtnHis1 setEnabled:NO];
   [setBtnHis2 setEnabled:NO];
   [setBtnHis3 setEnabled:NO];
-  [self btnScaleUp:setBtnReset]; //拡大アニメ
+  if ([BtnZoomOnFlag val]) {
+    [self btnScaleUp:setBtnReset]; //拡大アニメ
+  }
 }
 - (void)btnEnableOnlyStartReset
 {
@@ -665,7 +675,9 @@
   [setBtnHis1 setEnabled:NO];
   [setBtnHis2 setEnabled:NO];
   [setBtnHis3 setEnabled:NO];
-  [self btnScaleOrg:setBtnReset]; //縮小アニメ
+  if ([BtnZoomOnFlag val]) {
+    [self btnScaleOrg:setBtnReset]; //縮小アニメ
+  }
 }
 
 - (void)cntPlusChk
@@ -930,6 +942,45 @@
   [alert show];
 }
 
+/*
+ * Button Zoom ON/OFFボタン用イベント
+ */
+- (void)bigBtnTouch:(id)sender
+{
+  UIButton *btn = sender;
+  
+  // アラート
+  UIAlertView *alert = [[UIAlertView alloc] init];
+  
+  if ([BtnZoomOnFlag val]) {
+    [btn setImage:[UIImage imageNamed:@"IconBigOff.png"] forState:UIControlStateNormal];
+    
+    //拡大していた場合は戻す
+    if ([ResetBtnScaleOnFlag val]) {
+      [self btnScaleOrg:setBtnReset]; //縮小アニメ
+    }
+    
+    [BtnZoomOnFlag setValue:NO];
+    [BtnZoomOnFlag sync];
+    
+    alert.title   = [NSString stringWithFormat:@"%@",NSLocalizedString(@"BigTtlOff", nil)];
+    alert.message = [NSString stringWithFormat:@"%@",NSLocalizedString(@"BigMsgOff", nil)];
+    [alert addButtonWithTitle:@" O K "];
+    
+  }else{
+    [btn setImage:[UIImage imageNamed:@"IconBigOn.png"] forState:UIControlStateNormal];
+    
+    [BtnZoomOnFlag setValue:YES];
+    [BtnZoomOnFlag sync];
+    
+    alert.title   = [NSString stringWithFormat:@"%@",NSLocalizedString(@"BigTtlOn", nil)];
+    alert.message = [NSString stringWithFormat:@"%@",NSLocalizedString(@"BigMsgOn", nil)];
+    [alert addButtonWithTitle:@" O K "];
+  }
+  
+  [alert show];
+}
+
 
 
 /*
@@ -943,6 +994,7 @@
   [self lbFadeout:byoLabel];
   [self btnFadeout:sndBtn];
   [self btnFadeout:vibBtn];
+  [self btnFadeout:bigBtn];
 
   fadeinFlag = YES;
 
@@ -1054,6 +1106,7 @@
   [self lbFadein:cntLabel];
   [self btnFadein:sndBtn];
   [self btnFadein:vibBtn];
+  [self btnFadein:bigBtn];
 }
 
 
@@ -1140,27 +1193,33 @@
 
 
 // 中央寄せ用 X座標算出
-- (int)arignCenter:(int)w
+- (float)arignCenter:(int)w
 {
   //画面情報(横幅)取得
   UIScreen *sc = [UIScreen mainScreen];
   CGRect rect = sc.bounds;
+
+  float ret;
   
   // 現在が横向きの場合の対処
-//  int direction = self.interfaceOrientation;
   UIDeviceOrientation o = [[UIDevice currentDevice] orientation];
-
+  
   if(o == UIInterfaceOrientationPortrait || o == UIInterfaceOrientationPortraitUpsideDown){
     //Tate
-    //    NSLog(@"%d: width=%f",__LINE__,rect.size.width);
-    return ( rect.size.width - w ) / 2; // X座標を返す
+    ret = ( rect.size.width - w ) / 2;
+
   }else if(o == UIInterfaceOrientationLandscapeLeft || o == UIInterfaceOrientationLandscapeRight){
     //Yoko
-    //    NSLog(@"%d: height=%f",__LINE__,rect.size.height);
-    return ( rect.size.height - w ) / 2; // X座標を返す
+    ret = ( rect.size.height - w ) / 2;
+
+  }else{
+    ret = [ud floatForKey:@"beforeArignCenter"]; // 一つ前の状態を取得
   }
   
-  return 0;
+  // use next value is unknown case.
+  [ud setFloat:ret forKey:@"beforeArignCenter"];
+  
+  return ret;
 }
 
 
@@ -1343,15 +1402,20 @@ int vibCount;
   // ====== 「タイマー設定」ボタン（リンクテキスト風）ここまで ======
   
   
-  // ====== 「Sound & Vibrator ON/OFF」Button From here ======
+  // ====== 「Sound & Vibrator & ButtonZoom ON/OFF」Button From here ======
   sndBtn = [UIButton buttonWithType:UIButtonTypeCustom];
   vibBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+  bigBtn = [UIButton buttonWithType:UIButtonTypeCustom];
   
   [sndBtn setImage:[UIImage imageNamed:@"IconSndOn.png"]    forState:UIControlStateNormal];
   [sndBtn setImage:[UIImage imageNamed:@"IconSndTouch.png"] forState:UIControlStateHighlighted];
 
+  [bigBtn setImage:[UIImage imageNamed:@"IconBigOn.png"]    forState:UIControlStateNormal];
+  [bigBtn setImage:[UIImage imageNamed:@"IconBigTouch.png"] forState:UIControlStateHighlighted];
+
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
     sndBtn.frame = CGRectMake(cntView.bounds.size.width -37,cntView.bounds.size.height -35,30,30); // x y w h
+    bigBtn.frame = CGRectMake(cntView.bounds.size.width -37,cntView.frame.origin.y -50,30,30); // x y w h
     
     [vibBtn setImage:[UIImage imageNamed:@"IconVibOn.png"]    forState:UIControlStateNormal];
     [vibBtn setImage:[UIImage imageNamed:@"IconVibTouch.png"] forState:UIControlStateHighlighted];
@@ -1359,7 +1423,8 @@ int vibCount;
     [cntView addSubview:vibBtn];
     
   }else{
-    sndBtn.frame = CGRectMake(cntView.bounds.size.width -60,cntView.bounds.size.height -60,50,50); // x y w h
+    sndBtn.frame = CGRectMake(cntView.bounds.size.width -60,cntView.bounds.size.height  -60,50,50); // x y w h
+    bigBtn.frame = CGRectMake(cntView.bounds.size.width -60,cntView.bounds.size.height -110,50,50); // x y w h
   }
   
 //  [sndBtn setBackgroundColor:[UIColor purpleColor]];
@@ -1371,7 +1436,14 @@ int vibCount;
   [vibBtn setImageEdgeInsets:UIEdgeInsetsMake(6.f, 6.f, 6.f, 6.f)]; // 上 左 下 右
   [vibBtn addTarget:self action:@selector(vibBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
   [cntView addSubview:vibBtn];
-  // ====== 「Sound & Vibrator ON/OFF」Button To here ======
+  
+//  [bigBtn setBackgroundColor:[UIColor purpleColor]];
+  [bigBtn setImageEdgeInsets:UIEdgeInsetsMake(6.f, 6.f, 6.f, 6.f)]; // 上 左 下 右
+  [bigBtn addTarget:self action:@selector(bigBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
+  [cntView addSubview:bigBtn];
+  
+  
+  // ====== 「Sound & Vibrator & ButtonZoom ON/OFF」Button To here ======
 }
 
 /*

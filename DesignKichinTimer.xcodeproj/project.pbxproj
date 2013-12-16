@@ -49,6 +49,10 @@
 		5E80FDCE18530EFB0011AB75 /* IconFree-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E80FDCA18530EFB0011AB75 /* IconFree-76.png */; };
 		5E80FDCF18530EFB0011AB75 /* IconFree-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E80FDCB18530EFB0011AB75 /* IconFree-60@2x.png */; };
 		5E80FDD018530EFB0011AB75 /* IconFree-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E80FDCC18530EFB0011AB75 /* IconFree-76@2x.png */; };
+		5E8BC36D185DE38500C2802E /* BtnZoomOnFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8BC36C185DE38500C2802E /* BtnZoomOnFlag.m */; };
+		5E8BC371185DF84600C2802E /* IconBigTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E8BC36E185DF84600C2802E /* IconBigTouch.png */; };
+		5E8BC372185DF84600C2802E /* IconBigOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E8BC36F185DF84600C2802E /* IconBigOff.png */; };
+		5E8BC373185DF84600C2802E /* IconBigOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E8BC370185DF84600C2802E /* IconBigOn.png */; };
 		5EA2C0A01811865E00B0FC3D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5EA2C09F1811865E00B0FC3D /* .gitignore */; };
 		5EC2DCC6182C77B1003E1D5C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC2DCC5182C77B1003E1D5C /* AudioToolbox.framework */; };
 		5EC2DCCA182FCEB8003E1D5C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC2DCC9182FCEB8003E1D5C /* AVFoundation.framework */; };
@@ -138,6 +142,11 @@
 		5E80FDCA18530EFB0011AB75 /* IconFree-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconFree-76.png"; sourceTree = "<group>"; };
 		5E80FDCB18530EFB0011AB75 /* IconFree-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconFree-60@2x.png"; sourceTree = "<group>"; };
 		5E80FDCC18530EFB0011AB75 /* IconFree-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconFree-76@2x.png"; sourceTree = "<group>"; };
+		5E8BC36B185DE38500C2802E /* BtnZoomOnFlag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BtnZoomOnFlag.h; sourceTree = "<group>"; };
+		5E8BC36C185DE38500C2802E /* BtnZoomOnFlag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BtnZoomOnFlag.m; sourceTree = "<group>"; };
+		5E8BC36E185DF84600C2802E /* IconBigTouch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconBigTouch.png; sourceTree = "<group>"; };
+		5E8BC36F185DF84600C2802E /* IconBigOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconBigOff.png; sourceTree = "<group>"; };
+		5E8BC370185DF84600C2802E /* IconBigOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconBigOn.png; sourceTree = "<group>"; };
 		5EA2C09F1811865E00B0FC3D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = DesignKichinTimer/.gitignore; sourceTree = "<group>"; };
 		5EC2DCC5182C77B1003E1D5C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5EC2DCC9182FCEB8003E1D5C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -194,6 +203,8 @@
 				5E220DCC18425F3900D2ACB0 /* SoundOnFlag.m */,
 				5E24805F18558F9F0032AF77 /* VibrateOnFlag.h */,
 				5E24806018558F9F0032AF77 /* VibrateOnFlag.m */,
+				5E8BC36B185DE38500C2802E /* BtnZoomOnFlag.h */,
+				5E8BC36C185DE38500C2802E /* BtnZoomOnFlag.m */,
 				5EDE0905185CBF8F00660FF9 /* ResetBtnScaleOnFlag.h */,
 				5EDE0906185CBF8F00660FF9 /* ResetBtnScaleOnFlag.m */,
 				5E220DCE184261F100D2ACB0 /* MySetBtn.h */,
@@ -310,6 +321,9 @@
 		5E6F4B3118117F7600312CCD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5E8BC36E185DF84600C2802E /* IconBigTouch.png */,
+				5E8BC36F185DF84600C2802E /* IconBigOff.png */,
+				5E8BC370185DF84600C2802E /* IconBigOn.png */,
 				5E2480731856FE6B0032AF77 /* IconSndOff.png */,
 				5E2480741856FE6B0032AF77 /* IconSndTouch.png */,
 				5E2480711856FD4D0032AF77 /* IconSndOn.png */,
@@ -460,11 +474,13 @@
 				5EA2C0A01811865E00B0FC3D /* .gitignore in Resources */,
 				5E80FDCF18530EFB0011AB75 /* IconFree-60@2x.png in Resources */,
 				5E711E4618191B0000E7AA83 /* .gitattributes in Resources */,
+				5E8BC373185DF84600C2802E /* IconBigOn.png in Resources */,
 				5E5DF03918438FB50098499A /* AdMob_README.txt in Resources */,
 				5EF21EC91839260C00C079F0 /* Icon-76@2x.png in Resources */,
 				5E2480721856FD4D0032AF77 /* IconSndOn.png in Resources */,
 				5EC2DCD21830A52A003E1D5C /* pi_old.mp3 in Resources */,
 				5E80FDD018530EFB0011AB75 /* IconFree-76@2x.png in Resources */,
+				5E8BC372185DF84600C2802E /* IconBigOff.png in Resources */,
 				5E6F4B4118117F7600312CCD /* Main_iPad.storyboard in Resources */,
 				5E42589718192B7F00171F1F /* Localizable.strings in Resources */,
 				5E2480671856ED3E0032AF77 /* IconVibOn.png in Resources */,
@@ -473,6 +489,7 @@
 				5ECB0D271832038400103C18 /* piLong.mp3 in Resources */,
 				5E2480761856FE6B0032AF77 /* IconSndTouch.png in Resources */,
 				5E6F4B3E18117F7600312CCD /* Main_iPhone.storyboard in Resources */,
+				5E8BC371185DF84600C2802E /* IconBigTouch.png in Resources */,
 				5EF21ECA1839260C00C079F0 /* Icon-60.png in Resources */,
 				5EF21ECB1839260C00C079F0 /* Icon-60@2x.png in Resources */,
 				5E6F4B3518117F7600312CCD /* InfoPlist.strings in Resources */,
@@ -501,6 +518,7 @@
 				5E6F4B3B18117F7600312CCD /* AppDelegate.m in Sources */,
 				5E5DF025184327510098499A /* MyModeBtn.m in Sources */,
 				5E220DD0184261F100D2ACB0 /* MySetBtn.m in Sources */,
+				5E8BC36D185DE38500C2802E /* BtnZoomOnFlag.m in Sources */,
 				5E24806118558F9F0032AF77 /* VibrateOnFlag.m in Sources */,
 				5EDE0907185CBF8F00660FF9 /* ResetBtnScaleOnFlag.m in Sources */,
 				5E6F4B3718117F7600312CCD /* main.m in Sources */,
