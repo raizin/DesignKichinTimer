@@ -288,10 +288,11 @@
   
   // iphone かつ Home button top の場合のみ 動作がおかしいので止める
   if (o == UIDeviceOrientationPortraitUpsideDown && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-//    NSLog(@"%d: return void",__LINE__);
+    //    NSLog(@"%d: return void",__LINE__);
     return;
   }
-
+  
+  
   
   if (   o == UIDeviceOrientationLandscapeLeft
       || o == UIDeviceOrientationLandscapeRight
@@ -300,14 +301,13 @@
     
     //X軸の中心を取得
     int centerPoint = [self arignCenter:0];
-
+    
     // 端末によりボタンの配置／大きさの調整
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
       //NSLog(@"%d: iPhoneの処理",__LINE__);
       
       // Viewの位置とサイズを補正してセット
       cntView.frame = CGRectMake([self arignCenter:cntW], 35, cntW, cntH); // x y w h
-      
       
       setBtn10.frame    = CGRectMake(centerPoint -74  -85, 150, 74, 50); // x y w h
       setBtn05.frame    = CGRectMake(centerPoint -74 -3.5, 150, 74, 50); // x y w h
@@ -319,7 +319,7 @@
       
       clockSelectBtn.frame = CGRectMake(centerPoint - 150     , -3,120,50);
       timerSelectBtn.frame = CGRectMake(centerPoint - 150 +130, -3,145,50);
-
+      
       
       // 横向きのみ履歴ボタン表示
       if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
@@ -329,7 +329,8 @@
         
         // History Label
         hisLabel.frame   = CGRectMake((int)cntView.frame.origin.x +307, 30, 55, 20 ); // x y w h
-
+        //        NSLog(@"%d x=%d",__LINE__,(int)cntView.frame.origin.x);
+        
         if ([ResetBtnScaleOnFlag val]) {
           [self btnScaleUpYoko:setBtnReset];
         }
@@ -341,10 +342,9 @@
       
     }else{
       //NSLog(@"%d: iPadの処理",__LINE__);
-
+      
       // Viewの位置とサイズを補正してセット
       cntView.frame = CGRectMake([self arignCenter:cntW], 60, cntW, cntH); // x y w h
-
       
       setBtn10.frame    = CGRectMake(centerPoint -170 -200, 400, 170, 100); // x y w h
       setBtn05.frame    = CGRectMake(centerPoint -170  -10, 400, 170, 100); // x y w h
@@ -362,7 +362,8 @@
         
         // History Label
         hisLabel.frame   = CGRectMake((int)cntView.frame.origin.x +749, 70, 90, 20 ); // x y w h
-
+        //        NSLog(@"%d x=%d",__LINE__,(int)cntView.frame.origin.x);
+        
         if ([ResetBtnScaleOnFlag val]) {
           [self btnScaleUpYoko:setBtnReset];
         }
@@ -376,8 +377,26 @@
     }
     
   }
-
   
+  
+  
+  /*** ボタンの戻り位置制御 ※縦・横の状態を矯正 ***/
+  float centerCorrection;
+  
+  // 横向き
+  if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
+    
+    centerCorrection = [self arignCenter:0];
+    
+    // 縦向き
+  } else if (o == UIDeviceOrientationPortrait || o == UIDeviceOrientationPortraitUpsideDown) {
+    
+    centerCorrection = [self arignCenter:0];
+    
+    // 向きが不明な場合
+  } else {
+    //    NSLog(@"%d: device orientation is Unkown.",__LINE__);
+  }
 }
 
 
@@ -1072,16 +1091,20 @@
     //Tate
     ret = ( rect.size.width - w ) / 2;
     
+    // use next value is unknown case.
+    [ud setFloat:ret forKey:@"beforeArignCenter"];
+
   }else if(o == UIInterfaceOrientationLandscapeLeft || o == UIInterfaceOrientationLandscapeRight){
     //Yoko
     ret = ( rect.size.height - w ) / 2;
+
+    // use next value is unknown case.
+    [ud setFloat:ret forKey:@"beforeArignCenter"];
     
   }else{
     ret = [ud floatForKey:@"beforeArignCenter"]; // 一つ前の状態を取得
   }
   
-  // use next value is unknown case.
-  [ud setFloat:ret forKey:@"beforeArignCenter"];
   
   return ret;
 }
@@ -1372,7 +1395,7 @@ int vibCount;
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
     [UIView setAnimationDuration:0.5f];
-
+    
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
       setBtnReset.frame = CGRectMake([self arignCenter:0] -135, 220, 80, 60); // x y w h
     }else{
