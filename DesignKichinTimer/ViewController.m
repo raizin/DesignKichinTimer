@@ -1208,16 +1208,19 @@
     //Tate
     ret = ( rect.size.width - w ) / 2;
 
+    // use next value is unknown case.
+    [ud setFloat:ret forKey:@"beforeArignCenter"];
+
   }else if(o == UIInterfaceOrientationLandscapeLeft || o == UIInterfaceOrientationLandscapeRight){
     //Yoko
     ret = ( rect.size.height - w ) / 2;
 
+    // use next value is unknown case.
+    [ud setFloat:ret forKey:@"beforeArignCenter"];
+
   }else{
     ret = [ud floatForKey:@"beforeArignCenter"]; // 一つ前の状態を取得
   }
-  
-  // use next value is unknown case.
-  [ud setFloat:ret forKey:@"beforeArignCenter"];
   
   return ret;
 }
@@ -1509,8 +1512,6 @@ int vibCount;
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
     [UIView setAnimationDuration:0.5f];
-
-//    NSLog(@"%d,%d",__LINE__,[self arignCenter:0]);
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
       setBtnReset.frame = CGRectMake([self arignCenter:0] -135, 220, 80, 60); // x y w h
