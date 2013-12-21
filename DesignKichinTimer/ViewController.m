@@ -1454,6 +1454,7 @@ int vibCount;
  */
 - (void)btnScaleUpYoko:(UIButton *)btn
 {
+  [self.view bringSubviewToFront:btn]; //最前面
   //拡大アニメーション
   [UIView beginAnimations:nil context:nil];
   [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
@@ -1469,6 +1470,7 @@ int vibCount;
  */
 - (void)btnScaleUpTate:(UIButton *)btn
 {
+  [self.view bringSubviewToFront:btn]; //最前面
   //拡大アニメーション
   [UIView beginAnimations:nil context:nil];
   [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
@@ -1487,7 +1489,6 @@ int vibCount;
 - (void)btnScaleUp:(UIButton *)btn
 {
   if ([ResetBtnScaleOnFlag val] == NO) {
-    [self.view bringSubviewToFront:btn]; //最前面
 
     int direction = self.interfaceOrientation;
     if(direction == UIInterfaceOrientationPortrait || direction == UIInterfaceOrientationPortraitUpsideDown){
