@@ -102,6 +102,7 @@
 		5E42589818192B7F00171F1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E42589A18192B8800171F1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E42589B181CF29300171F1F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5E4ECBC518660C8200578E1E /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		5E5DF023184327510098499A /* MyModeBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyModeBtn.h; sourceTree = "<group>"; };
 		5E5DF024184327510098499A /* MyModeBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyModeBtn.m; sourceTree = "<group>"; };
 		5E5DF026184377EC0098499A /* MyCntLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCntLabel.h; sourceTree = "<group>"; };
@@ -266,6 +267,7 @@
 			children = (
 				5E711E4518191B0000E7AA83 /* .gitattributes */,
 				5EA2C09F1811865E00B0FC3D /* .gitignore */,
+				5E4ECBC518660C8200578E1E /* PrefixHeader.pch */,
 				5E220DD21842630700D2ACB0 /* IconPng-Free */,
 				5E5DF02C18438F7C0098499A /* GoogleADMobSDK */,
 				5E220DD31842637900D2ACB0 /* DefaultClass */,
