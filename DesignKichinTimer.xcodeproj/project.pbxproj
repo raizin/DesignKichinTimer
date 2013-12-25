@@ -56,6 +56,8 @@
 		5EF21EC91839260C00C079F0 /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EF21EC51839260C00C079F0 /* Icon-76@2x.png */; };
 		5EF21ECA1839260C00C079F0 /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EF21EC61839260C00C079F0 /* Icon-60.png */; };
 		5EF21ECB1839260C00C079F0 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EF21EC71839260C00C079F0 /* Icon-60@2x.png */; };
+		5EF44FC5186B5D6900E7494A /* MyInfoBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF44FC1186B5D6900E7494A /* MyInfoBtn.m */; };
+		5EF44FC6186B5D6900E7494A /* TriangleBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF44FC3186B5D6900E7494A /* TriangleBtn.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +139,10 @@
 		5EF21EC51839260C00C079F0 /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
 		5EF21EC61839260C00C079F0 /* Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60.png"; sourceTree = "<group>"; };
 		5EF21EC71839260C00C079F0 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
+		5EF44FC1186B5D6900E7494A /* MyInfoBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfoBtn.m; sourceTree = "<group>"; };
+		5EF44FC2186B5D6900E7494A /* MyInfoBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInfoBtn.h; sourceTree = "<group>"; };
+		5EF44FC3186B5D6900E7494A /* TriangleBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriangleBtn.m; sourceTree = "<group>"; };
+		5EF44FC4186B5D6900E7494A /* TriangleBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriangleBtn.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +180,10 @@
 		5E220DD11842624A00D2ACB0 /* CustomClass */ = {
 			isa = PBXGroup;
 			children = (
+				5EF44FC1186B5D6900E7494A /* MyInfoBtn.m */,
+				5EF44FC2186B5D6900E7494A /* MyInfoBtn.h */,
+				5EF44FC3186B5D6900E7494A /* TriangleBtn.m */,
+				5EF44FC4186B5D6900E7494A /* TriangleBtn.h */,
 				5E2480621856B0CB0032AF77 /* VibrateOnFlag.m */,
 				5E2480631856B0CB0032AF77 /* VibrateOnFlag.h */,
 				5E220DCB18425F3900D2ACB0 /* SoundOnFlag.h */,
@@ -466,6 +476,8 @@
 				5E6F4B3B18117F7600312CCD /* AppDelegate.m in Sources */,
 				5E5DF025184327510098499A /* MyModeBtn.m in Sources */,
 				5E220DD0184261F100D2ACB0 /* MySetBtn.m in Sources */,
+				5EF44FC6186B5D6900E7494A /* TriangleBtn.m in Sources */,
+				5EF44FC5186B5D6900E7494A /* MyInfoBtn.m in Sources */,
 				5E8BC376185EE6D300C2802E /* BtnZoomOnFlag.m in Sources */,
 				5EDE090A185CC89A00660FF9 /* ResetBtnScaleOnFlag.m in Sources */,
 				5E2480641856B0CB0032AF77 /* VibrateOnFlag.m in Sources */,
