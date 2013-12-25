@@ -66,7 +66,7 @@
   [toApviewBtn setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"ToApview", nil)] forState:UIControlStateNormal];
   [toApviewBtn addTarget:self action:@selector(toApview:) forControlEvents:UIControlEventTouchUpInside];
   
-  // Other App View Button
+  // Get Pro Version Button
   MyInfoBtn *toGetproBtn = [MyInfoBtn buttonWithType:UIButtonTypeCustom];
   [toGetproBtn setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"ToGetpro", nil)] forState:UIControlStateNormal];
   [toGetproBtn addTarget:self action:@selector(toGetpro:) forControlEvents:UIControlEventTouchUpInside];
@@ -81,7 +81,7 @@
   labelVer.text =
      [NSString stringWithFormat:@"APP Version : %@   %@ : %d",appVer,NSLocalizedString(@"LabelVer", nil),(int)appLauchedCount];
   
-  // App Version Infomaion Label
+  // Thanks Label
   UILabel *label3ks = [[UILabel alloc] init];
   label3ks.textColor = [UIColor blueColor];
   label3ks.text = [NSString stringWithFormat:@"%@%@",appName,NSLocalizedString(@"Label3ks", nil)];
