@@ -13,6 +13,7 @@
 #import "MyModeBtn.h"
 #import "MyCntLabel.h"
 #import "GADBannerView.h"
+#import "InfoViewController.h"
 
 //@interface ViewController : UIViewController <ADBannerViewDelegate> {
 //@interface ViewController : UIViewController <AdstirViewDelegate> {
@@ -75,6 +76,7 @@
   CALayer *cntlayer;
   
   // Button
+  UIButton *infBtn; // Infomation ModalView Call Button
   UIButton *sndBtn; // Sound On / Off
   UIButton *vibBtn; // Vibrate On / Off
   UIButton *bigBtn; // Button Zoom On / Off

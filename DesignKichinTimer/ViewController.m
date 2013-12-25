@@ -41,11 +41,6 @@
     [self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];
   }
   
-  
-  // Google AdMob 広告ユニットID
-  static NSString *MY_UNIT_ID = @"ca-app-pub-8799115520187072/6215156947";
-
-  
   // カウント部分 フォントサイズ ipad:180 iphone:70 = 5 digits + "M S"
   static float CNT_FONT_SIZE_IPHONE = 70.f;
   static float CNT_FONT_SIZE_IPAD   = 180.f;
@@ -252,8 +247,6 @@
   }
   [self.view addSubview:setBtnHis3];
   
-
-  
   
   
   // デバイスの回転をサポート デバイスが回転した際に、呼び出してほしいメソッドを指定
@@ -290,7 +283,8 @@
   
   mobView = [[GADBannerView alloc] initWithFrame:adRect];
   
-  mobView.adUnitID = MY_UNIT_ID;
+//  mobView.adUnitID = [APP_DELEGATE getAdMobUnitId];
+  mobView.adUnitID = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"AdMobUnitId"];
   mobView.delegate = (id<GADBannerViewDelegate>)self;
   mobView.rootViewController = self;
   
@@ -440,9 +434,12 @@
       clockSelectBtn.frame = CGRectMake(centerPoint - 150     , -3,120,50);
       timerSelectBtn.frame = CGRectMake(centerPoint - 150 +130, -3,145,50);
 
-      
+      infBtn.frame = CGRectMake(self.view.frame.size.width -35, 0, 35, 35); // x y w h
+     
       // 横向きのみ履歴ボタン表示
       if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
+        infBtn.frame = CGRectMake(self.view.frame.size.width +110, 5, 35, 35); // x y w h
+
         setBtnHis1.frame = CGRectMake(centerPoint     +158,  55, 60, 18 ); // x y w h
         setBtnHis2.frame = CGRectMake(centerPoint     +158,  80, 60, 18 ); // x y w h
         setBtnHis3.frame = CGRectMake(centerPoint     +158, 105, 60, 18 ); // x y w h
@@ -1406,10 +1403,14 @@ int vibCount;
   
   
   // ====== 「Sound & Vibrator & ButtonZoom ON/OFF」Button From here ======
+  infBtn = [UIButton buttonWithType:UIButtonTypeCustom];
   sndBtn = [UIButton buttonWithType:UIButtonTypeCustom];
   vibBtn = [UIButton buttonWithType:UIButtonTypeCustom];
   bigBtn = [UIButton buttonWithType:UIButtonTypeCustom];
   
+  [infBtn setImage:[UIImage imageNamed:@"IconInfo.png"]    forState:UIControlStateNormal];
+  [infBtn setImage:[UIImage imageNamed:@"IconInfoTouch.png"] forState:UIControlStateHighlighted];
+
   [sndBtn setImage:[UIImage imageNamed:@"IconSndOn.png"]    forState:UIControlStateNormal];
   [sndBtn setImage:[UIImage imageNamed:@"IconSndTouch.png"] forState:UIControlStateHighlighted];
 
@@ -1417,18 +1418,24 @@ int vibCount;
   [bigBtn setImage:[UIImage imageNamed:@"IconBigTouch.png"] forState:UIControlStateHighlighted];
 
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+    [self.view addSubview:infBtn];
+
     sndBtn.frame = CGRectMake(cntView.bounds.size.width -37,cntView.bounds.size.height -35,30,30); // x y w h
     bigBtn.frame = CGRectMake(cntView.bounds.size.width -37,cntView.frame.origin.y -50,30,30); // x y w h
     
     [vibBtn setImage:[UIImage imageNamed:@"IconVibOn.png"]    forState:UIControlStateNormal];
-    [vibBtn setImage:[UIImage imageNamed:@"IconVibTouch.png"] forState:UIControlStateHighlighted];
     vibBtn.frame = CGRectMake(cntView.bounds.size.width -66,cntView.bounds.size.height -36,32,32); // x y w h
     [cntView addSubview:vibBtn];
     
   }else{
+    infBtn.frame = CGRectMake(cntView.bounds.size.width -60, 10, 50, 50); // x y w h
+    [cntView addSubview:infBtn];
+
     sndBtn.frame = CGRectMake(cntView.bounds.size.width -60,cntView.bounds.size.height  -60,50,50); // x y w h
     bigBtn.frame = CGRectMake(cntView.bounds.size.width -60,cntView.bounds.size.height -110,50,50); // x y w h
   }
+  [infBtn setImageEdgeInsets:UIEdgeInsetsMake(8.f, 8.f, 8.f, 8.f)]; // 上 左 下 右
+  [infBtn addTarget:self action:@selector(infoBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
   
 //  [sndBtn setBackgroundColor:[UIColor purpleColor]];
   [sndBtn setImageEdgeInsets:UIEdgeInsetsMake(6.f, 6.f, 6.f, 6.f)]; // 上 左 下 右
@@ -1444,6 +1451,9 @@ int vibCount;
   [bigBtn setImageEdgeInsets:UIEdgeInsetsMake(6.f, 6.f, 6.f, 6.f)]; // 上 左 下 右
   [bigBtn addTarget:self action:@selector(bigBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
   [cntView addSubview:bigBtn];
+  
+  
+
   
   
   // ====== 「Sound & Vibrator & ButtonZoom ON/OFF」Button To here ======
@@ -1464,6 +1474,7 @@ int vibCount;
                          self.view.frame.size.height -6, // w
                          self.view.frame.size.width - (cntView.frame.size.height + cntView.frame.origin.y) -6 ); // h
   [UIView commitAnimations];
+  [self.view.layer removeAllAnimations];
 }
 /*
  * ボタン拡大アニメ(縦)
@@ -1480,6 +1491,7 @@ int vibCount;
                          self.view.frame.size.width -6, // w
                          self.view.frame.size.height - (cntView.frame.size.height + cntView.frame.origin.y) -6 ); // h
   [UIView commitAnimations];
+  [self.view.layer removeAllAnimations];
 }
 
 
@@ -1520,9 +1532,50 @@ int vibCount;
       setBtnReset.frame = CGRectMake([self arignCenter:0] -190 -115, 550, 190, 110); // x y w h
     }
     
+    [UIView commitAnimations];
+    [self.view.layer removeAllAnimations];
     [ResetBtnScaleOnFlag setValue:NO];
     [ResetBtnScaleOnFlag sync];
   }
+}
+
+/*
+ * UIButton scale org method
+ */
+- (void)infoBtnTouch:(UIButton *)btn
+{
+//  NSLog(@"%d",__LINE__);
+  
+  // InfoViewController生成
+  InfoViewController *infoViewController;
+  infoViewController = [[InfoViewController alloc] init];
+  
+  //配置
+//  infoViewController.modalPresentationStyle = UIModalPresentationFullScreen;  // 画面を覆う Default
+//  infoViewController.modalPresentationStyle = UIModalPresentationPageSheet;  // ビューの高さ＝画面高さ,幅=デバイスの向き(縦向き)による画面幅
+//  infoViewController.modalPresentationStyle = UIModalPresentationFormSheet;  // 画面中央に配置
+//  infoViewController.modalPresentationStyle = UIModalPresentationCurrentContext;  // 親と同じビューを維持する
+
+  //スタイル
+//  infoViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical; // 下から上へ出るスタイル Default
+//  infoViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal; // 回転して出るスタイル
+//  infoViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve; // 浮かびあがってくるスタイル
+  infoViewController.modalTransitionStyle = UIModalTransitionStylePartialCurl; // 下からめくり上げるスタイル
+  
+
+  //サイズ指定 Case is UIModalPresentationFormSheet or UIModalPresentationPageSheet
+//  infoViewController.view.superview.frame = CGRectMake(0, 0, 100, 300);
+//  infoViewController.view.superview.frame = CGRectMake(0, 0, 300, 300);
+//  infoViewController.view.superview.center = CGPointMake(1024/2, 768/2);
+//  infoViewController.view.superview.autoresizingMask = UIViewAutoresizingNone;
+  
+  
+
+  // InfoViewを表示
+  [self presentViewController: infoViewController animated:YES completion:nil];
+  
+  
+  
 }
 
 
