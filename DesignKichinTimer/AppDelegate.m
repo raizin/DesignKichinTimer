@@ -12,30 +12,40 @@
 @implementation AppDelegate
 
 
+// 起動回数を返す Globalな関数
+- (int)getAppLauchedCount
+{
+  NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+  return (int)[ud integerForKey:@"appLauchedCount"];
+}
+
+// 起動回数を保存
+- (void)setAppLauchedCount:(int)cnt
+{
+  NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+
+  cnt++;
+  
+  [ud setInteger:cnt forKey:@"appLauchedCount"];
+  [ud synchronize];
+}
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  // アプリ毎に割り振られる９桁のID
-  APP_ID = @"756181891";
-  
-  
   //Sound play setting
   AVAudioSession *audioSession = [AVAudioSession sharedInstance];
   [audioSession setCategory:AVAudioSessionCategorySoloAmbient error:NULL];
   [audioSession setActive:YES error:NULL];
   
-  NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-  int appLaunchedCountValue = (int)[ud integerForKey:@"appLauchedCount"];
-  appLaunchedCountValue++;
-//  NSLog(@"appLaunchedCountValue = %d", appLaunchedCountValue);
-  [ud setInteger:appLaunchedCountValue forKey:@"appLauchedCount"];
-
-  // 一万回起動に到達したら 5 にもどす。
-  if ( appLaunchedCountValue >= 9999 ) {
-    [ud setInteger:5 forKey:@"appLauchedCount"];
-  }
-  [ud synchronize];
+  int appLaunchedCountValue = [self getAppLauchedCount];
   
-  if ( appLaunchedCountValue == 3 ) {
+  // 99999回以上はカウントしない。
+  if ( appLaunchedCountValue < 99999 ) {
+    [self setAppLauchedCount:appLaunchedCountValue];
+  }
+
+  if ( appLaunchedCountValue == 5 ) {
     UIAlertView *alertView = [[UIAlertView alloc]
                               initWithTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"AlertTtl", nil)]
                                     message:[NSString stringWithFormat:@"%@",NSLocalizedString(@"AlertMsg", nil)]
@@ -55,7 +65,7 @@
 clickedButtonAtIndex:(NSInteger)buttonIndex {
   
   //  NSString *reviewURLiOS6 = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=APPID";
-  NSString *reviewURL = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@",APP_ID];
+  NSURL *reviewURL = [NSURL URLWithString:[[NSBundle mainBundle] objectForInfoDictionaryKey: @"ReviewURL"]];
   
   switch (buttonIndex) {
     case 0: // キャンセル (なにもしない)
@@ -65,7 +75,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
     case 1:
       //      NSLog(@"buttonIndex = %d", (int)buttonIndex);
       
-      [[UIApplication sharedApplication] openURL:[NSURL URLWithString:reviewURL]];
+      [[UIApplication sharedApplication] openURL:reviewURL];
       
       break;
   }

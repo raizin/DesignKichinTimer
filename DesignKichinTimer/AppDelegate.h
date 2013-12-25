@@ -10,9 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 //#import "Appirater.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>{
-  NSString *APP_ID;
-}
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 @property (strong, nonatomic) UIWindow *window;
-
+- (int)getAppLauchedCount;
 @end
