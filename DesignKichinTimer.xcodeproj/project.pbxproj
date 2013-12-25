@@ -25,6 +25,11 @@
 		5E2480761856FE6B0032AF77 /* IconSndTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E2480741856FE6B0032AF77 /* IconSndTouch.png */; };
 		5E42589718192B7F00171F1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E42589918192B7F00171F1F /* Localizable.strings */; };
 		5E42589C181CF29300171F1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E42589B181CF29300171F1F /* QuartzCore.framework */; };
+		5E4ECBCF1866250E00578E1E /* IconInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E4ECBCD1866250E00578E1E /* IconInfo.png */; };
+		5E4ECBD01866250E00578E1E /* IconInfoTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E4ECBCE1866250E00578E1E /* IconInfoTouch.png */; };
+		5E4ECBD81866CD5900578E1E /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4ECBD71866CD5900578E1E /* InfoViewController.m */; };
+		5E4ECBDD1867597900578E1E /* TriangleBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4ECBDC1867597900578E1E /* TriangleBtn.m */; };
+		5E4ECBE01868812E00578E1E /* MyInfoBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4ECBDF1868812E00578E1E /* MyInfoBtn.m */; };
 		5E5DF025184327510098499A /* MyModeBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DF024184327510098499A /* MyModeBtn.m */; };
 		5E5DF028184377EC0098499A /* MyCntLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DF027184377EC0098499A /* MyCntLabel.m */; };
 		5E5DF03818438FB50098499A /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E5DF03618438FB50098499A /* libGoogleAdMobAds.a */; };
@@ -88,8 +93,6 @@
 		5E220DCC18425F3900D2ACB0 /* SoundOnFlag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SoundOnFlag.m; path = DesignKichinTimer/SoundOnFlag.m; sourceTree = "<group>"; };
 		5E220DCE184261F100D2ACB0 /* MySetBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MySetBtn.h; path = DesignKichinTimer/MySetBtn.h; sourceTree = "<group>"; };
 		5E220DCF184261F100D2ACB0 /* MySetBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MySetBtn.m; path = DesignKichinTimer/MySetBtn.m; sourceTree = "<group>"; };
-		5E243BD9182504DC005C31D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		5E243BDA182504E7005C31D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5E24805F18558F9F0032AF77 /* VibrateOnFlag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VibrateOnFlag.h; sourceTree = "<group>"; };
 		5E24806018558F9F0032AF77 /* VibrateOnFlag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VibrateOnFlag.m; sourceTree = "<group>"; };
 		5E2480651856ED3E0032AF77 /* IconVibOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconVibOn.png; sourceTree = "<group>"; };
@@ -102,7 +105,14 @@
 		5E42589818192B7F00171F1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E42589A18192B8800171F1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E42589B181CF29300171F1F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		5E4ECBC518660C8200578E1E /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		5E4ECBCD1866250E00578E1E /* IconInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconInfo.png; sourceTree = "<group>"; };
+		5E4ECBCE1866250E00578E1E /* IconInfoTouch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconInfoTouch.png; sourceTree = "<group>"; };
+		5E4ECBD61866CD5900578E1E /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		5E4ECBD71866CD5900578E1E /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		5E4ECBDB1867597900578E1E /* TriangleBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriangleBtn.h; sourceTree = "<group>"; };
+		5E4ECBDC1867597900578E1E /* TriangleBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriangleBtn.m; sourceTree = "<group>"; };
+		5E4ECBDE1868812E00578E1E /* MyInfoBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInfoBtn.h; sourceTree = "<group>"; };
+		5E4ECBDF1868812E00578E1E /* MyInfoBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfoBtn.m; sourceTree = "<group>"; };
 		5E5DF023184327510098499A /* MyModeBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyModeBtn.h; sourceTree = "<group>"; };
 		5E5DF024184327510098499A /* MyModeBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyModeBtn.m; sourceTree = "<group>"; };
 		5E5DF026184377EC0098499A /* MyCntLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCntLabel.h; sourceTree = "<group>"; };
@@ -123,7 +133,6 @@
 		5E6F4B2C18117F7600312CCD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5E6F4B2E18117F7600312CCD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5E6F4B3218117F7600312CCD /* DesignKichinTimer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DesignKichinTimer-Info.plist"; sourceTree = "<group>"; };
-		5E6F4B3418117F7600312CCD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5E6F4B3618117F7600312CCD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5E6F4B3818117F7600312CCD /* DesignKichinTimer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DesignKichinTimer-Prefix.pch"; sourceTree = "<group>"; };
 		5E6F4B3918117F7600312CCD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = DesignKichinTimer/AppDelegate.h; sourceTree = "<group>"; };
@@ -148,6 +157,7 @@
 		5E8BC36E185DF84600C2802E /* IconBigTouch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconBigTouch.png; sourceTree = "<group>"; };
 		5E8BC36F185DF84600C2802E /* IconBigOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconBigOff.png; sourceTree = "<group>"; };
 		5E8BC370185DF84600C2802E /* IconBigOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconBigOn.png; sourceTree = "<group>"; };
+		5EA0041F186B0E3000D1A625 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5EA2C09F1811865E00B0FC3D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = DesignKichinTimer/.gitignore; sourceTree = "<group>"; };
 		5EC2DCC5182C77B1003E1D5C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5EC2DCC9182FCEB8003E1D5C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -160,6 +170,8 @@
 		5EF21EC51839260C00C079F0 /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
 		5EF21EC61839260C00C079F0 /* Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60.png"; sourceTree = "<group>"; };
 		5EF21EC71839260C00C079F0 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
+		5EF44FBE186B3DC800E7494A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5EF44FC0186B41E400E7494A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +226,10 @@
 				5E5DF024184327510098499A /* MyModeBtn.m */,
 				5E5DF026184377EC0098499A /* MyCntLabel.h */,
 				5E5DF027184377EC0098499A /* MyCntLabel.m */,
+				5E4ECBDB1867597900578E1E /* TriangleBtn.h */,
+				5E4ECBDC1867597900578E1E /* TriangleBtn.m */,
+				5E4ECBDE1868812E00578E1E /* MyInfoBtn.h */,
+				5E4ECBDF1868812E00578E1E /* MyInfoBtn.m */,
 			);
 			name = CustomClass;
 			sourceTree = "<group>";
@@ -267,7 +283,6 @@
 			children = (
 				5E711E4518191B0000E7AA83 /* .gitattributes */,
 				5EA2C09F1811865E00B0FC3D /* .gitignore */,
-				5E4ECBC518660C8200578E1E /* PrefixHeader.pch */,
 				5E220DD21842630700D2ACB0 /* IconPng-Free */,
 				5E5DF02C18438F7C0098499A /* GoogleADMobSDK */,
 				5E220DD31842637900D2ACB0 /* DefaultClass */,
@@ -314,6 +329,8 @@
 			children = (
 				5E6F4B4218117F7600312CCD /* ViewController.h */,
 				5E6F4B4318117F7600312CCD /* ViewController.m */,
+				5E4ECBD61866CD5900578E1E /* InfoViewController.h */,
+				5E4ECBD71866CD5900578E1E /* InfoViewController.m */,
 				5E6F4B4518117F7600312CCD /* Images.xcassets */,
 				5E6F4B3118117F7600312CCD /* Supporting Files */,
 			);
@@ -323,6 +340,8 @@
 		5E6F4B3118117F7600312CCD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5E4ECBCD1866250E00578E1E /* IconInfo.png */,
+				5E4ECBCE1866250E00578E1E /* IconInfoTouch.png */,
 				5E8BC36E185DF84600C2802E /* IconBigTouch.png */,
 				5E8BC36F185DF84600C2802E /* IconBigOff.png */,
 				5E8BC370185DF84600C2802E /* IconBigOn.png */,
@@ -474,6 +493,7 @@
 				5ECB0D371832173700103C18 /* pi_mono.mp3 in Resources */,
 				5EF21EC81839260C00C079F0 /* Icon-76.png in Resources */,
 				5EA2C0A01811865E00B0FC3D /* .gitignore in Resources */,
+				5E4ECBCF1866250E00578E1E /* IconInfo.png in Resources */,
 				5E80FDCF18530EFB0011AB75 /* IconFree-60@2x.png in Resources */,
 				5E711E4618191B0000E7AA83 /* .gitattributes in Resources */,
 				5E8BC373185DF84600C2802E /* IconBigOn.png in Resources */,
@@ -481,6 +501,7 @@
 				5EF21EC91839260C00C079F0 /* Icon-76@2x.png in Resources */,
 				5E2480721856FD4D0032AF77 /* IconSndOn.png in Resources */,
 				5EC2DCD21830A52A003E1D5C /* pi_old.mp3 in Resources */,
+				5E4ECBD01866250E00578E1E /* IconInfoTouch.png in Resources */,
 				5E80FDD018530EFB0011AB75 /* IconFree-76@2x.png in Resources */,
 				5E8BC372185DF84600C2802E /* IconBigOff.png in Resources */,
 				5E6F4B4118117F7600312CCD /* Main_iPad.storyboard in Resources */,
@@ -516,11 +537,14 @@
 			files = (
 				5E5DF028184377EC0098499A /* MyCntLabel.m in Sources */,
 				5E6F4B4418117F7600312CCD /* ViewController.m in Sources */,
+				5E4ECBD81866CD5900578E1E /* InfoViewController.m in Sources */,
 				5E220DCD18425F3900D2ACB0 /* SoundOnFlag.m in Sources */,
 				5E6F4B3B18117F7600312CCD /* AppDelegate.m in Sources */,
 				5E5DF025184327510098499A /* MyModeBtn.m in Sources */,
+				5E4ECBDD1867597900578E1E /* TriangleBtn.m in Sources */,
 				5E220DD0184261F100D2ACB0 /* MySetBtn.m in Sources */,
 				5E8BC36D185DE38500C2802E /* BtnZoomOnFlag.m in Sources */,
+				5E4ECBE01868812E00578E1E /* MyInfoBtn.m in Sources */,
 				5E24806118558F9F0032AF77 /* VibrateOnFlag.m in Sources */,
 				5EDE0907185CBF8F00660FF9 /* ResetBtnScaleOnFlag.m in Sources */,
 				5E6F4B3718117F7600312CCD /* main.m in Sources */,
@@ -551,7 +575,7 @@
 			children = (
 				5E42589818192B7F00171F1F /* Base */,
 				5E42589A18192B8800171F1F /* ja */,
-				5E243BD9182504DC005C31D2 /* en */,
+				5EF44FC0186B41E400E7494A /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -559,9 +583,9 @@
 		5E6F4B3318117F7600312CCD /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5E6F4B3418117F7600312CCD /* en */,
 				5E42589418192B2600171F1F /* ja */,
-				5E243BDA182504E7005C31D2 /* Base */,
+				5EA0041F186B0E3000D1A625 /* Base */,
+				5EF44FBE186B3DC800E7494A /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
