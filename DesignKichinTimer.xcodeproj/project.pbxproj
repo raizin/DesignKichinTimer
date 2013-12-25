@@ -58,6 +58,8 @@
 		5EF21ECB1839260C00C079F0 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EF21EC71839260C00C079F0 /* Icon-60@2x.png */; };
 		5EF44FC5186B5D6900E7494A /* MyInfoBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF44FC1186B5D6900E7494A /* MyInfoBtn.m */; };
 		5EF44FC6186B5D6900E7494A /* TriangleBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF44FC3186B5D6900E7494A /* TriangleBtn.m */; };
+		5EF44FC9186B5EEA00E7494A /* IconInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EF44FC7186B5EEA00E7494A /* IconInfo.png */; };
+		5EF44FCA186B5EEA00E7494A /* IconInfoTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EF44FC8186B5EEA00E7494A /* IconInfoTouch.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +144,8 @@
 		5EF44FC2186B5D6900E7494A /* MyInfoBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInfoBtn.h; sourceTree = "<group>"; };
 		5EF44FC3186B5D6900E7494A /* TriangleBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriangleBtn.m; sourceTree = "<group>"; };
 		5EF44FC4186B5D6900E7494A /* TriangleBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriangleBtn.h; sourceTree = "<group>"; };
+		5EF44FC7186B5EEA00E7494A /* IconInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconInfo.png; sourceTree = "<group>"; };
+		5EF44FC8186B5EEA00E7494A /* IconInfoTouch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconInfoTouch.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +286,8 @@
 		5E6F4B3118117F7600312CCD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5EF44FC7186B5EEA00E7494A /* IconInfo.png */,
+				5EF44FC8186B5EEA00E7494A /* IconInfoTouch.png */,
 				5E8BC377185EE75400C2802E /* IconBigTouch.png */,
 				5E8BC378185EE75400C2802E /* IconBigOff.png */,
 				5E8BC379185EE75400C2802E /* IconBigOn.png */,
@@ -439,9 +445,11 @@
 				5E8BC37A185EE75400C2802E /* IconBigTouch.png in Resources */,
 				5E24808418571ADE0032AF77 /* IconVibOn.png in Resources */,
 				5E42589718192B7F00171F1F /* Localizable.strings in Resources */,
+				5EF44FC9186B5EEA00E7494A /* IconInfo.png in Resources */,
 				5E6F4B4618117F7600312CCD /* Images.xcassets in Resources */,
 				5ECB0D271832038400103C18 /* piLong.mp3 in Resources */,
 				5E6F4B3E18117F7600312CCD /* Main_iPhone.storyboard in Resources */,
+				5EF44FCA186B5EEA00E7494A /* IconInfoTouch.png in Resources */,
 				5E24808318571ADE0032AF77 /* IconVibTouch.png in Resources */,
 				5E24807F18571ACD0032AF77 /* IconSndOn.png in Resources */,
 				5E24807D18571ACD0032AF77 /* IconSndOff.png in Resources */,
