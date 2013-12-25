@@ -12,6 +12,7 @@
 #import "MySetBtn.h"
 #import "MyModeBtn.h"
 #import "MyCntLabel.h"
+#import "InfoViewController.h"
 
 @interface ViewController : UIViewController {
   
@@ -63,6 +64,7 @@
   CALayer *cntlayer;
   
   // Button
+  UIButton *infBtn; // Infomation ModalView Call Button
   UIButton *sndBtn; // Sound On / Off
   UIButton *vibBtn; // Vibrate On / Off
   UIButton *bigBtn; // Button Zoom On / Off

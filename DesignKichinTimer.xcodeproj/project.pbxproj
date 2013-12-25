@@ -278,8 +278,8 @@
 		5E6F4B3018117F7600312CCD /* DesignKichinTimer */ = {
 			isa = PBXGroup;
 			children = (
-				5EF44FCC186B607200E7494A /* InfoViewController.m */,
 				5EF44FCB186B605F00E7494A /* InfoViewController.h */,
+				5EF44FCC186B607200E7494A /* InfoViewController.m */,
 				5E6F4B4218117F7600312CCD /* ViewController.h */,
 				5E6F4B4318117F7600312CCD /* ViewController.m */,
 				5E6F4B4518117F7600312CCD /* Images.xcassets */,
