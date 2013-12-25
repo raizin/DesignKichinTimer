@@ -5,7 +5,6 @@
  Created by z on 2013/10/24.
  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
  */
-//"AppName"="デザイン キッチンタイマー";
 "hun"="分";
 "byo"="秒";
 
@@ -19,7 +18,6 @@
 
 "btnClock"="▷現在時表示";
 "btnTimer"="▷タイマー表示";
-//"btnSound"="♬";
 
 "SndTtlOn" ="[サウンド設定]";
 "SndTtlOff"="[消音]";
@@ -40,3 +38,18 @@
 "AlertMsg"="よろしければ評価をお願いします。　　　(これ以降は表示されません。)";
 "AlertNG"="キャンセル";
 "AlertOK"="移動します";
+
+"Close"="閉じる";
+"Close_iPad"="閉じる";
+
+"ToReview"="評価する";
+"ToApview"="他のアプリを見る";
+"ToGetpro"="有料版(広告なし)を購入";
+"LabelVer"="   起動回数";
+"Label3ks"=" ";
+
+/*
+ 
+ ""="";
+ 
+ */
