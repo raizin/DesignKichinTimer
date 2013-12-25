@@ -14,5 +14,5 @@
   NSString *APP_ID;
 }
 @property (strong, nonatomic) UIWindow *window;
-
+- (int)getAppLauchedCount;
 @end
