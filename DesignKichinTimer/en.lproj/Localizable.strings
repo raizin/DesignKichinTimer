@@ -19,7 +19,6 @@
 
 "btnClock"="▷Clock Mode";
 "btnTimer"="▷Timer Mode";
-"btnSound"="♬";
 
 "SndTtlOn" ="[Sound]";
 "SndTtlOff"="[Mute]";
@@ -31,8 +30,8 @@
 "VibMsgOn" ="On";
 "VibMsgOff"="Off";
 
-"BigTtlOn" ="[Button Zoom Animation]";
-"BigTtlOff"="[Button Zoom Animation]";
+"BigTtlOn" ="[Button Zoom Anime]";
+"BigTtlOff"="[Button Zoom Anime]";
 "BigMsgOn" ="On";
 "BigMsgOff"="Off";
 
@@ -40,3 +39,13 @@
 "AlertMsg"="Please write a review if it is good.";
 "AlertNG"="Cancel";
 "AlertOK"="Go To Move";
+
+"Close"="CLOSE";
+"Close_iPad"="Close";
+
+"ToReview"="To Review";
+"ToApview"="Developer APP";
+"ToGetpro"="Buy the paid Ver(No ads)";
+"LabelVer"="Number starts";
+"Label3ks"=". Thanks a lot!";
+
