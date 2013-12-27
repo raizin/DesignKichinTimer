@@ -16,6 +16,7 @@
 		5E1E11F11836A4AD00307C8F /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1E11F01836A4AD00307C8F /* iAd.framework */; };
 		5E220DCD18425F3900D2ACB0 /* SoundOnFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E220DCC18425F3900D2ACB0 /* SoundOnFlag.m */; };
 		5E220DD0184261F100D2ACB0 /* MySetBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E220DCF184261F100D2ACB0 /* MySetBtn.m */; };
+		5E23549A186DA7250055217F /* IconInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E235499186DA7250055217F /* IconInfo.png */; };
 		5E24806118558F9F0032AF77 /* VibrateOnFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E24806018558F9F0032AF77 /* VibrateOnFlag.m */; };
 		5E2480671856ED3E0032AF77 /* IconVibOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E2480651856ED3E0032AF77 /* IconVibOn.png */; };
 		5E2480681856ED3E0032AF77 /* IconVibOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E2480661856ED3E0032AF77 /* IconVibOff.png */; };
@@ -25,7 +26,6 @@
 		5E2480761856FE6B0032AF77 /* IconSndTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E2480741856FE6B0032AF77 /* IconSndTouch.png */; };
 		5E42589718192B7F00171F1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E42589918192B7F00171F1F /* Localizable.strings */; };
 		5E42589C181CF29300171F1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E42589B181CF29300171F1F /* QuartzCore.framework */; };
-		5E4ECBCF1866250E00578E1E /* IconInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E4ECBCD1866250E00578E1E /* IconInfo.png */; };
 		5E4ECBD01866250E00578E1E /* IconInfoTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E4ECBCE1866250E00578E1E /* IconInfoTouch.png */; };
 		5E4ECBD81866CD5900578E1E /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4ECBD71866CD5900578E1E /* InfoViewController.m */; };
 		5E4ECBDD1867597900578E1E /* TriangleBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4ECBDC1867597900578E1E /* TriangleBtn.m */; };
@@ -93,6 +93,7 @@
 		5E220DCC18425F3900D2ACB0 /* SoundOnFlag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SoundOnFlag.m; path = DesignKichinTimer/SoundOnFlag.m; sourceTree = "<group>"; };
 		5E220DCE184261F100D2ACB0 /* MySetBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MySetBtn.h; path = DesignKichinTimer/MySetBtn.h; sourceTree = "<group>"; };
 		5E220DCF184261F100D2ACB0 /* MySetBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MySetBtn.m; path = DesignKichinTimer/MySetBtn.m; sourceTree = "<group>"; };
+		5E235499186DA7250055217F /* IconInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconInfo.png; sourceTree = "<group>"; };
 		5E24805F18558F9F0032AF77 /* VibrateOnFlag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VibrateOnFlag.h; sourceTree = "<group>"; };
 		5E24806018558F9F0032AF77 /* VibrateOnFlag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VibrateOnFlag.m; sourceTree = "<group>"; };
 		5E2480651856ED3E0032AF77 /* IconVibOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconVibOn.png; sourceTree = "<group>"; };
@@ -105,7 +106,6 @@
 		5E42589818192B7F00171F1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E42589A18192B8800171F1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E42589B181CF29300171F1F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		5E4ECBCD1866250E00578E1E /* IconInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconInfo.png; sourceTree = "<group>"; };
 		5E4ECBCE1866250E00578E1E /* IconInfoTouch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconInfoTouch.png; sourceTree = "<group>"; };
 		5E4ECBD61866CD5900578E1E /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		5E4ECBD71866CD5900578E1E /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
@@ -340,7 +340,7 @@
 		5E6F4B3118117F7600312CCD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5E4ECBCD1866250E00578E1E /* IconInfo.png */,
+				5E235499186DA7250055217F /* IconInfo.png */,
 				5E4ECBCE1866250E00578E1E /* IconInfoTouch.png */,
 				5E8BC36E185DF84600C2802E /* IconBigTouch.png */,
 				5E8BC36F185DF84600C2802E /* IconBigOff.png */,
@@ -493,7 +493,7 @@
 				5ECB0D371832173700103C18 /* pi_mono.mp3 in Resources */,
 				5EF21EC81839260C00C079F0 /* Icon-76.png in Resources */,
 				5EA2C0A01811865E00B0FC3D /* .gitignore in Resources */,
-				5E4ECBCF1866250E00578E1E /* IconInfo.png in Resources */,
+				5E23549A186DA7250055217F /* IconInfo.png in Resources */,
 				5E80FDCF18530EFB0011AB75 /* IconFree-60@2x.png in Resources */,
 				5E711E4618191B0000E7AA83 /* .gitattributes in Resources */,
 				5E8BC373185DF84600C2802E /* IconBigOn.png in Resources */,
