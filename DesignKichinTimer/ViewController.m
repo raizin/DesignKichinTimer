@@ -21,26 +21,14 @@
 @implementation ViewController
 
 
-// Statusbar non-display setting
-- (BOOL)prefersStatusBarHidden
-{
-  // iphone only non-display
-  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    return YES;
-  }else{
-    return NO;
-  }
-}
-
 // View が初めて呼び出される時に1回だけ呼ばれる定義済み関数
 - (void)viewDidLoad
 {
   [super viewDidLoad];
 
-  if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
-    [self prefersStatusBarHidden];
-    [self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];
-  }
+  // Head Status Bar Hidden
+  [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+  
   
   // カウント部分 フォントサイズ ipad:180 iphone:70 = 5 digits + "M S"
   static float CNT_FONT_SIZE_IPHONE = 70.f;
