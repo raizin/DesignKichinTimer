@@ -1439,30 +1439,12 @@ int vibCount;
   
   //配置
   //  infoViewController.modalPresentationStyle = UIModalPresentationFullScreen;  // 画面を覆う Default
-  //  infoViewController.modalPresentationStyle = UIModalPresentationPageSheet;  // ビューの高さ＝画面高さ,幅=デバイスの向き(縦向き)による画面幅
-  //  infoViewController.modalPresentationStyle = UIModalPresentationFormSheet;  // 画面中央に配置
-  //  infoViewController.modalPresentationStyle = UIModalPresentationCurrentContext;  // 親と同じビューを維持する
   
   //スタイル
-  //  infoViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical; // 下から上へ出るスタイル Default
-  //  infoViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal; // 回転して出るスタイル
-  //  infoViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve; // 浮かびあがってくるスタイル
   infoViewController.modalTransitionStyle = UIModalTransitionStylePartialCurl; // 下からめくり上げるスタイル
-  
-  
-  //サイズ指定 Case is UIModalPresentationFormSheet or UIModalPresentationPageSheet
-  //  infoViewController.view.superview.frame = CGRectMake(0, 0, 100, 300);
-  //  infoViewController.view.superview.frame = CGRectMake(0, 0, 300, 300);
-  //  infoViewController.view.superview.center = CGPointMake(1024/2, 768/2);
-  //  infoViewController.view.superview.autoresizingMask = UIViewAutoresizingNone;
-  
-  
   
   // InfoViewを表示
   [self presentViewController: infoViewController animated:YES completion:nil];
-  
-  
-  
 }
 
 
