@@ -11,8 +11,8 @@
 @interface MySetBtn : UIButton{
 
 }
-- (void)setNum:(int)number minFlag:(BOOL)unitFlag fontSize:(float)fontSize;
-- (void)setStart:(float)fontSize;
-- (void)setReset:(float)fontSize;
-- (void)setHis:(int)number fontSize:(float)btnFontSize;
+- (void)setNum:(int)number minFlag:(BOOL)unitFlag;
+- (void)setStart;
+- (void)setReset;
+- (void)setHis:(int)number;
 @end

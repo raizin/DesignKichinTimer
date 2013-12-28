@@ -50,11 +50,8 @@
   MyCntLabel *cntLabel;
   MyCntLabel *hunLabel;//use minits unit character display
   MyCntLabel *byoLabel;//use seconds unit character display
-  
-  MyCntLabel *hisLabel;//履歴
+  MyCntLabel *hisLabel;//history
 
-  // カウンター表示ラベル フォントサイズ定義
-  float cntFontSize;
   
   // カウンター表示エリア横幅,縦幅
   int cntW;
@@ -72,13 +69,11 @@
   MyModeBtn *timerSelectBtn; //「タイマー設定」切替ボタン
   MyModeBtn *clockSelectBtn; //「現在時表示」切替ボタン
   
-  MySetBtn *setBtn60;//60 min
   MySetBtn *setBtn10;//10 min
   MySetBtn *setBtn05;//5 min
   MySetBtn *setBtn03;//3 min
   MySetBtn *setBtn01;//1 min
   MySetBtn *setBtn001;//10 s
-  MySetBtn *setBtn0001;//1 s
   MySetBtn *setBtnStart;
   MySetBtn *setBtnReset;//Reset & Stop
   
@@ -86,14 +81,6 @@
   MySetBtn *setBtnHis2;//History
   MySetBtn *setBtnHis3;//History
   
-
-  // Button フォントサイズ定義
-  float btnFontSize;
-  
-  // 単位 「M」「S」フォントサイズ定義
-  float unitFontSize;
-  CGRect unitRectM;
-  CGRect unitRectS;
   
   // フェードインを一回だけ成功させるフラグ YES:実行 NO:実行しない
   BOOL fadeinFlag;
@@ -111,6 +98,5 @@
   // リセットボタン 拡大フラグ
   BOOL resetBtnScaleFlag;
 }
-//@property (nonatomic, retain) AdstirView* adview; //プロパティーで宣言すると、管理が簡単になります。
 
 @end
