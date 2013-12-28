@@ -16,29 +16,30 @@
   self.font = [UIFont fontWithName:@"Helvetica-Bold" size:fontSize];
   self.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8]; // Light Black
   self.text = [NSString stringWithFormat:@"%@",NSLocalizedString(@"hunn", nil)];
+  self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0.5 alpha:0]; //
 }
 - (void)setByo:(float)fontSize
 {
   self.font = [UIFont fontWithName:@"Helvetica-Bold" size:fontSize];
   self.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8]; // Light Black
   self.text = [NSString stringWithFormat:@"%@",NSLocalizedString(@"byoo", nil)];
+  self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0.5 alpha:0]; //
 }
 
 - (void)setCnt:(float)fontSize
 {
   self.font = [UIFont systemFontOfSize:fontSize];
+  self.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8]; // Light Gray
   self.text = nil;
   self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0.5 alpha:0]; //
-  self.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8]; // Light Gray
 }
 
 - (void)setHis:(float)fontSize
 {
   self.font = [UIFont systemFontOfSize:fontSize];
+  self.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8]; // Light Gray
   self.text = [NSString stringWithFormat:@"%@",NSLocalizedString(@"history", nil)];
   self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0.5 alpha:0]; //
-  self.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8]; // Light Gray
-  
 }
 - (void)setHisEnable:(BOOL)enable
 {
