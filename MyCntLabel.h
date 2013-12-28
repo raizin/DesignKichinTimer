@@ -11,10 +11,10 @@
 @interface MyCntLabel : UILabel {
 
 }
-- (void)setCnt:(float)fontSize;
-- (void)setHun:(float)fontSize;
-- (void)setByo:(float)fontSize;
+- (void)setCnt;
+- (void)setHun;
+- (void)setByo;
 
-- (void)setHis:(float)fontSize;
+- (void)setHis;
 - (void)setHisEnable:(BOOL)enable;
 @end

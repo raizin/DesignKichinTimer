@@ -28,24 +28,9 @@
   [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
   
   
-  // カウント部分 フォントサイズ ipad:180 iphone:70 = 5 digits + "M S"
-  static float CNT_FONT_SIZE_IPHONE = 70.f;
-  static float CNT_FONT_SIZE_IPAD   = 180.f;
-  
-  // ボタンのラベル フォントサイズ
-  static float BTN_FONT_SIZE_IPHONE = 25.f;
-  static float BTN_FONT_SIZE_IPAD   = 50.f;
-
-  // History Label Font Size
-  static float HIS_LABEL_FONT_SIZE_IPHONE = 15.f;
-  static float HIS_LABEL_FONT_SIZE_IPAD   = 20.f;
-  
-  
   //NSUserDefaults 初期化
   ud = [NSUserDefaults standardUserDefaults];
   
-
-
   //UserDefaults 初期値
   [ud setInteger:0 forKey:@"globalMinData"]; // M
   [ud setInteger:0 forKey:@"globalSecData"]; // S
@@ -119,39 +104,21 @@
   cntlayer.borderWidth = 7.0;
   cntlayer.cornerRadius = 10.0;
   [cntView.layer addSublayer:cntlayer];
-
   
   // Viewの表示順序を設定
   //  [cntView bringSubviewToFront:cntlayer]; //最前面
   //  [self.view sendSubviewToBack:nowTimeView]; //最背面
 
-  
   // カウント表示Label
   cntLabel = [[MyCntLabel alloc] initWithFrame:CGRectMake(-15,0,cntView.frame.size.width,cntView.frame.size.height)];// x y w h
-  
-  // 表示フォントサイズ 端末分岐 ipad:180 iphone:70  = 5 digits + "M S"
-  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    [cntLabel setCnt:CNT_FONT_SIZE_IPHONE];
-  }else{
-    [cntLabel setCnt:CNT_FONT_SIZE_IPAD];
-  }
+  [cntLabel setCnt];
   [cntView addSubview:cntLabel];
-  
   [self _addDropShadowToView:cntView]; // 内影生成
+  
   
   // History Label
   hisLabel = [[MyCntLabel alloc] init];// x y w h
-  
-  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    [hisLabel setHis:HIS_LABEL_FONT_SIZE_IPHONE];
-//    hisLabel.frame   = CGRectMake( 397, 30, 55, 20 ); // x y w h
-    hisLabel.frame = CGRectMake((int)cntView.frame.origin.x +307, 30, 55, 20 ); // x y w h
-
-  }else{
-    [hisLabel setHis:HIS_LABEL_FONT_SIZE_IPAD];
-//    hisLabel.frame   = CGRectMake( 887, 80, 90, 20 ); // x y w h
-    hisLabel.frame = CGRectMake((int)cntView.frame.origin.x +749, 70, 90, 20 ); // x y w h
-  }
+  [hisLabel setHis];
   [hisLabel setHisEnable:YES];
   if ((int)[ud integerForKey:@"historySecData1"] + (int)[ud integerForKey:@"historyMinData1"] < 1) {
     [hisLabel setHisEnable:NO];
@@ -166,52 +133,43 @@
   
   
   /*** カウンタ数値セットボタンUI定義 ここから ***/
-  
-  // 表示フォントサイズ 端末分岐 ipad:50 iphone:20
-  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    btnFontSize = BTN_FONT_SIZE_IPHONE;
-  }
-  else{
-    btnFontSize = BTN_FONT_SIZE_IPAD;
-  }
-  
   setBtn10 = [MySetBtn buttonWithType:UIButtonTypeCustom];
-  [setBtn10 setNum:10 minFlag:YES fontSize:btnFontSize];
+  [setBtn10 setNum:10 minFlag:YES];
   [setBtn10 addTarget:self action:@selector(btn10Touch:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:setBtn10];
  
   setBtn05 = [MySetBtn buttonWithType:UIButtonTypeCustom];
-  [setBtn05 setNum:5 minFlag:YES fontSize:btnFontSize];
+  [setBtn05 setNum:5 minFlag:YES];
   [setBtn05 addTarget:self action:@selector(btn05Touch:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:setBtn05];
   
   setBtn03 = [MySetBtn buttonWithType:UIButtonTypeCustom];
-  [setBtn03 setNum:3 minFlag:YES fontSize:btnFontSize];
+  [setBtn03 setNum:3 minFlag:YES];
   [setBtn03 addTarget:self action:@selector(btn03Touch:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:setBtn03];
   
   setBtn01 = [MySetBtn buttonWithType:UIButtonTypeCustom];
-  [setBtn01 setNum:1 minFlag:YES fontSize:btnFontSize];
+  [setBtn01 setNum:1 minFlag:YES];
   [setBtn01 addTarget:self action:@selector(btn01Touch:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:setBtn01];
 
   setBtnReset = [MySetBtn buttonWithType:UIButtonTypeCustom];
-  [setBtnReset setReset:btnFontSize];
+  [setBtnReset setReset];
   [setBtnReset addTarget:self action:@selector(resetBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:setBtnReset];
   
   setBtn001 = [MySetBtn buttonWithType:UIButtonTypeCustom];
-  [setBtn001 setNum:10 minFlag:NO fontSize:btnFontSize];
+  [setBtn001 setNum:10 minFlag:NO];
   [setBtn001 addTarget:self action:@selector(btn001Touch:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:setBtn001];
 
   setBtnStart = [MySetBtn buttonWithType:UIButtonTypeCustom];
-  [setBtnStart setStart:btnFontSize];
+  [setBtnStart setStart];
   [setBtnStart addTarget:self action:@selector(startBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:setBtnStart];
 
   setBtnHis1 = [MySetBtn buttonWithType:UIButtonTypeCustom];
-  [setBtnHis1 setHis:1 fontSize:btnFontSize];
+  [setBtnHis1 setHis:1];
   [setBtnHis1 addTarget:self action:@selector(btnHis1Touch:) forControlEvents:UIControlEventTouchUpInside];
   if ((int)[ud integerForKey:@"historySecData1"] + (int)[ud integerForKey:@"historyMinData1"] == 0) {
     [setBtnHis1 setEnabled:NO];
@@ -219,7 +177,7 @@
   [self.view addSubview:setBtnHis1];
   
   setBtnHis2 = [MySetBtn buttonWithType:UIButtonTypeCustom];
-  [setBtnHis2 setHis:2 fontSize:btnFontSize];
+  [setBtnHis2 setHis:2];
   [setBtnHis2 addTarget:self action:@selector(btnHis2Touch:) forControlEvents:UIControlEventTouchUpInside];
   if ((int)[ud integerForKey:@"historySecData2"] + (int)[ud integerForKey:@"historyMinData2"] == 0) {
     [setBtnHis2 setEnabled:NO];
@@ -227,12 +185,13 @@
   [self.view addSubview:setBtnHis2];
   
   setBtnHis3 = [MySetBtn buttonWithType:UIButtonTypeCustom];
-  [setBtnHis3 setHis:3 fontSize:btnFontSize];
+  [setBtnHis3 setHis:3];
   [setBtnHis3 addTarget:self action:@selector(btnHis3Touch:) forControlEvents:UIControlEventTouchUpInside];
   if ((int)[ud integerForKey:@"historySecData3"] + (int)[ud integerForKey:@"historyMinData3"] == 0) {
     [setBtnHis3 setEnabled:NO];
   }
   [self.view addSubview:setBtnHis3];
+  /*** カウンタ数値セットボタンUI定義 ここまで ***/
   
   
   
@@ -582,13 +541,13 @@
 
 - (void)btnDisabledAll
 {
-  [setBtn60 setEnabled:NO];
+//  [setBtn60 setEnabled:NO];
   [setBtn10 setEnabled:NO];
   [setBtn05 setEnabled:NO];
   [setBtn03 setEnabled:NO];
   [setBtn01 setEnabled:NO];
   [setBtn001 setEnabled:NO];
-  [setBtn0001 setEnabled:NO];
+//  [setBtn0001 setEnabled:NO];
   [setBtnStart setEnabled:NO];
   [setBtnReset setEnabled:NO];
   [hisLabel setHisEnable:NO];
@@ -598,13 +557,13 @@
 }
 - (void)btnEnabledAll
 {
-  [setBtn60 setEnabled:YES];
+//  [setBtn60 setEnabled:YES];
   [setBtn10 setEnabled:YES];
   [setBtn05 setEnabled:YES];
   [setBtn03 setEnabled:YES];
   [setBtn01 setEnabled:YES];
   [setBtn001 setEnabled:YES];
-  [setBtn0001 setEnabled:YES];
+//  [setBtn0001 setEnabled:YES];
   [setBtnStart setEnabled:YES];
   [setBtnReset setEnabled:YES];
   
@@ -627,13 +586,13 @@
 }
 - (void)btnEnableOnlyReset
 {
-  [setBtn60 setEnabled:NO];
+//  [setBtn60 setEnabled:NO];
   [setBtn10 setEnabled:NO];
   [setBtn05 setEnabled:NO];
   [setBtn03 setEnabled:NO];
   [setBtn01 setEnabled:NO];
   [setBtn001 setEnabled:NO];
-  [setBtn0001 setEnabled:NO];
+//  [setBtn0001 setEnabled:NO];
   [setBtnStart setEnabled:NO];
   [setBtnReset setEnabled:YES];
   [hisLabel setHisEnable:NO];
@@ -646,13 +605,13 @@
 }
 - (void)btnEnableOnlyStartReset
 {
-  [setBtn60 setEnabled:NO];
+//  [setBtn60 setEnabled:NO];
   [setBtn10 setEnabled:NO];
   [setBtn05 setEnabled:NO];
   [setBtn03 setEnabled:NO];
   [setBtn01 setEnabled:NO];
   [setBtn001 setEnabled:NO];
-  [setBtn0001 setEnabled:NO];
+//  [setBtn0001 setEnabled:NO];
   [setBtnStart setEnabled:YES];
   [setBtnReset setEnabled:YES];
   [hisLabel setHisEnable:NO];
@@ -1105,26 +1064,26 @@
   
   /*** 分・秒のラベルを作成して表示 ***/
   
-  // 表示フォントサイズ 端末分岐 ipad:30 iphone:15
+  // 表示サイズ 端末分岐
+  CGRect unitRectM;
+  CGRect unitRectS;
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
     //NSLog(@"%d: iPhoneの処理",__LINE__);
-    unitFontSize = 15.f;
     unitRectM = CGRectMake(131,9,45,45); // x y w h
     unitRectS = CGRectMake(229,9,45,45); // x y w h
   }
   else{
     //NSLog(@"%d: iPadの処理",__LINE__);
-    unitFontSize = 30.f;
     unitRectM = CGRectMake(378,60,45,45); // x y w h
     unitRectS = CGRectMake(623,60,45,45); // x y w h
   }
   
   hunLabel = [[MyCntLabel alloc] initWithFrame:unitRectM];// x y w h
-  [hunLabel setHun:unitFontSize];
+  [hunLabel setHun];
   [cntView addSubview:hunLabel];
   
   byoLabel = [[MyCntLabel alloc] initWithFrame:unitRectS];// x y w h
-  [byoLabel setByo:unitFontSize];
+  [byoLabel setByo];
   [cntView addSubview:byoLabel];
 }
 

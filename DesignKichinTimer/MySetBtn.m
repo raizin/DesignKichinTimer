@@ -10,8 +10,26 @@
 
 @implementation MySetBtn
 
+
+
+- (float)getFontSize
+{
+  // ボタンのラベル フォントサイズ
+  static float BTN_FONT_SIZE_IPHONE = 24.f;
+  static float BTN_FONT_SIZE_IPAD   = 50.f;
+
+  // 表示フォントサイズ 端末分岐 ipad:50 iphone:20
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+    return BTN_FONT_SIZE_IPHONE;
+  }
+  else{
+    return BTN_FONT_SIZE_IPAD;
+  }
+}
+
+
 // Number Button
-- (void)setNum:(int)number minFlag:(BOOL)unitFlag fontSize:(float)fontSize
+- (void)setNum:(int)number minFlag:(BOOL)unitFlag
 {
   NSString *unit = [NSString stringWithFormat:@"%@",NSLocalizedString(@"hun", nil)];
   if (unitFlag == NO) {
@@ -19,18 +37,18 @@
   }
   
   // UIControlStateNormal
-  [self setAttributedTitle:[self myBtnColorCtl:[UIColor blueColor ] num:number unit:unit fontSize:fontSize] forState:UIControlStateNormal];
+  [self setAttributedTitle:[self myBtnColorCtl:[UIColor blueColor ] num:number unit:unit] forState:UIControlStateNormal];
   // UIControlStateHighlighted
-  [self setAttributedTitle:[self myBtnColorCtl:[UIColor whiteColor] num:number unit:unit fontSize:fontSize] forState:UIControlStateHighlighted];
+  [self setAttributedTitle:[self myBtnColorCtl:[UIColor whiteColor] num:number unit:unit] forState:UIControlStateHighlighted];
   // UIControlStateDisabled
-  [self setAttributedTitle:[self myBtnColorCtl:[UIColor grayColor ] num:number unit:unit fontSize:fontSize] forState:UIControlStateDisabled];
+  [self setAttributedTitle:[self myBtnColorCtl:[UIColor grayColor ] num:number unit:unit] forState:UIControlStateDisabled];
 }
 
 // Start Button
-- (void)setStart:(float)fontSize
+- (void)setStart
 {
   [self setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btnStart", nil)] forState:UIControlStateNormal];
-  [self.titleLabel setFont:[UIFont boldSystemFontOfSize:fontSize/2]];
+  [self.titleLabel setFont:[UIFont boldSystemFontOfSize:[self getFontSize]/2]];
   
   [self setTitleColor:[UIColor blueColor] forState:UIControlStateNormal]; //有効時
   [self setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted]; //タッチ(ハイライト？)時
@@ -38,7 +56,7 @@
 }
 
 // Stop & Reset Button
-- (void)setReset:(float)fontSize
+- (void)setReset
 {
   NSString *_btnReset = [NSString stringWithFormat:@"%@",NSLocalizedString(@"btnReset", nil)];
   NSMutableString *__btnReset = [NSMutableString stringWithCapacity:1.0f];
@@ -46,7 +64,7 @@
   [__btnReset appendString:[_btnReset substringWithRange: NSMakeRange(4,[_btnReset length]-4)]];
   ((UILabel*)self).lineBreakMode = NSLineBreakByWordWrapping; // 改行モードON
   [self setTitle:__btnReset forState:UIControlStateNormal];
-  [self.titleLabel setFont:[UIFont boldSystemFontOfSize:fontSize/2]];
+  [self.titleLabel setFont:[UIFont boldSystemFontOfSize:[self getFontSize]/2]];
 
   
   [self setTitleColor:[UIColor blueColor] forState:UIControlStateNormal]; //有効時
@@ -56,12 +74,12 @@
 
 
 //履歴ボタン
-- (void)setHis:(int)number fontSize:(float)fontSize
+- (void)setHis:(int)number
 {
   [self.layer setCornerRadius:20];
 
   [self setTitle:[NSString stringWithFormat:@"H%d",number] forState:UIControlStateNormal];
-  [self.titleLabel setFont:[UIFont boldSystemFontOfSize:fontSize/2]];
+  [self.titleLabel setFont:[UIFont boldSystemFontOfSize:[self getFontSize]/2]];
   
   [self setTitleColor:[UIColor blueColor] forState:UIControlStateNormal]; //有効時
   [self setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted]; //タッチ(ハイライト？)時
@@ -107,25 +125,26 @@
 /*
  * ボタンタイトル(文字列)生成関数
  */
-- (NSMutableAttributedString*)myBtnColorCtl:(UIColor*)cl num:(int)num unit:(NSString*)unit fontSize:(float)fontSize
+- (NSMutableAttributedString*)myBtnColorCtl:(UIColor*)cl num:(int)num unit:(NSString*)unit
 {
-  NSDictionary *fontDigit = @{ NSForegroundColorAttributeName:cl,
-                               NSFontAttributeName : [UIFont boldSystemFontOfSize:fontSize] };
+  NSDictionary *fontPlus = @{ NSForegroundColorAttributeName:cl,
+                              NSFontAttributeName : [UIFont systemFontOfSize:[self getFontSize]/1.3f] };
+  NSDictionary *fontSpace= @{ NSForegroundColorAttributeName:cl,
+                              NSFontAttributeName : [UIFont systemFontOfSize:[self getFontSize]/3.0f] };
+  NSDictionary *fontDigit= @{ NSForegroundColorAttributeName:cl,
+                               NSFontAttributeName : [UIFont boldSystemFontOfSize:[self getFontSize]] };
   NSDictionary *fontUnit = @{ NSForegroundColorAttributeName:cl,
-                              NSFontAttributeName : [UIFont boldSystemFontOfSize:fontSize/1.5f] };
+                              NSFontAttributeName : [UIFont boldSystemFontOfSize:[self getFontSize]/1.5f] };
   
-  
-  NSAttributedString *btnPlusLabel = [[NSAttributedString alloc]
-                                      initWithString:@"＋"
-                                      attributes:fontUnit];
+  NSAttributedString *btnPlusLabel = [[NSAttributedString alloc] initWithString:@"+" attributes:fontPlus];
+  NSAttributedString *btnSpaceLabel= [[NSAttributedString alloc] initWithString:@" " attributes:fontSpace];
   NSAttributedString *btnDigiLabel = [[NSAttributedString alloc]
-                                      initWithString:[NSString stringWithFormat:@"%d",num]
-                                      attributes:fontDigit];
-  NSAttributedString *btnUnitLabel = [[NSAttributedString alloc]
-                                      initWithString:unit
-                                      attributes:fontUnit];
+                                      initWithString:[NSString stringWithFormat:@"%d",num] attributes:fontDigit];
+  NSAttributedString *btnUnitLabel = [[NSAttributedString alloc] initWithString:unit attributes:fontUnit];
   
-  NSMutableAttributedString *_btn = [[NSMutableAttributedString alloc] initWithAttributedString:btnPlusLabel];//Total String
+  //Total String
+  NSMutableAttributedString *_btn = [[NSMutableAttributedString alloc] initWithAttributedString:btnPlusLabel];
+  [_btn appendAttributedString:btnSpaceLabel];
   [_btn appendAttributedString:btnDigiLabel];
   [_btn appendAttributedString:btnUnitLabel];
   
@@ -163,7 +182,5 @@
  // Drawing code
  }
  */
-
-
 
 @end
