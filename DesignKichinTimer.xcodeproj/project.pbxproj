@@ -15,6 +15,7 @@
 		5E220DCD18425F3900D2ACB0 /* SoundOnFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E220DCC18425F3900D2ACB0 /* SoundOnFlag.m */; };
 		5E220DD0184261F100D2ACB0 /* MySetBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E220DCF184261F100D2ACB0 /* MySetBtn.m */; };
 		5E23549C186DA9A10055217F /* IconInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E23549B186DA9A10055217F /* IconInfo.png */; };
+		5E23549E186ED9480055217F /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = 5E23549D186ED9480055217F /* .gitattributes */; };
 		5E2480641856B0CB0032AF77 /* VibrateOnFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2480621856B0CB0032AF77 /* VibrateOnFlag.m */; };
 		5E24807D18571ACD0032AF77 /* IconSndOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E24807A18571ACD0032AF77 /* IconSndOff.png */; };
 		5E24807E18571ACD0032AF77 /* IconSndTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E24807B18571ACD0032AF77 /* IconSndTouch.png */; };
@@ -85,6 +86,7 @@
 		5E220DCE184261F100D2ACB0 /* MySetBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MySetBtn.h; path = DesignKichinTimer/MySetBtn.h; sourceTree = "<group>"; };
 		5E220DCF184261F100D2ACB0 /* MySetBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MySetBtn.m; path = DesignKichinTimer/MySetBtn.m; sourceTree = "<group>"; };
 		5E23549B186DA9A10055217F /* IconInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconInfo.png; sourceTree = "<group>"; };
+		5E23549D186ED9480055217F /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 		5E243BD9182504DC005C31D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E243BDA182504E7005C31D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5E2480621856B0CB0032AF77 /* VibrateOnFlag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VibrateOnFlag.m; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 		5E6F4B1E18117F7600312CCD = {
 			isa = PBXGroup;
 			children = (
+				5E23549D186ED9480055217F /* .gitattributes */,
 				5EA2C09F1811865E00B0FC3D /* .gitignore */,
 				5E220DD21842630700D2ACB0 /* IconPng-Professional */,
 				5E220DD31842637900D2ACB0 /* DefaultClass */,
@@ -440,6 +443,7 @@
 				5E8BC37C185EE75400C2802E /* IconBigOn.png in Resources */,
 				5EA2C0A01811865E00B0FC3D /* .gitignore in Resources */,
 				5E24807E18571ACD0032AF77 /* IconSndTouch.png in Resources */,
+				5E23549E186ED9480055217F /* .gitattributes in Resources */,
 				5EF21EC91839260C00C079F0 /* Icon-76@2x.png in Resources */,
 				5EC2DCD21830A52A003E1D5C /* pi_old.mp3 in Resources */,
 				5E6F4B4118117F7600312CCD /* Main_iPad.storyboard in Resources */,
