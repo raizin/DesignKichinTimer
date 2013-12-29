@@ -111,7 +111,7 @@
     if(direction == UIInterfaceOrientationPortrait || direction == UIInterfaceOrientationPortraitUpsideDown){
       //Tate
       
-      closeBtn.frame = CGRectMake(width -90, height -90, 90,90); // x y w h
+      closeBtn.frame = CGRectMake(width -100, height -90, 100, 90); // x y w h
       closeBtn.contentEdgeInsets = UIEdgeInsetsMake(75.f, 20.f, 0.f, 0.f); // 上 左 下 右
       toReviewBtn.layer.frame = CGRectMake(72.5f, height -160, 175, 40);// x y
       toApviewBtn.layer.frame = CGRectMake(72.5f, height -110, 175, 40);// x y
@@ -123,7 +123,7 @@
     else if(direction == UIInterfaceOrientationLandscapeLeft || direction == UIInterfaceOrientationLandscapeRight){
       //Yoko
       
-      closeBtn.frame = CGRectMake(height -90, width -90, 90,90); // x y w h
+      closeBtn.frame = CGRectMake(height -100, width -90, 100, 90); // x y w h
       closeBtn.contentEdgeInsets = UIEdgeInsetsMake(75.f, 20.f, 0.f, 0.f); // 上 左 下 右
       toReviewBtn.layer.frame = CGRectMake( 50, width -100, 175, 40);// x y
       toApviewBtn.layer.frame = CGRectMake(250, width -100, 175, 40);// x y
