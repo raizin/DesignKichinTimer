@@ -265,7 +265,7 @@
       setBtn001.frame   = CGRectMake(centerPoint  -(74/2), 225, 74, 50); // x y w h
       setBtnStart.frame = CGRectMake(centerPoint      +55, 220, 80, 60); // x y w h
       
-      clockSelectBtn.frame = CGRectMake(centerPoint - 150     , -3,135,50);
+      clockSelectBtn.frame = CGRectMake(centerPoint - 150     , -3,145,50);
       timerSelectBtn.frame = CGRectMake(centerPoint - 150 +140, -3,145,50);
       
       infBtn.frame = CGRectMake(self.view.frame.size.width -35, 0, 35, 35); // x y w h
