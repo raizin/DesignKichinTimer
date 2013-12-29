@@ -719,7 +719,7 @@
     
     [alermSound stop];//鳴っている途中なら止める
     
-    alert.title   = [NSString stringWithFormat:@"%@",NSLocalizedString(@"SndTtlOff", nil)];
+    alert.title   = [NSString stringWithFormat:@"%@",NSLocalizedString(@"SndTtl", nil)];
     alert.message = [NSString stringWithFormat:@"%@",NSLocalizedString(@"SndMsgOff", nil)];
     [alert addButtonWithTitle:@" O K "];
     
@@ -729,7 +729,7 @@
     [SoundOnFlag setValue:YES];
     [SoundOnFlag sync];
     
-    alert.title   = [NSString stringWithFormat:@"%@",NSLocalizedString(@"SndTtlOn", nil)];
+    alert.title   = [NSString stringWithFormat:@"%@",NSLocalizedString(@"SndTtl", nil)];
     alert.message = [NSString stringWithFormat:@"%@",NSLocalizedString(@"SndMsgOn", nil)];
     [alert addButtonWithTitle:@" O K "];
   }
@@ -753,7 +753,7 @@
     [VibrateOnFlag setValue:NO];
     [VibrateOnFlag sync];
     
-    alert.title   = [NSString stringWithFormat:@"%@",NSLocalizedString(@"VibTtlOff", nil)];
+    alert.title   = [NSString stringWithFormat:@"%@",NSLocalizedString(@"VibTtl", nil)];
     alert.message = [NSString stringWithFormat:@"%@",NSLocalizedString(@"VibMsgOff", nil)];
     [alert addButtonWithTitle:@" O K "];
     
@@ -763,7 +763,7 @@
     [VibrateOnFlag setValue:YES];
     [VibrateOnFlag sync];
     
-    alert.title   = [NSString stringWithFormat:@"%@",NSLocalizedString(@"VibTtlOn", nil)];
+    alert.title   = [NSString stringWithFormat:@"%@",NSLocalizedString(@"VibTtl", nil)];
     alert.message = [NSString stringWithFormat:@"%@",NSLocalizedString(@"VibMsgOn", nil)];
     [alert addButtonWithTitle:@" O K "];
   }
@@ -792,7 +792,7 @@
     [BtnZoomOnFlag setValue:NO];
     [BtnZoomOnFlag sync];
     
-    alert.title   = [NSString stringWithFormat:@"%@",NSLocalizedString(@"BigTtlOff", nil)];
+    alert.title   = [NSString stringWithFormat:@"%@",NSLocalizedString(@"BigTtl", nil)];
     alert.message = [NSString stringWithFormat:@"%@",NSLocalizedString(@"BigMsgOff", nil)];
     [alert addButtonWithTitle:@" O K "];
     
@@ -802,7 +802,7 @@
     [BtnZoomOnFlag setValue:YES];
     [BtnZoomOnFlag sync];
     
-    alert.title   = [NSString stringWithFormat:@"%@",NSLocalizedString(@"BigTtlOn", nil)];
+    alert.title   = [NSString stringWithFormat:@"%@",NSLocalizedString(@"BigTtl", nil)];
     alert.message = [NSString stringWithFormat:@"%@",NSLocalizedString(@"BigMsgOn", nil)];
     [alert addButtonWithTitle:@" O K "];
   }
