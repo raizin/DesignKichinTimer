@@ -76,7 +76,7 @@
 - (void)setHis:(int)number
 {
   [self.layer setCornerRadius:20];
-  [self setTitle:[NSString stringWithFormat:@"H%d",number] forState:UIControlStateNormal];
+  [self setTitle:[NSString stringWithFormat:@"%d",number] forState:UIControlStateNormal];
   [self.titleLabel setFont:[UIFont boldSystemFontOfSize:[self getFontSize]/2]];
 }
 
