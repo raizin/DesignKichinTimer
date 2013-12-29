@@ -44,7 +44,7 @@
   if ( appLaunchedCountValue < 99999 ) {
     [self setAppLauchedCount:appLaunchedCountValue];
   }
-
+/*
   if ( appLaunchedCountValue == 5 ) {
     UIAlertView *alertView = [[UIAlertView alloc]
                               initWithTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"AlertTtl", nil)]
@@ -54,12 +54,12 @@
                           otherButtonTitles:[NSString stringWithFormat:@"%@",NSLocalizedString(@"AlertOK", nil)],nil];
     [alertView show];
   }
-  
+*/  
   // Override point for customization after application launch.
   return YES;
 }
 
-
+/*
 // アラートのボタンが押された時に呼ばれるデリゲート
 -(void)alertView:(UIAlertView*)alertView
 clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -79,9 +79,8 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
       
       break;
   }
-  
 }
-
+*/
 
 
 
