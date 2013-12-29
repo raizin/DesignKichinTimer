@@ -20,18 +20,15 @@
 "btnClock"="▷Mode horloge";
 "btnTimer"="▷Mode minuteur";
 
-"SndTtlOn" ="[Son]";
-"SndTtlOff"="[Son]";
+"SndTtl" ="[Son]";
 "SndMsgOn" ="Efficacité";
 "SndMsgOff"="Invalide";
 
-"VibTtlOn" ="[vibration]";
-"VibTtlOff"="[vibration]";
+"VibTtl" ="[vibration]";
 "VibMsgOn" ="Efficacité";
 "VibMsgOff"="Invalide";
 
-"BigTtlOn" ="[Bouton Zoom Anime]";
-"BigTtlOff"="[Bouton Zoom Anime]";
+"BigTtl" ="[Bouton Zoom Anime]";
 "BigMsgOn" ="Efficacité";
 "BigMsgOff"="Invalide";
 
