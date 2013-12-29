@@ -4,8 +4,7 @@
  
  Created by z on 2013/10/24.
  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
- */
-//"AppName"="Japanese Kichin Timer";
+*/
 "hun"="min";
 "byo"="s";
 
@@ -21,25 +20,17 @@
 "btnClock"="▷Clock Mode";
 "btnTimer"="▷Timer Mode";
 
-"SndTtlOn" ="[Sound]";
-"SndTtlOff"="[Mute]";
-"SndMsgOn" ="Sound On";
-"SndMsgOff"="Sound Off";
+"SndTtl" ="[Sound]";
+"SndMsgOn" ="On";
+"SndMsgOff"="Off";
 
-"VibTtlOn" ="[vibration]";
-"VibTtlOff"="[vibration]";
+"VibTtl" ="[vibration]";
 "VibMsgOn" ="On";
 "VibMsgOff"="Off";
 
-"BigTtlOn" ="[Button Zoom Anime]";
-"BigTtlOff"="[Button Zoom Anime]";
+"BigTtl" ="[Button Zoom Anime]";
 "BigMsgOn" ="On";
 "BigMsgOff"="Off";
-
-"AlertTtl"="Thanks!";
-"AlertMsg"="Please write a review if it is good.";
-"AlertNG"="Cancel";
-"AlertOK"="Go To Move";
 
 "Close"="CLOSE";
 "Close_iPad"="Close";

@@ -4,42 +4,36 @@
  
  Created by z on 2013/10/24.
  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
- */
-//"AppName"="Japanese Kichin Timer";
+*/
 "hun"="min";
 "byo"="s";
 
 "hunn"="M";
 "byoo"="S";
 
-"history"="History";
+"history"="Historique";
 
-"btnStart"="Start";
+"btnStart"="Démarrer";
 "btnStop" ="Stop";
 "btnReset"="Reset";
 
-"btnClock"="▷Clock Mode";
-"btnTimer"="▷Timer Mode";
+"btnClock"="▷Mode horloge";
+"btnTimer"="▷Mode minuteur";
 
-"SndTtlOn" ="[Sound]";
-"SndTtlOff"="[Mute]";
-"SndMsgOn" ="Sound On";
-"SndMsgOff"="Sound Off";
+"SndTtlOn" ="[Son]";
+"SndTtlOff"="[Son]";
+"SndMsgOn" ="Efficacité";
+"SndMsgOff"="Invalide";
 
 "VibTtlOn" ="[vibration]";
 "VibTtlOff"="[vibration]";
-"VibMsgOn" ="On";
-"VibMsgOff"="Off";
+"VibMsgOn" ="Efficacité";
+"VibMsgOff"="Invalide";
 
-"BigTtlOn" ="[Button Zoom Anime]";
-"BigTtlOff"="[Button Zoom Anime]";
-"BigMsgOn" ="On";
-"BigMsgOff"="Off";
-
-"AlertTtl"="Thanks!";
-"AlertMsg"="Please write a review if it is good.";
-"AlertNG"="Cancel";
-"AlertOK"="Go To Move";
+"BigTtlOn" ="[Bouton Zoom Anime]";
+"BigTtlOff"="[Bouton Zoom Anime]";
+"BigMsgOn" ="Efficacité";
+"BigMsgOff"="Invalide";
 
 "Close"="CLOSE";
 "Close_iPad"="Close";

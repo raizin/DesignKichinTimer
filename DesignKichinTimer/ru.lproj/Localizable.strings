@@ -4,8 +4,7 @@
  
  Created by z on 2013/10/24.
  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
- */
-//"AppName"="Japanese Kichin Timer";
+*/
 "hun"="min";
 "byo"="s";
 
@@ -35,11 +34,6 @@
 "BigTtlOff"="[Button Zoom Anime]";
 "BigMsgOn" ="On";
 "BigMsgOff"="Off";
-
-"AlertTtl"="Thanks!";
-"AlertMsg"="Please write a review if it is good.";
-"AlertNG"="Cancel";
-"AlertOK"="Go To Move";
 
 "Close"="CLOSE";
 "Close_iPad"="Close";
