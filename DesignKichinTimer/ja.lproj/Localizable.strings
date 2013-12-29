@@ -5,16 +5,17 @@
   Created by z on 2013/10/24.
   Copyright (c) 2013 FoceSystemSolution. All rights reserved.
 */
-"hun"="分";
-"byo"="秒";
+"hun"="分";// Button:min
+"byo"="秒";// Button:s
 
-"hunn"="分";
-"byoo"="秒";
+"hunn"="分";// Label:M
+"byoo"="秒";// Label:S
 
 "history"=" セット履歴";
 
 "btnStart"="スタート";
-"btnReset"="ストップリセット";
+"btnStop" ="ストップ";
+"btnReset"="リセット";
 
 "btnClock"="▷現在時表示";
 "btnTimer"="▷タイマー表示";

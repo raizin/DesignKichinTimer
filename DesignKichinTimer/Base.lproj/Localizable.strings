@@ -15,7 +15,8 @@
 "history"="History";
 
 "btnStart"="Start";
-"btnReset"="Stop&Reset";
+"btnStop" ="Stop";
+"btnReset"="Reset";
 
 "btnClock"="▷Clock Mode";
 "btnTimer"="▷Timer Mode";
@@ -47,5 +48,5 @@
 "ToApview"="Developer APP";
 "ToGetpro"="Buy the paid Ver(No ads)";
 "LabelVer"="Number starts";
-"Label3ks"=". Thanks a lot!";
+"Label3ks"=".  ~ Thanks a lot! ~";
 

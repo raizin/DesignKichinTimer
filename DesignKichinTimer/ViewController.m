@@ -154,7 +154,7 @@
   [self.view addSubview:setBtn01];
 
   setBtnReset = [MySetBtn buttonWithType:UIButtonTypeCustom];
-  [setBtnReset setReset];
+  [setBtnReset setReset:YES];
   [setBtnReset addTarget:self action:@selector(resetBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:setBtnReset];
   
@@ -684,6 +684,8 @@
   [self btnSndChkPlay];//効果音再生
   [alermSound stop]; // 再生停止
 
+  // リセットボタンの文言を「リセット」にする。
+  [setBtnReset setReset:YES];
   
   
   if ([timerTm isValid]) {
@@ -715,7 +717,11 @@
 - (void)startBtnTouch:(id)sender
 {
   [self btnSndChkPlay];//効果音再生
- 
+
+  // リセットボタンの文言を「ストップ」にする。
+  [setBtnReset setReset:NO];
+
+  
   //Set Data Memory
   [ud setInteger:globalMin forKey:@"globalMinData"];  // M
   [ud setInteger:globalSec forKey:@"globalSecData"];  // S

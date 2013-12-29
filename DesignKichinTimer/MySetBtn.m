@@ -11,7 +11,6 @@
 @implementation MySetBtn
 
 
-
 - (float)getFontSize
 {
   // ボタンのラベル フォントサイズ
@@ -47,59 +46,52 @@
 // Start Button
 - (void)setStart
 {
-  [self setTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btnStart", nil)] forState:UIControlStateNormal];
+  [self setTitle:NSLocalizedString(@"btnStart", nil) forState:UIControlStateNormal];
   [self.titleLabel setFont:[UIFont boldSystemFontOfSize:[self getFontSize]/2]];
-  
-  [self setTitleColor:[UIColor blueColor] forState:UIControlStateNormal]; //有効時
-  [self setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted]; //タッチ(ハイライト？)時
-  [self setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled]; //無効時
 }
 
 // Stop & Reset Button
-- (void)setReset
+- (void)setReset:(BOOL)flag
 {
-  NSString *_btnReset = [NSString stringWithFormat:@"%@",NSLocalizedString(@"btnReset", nil)];
-  NSMutableString *__btnReset = [NSMutableString stringWithCapacity:1.0f];
-  [__btnReset appendFormat:@"%@\n",[_btnReset substringWithRange:NSMakeRange(0,4)]];
-  [__btnReset appendString:[_btnReset substringWithRange: NSMakeRange(4,[_btnReset length]-4)]];
-  ((UILabel*)self).lineBreakMode = NSLineBreakByWordWrapping; // 改行モードON
-  [self setTitle:__btnReset forState:UIControlStateNormal];
-  [self.titleLabel setFont:[UIFont boldSystemFontOfSize:[self getFontSize]/2]];
-
+//  NSMutableString *totalString = [NSMutableString stringWithCapacity:1.0f];
+//  
+//  ((UILabel*)self).lineBreakMode = NSLineBreakByWordWrapping; // 改行モードON
+//  [totalString appendString:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btnStop", nil)]];
+//  [totalString appendString:[NSString stringWithFormat:@"%@",NSLocalizedString(@"\n", nil)]];
+//  [totalString appendString:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btnReset", nil)]];
   
-  [self setTitleColor:[UIColor blueColor] forState:UIControlStateNormal]; //有効時
-  [self setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted]; //タッチ(ハイライト？)時
-  [self setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled]; //無効時
+  NSString *totalString;
+  
+  if(flag){
+    totalString = NSLocalizedString(@"btnReset", nil);
+  }else{
+    totalString = NSLocalizedString(@"btnStop" , nil);
+  }
+  
+  [self setTitle:totalString forState:UIControlStateNormal];
+  [self.titleLabel setFont:[UIFont boldSystemFontOfSize:[self getFontSize]/2]];
 }
 
-
-//履歴ボタン
+// History Button
 - (void)setHis:(int)number
 {
   [self.layer setCornerRadius:20];
-
   [self setTitle:[NSString stringWithFormat:@"H%d",number] forState:UIControlStateNormal];
   [self.titleLabel setFont:[UIFont boldSystemFontOfSize:[self getFontSize]/2]];
-  
-  [self setTitleColor:[UIColor blueColor] forState:UIControlStateNormal]; //有効時
-  [self setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted]; //タッチ(ハイライト？)時
-  [self setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled]; //無効時
 }
-
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
       
-      
+      // Initialization code
       [self setBackgroundColor:[UIColor colorWithRed:0.9f green:0.9f blue:0.f alpha:0.8f]];
       [self.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
       [self.layer setBorderWidth:1.f];
       
       
-      // ボタンの角丸ぐあい 端末分岐 iphone:25 ipad:50
+      // Corner Radius
       if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
         [self.layer setCornerRadius:25.f];
       }
@@ -107,20 +99,22 @@
         [self.layer setCornerRadius:50.f];
       }
       
+      // Shadow Setting
       [self.layer setShadowOpacity:0.5f];
       [self.layer setShadowOffset:CGSizeMake(2.f, 2.f)];
 
       
-      [self addTarget:self action:@selector(myBtnTouchDown:) forControlEvents:UIControlEventTouchDown]; // タッチ中 イベント
-      [self addTarget:self action:@selector(myBtnTouchUpInside:) forControlEvents:UIControlEventTouchUpInside]; // タッチリリース時
-      
-      
+      //Background Color Control
+      [self addTarget:self action:@selector(mySetBtnTouchDown:) forControlEvents:UIControlEventTouchDown];
+      [self addTarget:self action:@selector(mySetBtnTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
+
+      //Foreground Color Control
+      [self setTitleColor:[UIColor blueColor] forState:UIControlStateNormal]; //有効時
+      [self setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted]; //タッチ(ハイライト？)時
+      [self setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled]; //無効時
     }
     return self;
 }
-
-
-
 
 /*
  * ボタンタイトル(文字列)生成関数
@@ -156,7 +150,7 @@
 /*
  * ボタン押下時にボタンを下に少しずらす
  */
-- (void)myBtnTouchDown:(id)sender
+- (void)mySetBtnTouchDown:(id)sender
 {
   UIButton *btnView   = (UIButton *)sender;
   btnView.layer.frame = CGRectMake(btnView.layer.frame.origin.x+3, btnView.layer.frame.origin.y+3, btnView.frame.size.width, btnView.frame.size.height);
@@ -166,7 +160,7 @@
 /*
  * ボタンを押し離した時にボタンを元に戻す
  */
-- (void)myBtnTouchUpInside:(id)sender
+- (void)mySetBtnTouchUpInside:(id)sender
 {
   UIButton *btnView   = (UIButton *)sender;
   btnView.layer.frame = CGRectMake(btnView.layer.frame.origin.x-3, btnView.layer.frame.origin.y-3, btnView.frame.size.width, btnView.frame.size.height);
@@ -181,6 +175,6 @@
  {
  // Drawing code
  }
- */
+*/
 
 @end
