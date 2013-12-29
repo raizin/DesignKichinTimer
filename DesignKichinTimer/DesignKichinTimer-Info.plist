@@ -5,13 +5,13 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>Base</string>
 	<key>CFBundleDisplayName</key>
-	<string>KichinTimer</string>
+	<string>KitchenTimer</string>
 	<key>CFBundleDisplayName~ipad</key>
-	<string>JPNKichinTimer</string>
+	<string>JPNKitchenTimer</string>
 	<key>CFBundleName</key>
-	<string>KichinTimer Free</string>
+	<string>KitchenTimer Free</string>
 	<key>CFBundleName~ipad</key>
-	<string>JPNKichinTimer Free</string>
+	<string>JPNKitchenTimer Free</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
