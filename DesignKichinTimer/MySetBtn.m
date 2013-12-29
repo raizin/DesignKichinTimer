@@ -47,7 +47,7 @@
 - (void)setStart
 {
   [self setTitle:NSLocalizedString(@"btnStart", nil) forState:UIControlStateNormal];
-  [self.titleLabel setFont:[UIFont boldSystemFontOfSize:[self getFontSize]/2]];
+  [self.titleLabel setFont:[UIFont boldSystemFontOfSize:[self getFontSize]/1.5f]];
 }
 
 // Stop & Reset Button
@@ -69,7 +69,7 @@
   }
   
   [self setTitle:totalString forState:UIControlStateNormal];
-  [self.titleLabel setFont:[UIFont boldSystemFontOfSize:[self getFontSize]/2]];
+  [self.titleLabel setFont:[UIFont boldSystemFontOfSize:[self getFontSize]/1.5f]];
 }
 
 // History Button
