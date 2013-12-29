@@ -7,12 +7,9 @@
 //
 
 #import "AppDelegate.h"
-//#import "SSGentleAlertView.h"
 
 @implementation AppDelegate
 
-
-//  APP_ID = @"776800295";
 
 // 起動回数を返す Globalな関数
 - (int)getAppLauchedCount
@@ -46,46 +43,9 @@
   if ( appLaunchedCountValue < 99999 ) {
     [self setAppLauchedCount:appLaunchedCountValue];
   }
-  
-  if ( appLaunchedCountValue == 5 ) {
-    UIAlertView *alertView = [[UIAlertView alloc]
-                              initWithTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"AlertTtl", nil)]
-                              message:[NSString stringWithFormat:@"%@",NSLocalizedString(@"AlertMsg", nil)]
-                              delegate:self
-                              cancelButtonTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"AlertNG", nil)]
-                              otherButtonTitles:[NSString stringWithFormat:@"%@",NSLocalizedString(@"AlertOK", nil)],nil];
-    [alertView show];
-  }
-  
   // Override point for customization after application launch.
   return YES;
 }
-
-
-// アラートのボタンが押された時に呼ばれるデリゲート
--(void)alertView:(UIAlertView*)alertView
-clickedButtonAtIndex:(NSInteger)buttonIndex {
-
-//  NSString *reviewURLiOS6 = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=APPID";
-  NSString *reviewURL = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@",APP_ID];
-
-  switch (buttonIndex) {
-    case 0: // キャンセル (なにもしない)
-//      NSLog(@"buttonIndex = %d", (int)buttonIndex);
-      break;
-      
-    case 1:
-//      NSLog(@"buttonIndex = %d", (int)buttonIndex);
-      
-      [[UIApplication sharedApplication] openURL:[NSURL URLWithString:reviewURL]];
-
-    break;
-  }
-  
-}
-
-
-
 
 
 - (void)applicationWillResignActive:(UIApplication *)application
