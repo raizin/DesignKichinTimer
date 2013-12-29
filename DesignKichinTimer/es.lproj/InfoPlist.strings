@@ -1,3 +1,5 @@
 /* Localized versions of Info.plist keys */
-
-/*** Rewirite in *-Info.plist ***/
+"CFBundleName" = "Japón Tempor Libre";
+"CFBundleName~ipad" = "Japón Tempor Libre";
+"CFBundleDisplayName" = "JPNTempor"; // iphone ipod
+"CFBundleDisplayName~ipad" = "JPNTempor"; // ipad ipadmini
