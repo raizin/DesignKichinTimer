@@ -32,12 +32,12 @@
 "BigMsgOn" ="On(有効)";
 "BigMsgOff"="Off(無効)";
 
-"Close"="閉じる";
+"Close"="CLOSE";
 "Close_iPad"="閉じる";
 
 "ToReview"="評価する";
 "ToApview"="他のアプリを見る";
-"ToGetpro"="有料版(広告なし)を購入";
+//"ToGetpro"="有料版(広告なし)を購入";
 "LabelVer"="   起動回数";
 "Label3ks"=" ";
 

@@ -265,8 +265,9 @@
       setBtn001.frame   = CGRectMake(centerPoint  -(74/2), 225, 74, 50); // x y w h
       setBtnStart.frame = CGRectMake(centerPoint      +55, 220, 80, 60); // x y w h
       
-      clockSelectBtn.frame = CGRectMake(centerPoint - 150     , -3,120,50);
-      timerSelectBtn.frame = CGRectMake(centerPoint - 150 +130, -3,145,50);
+      clockSelectBtn.frame = CGRectMake(centerPoint - 150     , -3,135,50);
+      timerSelectBtn.frame = CGRectMake(centerPoint - 150 +140, -3,145,50);
+      
       infBtn.frame = CGRectMake(self.view.frame.size.width -35, 0, 35, 35); // x y w h
       
       
@@ -1207,7 +1208,7 @@ int vibCount;
   // ====== 「現在時表示」ボタン（リンクテキスト風）ここから ======
   clockSelectBtn = [MyModeBtn buttonWithType:UIButtonTypeCustom];
   
-  [clockSelectBtn ModeSelect:CGRectMake(15,7,120,50)    // x y w h // use ipad positioning
+  [clockSelectBtn ModeSelect:CGRectMake(15,7,135,50)    // x y w h // use ipad positioning
                     btnTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btnClock", nil)]];
   
   [clockSelectBtn setEnabled:YES]; // default
@@ -1224,7 +1225,7 @@ int vibCount;
   // ====== 「タイマー設定」ボタン（リンクテキスト風）ここから ======
   timerSelectBtn = [MyModeBtn buttonWithType:UIButtonTypeCustom];
   
-  [timerSelectBtn ModeSelect:CGRectMake(145,7,145,50)    // x y w h // use ipad positioning
+  [timerSelectBtn ModeSelect:CGRectMake(155,7,145,50)    // x y w h // use ipad positioning
                     btnTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btnTimer", nil)]];
   
   [timerSelectBtn setEnabled:NO]; // not default
@@ -1377,14 +1378,9 @@ int vibCount;
  */
 - (void)infoBtnTouch:(UIButton *)btn
 {
-  //  NSLog(@"%d",__LINE__);
-  
   // InfoViewController生成
   InfoViewController *infoViewController;
   infoViewController = [[InfoViewController alloc] init];
-  
-  //配置
-  //  infoViewController.modalPresentationStyle = UIModalPresentationFullScreen;  // 画面を覆う Default
   
   //スタイル
   infoViewController.modalTransitionStyle = UIModalTransitionStylePartialCurl; // 下からめくり上げるスタイル
@@ -1397,7 +1393,6 @@ int vibCount;
 - (void)didReceiveMemoryWarning
 {
   [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
 }
 
 @end

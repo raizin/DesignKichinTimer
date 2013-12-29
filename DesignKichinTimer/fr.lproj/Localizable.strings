@@ -32,11 +32,11 @@
 "BigMsgOn" ="Efficacité";
 "BigMsgOff"="Invalide";
 
-"Close"="CLOSE";
-"Close_iPad"="Close";
+"Close"="PROCHE";
+"Close_iPad"="Proche";
 
-"ToReview"="To Review";
-"ToApview"="Developer APP";
-"ToGetpro"="Buy the paid Ver(No ads)";
-"LabelVer"="Number starts";
-"Label3ks"=".  ~ Thanks a lot! ~";
+"ToReview"="à revoir";
+"ToApview"="Développeur APP";
+//"ToGetpro"="Acheter le Ver payé (Pas d'annonces)";
+"LabelVer"="Nombre départs";
+"Label3ks"=".  ~ Merci! ~";
