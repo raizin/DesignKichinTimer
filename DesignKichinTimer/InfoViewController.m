@@ -109,7 +109,7 @@
       closeBtn.frame = CGRectMake(width -100, height -90, 100, 90); // x y w h
       closeBtn.contentEdgeInsets = UIEdgeInsetsMake(75.f, 20.f, 0.f, 0.f); // 上 左 下 右
       toReviewBtn.layer.frame = CGRectMake(72.5f, height -160, 175, 40);// x y
-      toApviewBtn.layer.frame = CGRectMake(72.5f, height -110, 175, 40);// x y
+      toApviewBtn.layer.frame = CGRectMake(72.5f, height -110, 185, 40);// x y
       
       label3ks.frame = CGRectMake(30, height/2 +10, width-30, 30);// x y w h
       labelVer.frame = CGRectMake(30, height/2 +35, width-30, 30);// x y w h
@@ -120,7 +120,7 @@
       closeBtn.frame = CGRectMake(height -100, width -90, 100, 90); // x y w h
       closeBtn.contentEdgeInsets = UIEdgeInsetsMake(75.f, 20.f, 0.f, 0.f); // 上 左 下 右
       toReviewBtn.layer.frame = CGRectMake( 50, width -100, 175, 40);// x y
-      toApviewBtn.layer.frame = CGRectMake(250, width -100, 175, 40);// x y
+      toApviewBtn.layer.frame = CGRectMake(250, width -100, 185, 40);// x y
       
       label3ks.frame = CGRectMake(100, width/2  -5, height-100, 30);// x y w h
       labelVer.frame = CGRectMake(100, width/2 +20, height-100, 30);// x y w h
@@ -141,7 +141,7 @@
       closeBtn.frame = CGRectMake(width -200, height -200, 200,200); // x y w h
       closeBtn.contentEdgeInsets = UIEdgeInsetsMake(100.f, 60.f, 0.f, 0.f); // 上 左 下 右
       toReviewBtn.layer.frame = CGRectMake( 50, height -340, 330, 80);// x y
-      toApviewBtn.layer.frame = CGRectMake(425, height -340, 330, 80);// x y
+      toApviewBtn.layer.frame = CGRectMake(425, height -340, 365, 80);// x y
       
       label3ks.frame = CGRectMake(100, height/2 +40, width-100, 30);// x y w h
       labelVer.frame = CGRectMake(100, height/2 +80, width-100, 30);// x y w h
@@ -152,7 +152,7 @@
       closeBtn.frame = CGRectMake(height -200, width -200, 200,200); // x y w h
       closeBtn.contentEdgeInsets = UIEdgeInsetsMake(100.f, 60.f, 0.f, 0.f); // 上 左 下 右
       toReviewBtn.layer.frame = CGRectMake(100, width -250, 330, 80);// x y
-      toApviewBtn.layer.frame = CGRectMake(475, width -250, 330, 80);// x y
+      toApviewBtn.layer.frame = CGRectMake(475, width -250, 365, 80);// x y
       
       label3ks.frame = CGRectMake(100, width/2 +40, height-100, 30);// x y w h
       labelVer.frame = CGRectMake(100, width/2 +80, height-100, 30);// x y w h
