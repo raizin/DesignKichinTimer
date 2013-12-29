@@ -47,19 +47,12 @@
 - (void)setStart
 {
   [self setTitle:NSLocalizedString(@"btnStart", nil) forState:UIControlStateNormal];
-  [self.titleLabel setFont:[UIFont boldSystemFontOfSize:[self getFontSize]/2]];
+  [self.titleLabel setFont:[UIFont boldSystemFontOfSize:[self getFontSize]/1.5f]];
 }
 
 // Stop & Reset Button
 - (void)setReset:(BOOL)flag
 {
-  //  NSMutableString *totalString = [NSMutableString stringWithCapacity:1.0f];
-  //
-  //  ((UILabel*)self).lineBreakMode = NSLineBreakByWordWrapping; // 改行モードON
-  //  [totalString appendString:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btnStop", nil)]];
-  //  [totalString appendString:[NSString stringWithFormat:@"%@",NSLocalizedString(@"\n", nil)]];
-  //  [totalString appendString:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btnReset", nil)]];
-  
   NSString *totalString;
   
   if(flag){
@@ -69,7 +62,7 @@
   }
   
   [self setTitle:totalString forState:UIControlStateNormal];
-  [self.titleLabel setFont:[UIFont boldSystemFontOfSize:[self getFontSize]/2]];
+  [self.titleLabel setFont:[UIFont boldSystemFontOfSize:[self getFontSize]/1.5f]];
 }
 
 // History Button
