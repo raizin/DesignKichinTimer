@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface MySetBtn : UIButton{
-
+  
 }
 - (void)setNum:(int)number minFlag:(BOOL)unitFlag;
 - (void)setStart;
-- (void)setReset;
+- (void)setReset:(BOOL)flag;
 - (void)setHis:(int)number;
 @end

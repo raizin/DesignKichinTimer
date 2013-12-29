@@ -1,10 +1,11 @@
-/* 
-  Localizable.strings
-  DesignKichinTimer
-
-  Created by z on 2013/10/24.
-  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
-*/
+/*
+ Localizable.strings
+ DesignKichinTimer
+ 
+ Created by z on 2013/10/24.
+ Copyright (c) 2013 FoceSystemSolution. All rights reserved.
+ */
+//"AppName"="Japanese Kichin Timer";
 "hun"="min";
 "byo"="s";
 
@@ -14,7 +15,8 @@
 "history"="History";
 
 "btnStart"="Start";
-"btnReset"="Stop&Reset";
+"btnStop" ="Stop";
+"btnReset"="Reset";
 
 "btnClock"="▷Clock Mode";
 "btnTimer"="▷Timer Mode";
@@ -46,5 +48,4 @@
 "ToApview"="Developer APP";
 "ToGetpro"="Buy the paid Ver(No ads)";
 "LabelVer"="Number starts";
-"Label3ks"=". Thanks a lot!";
-
+"Label3ks"=".  ~ Thanks a lot! ~";
