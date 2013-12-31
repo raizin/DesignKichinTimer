@@ -147,9 +147,9 @@
 
       closeBtn.frame = CGRectMake(width -200, height -200, 200,200); // x y w h
       closeBtn.contentEdgeInsets = UIEdgeInsetsMake(100.f, 60.f, 0.f, 0.f); // 上 左 下 右
-      toReviewBtn.layer.frame = CGRectMake( 50, height -340, 330, 80);// x y
-      toApviewBtn.layer.frame = CGRectMake(425, height -340, 330, 80);// x y
-      toGetproBtn.layer.frame = CGRectMake( 50, height -210, 365, 80);// x y
+      toReviewBtn.layer.frame = CGRectMake( 40, height -340, 330, 80);// x y
+      toApviewBtn.layer.frame = CGRectMake(400, height -340, 330, 80);// x y
+      toGetproBtn.layer.frame = CGRectMake( 40, height -210, 365, 80);// x y
       
       label3ks.frame = CGRectMake(100, height/2 +40, width-100, 30);// x y w h
       labelVer.frame = CGRectMake(100, height/2 +80, width-100, 30);// x y w h
