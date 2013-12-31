@@ -1,6 +1,6 @@
 /* Localized versions of Info.plist keys */
 
-/*** ローカライズしたいものだけ書く それ以外は、*-Info.plistのソース編集すること ***/
+/*** ローカライズしたいものだけ書く それ以外は、*-Info.plistのソースに追加すること ***/
 
 /* 日本語 / japanese */
 "CFBundleName" = "便利タイマー無料版";

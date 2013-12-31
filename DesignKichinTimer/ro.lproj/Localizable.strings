@@ -39,5 +39,6 @@
 "ToReview"="Pentru a Review";
 "ToApview"="Developer APP";
 "ToGetpro"="Cumpăra versiunea plătite";
-"LabelVer"="Număr de porniri";
+"LabelVer"="APP versiune : ";
+"LabelNum"="  Număr de porniri : ";
 "Label3ks"=". Vă mulțumim!";

@@ -1,4 +1,5 @@
 /* Localized versions of Info.plist keys */
+/* ポルトガル語 / portuguese / português */
 "CFBundleName" = "japão tempor livre";
 "CFBundleName~ipad" = "japão cozinha tempor livre";
 "CFBundleDisplayName" = "JP Tempor"; // iphone ipod

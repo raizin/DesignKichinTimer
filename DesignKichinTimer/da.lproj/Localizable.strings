@@ -39,5 +39,6 @@
 "ToReview"="at Gennemgå";
 "ToApview"="Udvikler APP";
 "ToGetpro"="Køb den betalte version";
-"LabelVer"="antal starter";
+"LabelVer"="APP udgave : ";
+"LabelNum"="  Antal starter : ";
 "Label3ks"=".  ~ Tak! ~";

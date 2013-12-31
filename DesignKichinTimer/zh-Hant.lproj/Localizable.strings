@@ -5,7 +5,7 @@
  Created by z on 2013/10/24.
  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
  */
-/* 中国語 / chinese [simplified] / 简体中文 */
+/* 中国語 / chinese [traditional] / 繁体 or 繁體中文 */
 "hun"="分";// Button:min
 "byo"="秒";// Button:s
 
@@ -39,5 +39,6 @@
 "ToReview"="檢討";
 "ToApview"="開發者的 APP";
 "ToGetpro"="購買付費版（無廣告）";
-"LabelVer"="起動次數";
+"LabelVer"="APP 版本 : ";
+"LabelNum"="    起動次數 : ";
 "Label3ks"=".  ~ 謝謝! ~";

@@ -39,5 +39,6 @@
 "ToReview"="To áttekintése";
 "ToApview"="Fejlesztői APP";
 "ToGetpro"="Fizetett változat";
-"LabelVer"="Indítások száma";
+"LabelVer"="APP változat : ";
+"LabelNum"="  Indítások száma : ";
 "Label3ks"=".  ~ Köszönjük! ~";

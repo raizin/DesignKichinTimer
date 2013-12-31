@@ -182,8 +182,6 @@
 		5EFF66AF1870007F00F7D31E /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5EFF66B01870008800F7D31E /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5EFF66B11870008900F7D31E /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
-		5EFF66B21870009300F7D31E /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		5EFF66B31870009300F7D31E /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		5EFF66B41870009C00F7D31E /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5EFF66B51870009C00F7D31E /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5EFF66B6187000A500F7D31E /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -640,7 +638,6 @@
 				5EFF66AD1870007300F7D31E /* es */,
 				5EFF66AF1870007F00F7D31E /* it */,
 				5EFF66B11870008900F7D31E /* pt */,
-				5EFF66B31870009300F7D31E /* pt-PT */,
 				5EFF66B51870009C00F7D31E /* nl */,
 				5EFF66B7187000A500F7D31E /* sv */,
 				5EFF66B9187000AF00F7D31E /* nb */,
@@ -678,7 +675,6 @@
 				5EFF66AC1870007300F7D31E /* es */,
 				5EFF66AE1870007F00F7D31E /* it */,
 				5EFF66B01870008800F7D31E /* pt */,
-				5EFF66B21870009300F7D31E /* pt-PT */,
 				5EFF66B41870009C00F7D31E /* nl */,
 				5EFF66B6187000A500F7D31E /* sv */,
 				5EFF66B8187000AF00F7D31E /* nb */,

@@ -39,5 +39,6 @@
 "ToReview"="检讨";
 "ToApview"="开发者的 APP";
 "ToGetpro"="购买付费版（无广告）";
-"LabelVer"="起动次数";
+"LabelVer"="APP 版本 : ";
+"LabelNum"="    起动次数 : ";
 "Label3ks"=".  ~ 谢谢! ~";

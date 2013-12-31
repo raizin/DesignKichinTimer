@@ -39,5 +39,6 @@
 "ToReview"="per revisar";
 "ToApview"="desenvolupador APP";
 "ToGetpro"="Versió de pagament";
-"LabelVer"="Nombre d'arrencades";
+"LabelVer"="APP Versió:";
+"LabelNum"="  Nombre d'arrencades:";
 "Label3ks"=".  ~ Gràcies! ~";

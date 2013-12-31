@@ -39,5 +39,6 @@
 "ToReview"="Píšem recenziu";
 "ToApview"="Developer APP";
 "ToGetpro"="Kúpte si platenú verziu";
-"LabelVer"="Počet štartov";
+"LabelVer"="APP verzia : ";
+"LabelNum"="  Počet štartov : ";
 "Label3ks"=".  ~ Vďaka! ~";

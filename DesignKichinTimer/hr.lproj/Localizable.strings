@@ -39,5 +39,6 @@
 "ToReview"="Za pregled";
 "ToApview"="Developer APP";
 "ToGetpro"="Kupi plaćeni verzija";
-"LabelVer"="Broj startanja";
+"LabelVer"="APP Verzija : ";
+"LabelNum"="  Broj startanja : ";
 "Label3ks"=".  ~ Hvala! ~";

@@ -79,7 +79,7 @@
   UILabel *labelVer = [[UILabel alloc] init];
   labelVer.textColor = [UIColor blueColor];
   labelVer.text =
-     [NSString stringWithFormat:@"APP Version : %@   %@ : %d",appVer,NSLocalizedString(@"LabelVer", nil),(int)appLauchedCount];
+     [NSString stringWithFormat:@"%@%@%@%d",NSLocalizedString(@"LabelVer", nil),appVer,NSLocalizedString(@"LabelNum", nil),(int)appLauchedCount];
   
   // Thanks Label
   UILabel *label3ks = [[UILabel alloc] init];

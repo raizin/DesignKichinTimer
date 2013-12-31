@@ -37,7 +37,8 @@
 "Close_iPad"="לסגור";
 
 "ToReview"="לסקירה";
-"ToApview"="המפתחים APP";
+"ToApview"="מפתחי אפליקציות";
 "ToGetpro"="קנה את הגרסה בתשלום";
-"LabelVer"="מספר ההתחלות";
+"LabelVer"="גרסת יישום : ";
+"LabelNum"="    מספר ההתחלות : ";
 "Label3ks"=".  ~ תודה! ~";

@@ -5,6 +5,7 @@
  Created by z on 2013/10/24.
  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
  */
+/* イタリア語 / italian / italiano */
 "hun"="min";
 "byo"="s";
 
@@ -37,6 +38,7 @@
 
 "ToReview"="per Recensione";
 "ToApview"="sviluppatore APP";
-"ToGetpro"="Acquista la versione a pagamento";
-"LabelVer"="numero parte";
+"ToGetpro"="Acquista la ver a pagamento";
+"LabelVer"="APP Ver.:";
+"LabelNum"="  Numero di avviamenti:";
 "Label3ks"=".  ~ Grazie! ~";

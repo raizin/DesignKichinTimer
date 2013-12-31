@@ -5,6 +5,7 @@
  Created by z on 2013/10/24.
  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
  */
+/* トルコ語 / turkish / Türkçe */
 "hun"="min";
 "byo"="s";
 
@@ -38,5 +39,6 @@
 "ToReview"="Ben yorum yazmak";
 "ToApview"="Geliştirici APP";
 "ToGetpro"="Ücretli sürümünü satın";
-"LabelVer"="Start-up Kat sayısı";
+"LabelVer"="APP versiyon : ";
+"LabelNum"="  Start-up Kat sayısı: ";
 "Label3ks"=".  ~ Teşekkürler! ~";

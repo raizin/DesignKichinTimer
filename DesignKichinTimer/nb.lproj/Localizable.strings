@@ -39,5 +39,6 @@
 "ToReview"="til å anmelde";
 "ToApview"="Utvikler APP";
 "ToGetpro"="Kjøpe betalt versjon";
-"LabelVer"="antall starter";
-"Label3ks"=".  ~ Thanks! ~";
+"LabelVer"="APP Versjon : ";
+"LabelNum"="  antall starter : ";
+"Label3ks"=".  ~ takk! ~";

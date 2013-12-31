@@ -39,5 +39,6 @@
 "ToReview"="te beoordelen";
 "ToApview"="Ontwikkelaar APP";
 "ToGetpro"="Koop de betaalde versie";
-"LabelVer"="Aantal starts";
+"LabelVer"="APP Versie : ";
+"LabelNum"="  Aantal starts : ";
 "Label3ks"=".  ~ Bedankt! ~";

@@ -1,4 +1,5 @@
 /* Localized versions of Info.plist keys */
+/* フランス語 / french / français */
 "CFBundleName" = "minuterie de cuisine gratuit";
 "CFBundleName~ipad" = "minuterie de cuisine gratuit";
 "CFBundleDisplayName" = "JPNMinuterie"; // iphone ipod

@@ -39,5 +39,6 @@
 "ToReview"="do Skomentuj";
 "ToApview"="deweloper APP";
 "ToGetpro"="Kup wersji płatnej";
-"LabelVer"="Numer zaczyna";
+"LabelVer"="APP wersja : ";
+"LabelNum"=" Liczba rozruchów : ";
 "Label3ks"=".  ~ Dziękuję! ~";

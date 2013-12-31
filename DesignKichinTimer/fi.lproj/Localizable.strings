@@ -39,5 +39,6 @@
 "ToReview"="Tarkastelu";
 "ToApview"="kehittäjä APP";
 "ToGetpro"="Ostaa maksullisen version";
-"LabelVer"="numerointi alkaa";
+"LabelVer"="APP Versio : ";
+"LabelNum"="  Numerointi alkaa : ";
 "Label3ks"=".  ~ Kiitos! ~";

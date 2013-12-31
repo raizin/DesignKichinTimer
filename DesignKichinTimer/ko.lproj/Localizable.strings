@@ -39,5 +39,6 @@
 "ToReview"="리뷰를";
 "ToApview"="개발자 APP";
 "ToGetpro"="유료 버전을 구입 (광고 없음)";
-"LabelVer"="시작 횟수";
+"LabelVer"="APP 버전 : ";
+"LabelNum"="      시작 횟수 : ";
 "Label3ks"=".  ~ 감사합니다! ~";
