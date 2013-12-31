@@ -24,9 +24,12 @@
 // iOS7 Status Bar Disabled
 - (BOOL)prefersStatusBarHidden
 {
-  return YES;
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+    return YES;
+  }else{
+    return NO; // ipad
+  }
 }
-
 - (UIStatusBarAnimation)preferredStatusBarUpdateAnimation
 {
   return UIStatusBarAnimationFade;
