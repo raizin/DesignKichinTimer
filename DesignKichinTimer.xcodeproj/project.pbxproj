@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E10672F18735FD300956374 /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E10672B18735FD300956374 /* Icon-60.png */; };
-		5E10673018735FD300956374 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E10672C18735FD300956374 /* Icon-60@2x.png */; };
-		5E10673118735FD300956374 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E10672D18735FD300956374 /* Icon-76.png */; };
-		5E10673218735FD300956374 /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E10672E18735FD300956374 /* Icon-76@2x.png */; };
 		5E1E11D71834F81500307C8F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1E11D61834F81500307C8F /* MessageUI.framework */; };
 		5E1E11D91834F82600307C8F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1E11D81834F82600307C8F /* SystemConfiguration.framework */; };
 		5E1E11DB18350D0500307C8F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1E11DA18350D0500307C8F /* CoreLocation.framework */; };
@@ -60,6 +56,10 @@
 		5ED3AC071873760F00C096DB /* Icon-57@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ED3AC031873760F00C096DB /* Icon-57@2x.png */; };
 		5ED3AC081873760F00C096DB /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ED3AC041873760F00C096DB /* Icon-72.png */; };
 		5ED3AC091873760F00C096DB /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ED3AC051873760F00C096DB /* Icon-72@2x.png */; };
+		5ED3AC0E187378EF00C096DB /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ED3AC0A187378EF00C096DB /* Icon-60.png */; };
+		5ED3AC0F187378EF00C096DB /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ED3AC0B187378EF00C096DB /* Icon-60@2x.png */; };
+		5ED3AC10187378EF00C096DB /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ED3AC0C187378EF00C096DB /* Icon-76.png */; };
+		5ED3AC11187378EF00C096DB /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ED3AC0D187378EF00C096DB /* Icon-76@2x.png */; };
 		5EDE090A185CC89A00660FF9 /* ResetBtnScaleOnFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDE0909185CC89A00660FF9 /* ResetBtnScaleOnFlag.m */; };
 		5EF44FC5186B5D6900E7494A /* MyInfoBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF44FC1186B5D6900E7494A /* MyInfoBtn.m */; };
 		5EF44FC6186B5D6900E7494A /* TriangleBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF44FC3186B5D6900E7494A /* TriangleBtn.m */; };
@@ -78,10 +78,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5E10672B18735FD300956374 /* Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60.png"; sourceTree = "<group>"; };
-		5E10672C18735FD300956374 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
-		5E10672D18735FD300956374 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
-		5E10672E18735FD300956374 /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
 		5E1E11D61834F81500307C8F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		5E1E11D81834F82600307C8F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5E1E11DA18350D0500307C8F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -148,6 +144,10 @@
 		5ED3AC031873760F00C096DB /* Icon-57@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-57@2x.png"; sourceTree = "<group>"; };
 		5ED3AC041873760F00C096DB /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		5ED3AC051873760F00C096DB /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		5ED3AC0A187378EF00C096DB /* Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60.png"; sourceTree = "<group>"; };
+		5ED3AC0B187378EF00C096DB /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
+		5ED3AC0C187378EF00C096DB /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
+		5ED3AC0D187378EF00C096DB /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
 		5EDE0908185CC89A00660FF9 /* ResetBtnScaleOnFlag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetBtnScaleOnFlag.h; sourceTree = "<group>"; };
 		5EDE0909185CC89A00660FF9 /* ResetBtnScaleOnFlag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetBtnScaleOnFlag.m; sourceTree = "<group>"; };
 		5EF44FC1186B5D6900E7494A /* MyInfoBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfoBtn.m; sourceTree = "<group>"; };
@@ -273,14 +273,14 @@
 		5E220DD21842630700D2ACB0 /* IconPng-Professional */ = {
 			isa = PBXGroup;
 			children = (
+				5ED3AC0A187378EF00C096DB /* Icon-60.png */,
+				5ED3AC0B187378EF00C096DB /* Icon-60@2x.png */,
+				5ED3AC0C187378EF00C096DB /* Icon-76.png */,
+				5ED3AC0D187378EF00C096DB /* Icon-76@2x.png */,
 				5ED3AC021873760F00C096DB /* Icon-57.png */,
 				5ED3AC031873760F00C096DB /* Icon-57@2x.png */,
 				5ED3AC041873760F00C096DB /* Icon-72.png */,
 				5ED3AC051873760F00C096DB /* Icon-72@2x.png */,
-				5E10672B18735FD300956374 /* Icon-60.png */,
-				5E10672C18735FD300956374 /* Icon-60@2x.png */,
-				5E10672D18735FD300956374 /* Icon-76.png */,
-				5E10672E18735FD300956374 /* Icon-76@2x.png */,
 			);
 			name = "IconPng-Professional";
 			sourceTree = "<group>";
@@ -513,24 +513,24 @@
 				5EA2C0A01811865E00B0FC3D /* .gitignore in Resources */,
 				5E24807E18571ACD0032AF77 /* IconSndTouch.png in Resources */,
 				5ED3AC081873760F00C096DB /* Icon-72.png in Resources */,
-				5E10672F18735FD300956374 /* Icon-60.png in Resources */,
 				5E23549E186ED9480055217F /* .gitattributes in Resources */,
 				5EC2DCD21830A52A003E1D5C /* pi_old.mp3 in Resources */,
 				5E6F4B4118117F7600312CCD /* Main_iPad.storyboard in Resources */,
 				5E8BC37A185EE75400C2802E /* IconBigTouch.png in Resources */,
+				5ED3AC11187378EF00C096DB /* Icon-76@2x.png in Resources */,
 				5E24808418571ADE0032AF77 /* IconVibOn.png in Resources */,
 				5E42589718192B7F00171F1F /* Localizable.strings in Resources */,
 				5E6F4B4618117F7600312CCD /* Images.xcassets in Resources */,
 				5E23549C186DA9A10055217F /* IconInfo.png in Resources */,
-				5E10673018735FD300956374 /* Icon-60@2x.png in Resources */,
+				5ED3AC0F187378EF00C096DB /* Icon-60@2x.png in Resources */,
 				5ECB0D271832038400103C18 /* piLong.mp3 in Resources */,
 				5E6F4B3E18117F7600312CCD /* Main_iPhone.storyboard in Resources */,
+				5ED3AC10187378EF00C096DB /* Icon-76.png in Resources */,
 				5EF44FCA186B5EEA00E7494A /* IconInfoTouch.png in Resources */,
 				5ED3AC091873760F00C096DB /* Icon-72@2x.png in Resources */,
-				5E10673118735FD300956374 /* Icon-76.png in Resources */,
 				5ED3AC071873760F00C096DB /* Icon-57@2x.png in Resources */,
-				5E10673218735FD300956374 /* Icon-76@2x.png in Resources */,
 				5E24808318571ADE0032AF77 /* IconVibTouch.png in Resources */,
+				5ED3AC0E187378EF00C096DB /* Icon-60.png in Resources */,
 				5E24807F18571ACD0032AF77 /* IconSndOn.png in Resources */,
 				5E24807D18571ACD0032AF77 /* IconSndOff.png in Resources */,
 				5E8BC37B185EE75400C2802E /* IconBigOff.png in Resources */,
@@ -782,6 +782,7 @@
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -800,6 +801,7 @@
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

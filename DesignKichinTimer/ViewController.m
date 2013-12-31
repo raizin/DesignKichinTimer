@@ -21,13 +21,27 @@
 @implementation ViewController
 
 
+// iOS7 Status Bar Disabled
+- (BOOL)prefersStatusBarHidden
+{
+  return YES;
+}
+
+- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation
+{
+  return UIStatusBarAnimationFade;
+}
+
+
 // View が初めて呼び出される時に1回だけ呼ばれる定義済み関数
 - (void)viewDidLoad
 {
   [super viewDidLoad];
 
   // Head Status Bar Hidden
-  [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+  if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+  }
   
   
   //NSUserDefaults 初期化
