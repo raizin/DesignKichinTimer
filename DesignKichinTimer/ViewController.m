@@ -1225,7 +1225,7 @@ int vibCount;
   // ====== 「タイマー設定」ボタン（リンクテキスト風）ここから ======
   timerSelectBtn = [MyModeBtn buttonWithType:UIButtonTypeCustom];
   
-  [timerSelectBtn ModeSelect:CGRectMake(155,7,145,50)    // x y w h // use ipad positioning
+  [timerSelectBtn ModeSelect:CGRectMake(155,7,155,50)    // x y w h // use ipad positioning
                     btnTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btnTimer", nil)]];
   
   [timerSelectBtn setEnabled:NO]; // not default
