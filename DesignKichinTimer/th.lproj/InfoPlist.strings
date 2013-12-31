@@ -1,3 +1,6 @@
 /* Localized versions of Info.plist keys */
-
-/*** Rewirite in *-Info.plist ***/
+/* タイ語 / thai / ภาษาไทย */
+"CFBundleName" = "ญี่ปุ่นจับเวลาห้องครัว";
+"CFBundleName~ipad" = "ญี่ปุ่นจับเวลาห้องครัว";
+"CFBundleDisplayName" = "ห้องครัวตั้งเวลา"; // iphone ipod
+"CFBundleDisplayName~ipad" = "ห้องครัวตั้งเวลา"; // ipad ipadmini

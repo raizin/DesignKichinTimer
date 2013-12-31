@@ -5,38 +5,40 @@
  Created by z on 2013/10/24.
  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
  */
+/* オランダ語 / Dutch / Nederlands */
 "hun"="min";
 "byo"="s";
 
 "hunn"="M";
 "byoo"="S";
 
-"history"="History";
+"history"="Geschied";
 
-"btnStart"="Start";
+"btnStart"="Begin";
 "btnStop" ="Stop";
 "btnReset"="Reset";
 
-"btnClock"="▷Clock Mode";
-"btnTimer"="▷Timer Mode";
+"btnClock"="▷Klokmodus";
+"btnTimer"="▷Timermodus";
 
-"SndTtl" ="[Sound]";
-"SndMsgOn" ="On";
-"SndMsgOff"="Off";
+"SndTtl" ="[klinken]";
+"SndMsgOn" ="Op";
+"SndMsgOff"="Af";
 
-"VibTtl" ="[vibration]";
-"VibMsgOn" ="On";
-"VibMsgOff"="Off";
+"VibTtl" ="[vibratie]";
+"VibMsgOn" ="Op";
+"VibMsgOff"="Af";
 
-"BigTtl" ="[Button Zoom Anime]";
-"BigMsgOn" ="On";
-"BigMsgOff"="Off";
+"BigTtl" ="[Zoomknop Anime]";
+"BigMsgOn" ="Op";
+"BigMsgOff"="Af";
 
 "Close"="CLOSE";
-"Close_iPad"="Close";
+"Close_iPad"="Dicht";
 
-"ToReview"="To Review";
-"ToApview"="Developer APP";
-"ToGetpro"="Buy the paid Ver(No ads)";
-"LabelVer"="Number starts";
-"Label3ks"=".  ~ Thanks a lot! ~";
+"ToReview"="te beoordelen";
+"ToApview"="Ontwikkelaar APP";
+//"ToGetpro"="Koop de betaalde versie";
+"LabelVer"="APP Versie : ";
+"LabelNum"="  Aantal starts : ";
+"Label3ks"=".  ~ Bedankt! ~";

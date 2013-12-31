@@ -5,38 +5,40 @@
  Created by z on 2013/10/24.
  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
  */
+/* フィンランド語 / finnish / suomi */
 "hun"="min";
 "byo"="s";
 
 "hunn"="M";
 "byoo"="S";
 
-"history"="History";
+"history"="Historia";
 
-"btnStart"="Start";
-"btnStop" ="Stop";
-"btnReset"="Reset";
+"btnStart"="alku";
+"btnStop" ="pysäkki";
+"btnReset"="selkeä";
 
-"btnClock"="▷Clock Mode";
-"btnTimer"="▷Timer Mode";
+"btnClock"="▷kello tilassa";
+"btnTimer"="▷Ajastintilan";
 
-"SndTtl" ="[Sound]";
-"SndMsgOn" ="On";
-"SndMsgOff"="Off";
+"SndTtl" ="[ääni]";
+"SndMsgOn" ="päälle";
+"SndMsgOff"="pois";
 
-"VibTtl" ="[vibration]";
-"VibMsgOn" ="On";
-"VibMsgOff"="Off";
+"VibTtl" ="[värähtely]";
+"VibMsgOn" ="päälle";
+"VibMsgOff"="pois";
 
-"BigTtl" ="[Button Zoom Anime]";
-"BigMsgOn" ="On";
-"BigMsgOff"="Off";
+"BigTtl" ="[Painike Zoom Anime]";
+"BigMsgOn" ="päälle";
+"BigMsgOff"="pois";
 
-"Close"="CLOSE";
-"Close_iPad"="Close";
+"Close"="SULJE";
+"Close_iPad"="lähellä";
 
-"ToReview"="To Review";
-"ToApview"="Developer APP";
-"ToGetpro"="Buy the paid Ver(No ads)";
-"LabelVer"="Number starts";
-"Label3ks"=".  ~ Thanks a lot! ~";
+"ToReview"="Tarkastelu";
+"ToApview"="kehittäjä APP";
+//"ToGetpro"="Ostaa maksullisen version";
+"LabelVer"="APP Versio : ";
+"LabelNum"="  Numerointi alkaa : ";
+"Label3ks"=".  ~ Kiitos! ~";

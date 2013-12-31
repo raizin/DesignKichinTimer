@@ -5,38 +5,40 @@
  Created by z on 2013/10/24.
  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
  */
+/* ウクライナ語 / ukrainian / український */
 "hun"="min";
 "byo"="s";
 
 "hunn"="M";
 "byoo"="S";
 
-"history"="History";
+"history"="Історія";
 
-"btnStart"="Start";
-"btnStop" ="Stop";
-"btnReset"="Reset";
+"btnStart"="початок";
+"btnStop" ="зупинити";
+"btnReset"="Назад";
 
-"btnClock"="▷Clock Mode";
-"btnTimer"="▷Timer Mode";
+"btnClock"="▷Режим годин";
+"btnTimer"="▷таймера";
 
-"SndTtl" ="[Sound]";
-"SndMsgOn" ="On";
-"SndMsgOff"="Off";
+"SndTtl" ="[Звук]";
+"SndMsgOn" ="Ефективність";
+"SndMsgOff"="Інвалід";
 
-"VibTtl" ="[vibration]";
-"VibMsgOn" ="On";
-"VibMsgOff"="Off";
+"VibTtl" ="[вібрація]";
+"VibMsgOn" ="Ефективність";
+"VibMsgOff"="Інвалід";
 
-"BigTtl" ="[Button Zoom Anime]";
-"BigMsgOn" ="On";
-"BigMsgOff"="Off";
+"BigTtl" ="[Кнопка Збільшити Аніме]";
+"BigMsgOn" ="Ефективність";
+"BigMsgOff"="Інвалід";
 
-"Close"="CLOSE";
-"Close_iPad"="Close";
+"Close"="Близько";
+"Close_iPad"="Близько";
 
-"ToReview"="To Review";
-"ToApview"="Developer APP";
-"ToGetpro"="Buy the paid Ver(No ads)";
-"LabelVer"="Number starts";
-"Label3ks"=".  ~ Thanks a lot! ~";
+"ToReview"="Щоб перевірити";
+"ToApview"="Розробник APP";
+//"ToGetpro"="Купити платну версію";
+"LabelVer"="APP Версія : ";
+"LabelNum"="  Кількість пусків : ";
+"Label3ks"=". ~Завдяки!~";

@@ -5,38 +5,40 @@
  Created by z on 2013/10/24.
  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
  */
+/* スロバキア語 / slovak / slovenčina */
 "hun"="min";
 "byo"="s";
 
 "hunn"="M";
 "byoo"="S";
 
-"history"="History";
+"history"="História";
 
-"btnStart"="Start";
+"btnStart"="štart";
 "btnStop" ="Stop";
-"btnReset"="Reset";
+"btnReset"="Návrat";
 
-"btnClock"="▷Clock Mode";
-"btnTimer"="▷Timer Mode";
+"btnClock"="▷Režim hodín";
+"btnTimer"="▷časovača";
 
-"SndTtl" ="[Sound]";
-"SndMsgOn" ="On";
-"SndMsgOff"="Off";
+"SndTtl" ="[Zvuk]";
+"SndMsgOn" ="Účinnosť";
+"SndMsgOff"="od";
 
-"VibTtl" ="[vibration]";
-"VibMsgOn" ="On";
-"VibMsgOff"="Off";
+"VibTtl" ="[chvenie]";
+"VibMsgOn" ="Účinnosť";
+"VibMsgOff"="od";
 
-"BigTtl" ="[Button Zoom Anime]";
-"BigMsgOn" ="On";
-"BigMsgOff"="Off";
+"BigTtl" ="[Tlačidlo Zoom Anime]";
+"BigMsgOn" ="Účinnosť";
+"BigMsgOff"="od";
 
-"Close"="CLOSE";
-"Close_iPad"="Close";
+"Close"="Zavrieť";
+"Close_iPad"="Zavrieť";
 
-"ToReview"="To Review";
+"ToReview"="Píšem recenziu";
 "ToApview"="Developer APP";
-"ToGetpro"="Buy the paid Ver(No ads)";
-"LabelVer"="Number starts";
-"Label3ks"=".  ~ Thanks a lot! ~";
+//"ToGetpro"="Kúpte si platenú verziu";
+"LabelVer"="APP verzia : ";
+"LabelNum"="  Počet štartov : ";
+"Label3ks"=".  ~ Vďaka! ~";

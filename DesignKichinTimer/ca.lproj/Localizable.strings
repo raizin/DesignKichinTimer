@@ -5,38 +5,40 @@
  Created by z on 2013/10/24.
  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
  */
+/* カタロニア語 or カタルーニャ語 / catalan / català */
 "hun"="min";
 "byo"="s";
 
 "hunn"="M";
 "byoo"="S";
 
-"history"="History";
+"history"="història";
 
-"btnStart"="Start";
-"btnStop" ="Stop";
-"btnReset"="Reset";
+"btnStart"="Carrera";
+"btnStop" ="aturi";
+"btnReset"="reajustar";
 
-"btnClock"="▷Clock Mode";
-"btnTimer"="▷Timer Mode";
+"btnClock"="▷mode rellotge";
+"btnTimer"="▷temporitzador";
 
-"SndTtl" ="[Sound]";
-"SndMsgOn" ="On";
-"SndMsgOff"="Off";
+"SndTtl" ="[so]";
+"SndMsgOn" ="Eficàcia";
+"SndMsgOff"="apagat";
 
-"VibTtl" ="[vibration]";
-"VibMsgOn" ="On";
-"VibMsgOff"="Off";
+"VibTtl" ="[vibració]";
+"VibMsgOn" ="Eficàcia";
+"VibMsgOff"="apagat";
 
-"BigTtl" ="[Button Zoom Anime]";
-"BigMsgOn" ="On";
-"BigMsgOff"="Off";
+"BigTtl" ="[botó de zoom d'anime]";
+"BigMsgOn" ="Eficàcia";
+"BigMsgOff"="apagat";
 
-"Close"="CLOSE";
-"Close_iPad"="Close";
+"Close"="Prop";
+"Close_iPad"="Prop";
 
-"ToReview"="To Review";
-"ToApview"="Developer APP";
-"ToGetpro"="Buy the paid Ver(No ads)";
-"LabelVer"="Number starts";
-"Label3ks"=".  ~ Thanks a lot! ~";
+"ToReview"="per revisar";
+"ToApview"="desenvolupador APP";
+//"ToGetpro"="Versió de pagament";
+"LabelVer"="APP Versió:";
+"LabelNum"="  Nombre d'arrencades:";
+"Label3ks"=".  ~ Gràcies! ~";

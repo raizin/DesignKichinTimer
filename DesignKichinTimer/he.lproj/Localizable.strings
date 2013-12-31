@@ -5,38 +5,40 @@
  Created by z on 2013/10/24.
  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
  */
+/* ヘブライ語 / hebrew / עברית‎ */
 "hun"="min";
 "byo"="s";
 
 "hunn"="M";
 "byoo"="S";
 
-"history"="History";
+"history"="היסטוריה";
 
-"btnStart"="Start";
-"btnStop" ="Stop";
-"btnReset"="Reset";
+"btnStart"="התחלה";
+"btnStop" ="להפסיק";
+"btnReset"="לאתחל";
 
-"btnClock"="▷Clock Mode";
-"btnTimer"="▷Timer Mode";
+"btnClock"="▷מצב שעון";
+"btnTimer"="▷מצב טיימר";
 
-"SndTtl" ="[Sound]";
-"SndMsgOn" ="On";
-"SndMsgOff"="Off";
+"SndTtl" ="[צליל]";
+"SndMsgOn" ="יעילות";
+"SndMsgOff"="את";
 
-"VibTtl" ="[vibration]";
-"VibMsgOn" ="On";
-"VibMsgOff"="Off";
+"VibTtl" ="[רטט]";
+"VibMsgOn" ="יעילות";
+"VibMsgOff"="את";
 
-"BigTtl" ="[Button Zoom Anime]";
-"BigMsgOn" ="On";
-"BigMsgOff"="Off";
+"BigTtl" ="[לחצן זום אנימה]";
+"BigMsgOn" ="יעילות";
+"BigMsgOff"="את";
 
-"Close"="CLOSE";
-"Close_iPad"="Close";
+"Close"="לסגור";
+"Close_iPad"="לסגור";
 
-"ToReview"="To Review";
-"ToApview"="Developer APP";
-"ToGetpro"="Buy the paid Ver(No ads)";
-"LabelVer"="Number starts";
-"Label3ks"=".  ~ Thanks a lot! ~";
+"ToReview"="לסקירה";
+"ToApview"="מפתחי אפליקציות";
+//"ToGetpro"="קנה את הגרסה בתשלום";
+"LabelVer"="גרסת יישום : ";
+"LabelNum"="    מספר ההתחלות : ";
+"Label3ks"=".  ~ תודה! ~";

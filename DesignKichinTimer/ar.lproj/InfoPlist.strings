@@ -1,3 +1,6 @@
 /* Localized versions of Info.plist keys */
-
-/*** Rewirite in *-Info.plist ***/
+/* アラビア語 / arabic / اللغة العربية */
+"CFBundleName" = "اليابان المطبخ الموقت";
+"CFBundleName~ipad" = "اليابان المطبخ الموقت";
+"CFBundleDisplayName" = "المطبخ الموقت"; // iphone ipod
+"CFBundleDisplayName~ipad" = "المطبخ الموقت"; // ipad ipadmini

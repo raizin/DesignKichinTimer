@@ -4,7 +4,8 @@
  
  Created by z on 2013/10/24.
  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
-*/
+ */
+/* 日本語 / japanese */
 "hun"="分";// Button:min
 "byo"="秒";// Button:s
 
@@ -38,8 +39,9 @@
 "ToReview"="評価する";
 "ToApview"="他のアプリを見る";
 //"ToGetpro"="有料版(広告なし)を購入";
-"LabelVer"="   起動回数";
-"Label3ks"=" ";
+"LabelVer"="APP Version : ";
+"LabelNum"="    起動回数 : ";
+"Label3ks"="     ~ Thanks! ~";
 
 /*
  

@@ -5,38 +5,40 @@
  Created by z on 2013/10/24.
  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
  */
+/* イタリア語 / italian / italiano */
 "hun"="min";
 "byo"="s";
 
 "hunn"="M";
 "byoo"="S";
 
-"history"="History";
+"history"="Storia";
 
-"btnStart"="Start";
+"btnStart"="Inizio";
 "btnStop" ="Stop";
 "btnReset"="Reset";
 
-"btnClock"="▷Clock Mode";
-"btnTimer"="▷Timer Mode";
+"btnClock"="▷Modo orologio";
+"btnTimer"="▷Modo timer";
 
-"SndTtl" ="[Sound]";
-"SndMsgOn" ="On";
-"SndMsgOff"="Off";
+"SndTtl" ="[suono]";
+"SndMsgOn" ="su";
+"SndMsgOff"="spento";
 
-"VibTtl" ="[vibration]";
-"VibMsgOn" ="On";
-"VibMsgOff"="Off";
+"VibTtl" ="[vibrazione]";
+"VibMsgOn" ="su";
+"VibMsgOff"="spento";
 
-"BigTtl" ="[Button Zoom Anime]";
-"BigMsgOn" ="On";
-"BigMsgOff"="Off";
+"BigTtl" ="[Pulsante Zoom Anime]";
+"BigMsgOn" ="su";
+"BigMsgOff"="spento";
 
-"Close"="CLOSE";
-"Close_iPad"="Close";
+"Close"="CHIUDI";
+"Close_iPad"="Vicino";
 
-"ToReview"="To Review";
-"ToApview"="Developer APP";
-"ToGetpro"="Buy the paid Ver(No ads)";
-"LabelVer"="Number starts";
-"Label3ks"=".  ~ Thanks a lot! ~";
+"ToReview"="per Recensione";
+"ToApview"="sviluppatore APP";
+//"ToGetpro"="Acquista la ver a pagamento";
+"LabelVer"="APP Ver.:";
+"LabelNum"="  Numero di avviamenti:";
+"Label3ks"=".  ~ Grazie! ~";

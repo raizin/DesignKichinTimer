@@ -4,7 +4,8 @@
  
  Created by z on 2013/10/24.
  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
-*/
+ */
+/* フランス語 / french / français */
 "hun"="min";
 "byo"="s";
 
@@ -37,6 +38,7 @@
 
 "ToReview"="à revoir";
 "ToApview"="Développeur APP";
-//"ToGetpro"="Acheter le Ver payé (Pas d'annonces)";
-"LabelVer"="Nombre départs";
+//"ToGetpro"="Acheter le Ver payé";
+"LabelVer"="APP Version : ";
+"LabelNum"="  Nombre de start : ";
 "Label3ks"=".  ~ Merci! ~";

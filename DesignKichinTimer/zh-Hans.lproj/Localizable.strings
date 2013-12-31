@@ -5,38 +5,40 @@
  Created by z on 2013/10/24.
  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
  */
-"hun"="min";
-"byo"="s";
+/* 中国語 / chinese [simplified] / 简体中文 */
+"hun"="分";// Button:min
+"byo"="秒";// Button:s
 
-"hunn"="M";
-"byoo"="S";
+"hunn"="分";// Label:M
+"byoo"="秒";// Label:S
 
-"history"="History";
+"history"="历史";
 
-"btnStart"="Start";
-"btnStop" ="Stop";
-"btnReset"="Reset";
+"btnStart"="开始";
+"btnStop" ="停止";
+"btnReset"="复位";
 
-"btnClock"="▷Clock Mode";
-"btnTimer"="▷Timer Mode";
+"btnClock"="▷时钟模式";
+"btnTimer"="▷定时器模式";
 
-"SndTtl" ="[Sound]";
-"SndMsgOn" ="On";
-"SndMsgOff"="Off";
+"SndTtl" ="[声音]";
+"SndMsgOn" ="效用";
+"SndMsgOff"="无效";
 
-"VibTtl" ="[vibration]";
-"VibMsgOn" ="On";
-"VibMsgOff"="Off";
+"VibTtl" ="[振动]";
+"VibMsgOn" ="效用";
+"VibMsgOff"="无效";
 
-"BigTtl" ="[Button Zoom Anime]";
-"BigMsgOn" ="On";
-"BigMsgOff"="Off";
+"BigTtl" ="[按钮变焦动漫]";
+"BigMsgOn" ="效用";
+"BigMsgOff"="无效";
 
-"Close"="CLOSE";
-"Close_iPad"="Close";
+"Close"="关闭";
+"Close_iPad"="关闭";
 
-"ToReview"="To Review";
-"ToApview"="Developer APP";
-"ToGetpro"="Buy the paid Ver(No ads)";
-"LabelVer"="Number starts";
-"Label3ks"=".  ~ Thanks a lot! ~";
+"ToReview"="检讨";
+"ToApview"="开发者的 APP";
+//"ToGetpro"="购买付费版（无广告）";
+"LabelVer"="APP 版本 : ";
+"LabelNum"="    起动次数 : ";
+"Label3ks"=".  ~ 谢谢! ~";

@@ -1,3 +1,6 @@
 /* Localized versions of Info.plist keys */
-
-/*** Rewirite in *-Info.plist ***/
+/* 朝鮮語 / korean / 한국어 */
+"CFBundleName" = "편리한 키친 타이머";
+"CFBundleName~ipad" = "편리한 키친 타이머";
+"CFBundleDisplayName" = "편리한 타이머"; // iphone ipod
+"CFBundleDisplayName~ipad" = "편리한 주방 타이머"; // ipad ipadmini

@@ -5,38 +5,40 @@
  Created by z on 2013/10/24.
  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
  */
+/* クロアチア語 / croatian / hrvatski */
 "hun"="min";
 "byo"="s";
 
 "hunn"="M";
 "byoo"="S";
 
-"history"="History";
+"history"="Povijest";
 
-"btnStart"="Start";
-"btnStop" ="Stop";
-"btnReset"="Reset";
+"btnStart"="početak";
+"btnStop" ="zaustaviti";
+"btnReset"="Povratak";
 
-"btnClock"="▷Clock Mode";
-"btnTimer"="▷Timer Mode";
+"btnClock"="▷Način sat";
+"btnTimer"="▷Način timer";
 
-"SndTtl" ="[Sound]";
-"SndMsgOn" ="On";
-"SndMsgOff"="Off";
+"SndTtl" ="[zvuk]";
+"SndMsgOn" ="Efikasnost";
+"SndMsgOff"="isključen";
 
-"VibTtl" ="[vibration]";
-"VibMsgOn" ="On";
-"VibMsgOff"="Off";
+"VibTtl" ="[vibracija]";
+"VibMsgOn" ="Efikasnost";
+"VibMsgOff"="isključen";
 
-"BigTtl" ="[Button Zoom Anime]";
-"BigMsgOn" ="On";
-"BigMsgOff"="Off";
+"BigTtl" ="[Gumb za zumiranje anime]";
+"BigMsgOn" ="Efikasnost";
+"BigMsgOff"="isključen";
 
-"Close"="CLOSE";
-"Close_iPad"="Close";
+"Close"="Blizu";
+"Close_iPad"="Blizu";
 
-"ToReview"="To Review";
+"ToReview"="Za pregled";
 "ToApview"="Developer APP";
-"ToGetpro"="Buy the paid Ver(No ads)";
-"LabelVer"="Number starts";
-"Label3ks"=".  ~ Thanks a lot! ~";
+//"ToGetpro"="Kupi plaćeni verzija";
+"LabelVer"="APP Verzija : ";
+"LabelNum"="  Broj startanja : ";
+"Label3ks"=".  ~ Hvala! ~";

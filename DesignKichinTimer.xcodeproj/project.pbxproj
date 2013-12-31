@@ -159,8 +159,6 @@
 		5EFF66E7187003B900F7D31E /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5EFF66E8187003C200F7D31E /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5EFF66E9187003C200F7D31E /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
-		5EFF66EA187003CB00F7D31E /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		5EFF66EB187003CB00F7D31E /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		5EFF66EC187003D200F7D31E /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5EFF66ED187003D200F7D31E /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5EFF66EE187003DA00F7D31E /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -586,7 +584,6 @@
 				5EFF66E5187003B000F7D31E /* es */,
 				5EFF66E7187003B900F7D31E /* it */,
 				5EFF66E9187003C200F7D31E /* pt */,
-				5EFF66EB187003CB00F7D31E /* pt-PT */,
 				5EFF66ED187003D200F7D31E /* nl */,
 				5EFF66EF187003DA00F7D31E /* sv */,
 				5EFF66F1187003E700F7D31E /* nb */,
@@ -624,7 +621,6 @@
 				5EFF66E4187003B000F7D31E /* es */,
 				5EFF66E6187003B900F7D31E /* it */,
 				5EFF66E8187003C200F7D31E /* pt */,
-				5EFF66EA187003CB00F7D31E /* pt-PT */,
 				5EFF66EC187003D200F7D31E /* nl */,
 				5EFF66EE187003DA00F7D31E /* sv */,
 				5EFF66F0187003E700F7D31E /* nb */,

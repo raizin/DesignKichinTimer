@@ -9,9 +9,9 @@
 	<key>CFBundleDisplayName~ipad</key>
 	<string>JPNKitchenTimer</string>
 	<key>CFBundleName</key>
-	<string>KitchenTimer</string>
+	<string>Kitchen Timer</string>
 	<key>CFBundleName~ipad</key>
-	<string>JPNKitchenTimer</string>
+	<string>Japan Kitchen Timer</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>

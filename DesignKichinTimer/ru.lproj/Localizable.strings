@@ -5,38 +5,40 @@
  Created by z on 2013/10/24.
  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
  */
+/* ロシア語 / russian / русский язык */
 "hun"="min";
 "byo"="s";
 
 "hunn"="M";
 "byoo"="S";
 
-"history"="History";
+"history"="история";
 
-"btnStart"="Start";
-"btnStop" ="Stop";
-"btnReset"="Reset";
+"btnStart"="начало";
+"btnStop" ="Стоп";
+"btnReset"="сброс";
 
-"btnClock"="▷Clock Mode";
-"btnTimer"="▷Timer Mode";
+"btnClock"="▷Режим часов";
+"btnTimer"="▷таймера";
 
-"SndTtl" ="[Sound]";
-"SndMsgOn" ="On";
-"SndMsgOff"="Off";
+"SndTtl" ="[звук]";
+"SndMsgOn" ="на";
+"SndMsgOff"="от";
 
-"VibTtl" ="[vibration]";
-"VibMsgOn" ="On";
-"VibMsgOff"="Off";
+"VibTtl" ="[вибрация]";
+"VibMsgOn" ="на";
+"VibMsgOff"="от";
 
-"BigTtl" ="[Button Zoom Anime]";
-"BigMsgOn" ="On";
-"BigMsgOff"="Off";
+"BigTtl" ="[Кнопка Увеличить Аниме]";
+"BigMsgOn" ="на";
+"BigMsgOff"="от";
 
-"Close"="CLOSE";
-"Close_iPad"="Close";
+"Close"="ЗАКРЫТЬ";
+"Close_iPad"="близко";
 
-"ToReview"="To Review";
-"ToApview"="Developer APP";
-"ToGetpro"="Buy the paid Ver(No ads)";
-"LabelVer"="Number starts";
-"Label3ks"=".  ~ Thanks a lot! ~";
+"ToReview"="Чтобы проверить";
+"ToApview"="Разработчик APP";
+//"ToGetpro"="Купить платную версию";
+"LabelVer"="APP Версия : ";
+"LabelNum"="  Количество пусков : ";
+"Label3ks"=". Благодаря!";

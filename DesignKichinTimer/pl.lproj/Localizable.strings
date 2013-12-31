@@ -5,38 +5,40 @@
  Created by z on 2013/10/24.
  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
  */
+/* ポーランド語 / polish / polski */
 "hun"="min";
 "byo"="s";
 
 "hunn"="M";
 "byoo"="S";
 
-"history"="History";
+"history"="Historia";
 
-"btnStart"="Start";
+"btnStart"="początek";
 "btnStop" ="Stop";
-"btnReset"="Reset";
+"btnReset"="Powrót";
 
-"btnClock"="▷Clock Mode";
-"btnTimer"="▷Timer Mode";
+"btnClock"="▷Tryb zegara";
+"btnTimer"="▷Tryb minutnik";
 
-"SndTtl" ="[Sound]";
-"SndMsgOn" ="On";
-"SndMsgOff"="Off";
+"SndTtl" ="[brzmieć]";
+"SndMsgOn" ="na";
+"SndMsgOff"="z";
 
-"VibTtl" ="[vibration]";
-"VibMsgOn" ="On";
-"VibMsgOff"="Off";
+"VibTtl" ="[wibracja]";
+"VibMsgOn" ="na";
+"VibMsgOff"="z";
 
-"BigTtl" ="[Button Zoom Anime]";
-"BigMsgOn" ="On";
-"BigMsgOff"="Off";
+"BigTtl" ="[Przycisk zoom Anime]";
+"BigMsgOn" ="na";
+"BigMsgOff"="z";
 
-"Close"="CLOSE";
-"Close_iPad"="Close";
+"Close"="Blisko";
+"Close_iPad"="blisko";
 
-"ToReview"="To Review";
-"ToApview"="Developer APP";
-"ToGetpro"="Buy the paid Ver(No ads)";
-"LabelVer"="Number starts";
-"Label3ks"=".  ~ Thanks a lot! ~";
+"ToReview"="do Skomentuj";
+"ToApview"="deweloper APP";
+//"ToGetpro"="Kup wersji płatnej";
+"LabelVer"="APP wersja : ";
+"LabelNum"=" Liczba rozruchów : ";
+"Label3ks"=".  ~ Dziękuję! ~";

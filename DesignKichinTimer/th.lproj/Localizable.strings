@@ -5,38 +5,40 @@
  Created by z on 2013/10/24.
  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
  */
+/* タイ語 / thai / ภาษาไทย */
 "hun"="min";
 "byo"="s";
 
 "hunn"="M";
 "byoo"="S";
 
-"history"="History";
+"history"="ประวัติศาสตร์";
 
-"btnStart"="Start";
-"btnStop" ="Stop";
-"btnReset"="Reset";
+"btnStart"="เริ่มต้น";
+"btnStop" ="หยุด";
+"btnReset"="ตั้งใหม่";
 
-"btnClock"="▷Clock Mode";
-"btnTimer"="▷Timer Mode";
+"btnClock"="▷โหมดนาฬิกา";
+"btnTimer"="▷โหมดตั้งเวลา";
 
-"SndTtl" ="[Sound]";
-"SndMsgOn" ="On";
-"SndMsgOff"="Off";
+"SndTtl" ="[เสียง]";
+"SndMsgOn" ="ประสิทธิผล";
+"SndMsgOff"="โมฆะ";
 
-"VibTtl" ="[vibration]";
-"VibMsgOn" ="On";
-"VibMsgOff"="Off";
+"VibTtl" ="[การสั่นสะเทือน]";
+"VibMsgOn" ="ประสิทธิผล";
+"VibMsgOff"="โมฆะ";
 
-"BigTtl" ="[Button Zoom Anime]";
-"BigMsgOn" ="On";
-"BigMsgOff"="Off";
+"BigTtl" ="[ปุ่มซูมอะนิเมะ]";
+"BigMsgOn" ="ประสิทธิผล";
+"BigMsgOff"="โมฆะ";
 
-"Close"="CLOSE";
-"Close_iPad"="Close";
+"Close"="ใกล้";
+"Close_iPad"="ใกล้";
 
-"ToReview"="To Review";
-"ToApview"="Developer APP";
-"ToGetpro"="Buy the paid Ver(No ads)";
-"LabelVer"="Number starts";
-"Label3ks"=".  ~ Thanks a lot! ~";
+"ToReview"="เพื่อทบทวน";
+"ToApview"="ผู้พัฒนา APP";
+//"ToGetpro"="ซื้อรุ่นที่จ่าย (ไม่มีโฆษณา)";
+"LabelVer"="APP เวอร์ชัน : ";
+"LabelNum"="  จำนวนเริ่มต้น : ";
+"Label3ks"=".  ~ ขอบคุณ! ~";

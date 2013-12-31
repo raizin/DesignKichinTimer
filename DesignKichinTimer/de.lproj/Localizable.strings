@@ -5,22 +5,23 @@
  Created by z on 2013/10/24.
  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
  */
+/* ドイツ語 / german / Deutsch */
 "hun"="min";
 "byo"="s";
 
 "hunn"="M";
 "byoo"="S";
 
-"history"="History";
+"history"="Geschichte";
 
 "btnStart"="Start";
-"btnStop" ="Stop";
+"btnStop" ="Stopp";
 "btnReset"="Reset";
 
-"btnClock"="▷Clock Mode";
-"btnTimer"="▷Timer Mode";
+"btnClock"="▷Uhr Modus";
+"btnTimer"="▷Timer Modus";
 
-"SndTtl" ="[Sound]";
+"SndTtl" ="[Klingen]";
 "SndMsgOn" ="On";
 "SndMsgOff"="Off";
 
@@ -32,11 +33,12 @@
 "BigMsgOn" ="On";
 "BigMsgOff"="Off";
 
-"Close"="CLOSE";
-"Close_iPad"="Close";
+"Close"="ENDE";
+"Close_iPad"="Ende";
 
-"ToReview"="To Review";
-"ToApview"="Developer APP";
-"ToGetpro"="Buy the paid Ver(No ads)";
-"LabelVer"="Number starts";
-"Label3ks"=".  ~ Thanks a lot! ~";
+"ToReview"="Um schreiben";
+"ToApview"="Entwickler APP";
+//"ToGetpro"="Kaufen Sie die gezahlten Ver";
+"LabelVer"="APP Version : ";
+"LabelNum"="  Anzahl der Starts : ";
+"Label3ks"=".  ~ Dank! ~";
