@@ -108,7 +108,7 @@
       
       closeBtn.frame = CGRectMake(width -100, height -90, 100, 90); // x y w h
       closeBtn.contentEdgeInsets = UIEdgeInsetsMake(75.f, 20.f, 0.f, 0.f); // 上 左 下 右
-      toReviewBtn.layer.frame = CGRectMake(72.5f, height -160, 175, 40);// x y
+      toReviewBtn.layer.frame = CGRectMake(72.5f, height -160, 185, 40);// x y
       toApviewBtn.layer.frame = CGRectMake(72.5f, height -110, 185, 40);// x y
       
       label3ks.frame = CGRectMake(30, height/2 +10, width-30, 30);// x y w h
@@ -119,7 +119,7 @@
       
       closeBtn.frame = CGRectMake(height -100, width -90, 100, 90); // x y w h
       closeBtn.contentEdgeInsets = UIEdgeInsetsMake(75.f, 20.f, 0.f, 0.f); // 上 左 下 右
-      toReviewBtn.layer.frame = CGRectMake( 50, width -100, 175, 40);// x y
+      toReviewBtn.layer.frame = CGRectMake( 50, width -100, 185, 40);// x y
       toApviewBtn.layer.frame = CGRectMake(250, width -100, 185, 40);// x y
       
       label3ks.frame = CGRectMake(100, width/2  -5, height-100, 30);// x y w h
