@@ -56,6 +56,10 @@
 		5EC2DCD21830A52A003E1D5C /* pi_old.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5EC2DCD11830A52A003E1D5C /* pi_old.mp3 */; };
 		5ECB0D271832038400103C18 /* piLong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5ECB0D261832038400103C18 /* piLong.mp3 */; };
 		5ECB0D371832173700103C18 /* pi_mono.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5ECB0D361832173700103C18 /* pi_mono.mp3 */; };
+		5ED3AC061873760F00C096DB /* Icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ED3AC021873760F00C096DB /* Icon-57.png */; };
+		5ED3AC071873760F00C096DB /* Icon-57@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ED3AC031873760F00C096DB /* Icon-57@2x.png */; };
+		5ED3AC081873760F00C096DB /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ED3AC041873760F00C096DB /* Icon-72.png */; };
+		5ED3AC091873760F00C096DB /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ED3AC051873760F00C096DB /* Icon-72@2x.png */; };
 		5EDE090A185CC89A00660FF9 /* ResetBtnScaleOnFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDE0909185CC89A00660FF9 /* ResetBtnScaleOnFlag.m */; };
 		5EF44FC5186B5D6900E7494A /* MyInfoBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF44FC1186B5D6900E7494A /* MyInfoBtn.m */; };
 		5EF44FC6186B5D6900E7494A /* TriangleBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF44FC3186B5D6900E7494A /* TriangleBtn.m */; };
@@ -140,6 +144,10 @@
 		5EC2DCD11830A52A003E1D5C /* pi_old.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pi_old.mp3; sourceTree = "<group>"; };
 		5ECB0D261832038400103C18 /* piLong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = piLong.mp3; sourceTree = "<group>"; };
 		5ECB0D361832173700103C18 /* pi_mono.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pi_mono.mp3; sourceTree = "<group>"; };
+		5ED3AC021873760F00C096DB /* Icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-57.png"; sourceTree = "<group>"; };
+		5ED3AC031873760F00C096DB /* Icon-57@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-57@2x.png"; sourceTree = "<group>"; };
+		5ED3AC041873760F00C096DB /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		5ED3AC051873760F00C096DB /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
 		5EDE0908185CC89A00660FF9 /* ResetBtnScaleOnFlag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetBtnScaleOnFlag.h; sourceTree = "<group>"; };
 		5EDE0909185CC89A00660FF9 /* ResetBtnScaleOnFlag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetBtnScaleOnFlag.m; sourceTree = "<group>"; };
 		5EF44FC1186B5D6900E7494A /* MyInfoBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfoBtn.m; sourceTree = "<group>"; };
@@ -265,6 +273,10 @@
 		5E220DD21842630700D2ACB0 /* IconPng-Professional */ = {
 			isa = PBXGroup;
 			children = (
+				5ED3AC021873760F00C096DB /* Icon-57.png */,
+				5ED3AC031873760F00C096DB /* Icon-57@2x.png */,
+				5ED3AC041873760F00C096DB /* Icon-72.png */,
+				5ED3AC051873760F00C096DB /* Icon-72@2x.png */,
 				5E10672B18735FD300956374 /* Icon-60.png */,
 				5E10672C18735FD300956374 /* Icon-60@2x.png */,
 				5E10672D18735FD300956374 /* Icon-76.png */,
@@ -495,10 +507,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ED3AC061873760F00C096DB /* Icon-57.png in Resources */,
 				5ECB0D371832173700103C18 /* pi_mono.mp3 in Resources */,
 				5E8BC37C185EE75400C2802E /* IconBigOn.png in Resources */,
 				5EA2C0A01811865E00B0FC3D /* .gitignore in Resources */,
 				5E24807E18571ACD0032AF77 /* IconSndTouch.png in Resources */,
+				5ED3AC081873760F00C096DB /* Icon-72.png in Resources */,
 				5E10672F18735FD300956374 /* Icon-60.png in Resources */,
 				5E23549E186ED9480055217F /* .gitattributes in Resources */,
 				5EC2DCD21830A52A003E1D5C /* pi_old.mp3 in Resources */,
@@ -512,7 +526,9 @@
 				5ECB0D271832038400103C18 /* piLong.mp3 in Resources */,
 				5E6F4B3E18117F7600312CCD /* Main_iPhone.storyboard in Resources */,
 				5EF44FCA186B5EEA00E7494A /* IconInfoTouch.png in Resources */,
+				5ED3AC091873760F00C096DB /* Icon-72@2x.png in Resources */,
 				5E10673118735FD300956374 /* Icon-76.png in Resources */,
+				5ED3AC071873760F00C096DB /* Icon-57@2x.png in Resources */,
 				5E10673218735FD300956374 /* Icon-76@2x.png in Resources */,
 				5E24808318571ADE0032AF77 /* IconVibTouch.png in Resources */,
 				5E24807F18571ACD0032AF77 /* IconSndOn.png in Resources */,
