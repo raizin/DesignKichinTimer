@@ -3,7 +3,7 @@
 /*** ローカライズしたいものだけ書く それ以外は、*-Info.plistのソースに追加すること ***/
 
 /* 日本語 / japanese */
-"CFBundleName" = "便利タイマー";
-"CFBundleName~ipad" = "キッチンタイマー";
+"CFBundleName" = "便利キッチンタイマー";
+"CFBundleName~ipad" = "便利キッチンタイマー";
 "CFBundleDisplayName" = "便利タイマー"; // iphone ipod
 "CFBundleDisplayName~ipad" = "キッチンタイマー"; // ipad ipadmini
