@@ -1,3 +1,6 @@
 /* Localized versions of Info.plist keys */
-
-/*** Rewirite in *-Info.plist ***/
+/* フィンランド語 / finnish / suomi */
+"CFBundleName" = "japani keittiöajastin Vapaa";
+"CFBundleName~ipad" = "japani keittiöajastin Vapaa";
+"CFBundleDisplayName" = "keittiöajastin"; // iphone ipod
+"CFBundleDisplayName~ipad" = "keittiöajastin"; // ipad ipadmini

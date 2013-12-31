@@ -5,38 +5,39 @@
  Created by z on 2013/10/24.
  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
  */
+/* ハンガリー語 / hungarian / magyar */
 "hun"="min";
 "byo"="s";
 
 "hunn"="M";
 "byoo"="S";
 
-"history"="History";
+"history"="Történelem";
 
-"btnStart"="Start";
-"btnStop" ="Stop";
-"btnReset"="Reset";
+"btnStart"="kezdet";
+"btnStop" ="megáll";
+"btnReset"="vissza";
 
-"btnClock"="▷Clock Mode";
-"btnTimer"="▷Timer Mode";
+"btnClock"="▷Óra";
+"btnTimer"="▷időzítő";
 
-"SndTtl" ="[Sound]";
+"SndTtl" ="[hang]";
 "SndMsgOn" ="On";
-"SndMsgOff"="Off";
+"SndMsgOff"="le";
 
-"VibTtl" ="[vibration]";
+"VibTtl" ="[rezgés]";
 "VibMsgOn" ="On";
-"VibMsgOff"="Off";
+"VibMsgOff"="le";
 
-"BigTtl" ="[Button Zoom Anime]";
+"BigTtl" ="[Gomb Zoom Anime]";
 "BigMsgOn" ="On";
-"BigMsgOff"="Off";
+"BigMsgOff"="le ";
 
-"Close"="CLOSE";
-"Close_iPad"="Close";
+"Close"="szorosan";
+"Close_iPad"="szorosan";
 
-"ToReview"="To Review";
-"ToApview"="Developer APP";
-"ToGetpro"="Buy the paid Ver(No ads)";
-"LabelVer"="Number starts";
-"Label3ks"=".  ~ Thanks a lot! ~";
+"ToReview"="To áttekintése";
+"ToApview"="Fejlesztői APP";
+"ToGetpro"="Fizetett változat";
+"LabelVer"="Indítások száma";
+"Label3ks"=".  ~ Köszönjük! ~";

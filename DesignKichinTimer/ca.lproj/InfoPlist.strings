@@ -1,3 +1,6 @@
 /* Localized versions of Info.plist keys */
-
-/*** Rewirite in *-Info.plist ***/
+/* カタロニア語 or カタルーニャ語 / catalan / català */
+"CFBundleName" = "Japó temporitzador gratis";
+"CFBundleName~ipad" = "Japó temporitzador de cuina gratis";
+"CFBundleDisplayName" = "JP_Timer"; // iphone ipod
+"CFBundleDisplayName~ipad" = "JPtemporitzador"; // ipad ipadmini

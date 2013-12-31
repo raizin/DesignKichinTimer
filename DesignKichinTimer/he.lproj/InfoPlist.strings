@@ -1,3 +1,6 @@
 /* Localized versions of Info.plist keys */
-
-/*** Rewirite in *-Info.plist ***/
+/* ヘブライ語 / hebrew / עברית‎ */
+"CFBundleName" = "המטבח טיימר ללא יפן";
+"CFBundleName~ipad" = "המטבח טיימר ללא יפן";
+"CFBundleDisplayName" = "טיימר למטבח"; // iphone ipod
+"CFBundleDisplayName~ipad" = "טיימר למטבח"; // ipad ipadmini

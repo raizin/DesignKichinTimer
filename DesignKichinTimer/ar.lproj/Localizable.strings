@@ -5,38 +5,39 @@
  Created by z on 2013/10/24.
  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
  */
-"hun"="min";
-"byo"="s";
+/* アラビア語 / arabic / اللغة العربية */
+"hun"="دقيقة";
+"byo"="ثان";
 
-"hunn"="M";
-"byoo"="S";
+"hunn"="دقيقة";
+"byoo"="ثان";
 
-"history"="History";
+"history"="تاريخ";
 
-"btnStart"="Start";
-"btnStop" ="Stop";
-"btnReset"="Reset";
+"btnStart"="بداية";
+"btnStop" ="توقف";
+"btnReset"="إعادة تعيين";
 
-"btnClock"="▷Clock Mode";
-"btnTimer"="▷Timer Mode";
+"btnClock"="▷على مدار الساعة";
+"btnTimer"="▷الوضع الموقت";
 
-"SndTtl" ="[Sound]";
-"SndMsgOn" ="On";
-"SndMsgOff"="Off";
+"SndTtl" ="[صوت]";
+"SndMsgOn" ="فعالية";
+"SndMsgOff"="باطل";
 
-"VibTtl" ="[vibration]";
-"VibMsgOn" ="On";
-"VibMsgOff"="Off";
+"VibTtl" ="[اهتزاز]";
+"VibMsgOn" ="فعالية";
+"VibMsgOff"="باطل";
 
-"BigTtl" ="[Button Zoom Anime]";
-"BigMsgOn" ="On";
-"BigMsgOff"="Off";
+"BigTtl" ="[زر التكبير صور رمزية]";
+"BigMsgOn" ="فعالية";
+"BigMsgOff"="باطل";
 
-"Close"="CLOSE";
-"Close_iPad"="Close";
+"Close"="قريب";
+"Close_iPad"="قريب";
 
-"ToReview"="To Review";
-"ToApview"="Developer APP";
-"ToGetpro"="Buy the paid Ver(No ads)";
-"LabelVer"="Number starts";
-"Label3ks"=".  ~ Thanks a lot! ~";
+"ToReview"="لاستعراض";
+"ToApview"="المطور APP";
+"ToGetpro"="شراء النسخة المدفوعة (لا الإعلانات)";
+"LabelVer"="عدد بدايات التشغيل";
+"Label3ks"=".  ~ وذلك بفضل! ~";

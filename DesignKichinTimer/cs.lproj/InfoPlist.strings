@@ -1,3 +1,6 @@
 /* Localized versions of Info.plist keys */
-
-/*** Rewirite in *-Info.plist ***/
+/* チェコ語 / czech / čeština */
+"CFBundleName" = "japonsko časovač zdarma";
+"CFBundleName~ipad" = "japonsko kuchyně časovač zdarma";
+"CFBundleDisplayName" = "JPNČasovač"; // iphone ipod
+"CFBundleDisplayName~ipad" = "JPNČasovač"; // ipad ipadmini

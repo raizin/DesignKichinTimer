@@ -1,3 +1,6 @@
 /* Localized versions of Info.plist keys */
-
-/*** Rewirite in *-Info.plist ***/
+/* デンマーク語 / danish / dansk */
+"CFBundleName" = "japan køkken timer fri";
+"CFBundleName~ipad" = "japan køkken timer fri";
+"CFBundleDisplayName" = "KøkkenTimer"; // iphone ipod
+"CFBundleDisplayName~ipad" = "JPNKøkkenTimer"; // ipad ipadmini

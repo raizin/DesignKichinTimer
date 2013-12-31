@@ -5,38 +5,39 @@
  Created by z on 2013/10/24.
  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
  */
+/* ギリシャ語 / greek / Ελληνικά */
 "hun"="min";
 "byo"="s";
 
 "hunn"="M";
 "byoo"="S";
 
-"history"="History";
+"history"="Ιστορία";
 
-"btnStart"="Start";
-"btnStop" ="Stop";
-"btnReset"="Reset";
+"btnStart"="αρχή";
+"btnStop" ="στάση";
+"btnReset"="Απόδοση";
 
-"btnClock"="▷Clock Mode";
-"btnTimer"="▷Timer Mode";
+"btnClock"="▷Ρολογιού";
+"btnTimer"="▷χρονοδιακόπτη";
 
-"SndTtl" ="[Sound]";
-"SndMsgOn" ="On";
-"SndMsgOff"="Off";
+"SndTtl" ="[ήχος]";
+"SndMsgOn" ="Αποτελεσματικότητα";
+"SndMsgOff"="μακριά από";
 
-"VibTtl" ="[vibration]";
-"VibMsgOn" ="On";
-"VibMsgOff"="Off";
+"VibTtl" ="[δόνηση]";
+"VibMsgOn" ="Αποτελεσματικότητα";
+"VibMsgOff"="μακριά από";
 
-"BigTtl" ="[Button Zoom Anime]";
-"BigMsgOn" ="On";
-"BigMsgOff"="Off";
+"BigTtl" ="[Κουμπί ζουμ anime]";
+"BigMsgOn" ="Αποτελεσματικότητα";
+"BigMsgOff"="μακριά από";
 
-"Close"="CLOSE";
-"Close_iPad"="Close";
+"Close"="Κοντά";
+"Close_iPad"="Κοντά";
 
-"ToReview"="To Review";
-"ToApview"="Developer APP";
-"ToGetpro"="Buy the paid Ver(No ads)";
-"LabelVer"="Number starts";
-"Label3ks"=".  ~ Thanks a lot! ~";
+"ToReview"="Γράφω μια κριτική";
+"ToApview"="Προγραμματιστής APP";
+"ToGetpro"="πληρωμένη έκδοση";
+"LabelVer"="αριθμός ξεκινά";
+"Label3ks"=". Ευχαριστώ!";

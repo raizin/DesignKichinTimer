@@ -11,32 +11,32 @@
 "hunn"="M";
 "byoo"="S";
 
-"history"="History";
+"history"="Tarih";
 
-"btnStart"="Start";
-"btnStop" ="Stop";
-"btnReset"="Reset";
+"btnStart"="başlangıç";
+"btnStop" ="dur";
+"btnReset"="Silinti";
 
-"btnClock"="▷Clock Mode";
-"btnTimer"="▷Timer Mode";
+"btnClock"="▷Saat modu";
+"btnTimer"="▷zamanlayıcı";
 
-"SndTtl" ="[Sound]";
-"SndMsgOn" ="On";
-"SndMsgOff"="Off";
+"SndTtl" ="[ses]";
+"SndMsgOn" ="Etki";
+"SndMsgOff"="Geçersiz";
 
-"VibTtl" ="[vibration]";
-"VibMsgOn" ="On";
-"VibMsgOff"="Off";
+"VibTtl" ="[titreşim]";
+"VibMsgOn" ="Etki";
+"VibMsgOff"="Geçersiz";
 
-"BigTtl" ="[Button Zoom Anime]";
-"BigMsgOn" ="On";
-"BigMsgOff"="Off";
+"BigTtl" ="[düğmesi zoom anime]";
+"BigMsgOn" ="Etki";
+"BigMsgOff"="Geçersiz";
 
-"Close"="CLOSE";
-"Close_iPad"="Close";
+"Close"="Yakın";
+"Close_iPad"="Yakın";
 
-"ToReview"="To Review";
-"ToApview"="Developer APP";
-"ToGetpro"="Buy the paid Ver(No ads)";
-"LabelVer"="Number starts";
-"Label3ks"=".  ~ Thanks a lot! ~";
+"ToReview"="Ben yorum yazmak";
+"ToApview"="Geliştirici APP";
+"ToGetpro"="Ücretli sürümünü satın";
+"LabelVer"="Start-up Kat sayısı";
+"Label3ks"=".  ~ Teşekkürler! ~";

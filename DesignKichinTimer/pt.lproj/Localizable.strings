@@ -11,32 +11,32 @@
 "hunn"="M";
 "byoo"="S";
 
-"history"="History";
+"history"="história";
 
-"btnStart"="Start";
-"btnStop" ="Stop";
-"btnReset"="Reset";
+"btnStart"="começo";
+"btnStop" ="Pare";
+"btnReset"="Retorno";
 
-"btnClock"="▷Clock Mode";
-"btnTimer"="▷Timer Mode";
+"btnClock"="▷Modo Relógio";
+"btnTimer"="▷Modo Tempor";
 
-"SndTtl" ="[Sound]";
-"SndMsgOn" ="On";
-"SndMsgOff"="Off";
+"SndTtl" ="[parecer]";
+"SndMsgOn" ="Em";
+"SndMsgOff"="Fora";
 
-"VibTtl" ="[vibration]";
-"VibMsgOn" ="On";
-"VibMsgOff"="Off";
+"VibTtl" ="[vibração]";
+"VibMsgOn" ="Em";
+"VibMsgOff"="Fora";
 
-"BigTtl" ="[Button Zoom Anime]";
-"BigMsgOn" ="On";
-"BigMsgOff"="Off";
+"BigTtl" ="[Botão Zoom Anime]";
+"BigMsgOn" ="Em";
+"BigMsgOff"="Fora";
 
-"Close"="CLOSE";
-"Close_iPad"="Close";
+"Close"="FECHAR";
+"Close_iPad"="Perto";
 
-"ToReview"="To Review";
-"ToApview"="Developer APP";
-"ToGetpro"="Buy the paid Ver(No ads)";
-"LabelVer"="Number starts";
-"Label3ks"=".  ~ Thanks a lot! ~";
+"ToReview"="para Rever";
+"ToApview"="desenvolvedor APP";
+"ToGetpro"="Compre a versão paga";
+"LabelVer"="número começa";
+"Label3ks"=".  ~ Thanks! ~";

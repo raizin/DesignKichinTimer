@@ -1,3 +1,6 @@
 /* Localized versions of Info.plist keys */
-
-/*** Rewirite in *-Info.plist ***/
+/* ギリシャ語 / greek / Ελληνικά */
+"CFBundleName" = "Ιαπωνία χρονόμετρο δωρεάν";
+"CFBundleName~ipad" = "Ιαπωνία χρονόμετρο δωρεάν";
+"CFBundleDisplayName" = "χρονόμετρο"; // iphone ipod
+"CFBundleDisplayName~ipad" = "Ιαπχρονόμετρο"; // ipad ipadmini

@@ -1,3 +1,6 @@
 /* Localized versions of Info.plist keys */
-
-/*** Rewirite in *-Info.plist ***/
+/* ポーランド語 / polish / polski */
+"CFBundleName" = "minutnik darmo japonia";
+"CFBundleName~ipad" = "minutnik darmo japonia";
+"CFBundleDisplayName" = "JpMinutnik"; // iphone ipod
+"CFBundleDisplayName~ipad" = "JpMinutnik"; // ipad ipadmini

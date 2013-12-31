@@ -11,32 +11,32 @@
 "hunn"="M";
 "byoo"="S";
 
-"history"="History";
+"history"="historie";
 
 "btnStart"="Start";
 "btnStop" ="Stop";
 "btnReset"="Reset";
 
-"btnClock"="▷Clock Mode";
-"btnTimer"="▷Timer Mode";
+"btnClock"="▷Režim Hodiny";
+"btnTimer"="▷Režim Časovač";
 
-"SndTtl" ="[Sound]";
-"SndMsgOn" ="On";
-"SndMsgOff"="Off";
+"SndTtl" ="[zvuk]";
+"SndMsgOn" ="Účinnost";
+"SndMsgOff"="Neplatný";
 
-"VibTtl" ="[vibration]";
-"VibMsgOn" ="On";
-"VibMsgOff"="Off";
+"VibTtl" ="[chvění]";
+"VibMsgOn" ="Účinnost";
+"VibMsgOff"="Neplatný";
 
-"BigTtl" ="[Button Zoom Anime]";
-"BigMsgOn" ="On";
-"BigMsgOff"="Off";
+"BigTtl" ="[Tlačítko Zoom Anime]";
+"BigMsgOn" ="Účinnost";
+"BigMsgOff"="Neplatný";
 
-"Close"="CLOSE";
-"Close_iPad"="Close";
+"Close"="Zavřít";
+"Close_iPad"="Zavřít";
 
-"ToReview"="To Review";
-"ToApview"="Developer APP";
-"ToGetpro"="Buy the paid Ver(No ads)";
-"LabelVer"="Number starts";
-"Label3ks"=".  ~ Thanks a lot! ~";
+"ToReview"="Píšu recenzi";
+"ToApview"="Vývojka APP";
+"ToGetpro"="Kupte si placenou verzi";
+"LabelVer"="Počet startů";
+"Label3ks"=".  ~ Díky! ~";

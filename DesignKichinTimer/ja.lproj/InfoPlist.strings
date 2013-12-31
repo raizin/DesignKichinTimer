@@ -1,6 +1,8 @@
 /* Localized versions of Info.plist keys */
 
 /*** ローカライズしたいものだけ書く それ以外は、*-Info.plistのソース編集すること ***/
+
+/* 日本語 / japanese */
 "CFBundleName" = "便利タイマー無料版";
 "CFBundleName~ipad" = "キッチンタイマー無料版";
 "CFBundleDisplayName" = "便利タイマー"; // iphone ipod

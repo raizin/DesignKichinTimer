@@ -5,38 +5,39 @@
  Created by z on 2013/10/24.
  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
  */
+/* ルーマニア語 / romanian / română */
 "hun"="min";
 "byo"="s";
 
 "hunn"="M";
 "byoo"="S";
 
-"history"="History";
+"history"="Istorie";
 
 "btnStart"="Start";
 "btnStop" ="Stop";
-"btnReset"="Reset";
+"btnReset"="Revenire";
 
-"btnClock"="▷Clock Mode";
-"btnTimer"="▷Timer Mode";
+"btnClock"="▷Mod de ceas";
+"btnTimer"="▷temporizator";
 
-"SndTtl" ="[Sound]";
-"SndMsgOn" ="On";
-"SndMsgOff"="Off";
+"SndTtl" ="[sunet]";
+"SndMsgOn" ="Eficacitate";
+"SndMsgOff"="de pe";
 
-"VibTtl" ="[vibration]";
-"VibMsgOn" ="On";
-"VibMsgOff"="Off";
+"VibTtl" ="[vibrație]";
+"VibMsgOn" ="Eficacitate";
+"VibMsgOff"="de pe";
 
 "BigTtl" ="[Button Zoom Anime]";
-"BigMsgOn" ="On";
-"BigMsgOff"="Off";
+"BigMsgOn" ="Eficacitate";
+"BigMsgOff"="de pe";
 
-"Close"="CLOSE";
-"Close_iPad"="Close";
+"Close"="Închide";
+"Close_iPad"="Închide";
 
-"ToReview"="To Review";
+"ToReview"="Pentru a Review";
 "ToApview"="Developer APP";
-"ToGetpro"="Buy the paid Ver(No ads)";
-"LabelVer"="Number starts";
-"Label3ks"=".  ~ Thanks a lot! ~";
+"ToGetpro"="Cumpăra versiunea plătite";
+"LabelVer"="Număr de porniri";
+"Label3ks"=". Vă mulțumim!";
