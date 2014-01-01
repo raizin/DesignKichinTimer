@@ -20,8 +20,8 @@
 @interface ViewController : UIViewController {
 
   // iAd用View
-//  ADBannerView *adView;
-//  BOOL bannerIsVisible;
+  ADBannerView *adView;
+  BOOL bannerIsVisible;
   int adViewHeightMargin;
   
   //Google AdMob用View

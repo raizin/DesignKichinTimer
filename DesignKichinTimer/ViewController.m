@@ -237,7 +237,7 @@
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
     // iPad用定義
     
-    adViewHeightMargin = 66;
+    adViewHeightMargin = 57;
     
     adRect = CGRectMake(0.0,
                         self.view.frame.size.height - GAD_SIZE_728x90.height,
@@ -255,7 +255,7 @@
   
   //画面下部へ表示
   mobView.frame = CGRectMake(0, // x
-                             screenWidth - adViewHeightMargin, // y
+                             screenWidth - adViewHeightMargin +45, // y
                              mobView.frame.size.width,   // w
                              mobView.frame.size.height); // h
   
@@ -272,8 +272,13 @@
   
   
   
+  //Screen Shot用にぬりつぶし。。
+  if (NO) {
+    //表示しない
+    mobView.hidden = YES;
+  }
   
-//  mobView.hidden = YES;
+  
   /*** AdMob用 広告表示 ここまで ***/
   
   
@@ -301,6 +306,25 @@
   bannerIsVisible = YES;
   *** iAd用 広告表示 ここまで ***/
 }
+
+//AdMob取得成功
+- (void)adViewDidReceiveAd:(GADBannerView *)view
+{
+  if (!bannerIsVisible) {
+    [UIView animateWithDuration:0.3 animations:^{
+      mobView.frame = CGRectOffset(view.frame, 0, -view.frame.size.height);
+    }];
+    bannerIsVisible = YES;
+  }
+}
+
+//AdMob取得失敗
+- (void)adView:(GADBannerView *)view didFailToReceiveAdWithError:(GADRequestError *)error
+{
+  [mobView removeFromSuperview];
+  mobView = nil;
+}
+
 
 /*
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
@@ -469,12 +493,12 @@
   // 横向き
   if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
     
-    mobView.center = CGPointMake([self arignCenter:0], mobView.center.y);
+    mobView.center = CGPointMake([self arignCenter:0], mobView.center.y); // x y
 
   // 縦向き
   } else if (o == UIDeviceOrientationPortrait || o == UIDeviceOrientationPortraitUpsideDown) {
     
-    mobView.center = CGPointMake([self arignCenter:0], mobView.center.y);
+    mobView.center = CGPointMake([self arignCenter:0], mobView.center.y); // x y
 
     
     // 向きが不明な場合
