@@ -19,13 +19,32 @@
 
 @implementation ViewController
 
+
+// iOS7 Status Bar Disabled
+- (BOOL)prefersStatusBarHidden
+{
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+    return YES;
+  }else{
+    return NO; // ipad
+  }
+}
+
+- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation
+{
+  return UIStatusBarAnimationFade;
+}
+
+
 // View が初めて呼び出される時に1回だけ呼ばれる定義済み関数
 - (void)viewDidLoad
 {
   [super viewDidLoad];
   
   // Head Status Bar Hidden
-  [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+  if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+  }
   
   
   //NSUserDefaults 初期化
@@ -254,11 +273,11 @@
   
   
   
-  mobView.hidden = YES;
+//  mobView.hidden = YES;
   /*** AdMob用 広告表示 ここまで ***/
   
   
-  /*** iAd用 広告表示 ここから ***/
+  /*** iAd用 広告表示 ここから ***
   adView = [[ADBannerView alloc] initWithFrame:CGRectZero];
   
   //画面下部へ表示
@@ -280,10 +299,10 @@
   
   [self.view addSubview:adView];
   bannerIsVisible = YES;
-  /*** iAd用 広告表示 ここまで ***/
+  *** iAd用 広告表示 ここまで ***/
 }
 
-
+/*
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
 //  NSLog(@"%d: iAd Get Success!!",__LINE__);
@@ -307,6 +326,8 @@
   }
   
 }
+*/
+/*
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
 {
 //  NSLog(@"%d: iAd get NG??",__LINE__);
@@ -328,7 +349,7 @@
     [self.view addSubview:mobView];
   }
 }
-
+*/
 
 - (BOOL)shouldAutorotate
 {
