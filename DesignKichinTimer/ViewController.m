@@ -272,9 +272,8 @@
   
   
   
-  //Screen Shot用にぬりつぶし。。
+  //Screen Shot用に広告非表示 NO:広告表示する YES:広告表示しない
   if (NO) {
-    //表示しない
     mobView.hidden = YES;
   }
   
