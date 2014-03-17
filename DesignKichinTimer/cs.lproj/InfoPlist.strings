@@ -1,6 +1,6 @@
 /* Localized versions of Info.plist keys */
 /* チェコ語 / czech / čeština */
-"CFBundleName" = "japonsko časovač zdarma";
-"CFBundleName~ipad" = "japonsko kuchyně časovač zdarma";
+"CFBundleName" = "japonsko časovač";
+"CFBundleName~ipad" = "japonsko kuchyně časovač";
 "CFBundleDisplayName" = "JPNČasovač"; // iphone ipod
 "CFBundleDisplayName~ipad" = "JPNČasovač"; // ipad ipadmini

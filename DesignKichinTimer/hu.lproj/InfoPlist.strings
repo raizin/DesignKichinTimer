@@ -1,6 +1,6 @@
 /* Localized versions of Info.plist keys */
 /* ハンガリー語 / hungarian / magyar */
-"CFBundleName" = "japan időmérő ingyenes";
-"CFBundleName~ipad" = "japan konyhai időmérő ingyenes";
+"CFBundleName" = "japan időmérő";
+"CFBundleName~ipad" = "japan konyhai időmérő";
 "CFBundleDisplayName" = "JPNidőmérő"; // iphone ipod
 "CFBundleDisplayName~ipad" = "JPNidőmérő"; // ipad ipadmini

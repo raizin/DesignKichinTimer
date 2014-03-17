@@ -1,6 +1,6 @@
 /* Localized versions of Info.plist keys */
 /* ドイツ語 / german / Deutsch */
-"CFBundleName" = "KücheTimer Free";
-"CFBundleName~ipad" = "Japan Küche Timer Free";
+"CFBundleName" = "KücheTimer";
+"CFBundleName~ipad" = "Japan Küche Timer";
 "CFBundleDisplayName" = "KücheTimer"; // iphone ipod
 "CFBundleDisplayName~ipad" = "JPNKücheTimer"; // ipad ipadmini

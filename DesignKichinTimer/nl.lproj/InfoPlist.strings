@@ -1,6 +1,6 @@
 /* Localized versions of Info.plist keys */
 /* オランダ語 / Dutch / Nederlands */
-"CFBundleName" = "japan kookwekker gratis";
-"CFBundleName~ipad" = "japan kookwekker gratis";
+"CFBundleName" = "japan kookwekker";
+"CFBundleName~ipad" = "japan kookwekker";
 "CFBundleDisplayName" = "Kookwekker"; // iphone ipod
 "CFBundleDisplayName~ipad" = "JPNKookwekker"; // ipad ipadmini

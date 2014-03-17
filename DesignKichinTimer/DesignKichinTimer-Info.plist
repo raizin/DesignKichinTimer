@@ -9,17 +9,17 @@
 	<key>CFBundleDisplayName~ipad</key>
 	<string>JPNKitchenTimer</string>
 	<key>CFBundleName</key>
-	<string>Kitchen Timer Free</string>
+	<string>Kitchen Timer</string>
 	<key>CFBundleName~ipad</key>
-	<string>Japan Kitchen Timer Free</string>
+	<string>Japan Kitchen Timer</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>IconFree-60.png</string>
-		<string>IconFree-60@2x.png</string>
-		<string>IconFree-76.png</string>
-		<string>IconFree-76@2x.png</string>
+		<string>Icon-60.png</string>
+		<string>Icon-60@2x.png</string>
+		<string>Icon-76.png</string>
+		<string>Icon-76@2x.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
 	<string>jp.mydns.seiryu.designkichintimer</string>

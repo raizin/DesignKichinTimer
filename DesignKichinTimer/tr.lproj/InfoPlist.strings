@@ -1,6 +1,6 @@
 /* Localized versions of Info.plist keys */
 /* トルコ語 / turkish / Türkçe */
-"CFBundleName" = "mutfak sayacı ücretsiz";
-"CFBundleName~ipad" = "aponya mutfak sayacı ücretsiz";
+"CFBundleName" = "mutfak sayacı";
+"CFBundleName~ipad" = "aponya mutfak sayacı";
 "CFBundleDisplayName" = "MutfakSayacı"; // iphone ipod
 "CFBundleDisplayName~ipad" = "MutfakSayacı"; // ipad ipadmini

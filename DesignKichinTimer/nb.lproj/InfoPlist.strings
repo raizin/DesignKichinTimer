@@ -1,6 +1,6 @@
 /* Localized versions of Info.plist keys */
 /* ノルウェー語 / Norwegian / norsk (bokmål = ブークモール) */
-"CFBundleName" = "kjøkken tidtaker gratis";
-"CFBundleName~ipad" = "japan kjøkken tidtaker gratis";
+"CFBundleName" = "kjøkken tidtaker";
+"CFBundleName~ipad" = "japan kjøkken tidtaker";
 "CFBundleDisplayName" = "KjøkkenTimer"; // iphone ipod
 "CFBundleDisplayName~ipad" = "KjøkkenTimer"; // ipad ipadmini

@@ -1,6 +1,6 @@
 /* Localized versions of Info.plist keys */
 /* ロシア語 / russian / русский язык */
-"CFBundleName" = "Япония таймер бесплатно";
-"CFBundleName~ipad" = "Япония кухонный таймер бесплатно";
+"CFBundleName" = "Япония таймер";
+"CFBundleName~ipad" = "Япония кухонный таймер";
 "CFBundleDisplayName" = "ЯпиTаймер"; // iphone ipod
 "CFBundleDisplayName~ipad" = "Япония таймер"; // ipad ipadmini

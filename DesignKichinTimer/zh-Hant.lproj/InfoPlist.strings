@@ -1,6 +1,6 @@
 /* Localized versions of Info.plist keys */
 /* 中国語 / chinese [traditional] / 繁體中文 */
-"CFBundleName" = "廚房方便定時器 免費版";
-"CFBundleName~ipad" = "廚房方便定時器 免費版";
+"CFBundleName" = "廚房方便定時器";
+"CFBundleName~ipad" = "廚房方便定時器";
 "CFBundleDisplayName" = "方便定時器"; // iphone ipod
 "CFBundleDisplayName~ipad" = "廚房方便定時器"; // ipad ipadmini
