@@ -296,7 +296,7 @@
 			name = CustomClass;
 			sourceTree = "<group>";
 		};
-		5E220DD21842630700D2ACB0 /* IconPng-Free */ = {
+		5E220DD21842630700D2ACB0 /* IconPng */ = {
 			isa = PBXGroup;
 			children = (
 				5EF21EC41839260C00C079F0 /* Icon-76.png */,
@@ -304,7 +304,8 @@
 				5EF21EC61839260C00C079F0 /* Icon-60.png */,
 				5EF21EC71839260C00C079F0 /* Icon-60@2x.png */,
 			);
-			name = "IconPng-Free";
+			name = IconPng;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		5E220DD31842637900D2ACB0 /* DefaultClass */ = {
@@ -376,7 +377,6 @@
 			children = (
 				5E711E4518191B0000E7AA83 /* .gitattributes */,
 				5EA2C09F1811865E00B0FC3D /* .gitignore */,
-				5E220DD21842630700D2ACB0 /* IconPng-Free */,
 				5E5B41F61874428C006FDE6E /* NendAdSDK */,
 				5E5DF02C18438F7C0098499A /* GoogleADMobSDK */,
 				5E220DD31842637900D2ACB0 /* DefaultClass */,
@@ -435,6 +435,7 @@
 		5E6F4B3118117F7600312CCD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5E220DD21842630700D2ACB0 /* IconPng */,
 				5E30A82918D71579001D468A /* ImageAndSound */,
 				5E6F4B3218117F7600312CCD /* DesignKichinTimer-Info.plist */,
 				5E6F4B3318117F7600312CCD /* InfoPlist.strings */,
