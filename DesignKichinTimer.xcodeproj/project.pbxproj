@@ -330,6 +330,27 @@
 			name = DefaultClass;
 			sourceTree = "<group>";
 		};
+		5E30A82918D71579001D468A /* ImageAndSound */ = {
+			isa = PBXGroup;
+			children = (
+				5E235499186DA7250055217F /* IconInfo.png */,
+				5E4ECBCE1866250E00578E1E /* IconInfoTouch.png */,
+				5E8BC36E185DF84600C2802E /* IconBigTouch.png */,
+				5E8BC36F185DF84600C2802E /* IconBigOff.png */,
+				5E8BC370185DF84600C2802E /* IconBigOn.png */,
+				5E2480731856FE6B0032AF77 /* IconSndOff.png */,
+				5E2480741856FE6B0032AF77 /* IconSndTouch.png */,
+				5E2480711856FD4D0032AF77 /* IconSndOn.png */,
+				5E24806C1856F5D80032AF77 /* IconVibTouch.png */,
+				5E2480651856ED3E0032AF77 /* IconVibOn.png */,
+				5E2480661856ED3E0032AF77 /* IconVibOff.png */,
+				5ECB0D361832173700103C18 /* pi_mono.mp3 */,
+				5ECB0D261832038400103C18 /* piLong.mp3 */,
+				5EC2DCD11830A52A003E1D5C /* pi_old.mp3 */,
+			);
+			name = ImageAndSound;
+			sourceTree = "<group>";
+		};
 		5E5B41F61874428C006FDE6E /* NendAdSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,20 +447,7 @@
 		5E6F4B3118117F7600312CCD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5E235499186DA7250055217F /* IconInfo.png */,
-				5E4ECBCE1866250E00578E1E /* IconInfoTouch.png */,
-				5E8BC36E185DF84600C2802E /* IconBigTouch.png */,
-				5E8BC36F185DF84600C2802E /* IconBigOff.png */,
-				5E8BC370185DF84600C2802E /* IconBigOn.png */,
-				5E2480731856FE6B0032AF77 /* IconSndOff.png */,
-				5E2480741856FE6B0032AF77 /* IconSndTouch.png */,
-				5E2480711856FD4D0032AF77 /* IconSndOn.png */,
-				5E24806C1856F5D80032AF77 /* IconVibTouch.png */,
-				5E2480651856ED3E0032AF77 /* IconVibOn.png */,
-				5E2480661856ED3E0032AF77 /* IconVibOff.png */,
-				5ECB0D361832173700103C18 /* pi_mono.mp3 */,
-				5ECB0D261832038400103C18 /* piLong.mp3 */,
-				5EC2DCD11830A52A003E1D5C /* pi_old.mp3 */,
+				5E30A82918D71579001D468A /* ImageAndSound */,
 				5E6F4B3218117F7600312CCD /* DesignKichinTimer-Info.plist */,
 				5E6F4B3318117F7600312CCD /* InfoPlist.strings */,
 				5E6F4B3618117F7600312CCD /* main.m */,

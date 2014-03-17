@@ -36,7 +36,7 @@
 }
 
 
-// View が初めて呼び出される時に1回だけ呼ばれる定義済み関数
+// View が初めて呼び出される時に1回だけ呼ばれる *定義済み関数
 - (void)viewDidLoad
 {
   [super viewDidLoad];
