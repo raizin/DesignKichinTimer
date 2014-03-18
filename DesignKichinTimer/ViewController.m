@@ -29,7 +29,6 @@
     return NO; // ipad
   }
 }
-
 - (UIStatusBarAnimation)preferredStatusBarUpdateAnimation
 {
   return UIStatusBarAnimationFade;
@@ -45,7 +44,6 @@
   if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
   }
-  
   
   //NSUserDefaults 初期化
   ud = [NSUserDefaults standardUserDefaults];
@@ -75,8 +73,6 @@
 //  alermSound.volume = 0.4;
   alermSound.numberOfLoops = 0; // 再生回数 -1:ループ再生
   
-  
-  
   //自動スリープの解除
 //  UIApplication *application = [UIApplication sharedApplication];
 //  application.idleTimerDisabled = YES;
@@ -89,13 +85,11 @@
   timeUpOk = NO;
   
   
-  
   //画面情報(横幅)取得
   UIScreen *sc = [UIScreen mainScreen];
   CGRect rect = sc.bounds;
   CGFloat screenWidth = rect.size.width;
 //  CGFloat screenHeight = rect.size.height;
-  
 //  NSLog(@"%d: w=%d h=%d",__LINE__,(int)screenWidth,(int)screenHeight); // iphone4s 320x480, ipad mini 768x1024
                                                 // iphone5s 320x568
   
@@ -305,6 +299,9 @@
   bannerIsVisible = YES;
   *** iAd用 広告表示 ここまで ***/
 }
+
+
+
 
 //AdMob取得成功
 - (void)adViewDidReceiveAd:(GADBannerView *)view

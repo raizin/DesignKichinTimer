@@ -24,6 +24,7 @@
 		5E2480721856FD4D0032AF77 /* IconSndOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E2480711856FD4D0032AF77 /* IconSndOn.png */; };
 		5E2480751856FE6B0032AF77 /* IconSndOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E2480731856FE6B0032AF77 /* IconSndOff.png */; };
 		5E2480761856FE6B0032AF77 /* IconSndTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E2480741856FE6B0032AF77 /* IconSndTouch.png */; };
+		5E30A82B18D722E7001D468A /* batten33.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E30A82A18D722E7001D468A /* batten33.png */; };
 		5E42589718192B7F00171F1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E42589918192B7F00171F1F /* Localizable.strings */; };
 		5E42589C181CF29300171F1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E42589B181CF29300171F1F /* QuartzCore.framework */; };
 		5E4ECBD01866250E00578E1E /* IconInfoTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E4ECBCE1866250E00578E1E /* IconInfoTouch.png */; };
@@ -103,6 +104,7 @@
 		5E2480711856FD4D0032AF77 /* IconSndOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconSndOn.png; sourceTree = "<group>"; };
 		5E2480731856FE6B0032AF77 /* IconSndOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconSndOff.png; sourceTree = "<group>"; };
 		5E2480741856FE6B0032AF77 /* IconSndTouch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconSndTouch.png; sourceTree = "<group>"; };
+		5E30A82A18D722E7001D468A /* batten33.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batten33.png; sourceTree = "<group>"; };
 		5E42589418192B2600171F1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5E42589818192B7F00171F1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E42589A18192B8800171F1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -271,9 +273,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5E220DD11842624A00D2ACB0 /* CustomClass */ = {
+		5E220DD11842624A00D2ACB0 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				5E40179E18D892A300CE074E /* ButtonAndLabel */,
 				5E220DCB18425F3900D2ACB0 /* SoundOnFlag.h */,
 				5E220DCC18425F3900D2ACB0 /* SoundOnFlag.m */,
 				5E24805F18558F9F0032AF77 /* VibrateOnFlag.h */,
@@ -282,18 +285,8 @@
 				5E8BC36C185DE38500C2802E /* BtnZoomOnFlag.m */,
 				5EDE0905185CBF8F00660FF9 /* ResetBtnScaleOnFlag.h */,
 				5EDE0906185CBF8F00660FF9 /* ResetBtnScaleOnFlag.m */,
-				5E220DCE184261F100D2ACB0 /* MySetBtn.h */,
-				5E220DCF184261F100D2ACB0 /* MySetBtn.m */,
-				5E5DF023184327510098499A /* MyModeBtn.h */,
-				5E5DF024184327510098499A /* MyModeBtn.m */,
-				5E5DF026184377EC0098499A /* MyCntLabel.h */,
-				5E5DF027184377EC0098499A /* MyCntLabel.m */,
-				5E4ECBDB1867597900578E1E /* TriangleBtn.h */,
-				5E4ECBDC1867597900578E1E /* TriangleBtn.m */,
-				5E4ECBDE1868812E00578E1E /* MyInfoBtn.h */,
-				5E4ECBDF1868812E00578E1E /* MyInfoBtn.m */,
 			);
-			name = CustomClass;
+			name = Custom;
 			sourceTree = "<group>";
 		};
 		5E220DD21842630700D2ACB0 /* IconPng */ = {
@@ -322,6 +315,7 @@
 		5E30A82918D71579001D468A /* ImageAndSound */ = {
 			isa = PBXGroup;
 			children = (
+				5E30A82A18D722E7001D468A /* batten33.png */,
 				5E235499186DA7250055217F /* IconInfo.png */,
 				5E4ECBCE1866250E00578E1E /* IconInfoTouch.png */,
 				5E8BC36E185DF84600C2802E /* IconBigTouch.png */,
@@ -338,6 +332,23 @@
 				5EC2DCD11830A52A003E1D5C /* pi_old.mp3 */,
 			);
 			name = ImageAndSound;
+			sourceTree = "<group>";
+		};
+		5E40179E18D892A300CE074E /* ButtonAndLabel */ = {
+			isa = PBXGroup;
+			children = (
+				5E220DCE184261F100D2ACB0 /* MySetBtn.h */,
+				5E220DCF184261F100D2ACB0 /* MySetBtn.m */,
+				5E5DF023184327510098499A /* MyModeBtn.h */,
+				5E5DF024184327510098499A /* MyModeBtn.m */,
+				5E5DF026184377EC0098499A /* MyCntLabel.h */,
+				5E5DF027184377EC0098499A /* MyCntLabel.m */,
+				5E4ECBDB1867597900578E1E /* TriangleBtn.h */,
+				5E4ECBDC1867597900578E1E /* TriangleBtn.m */,
+				5E4ECBDE1868812E00578E1E /* MyInfoBtn.h */,
+				5E4ECBDF1868812E00578E1E /* MyInfoBtn.m */,
+			);
+			name = ButtonAndLabel;
 			sourceTree = "<group>";
 		};
 		5E5B41F61874428C006FDE6E /* NendAdSDK */ = {
@@ -380,7 +391,7 @@
 				5E5B41F61874428C006FDE6E /* NendAdSDK */,
 				5E5DF02C18438F7C0098499A /* GoogleADMobSDK */,
 				5E220DD31842637900D2ACB0 /* DefaultClass */,
-				5E220DD11842624A00D2ACB0 /* CustomClass */,
+				5E220DD11842624A00D2ACB0 /* Custom */,
 				5E6F4B3018117F7600312CCD /* DesignKichinTimer */,
 				5E6F4B5218117F7700312CCD /* DesignKichinTimerTests */,
 				5E6F4B2918117F7600312CCD /* Frameworks */,
@@ -582,6 +593,7 @@
 				5E23549A186DA7250055217F /* IconInfo.png in Resources */,
 				5E711E4618191B0000E7AA83 /* .gitattributes in Resources */,
 				5E8BC373185DF84600C2802E /* IconBigOn.png in Resources */,
+				5E30A82B18D722E7001D468A /* batten33.png in Resources */,
 				5E5DF03918438FB50098499A /* AdMob_README.txt in Resources */,
 				5EF21EC91839260C00C079F0 /* Icon-76@2x.png in Resources */,
 				5E2480721856FD4D0032AF77 /* IconSndOn.png in Resources */,
