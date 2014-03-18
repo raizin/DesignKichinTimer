@@ -25,16 +25,14 @@
 		5E2480751856FE6B0032AF77 /* IconSndOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E2480731856FE6B0032AF77 /* IconSndOff.png */; };
 		5E2480761856FE6B0032AF77 /* IconSndTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E2480741856FE6B0032AF77 /* IconSndTouch.png */; };
 		5E30A82B18D722E7001D468A /* batten33.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E30A82A18D722E7001D468A /* batten33.png */; };
+		5E4017A718D89A3400CE074E /* libNendAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E4017A118D89A3400CE074E /* libNendAd.a */; };
+		5E4017A818D89A3400CE074E /* NADView_readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5E4017A618D89A3400CE074E /* NADView_readme.txt */; };
 		5E42589718192B7F00171F1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E42589918192B7F00171F1F /* Localizable.strings */; };
 		5E42589C181CF29300171F1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E42589B181CF29300171F1F /* QuartzCore.framework */; };
 		5E4ECBD01866250E00578E1E /* IconInfoTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E4ECBCE1866250E00578E1E /* IconInfoTouch.png */; };
 		5E4ECBD81866CD5900578E1E /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4ECBD71866CD5900578E1E /* InfoViewController.m */; };
 		5E4ECBDD1867597900578E1E /* TriangleBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4ECBDC1867597900578E1E /* TriangleBtn.m */; };
 		5E4ECBE01868812E00578E1E /* MyInfoBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4ECBDF1868812E00578E1E /* MyInfoBtn.m */; };
-		5E5B41F9187442EA006FDE6E /* libAdapterNend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E5B41F7187442EA006FDE6E /* libAdapterNend.a */; };
-		5E5B41FA187442EA006FDE6E /* libAdapterNend_readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5E5B41F8187442EA006FDE6E /* libAdapterNend_readme.txt */; };
-		5E5B42001874431F006FDE6E /* libNendAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E5B41FB1874431E006FDE6E /* libNendAd.a */; };
-		5E5B42011874431F006FDE6E /* NADView_readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5E5B41FF1874431F006FDE6E /* NADView_readme.txt */; };
 		5E5B420318744775006FDE6E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E5B420218744775006FDE6E /* Security.framework */; };
 		5E5DF025184327510098499A /* MyModeBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DF024184327510098499A /* MyModeBtn.m */; };
 		5E5DF028184377EC0098499A /* MyCntLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DF027184377EC0098499A /* MyCntLabel.m */; };
@@ -105,6 +103,12 @@
 		5E2480731856FE6B0032AF77 /* IconSndOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconSndOff.png; sourceTree = "<group>"; };
 		5E2480741856FE6B0032AF77 /* IconSndTouch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconSndTouch.png; sourceTree = "<group>"; };
 		5E30A82A18D722E7001D468A /* batten33.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batten33.png; sourceTree = "<group>"; };
+		5E4017A118D89A3400CE074E /* libNendAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libNendAd.a; sourceTree = "<group>"; };
+		5E4017A218D89A3400CE074E /* NADIconArrayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconArrayView.h; sourceTree = "<group>"; };
+		5E4017A318D89A3400CE074E /* NADIconLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconLoader.h; sourceTree = "<group>"; };
+		5E4017A418D89A3400CE074E /* NADIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconView.h; sourceTree = "<group>"; };
+		5E4017A518D89A3400CE074E /* NADView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADView.h; sourceTree = "<group>"; };
+		5E4017A618D89A3400CE074E /* NADView_readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NADView_readme.txt; sourceTree = "<group>"; };
 		5E42589418192B2600171F1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5E42589818192B7F00171F1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E42589A18192B8800171F1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -116,13 +120,6 @@
 		5E4ECBDC1867597900578E1E /* TriangleBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriangleBtn.m; sourceTree = "<group>"; };
 		5E4ECBDE1868812E00578E1E /* MyInfoBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInfoBtn.h; sourceTree = "<group>"; };
 		5E4ECBDF1868812E00578E1E /* MyInfoBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfoBtn.m; sourceTree = "<group>"; };
-		5E5B41F7187442EA006FDE6E /* libAdapterNend.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdapterNend.a; sourceTree = "<group>"; };
-		5E5B41F8187442EA006FDE6E /* libAdapterNend_readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = libAdapterNend_readme.txt; sourceTree = "<group>"; };
-		5E5B41FB1874431E006FDE6E /* libNendAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libNendAd.a; sourceTree = "<group>"; };
-		5E5B41FC1874431F006FDE6E /* NADIconLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconLoader.h; sourceTree = "<group>"; };
-		5E5B41FD1874431F006FDE6E /* NADIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconView.h; sourceTree = "<group>"; };
-		5E5B41FE1874431F006FDE6E /* NADView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADView.h; sourceTree = "<group>"; };
-		5E5B41FF1874431F006FDE6E /* NADView_readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NADView_readme.txt; sourceTree = "<group>"; };
 		5E5B420218744775006FDE6E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		5E5DF023184327510098499A /* MyModeBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyModeBtn.h; sourceTree = "<group>"; };
 		5E5DF024184327510098499A /* MyModeBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyModeBtn.m; sourceTree = "<group>"; };
@@ -243,7 +240,6 @@
 				5E5B420318744775006FDE6E /* Security.framework in Frameworks */,
 				5E1E11DD18350D1500307C8F /* MediaPlayer.framework in Frameworks */,
 				5E1E11F11836A4AD00307C8F /* iAd.framework in Frameworks */,
-				5E5B41F9187442EA006FDE6E /* libAdapterNend.a in Frameworks */,
 				5E1E11EF18350F1100307C8F /* AdSupport.framework in Frameworks */,
 				5E1E11DF18350D3100307C8F /* StoreKit.framework in Frameworks */,
 				5E1E11DB18350D0500307C8F /* CoreLocation.framework in Frameworks */,
@@ -252,7 +248,7 @@
 				5EC2DCCA182FCEB8003E1D5C /* AVFoundation.framework in Frameworks */,
 				5EC2DCC6182C77B1003E1D5C /* AudioToolbox.framework in Frameworks */,
 				5E42589C181CF29300171F1F /* QuartzCore.framework in Frameworks */,
-				5E5B42001874431F006FDE6E /* libNendAd.a in Frameworks */,
+				5E4017A718D89A3400CE074E /* libNendAd.a in Frameworks */,
 				5E6F4B2D18117F7600312CCD /* CoreGraphics.framework in Frameworks */,
 				5E5DF03818438FB50098499A /* libGoogleAdMobAds.a in Frameworks */,
 				5E6F4B2F18117F7600312CCD /* UIKit.framework in Frameworks */,
@@ -351,18 +347,26 @@
 			name = ButtonAndLabel;
 			sourceTree = "<group>";
 		};
-		5E5B41F61874428C006FDE6E /* NendAdSDK */ = {
+		5E40179F18D899FB00CE074E /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				5E5B41FB1874431E006FDE6E /* libNendAd.a */,
-				5E5B41FC1874431F006FDE6E /* NADIconLoader.h */,
-				5E5B41FD1874431F006FDE6E /* NADIconView.h */,
-				5E5B41FE1874431F006FDE6E /* NADView.h */,
-				5E5B41FF1874431F006FDE6E /* NADView_readme.txt */,
-				5E5B41F7187442EA006FDE6E /* libAdapterNend.a */,
-				5E5B41F8187442EA006FDE6E /* libAdapterNend_readme.txt */,
+				5E4017A018D89A3400CE074E /* NendAd */,
+				5E5DF02C18438F7C0098499A /* GoogleADMobSDK */,
 			);
-			name = NendAdSDK;
+			name = Lib;
+			sourceTree = "<group>";
+		};
+		5E4017A018D89A3400CE074E /* NendAd */ = {
+			isa = PBXGroup;
+			children = (
+				5E4017A118D89A3400CE074E /* libNendAd.a */,
+				5E4017A218D89A3400CE074E /* NADIconArrayView.h */,
+				5E4017A318D89A3400CE074E /* NADIconLoader.h */,
+				5E4017A418D89A3400CE074E /* NADIconView.h */,
+				5E4017A518D89A3400CE074E /* NADView.h */,
+				5E4017A618D89A3400CE074E /* NADView_readme.txt */,
+			);
+			path = NendAd;
 			sourceTree = "<group>";
 		};
 		5E5DF02C18438F7C0098499A /* GoogleADMobSDK */ = {
@@ -388,8 +392,7 @@
 			children = (
 				5E711E4518191B0000E7AA83 /* .gitattributes */,
 				5EA2C09F1811865E00B0FC3D /* .gitignore */,
-				5E5B41F61874428C006FDE6E /* NendAdSDK */,
-				5E5DF02C18438F7C0098499A /* GoogleADMobSDK */,
+				5E40179F18D899FB00CE074E /* Lib */,
 				5E220DD31842637900D2ACB0 /* DefaultClass */,
 				5E220DD11842624A00D2ACB0 /* Custom */,
 				5E6F4B3018117F7600312CCD /* DesignKichinTimer */,
@@ -587,6 +590,7 @@
 				5E2480701856F5D80032AF77 /* IconVibTouch.png in Resources */,
 				5E2480751856FE6B0032AF77 /* IconSndOff.png in Resources */,
 				5E2480681856ED3E0032AF77 /* IconVibOff.png in Resources */,
+				5E4017A818D89A3400CE074E /* NADView_readme.txt in Resources */,
 				5ECB0D371832173700103C18 /* pi_mono.mp3 in Resources */,
 				5EF21EC81839260C00C079F0 /* Icon-76.png in Resources */,
 				5EA2C0A01811865E00B0FC3D /* .gitignore in Resources */,
@@ -607,9 +611,7 @@
 				5ECB0D271832038400103C18 /* piLong.mp3 in Resources */,
 				5E2480761856FE6B0032AF77 /* IconSndTouch.png in Resources */,
 				5E6F4B3E18117F7600312CCD /* Main_iPhone.storyboard in Resources */,
-				5E5B41FA187442EA006FDE6E /* libAdapterNend_readme.txt in Resources */,
 				5E8BC371185DF84600C2802E /* IconBigTouch.png in Resources */,
-				5E5B42011874431F006FDE6E /* NADView_readme.txt in Resources */,
 				5EF21ECA1839260C00C079F0 /* Icon-60.png in Resources */,
 				5EF21ECB1839260C00C079F0 /* Icon-60@2x.png in Resources */,
 				5E6F4B3518117F7600312CCD /* InfoPlist.strings in Resources */,
@@ -855,7 +857,10 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "DesignKichinTimer/DesignKichinTimer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = /Users/zzz/XCodeWorks/DesignKichinTimer;
+				LIBRARY_SEARCH_PATHS = (
+					/Users/zzz/XCodeWorks/DesignKichinTimer,
+					/Users/zzz/XCodeWorks/DesignKichinTimer/NendAd,
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -874,7 +879,10 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "DesignKichinTimer/DesignKichinTimer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = /Users/zzz/XCodeWorks/DesignKichinTimer;
+				LIBRARY_SEARCH_PATHS = (
+					/Users/zzz/XCodeWorks/DesignKichinTimer,
+					/Users/zzz/XCodeWorks/DesignKichinTimer/NendAd,
+				);
 				OTHER_LDFLAGS = "-all_load";
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
