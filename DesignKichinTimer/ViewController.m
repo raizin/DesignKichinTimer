@@ -217,6 +217,10 @@
   
   [self timerInitDisp];
   
+  
+//  NSString *appVer  = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleVersion"];
+  
+  
   //バナー広告表示 ※遅延実行
   [self performSelector:@selector(bannerInit) withObject:nil afterDelay:0];
 
