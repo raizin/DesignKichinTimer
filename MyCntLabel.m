@@ -32,7 +32,8 @@ static float HIS_FONT_SIZE_IPAD   = 20.f;
     self.font = [UIFont fontWithName:@"Helvetica-Bold" size:UNIT_FONT_SIZE_IPAD];
   }
   self.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8]; // Light Black
-  self.text = [NSString stringWithFormat:@"%@",NSLocalizedString(@"hunn", nil)];
+//  self.text = [NSString stringWithFormat:@"%@",NSLocalizedString(@"hunn", nil)];
+  self.text = @"′";
   self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0.5 alpha:0]; //
 }
 - (void)setByo
@@ -43,7 +44,8 @@ static float HIS_FONT_SIZE_IPAD   = 20.f;
     self.font = [UIFont fontWithName:@"Helvetica-Bold" size:UNIT_FONT_SIZE_IPAD];
   }
   self.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8]; // Light Black
-  self.text = [NSString stringWithFormat:@"%@",NSLocalizedString(@"byoo", nil)];
+//  self.text = [NSString stringWithFormat:@"%@",NSLocalizedString(@"byoo", nil)];
+  self.text = @"″";
   self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0.5 alpha:0]; //
 }
 
