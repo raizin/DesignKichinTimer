@@ -23,6 +23,8 @@
 		<string>Icon76.png</string>
 		<string>Icon76@2x.png</string>
 	</array>
+	<key>FreeVersionFlag</key>
+	<string>true</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>

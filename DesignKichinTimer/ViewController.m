@@ -218,11 +218,16 @@
   [self timerInitDisp];
   
   
-//  NSString *appVer  = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleVersion"];
+  NSString* freeFlagStr  = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"FreeVersionFlag"];
+  LOG(@"%@",freeFlagStr);
+  BOOL freeFlag = [freeFlagStr boolValue];
+
+  if (freeFlag) {
+    //フリー版はバナー広告表示 (遅延実行)
+    [self performSelector:@selector(bannerInit) withObject:nil afterDelay:0];
+  }
   
   
-  //バナー広告表示 ※遅延実行
-  [self performSelector:@selector(bannerInit) withObject:nil afterDelay:0];
 
 }
 

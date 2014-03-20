@@ -18,7 +18,14 @@
 
 #define APP_DELEGATE (AppDelegate*)[[UIApplication sharedApplication] delegate]
 
+
+#ifdef DEBUG
+#define LOG(fmt,...) NSLog((@"%d "fmt),__LINE__,##__VA_ARGS__);
+#else
+#define LOG(...)
+#endif
+
 #if DEBUG
 #else
-#   define NSLog( args... )
+#define NSLog(...)
 #endif
