@@ -1,11 +1,4 @@
-/*
- Localizable.strings
- DesignKichinTimer
- 
- Created by z on 2013/10/24.
- Copyright (c) 2013 FoceSystemSolution. All rights reserved.
- */
-/* トルコ語 / turkish / Türkçe */
+// turkish / Türkçe (トルコ語)
 "hun"="min";
 "byo"="s";
 

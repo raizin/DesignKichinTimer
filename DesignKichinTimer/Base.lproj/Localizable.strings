@@ -1,10 +1,6 @@
-/*
- Localizable.strings
- DesignKichinTimer
- 
- Created by z on 2013/10/24.
- Copyright (c) 2013 FoceSystemSolution. All rights reserved.
- */
+
+// Localizable.strings
+
 "hun"="min";
 "byo"="s";
 
@@ -37,6 +33,5 @@
 
 "ToReview"="To Review";
 "ToApview"="Developer APP";
-"ToGetpro"="Buy the paid Ver(No ads)";
 "LabelVer"="Number starts";
 "Label3ks"=".  ~ Thanks a lot! ~";

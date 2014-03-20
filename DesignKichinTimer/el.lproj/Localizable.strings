@@ -1,11 +1,4 @@
-/*
- Localizable.strings
- DesignKichinTimer
- 
- Created by z on 2013/10/24.
- Copyright (c) 2013 FoceSystemSolution. All rights reserved.
- */
-/* ギリシャ語 / greek / Ελληνικά */
+// greek / Ελληνικά (ギリシャ語)
 "hun"="min";
 "byo"="s";
 
@@ -38,7 +31,6 @@
 
 "ToReview"="Γράφω μια κριτική";
 "ToApview"="Προγραμματιστής APP";
-"ToGetpro"="πληρωμένη έκδοση";
 "LabelVer"="APP Εκδοχή : ";
 "LabelNum"="  αριθμός ξεκινά : ";
 "Label3ks"=". Ευχαριστώ!";

@@ -1,11 +1,4 @@
-/*
- Localizable.strings
- DesignKichinTimer
- 
- Created by z on 2013/10/24.
- Copyright (c) 2013 FoceSystemSolution. All rights reserved.
- */
-/* ルーマニア語 / romanian / română */
+// romanian / română (ルーマニア語)
 "hun"="min";
 "byo"="s";
 
@@ -38,7 +31,6 @@
 
 "ToReview"="Pentru a Review";
 "ToApview"="Developer APP";
-"ToGetpro"="Cumpăra versiunea plătite";
 "LabelVer"="APP versiune : ";
 "LabelNum"="  Număr de porniri : ";
 "Label3ks"=". Vă mulțumim!";

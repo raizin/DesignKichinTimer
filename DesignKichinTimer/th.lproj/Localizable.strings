@@ -1,11 +1,4 @@
-/*
- Localizable.strings
- DesignKichinTimer
- 
- Created by z on 2013/10/24.
- Copyright (c) 2013 FoceSystemSolution. All rights reserved.
- */
-/* タイ語 / thai / ภาษาไทย */
+// thai / ภาษาไทย (タイ語)
 "hun"="min";
 "byo"="s";
 
@@ -38,7 +31,6 @@
 
 "ToReview"="เพื่อทบทวน";
 "ToApview"="ผู้พัฒนา APP";
-"ToGetpro"="ซื้อรุ่นที่จ่าย (ไม่มีโฆษณา)";
 "LabelVer"="APP เวอร์ชัน : ";
 "LabelNum"="  จำนวนเริ่มต้น : ";
 "Label3ks"=".  ~ ขอบคุณ! ~";

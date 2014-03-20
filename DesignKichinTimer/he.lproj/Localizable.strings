@@ -1,11 +1,4 @@
-/*
- Localizable.strings
- DesignKichinTimer
- 
- Created by z on 2013/10/24.
- Copyright (c) 2013 FoceSystemSolution. All rights reserved.
- */
-/* ヘブライ語 / hebrew / עברית‎ */
+// hebrew / עברית‎ (ヘブライ語)
 "hun"="min";
 "byo"="s";
 
@@ -38,7 +31,6 @@
 
 "ToReview"="לסקירה";
 "ToApview"="מפתחי אפליקציות";
-"ToGetpro"="קנה את הגרסה בתשלום";
 "LabelVer"="גרסת יישום : ";
 "LabelNum"="    מספר ההתחלות : ";
 "Label3ks"=".  ~ תודה! ~";

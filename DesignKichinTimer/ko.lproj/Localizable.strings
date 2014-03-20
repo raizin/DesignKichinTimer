@@ -1,11 +1,4 @@
-/*
- Localizable.strings
- DesignKichinTimer
- 
- Created by z on 2013/10/24.
- Copyright (c) 2013 FoceSystemSolution. All rights reserved.
- */
-/* 朝鮮語 / korean / 한국어 */
+// korean / 한국어 (朝鮮語)
 "hun"="분";// Button:min
 "byo"="초";// Button:s
 
@@ -38,7 +31,6 @@
 
 "ToReview"="리뷰를";
 "ToApview"="개발자 APP";
-"ToGetpro"="유료 버전을 구입 (광고 없음)";
 "LabelVer"="APP 버전 : ";
 "LabelNum"="      시작 횟수 : ";
 "Label3ks"=".  ~ 감사합니다! ~";

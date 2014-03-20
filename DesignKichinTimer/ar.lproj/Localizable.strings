@@ -1,11 +1,4 @@
-/*
- Localizable.strings
- DesignKichinTimer
- 
- Created by z on 2013/10/24.
- Copyright (c) 2013 FoceSystemSolution. All rights reserved.
- */
-/* アラビア語 / arabic / اللغة العربية */
+// arabic / اللغة العربية (アラビア語)
 "hun"="دقيقة";
 "byo"="ثان";
 
@@ -38,7 +31,6 @@
 
 "ToReview"="لاستعراض";
 "ToApview"="مطوري التطبيق";
-"ToGetpro"="شراء النسخة المدفوعة (لا الإعلانات)";
 "LabelVer"="إصدار التطبيق : ";
 "LabelNum"="      عدد بدايات التشغيل : ";
 "Label3ks"=".  ~ وذلك بفضل! ~";

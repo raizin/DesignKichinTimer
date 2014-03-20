@@ -1,16 +1,9 @@
-/*
- Localizable.strings
- DesignKichinTimer
- 
- Created by z on 2013/10/24.
- Copyright (c) 2013 FoceSystemSolution. All rights reserved.
- */
-/* ウクライナ語 / ukrainian / український */
-"hun"="min";
-"byo"="s";
+// ukrainian / український (ウクライナ語)
+"hun"="хв";
+"byo"="сек";
 
-"hunn"="M";
-"byoo"="S";
+"hunn"="хв";
+"byoo"="сек";
 
 "history"="Історія";
 
@@ -38,7 +31,6 @@
 
 "ToReview"="Щоб перевірити";
 "ToApview"="Розробник APP";
-"ToGetpro"="Купити платну версію";
 "LabelVer"="APP Версія : ";
 "LabelNum"="  Кількість пусків : ";
 "Label3ks"=". ~Завдяки!~";

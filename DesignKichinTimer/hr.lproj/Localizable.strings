@@ -1,11 +1,4 @@
-/*
- Localizable.strings
- DesignKichinTimer
- 
- Created by z on 2013/10/24.
- Copyright (c) 2013 FoceSystemSolution. All rights reserved.
- */
-/* クロアチア語 / croatian / hrvatski */
+// croatian / hrvatski (クロアチア語)
 "hun"="min";
 "byo"="s";
 
@@ -38,7 +31,6 @@
 
 "ToReview"="Za pregled";
 "ToApview"="Developer APP";
-"ToGetpro"="Kupi plaćeni verzija";
 "LabelVer"="APP Verzija : ";
 "LabelNum"="  Broj startanja : ";
 "Label3ks"=".  ~ Hvala! ~";

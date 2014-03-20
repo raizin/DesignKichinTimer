@@ -1,11 +1,4 @@
-/*
- Localizable.strings
- DesignKichinTimer
- 
- Created by z on 2013/10/24.
- Copyright (c) 2013 FoceSystemSolution. All rights reserved.
- */
-/* ポーランド語 / polish / polski */
+// polish / polski (ポーランド語)
 "hun"="min";
 "byo"="s";
 
@@ -38,7 +31,6 @@
 
 "ToReview"="do Skomentuj";
 "ToApview"="deweloper APP";
-"ToGetpro"="Kup wersji płatnej";
 "LabelVer"="APP wersja : ";
 "LabelNum"=" Liczba rozruchów : ";
 "Label3ks"=".  ~ Dziękuję! ~";
