@@ -65,8 +65,6 @@
 	<string>itms-apps://itunes.apple.com/app/id756181891</string>
 	<key>ArtistURL</key>
 	<string>itms-apps://itunes.apple.com/artist/makoto-amano/id687643943</string>
-	<key>GetProURL</key>
-	<string>itms-apps://itunes.apple.com/app/id776800295</string>
 	<key>AdMobUnitId</key>
 	<string>ca-app-pub-8799115520187072/6215156947</string>
 </dict>
