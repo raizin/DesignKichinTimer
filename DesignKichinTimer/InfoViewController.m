@@ -11,11 +11,9 @@
 #import "MyInfoBtn.h"
 
 @interface InfoViewController ()
-
 @end
 
 @implementation InfoViewController
-
 
 // nibなしView生成関数追加
 - (id)init {

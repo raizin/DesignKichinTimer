@@ -152,13 +152,13 @@
 		5E6F4B3218117F7600312CCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E6F4B3618117F7600312CCD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5E6F4B3818117F7600312CCD /* DesignKichinTimer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DesignKichinTimer-Prefix.pch"; sourceTree = "<group>"; };
-		5E6F4B3918117F7600312CCD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = DesignKichinTimer/AppDelegate.h; sourceTree = "<group>"; };
-		5E6F4B3A18117F7600312CCD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = DesignKichinTimer/AppDelegate.m; sourceTree = "<group>"; };
+		5E6F4B3918117F7600312CCD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5E6F4B3A18117F7600312CCD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5E6F4B3D18117F7600312CCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		5E6F4B4018117F7600312CCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		5E6F4B4218117F7600312CCD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		5E6F4B4318117F7600312CCD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		5E6F4B4518117F7600312CCD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5E6F4B4518117F7600312CCD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = DesignKichinTimer/Images.xcassets; sourceTree = "<group>"; };
 		5E6F4B4B18117F7600312CCD /* DesignKichinTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignKichinTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6F4B4C18117F7600312CCD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5E6F4B5418117F7700312CCD /* DesignKichinTimerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DesignKichinTimerTests-Info.plist"; sourceTree = "<group>"; };
@@ -310,15 +310,14 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		5E220DD31842637900D2ACB0 /* DefaultClass */ = {
+		5E220DD31842637900D2ACB0 /* NoUse */ = {
 			isa = PBXGroup;
 			children = (
 				5E6F4B3C18117F7600312CCD /* Main_iPhone.storyboard */,
 				5E6F4B3F18117F7600312CCD /* Main_iPad.storyboard */,
-				5E6F4B3918117F7600312CCD /* AppDelegate.h */,
-				5E6F4B3A18117F7600312CCD /* AppDelegate.m */,
+				5E6F4B4518117F7600312CCD /* Images.xcassets */,
 			);
-			name = DefaultClass;
+			name = NoUse;
 			sourceTree = "<group>";
 		};
 		5E30A82918D71579001D468A /* ImageAndSound */ = {
@@ -406,7 +405,7 @@
 				5E711E4518191B0000E7AA83 /* .gitattributes */,
 				5EA2C09F1811865E00B0FC3D /* .gitignore */,
 				5E40179F18D899FB00CE074E /* Lib */,
-				5E220DD31842637900D2ACB0 /* DefaultClass */,
+				5E220DD31842637900D2ACB0 /* NoUse */,
 				5E220DD11842624A00D2ACB0 /* Custom */,
 				5E6F4B3018117F7600312CCD /* DesignKichinTimer */,
 				5E6F4B5218117F7700312CCD /* DesignKichinTimerTests */,
@@ -449,11 +448,12 @@
 		5E6F4B3018117F7600312CCD /* DesignKichinTimer */ = {
 			isa = PBXGroup;
 			children = (
+				5E6F4B3918117F7600312CCD /* AppDelegate.h */,
+				5E6F4B3A18117F7600312CCD /* AppDelegate.m */,
 				5E6F4B4218117F7600312CCD /* ViewController.h */,
 				5E6F4B4318117F7600312CCD /* ViewController.m */,
 				5E4ECBD61866CD5900578E1E /* InfoViewController.h */,
 				5E4ECBD71866CD5900578E1E /* InfoViewController.m */,
-				5E6F4B4518117F7600312CCD /* Images.xcassets */,
 				5E6F4B3118117F7600312CCD /* Supporting Files */,
 			);
 			path = DesignKichinTimer;

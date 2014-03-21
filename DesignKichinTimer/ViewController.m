@@ -233,7 +233,7 @@
 -(void)bannerInit
 {
   int w = [UIScreen mainScreen].bounds.size.width;
-//  int h = [UIScreen mainScreen].bounds.size.height;
+  int h = [UIScreen mainScreen].bounds.size.height;
   
   
   /*** AdMob用 広告表示 ここから ***/
@@ -267,6 +267,20 @@
                              w - adViewHeightMargin +45, // y
                              mobView.frame.size.width,   // w
                              mobView.frame.size.height); // h
+  
+  // 現在の画面の回転状態を取得
+  UIInterfaceOrientation o = [[UIApplication sharedApplication] statusBarOrientation];
+  if(o == UIInterfaceOrientationLandscapeLeft || o == UIInterfaceOrientationLandscapeRight){
+    //Yoko
+//    [self RotatedAdView:h baseHigh:w];
+    mobView.center = CGPointMake(h/2,mobView.center.y);
+
+  }else{
+    //Tate
+//    [self RotatedAdView:w baseHigh:h];
+    mobView.center = CGPointMake(w/2,mobView.center.y);
+  }
+  
   
   [self.view addSubview:mobView];
   
