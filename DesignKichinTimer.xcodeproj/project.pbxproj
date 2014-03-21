@@ -28,6 +28,7 @@
 		5E2809E118DADD1400A28373 /* Icon60@2x_pro.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E2809DD18DADD1400A28373 /* Icon60@2x_pro.png */; };
 		5E2809E218DADD1400A28373 /* Icon76_pro.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E2809DE18DADD1400A28373 /* Icon76_pro.png */; };
 		5E2809E318DADD1400A28373 /* Icon76@2x_pro.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E2809DF18DADD1400A28373 /* Icon76@2x_pro.png */; };
+		5E2809EA18DC596200A28373 /* CntView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2809E918DC596200A28373 /* CntView.m */; };
 		5E30A82B18D722E7001D468A /* batten33.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E30A82A18D722E7001D468A /* batten33.png */; };
 		5E4017A718D89A3400CE074E /* libNendAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E4017A118D89A3400CE074E /* libNendAd.a */; };
 		5E4017A818D89A3400CE074E /* NADView_readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5E4017A618D89A3400CE074E /* NADView_readme.txt */; };
@@ -111,6 +112,8 @@
 		5E2809DE18DADD1400A28373 /* Icon76_pro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon76_pro.png; sourceTree = "<group>"; };
 		5E2809DF18DADD1400A28373 /* Icon76@2x_pro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon76@2x_pro.png"; sourceTree = "<group>"; };
 		5E2809E518DB05CC00A28373 /* Info_pro.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info_pro.plist; sourceTree = "<group>"; };
+		5E2809E818DC596200A28373 /* CntView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CntView.h; sourceTree = "<group>"; };
+		5E2809E918DC596200A28373 /* CntView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CntView.m; sourceTree = "<group>"; };
 		5E30A82A18D722E7001D468A /* batten33.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batten33.png; sourceTree = "<group>"; };
 		5E4017A118D89A3400CE074E /* libNendAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libNendAd.a; sourceTree = "<group>"; };
 		5E4017A218D89A3400CE074E /* NADIconArrayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconArrayView.h; sourceTree = "<group>"; };
@@ -290,6 +293,8 @@
 				5E8BC36C185DE38500C2802E /* BtnZoomOnFlag.m */,
 				5EDE0905185CBF8F00660FF9 /* ResetBtnScaleOnFlag.h */,
 				5EDE0906185CBF8F00660FF9 /* ResetBtnScaleOnFlag.m */,
+				5E2809E818DC596200A28373 /* CntView.h */,
+				5E2809E918DC596200A28373 /* CntView.m */,
 			);
 			name = Custom;
 			sourceTree = "<group>";
@@ -661,6 +666,7 @@
 				5E220DD0184261F100D2ACB0 /* MySetBtn.m in Sources */,
 				5E8BC36D185DE38500C2802E /* BtnZoomOnFlag.m in Sources */,
 				5E4ECBE01868812E00578E1E /* MyInfoBtn.m in Sources */,
+				5E2809EA18DC596200A28373 /* CntView.m in Sources */,
 				5E24806118558F9F0032AF77 /* VibrateOnFlag.m in Sources */,
 				5EDE0907185CBF8F00660FF9 /* ResetBtnScaleOnFlag.m in Sources */,
 				5E6F4B3718117F7600312CCD /* main.m in Sources */,
@@ -873,7 +879,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DesignKichinTimer/DesignKichinTimer-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = DesignKichinTimer/Info.plist;
+				INFOPLIST_FILE = DesignKichinTimer/Info_pro.plist;
 				INFOPLIST_PREFIX_HEADER = "";
 				INFOPLIST_PREPROCESS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -897,7 +903,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DesignKichinTimer/DesignKichinTimer-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = DesignKichinTimer/Info.plist;
+				INFOPLIST_FILE = DesignKichinTimer/Info_pro.plist;
 				INFOPLIST_PREFIX_HEADER = "";
 				INFOPLIST_PREPROCESS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

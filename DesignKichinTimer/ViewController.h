@@ -14,6 +14,7 @@
 #import "MyCntLabel.h"
 #import "GADBannerView.h"
 #import "InfoViewController.h"
+#import "CntView.h"
 
 //@interface ViewController : UIViewController <ADBannerViewDelegate> {
 //@interface ViewController : UIViewController <AdstirViewDelegate> {
@@ -55,7 +56,9 @@
 
   
   // カウンター表示View定義
-  UIView *cntView;
+//  UIView* cntView;
+  CntView* cntView;
+
   
 
   // カウンター表示ラベル定義

@@ -103,25 +103,11 @@
   self.view.layer.cornerRadius = 50.0f;
   self.view.layer.frame = CGRectInset(self.view.layer.frame, 20, 20);
   
-  
   //カウント表示View生成
-  cntView = [[UIView alloc] initWithFrame:CGRectMake([self arignCenter:cntW], 60, cntW, cntH)];// x y w h
+  cntView = [[CntView alloc] initWithFrame:CGRectMake([self arignCenter:cntW], 60, cntW, cntH)];// x y w h
   [self.view addSubview:cntView];
   
   
-  // カウント表示エリア生成
-  cntlayer = [CALayer layer];
-  cntlayer.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0].CGColor;//薄いグレイ
-  cntlayer.frame = CGRectMake(0, 0, cntW, cntH); // x y w h
-  cntlayer.borderColor = [UIColor colorWithRed:0.5 green:0.5 blue:1.0 alpha:1.0].CGColor;//薄い青
-  cntlayer.borderWidth = 7.0;
-  cntlayer.cornerRadius = 10.0;
-  [cntView.layer addSublayer:cntlayer];
-  
-  // Viewの表示順序を設定
-  //  [cntView bringSubviewToFront:cntlayer]; //最前面
-  //  [self.view sendSubviewToBack:nowTimeView]; //最背面
-
   // カウント表示Label
   cntLabel = [[MyCntLabel alloc] initWithFrame:CGRectMake(-15,0,cntView.frame.size.width,cntView.frame.size.height)];// x y w h
   [cntLabel setCnt];
