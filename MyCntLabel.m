@@ -16,8 +16,8 @@ static float CNT_FONT_SIZE_IPHONE = 70.f;
 static float CNT_FONT_SIZE_IPAD   = 180.f;
 
 // Unit Label Font Size "M and S"
-static float UNIT_FONT_SIZE_IPHONE= 15.f;
-static float UNIT_FONT_SIZE_IPAD  = 30.f;
+static float UNIT_FONT_SIZE_IPHONE= 30.f;
+static float UNIT_FONT_SIZE_IPAD  = 60.f;
 
 // History Label Font Size
 static float HIS_FONT_SIZE_IPHONE = 15.f;

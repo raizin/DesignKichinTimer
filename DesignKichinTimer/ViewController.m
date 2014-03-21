@@ -114,7 +114,6 @@
   [cntView addSubview:cntLabel];
   [self _addDropShadowToView:cntView]; // 内影生成
   
-  
   // History Label
   hisLabel = [[MyCntLabel alloc] init];// x y w h
   [hisLabel setHis];
