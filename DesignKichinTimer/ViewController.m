@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import <QuartzCore/QuartzCore.h>
 #import "SoundOnFlag.h"
 #import "VibrateOnFlag.h"
 #import "BtnZoomOnFlag.h"
@@ -191,7 +190,6 @@
   /*** カウンタ数値セットボタンUI定義 ここまで ***/
   
   
-  
   // デバイスの回転をサポート デバイスが回転した際に、呼び出してほしいメソッドを指定
   [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
   [[NSNotificationCenter defaultCenter] addObserver:self
@@ -203,107 +201,19 @@
   
   
   NSString* freeFlagStr  = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"FreeVersionFlag"];
-//  LOG(@"%@",freeFlagStr);
   BOOL freeFlag = [freeFlagStr boolValue];
   if (freeFlag) {
     //フリー版はバナー広告表示 (遅延実行)
-    
-    
-    // 言語環境により処理を分ける
-    NSString* lang = [self getLanguageEnvironment];
-    LOG(@"Language: %@", lang);
-    
-    if ([lang isEqualToString:@"ja"]) {
-      // 日本語環境のみNend広告を使う
-//      [self performSelector:@selector(bannerInitNend) withObject:nil afterDelay:0];
-    }else{
-//      [self performSelector:@selector(bannerInitAdmob) withObject:nil afterDelay:0];
-    }
+    [self performSelector:@selector(bannerInit) withObject:nil afterDelay:0];
   }
 }
-
-
-
 
 -(void)bannerInit
 {
-  int w = [UIScreen mainScreen].bounds.size.width;
-  int h = [UIScreen mainScreen].bounds.size.height;
-  
-
-  /*** iAd用 広告表示 ここから ***
-   adView = [[ADBannerView alloc] initWithFrame:CGRectZero];
-   
-   //画面下部へ表示
-   adViewHeightMargin = 30; // iphone
-   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-   adViewHeightMargin = 66;
-   }
-   
-   adView.frame = CGRectMake(0, // x
-   screenWidth - adViewHeightMargin, // y
-   adView.frame.size.width,   // w
-   adView.frame.size.height); // h
-   
-   
-   
-   adView.delegate = (id<ADBannerViewDelegate>)self;
-   adView.autoresizesSubviews = YES;
-   adView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
-   
-   [self.view addSubview:adView];
-   bannerIsVisible = YES;
-   *** iAd用 広告表示 ここまで ***/
+//  int w = [UIScreen mainScreen].bounds.size.width;
+//  int h = [UIScreen mainScreen].bounds.size.height;
 }
 
-/*
-- (void)bannerViewDidLoadAd:(ADBannerView *)banner
-{
-//  NSLog(@"%d: iAd Get Success!!",__LINE__);
-  
-  if (!bannerIsVisible) {
-    [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
-    [UIView setAnimationDuration:0.3];
-    
-    //    banner.frame = CGRectOffset(banner.frame, 0, CGRectGetHeight(banner.frame));
-    banner.alpha = 1.0f;
-    banner.hidden = NO;
-    
-    [UIView commitAnimations];
-    
-    bannerIsVisible = YES;
-    [self.view addSubview:adView];
-    
-    mobView.hidden = YES;
-    [mobView removeFromSuperview];
-    
-  }
-  
-}
-*/
-/*
-- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
-{
-//  NSLog(@"%d: iAd get NG??",__LINE__);
-  
-  if (bannerIsVisible) {
-    [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
-    [UIView setAnimationDuration:0.3];
-    
-    //    banner.frame = CGRectOffset(banner.frame, 0, -CGRectGetHeight(banner.frame));
-    banner.alpha = 0.0f;
-    banner.hidden = YES;
-    
-    [UIView commitAnimations];
-    
-    bannerIsVisible = NO;
-    [adView removeFromSuperview];
-    
-    mobView.hidden = NO;
-    [self.view addSubview:mobView];
-  }
-}
-*/
 
 - (BOOL)shouldAutorotate
 {
@@ -410,36 +320,9 @@
           [self btnScaleUpTate:setBtnReset];
         }
       }
-      
-      
     }
-    
-  }
-
-  
-  
-  /*** 広告表示位置制御 ***/
-  
-  // 横向き
-  if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
-    
-//    mobView.center = CGPointMake([self arignCenter:0], mobView.center.y); // x y
-
-  // 縦向き
-  } else if (o == UIDeviceOrientationPortrait || o == UIDeviceOrientationPortraitUpsideDown) {
-    
-//    mobView.center = CGPointMake([self arignCenter:0], mobView.center.y); // x y
-
-    
-    // 向きが不明な場合
-  } else {
-//    NSLog(@"%d: device orientation is Unkown.",__LINE__);
   }
 }
-
-
-
-
 
 /*
  * タイマー用タイマー開始関数

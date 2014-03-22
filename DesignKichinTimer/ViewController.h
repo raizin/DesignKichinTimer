@@ -6,8 +6,7 @@
 //  Copyright (c) 2013 FoceSystemSolution. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <AVFoundation/AVFoundation.h>
+#import <QuartzCore/QuartzCore.h>
 #import <iAd/iAd.h>
 #import "MySetBtn.h"
 #import "MyModeBtn.h"
@@ -57,7 +56,6 @@
 
   
   // カウンター表示View定義
-//  UIView* cntView;
   CntView* cntView;
 
   
@@ -85,13 +83,11 @@
   MyModeBtn *timerSelectBtn; //「タイマー設定」切替ボタン
   MyModeBtn *clockSelectBtn; //「現在時表示」切替ボタン
   
-//  MySetBtn *setBtn60;//60 min
   MySetBtn *setBtn10;//10 min
   MySetBtn *setBtn05;//5 min
   MySetBtn *setBtn03;//3 min
   MySetBtn *setBtn01;//1 min
   MySetBtn *setBtn001;//10 s
-//  MySetBtn *setBtn0001;//1 s
   MySetBtn *setBtnStart;
   MySetBtn *setBtnReset;//Reset & Stop
   
