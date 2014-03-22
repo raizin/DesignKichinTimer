@@ -12,21 +12,22 @@
 #import "MySetBtn.h"
 #import "MyModeBtn.h"
 #import "MyCntLabel.h"
-#import "GADBannerView.h"
 #import "InfoViewController.h"
 #import "CntView.h"
 
-//@interface ViewController : UIViewController <ADBannerViewDelegate> {
-//@interface ViewController : UIViewController <AdstirViewDelegate> {
 @interface ViewController : UIViewController {
 
+  /// Banner広告用定義 ここから ///
   // iAd用View
   ADBannerView *adView;
   BOOL bannerIsVisible;
   int adViewHeightMargin;
   
   //Google AdMob用View
-  GADBannerView *mobView;
+//  GADBannerView *mobView;
+  
+  UIButton* adDelBtn;
+  /// Banner広告用定義 ここまで ///
 
   
   //NSUserDefaults領域を使用
@@ -115,5 +116,4 @@
   // リセットボタン 拡大フラグ
   BOOL resetBtnScaleFlag;  
 }
-
 @end

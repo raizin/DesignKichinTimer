@@ -30,8 +30,6 @@
 		5E2809E318DADD1400A28373 /* Icon76@2x_pro.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E2809DF18DADD1400A28373 /* Icon76@2x_pro.png */; };
 		5E2809EA18DC596200A28373 /* CntView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2809E918DC596200A28373 /* CntView.m */; };
 		5E30A82B18D722E7001D468A /* batten33.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E30A82A18D722E7001D468A /* batten33.png */; };
-		5E4017A718D89A3400CE074E /* libNendAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E4017A118D89A3400CE074E /* libNendAd.a */; };
-		5E4017A818D89A3400CE074E /* NADView_readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5E4017A618D89A3400CE074E /* NADView_readme.txt */; };
 		5E42589718192B7F00171F1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E42589918192B7F00171F1F /* Localizable.strings */; };
 		5E42589C181CF29300171F1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E42589B181CF29300171F1F /* QuartzCore.framework */; };
 		5E4ECBD01866250E00578E1E /* IconInfoTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E4ECBCE1866250E00578E1E /* IconInfoTouch.png */; };
@@ -41,8 +39,6 @@
 		5E5B420318744775006FDE6E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E5B420218744775006FDE6E /* Security.framework */; };
 		5E5DF025184327510098499A /* MyModeBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DF024184327510098499A /* MyModeBtn.m */; };
 		5E5DF028184377EC0098499A /* MyCntLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DF027184377EC0098499A /* MyCntLabel.m */; };
-		5E5DF03818438FB50098499A /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E5DF03618438FB50098499A /* libGoogleAdMobAds.a */; };
-		5E5DF03918438FB50098499A /* AdMob_README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5E5DF03718438FB50098499A /* AdMob_README.txt */; };
 		5E6F4B2B18117F7600312CCD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E6F4B2A18117F7600312CCD /* Foundation.framework */; };
 		5E6F4B2D18117F7600312CCD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E6F4B2C18117F7600312CCD /* CoreGraphics.framework */; };
 		5E6F4B2F18117F7600312CCD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E6F4B2E18117F7600312CCD /* UIKit.framework */; };
@@ -115,12 +111,6 @@
 		5E2809E818DC596200A28373 /* CntView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CntView.h; sourceTree = "<group>"; };
 		5E2809E918DC596200A28373 /* CntView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CntView.m; sourceTree = "<group>"; };
 		5E30A82A18D722E7001D468A /* batten33.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batten33.png; sourceTree = "<group>"; };
-		5E4017A118D89A3400CE074E /* libNendAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libNendAd.a; sourceTree = "<group>"; };
-		5E4017A218D89A3400CE074E /* NADIconArrayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconArrayView.h; sourceTree = "<group>"; };
-		5E4017A318D89A3400CE074E /* NADIconLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconLoader.h; sourceTree = "<group>"; };
-		5E4017A418D89A3400CE074E /* NADIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconView.h; sourceTree = "<group>"; };
-		5E4017A518D89A3400CE074E /* NADView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADView.h; sourceTree = "<group>"; };
-		5E4017A618D89A3400CE074E /* NADView_readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NADView_readme.txt; sourceTree = "<group>"; };
 		5E42589418192B2600171F1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5E42589818192B7F00171F1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E42589A18192B8800171F1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -137,17 +127,6 @@
 		5E5DF024184327510098499A /* MyModeBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyModeBtn.m; sourceTree = "<group>"; };
 		5E5DF026184377EC0098499A /* MyCntLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCntLabel.h; sourceTree = "<group>"; };
 		5E5DF027184377EC0098499A /* MyCntLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCntLabel.m; sourceTree = "<group>"; };
-		5E5DF02D18438FB50098499A /* GADAdMobExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdMobExtras.h; sourceTree = "<group>"; };
-		5E5DF02E18438FB50098499A /* GADAdNetworkExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdNetworkExtras.h; sourceTree = "<group>"; };
-		5E5DF02F18438FB50098499A /* GADAdSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdSize.h; sourceTree = "<group>"; };
-		5E5DF03018438FB50098499A /* GADBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerView.h; sourceTree = "<group>"; };
-		5E5DF03118438FB50098499A /* GADBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerViewDelegate.h; sourceTree = "<group>"; };
-		5E5DF03218438FB50098499A /* GADInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitial.h; sourceTree = "<group>"; };
-		5E5DF03318438FB50098499A /* GADInterstitialDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitialDelegate.h; sourceTree = "<group>"; };
-		5E5DF03418438FB50098499A /* GADRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequest.h; sourceTree = "<group>"; };
-		5E5DF03518438FB50098499A /* GADRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequestError.h; sourceTree = "<group>"; };
-		5E5DF03618438FB50098499A /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAdMobAds.a; sourceTree = "<group>"; };
-		5E5DF03718438FB50098499A /* AdMob_README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AdMob_README.txt; sourceTree = "<group>"; };
 		5E6F4B2718117F7600312CCD /* DesignKichinTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignKichinTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6F4B2A18117F7600312CCD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5E6F4B2C18117F7600312CCD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -260,9 +239,7 @@
 				5EC2DCCA182FCEB8003E1D5C /* AVFoundation.framework in Frameworks */,
 				5EC2DCC6182C77B1003E1D5C /* AudioToolbox.framework in Frameworks */,
 				5E42589C181CF29300171F1F /* QuartzCore.framework in Frameworks */,
-				5E4017A718D89A3400CE074E /* libNendAd.a in Frameworks */,
 				5E6F4B2D18117F7600312CCD /* CoreGraphics.framework in Frameworks */,
-				5E5DF03818438FB50098499A /* libGoogleAdMobAds.a in Frameworks */,
 				5E6F4B2F18117F7600312CCD /* UIKit.framework in Frameworks */,
 				5E6F4B2B18117F7600312CCD /* Foundation.framework in Frameworks */,
 			);
@@ -367,41 +344,8 @@
 		5E40179F18D899FB00CE074E /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				5E4017A018D89A3400CE074E /* NendAd */,
-				5E5DF02C18438F7C0098499A /* GoogleADMobSDK */,
 			);
 			name = Lib;
-			sourceTree = "<group>";
-		};
-		5E4017A018D89A3400CE074E /* NendAd */ = {
-			isa = PBXGroup;
-			children = (
-				5E4017A118D89A3400CE074E /* libNendAd.a */,
-				5E4017A218D89A3400CE074E /* NADIconArrayView.h */,
-				5E4017A318D89A3400CE074E /* NADIconLoader.h */,
-				5E4017A418D89A3400CE074E /* NADIconView.h */,
-				5E4017A518D89A3400CE074E /* NADView.h */,
-				5E4017A618D89A3400CE074E /* NADView_readme.txt */,
-			);
-			path = NendAd;
-			sourceTree = "<group>";
-		};
-		5E5DF02C18438F7C0098499A /* GoogleADMobSDK */ = {
-			isa = PBXGroup;
-			children = (
-				5E5DF02D18438FB50098499A /* GADAdMobExtras.h */,
-				5E5DF02E18438FB50098499A /* GADAdNetworkExtras.h */,
-				5E5DF02F18438FB50098499A /* GADAdSize.h */,
-				5E5DF03018438FB50098499A /* GADBannerView.h */,
-				5E5DF03118438FB50098499A /* GADBannerViewDelegate.h */,
-				5E5DF03218438FB50098499A /* GADInterstitial.h */,
-				5E5DF03318438FB50098499A /* GADInterstitialDelegate.h */,
-				5E5DF03418438FB50098499A /* GADRequest.h */,
-				5E5DF03518438FB50098499A /* GADRequestError.h */,
-				5E5DF03618438FB50098499A /* libGoogleAdMobAds.a */,
-				5E5DF03718438FB50098499A /* AdMob_README.txt */,
-			);
-			name = GoogleADMobSDK;
 			sourceTree = "<group>";
 		};
 		5E6F4B1E18117F7600312CCD = {
@@ -541,7 +485,7 @@
 		5E6F4B1F18117F7600312CCD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = FoceSystemSolution;
 				TargetAttributes = {
 					5E6F4B4A18117F7600312CCD = {
@@ -610,7 +554,6 @@
 				5E2480751856FE6B0032AF77 /* IconSndOff.png in Resources */,
 				5E2809E318DADD1400A28373 /* Icon76@2x_pro.png in Resources */,
 				5E2480681856ED3E0032AF77 /* IconVibOff.png in Resources */,
-				5E4017A818D89A3400CE074E /* NADView_readme.txt in Resources */,
 				5ECB0D371832173700103C18 /* pi_mono.mp3 in Resources */,
 				5EF21EC81839260C00C079F0 /* Icon76.png in Resources */,
 				5EA2C0A01811865E00B0FC3D /* .gitignore in Resources */,
@@ -619,7 +562,6 @@
 				5E711E4618191B0000E7AA83 /* .gitattributes in Resources */,
 				5E8BC373185DF84600C2802E /* IconBigOn.png in Resources */,
 				5E30A82B18D722E7001D468A /* batten33.png in Resources */,
-				5E5DF03918438FB50098499A /* AdMob_README.txt in Resources */,
 				5EF21EC91839260C00C079F0 /* Icon76@2x.png in Resources */,
 				5E2480721856FD4D0032AF77 /* IconSndOn.png in Resources */,
 				5EC2DCD21830A52A003E1D5C /* pi_old.mp3 in Resources */,
@@ -799,7 +741,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -829,7 +770,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -840,7 +781,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -864,7 +804,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -882,7 +822,7 @@
 				INFOPLIST_FILE = DesignKichinTimer/Info.plist;
 				INFOPLIST_PREFIX_HEADER = "";
 				INFOPLIST_PREPROCESS = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					/Users/zzz/XCodeWorks/DesignKichinTimer,
 					/Users/zzz/XCodeWorks/DesignKichinTimer/NendAd,
@@ -906,7 +846,7 @@
 				INFOPLIST_FILE = DesignKichinTimer/Info.plist;
 				INFOPLIST_PREFIX_HEADER = "";
 				INFOPLIST_PREPROCESS = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					/Users/zzz/XCodeWorks/DesignKichinTimer,
 					/Users/zzz/XCodeWorks/DesignKichinTimer/NendAd,
@@ -922,7 +862,6 @@
 		5E6F4B6018117F7700312CCD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DesignKichinTimer.app/DesignKichinTimer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -946,7 +885,6 @@
 		5E6F4B6118117F7700312CCD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DesignKichinTimer.app/DesignKichinTimer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

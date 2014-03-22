@@ -12,7 +12,6 @@
 #import "VibrateOnFlag.h"
 #import "BtnZoomOnFlag.h"
 #import "ResetBtnScaleOnFlag.h"
-#import "GADBannerView.h"
 
 @interface ViewController()
 @end
@@ -208,79 +207,30 @@
   BOOL freeFlag = [freeFlagStr boolValue];
   if (freeFlag) {
     //フリー版はバナー広告表示 (遅延実行)
-    [self performSelector:@selector(bannerInit) withObject:nil afterDelay:0];
+    
+    
+    // 言語環境により処理を分ける
+    NSString* lang = [self getLanguageEnvironment];
+    LOG(@"Language: %@", lang);
+    
+    if ([lang isEqualToString:@"ja"]) {
+      // 日本語環境のみNend広告を使う
+//      [self performSelector:@selector(bannerInitNend) withObject:nil afterDelay:0];
+    }else{
+//      [self performSelector:@selector(bannerInitAdmob) withObject:nil afterDelay:0];
+    }
   }
-  
-  
-
 }
+
+
+
 
 -(void)bannerInit
 {
   int w = [UIScreen mainScreen].bounds.size.width;
   int h = [UIScreen mainScreen].bounds.size.height;
   
-  
-  /*** AdMob用 広告表示 ここから ***/
-  adViewHeightMargin = 30; // iphone
-  CGRect adRect = CGRectMake(0.0,
-                             self.view.frame.size.height - GAD_SIZE_320x50.height,
-                             GAD_SIZE_320x50.width,
-                             GAD_SIZE_320x50.height);
-  
-  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-    // iPad用定義
-    
-    adViewHeightMargin = 57;
-    
-    adRect = CGRectMake(0.0,
-                        self.view.frame.size.height - GAD_SIZE_728x90.height,
-                        GAD_SIZE_728x90.width,
-                        GAD_SIZE_728x90.height);
-    
-  }
-  
-  mobView = [[GADBannerView alloc] initWithFrame:adRect];
-  
-  //  mobView.adUnitID = [APP_DELEGATE getAdMobUnitId];
-  mobView.adUnitID = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"AdMobUnitId"];
-  mobView.delegate = (id<GADBannerViewDelegate>)self;
-  mobView.rootViewController = self;
-  
-  //画面下部へ表示
-  mobView.frame = CGRectMake(0, // x
-                             w - adViewHeightMargin +45, // y
-                             mobView.frame.size.width,   // w
-                             mobView.frame.size.height); // h
-  
-  // 現在の画面の回転状態を取得
-  UIInterfaceOrientation o = [[UIApplication sharedApplication] statusBarOrientation];
-  if(o == UIInterfaceOrientationLandscapeLeft || o == UIInterfaceOrientationLandscapeRight){
-    //Yoko
-//    [self RotatedAdView:h baseHigh:w];
-    mobView.center = CGPointMake(h/2,mobView.center.y);
 
-  }else{
-    //Tate
-//    [self RotatedAdView:w baseHigh:h];
-    mobView.center = CGPointMake(w/2,mobView.center.y);
-  }
-  
-  
-  [self.view addSubview:mobView];
-  
-  GADRequest *request = [GADRequest request];
-  [mobView loadRequest:request];
-  
-  //Screen Shot用に広告非表示 NO:広告表示する YES:広告表示しない
-  if (NO) {
-    mobView.hidden = YES;
-  }
-  
-  
-  /*** AdMob用 広告表示 ここまで ***/
-  
-  
   /*** iAd用 広告表示 ここから ***
    adView = [[ADBannerView alloc] initWithFrame:CGRectZero];
    
@@ -305,26 +255,6 @@
    bannerIsVisible = YES;
    *** iAd用 広告表示 ここまで ***/
 }
-
-
-//AdMob取得成功
-- (void)adViewDidReceiveAd:(GADBannerView *)view
-{
-  if (!bannerIsVisible) {
-    [UIView animateWithDuration:0.3 animations:^{
-      mobView.frame = CGRectOffset(view.frame, 0, -view.frame.size.height);
-    }];
-    bannerIsVisible = YES;
-  }
-}
-
-//AdMob取得失敗
-- (void)adView:(GADBannerView *)view didFailToReceiveAdWithError:(GADRequestError *)error
-{
-  [mobView removeFromSuperview];
-  mobView = nil;
-}
-
 
 /*
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
@@ -493,12 +423,12 @@
   // 横向き
   if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
     
-    mobView.center = CGPointMake([self arignCenter:0], mobView.center.y); // x y
+//    mobView.center = CGPointMake([self arignCenter:0], mobView.center.y); // x y
 
   // 縦向き
   } else if (o == UIDeviceOrientationPortrait || o == UIDeviceOrientationPortraitUpsideDown) {
     
-    mobView.center = CGPointMake([self arignCenter:0], mobView.center.y); // x y
+//    mobView.center = CGPointMake([self arignCenter:0], mobView.center.y); // x y
 
     
     // 向きが不明な場合
@@ -1138,6 +1068,15 @@
   [cntView addSubview:byoLabel];
 }
 
+// 現在の言語環境を得る
+-(NSString*) getLanguageEnvironment
+{
+	// 言語配列を得る
+	NSArray* languageList = [NSLocale preferredLanguages];
+	
+	// 使用中の言語は言語配列の先頭の項目となる
+	return [languageList objectAtIndex:0];
+}
 
 
 // L字型(『)の内影
