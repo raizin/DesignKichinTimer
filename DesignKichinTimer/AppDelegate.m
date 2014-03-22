@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-//#import "SSGentleAlertView.h"
 
 @implementation AppDelegate
 
@@ -58,31 +57,6 @@
   // Override point for customization after application launch.
   return YES;
 }
-
-/*
-// アラートのボタンが押された時に呼ばれるデリゲート
--(void)alertView:(UIAlertView*)alertView
-clickedButtonAtIndex:(NSInteger)buttonIndex {
-  
-  //  NSString *reviewURLiOS6 = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=APPID";
-  NSURL *reviewURL = [NSURL URLWithString:[[NSBundle mainBundle] objectForInfoDictionaryKey: @"ReviewURL"]];
-  
-  switch (buttonIndex) {
-    case 0: // キャンセル (なにもしない)
-      //      NSLog(@"buttonIndex = %d", (int)buttonIndex);
-      break;
-      
-    case 1:
-      //      NSLog(@"buttonIndex = %d", (int)buttonIndex);
-      
-      [[UIApplication sharedApplication] openURL:reviewURL];
-      
-      break;
-  }
-}
-*/
-
-
 
 
 - (void)applicationWillResignActive:(UIApplication *)application

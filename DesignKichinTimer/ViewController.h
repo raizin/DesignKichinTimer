@@ -7,7 +7,7 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
-#import <iAd/iAd.h>
+//#import <iAd/iAd.h>
 #import "MySetBtn.h"
 #import "MyModeBtn.h"
 #import "MyCntLabel.h"
@@ -15,19 +15,6 @@
 #import "CntView.h"
 
 @interface ViewController : UIViewController {
-
-  /// Banner広告用定義 ここから ///
-  // iAd用View
-  ADBannerView *adView;
-  BOOL bannerIsVisible;
-  int adViewHeightMargin;
-  
-  //Google AdMob用View
-//  GADBannerView *mobView;
-  
-  UIButton* adDelBtn;
-  /// Banner広告用定義 ここまで ///
-
   
   //NSUserDefaults領域を使用
   NSUserDefaults *ud;

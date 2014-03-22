@@ -819,14 +819,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DesignKichinTimer/DesignKichinTimer-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = DesignKichinTimer/Info.plist;
+				INFOPLIST_FILE = DesignKichinTimer/Info_pro.plist;
 				INFOPLIST_PREFIX_HEADER = "";
 				INFOPLIST_PREPROCESS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				LIBRARY_SEARCH_PATHS = (
-					/Users/zzz/XCodeWorks/DesignKichinTimer,
-					/Users/zzz/XCodeWorks/DesignKichinTimer/NendAd,
-				);
+				LIBRARY_SEARCH_PATHS = /Users/zzz/XCodeWorks/DesignTimer;
 				OTHER_LDFLAGS = "-ObjC";
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -843,14 +840,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DesignKichinTimer/DesignKichinTimer-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = DesignKichinTimer/Info.plist;
+				INFOPLIST_FILE = DesignKichinTimer/Info_pro.plist;
 				INFOPLIST_PREFIX_HEADER = "";
 				INFOPLIST_PREPROCESS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				LIBRARY_SEARCH_PATHS = (
-					/Users/zzz/XCodeWorks/DesignKichinTimer,
-					/Users/zzz/XCodeWorks/DesignKichinTimer/NendAd,
-				);
+				LIBRARY_SEARCH_PATHS = /Users/zzz/XCodeWorks/DesignTimer;
 				OTHER_LDFLAGS = "-all_load";
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
