@@ -18,21 +18,6 @@
 @implementation ViewController
 
 
-// iOS7 Status Bar Disabled
-- (BOOL)prefersStatusBarHidden
-{
-  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    return YES;
-  }else{
-    return NO; // ipad
-  }
-}
-- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation
-{
-  return UIStatusBarAnimationFade;
-}
-
-
 // View が初めて呼び出される時に1回だけ呼ばれる *定義済み関数
 - (void)viewDidLoad
 {
@@ -213,16 +198,6 @@
   LOG(@"%s",__func__);
 //  int w = [UIScreen mainScreen].bounds.size.width;
 //  int h = [UIScreen mainScreen].bounds.size.height;
-}
-
-
-- (BOOL)shouldAutorotate
-{
-  if(YES){
-    return YES;
-  } else {
-    return NO;
-  }
 }
 
 
