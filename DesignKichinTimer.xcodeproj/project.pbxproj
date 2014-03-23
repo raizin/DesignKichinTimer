@@ -133,7 +133,7 @@
 		5E6F4B2E18117F7600312CCD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5E6F4B3218117F7600312CCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E6F4B3618117F7600312CCD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5E6F4B3818117F7600312CCD /* DesignKichinTimer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DesignKichinTimer-Prefix.pch"; sourceTree = "<group>"; };
+		5E6F4B3818117F7600312CCD /* DesignTimer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DesignTimer-Prefix.pch"; sourceTree = "<group>"; };
 		5E6F4B3918117F7600312CCD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5E6F4B3A18117F7600312CCD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5E6F4B3D18117F7600312CCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
@@ -356,7 +356,7 @@
 				5E40179F18D899FB00CE074E /* Lib */,
 				5E220DD31842637900D2ACB0 /* NoUse */,
 				5E220DD11842624A00D2ACB0 /* Custom */,
-				5E6F4B3018117F7600312CCD /* DesignKichinTimer */,
+				5E6F4B3018117F7600312CCD /* DesignTimer */,
 				5E6F4B5218117F7700312CCD /* DesignKichinTimerTests */,
 				5E6F4B2918117F7600312CCD /* Frameworks */,
 				5E6F4B2818117F7600312CCD /* Products */,
@@ -394,7 +394,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5E6F4B3018117F7600312CCD /* DesignKichinTimer */ = {
+		5E6F4B3018117F7600312CCD /* DesignTimer */ = {
 			isa = PBXGroup;
 			children = (
 				5E6F4B3918117F7600312CCD /* AppDelegate.h */,
@@ -405,6 +405,7 @@
 				5E4ECBD71866CD5900578E1E /* InfoViewController.m */,
 				5E6F4B3118117F7600312CCD /* Supporting Files */,
 			);
+			name = DesignTimer;
 			path = DesignKichinTimer;
 			sourceTree = "<group>";
 		};
@@ -417,7 +418,7 @@
 				5E2809E518DB05CC00A28373 /* Info_pro.plist */,
 				5E6F4B3318117F7600312CCD /* InfoPlist.strings */,
 				5E6F4B3618117F7600312CCD /* main.m */,
-				5E6F4B3818117F7600312CCD /* DesignKichinTimer-Prefix.pch */,
+				5E6F4B3818117F7600312CCD /* DesignTimer-Prefix.pch */,
 				5E42589918192B7F00171F1F /* Localizable.strings */,
 			);
 			name = "Supporting Files";
@@ -817,7 +818,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DesignKichinTimer/DesignKichinTimer-Prefix.pch";
+				GCC_PREFIX_HEADER = "DesignKichinTimer/DesignTimer-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = DesignKichinTimer/Info_pro.plist;
 				INFOPLIST_PREFIX_HEADER = "";
@@ -838,7 +839,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DesignKichinTimer/DesignKichinTimer-Prefix.pch";
+				GCC_PREFIX_HEADER = "DesignKichinTimer/DesignTimer-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = DesignKichinTimer/Info_pro.plist;
 				INFOPLIST_PREFIX_HEADER = "";
