@@ -103,6 +103,7 @@
   
   //カウント表示View生成
   cntView = [[CntView alloc] initWithFrame:CGRectMake([self arignCenter:cntW], 60, cntW, cntH)];// x y w h
+  [cntView setBackgroundColor:[UIColor whiteColor]];
   [self.view addSubview:cntView];
   
   
@@ -110,7 +111,6 @@
   cntLabel = [[MyCntLabel alloc] initWithFrame:CGRectMake(-15,0,cntView.frame.size.width,cntView.frame.size.height)];// x y w h
   [cntLabel setCnt];
   [cntView addSubview:cntLabel];
-  [self _addDropShadowToView:cntView]; // 内影生成
   
   // History Label
   hisLabel = [[MyCntLabel alloc] init];// x y w h
@@ -951,63 +951,6 @@
   [byoLabel setByo];
   [cntView addSubview:byoLabel];
 }
-
-// 現在の言語環境を得る
--(NSString*) getLanguageEnvironment
-{
-	// 言語配列を得る
-	NSArray* languageList = [NSLocale preferredLanguages];
-	
-	// 使用中の言語は言語配列の先頭の項目となる
-	return [languageList objectAtIndex:0];
-}
-
-
-// L字型(『)の内影
-- (void)_addDropShadowToView:(UIView*)toView
-{
-  CALayer* subLayer = [CALayer layer];
-  subLayer.frame = toView.bounds;
-  [toView.layer addSublayer:subLayer];
-  subLayer.masksToBounds = YES;
-  
-  CGSize size = subLayer.bounds.size;
-  CGFloat x = 3.0;
-  CGFloat y = 3.0;
-  CGMutablePathRef pathRef = CGPathCreateMutable(); // polygon create
-
-  CGPathMoveToPoint(pathRef, NULL, x, y); // start
-
-  x += size.width - 5.0;
-  CGPathAddLineToPoint(pathRef, NULL, x, y); // 1
-  
-  y += 10.0;
-  CGPathAddLineToPoint(pathRef, NULL, x, y); // 2
-  
-  x -= size.width - 15.0;
-  CGPathAddLineToPoint(pathRef, NULL, x, y); // 3
-  
-  y += size.height - 15.0;
-  CGPathAddLineToPoint(pathRef, NULL, x, y); // 4
-  
-  x -= 5.0;   // (*)10
-  CGPathAddLineToPoint(pathRef, NULL, x, y); // 5
-  
-  y -= 5.0;   // (*)size.height+10
-  CGPathAddLineToPoint(pathRef, NULL, x, y); // 6
-  
-  CGPathAddLineToPoint(pathRef, NULL, 3.0, 3.0); // end
-  
-  CGPathCloseSubpath(pathRef);
-  
-  subLayer.shadowOffset = CGSizeMake(0.0, 0.0);
-  subLayer.shadowColor = [[UIColor blackColor] CGColor];
-  subLayer.shadowOpacity = 0.2; // 不透明度
-  subLayer.shadowPath = pathRef;
-  
-  CGPathRelease(pathRef);
-}
-
 
 // 中央寄せ用 X座標算出
 - (float)arignCenter:(int)w
