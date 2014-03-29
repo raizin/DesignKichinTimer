@@ -134,8 +134,7 @@
   [setBtn03 addTarget:self action:@selector(btn03Touch:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:setBtn03];
   
-  setBtn01 = [MySetBtn buttonWithType:UIButtonTypeCustom];
-  [setBtn01 setNum:1 minFlag:YES];
+  setBtn01 = [PlusNnBtn buttonWithType:UIButtonTypeCustom];[setBtn01 setNum:1];
   [setBtn01 addTarget:self action:@selector(btn01Touch:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:setBtn01];
 
@@ -238,7 +237,13 @@
       setBtn10.frame    = CGRectMake(centerPoint -74  -85, 150, 74, 50); // x y w h
       setBtn05.frame    = CGRectMake(centerPoint -74 -3.5, 150, 74, 50); // x y w h
       setBtn03.frame    = CGRectMake(centerPoint     +3.5, 150, 74, 50); // x y w h
-      setBtn01.frame    = CGRectMake(centerPoint      +85, 150, 74, 50); // x y w h
+      
+      
+//    setBtn01.frame    = CGRectMake(centerPoint      +85, 150, 74, 50); // x y w h
+      setBtn01.center = CGPointMake(centerPoint +122, 175);
+      LOG(@"center=%d x=%d y=%d",centerPoint,(int)setBtn01.center.x,(int)setBtn01.center.y);
+
+      
       setBtnReset.frame = CGRectMake(centerPoint     -135, 220, 80, 60); // x y w h
       setBtn001.frame   = CGRectMake(centerPoint  -(74/2), 225, 74, 50); // x y w h
       setBtnStart.frame = CGRectMake(centerPoint      +55, 220, 80, 60); // x y w h
@@ -275,10 +280,15 @@
       // Viewの位置とサイズを補正してセット
       cntView.frame = CGRectMake([self arignCenter:cntW], 60, cntW, cntH); // x y w h
 
-      setBtn10.frame    = CGRectMake(centerPoint -170 -200, 400, 170, 100); // x y w h
+      setBtn10.frame    = CGRectMake(centerPoint -170 -200, 400 -50, 170, 100); // x y w h
       setBtn05.frame    = CGRectMake(centerPoint -170  -10, 400, 170, 100); // x y w h
       setBtn03.frame    = CGRectMake(centerPoint       +10, 400, 170, 100); // x y w h
-      setBtn01.frame    = CGRectMake(centerPoint      +200, 400, 170, 100); // x y w h
+      
+//    setBtn01.frame    = CGRectMake(centerPoint      +200, 400, 170, 100); // x y w h
+      setBtn01.center = CGPointMake(centerPoint +285, 450 -50);
+      LOG(@"center=%d x=%d y=%d",centerPoint,(int)setBtn01.center.x,(int)setBtn01.center.y);
+      
+      
       setBtnReset.frame = CGRectMake(centerPoint -190 -115, 550, 190, 110); // x y w h
       setBtn001.frame   = CGRectMake(centerPoint  -(170/2), 550, 170, 100); // x y w h
       setBtnStart.frame = CGRectMake(centerPoint      +115, 550, 190, 110); // x y w h

@@ -13,6 +13,7 @@
 #import "MyCntLabel.h"
 #import "InfoViewController.h"
 #import "CntView.h"
+#import "PlusNnBtn.h"
 
 @interface ViewController : UIViewController {
   
@@ -73,7 +74,7 @@
   MySetBtn *setBtn10;//10 min
   MySetBtn *setBtn05;//5 min
   MySetBtn *setBtn03;//3 min
-  MySetBtn *setBtn01;//1 min
+  PlusNnBtn *setBtn01;//1 min
   MySetBtn *setBtn001;//10 s
   MySetBtn *setBtnStart;
   MySetBtn *setBtnReset;//Reset & Stop
