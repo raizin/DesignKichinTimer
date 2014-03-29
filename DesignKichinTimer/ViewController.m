@@ -119,18 +119,15 @@
   
   
   /*** カウンタ数値セットボタンUI定義 ここから ***/
-  setBtn10 = [MySetBtn buttonWithType:UIButtonTypeCustom];
-  [setBtn10 setNum:10 minFlag:YES];
+  setBtn10 = [PlusNnBtn buttonWithType:UIButtonTypeCustom];[setBtn10 setNum:10];
   [setBtn10 addTarget:self action:@selector(btn10Touch:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:setBtn10];
  
-  setBtn05 = [MySetBtn buttonWithType:UIButtonTypeCustom];
-  [setBtn05 setNum:5 minFlag:YES];
+  setBtn05 = [PlusNnBtn buttonWithType:UIButtonTypeCustom];[setBtn05 setNum:5];
   [setBtn05 addTarget:self action:@selector(btn05Touch:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:setBtn05];
   
-  setBtn03 = [MySetBtn buttonWithType:UIButtonTypeCustom];
-  [setBtn03 setNum:3 minFlag:YES];
+  setBtn03 = [PlusNnBtn buttonWithType:UIButtonTypeCustom];[setBtn03 setNum:3];
   [setBtn03 addTarget:self action:@selector(btn03Touch:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:setBtn03];
   
@@ -143,8 +140,7 @@
   [setBtnReset addTarget:self action:@selector(resetBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:setBtnReset];
   
-  setBtn001 = [MySetBtn buttonWithType:UIButtonTypeCustom];
-  [setBtn001 setNum:10 minFlag:NO];
+  setBtn001 = [PlusNnBtn buttonWithType:UIButtonTypeCustom];[setBtn001 setNumByo:10];
   [setBtn001 addTarget:self action:@selector(btn001Touch:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:setBtn001];
 

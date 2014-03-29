@@ -71,11 +71,11 @@
   MyModeBtn *timerSelectBtn; //「タイマー設定」切替ボタン
   MyModeBtn *clockSelectBtn; //「現在時表示」切替ボタン
   
-  MySetBtn *setBtn10;//10 min
-  MySetBtn *setBtn05;//5 min
-  MySetBtn *setBtn03;//3 min
+  PlusNnBtn *setBtn10;//10 min
+  PlusNnBtn *setBtn05;//5 min
+  PlusNnBtn *setBtn03;//3 min
   PlusNnBtn *setBtn01;//1 min
-  MySetBtn *setBtn001;//10 s
+  PlusNnBtn *setBtn001;//10 s
   MySetBtn *setBtnStart;
   MySetBtn *setBtnReset;//Reset & Stop
   
