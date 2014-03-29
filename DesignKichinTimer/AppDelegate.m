@@ -40,6 +40,25 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   //Sound play setting
@@ -61,17 +80,73 @@
   LOG(@"%s",__func__);
 }
 
+
+// 残り時間（秒数）を取得
+- (int)getRemnamt{
+  int ret = 0;
+  ret = self.globalMin * 60;
+  ret += self.globalSec;
+  return ret;
+}
+
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
   //アプリがバックグラウンドになった時
   LOG(@"%s",__func__);
+  
+  UIApplication* app = [UIApplication sharedApplication];
+  
+  UILocalNotification *notification = [[UILocalNotification alloc] init];
+  
+  //残りの秒数を取得
+  int remnantSec = [self getRemnamt];
+
+  LOG(@"remnantSec=%d",remnantSec);
+  
+  //n秒後にメッセージが表示されます
+  notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:remnantSec];
+
+  //履歴からセットした分秒を取得
+  //
+  
+  //メッセージ内容
+//  NSString* msg = [NSString stringWithFormat:@"%d秒経過しました",5];
+  NSString* msg = [NSString stringWithFormat:@"セットした時間に達しました"];
+  notification.alertBody = msg;
+  
+  //バッジを表示する事も可能です。この場合、１が表示されます
+//  notification.applicationIconBadgeNumber = 1;
+//  [UIApplication sharedApplication].applicationIconBadgeNumber = 99999;//1~99999まで表示可
+  
+  
+  //タイムゾーンの設定
+  notification.timeZone = [NSTimeZone localTimeZone];
+  
+  //メッセージ表示時の効果音を設定
+  notification.soundName = UILocalNotificationDefaultSoundName;
+  
+  //ローカル通知の登録
+  [app scheduleLocalNotification:notification];
 }
+
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
   //アプリがバックグラウンドからフォアグラウンドになる直前
   LOG(@"%s",__func__);
+  
+  //バッチをクリア
+//  [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+  
+  //通知をスケジュールをキャンセル
+  [[UIApplication sharedApplication] cancelAllLocalNotifications];
+  
+//  self.globalMin = 0;
+//  self.globalSec = 0;
+  
 }
+
+
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {

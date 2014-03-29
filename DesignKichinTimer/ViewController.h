@@ -27,8 +27,8 @@
   NSTimer *clockTm;
   NSTimer *timerTm;
 
-  int globalMin;// 00~999
-  int globalSec;// 00~59
+//  int globalMin;// 00~999
+//  int globalSec;// 00~59
   
   int historyMin1;
   int historySec1;

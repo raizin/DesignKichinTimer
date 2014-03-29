@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+//@class ViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 @property (strong, nonatomic) UIWindow *window;
 - (int)getAppLauchedCount;
+//@property (retain, nonatomic) ViewController *viewController;
+@property (assign, nonatomic) int globalMin;
+@property (assign, nonatomic) int globalSec;
 @end

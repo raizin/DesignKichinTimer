@@ -18,6 +18,7 @@
 @implementation ViewController
 
 
+
 // View が初めて呼び出される時に1回だけ呼ばれる *定義済み関数
 - (void)viewDidLoad
 {
@@ -62,8 +63,12 @@
 
   
   //初期化
-  globalSec = 0;
-  globalMin = 0;
+//  globalSec = 0;
+//  globalMin = 0;
+  [APP_DELEGATE setGlobalMin:0];
+  [APP_DELEGATE setGlobalSec:0];
+  
+  
   cntUpFlag = NO;
   timeUpOk = NO;
   
@@ -320,8 +325,10 @@
   }
   
   // Reset処理
-  globalSec = 0;
-  globalMin = 0;
+//  globalSec = 0;
+//  globalMin = 0;
+  [APP_DELEGATE setGlobalMin:0];
+  [APP_DELEGATE setGlobalSec:0];
   
   cntLabel.text = @"000 00"; // 表示テキストもクリア
 }
@@ -459,17 +466,21 @@
 
 - (void)cntPlusChk
 {
-  if (globalSec >= 60) {
-    globalMin++;
+  if ([APP_DELEGATE globalSec] >= 60) {
+//    globalMin++;
+    [APP_DELEGATE setGlobalMin:[APP_DELEGATE globalMin]+1];
 
-    if (globalMin >= 999) {
-      globalSec = 59;
+    if ([APP_DELEGATE globalMin] >= 999) {
+//      globalSec = 59;
+      [APP_DELEGATE setGlobalSec:59];
     }else{
-      globalSec -= 60;
+//      globalSec -= 60;
+      [APP_DELEGATE setGlobalSec:0];
     }
   }
-  if (globalMin >= 999) {
-    globalMin = 999;
+  if ([APP_DELEGATE globalMin] >= 999) {
+//    globalMin = 999;
+    [APP_DELEGATE setGlobalMin:999];
   }
 
   [self chkDisp];
@@ -479,7 +490,8 @@
 {
   [self btnSndChkPlay];//効果音再生
   
-  globalSec += 10;
+//  globalSec += 10;
+  [APP_DELEGATE setGlobalSec:[APP_DELEGATE globalSec]+10];
   [self cntPlusChk];
 }
 
@@ -487,28 +499,32 @@
 {
   [self btnSndChkPlay];//効果音再生
   
-  globalMin += 1;
+//  globalMin += 1;
+  [APP_DELEGATE setGlobalMin:[APP_DELEGATE globalMin]+1];
   [self cntPlusChk];
 }
 - (void)btn03Touch:(id)sender
 {
   [self btnSndChkPlay];//効果音再生
   
-  globalMin += 3;
+//  globalMin += 3;
+  [APP_DELEGATE setGlobalMin:[APP_DELEGATE globalMin]+3];
   [self cntPlusChk];
 }
 - (void)btn05Touch:(id)sender
 {
   [self btnSndChkPlay];//効果音再生
   
-  globalMin += 5;
+//  globalMin += 5;
+  [APP_DELEGATE setGlobalMin:[APP_DELEGATE globalMin]+5];
   [self cntPlusChk];
 }
 - (void)btn10Touch:(id)sender
 {
   [self btnSndChkPlay];//効果音再生
   
-  globalMin += 10;
+//  globalMin += 10;
+  [APP_DELEGATE setGlobalMin:[APP_DELEGATE globalMin]+10];
   [self cntPlusChk];
 }
 
@@ -530,8 +546,10 @@
     [self btnEnableOnlyStartReset];
 
     if (timeUpOk) {
-      globalMin = (int)[ud integerForKey:@"globalMinData"];
-      globalSec = (int)[ud integerForKey:@"globalSecData"];
+      [APP_DELEGATE setGlobalMin:(int)[ud integerForKey:@"globalMinData"]];
+      [APP_DELEGATE setGlobalSec:(int)[ud integerForKey:@"globalSecData"]];
+//      globalMin = (int)[ud integerForKey:@"globalMinData"];
+//      globalSec = (int)[ud integerForKey:@"globalSecData"];
       [self chkDisp];
       [self btnEnabledAll];
       
@@ -557,14 +575,14 @@
 
   
   //Set Data Memory
-  [ud setInteger:globalMin forKey:@"globalMinData"];  // M
-  [ud setInteger:globalSec forKey:@"globalSecData"];  // S
+  [ud setInteger:[APP_DELEGATE globalMin] forKey:@"globalMinData"];  // M
+  [ud setInteger:[APP_DELEGATE globalSec] forKey:@"globalSecData"];  // S
 
 
   BOOL addHistoryFlag = YES;
   if (
-      globalMin == (int)[ud integerForKey:@"historyMinData1"] &&
-      globalSec == (int)[ud integerForKey:@"historySecData1"]
+      [APP_DELEGATE globalMin] == (int)[ud integerForKey:@"historyMinData1"] &&
+      [APP_DELEGATE globalSec] == (int)[ud integerForKey:@"historySecData1"]
       ) {
     addHistoryFlag = NO;
     
@@ -572,7 +590,7 @@
   }
   
 
-  if (globalMin + globalSec > 0 && addHistoryFlag) {
+  if ([APP_DELEGATE globalMin] + [APP_DELEGATE globalSec] > 0 && addHistoryFlag) {
     
     // 履歴２を履歴３へ移す
     [ud setInteger:(int)[ud integerForKey:@"historyMinData2"] forKey:@"historyMinData3"];  // M
@@ -583,8 +601,8 @@
     [ud setInteger:(int)[ud integerForKey:@"historySecData1"] forKey:@"historySecData2"];  // S
     
     // セットを履歴１へ残す
-    [ud setInteger:globalMin forKey:@"historyMinData1"];  // M
-    [ud setInteger:globalSec forKey:@"historySecData1"];  // S
+    [ud setInteger:[APP_DELEGATE globalMin] forKey:@"historyMinData1"];  // M
+    [ud setInteger:[APP_DELEGATE globalSec] forKey:@"historySecData1"];  // S
   }
   
   
@@ -603,28 +621,24 @@
 - (void)btnHis1Touch:(id)sender
 {
   [self btnSndChkPlay];//効果音再生
-  
-  globalMin = (int)[ud integerForKey:@"historyMinData1"];
-  globalSec = (int)[ud integerForKey:@"historySecData1"];
-
+//  globalMin = (int)[ud integerForKey:@"historyMinData1"];
+//  globalSec = (int)[ud integerForKey:@"historySecData1"];
+  [APP_DELEGATE setGlobalMin:(int)[ud integerForKey:@"historyMinData1"]];
+  [APP_DELEGATE setGlobalSec:(int)[ud integerForKey:@"historySecData1"]];
   [self cntPlusChk];
 }
 - (void)btnHis2Touch:(id)sender
 {
   [self btnSndChkPlay];//効果音再生
-  
-  globalMin = (int)[ud integerForKey:@"historyMinData2"];
-  globalSec = (int)[ud integerForKey:@"historySecData2"];
-  
+  [APP_DELEGATE setGlobalMin:(int)[ud integerForKey:@"historyMinData2"]];
+  [APP_DELEGATE setGlobalSec:(int)[ud integerForKey:@"historySecData2"]];
   [self cntPlusChk];
 }
 - (void)btnHis3Touch:(id)sender
 {
   [self btnSndChkPlay];//効果音再生
-  
-  globalMin = (int)[ud integerForKey:@"historyMinData3"];
-  globalSec = (int)[ud integerForKey:@"historySecData3"];
-  
+  [APP_DELEGATE setGlobalMin:(int)[ud integerForKey:@"historyMinData3"]];
+  [APP_DELEGATE setGlobalSec:(int)[ud integerForKey:@"historySecData3"]];
   [self cntPlusChk];
 }
 
@@ -870,7 +884,7 @@
     [self btnEnableOnlyReset];
   } else {
     
-    if (globalMin > 0 || globalSec > 0) {
+    if ([APP_DELEGATE globalMin] > 0 || [APP_DELEGATE globalSec] > 0) {
       [self btnEnableOnlyStartReset];
     }else{
     
@@ -998,8 +1012,10 @@
 - (void)timerTimer:(NSTimer *)timer
 {
 //  NSLog(@"%d: timerTimer Start!",__LINE__);
+  int sec = [APP_DELEGATE globalSec];
+  int min = [APP_DELEGATE globalMin];
   
-  if (globalSec == 0 && globalMin == 0) {
+  if (sec == 0 && min == 0) {
 //    NSLog(@"%d: Count UP Start!",__LINE__);
     cntUpFlag = YES;
   }
@@ -1015,42 +1031,51 @@
 // カウントアップ用関数
 - (void)cntUpTimer
 {
-  globalSec++;
+  int sec = [APP_DELEGATE globalSec];
+  int min = [APP_DELEGATE globalMin];
+  
+  sec++;
     
-  if (globalSec > 59) {
-    globalSec = 0;
-    globalMin++;
+  if (sec > 59) {
+    sec = 0;
+    min++;
     
-    if (globalMin > 999) {
+    if (min > 999) {
       [self pauseTimerTimer];
-      globalMin = 999;
-      globalSec = 59;
+      min = 999;
+      sec = 59;
     }
   }
+  [APP_DELEGATE setGlobalSec:sec];
+  [APP_DELEGATE setGlobalMin:min];
   [self chkDisp];
 }
 
 // カウントダウン用関数
 - (void)cntDnTimer
 {
-  if (globalSec == 0) {
-    globalMin--;
-    globalSec = 59;
+  int sec = [APP_DELEGATE globalSec];
+  int min = [APP_DELEGATE globalMin];
+
+  if (sec == 0) {
+    min--;
+    sec = 59;
   }else{
-    globalSec--;
+    sec--;
   }
   
-  if (globalSec == 0 && globalMin == 0) {
+  if (sec == 0 && min == 0) {
    
     // Vibrate
     [self vibrateRoop];
-    
     [self almSndChkPlay];
     
     timeUpOk = YES;
     cntUpFlag = YES;
   }
   
+  [APP_DELEGATE setGlobalSec:sec];
+  [APP_DELEGATE setGlobalMin:min];
   [self chkDisp];
   
 }
@@ -1092,12 +1117,12 @@ int vibCount;
 // 表示反映関数
 - (void)chkDisp
 {
-  
-//  NSLog(@"%d: cntMode = %hhd",__LINE__,cntMode);
+//  LOG(@"cntMode = %hhd",cntMode);
+//  LOG(@"%d %d",[APP_DELEGATE globalMin],[APP_DELEGATE globalSec]);
   
   // Check is Mode
   if (cntMode) {
-    cntLabel.text = [NSString stringWithFormat:@"%03d %02d",globalMin,globalSec];
+    cntLabel.text = [NSString stringWithFormat:@"%03d %02d",[APP_DELEGATE globalMin],(int)[APP_DELEGATE globalSec]];
   }
 }
 
