@@ -32,6 +32,7 @@
 		5E30A82B18D722E7001D468A /* batten33.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E30A82A18D722E7001D468A /* batten33.png */; };
 		5E3E88AA18E6EDDF000A77B8 /* PlusNnBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3E88A918E6EDDF000A77B8 /* PlusNnBtn.m */; };
 		5E3E88AD18E72671000A77B8 /* HistNnBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3E88AC18E72671000A77B8 /* HistNnBtn.m */; };
+		5E3E88B018E84C9F000A77B8 /* HistLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3E88AF18E84C9F000A77B8 /* HistLabel.m */; };
 		5E42589718192B7F00171F1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E42589918192B7F00171F1F /* Localizable.strings */; };
 		5E42589C181CF29300171F1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E42589B181CF29300171F1F /* QuartzCore.framework */; };
 		5E4ECBD01866250E00578E1E /* IconInfoTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E4ECBCE1866250E00578E1E /* IconInfoTouch.png */; };
@@ -117,6 +118,8 @@
 		5E3E88A918E6EDDF000A77B8 /* PlusNnBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlusNnBtn.m; sourceTree = "<group>"; };
 		5E3E88AB18E72671000A77B8 /* HistNnBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistNnBtn.h; sourceTree = "<group>"; };
 		5E3E88AC18E72671000A77B8 /* HistNnBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistNnBtn.m; sourceTree = "<group>"; };
+		5E3E88AE18E84C9F000A77B8 /* HistLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistLabel.h; sourceTree = "<group>"; };
+		5E3E88AF18E84C9F000A77B8 /* HistLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistLabel.m; sourceTree = "<group>"; };
 		5E42589418192B2600171F1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5E42589818192B7F00171F1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E42589A18192B8800171F1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -347,6 +350,8 @@
 				5E3E88A918E6EDDF000A77B8 /* PlusNnBtn.m */,
 				5E3E88AB18E72671000A77B8 /* HistNnBtn.h */,
 				5E3E88AC18E72671000A77B8 /* HistNnBtn.m */,
+				5E3E88AE18E84C9F000A77B8 /* HistLabel.h */,
+				5E3E88AF18E84C9F000A77B8 /* HistLabel.m */,
 			);
 			name = ButtonAndLabel;
 			sourceTree = "<group>";
@@ -621,6 +626,7 @@
 				5E8BC36D185DE38500C2802E /* BtnZoomOnFlag.m in Sources */,
 				5E4ECBE01868812E00578E1E /* MyInfoBtn.m in Sources */,
 				5E2809EA18DC596200A28373 /* CntView.m in Sources */,
+				5E3E88B018E84C9F000A77B8 /* HistLabel.m in Sources */,
 				5E24806118558F9F0032AF77 /* VibrateOnFlag.m in Sources */,
 				5EDE0907185CBF8F00660FF9 /* ResetBtnScaleOnFlag.m in Sources */,
 				5E3E88AD18E72671000A77B8 /* HistNnBtn.m in Sources */,
