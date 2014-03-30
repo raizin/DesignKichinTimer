@@ -14,6 +14,7 @@
 #import "InfoViewController.h"
 #import "CntView.h"
 #import "PlusNnBtn.h"
+#import "HistNnBtn.h"
 
 @interface ViewController : UIViewController {
   
@@ -79,9 +80,9 @@
   MySetBtn *setBtnStart;
   MySetBtn *setBtnReset;//Reset & Stop
   
-  MySetBtn *setBtnHis1;//History
-  MySetBtn *setBtnHis2;//History
-  MySetBtn *setBtnHis3;//History
+  HistNnBtn *setBtnHis1;//History1
+  HistNnBtn *setBtnHis2;//History2
+  HistNnBtn *setBtnHis3;//History3
   
   
   // フェードインを一回だけ成功させるフラグ YES:実行 NO:実行しない

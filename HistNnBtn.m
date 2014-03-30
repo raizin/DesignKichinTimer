@@ -27,40 +27,35 @@
 
 - (void)setNum:(int)nn
 {
-  NSString* unit = [NSString stringWithFormat:@"%@",NSLocalizedString(@"hun", nil)];
-  [self setAttributedTitle:[self myBtnColorCtl:[UIColor blueColor ] num:nn unit:unit] forState:UIControlStateNormal];
-  [self setAttributedTitle:[self myBtnColorCtl:[UIColor whiteColor] num:nn unit:unit] forState:UIControlStateHighlighted];
-  [self setAttributedTitle:[self myBtnColorCtl:[UIColor grayColor ] num:nn unit:unit] forState:UIControlStateDisabled];
+  [self setTitle:[NSString stringWithFormat:@"%d",nn] forState:UIControlStateNormal];
+  [self.titleLabel setFont:[UIFont boldSystemFontOfSize:[self getFontSize]/2]];
+  
+  [self setTitleColor:[UIColor blueColor ] forState:UIControlStateNormal];
+  [self setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+  [self setTitleColor:[UIColor grayColor ] forState:UIControlStateDisabled];
 }
 
 - (id)initWithFrame:(CGRect)frame
 {
-  float w=170,h=100;// iPad Definition the width size and height size
+  float w=65,h=40;// iPad Definition the width size and height size
   
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
     //iPhone
-    w = 74;
-    h = 50;
+    w = 60;
+    h = 18;
   }
   
   self = [super initWithFrame:CGRectMake(0,0,w,h)];//x y w h
   
   if (self) {
-    // Initialization code
     [self setBackgroundColor:[UIColor colorWithRed:0.9f green:0.9f blue:0.f alpha:0.8f]];
     [self.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
     [self.layer setBorderWidth:1.f];
     
+    //Corner Radius
+    [self.layer setCornerRadius:20.f];
     
-    // Corner Radius
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-      [self.layer setCornerRadius:25.f];
-    }
-    else{
-      [self.layer setCornerRadius:50.f];
-    }
-    
-    // Shadow Setting
+    //Shadow Setting
     [self.layer setShadowOpacity:0.5f];
     [self.layer setShadowOffset:CGSizeMake(2.f, 2.f)];
     

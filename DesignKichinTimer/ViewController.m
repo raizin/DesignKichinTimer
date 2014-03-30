@@ -149,24 +149,21 @@
   [setBtnStart addTarget:self action:@selector(startBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:setBtnStart];
 
-  setBtnHis1 = [MySetBtn buttonWithType:UIButtonTypeCustom];
-  [setBtnHis1 setHis:1];
+  setBtnHis1 = [HistNnBtn buttonWithType:UIButtonTypeCustom];[setBtnHis1 setNum:1];
   [setBtnHis1 addTarget:self action:@selector(btnHis1Touch:) forControlEvents:UIControlEventTouchUpInside];
   if ((int)[ud integerForKey:@"historySecData1"] + (int)[ud integerForKey:@"historyMinData1"] == 0) {
     [setBtnHis1 setEnabled:NO];
   }
   [self.view addSubview:setBtnHis1];
   
-  setBtnHis2 = [MySetBtn buttonWithType:UIButtonTypeCustom];
-  [setBtnHis2 setHis:2];
+  setBtnHis2 = [HistNnBtn buttonWithType:UIButtonTypeCustom];[setBtnHis2 setNum:2];
   [setBtnHis2 addTarget:self action:@selector(btnHis2Touch:) forControlEvents:UIControlEventTouchUpInside];
   if ((int)[ud integerForKey:@"historySecData2"] + (int)[ud integerForKey:@"historyMinData2"] == 0) {
     [setBtnHis2 setEnabled:NO];
   }
   [self.view addSubview:setBtnHis2];
   
-  setBtnHis3 = [MySetBtn buttonWithType:UIButtonTypeCustom];
-  [setBtnHis3 setHis:3];
+  setBtnHis3 = [HistNnBtn buttonWithType:UIButtonTypeCustom];[setBtnHis3 setNum:3];
   [setBtnHis3 addTarget:self action:@selector(btnHis3Touch:) forControlEvents:UIControlEventTouchUpInside];
   if ((int)[ud integerForKey:@"historySecData3"] + (int)[ud integerForKey:@"historyMinData3"] == 0) {
     [setBtnHis3 setEnabled:NO];
@@ -252,10 +249,10 @@
       // 横向きのみ履歴ボタン表示
       if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
         infBtn.frame = CGRectMake(self.view.frame.size.width +110, 5, 35, 35); // x y w h
-
-        setBtnHis1.frame = CGRectMake(centerPoint     +158,  55, 60, 18 ); // x y w h
-        setBtnHis2.frame = CGRectMake(centerPoint     +158,  80, 60, 18 ); // x y w h
-        setBtnHis3.frame = CGRectMake(centerPoint     +158, 105, 60, 18 ); // x y w h
+        [setBtnHis1 setCenter:CGPointMake(centerPoint +188, 65)];
+        [setBtnHis2 setCenter:CGPointMake(centerPoint +188, 90)];
+        [setBtnHis3 setCenter:CGPointMake(centerPoint +188,115)];
+        LOG(@"center=%d x=%d y=%d",centerPoint,(int)setBtnHis1.center.x,(int)setBtnHis1.center.y);
         
         // History Label
         hisLabel.frame   = CGRectMake((int)cntView.frame.origin.x +307, 30, 55, 20 ); // x y w h
@@ -281,8 +278,7 @@
       setBtn03.frame    = CGRectMake(centerPoint       +10, 400, 170, 100); // x y w h
       
 //    setBtn01.frame    = CGRectMake(centerPoint      +200, 400, 170, 100); // x y w h
-      setBtn01.center = CGPointMake(centerPoint +285, 450 -50);
-      LOG(@"center=%d x=%d y=%d",centerPoint,(int)setBtn01.center.x,(int)setBtn01.center.y);
+      [setBtn01 setCenter:CGPointMake(centerPoint +285, 450 -50)];
       
       
       setBtnReset.frame = CGRectMake(centerPoint -190 -115, 550, 190, 110); // x y w h
@@ -291,9 +287,9 @@
       
       // 横向きのみ履歴ボタン表示
       if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
-        setBtnHis1.frame = CGRectMake(centerPoint     +385, 110, 65, 40 ); // x y w h
-        setBtnHis2.frame = CGRectMake(centerPoint     +385, 170, 65, 40 ); // x y w h
-        setBtnHis3.frame = CGRectMake(centerPoint     +385, 230, 65, 40 ); // x y w h
+        [setBtnHis1 setCenter:CGPointMake(centerPoint +417, 130)];
+        [setBtnHis2 setCenter:CGPointMake(centerPoint +417, 190)];
+        [setBtnHis3 setCenter:CGPointMake(centerPoint +417, 250)];
         
         // History Label
         hisLabel.frame   = CGRectMake((int)cntView.frame.origin.x +749, 70, 90, 20 ); // x y w h
