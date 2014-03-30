@@ -103,11 +103,10 @@
   [cntView addSubview:cntLabel];
   
   // History Label
-  hisLabel = [[MyCntLabel alloc] init];// x y w h
-  [hisLabel setHis];
-  [hisLabel setHisEnable:YES];
+  hisLabel = [[HistLabel alloc] init];// x y w h
+  [hisLabel setEnable:YES];
   if ((int)[ud integerForKey:@"historySecData1"] + (int)[ud integerForKey:@"historyMinData1"] < 1) {
-    [hisLabel setHisEnable:NO];
+    [hisLabel setEnable:NO];
   }
   [self.view addSubview:hisLabel];
   
@@ -218,11 +217,12 @@
     
     // 端末によりボタンの配置／大きさの調整
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-      //NSLog(@"%d: iPhoneの処理",__LINE__);
+      // iPhone
       
       // Viewの位置とサイズを補正してセット
-      cntView.frame = CGRectMake([self arignCenter:cntW], 35, cntW, cntH); // x y w h
-      
+      [cntView setCenter:CGPointMake(centerPoint, 85)];
+//      LOG(@"center=%d x=%d y=%d",centerPoint,(int)cntView.center.x,(int)cntView.center.y);
+    
       [setBtn10 setCenter:CGPointMake(centerPoint -121, 170)];
       [setBtn05 setCenter:CGPointMake(centerPoint  -40, 180)];
       [setBtn03 setCenter:CGPointMake(centerPoint  +40, 180)];
@@ -231,7 +231,7 @@
       setBtnReset.frame = CGRectMake(centerPoint     -140, 220, 80, 60); // x y w h
 //      setBtn001.frame   = CGRectMake(centerPoint  -(74/2), 225, 74, 50); // x y w h
       [setBtn001 setCenter:CGPointMake(centerPoint, 240)];
-      LOG(@"center=%d x=%d y=%d",centerPoint,(int)setBtn001.center.x,(int)setBtn001.center.y);
+//      LOG(@"center=%d x=%d y=%d",centerPoint,(int)setBtn001.center.x,(int)setBtn001.center.y);
       setBtnStart.frame = CGRectMake(centerPoint      +60, 220, 80, 60); // x y w h
       
       clockSelectBtn.frame = CGRectMake(centerPoint - 150     , -3,145,50);
@@ -241,19 +241,16 @@
 
 
       // 横向き時のみ表示されるように位置を調整
-      [setBtnHis1 setCenter:CGPointMake(centerPoint +188, 65)];
-      [setBtnHis2 setCenter:CGPointMake(centerPoint +188, 90)];
-      [setBtnHis3 setCenter:CGPointMake(centerPoint +188,115)];
+      [hisLabel   setCenter:CGPointMake(centerPoint +190,  45)];//x,y
+      [setBtnHis1 setCenter:CGPointMake(centerPoint +190,  75)];
+      [setBtnHis2 setCenter:CGPointMake(centerPoint +190, 105)];
+      [setBtnHis3 setCenter:CGPointMake(centerPoint +190, 135)];
+//      LOG(@"center=%d x=%d y=%d",centerPoint,(int)hisLabel.center.x,(int)hisLabel.center.y);
      
       // 横向き時の調整
       if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
         infBtn.frame = CGRectMake(self.view.frame.size.width +110, 5, 35, 35); // x y w h
-        LOG(@"center=%d x=%d y=%d",centerPoint,(int)setBtnHis1.center.x,(int)setBtnHis1.center.y);
-        
-        // History Label
-        hisLabel.frame   = CGRectMake((int)cntView.frame.origin.x +307, 30, 55, 20 ); // x y w h
-//        NSLog(@"%d x=%d",__LINE__,(int)cntView.frame.origin.x);
-        
+                
         if ([ResetBtnScaleOnFlag val]) {
           [self btnScaleUpYoko:setBtnReset];
         }
@@ -268,7 +265,6 @@
 
       // Viewの位置とサイズを補正してセット
       [cntView setCenter:CGPointMake(centerPoint, 184)];
-//      LOG(@"center=%d x=%d y=%d",centerPoint,(int)cntView.center.x,(int)cntView.center.y);
       
       [setBtn10 setCenter:CGPointMake(centerPoint -285, 400)];
       [setBtn05 setCenter:CGPointMake(centerPoint  -95, 455)];
@@ -279,20 +275,15 @@
       [setBtn001 setCenter:CGPointMake(centerPoint, 590)];
       setBtnStart.frame = CGRectMake(centerPoint      +135, 550, 190, 110); // x y w h
       
-      
       // 横向き時のみ表示されるように位置を調整
-      [setBtnHis1 setCenter:CGPointMake(centerPoint +417, 130)];
-      [setBtnHis2 setCenter:CGPointMake(centerPoint +417, 190)];
-      [setBtnHis3 setCenter:CGPointMake(centerPoint +417, 250)];
-     
+      [hisLabel   setCenter:CGPointMake(centerPoint +430,  80)];
+      [setBtnHis1 setCenter:CGPointMake(centerPoint +430, 135)];
+      [setBtnHis2 setCenter:CGPointMake(centerPoint +430, 200)];
+      [setBtnHis3 setCenter:CGPointMake(centerPoint +430, 265)];
+//      LOG(@"center=%d x=%d y=%d",centerPoint,(int)hisLabel.center.x,(int)hisLabel.center.y);
       
-      
-      // 横向きのみ履歴ボタン表示
+      // 横向き時の調整
       if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
-        
-        // History Label
-        hisLabel.frame   = CGRectMake((int)cntView.frame.origin.x +749, 70, 90, 20 ); // x y w h
-//        NSLog(@"%d x=%d",__LINE__,(int)cntView.frame.origin.x);
         
         if ([ResetBtnScaleOnFlag val]) {
           [self btnScaleUpYoko:setBtnReset];
@@ -302,6 +293,8 @@
           [self btnScaleUpTate:setBtnReset];
         }
       }
+      
+      
     }
   }
 }
@@ -392,7 +385,7 @@
 //  [setBtn0001 setEnabled:NO];
   [setBtnStart setEnabled:NO];
   [setBtnReset setEnabled:NO];
-  [hisLabel setHisEnable:NO];
+  [hisLabel setEnable:NO];
   [setBtnHis1 setEnabled:NO];
   [setBtnHis2 setEnabled:NO];
   [setBtnHis3 setEnabled:NO];
@@ -410,7 +403,7 @@
   [setBtnReset setEnabled:YES];
   
   if ((int)[ud integerForKey:@"historySecData1"] + (int)[ud integerForKey:@"historyMinData1"] >= 1) {
-    [hisLabel setHisEnable:YES];
+    [hisLabel setEnable:YES];
   }
   if ((int)[ud integerForKey:@"historySecData1"] + (int)[ud integerForKey:@"historyMinData1"] >= 1) {
     [setBtnHis1 setEnabled:YES];
@@ -437,7 +430,7 @@
 //  [setBtn0001 setEnabled:NO];
   [setBtnStart setEnabled:NO];
   [setBtnReset setEnabled:YES];
-  [hisLabel setHisEnable:NO];
+  [hisLabel setEnable:NO];
   [setBtnHis1 setEnabled:NO];
   [setBtnHis2 setEnabled:NO];
   [setBtnHis3 setEnabled:NO];
@@ -456,7 +449,7 @@
 //  [setBtn0001 setEnabled:NO];
   [setBtnStart setEnabled:YES];
   [setBtnReset setEnabled:YES];
-  [hisLabel setHisEnable:NO];
+  [hisLabel setEnable:NO];
   [setBtnHis1 setEnabled:NO];
   [setBtnHis2 setEnabled:NO];
   [setBtnHis3 setEnabled:NO];

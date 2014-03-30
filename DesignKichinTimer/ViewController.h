@@ -15,6 +15,7 @@
 #import "CntView.h"
 #import "PlusNnBtn.h"
 #import "HistNnBtn.h"
+#import "HistLabel.h"
 
 @interface ViewController : UIViewController {
   
@@ -53,7 +54,7 @@
   MyCntLabel *cntLabel;
   MyCntLabel *hunLabel;//use minits unit character display
   MyCntLabel *byoLabel;//use seconds unit character display
-  MyCntLabel *hisLabel;//history
+  HistLabel *hisLabel;//history
 
   
   // カウンター表示エリア横幅,縦幅

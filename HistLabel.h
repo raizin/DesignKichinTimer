@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface HistLabel : UILabel
-
+- (void)setEnable:(BOOL)enable;
 @end
