@@ -38,27 +38,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   //Sound play setting
@@ -95,6 +74,8 @@
   LOG(@"%s",__func__);
   
   UIApplication* app = [UIApplication sharedApplication];
+  LOG(@"%@",app.debugDescription);
+  LOG(@"%@",app.description);
   
   UILocalNotification *notification = [[UILocalNotification alloc] init];
   
@@ -126,7 +107,7 @@
   notification.soundName = UILocalNotificationDefaultSoundName;
   
   //ローカル通知の登録
-  [app scheduleLocalNotification:notification];
+//  [app scheduleLocalNotification:notification];
 }
 
 

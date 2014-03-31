@@ -24,10 +24,10 @@
 {
   [super viewDidLoad];
   
-  // Head Status Bar Hidden
-  if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
-    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
-  }
+//  // Head Status Bar Hidden
+//  if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+//    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+//  }
   
   //NSUserDefaults 初期化
   ud = [NSUserDefaults standardUserDefaults];
@@ -216,32 +216,24 @@
       || o == UIDeviceOrientationPortrait
       || o == UIDeviceOrientationPortraitUpsideDown) {
     
-    //横幅取得
-//    int w = [UIScreen mainScreen].bounds.size.width;
-    
     //X軸の中心を取得
     int centerPoint = [self arignCenter:0];
-//    int centerPoint = w/2;
     
-    // 端末によりボタンの配置／大きさの調整
+    // 端末毎に配置調整
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
       // iPhone
       
       // Viewの位置とサイズを補正してセット
       [cntView setCenter:CGPointMake(centerPoint, 85)];
-//      LOG(@"center=%d x=%d y=%d",centerPoint,(int)cntView.center.x,(int)cntView.center.y);
     
       [setBtn10 setCenter:CGPointMake(centerPoint -121, 170)];
       [setBtn05 setCenter:CGPointMake(centerPoint  -40, 180)];
       [setBtn03 setCenter:CGPointMake(centerPoint  +40, 180)];
       [setBtn01 setCenter:CGPointMake(centerPoint +121, 170)];
       
-//      setBtnReset.frame = CGRectMake(centerPoint     -140, 220, 80, 60); // x y w h
       [setBtnReset setCenter:CGPointMake(centerPoint -100, 250)];
-      LOG(@"center=%d x=%d y=%d",centerPoint,(int)setBtnReset.center.x,(int)setBtnReset.center.y);
-
       [setBtn001 setCenter:CGPointMake(centerPoint, 240)];
-      setBtnStart.frame = CGRectMake(centerPoint      +60, 220, 80, 60); // x y w h
+      [setBtnStart setCenter:CGPointMake(centerPoint +100, 250)];
       
       clockSelectBtn.frame = CGRectMake(centerPoint - 150     , -3,145,50);
       timerSelectBtn.frame = CGRectMake(centerPoint - 150 +140, -3,145,50);
@@ -947,13 +939,8 @@
 - (float)arignCenter:(int)componentW
 {
   //画面情報(横幅)取得
-//  UIScreen *sc = [UIScreen mainScreen];
-//  CGRect rect = sc.bounds;
-//  float w = self.view.bounds.size.width;
-//  float h = self.view.bounds.size.height;
-    int w = [UIScreen mainScreen].bounds.size.width;
-    int h = [UIScreen mainScreen].bounds.size.height;
-
+  int w = [UIScreen mainScreen].bounds.size.width;
+  int h = [UIScreen mainScreen].bounds.size.height;
 
   float ret;
   
@@ -962,7 +949,6 @@
   
   if(o == UIInterfaceOrientationPortrait || o == UIInterfaceOrientationPortraitUpsideDown){
     //Tate
-//  ret = ( rect.size.width - componentW ) / 2;
     ret = ( w - componentW ) / 2;
 
     // use next value is unknown case.
@@ -970,7 +956,6 @@
 
   }else if(o == UIInterfaceOrientationLandscapeLeft || o == UIInterfaceOrientationLandscapeRight){
     //Yoko
-//  ret = ( rect.size.height - componentW ) / 2;
     ret = ( h - componentW ) / 2;
 
     // use next value is unknown case.
@@ -1301,9 +1286,8 @@ int vibCount;
     [UIView setAnimationDuration:0.5f];
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-//      setBtnReset.frame = CGRectMake([self arignCenter:0] -135, 220, 80, 60); // x y w h
-      [setBtnReset setFrame:CGRectMake([self arignCenter:0] -230 -(setBtnStart.frame.size.width/2), //x
-                                       605 -(setBtnStart.frame.size.height/2), //y
+      [setBtnReset setFrame:CGRectMake([self arignCenter:0] -100 -(setBtnStart.frame.size.width/2), //x
+                                       250 -(setBtnStart.frame.size.height/2), //y
                                        setBtnStart.frame.size.width, setBtnStart.frame.size.height)];//w,h
     }else{
       [setBtnReset setFrame:CGRectMake([self arignCenter:0] -230 -(setBtnStart.frame.size.width/2), //x

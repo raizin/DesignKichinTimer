@@ -60,9 +60,9 @@
     [self.layer setShadowOffset:CGSizeMake(2.f, 2.f)];
     
     //Background Color Control
-    [self addTarget:self action:@selector(mySetBtnTouchDown) forControlEvents:UIControlEventTouchDown];
-    [self addTarget:self action:@selector(mySetBtnTouchUp) forControlEvents:UIControlEventTouchUpInside];
-    [self addTarget:self action:@selector(mySetBtnTouchUp) forControlEvents:UIControlEventTouchUpOutside];
+    [self addTarget:self action:@selector(btnTouchDown) forControlEvents:UIControlEventTouchDown];
+    [self addTarget:self action:@selector(btnTouchUp) forControlEvents:UIControlEventTouchUpInside];
+    [self addTarget:self action:@selector(btnTouchUp) forControlEvents:UIControlEventTouchUpOutside];
   }
   return self;
 }
@@ -101,7 +101,7 @@
 /*
  * ボタン押下時にボタンを下に少しずらす
  */
-- (void)mySetBtnTouchDown
+- (void)btnTouchDown
 {
   [self setCenter:CGPointMake(self.center.x +3, self.center.y +3)];
   [self setBackgroundColor:[UIColor brownColor]];
@@ -110,7 +110,7 @@
 /*
  * ボタンを押し離した時にボタンを元に戻す
  */
-- (void)mySetBtnTouchUp
+- (void)btnTouchUp
 {
   [self setCenter:CGPointMake(self.center.x -3, self.center.y -3)];
   [self setBackgroundColor:[UIColor colorWithRed:0.9 green:0.9 blue:0.0 alpha:0.8]];
