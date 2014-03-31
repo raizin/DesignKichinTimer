@@ -7,8 +7,9 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
+//#import <QuartzCore/CoreAnimation.h>
 //#import <iAd/iAd.h>
-#import "MySetBtn.h"
+//#import "MySetBtn.h"
 #import "MyModeBtn.h"
 #import "MyCntLabel.h"
 #import "InfoViewController.h"
@@ -16,6 +17,8 @@
 #import "PlusNnBtn.h"
 #import "HistNnBtn.h"
 #import "HistLabel.h"
+#import "StartBtn.h"
+#import "ResetBtn.h"
 
 @interface ViewController : UIViewController {
   
@@ -40,15 +43,11 @@
   int historyMin3;
   int historySec3;
 
-  
   BOOL cntUpFlag; // YES:up NO:down
   BOOL cntMode;   // YES:キッチンタイマー NO:現在時表示
 
-  
   // カウンター表示View定義
   CntView* cntView;
-
-  
 
   // カウンター表示ラベル定義
   MyCntLabel *cntLabel;
@@ -78,8 +77,8 @@
   PlusNnBtn *setBtn03;//3 min
   PlusNnBtn *setBtn01;//1 min
   PlusNnBtn *setBtn001;//10 s
-  MySetBtn *setBtnStart;
-  MySetBtn *setBtnReset;//Reset & Stop
+  StartBtn *setBtnStart;
+  ResetBtn *setBtnReset;//Reset & Stop
   
   HistNnBtn *setBtnHis1;//History1
   HistNnBtn *setBtnHis2;//History2

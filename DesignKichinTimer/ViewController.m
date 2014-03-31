@@ -134,8 +134,7 @@
   [setBtn01 addTarget:self action:@selector(btn01Touch:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:setBtn01];
 
-  setBtnReset = [MySetBtn buttonWithType:UIButtonTypeCustom];
-  [setBtnReset setReset:YES];
+  setBtnReset = [ResetBtn buttonWithType:UIButtonTypeCustom];
   [setBtnReset addTarget:self action:@selector(resetBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:setBtnReset];
   
@@ -143,8 +142,7 @@
   [setBtn001 addTarget:self action:@selector(btn001Touch:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:setBtn001];
 
-  setBtnStart = [MySetBtn buttonWithType:UIButtonTypeCustom];
-  [setBtnStart setStart];
+  setBtnStart = [StartBtn buttonWithType:UIButtonTypeCustom];
   [setBtnStart addTarget:self action:@selector(startBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:setBtnStart];
 
@@ -169,8 +167,7 @@
   }
   [self.view addSubview:setBtnHis3];
   /*** カウンタ数値セットボタンUI定義 ここまで ***/
-  
-  
+
   // デバイスの回転をサポート デバイスが回転した際に、呼び出してほしいメソッドを指定
   [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
   [[NSNotificationCenter defaultCenter] addObserver:self
@@ -180,7 +177,6 @@
   
   [self timerInitDisp];
   
-  
   NSString* freeFlagStr  = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"FreeVersionFlag"];
   BOOL freeFlag = [freeFlagStr boolValue];
   if (freeFlag) {
@@ -188,6 +184,14 @@
     [self performSelector:@selector(bannerInit) withObject:nil afterDelay:0];
   }
 }
+
+// 画面が表示される直前に呼び出される *定義済み関数
+- (void)viewWillAppear:(BOOL)animated
+{
+
+}
+
+
 
 -(void)bannerInit
 {
@@ -199,7 +203,7 @@
 
 // デバイスが回転した際に、呼び出されるメソッド(※自作)
 - (void) didRotate:(NSNotification *)notification {
-  //  UIDeviceOrientation o = [[notification object] orientation];
+//  UIDeviceOrientation o = [[notification object] orientation];
   UIDeviceOrientation o = [[UIDevice currentDevice] orientation];
   
   // iphone かつ Home button top の場合のみ 動作がおかしいので止める
@@ -212,8 +216,12 @@
       || o == UIDeviceOrientationPortrait
       || o == UIDeviceOrientationPortraitUpsideDown) {
     
+    //横幅取得
+//    int w = [UIScreen mainScreen].bounds.size.width;
+    
     //X軸の中心を取得
     int centerPoint = [self arignCenter:0];
+//    int centerPoint = w/2;
     
     // 端末によりボタンの配置／大きさの調整
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
@@ -228,17 +236,17 @@
       [setBtn03 setCenter:CGPointMake(centerPoint  +40, 180)];
       [setBtn01 setCenter:CGPointMake(centerPoint +121, 170)];
       
-      setBtnReset.frame = CGRectMake(centerPoint     -140, 220, 80, 60); // x y w h
-//      setBtn001.frame   = CGRectMake(centerPoint  -(74/2), 225, 74, 50); // x y w h
+//      setBtnReset.frame = CGRectMake(centerPoint     -140, 220, 80, 60); // x y w h
+      [setBtnReset setCenter:CGPointMake(centerPoint -100, 250)];
+      LOG(@"center=%d x=%d y=%d",centerPoint,(int)setBtnReset.center.x,(int)setBtnReset.center.y);
+
       [setBtn001 setCenter:CGPointMake(centerPoint, 240)];
-//      LOG(@"center=%d x=%d y=%d",centerPoint,(int)setBtn001.center.x,(int)setBtn001.center.y);
       setBtnStart.frame = CGRectMake(centerPoint      +60, 220, 80, 60); // x y w h
       
       clockSelectBtn.frame = CGRectMake(centerPoint - 150     , -3,145,50);
       timerSelectBtn.frame = CGRectMake(centerPoint - 150 +140, -3,145,50);
 
       infBtn.frame = CGRectMake(self.view.frame.size.width -35, 0, 35, 35); // x y w h
-
 
       // 横向き時のみ表示されるように位置を調整
       [hisLabel   setCenter:CGPointMake(centerPoint +190,  45)];//x,y
@@ -271,16 +279,16 @@
       [setBtn03 setCenter:CGPointMake(centerPoint  +95, 455)];
       [setBtn01 setCenter:CGPointMake(centerPoint +285, 400)];
       
-      setBtnReset.frame = CGRectMake(centerPoint -190 -135, 550, 190, 110); // x y w h
-      [setBtn001 setCenter:CGPointMake(centerPoint, 590)];
-      setBtnStart.frame = CGRectMake(centerPoint      +135, 550, 190, 110); // x y w h
+      [setBtnReset setCenter:CGPointMake(centerPoint -230, 605)];
+      [setBtn001   setCenter:CGPointMake(centerPoint, 590)];
+      [setBtnStart setCenter:CGPointMake(centerPoint +230, 605)];
       
       // 横向き時のみ表示されるように位置を調整
       [hisLabel   setCenter:CGPointMake(centerPoint +430,  80)];
       [setBtnHis1 setCenter:CGPointMake(centerPoint +430, 135)];
       [setBtnHis2 setCenter:CGPointMake(centerPoint +430, 200)];
       [setBtnHis3 setCenter:CGPointMake(centerPoint +430, 265)];
-//      LOG(@"center=%d x=%d y=%d",centerPoint,(int)hisLabel.center.x,(int)hisLabel.center.y);
+      
       
       // 横向き時の調整
       if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
@@ -936,11 +944,16 @@
 }
 
 // 中央寄せ用 X座標算出
-- (float)arignCenter:(int)w
+- (float)arignCenter:(int)componentW
 {
   //画面情報(横幅)取得
-  UIScreen *sc = [UIScreen mainScreen];
-  CGRect rect = sc.bounds;
+//  UIScreen *sc = [UIScreen mainScreen];
+//  CGRect rect = sc.bounds;
+//  float w = self.view.bounds.size.width;
+//  float h = self.view.bounds.size.height;
+    int w = [UIScreen mainScreen].bounds.size.width;
+    int h = [UIScreen mainScreen].bounds.size.height;
+
 
   float ret;
   
@@ -949,14 +962,16 @@
   
   if(o == UIInterfaceOrientationPortrait || o == UIInterfaceOrientationPortraitUpsideDown){
     //Tate
-    ret = ( rect.size.width - w ) / 2;
+//  ret = ( rect.size.width - componentW ) / 2;
+    ret = ( w - componentW ) / 2;
 
     // use next value is unknown case.
     [ud setFloat:ret forKey:@"beforeArignCenter"];
 
   }else if(o == UIInterfaceOrientationLandscapeLeft || o == UIInterfaceOrientationLandscapeRight){
     //Yoko
-    ret = ( rect.size.height - w ) / 2;
+//  ret = ( rect.size.height - componentW ) / 2;
+    ret = ( h - componentW ) / 2;
 
     // use next value is unknown case.
     [ud setFloat:ret forKey:@"beforeArignCenter"];
@@ -1271,6 +1286,8 @@ int vibCount;
     [ResetBtnScaleOnFlag sync];
   }
 }
+
+
 /*
  * UIButton scale org method
  */
@@ -1284,9 +1301,14 @@ int vibCount;
     [UIView setAnimationDuration:0.5f];
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-      setBtnReset.frame = CGRectMake([self arignCenter:0] -135, 220, 80, 60); // x y w h
+//      setBtnReset.frame = CGRectMake([self arignCenter:0] -135, 220, 80, 60); // x y w h
+      [setBtnReset setFrame:CGRectMake([self arignCenter:0] -230 -(setBtnStart.frame.size.width/2), //x
+                                       605 -(setBtnStart.frame.size.height/2), //y
+                                       setBtnStart.frame.size.width, setBtnStart.frame.size.height)];//w,h
     }else{
-      setBtnReset.frame = CGRectMake([self arignCenter:0] -190 -115, 550, 190, 110); // x y w h
+      [setBtnReset setFrame:CGRectMake([self arignCenter:0] -230 -(setBtnStart.frame.size.width/2), //x
+                                       605 -(setBtnStart.frame.size.height/2), //y
+                                       setBtnStart.frame.size.width, setBtnStart.frame.size.height)];//w,h
     }
     
     [UIView commitAnimations];
