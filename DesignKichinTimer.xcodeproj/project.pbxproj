@@ -15,7 +15,6 @@
 		5E1E11EF18350F1100307C8F /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1E11EE18350F1100307C8F /* AdSupport.framework */; };
 		5E1E11F11836A4AD00307C8F /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1E11F01836A4AD00307C8F /* iAd.framework */; };
 		5E220DCD18425F3900D2ACB0 /* SoundOnFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E220DCC18425F3900D2ACB0 /* SoundOnFlag.m */; };
-		5E220DD0184261F100D2ACB0 /* MySetBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E220DCF184261F100D2ACB0 /* MySetBtn.m */; };
 		5E23549A186DA7250055217F /* IconInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E235499186DA7250055217F /* IconInfo.png */; };
 		5E24806118558F9F0032AF77 /* VibrateOnFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E24806018558F9F0032AF77 /* VibrateOnFlag.m */; };
 		5E2480671856ED3E0032AF77 /* IconVibOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E2480651856ED3E0032AF77 /* IconVibOn.png */; };
@@ -97,8 +96,6 @@
 		5E1E11F01836A4AD00307C8F /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		5E220DCB18425F3900D2ACB0 /* SoundOnFlag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoundOnFlag.h; path = DesignKichinTimer/SoundOnFlag.h; sourceTree = "<group>"; };
 		5E220DCC18425F3900D2ACB0 /* SoundOnFlag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SoundOnFlag.m; path = DesignKichinTimer/SoundOnFlag.m; sourceTree = "<group>"; };
-		5E220DCE184261F100D2ACB0 /* MySetBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MySetBtn.h; path = DesignKichinTimer/MySetBtn.h; sourceTree = "<group>"; };
-		5E220DCF184261F100D2ACB0 /* MySetBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MySetBtn.m; path = DesignKichinTimer/MySetBtn.m; sourceTree = "<group>"; };
 		5E235499186DA7250055217F /* IconInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconInfo.png; sourceTree = "<group>"; };
 		5E24805F18558F9F0032AF77 /* VibrateOnFlag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VibrateOnFlag.h; sourceTree = "<group>"; };
 		5E24806018558F9F0032AF77 /* VibrateOnFlag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VibrateOnFlag.m; sourceTree = "<group>"; };
@@ -342,8 +339,6 @@
 		5E40179E18D892A300CE074E /* ButtonAndLabel */ = {
 			isa = PBXGroup;
 			children = (
-				5E220DCE184261F100D2ACB0 /* MySetBtn.h */,
-				5E220DCF184261F100D2ACB0 /* MySetBtn.m */,
 				5E5DF023184327510098499A /* MyModeBtn.h */,
 				5E5DF024184327510098499A /* MyModeBtn.m */,
 				5E5DF026184377EC0098499A /* MyCntLabel.h */,
@@ -631,7 +626,6 @@
 				5E6F4B3B18117F7600312CCD /* AppDelegate.m in Sources */,
 				5E5DF025184327510098499A /* MyModeBtn.m in Sources */,
 				5E4ECBDD1867597900578E1E /* TriangleBtn.m in Sources */,
-				5E220DD0184261F100D2ACB0 /* MySetBtn.m in Sources */,
 				5E3E88AA18E6EDDF000A77B8 /* PlusNnBtn.m in Sources */,
 				5E8BC36D185DE38500C2802E /* BtnZoomOnFlag.m in Sources */,
 				5E4ECBE01868812E00578E1E /* MyInfoBtn.m in Sources */,

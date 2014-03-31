@@ -84,17 +84,24 @@ static float HIS_FONT_SIZE_IPAD   = 20.f;
 
 - (id)initWithFrame:(CGRect)frame
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-      
-      self.textAlignment = NSTextAlignmentCenter;
-      self.adjustsFontSizeToFitWidth = YES;
-      [self.layer setShadowOpacity:0.5f];
-      [self.layer setShadowOffset:CGSizeMake(2.f, 2.f)];
-      
-    }
-    return self;
+//    float w=170,h=100;// iPad Definition the width size and height size
+//    
+//    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+//      //iPhone
+//      w = 74;
+//      h = 50;
+//    }
+//  
+//  self = [super initWithFrame:CGRectMake(0,0,w,h)];//x y w h
+  self = [super initWithFrame:frame];//x y w h
+  if (self) {
+    self.textAlignment = NSTextAlignmentCenter;
+    self.adjustsFontSizeToFitWidth = YES;
+    [self.layer setShadowOpacity:0.5f];
+    [self.layer setShadowOffset:CGSizeMake(2.f, 2.f)];
+    
+  }
+  return self;
 }
 
 @end

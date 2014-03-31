@@ -15,9 +15,9 @@
 {  
   self.frame = xywh; // use ipad positioning
   
-  [self setAttributedTitle:[self myColorShadowAttr:[UIColor grayColor] btnTitle:lb] forState:UIControlStateNormal]; // 有効時
-  [self setAttributedTitle:[self myColorShadowAttr:[UIColor redColor] btnTitle:lb] forState:UIControlStateHighlighted]; // タッチ中
-  [self setAttributedTitle:[self myColorShadowAttr:[UIColor blueColor] btnTitle:lb] forState:UIControlStateDisabled]; // 無効時
+  [self setAttributedTitle:[self myColorShadowAttr:[UIColor grayColor] btnTitle:lb] forState:UIControlStateNormal];
+  [self setAttributedTitle:[self myColorShadowAttr:[UIColor redColor] btnTitle:lb] forState:UIControlStateHighlighted];
+  [self setAttributedTitle:[self myColorShadowAttr:[UIColor blueColor] btnTitle:lb] forState:UIControlStateDisabled];
 }
 
 
@@ -35,15 +35,23 @@
   [self setAttributedTitle:[self myColorShadowAttr:[UIColor redColor ] btnTitle:lb] forState:UIControlStateHighlighted];
 }
 
-
-
 - (id)initWithFrame:(CGRect)frame
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+//  float w=170,h=100;// iPad Definition the width size and height size
+//  
+//  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+//    //iPhone
+//    w = 74;
+//    h = 50;
+//  }
+//  
+//  self = [super initWithFrame:CGRectMake(0,0,w,h)];//x y w h
+  self = [super initWithFrame:frame];//x y w h
+
+  if (self) {
+  
+  }
+  return self;
 }
 
 
