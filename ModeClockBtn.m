@@ -12,12 +12,13 @@
 
 - (id)initWithFrame:(CGRect)frame
 {
-  float w=155,h=50;// iPad Definition the width size and height size
+  float w=155,h=50,fontSize=20;// iPad Definition the width size and height size
   
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
     //iPhone
     w = 145;
     h = 50;
+    fontSize=18;
   }
   
   self = [super initWithFrame:CGRectMake(0,0,w,h)];//x y w h
@@ -27,8 +28,12 @@
     [self setAttributedTitle:[self myColorShadowAttr:[UIColor redColor]] forState:UIControlStateHighlighted];
     [self setAttributedTitle:[self myColorShadowAttr:[UIColor blueColor]] forState:UIControlStateDisabled];
     
+    [self.titleLabel setFont:[UIFont systemFontOfSize:fontSize]];
+    [self.titleLabel setTextAlignment:NSTextAlignmentCenter];
+//    [self.titleLabel setAdjustsFontSizeToFitWidth:YES];
+
     [self setBackgroundColor:[UIColor clearColor]];
-    //    [self setBackgroundColor:[UIColor purpleColor]];//Use Debug
+//    [self setBackgroundColor:[UIColor purpleColor]];//Use Debug
   }
   return self;
 }

@@ -18,16 +18,11 @@
 @implementation ViewController
 
 
-
 // View が初めて呼び出される時に1回だけ呼ばれる *定義済み関数
 - (void)viewDidLoad
 {
   [super viewDidLoad];
   
-//  // Head Status Bar Hidden
-//  if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
-//    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
-//  }
   
   //NSUserDefaults 初期化
   ud = [NSUserDefaults standardUserDefaults];
@@ -263,7 +258,7 @@
       }
       
     }else{
-      //NSLog(@"%d: iPadの処理",__LINE__);
+      //iPad
 
       // Viewの位置とサイズを補正してセット
       [cntView setCenter:CGPointMake(centerPoint, 184)];
@@ -277,8 +272,8 @@
       [setBtn001   setCenter:CGPointMake(centerPoint, 590)];
       [setBtnStart setCenter:CGPointMake(centerPoint +230, 605)];
       
-      [clockSelectBtn setCenter:CGPointMake( 78, 34)];
-      [timerSelectBtn setCenter:CGPointMake(220, 34)];
+      [clockSelectBtn setCenter:CGPointMake( 80, -34)];//x,y
+      [timerSelectBtn setCenter:CGPointMake(250, -34)];//x,y
 
       // 横向き時のみ表示されるように位置を調整
       [hisLabel   setCenter:CGPointMake(centerPoint +430,  80)];
