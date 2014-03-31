@@ -9,8 +9,8 @@
 #import <QuartzCore/QuartzCore.h>
 //#import <QuartzCore/CoreAnimation.h>
 //#import <iAd/iAd.h>
-//#import "MySetBtn.h"
-#import "MyModeBtn.h"
+#import "ModeTimerBtn.h"
+#import "ModeClockBtn.h"
 #import "MyCntLabel.h"
 #import "InfoViewController.h"
 #import "CntView.h"
@@ -69,8 +69,8 @@
   UIButton *vibBtn; // Vibrate On / Off
   UIButton *bigBtn; // Button Zoom On / Off
   
-  MyModeBtn *timerSelectBtn; //「タイマー設定」切替ボタン
-  MyModeBtn *clockSelectBtn; //「現在時表示」切替ボタン
+  ModeTimerBtn *timerSelectBtn; //「タイマー設定」切替ボタン
+  ModeClockBtn *clockSelectBtn; //「現在時表示」切替ボタン
   
   PlusNnBtn *setBtn10;//10 min
   PlusNnBtn *setBtn05;//5 min

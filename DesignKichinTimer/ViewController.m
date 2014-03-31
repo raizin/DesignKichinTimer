@@ -185,10 +185,11 @@
   }
 }
 
+
+
 // 画面が表示される直前に呼び出される *定義済み関数
 - (void)viewWillAppear:(BOOL)animated
 {
-
 }
 
 
@@ -235,17 +236,18 @@
       [setBtn001 setCenter:CGPointMake(centerPoint, 240)];
       [setBtnStart setCenter:CGPointMake(centerPoint +100, 250)];
       
-      clockSelectBtn.frame = CGRectMake(centerPoint - 150     , -3,145,50);
-      timerSelectBtn.frame = CGRectMake(centerPoint - 150 +140, -3,145,50);
+      [clockSelectBtn setCenter:CGPointMake(centerPoint -78, 22)];
+      [timerSelectBtn setCenter:CGPointMake(centerPoint +62, 22)];
 
       infBtn.frame = CGRectMake(self.view.frame.size.width -35, 0, 35, 35); // x y w h
+
+//      LOG(@"center=%d x=%d y=%d",centerPoint,(int)clockSelectBtn.center.x,(int)clockSelectBtn.center.y);
 
       // 横向き時のみ表示されるように位置を調整
       [hisLabel   setCenter:CGPointMake(centerPoint +190,  45)];//x,y
       [setBtnHis1 setCenter:CGPointMake(centerPoint +190,  75)];
       [setBtnHis2 setCenter:CGPointMake(centerPoint +190, 105)];
       [setBtnHis3 setCenter:CGPointMake(centerPoint +190, 135)];
-//      LOG(@"center=%d x=%d y=%d",centerPoint,(int)hisLabel.center.x,(int)hisLabel.center.y);
      
       // 横向き時の調整
       if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
@@ -275,16 +277,17 @@
       [setBtn001   setCenter:CGPointMake(centerPoint, 590)];
       [setBtnStart setCenter:CGPointMake(centerPoint +230, 605)];
       
+      [clockSelectBtn setCenter:CGPointMake( 78, 34)];
+      [timerSelectBtn setCenter:CGPointMake(220, 34)];
+
       // 横向き時のみ表示されるように位置を調整
       [hisLabel   setCenter:CGPointMake(centerPoint +430,  80)];
       [setBtnHis1 setCenter:CGPointMake(centerPoint +430, 135)];
       [setBtnHis2 setCenter:CGPointMake(centerPoint +430, 200)];
       [setBtnHis3 setCenter:CGPointMake(centerPoint +430, 265)];
       
-      
       // 横向き時の調整
       if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
-        
         if ([ResetBtnScaleOnFlag val]) {
           [self btnScaleUpYoko:setBtnReset];
         }
@@ -1124,13 +1127,8 @@ int vibCount;
 /*** 表示切り替え(ボタン)配置 関数 ***/
 - (void)btnLinkSelect
 {
-  
   // ====== 「現在時表示」ボタン（リンクテキスト風）ここから ======
-  clockSelectBtn = [MyModeBtn buttonWithType:UIButtonTypeCustom];
-  
-  [clockSelectBtn ModeSelect:CGRectMake(15,7,135,50)    // x y w h // use ipad positioning
-                    btnTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btnClock", nil)]];
-  
+  clockSelectBtn = [ModeClockBtn buttonWithType:UIButtonTypeCustom];
   [clockSelectBtn setEnabled:YES]; // default
   
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
@@ -1138,16 +1136,11 @@ int vibCount;
   }else{
     [cntView addSubview:clockSelectBtn];   // ipad
   }
-  [clockSelectBtn addTarget:self action:@selector(clockSelectBtnTouch:) forControlEvents:UIControlEventTouchUpInside]; // タッチリリース時
+  [clockSelectBtn addTarget:self action:@selector(clockSelectBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
   // ====== 「現在時表示」ボタン（リンクテキスト風）ここまで ======
   
-  
   // ====== 「タイマー設定」ボタン（リンクテキスト風）ここから ======
-  timerSelectBtn = [MyModeBtn buttonWithType:UIButtonTypeCustom];
-  
-  [timerSelectBtn ModeSelect:CGRectMake(155,7,155,50)    // x y w h // use ipad positioning
-                    btnTitle:[NSString stringWithFormat:@"%@",NSLocalizedString(@"btnTimer", nil)]];
-  
+  timerSelectBtn = [ModeTimerBtn buttonWithType:UIButtonTypeCustom];
   [timerSelectBtn setEnabled:NO]; // not default
   
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
@@ -1155,7 +1148,7 @@ int vibCount;
   }else{
     [cntView addSubview:timerSelectBtn];   // ipad
   }
-  [timerSelectBtn addTarget:self action:@selector(timerSelectBtnTouch:) forControlEvents:UIControlEventTouchUpInside]; // タッチリリース時
+  [timerSelectBtn addTarget:self action:@selector(timerSelectBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
   // ====== 「タイマー設定」ボタン（リンクテキスト風）ここまで ======
   
   

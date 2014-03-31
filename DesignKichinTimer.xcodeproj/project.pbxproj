@@ -34,6 +34,7 @@
 		5E3E88B018E84C9F000A77B8 /* HistLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3E88AF18E84C9F000A77B8 /* HistLabel.m */; };
 		5E3E88B318E85BE9000A77B8 /* StartBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3E88B218E85BE9000A77B8 /* StartBtn.m */; };
 		5E3E88B618E86F17000A77B8 /* ResetBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3E88B518E86F17000A77B8 /* ResetBtn.m */; };
+		5E3E88B918E9B089000A77B8 /* ModeClockBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3E88B818E9B089000A77B8 /* ModeClockBtn.m */; };
 		5E42589718192B7F00171F1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E42589918192B7F00171F1F /* Localizable.strings */; };
 		5E42589C181CF29300171F1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E42589B181CF29300171F1F /* QuartzCore.framework */; };
 		5E4ECBD01866250E00578E1E /* IconInfoTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E4ECBCE1866250E00578E1E /* IconInfoTouch.png */; };
@@ -41,7 +42,7 @@
 		5E4ECBDD1867597900578E1E /* TriangleBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4ECBDC1867597900578E1E /* TriangleBtn.m */; };
 		5E4ECBE01868812E00578E1E /* MyInfoBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4ECBDF1868812E00578E1E /* MyInfoBtn.m */; };
 		5E5B420318744775006FDE6E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E5B420218744775006FDE6E /* Security.framework */; };
-		5E5DF025184327510098499A /* MyModeBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DF024184327510098499A /* MyModeBtn.m */; };
+		5E5DF025184327510098499A /* ModeTimerBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DF024184327510098499A /* ModeTimerBtn.m */; };
 		5E5DF028184377EC0098499A /* MyCntLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DF027184377EC0098499A /* MyCntLabel.m */; };
 		5E6F4B2B18117F7600312CCD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E6F4B2A18117F7600312CCD /* Foundation.framework */; };
 		5E6F4B2D18117F7600312CCD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E6F4B2C18117F7600312CCD /* CoreGraphics.framework */; };
@@ -123,6 +124,8 @@
 		5E3E88B218E85BE9000A77B8 /* StartBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartBtn.m; sourceTree = "<group>"; };
 		5E3E88B418E86F17000A77B8 /* ResetBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetBtn.h; sourceTree = "<group>"; };
 		5E3E88B518E86F17000A77B8 /* ResetBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetBtn.m; sourceTree = "<group>"; };
+		5E3E88B718E9B089000A77B8 /* ModeClockBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeClockBtn.h; sourceTree = "<group>"; };
+		5E3E88B818E9B089000A77B8 /* ModeClockBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModeClockBtn.m; sourceTree = "<group>"; };
 		5E42589418192B2600171F1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5E42589818192B7F00171F1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E42589A18192B8800171F1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -135,8 +138,8 @@
 		5E4ECBDE1868812E00578E1E /* MyInfoBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInfoBtn.h; sourceTree = "<group>"; };
 		5E4ECBDF1868812E00578E1E /* MyInfoBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfoBtn.m; sourceTree = "<group>"; };
 		5E5B420218744775006FDE6E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		5E5DF023184327510098499A /* MyModeBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyModeBtn.h; sourceTree = "<group>"; };
-		5E5DF024184327510098499A /* MyModeBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyModeBtn.m; sourceTree = "<group>"; };
+		5E5DF023184327510098499A /* ModeTimerBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeTimerBtn.h; sourceTree = "<group>"; };
+		5E5DF024184327510098499A /* ModeTimerBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModeTimerBtn.m; sourceTree = "<group>"; };
 		5E5DF026184377EC0098499A /* MyCntLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCntLabel.h; sourceTree = "<group>"; };
 		5E5DF027184377EC0098499A /* MyCntLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCntLabel.m; sourceTree = "<group>"; };
 		5E6F4B2718117F7600312CCD /* DesignKichinTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignKichinTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -339,8 +342,10 @@
 		5E40179E18D892A300CE074E /* ButtonAndLabel */ = {
 			isa = PBXGroup;
 			children = (
-				5E5DF023184327510098499A /* MyModeBtn.h */,
-				5E5DF024184327510098499A /* MyModeBtn.m */,
+				5E5DF023184327510098499A /* ModeTimerBtn.h */,
+				5E5DF024184327510098499A /* ModeTimerBtn.m */,
+				5E3E88B718E9B089000A77B8 /* ModeClockBtn.h */,
+				5E3E88B818E9B089000A77B8 /* ModeClockBtn.m */,
 				5E5DF026184377EC0098499A /* MyCntLabel.h */,
 				5E5DF027184377EC0098499A /* MyCntLabel.m */,
 				5E4ECBDB1867597900578E1E /* TriangleBtn.h */,
@@ -624,7 +629,8 @@
 				5E4ECBD81866CD5900578E1E /* InfoViewController.m in Sources */,
 				5E220DCD18425F3900D2ACB0 /* SoundOnFlag.m in Sources */,
 				5E6F4B3B18117F7600312CCD /* AppDelegate.m in Sources */,
-				5E5DF025184327510098499A /* MyModeBtn.m in Sources */,
+				5E5DF025184327510098499A /* ModeTimerBtn.m in Sources */,
+				5E3E88B918E9B089000A77B8 /* ModeClockBtn.m in Sources */,
 				5E4ECBDD1867597900578E1E /* TriangleBtn.m in Sources */,
 				5E3E88AA18E6EDDF000A77B8 /* PlusNnBtn.m in Sources */,
 				5E8BC36D185DE38500C2802E /* BtnZoomOnFlag.m in Sources */,
