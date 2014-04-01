@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E0BFA8018EABD8100CFB7F9 /* ToggleBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0BFA7F18EABD8100CFB7F9 /* ToggleBtn.m */; };
+		5E0BFA8E18EACEA100CFB7F9 /* IconInfoTouch40.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0BFA8C18EACEA100CFB7F9 /* IconInfoTouch40.png */; };
+		5E0BFA9018EAD52D00CFB7F9 /* IconInfo40.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0BFA8F18EAD52D00CFB7F9 /* IconInfo40.png */; };
 		5E1E11D71834F81500307C8F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1E11D61834F81500307C8F /* MessageUI.framework */; };
 		5E1E11D91834F82600307C8F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1E11D81834F82600307C8F /* SystemConfiguration.framework */; };
 		5E1E11DB18350D0500307C8F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1E11DA18350D0500307C8F /* CoreLocation.framework */; };
@@ -35,6 +38,7 @@
 		5E3E88B318E85BE9000A77B8 /* StartBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3E88B218E85BE9000A77B8 /* StartBtn.m */; };
 		5E3E88B618E86F17000A77B8 /* ResetBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3E88B518E86F17000A77B8 /* ResetBtn.m */; };
 		5E3E88B918E9B089000A77B8 /* ModeClockBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3E88B818E9B089000A77B8 /* ModeClockBtn.m */; };
+		5E3E88BC18EAA90F000A77B8 /* InfoBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3E88BB18EAA90F000A77B8 /* InfoBtn.m */; };
 		5E42589718192B7F00171F1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E42589918192B7F00171F1F /* Localizable.strings */; };
 		5E42589C181CF29300171F1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E42589B181CF29300171F1F /* QuartzCore.framework */; };
 		5E4ECBD01866250E00578E1E /* IconInfoTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E4ECBCE1866250E00578E1E /* IconInfoTouch.png */; };
@@ -88,6 +92,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E0BFA7E18EABD8100CFB7F9 /* ToggleBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToggleBtn.h; sourceTree = "<group>"; };
+		5E0BFA7F18EABD8100CFB7F9 /* ToggleBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToggleBtn.m; sourceTree = "<group>"; };
+		5E0BFA8C18EACEA100CFB7F9 /* IconInfoTouch40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconInfoTouch40.png; sourceTree = "<group>"; };
+		5E0BFA8F18EAD52D00CFB7F9 /* IconInfo40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconInfo40.png; sourceTree = "<group>"; };
 		5E1E11D61834F81500307C8F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		5E1E11D81834F82600307C8F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5E1E11DA18350D0500307C8F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -126,6 +134,8 @@
 		5E3E88B518E86F17000A77B8 /* ResetBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetBtn.m; sourceTree = "<group>"; };
 		5E3E88B718E9B089000A77B8 /* ModeClockBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeClockBtn.h; sourceTree = "<group>"; };
 		5E3E88B818E9B089000A77B8 /* ModeClockBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModeClockBtn.m; sourceTree = "<group>"; };
+		5E3E88BA18EAA90F000A77B8 /* InfoBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoBtn.h; sourceTree = "<group>"; };
+		5E3E88BB18EAA90F000A77B8 /* InfoBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoBtn.m; sourceTree = "<group>"; };
 		5E42589418192B2600171F1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5E42589818192B7F00171F1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E42589A18192B8800171F1F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -320,6 +330,8 @@
 		5E30A82918D71579001D468A /* ImageAndSound */ = {
 			isa = PBXGroup;
 			children = (
+				5E0BFA8F18EAD52D00CFB7F9 /* IconInfo40.png */,
+				5E0BFA8C18EACEA100CFB7F9 /* IconInfoTouch40.png */,
 				5E30A82A18D722E7001D468A /* batten33.png */,
 				5E235499186DA7250055217F /* IconInfo.png */,
 				5E4ECBCE1866250E00578E1E /* IconInfoTouch.png */,
@@ -362,6 +374,10 @@
 				5E3E88B218E85BE9000A77B8 /* StartBtn.m */,
 				5E3E88B418E86F17000A77B8 /* ResetBtn.h */,
 				5E3E88B518E86F17000A77B8 /* ResetBtn.m */,
+				5E3E88BA18EAA90F000A77B8 /* InfoBtn.h */,
+				5E3E88BB18EAA90F000A77B8 /* InfoBtn.m */,
+				5E0BFA7E18EABD8100CFB7F9 /* ToggleBtn.h */,
+				5E0BFA7F18EABD8100CFB7F9 /* ToggleBtn.m */,
 			);
 			name = ButtonAndLabel;
 			sourceTree = "<group>";
@@ -579,6 +595,7 @@
 				5E2480701856F5D80032AF77 /* IconVibTouch.png in Resources */,
 				5E2480751856FE6B0032AF77 /* IconSndOff.png in Resources */,
 				5E2809E318DADD1400A28373 /* Icon76@2x_pro.png in Resources */,
+				5E0BFA8E18EACEA100CFB7F9 /* IconInfoTouch40.png in Resources */,
 				5E2480681856ED3E0032AF77 /* IconVibOff.png in Resources */,
 				5ECB0D371832173700103C18 /* pi_mono.mp3 in Resources */,
 				5EF21EC81839260C00C079F0 /* Icon76.png in Resources */,
@@ -602,6 +619,7 @@
 				5ECB0D271832038400103C18 /* piLong.mp3 in Resources */,
 				5E2480761856FE6B0032AF77 /* IconSndTouch.png in Resources */,
 				5E6F4B3E18117F7600312CCD /* Main_iPhone.storyboard in Resources */,
+				5E0BFA9018EAD52D00CFB7F9 /* IconInfo40.png in Resources */,
 				5E8BC371185DF84600C2802E /* IconBigTouch.png in Resources */,
 				5EF21ECA1839260C00C079F0 /* Icon60.png in Resources */,
 				5EF21ECB1839260C00C079F0 /* Icon60@2x.png in Resources */,
@@ -634,12 +652,14 @@
 				5E4ECBDD1867597900578E1E /* TriangleBtn.m in Sources */,
 				5E3E88AA18E6EDDF000A77B8 /* PlusNnBtn.m in Sources */,
 				5E8BC36D185DE38500C2802E /* BtnZoomOnFlag.m in Sources */,
+				5E0BFA8018EABD8100CFB7F9 /* ToggleBtn.m in Sources */,
 				5E4ECBE01868812E00578E1E /* MyInfoBtn.m in Sources */,
 				5E2809EA18DC596200A28373 /* CntView.m in Sources */,
 				5E3E88B018E84C9F000A77B8 /* HistLabel.m in Sources */,
 				5E24806118558F9F0032AF77 /* VibrateOnFlag.m in Sources */,
 				5EDE0907185CBF8F00660FF9 /* ResetBtnScaleOnFlag.m in Sources */,
 				5E3E88B618E86F17000A77B8 /* ResetBtn.m in Sources */,
+				5E3E88BC18EAA90F000A77B8 /* InfoBtn.m in Sources */,
 				5E3E88AD18E72671000A77B8 /* HistNnBtn.m in Sources */,
 				5E6F4B3718117F7600312CCD /* main.m in Sources */,
 				5E3E88B318E85BE9000A77B8 /* StartBtn.m in Sources */,

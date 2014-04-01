@@ -234,9 +234,7 @@
       [clockSelectBtn setCenter:CGPointMake(centerPoint -78, 22)];
       [timerSelectBtn setCenter:CGPointMake(centerPoint +62, 22)];
 
-      infBtn.frame = CGRectMake(self.view.frame.size.width -35, 0, 35, 35); // x y w h
-
-//      LOG(@"center=%d x=%d y=%d",centerPoint,(int)clockSelectBtn.center.x,(int)clockSelectBtn.center.y);
+      [infBtn setCenter:CGPointMake(self.view.frame.size.width -17, 17)];
 
       // 横向き時のみ表示されるように位置を調整
       [hisLabel   setCenter:CGPointMake(centerPoint +190,  45)];//x,y
@@ -246,8 +244,8 @@
      
       // 横向き時の調整
       if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
-        infBtn.frame = CGRectMake(self.view.frame.size.width +110, 5, 35, 35); // x y w h
-                
+        [infBtn setCenter:CGPointMake(self.view.frame.size.width +126, 17)];
+        
         if ([ResetBtnScaleOnFlag val]) {
           [self btnScaleUpYoko:setBtnReset];
         }
@@ -272,8 +270,11 @@
       [setBtn001   setCenter:CGPointMake(centerPoint, 590)];
       [setBtnStart setCenter:CGPointMake(centerPoint +230, 605)];
       
-      [clockSelectBtn setCenter:CGPointMake( 80, -34)];//x,y
-      [timerSelectBtn setCenter:CGPointMake(250, -34)];//x,y
+      [clockSelectBtn setCenter:CGPointMake( 84, -24)];//x,y
+      [timerSelectBtn setCenter:CGPointMake(280, -24)];//x,y
+
+      [infBtn setCenter:CGPointMake(self.view.frame.size.width -35, 30)];
+//      LOG(@"center=%d x=%d y=%d",centerPoint,(int)infBtn.center.x,(int)infBtn.center.y);
 
       // 横向き時のみ表示されるように位置を調整
       [hisLabel   setCenter:CGPointMake(centerPoint +430,  80)];
@@ -283,6 +284,8 @@
       
       // 横向き時の調整
       if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
+        [infBtn setCenter:CGPointMake(self.view.frame.size.width +200, 30)];
+
         if ([ResetBtnScaleOnFlag val]) {
           [self btnScaleUpYoko:setBtnReset];
         }
@@ -374,13 +377,11 @@
 
 - (void)btnDisabledAll
 {
-//  [setBtn60 setEnabled:NO];
   [setBtn10 setEnabled:NO];
   [setBtn05 setEnabled:NO];
   [setBtn03 setEnabled:NO];
   [setBtn01 setEnabled:NO];
   [setBtn001 setEnabled:NO];
-//  [setBtn0001 setEnabled:NO];
   [setBtnStart setEnabled:NO];
   [setBtnReset setEnabled:NO];
   [hisLabel setEnable:NO];
@@ -390,13 +391,11 @@
 }
 - (void)btnEnabledAll
 {
-//  [setBtn60 setEnabled:YES];
   [setBtn10 setEnabled:YES];
   [setBtn05 setEnabled:YES];
   [setBtn03 setEnabled:YES];
   [setBtn01 setEnabled:YES];
   [setBtn001 setEnabled:YES];
-//  [setBtn0001 setEnabled:YES];
   [setBtnStart setEnabled:YES];
   [setBtnReset setEnabled:YES];
   
@@ -419,13 +418,11 @@
 }
 - (void)btnEnableOnlyReset
 {
-//  [setBtn60 setEnabled:NO];
   [setBtn10 setEnabled:NO];
   [setBtn05 setEnabled:NO];
   [setBtn03 setEnabled:NO];
   [setBtn01 setEnabled:NO];
   [setBtn001 setEnabled:NO];
-//  [setBtn0001 setEnabled:NO];
   [setBtnStart setEnabled:NO];
   [setBtnReset setEnabled:YES];
   [hisLabel setEnable:NO];
@@ -438,13 +435,11 @@
 }
 - (void)btnEnableOnlyStartReset
 {
-//  [setBtn60 setEnabled:NO];
   [setBtn10 setEnabled:NO];
   [setBtn05 setEnabled:NO];
   [setBtn03 setEnabled:NO];
   [setBtn01 setEnabled:NO];
   [setBtn001 setEnabled:NO];
-//  [setBtn0001 setEnabled:NO];
   [setBtnStart setEnabled:YES];
   [setBtnReset setEnabled:YES];
   [hisLabel setEnable:NO];
@@ -971,8 +966,6 @@
 // 時計(現在時)表示用関数
 - (void)driveClock:(NSTimer *)timer
 {
-  //  NSLog(@"%d: driveClock Start!",__LINE__);
-  
   NSDate *today = [NSDate date]; //現在時刻を取得
   NSCalendar *calender = [NSCalendar currentCalendar]; //現在時刻の時分秒を取得
   unsigned flags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
@@ -1003,12 +996,10 @@
 // タイマー表示用関数
 - (void)timerTimer:(NSTimer *)timer
 {
-//  NSLog(@"%d: timerTimer Start!",__LINE__);
   int sec = [APP_DELEGATE globalSec];
   int min = [APP_DELEGATE globalMin];
   
   if (sec == 0 && min == 0) {
-//    NSLog(@"%d: Count UP Start!",__LINE__);
     cntUpFlag = YES;
   }
   
@@ -1093,7 +1084,6 @@ NSTimer* vibTimer;
 int vibCount;
 
 - (void) vibrateRepeat:(CFRunLoopTimerRef *)timer {
-//  NSLog(@"%d Vibration %s",__LINE__,__func__);
   AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
   vibCount++;
   
@@ -1109,9 +1099,6 @@ int vibCount;
 // 表示反映関数
 - (void)chkDisp
 {
-//  LOG(@"cntMode = %hhd",cntMode);
-//  LOG(@"%d %d",[APP_DELEGATE globalMin],[APP_DELEGATE globalSec]);
-  
   // Check is Mode
   if (cntMode) {
     cntLabel.text = [NSString stringWithFormat:@"%03d %02d",[APP_DELEGATE globalMin],(int)[APP_DELEGATE globalSec]];
@@ -1127,9 +1114,9 @@ int vibCount;
   [clockSelectBtn setEnabled:YES]; // default
   
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    [self.view addSubview:clockSelectBtn]; // iphone
+    [self.view addSubview:clockSelectBtn]; //iPhone
   }else{
-    [cntView addSubview:clockSelectBtn];   // ipad
+    [cntView addSubview:clockSelectBtn];   //iPad
   }
   [clockSelectBtn addTarget:self action:@selector(clockSelectBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
   // ====== 「現在時表示」ボタン（リンクテキスト風）ここまで ======
@@ -1139,68 +1126,56 @@ int vibCount;
   [timerSelectBtn setEnabled:NO]; // not default
   
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    [self.view addSubview:timerSelectBtn]; // iphone
+    [self.view addSubview:timerSelectBtn]; //iPhone
   }else{
-    [cntView addSubview:timerSelectBtn];   // ipad
+    [cntView addSubview:timerSelectBtn];   //iPad
   }
   [timerSelectBtn addTarget:self action:@selector(timerSelectBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
   // ====== 「タイマー設定」ボタン（リンクテキスト風）ここまで ======
   
   
   // ====== 「Sound & Vibrator & ButtonZoom ON/OFF」Button From here ======
-  infBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-  sndBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-  vibBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-  bigBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+  infBtn = [InfoBtn buttonWithType:UIButtonTypeCustom];
+  sndBtn = [ToggleBtn buttonWithType:UIButtonTypeCustom];
+  vibBtn = [ToggleBtn buttonWithType:UIButtonTypeCustom];
+  bigBtn = [ToggleBtn buttonWithType:UIButtonTypeCustom];
   
-  [infBtn setImage:[UIImage imageNamed:@"IconInfo.png"]    forState:UIControlStateNormal];
+  [infBtn setImage:[UIImage imageNamed:@"IconInfo.png"]      forState:UIControlStateNormal];
   [infBtn setImage:[UIImage imageNamed:@"IconInfoTouch.png"] forState:UIControlStateHighlighted];
+  [infBtn addTarget:self action:@selector(infoBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
+  [self.view addSubview:infBtn];
 
   [sndBtn setImage:[UIImage imageNamed:@"IconSndOn.png"]    forState:UIControlStateNormal];
   [sndBtn setImage:[UIImage imageNamed:@"IconSndTouch.png"] forState:UIControlStateHighlighted];
-
-  [bigBtn setImage:[UIImage imageNamed:@"IconBigOn.png"]    forState:UIControlStateNormal];
-  [bigBtn setImage:[UIImage imageNamed:@"IconBigTouch.png"] forState:UIControlStateHighlighted];
-
-  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    [self.view addSubview:infBtn];
-
-    sndBtn.frame = CGRectMake(cntView.bounds.size.width -37,cntView.bounds.size.height -35,30,30); // x y w h
-    bigBtn.frame = CGRectMake(cntView.bounds.size.width -37,cntView.frame.origin.y -50,30,30); // x y w h
-    
-    [vibBtn setImage:[UIImage imageNamed:@"IconVibOn.png"]    forState:UIControlStateNormal];
-    vibBtn.frame = CGRectMake(cntView.bounds.size.width -66,cntView.bounds.size.height -36,32,32); // x y w h
-    [cntView addSubview:vibBtn];
-    
-  }else{
-    infBtn.frame = CGRectMake(cntView.bounds.size.width -60, 10, 50, 50); // x y w h
-    [cntView addSubview:infBtn];
-
-    sndBtn.frame = CGRectMake(cntView.bounds.size.width -60,cntView.bounds.size.height  -60,50,50); // x y w h
-    bigBtn.frame = CGRectMake(cntView.bounds.size.width -60,cntView.bounds.size.height -110,50,50); // x y w h
-  }
-  [infBtn setImageEdgeInsets:UIEdgeInsetsMake(8.f, 8.f, 8.f, 8.f)]; // 上 左 下 右
-  [infBtn addTarget:self action:@selector(infoBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
-  
-//  [sndBtn setBackgroundColor:[UIColor purpleColor]];
-  [sndBtn setImageEdgeInsets:UIEdgeInsetsMake(6.f, 6.f, 6.f, 6.f)]; // 上 左 下 右
   [sndBtn addTarget:self action:@selector(sndBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
   [cntView addSubview:sndBtn];
 
-//  [vibBtn setBackgroundColor:[UIColor yellowColor]];
-  [vibBtn setImageEdgeInsets:UIEdgeInsetsMake(6.f, 6.f, 6.f, 6.f)]; // 上 左 下 右
-  [vibBtn addTarget:self action:@selector(vibBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
-  [cntView addSubview:vibBtn];
-  
-//  [bigBtn setBackgroundColor:[UIColor purpleColor]];
-  [bigBtn setImageEdgeInsets:UIEdgeInsetsMake(6.f, 6.f, 6.f, 6.f)]; // 上 左 下 右
+  [bigBtn setImage:[UIImage imageNamed:@"IconBigOn.png"]    forState:UIControlStateNormal];
+  [bigBtn setImage:[UIImage imageNamed:@"IconBigTouch.png"] forState:UIControlStateHighlighted];
   [bigBtn addTarget:self action:@selector(bigBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
   [cntView addSubview:bigBtn];
-  
-  
 
-  
-  
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+    //iPhone
+
+    [sndBtn setCenter:CGPointMake(278, 80)];
+    [bigBtn setCenter:CGPointMake(278, 25)];
+    
+    [vibBtn setImage:[UIImage imageNamed:@"IconVibOn.png"] forState:UIControlStateNormal];
+    [vibBtn setImage:[UIImage imageNamed:@"IconVibTouch.png"] forState:UIControlStateHighlighted];
+    [vibBtn addTarget:self action:@selector(vibBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
+    [vibBtn setCenter:CGPointMake(250, 80)];
+    [cntView addSubview:vibBtn];
+    
+  }else{
+    //iPad
+
+    [sndBtn setCenter:CGPointMake(713, 214-45)];//x,y
+    [bigBtn setCenter:CGPointMake(713, 264-45)];//x,y
+    
+    [infBtn setImage:[UIImage imageNamed:@"IconInfo40.png"]      forState:UIControlStateNormal];
+    [infBtn setImage:[UIImage imageNamed:@"IconInfoTouch40.png"] forState:UIControlStateHighlighted];
+  }
   // ====== 「Sound & Vibrator & ButtonZoom ON/OFF」Button To here ======
 }
 

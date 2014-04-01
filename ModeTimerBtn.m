@@ -12,7 +12,7 @@
 
 - (id)initWithFrame:(CGRect)frame
 {
-  float w=155,h=50,fontSize=20;// iPad Definition the width size and height size
+  float w=200,h=50,fontSize=24;// iPad Definition the width size and height size
   
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
     //iPhone
@@ -30,10 +30,11 @@
     
     [self.titleLabel setFont:[UIFont systemFontOfSize:fontSize]];
     [self.titleLabel setTextAlignment:NSTextAlignmentCenter];
-    //    [self.titleLabel setAdjustsFontSizeToFitWidth:YES];
+    [self.titleLabel setAdjustsFontSizeToFitWidth:YES];
     
     [self setBackgroundColor:[UIColor clearColor]];
-    //    [self setBackgroundColor:[UIColor purpleColor]];//Use Debug
+//    [self setBackgroundColor:[UIColor purpleColor]];//Use Debug
+//    [self setAlpha:0.5f];//Use Debug
   }
   return self;
 }

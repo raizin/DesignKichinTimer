@@ -19,6 +19,8 @@
 #import "HistLabel.h"
 #import "StartBtn.h"
 #import "ResetBtn.h"
+#import "InfoBtn.h"
+#import "ToggleBtn.h"
 
 @interface ViewController : UIViewController {
   
@@ -64,25 +66,25 @@
   CALayer *cntlayer;
   
   // Button
-  UIButton *infBtn; // Infomation ModalView Call Button
-  UIButton *sndBtn; // Sound On / Off
-  UIButton *vibBtn; // Vibrate On / Off
-  UIButton *bigBtn; // Button Zoom On / Off
+  InfoBtn* infBtn; // Infomation ModalView Call Button
+  ToggleBtn* sndBtn; // Sound On / Off
+  ToggleBtn* vibBtn; // Vibrate On / Off
+  ToggleBtn* bigBtn; // Button Zoom On / Off
   
-  ModeTimerBtn *timerSelectBtn; //「タイマー設定」切替ボタン
-  ModeClockBtn *clockSelectBtn; //「現在時表示」切替ボタン
+  ModeTimerBtn* timerSelectBtn; //「タイマー設定」切替ボタン
+  ModeClockBtn* clockSelectBtn; //「現在時表示」切替ボタン
   
-  PlusNnBtn *setBtn10;//10 min
-  PlusNnBtn *setBtn05;//5 min
-  PlusNnBtn *setBtn03;//3 min
-  PlusNnBtn *setBtn01;//1 min
-  PlusNnBtn *setBtn001;//10 s
-  StartBtn *setBtnStart;
-  ResetBtn *setBtnReset;//Reset & Stop
+  PlusNnBtn* setBtn10;//10 min
+  PlusNnBtn* setBtn05;//5 min
+  PlusNnBtn* setBtn03;//3 min
+  PlusNnBtn* setBtn01;//1 min
+  PlusNnBtn* setBtn001;//10 s
+  StartBtn* setBtnStart;
+  ResetBtn* setBtnReset;//Reset & Stop
   
-  HistNnBtn *setBtnHis1;//History1
-  HistNnBtn *setBtnHis2;//History2
-  HistNnBtn *setBtnHis3;//History3
+  HistNnBtn* setBtnHis1;//History1
+  HistNnBtn* setBtnHis2;//History2
+  HistNnBtn* setBtnHis3;//History3
   
   
   // フェードインを一回だけ成功させるフラグ YES:実行 NO:実行しない
