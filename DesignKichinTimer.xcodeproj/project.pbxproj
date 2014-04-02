@@ -10,6 +10,9 @@
 		5E0BFA8018EABD8100CFB7F9 /* ToggleBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0BFA7F18EABD8100CFB7F9 /* ToggleBtn.m */; };
 		5E0BFA8E18EACEA100CFB7F9 /* IconInfoTouch40.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0BFA8C18EACEA100CFB7F9 /* IconInfoTouch40.png */; };
 		5E0BFA9018EAD52D00CFB7F9 /* IconInfo40.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0BFA8F18EAD52D00CFB7F9 /* IconInfo40.png */; };
+		5E0BFA9718EC27C100CFB7F9 /* UnitLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0BFA9618EC27C100CFB7F9 /* UnitLabel.m */; };
+		5E0BFA9D18EC281300CFB7F9 /* ByoUnitLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0BFA9C18EC281300CFB7F9 /* ByoUnitLabel.m */; };
+		5E0BFAA018EC282D00CFB7F9 /* HunUnitLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0BFA9F18EC282D00CFB7F9 /* HunUnitLabel.m */; };
 		5E1E11D71834F81500307C8F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1E11D61834F81500307C8F /* MessageUI.framework */; };
 		5E1E11D91834F82600307C8F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1E11D81834F82600307C8F /* SystemConfiguration.framework */; };
 		5E1E11DB18350D0500307C8F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1E11DA18350D0500307C8F /* CoreLocation.framework */; };
@@ -96,6 +99,12 @@
 		5E0BFA7F18EABD8100CFB7F9 /* ToggleBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToggleBtn.m; sourceTree = "<group>"; };
 		5E0BFA8C18EACEA100CFB7F9 /* IconInfoTouch40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconInfoTouch40.png; sourceTree = "<group>"; };
 		5E0BFA8F18EAD52D00CFB7F9 /* IconInfo40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconInfo40.png; sourceTree = "<group>"; };
+		5E0BFA9518EC27C100CFB7F9 /* UnitLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitLabel.h; sourceTree = "<group>"; };
+		5E0BFA9618EC27C100CFB7F9 /* UnitLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitLabel.m; sourceTree = "<group>"; };
+		5E0BFA9B18EC281300CFB7F9 /* ByoUnitLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ByoUnitLabel.h; sourceTree = "<group>"; };
+		5E0BFA9C18EC281300CFB7F9 /* ByoUnitLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ByoUnitLabel.m; sourceTree = "<group>"; };
+		5E0BFA9E18EC282D00CFB7F9 /* HunUnitLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HunUnitLabel.h; sourceTree = "<group>"; };
+		5E0BFA9F18EC282D00CFB7F9 /* HunUnitLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HunUnitLabel.m; sourceTree = "<group>"; };
 		5E1E11D61834F81500307C8F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		5E1E11D81834F82600307C8F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5E1E11DA18350D0500307C8F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -290,6 +299,12 @@
 				5E5DF027184377EC0098499A /* MyCntLabel.m */,
 				5E3E88AE18E84C9F000A77B8 /* HistLabel.h */,
 				5E3E88AF18E84C9F000A77B8 /* HistLabel.m */,
+				5E0BFA9518EC27C100CFB7F9 /* UnitLabel.h */,
+				5E0BFA9618EC27C100CFB7F9 /* UnitLabel.m */,
+				5E0BFA9B18EC281300CFB7F9 /* ByoUnitLabel.h */,
+				5E0BFA9C18EC281300CFB7F9 /* ByoUnitLabel.m */,
+				5E0BFA9E18EC282D00CFB7F9 /* HunUnitLabel.h */,
+				5E0BFA9F18EC282D00CFB7F9 /* HunUnitLabel.m */,
 			);
 			name = Label;
 			sourceTree = "<group>";
@@ -661,6 +676,8 @@
 				5E3E88AA18E6EDDF000A77B8 /* PlusNnBtn.m in Sources */,
 				5E8BC36D185DE38500C2802E /* BtnZoomOnFlag.m in Sources */,
 				5E0BFA8018EABD8100CFB7F9 /* ToggleBtn.m in Sources */,
+				5E0BFA9D18EC281300CFB7F9 /* ByoUnitLabel.m in Sources */,
+				5E0BFAA018EC282D00CFB7F9 /* HunUnitLabel.m in Sources */,
 				5E4ECBE01868812E00578E1E /* MyInfoBtn.m in Sources */,
 				5E2809EA18DC596200A28373 /* CntView.m in Sources */,
 				5E3E88B018E84C9F000A77B8 /* HistLabel.m in Sources */,
@@ -670,6 +687,7 @@
 				5E3E88BC18EAA90F000A77B8 /* InfoBtn.m in Sources */,
 				5E3E88AD18E72671000A77B8 /* HistNnBtn.m in Sources */,
 				5E6F4B3718117F7600312CCD /* main.m in Sources */,
+				5E0BFA9718EC27C100CFB7F9 /* UnitLabel.m in Sources */,
 				5E3E88B318E85BE9000A77B8 /* StartBtn.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

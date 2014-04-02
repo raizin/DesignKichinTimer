@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyCntLabel : UILabel {
+@interface MyCntLabel : UILabel
 
-}
-- (void)setCnt;
-- (void)setHun;
-- (void)setByo;
 @end

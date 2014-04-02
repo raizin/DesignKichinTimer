@@ -21,6 +21,8 @@
 #import "ResetBtn.h"
 #import "InfoBtn.h"
 #import "ToggleBtn.h"
+#import "ByoUnitLabel.h"
+#import "HunUnitLabel.h"
 
 @interface ViewController : UIViewController {
   
@@ -53,8 +55,8 @@
 
   // カウンター表示ラベル定義
   MyCntLabel *cntLabel;
-  MyCntLabel *hunLabel;//use minits unit character display
-  MyCntLabel *byoLabel;//use seconds unit character display
+  HunUnitLabel *hunLabel;//use minits unit character display
+  ByoUnitLabel *byoLabel;//use seconds unit character display
   HistLabel *hisLabel;//history
 
   

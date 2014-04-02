@@ -920,12 +920,10 @@
     unitRectS = CGRectMake(623,60,45,45); // x y w h
   }
   
-  hunLabel = [[MyCntLabel alloc] initWithFrame:unitRectM];// x y w h
-  [hunLabel setHun];
+  hunLabel = [[HunUnitLabel alloc] initWithFrame:unitRectM];// x y w h
   [cntView addSubview:hunLabel];
   
-  byoLabel = [[MyCntLabel alloc] initWithFrame:unitRectS];// x y w h
-  [byoLabel setByo];
+  byoLabel = [[ByoUnitLabel alloc] initWithFrame:unitRectS];// x y w h
   [cntView addSubview:byoLabel];
 }
 
