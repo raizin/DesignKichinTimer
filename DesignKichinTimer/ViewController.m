@@ -69,16 +69,19 @@
   
   
   //画面情報(横幅)取得
-  UIScreen *sc = [UIScreen mainScreen];
-  CGRect rect = sc.bounds;
-  CGFloat screenWidth = rect.size.width;
+//  UIScreen *sc = [UIScreen mainScreen];
+//  CGRect rect = sc.bounds;
+//  CGFloat screenWidth = rect.size.width;
 //  CGFloat screenHeight = rect.size.height;
 //  NSLog(@"%d: w=%d h=%d",__LINE__,(int)screenWidth,(int)screenHeight); // iphone4s 320x480, ipad mini 768x1024
                                                 // iphone5s 320x568
   
+  int w = [UIScreen mainScreen].bounds.size.width;
+//  int h = [UIScreen mainScreen].bounds.size.height;
+
   // カウンター表示エリアの横幅を定義
-  cntW = screenWidth -20;  //300;
-  cntH = (screenWidth -20) / 3;
+  cntW = w -20;  //300;
+  cntH = (w -20) / 3;
   //cntH = (screenWidth -20) / 1.618; // 黄金比
   
   // 全体背景枠
@@ -88,13 +91,10 @@
   
   //カウント表示View生成
   cntView = [[CntView alloc] initWithFrame:CGRectMake([self arignCenter:cntW], 60, cntW, cntH)];// x y w h
-  [cntView setBackgroundColor:[UIColor whiteColor]];
   [self.view addSubview:cntView];
   
-  
   // カウント表示Label
-  cntLabel = [[MyCntLabel alloc] initWithFrame:CGRectMake(-15,0,cntView.frame.size.width,cntView.frame.size.height)];// x y w h
-  [cntLabel setCnt];
+  cntLabel = [[MyCntLabel alloc] initWithFrame:CGRectMake(-15,0,cntView.frame.size.width,cntView.frame.size.height)];
   [cntView addSubview:cntLabel];
   
   // History Label
@@ -270,8 +270,8 @@
       [setBtn001   setCenter:CGPointMake(centerPoint, 590)];
       [setBtnStart setCenter:CGPointMake(centerPoint +230, 605)];
       
-      [clockSelectBtn setCenter:CGPointMake( 84, -24)];//x,y
-      [timerSelectBtn setCenter:CGPointMake(280, -24)];//x,y
+      [clockSelectBtn setCenter:CGPointMake(centerPoint -290, 38)];
+      [timerSelectBtn setCenter:CGPointMake(centerPoint  -85, 38)];
 
       [infBtn setCenter:CGPointMake(self.view.frame.size.width -35, 30)];
 //      LOG(@"center=%d x=%d y=%d",centerPoint,(int)infBtn.center.x,(int)infBtn.center.y);
@@ -849,22 +849,20 @@
 
 
 /*
- * 「タイマー設定」ボタン用イベント
+ * 「タイマー表示」ボタン用イベント
  */
 - (void) timerSelectBtnTouch:(id)sender
 {
   // カウンター数値 表示位置補正
-  cntLabel.frame = CGRectMake(-15, 0, cntView.frame.size.width, cntView.frame.size.height); //x y w h
+  [cntLabel setCenter:CGPointMake(cntView.frame.size.width /2 -15, cntView.frame.size.height /2)];
 
-  
-  // キッチンタイマーモード
+  // タイマーモード
   cntMode = YES;
   [self chkDisp];
   cntLabel.alpha = 0.f;
 
   [clockSelectBtn setEnabled:YES];
   [timerSelectBtn setEnabled:NO];
-  
 
   if ([timerTm isValid]) {
     // タイマーが動いている場合はリセットボタンのみ活性化
@@ -895,6 +893,9 @@
 
 
 - (void)timerInitDisp {
+
+  // カウンター数値 表示位置補正
+  [cntLabel setCenter:CGPointMake(cntView.frame.size.width /2, cntView.frame.size.height /2)];
 
   cntMode = YES; // Timer Mode
   
@@ -985,9 +986,7 @@
   // 時間を表示
   cntLabel.text = [NSString stringWithFormat:@"%02d:%02d:%02d",hour,min,sec];
   
-  // カウンター数値 表示位置補正
-  cntLabel.frame = CGRectMake(0, 0, cntView.frame.size.width, cntView.frame.size.height);
-
+  
   [self lbFadein:cntLabel];
 }
 
@@ -1112,25 +1111,27 @@ int vibCount;
   // ====== 「現在時表示」ボタン（リンクテキスト風）ここから ======
   clockSelectBtn = [ModeClockBtn buttonWithType:UIButtonTypeCustom];
   [clockSelectBtn setEnabled:YES]; // default
-  
-  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    [self.view addSubview:clockSelectBtn]; //iPhone
-  }else{
-    [cntView addSubview:clockSelectBtn];   //iPad
-  }
   [clockSelectBtn addTarget:self action:@selector(clockSelectBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
+  [self.view addSubview:clockSelectBtn]; //iPhone
+  
+//  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+//    [self.view addSubview:clockSelectBtn]; //iPhone
+//  }else{
+//    [cntView addSubview:clockSelectBtn];   //iPad
+//  }
   // ====== 「現在時表示」ボタン（リンクテキスト風）ここまで ======
   
   // ====== 「タイマー設定」ボタン（リンクテキスト風）ここから ======
   timerSelectBtn = [ModeTimerBtn buttonWithType:UIButtonTypeCustom];
   [timerSelectBtn setEnabled:NO]; // not default
-  
-  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    [self.view addSubview:timerSelectBtn]; //iPhone
-  }else{
-    [cntView addSubview:timerSelectBtn];   //iPad
-  }
   [timerSelectBtn addTarget:self action:@selector(timerSelectBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
+  [self.view addSubview:timerSelectBtn]; //iPhone
+  
+//  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+//    [self.view addSubview:timerSelectBtn]; //iPhone
+//  }else{
+//    [cntView addSubview:timerSelectBtn];   //iPad
+//  }
   // ====== 「タイマー設定」ボタン（リンクテキスト風）ここまで ======
   
   

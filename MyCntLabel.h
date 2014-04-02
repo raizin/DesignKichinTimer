@@ -14,7 +14,4 @@
 - (void)setCnt;
 - (void)setHun;
 - (void)setByo;
-
-- (void)setHis;
-- (void)setHisEnable:(BOOL)enable;
 @end

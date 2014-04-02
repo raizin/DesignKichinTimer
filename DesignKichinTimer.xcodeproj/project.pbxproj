@@ -283,10 +283,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E0BFA9118EC10CF00CFB7F9 /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				5E5DF026184377EC0098499A /* MyCntLabel.h */,
+				5E5DF027184377EC0098499A /* MyCntLabel.m */,
+				5E3E88AE18E84C9F000A77B8 /* HistLabel.h */,
+				5E3E88AF18E84C9F000A77B8 /* HistLabel.m */,
+			);
+			name = Label;
+			sourceTree = "<group>";
+		};
 		5E220DD11842624A00D2ACB0 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				5E40179E18D892A300CE074E /* ButtonAndLabel */,
+				5E0BFA9118EC10CF00CFB7F9 /* Label */,
+				5E40179E18D892A300CE074E /* Button */,
 				5E220DCB18425F3900D2ACB0 /* SoundOnFlag.h */,
 				5E220DCC18425F3900D2ACB0 /* SoundOnFlag.m */,
 				5E24805F18558F9F0032AF77 /* VibrateOnFlag.h */,
@@ -351,15 +363,13 @@
 			name = ImageAndSound;
 			sourceTree = "<group>";
 		};
-		5E40179E18D892A300CE074E /* ButtonAndLabel */ = {
+		5E40179E18D892A300CE074E /* Button */ = {
 			isa = PBXGroup;
 			children = (
 				5E5DF023184327510098499A /* ModeTimerBtn.h */,
 				5E5DF024184327510098499A /* ModeTimerBtn.m */,
 				5E3E88B718E9B089000A77B8 /* ModeClockBtn.h */,
 				5E3E88B818E9B089000A77B8 /* ModeClockBtn.m */,
-				5E5DF026184377EC0098499A /* MyCntLabel.h */,
-				5E5DF027184377EC0098499A /* MyCntLabel.m */,
 				5E4ECBDB1867597900578E1E /* TriangleBtn.h */,
 				5E4ECBDC1867597900578E1E /* TriangleBtn.m */,
 				5E4ECBDE1868812E00578E1E /* MyInfoBtn.h */,
@@ -368,8 +378,6 @@
 				5E3E88A918E6EDDF000A77B8 /* PlusNnBtn.m */,
 				5E3E88AB18E72671000A77B8 /* HistNnBtn.h */,
 				5E3E88AC18E72671000A77B8 /* HistNnBtn.m */,
-				5E3E88AE18E84C9F000A77B8 /* HistLabel.h */,
-				5E3E88AF18E84C9F000A77B8 /* HistLabel.m */,
 				5E3E88B118E85BE9000A77B8 /* StartBtn.h */,
 				5E3E88B218E85BE9000A77B8 /* StartBtn.m */,
 				5E3E88B418E86F17000A77B8 /* ResetBtn.h */,
@@ -379,7 +387,7 @@
 				5E0BFA7E18EABD8100CFB7F9 /* ToggleBtn.h */,
 				5E0BFA7F18EABD8100CFB7F9 /* ToggleBtn.m */,
 			);
-			name = ButtonAndLabel;
+			name = Button;
 			sourceTree = "<group>";
 		};
 		5E40179F18D899FB00CE074E /* Lib */ = {

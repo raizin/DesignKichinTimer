@@ -19,11 +19,6 @@ static float CNT_FONT_SIZE_IPAD   = 180.f;
 static float UNIT_FONT_SIZE_IPHONE= 30.f;
 static float UNIT_FONT_SIZE_IPAD  = 60.f;
 
-// History Label Font Size
-static float HIS_FONT_SIZE_IPHONE = 15.f;
-static float HIS_FONT_SIZE_IPAD   = 20.f;
-
-
 - (void)setHun
 {
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
@@ -61,45 +56,16 @@ static float HIS_FONT_SIZE_IPAD   = 20.f;
   self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0.5 alpha:0]; //
 }
 
-- (void)setHis
-{
-  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    self.font = [UIFont systemFontOfSize:HIS_FONT_SIZE_IPHONE];
-  }else{
-    self.font = [UIFont systemFontOfSize:HIS_FONT_SIZE_IPAD];
-  }
-  self.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8]; // Light Gray
-  self.text = [NSString stringWithFormat:@"%@",NSLocalizedString(@"history", nil)];
-  self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0.5 alpha:0]; //
-}
-- (void)setHisEnable:(BOOL)enable
-{
-  if (enable) {
-    self.textColor = [UIColor orangeColor];
-  }else{
-    self.textColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8]; // Light Gray
-  }
-}
-
 
 - (id)initWithFrame:(CGRect)frame
 {
-//    float w=170,h=100;// iPad Definition the width size and height size
-//    
-//    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-//      //iPhone
-//      w = 74;
-//      h = 50;
-//    }
-//  
-//  self = [super initWithFrame:CGRectMake(0,0,w,h)];//x y w h
   self = [super initWithFrame:frame];//x y w h
   if (self) {
-    self.textAlignment = NSTextAlignmentCenter;
-    self.adjustsFontSizeToFitWidth = YES;
+    [self setTextAlignment:NSTextAlignmentCenter];
+    [self setAdjustsFontSizeToFitWidth:YES];
     [self.layer setShadowOpacity:0.5f];
     [self.layer setShadowOffset:CGSizeMake(2.f, 2.f)];
-    
+    [self setCnt];
   }
   return self;
 }
