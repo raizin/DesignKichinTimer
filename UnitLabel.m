@@ -12,13 +12,14 @@
 
 - (id)initWithFrame:(CGRect)frame
 {
-  float fontSize = 60;//iPad Definition the width size and height size
+  float w=45,h=w,fontSize = 60;//iPad Definition the width size and height size
   
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
     fontSize = 30;//iPhone
   }
 
-  self = [super initWithFrame:frame];//x y w h
+  self = [super initWithFrame:CGRectMake(0,0,w,h)];//x y w h
+//self = [super initWithFrame:frame];//x y w h
   if (self) {
     [self setFont:[UIFont fontWithName:@"Helvetica-Bold" size:fontSize]];
     [self.layer setShadowOpacity:0.5f];

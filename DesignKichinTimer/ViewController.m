@@ -95,6 +95,7 @@
   
   // カウント表示Label
   cntLabel = [[MyCntLabel alloc] initWithFrame:CGRectMake(-15,0,cntView.frame.size.width,cntView.frame.size.height)];
+//  LOG(@"x=%d y=%d",(int)cntLabel.center.x,(int)cntLabel.center.y);
   [cntView addSubview:cntLabel];
   
   // History Label
@@ -527,8 +528,6 @@
   
   if ([timerTm isValid]) {
     // タイマーが動いている場合は、一時停止
-//    NSLog(@"%d: aaa",__LINE__);
-    
     [self pauseTimerTimer];
     [self btnEnableOnlyStartReset];
 
@@ -545,7 +544,6 @@
     }
     
   } else {
-//    NSLog(@"%d: bbb",__LINE__);
 
     [self resetTimerTimer];
     [self btnEnabledAll];
@@ -787,7 +785,7 @@
 
   //すべてのボタンをDisableにする
   [self btnDisabledAll];
-
+  
   //現在時表示用タイマー開始
   [self startClockTimer];
   
@@ -855,6 +853,7 @@
 {
   // カウンター数値 表示位置補正
   [cntLabel setCenter:CGPointMake(cntView.frame.size.width /2 -15, cntView.frame.size.height /2)];
+//  LOG(@"x=%d y=%d",(int)cntLabel.center.x,(int)cntLabel.center.y);
 
   // タイマーモード
   cntMode = YES;
@@ -893,10 +892,6 @@
 
 
 - (void)timerInitDisp {
-
-  // カウンター数値 表示位置補正
-  [cntLabel setCenter:CGPointMake(cntView.frame.size.width /2, cntView.frame.size.height /2)];
-
   cntMode = YES; // Timer Mode
   
   // キッチンタイマー用 初期表示
@@ -904,27 +899,24 @@
   [self chkDisp];
 
   
-  /*** 分・秒のラベルを作成して表示 ***/
-  
-  // 表示サイズ 端末分岐
-  CGRect unitRectM;
-  CGRect unitRectS;
-  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-    //NSLog(@"%d: iPhoneの処理",__LINE__);
-    unitRectM = CGRectMake(131,9,45,45); // x y w h
-    unitRectS = CGRectMake(229,9,45,45); // x y w h
-  }
-  else{
-    //NSLog(@"%d: iPadの処理",__LINE__);
-    unitRectM = CGRectMake(378,60,45,45); // x y w h
-    unitRectS = CGRectMake(623,60,45,45); // x y w h
-  }
-  
-  hunLabel = [[HunUnitLabel alloc] initWithFrame:unitRectM];// x y w h
+  /*** 分(')・秒(")のラベルを作成して表示 ***/
+  hunLabel = [[HunUnitLabel alloc] initWithFrame:CGRectMake(0,0,0,0)];// x y w h
   [cntView addSubview:hunLabel];
   
-  byoLabel = [[ByoUnitLabel alloc] initWithFrame:unitRectS];// x y w h
+  byoLabel = [[ByoUnitLabel alloc] initWithFrame:CGRectMake(0,0,0,0)];// x y w h
   [cntView addSubview:byoLabel];
+  
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+    //iPhone
+    [hunLabel setCenter:CGPointMake(153, 31)];
+    [byoLabel setCenter:CGPointMake(251, 31)];
+  }else{
+    //iPad
+    [hunLabel setCenter:CGPointMake(400, 82)];
+    [byoLabel setCenter:CGPointMake(645, 82)];
+//    LOG(@"x=%d y=%d",(int)hunLabel.center.x,(int)hunLabel.center.y);
+//    LOG(@"x=%d y=%d",(int)byoLabel.center.x,(int)byoLabel.center.y);
+  }
 }
 
 // 中央寄せ用 X座標算出
@@ -982,8 +974,11 @@
   //  nowDate.text = [NSString stringWithFormat:@"%04d/%02d/%02d (%@)",nenn,tuki,niti,[self stringShortweekday:weekIndex]];
   
   // 時間を表示
-  cntLabel.text = [NSString stringWithFormat:@"%02d:%02d:%02d",hour,min,sec];
-  
+  // カウンター数値 表示位置補正
+  [cntLabel setCenter:CGPointMake(cntView.frame.size.width /2, cntView.frame.size.height /2)];
+//  LOG(@"x=%d y=%d",(int)cntLabel.center.x,(int)cntLabel.center.y);
+
+  [cntLabel setText:[NSString stringWithFormat:@"%02d:%02d:%02d",hour,min,sec]];
   
   [self lbFadein:cntLabel];
 }
