@@ -10,9 +10,9 @@
 
 @implementation HunUnitLabel
 
-- (id)initWithFrame:(CGRect)frame
+- (id)init
 {
-  self = [super initWithFrame:frame];
+  self = [super init];
   if (self) {
     //[NSString stringWithFormat:@"%@",NSLocalizedString(@"hunn", nil)];//分
     self.text = @"′";

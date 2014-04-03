@@ -10,9 +10,9 @@
 
 @implementation ByoUnitLabel
 
-- (id)initWithFrame:(CGRect)frame
+- (id)init
 {
-  self = [super initWithFrame:frame];
+  self = [super init];
   if (self) {
     //[NSString stringWithFormat:@"%@",NSLocalizedString(@"byoo", nil)];//秒
     [self setText:@"″"];

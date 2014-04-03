@@ -10,7 +10,7 @@
 
 @implementation UnitLabel
 
-- (id)initWithFrame:(CGRect)frame
+- (id)init
 {
   float w=45,h=w,fontSize = 60;//iPad Definition the width size and height size
   

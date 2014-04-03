@@ -900,10 +900,10 @@
 
   
   /*** 分(')・秒(")のラベルを作成して表示 ***/
-  hunLabel = [[HunUnitLabel alloc] initWithFrame:CGRectMake(0,0,0,0)];// x y w h
+  hunLabel = [[HunUnitLabel alloc] init];// x y w h
   [cntView addSubview:hunLabel];
   
-  byoLabel = [[ByoUnitLabel alloc] initWithFrame:CGRectMake(0,0,0,0)];// x y w h
+  byoLabel = [[ByoUnitLabel alloc] init];// x y w h
   [cntView addSubview:byoLabel];
   
   if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
