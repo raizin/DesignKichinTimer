@@ -1134,8 +1134,8 @@ int vibCount;
   vibBtn = [ToggleBtn buttonWithType:UIButtonTypeCustom];
   bigBtn = [ToggleBtn buttonWithType:UIButtonTypeCustom];
   
-  [infBtn setImage:[UIImage imageNamed:@"IconInfo.png"]      forState:UIControlStateNormal];
-  [infBtn setImage:[UIImage imageNamed:@"IconInfoTouch.png"] forState:UIControlStateHighlighted];
+  [infBtn setImage:[UIImage imageNamed:@"IconInfo25.png"]      forState:UIControlStateNormal];
+  [infBtn setImage:[UIImage imageNamed:@"IconInfoTouch25.png"] forState:UIControlStateHighlighted];
   [infBtn addTarget:self action:@selector(infoBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:infBtn];
 
