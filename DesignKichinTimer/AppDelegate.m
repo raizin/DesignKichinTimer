@@ -68,14 +68,19 @@
   return ret;
 }
 
+
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
   //アプリがバックグラウンドになった時
   LOG(@"%s",__func__);
   
-  UIApplication* app = [UIApplication sharedApplication];
-  LOG(@"%@",app.debugDescription);
-  LOG(@"%@",app.description);
+  //現在時を保存
+  NSDate* nowDate = [NSDate date];
+  [[NSUserDefaults standardUserDefaults] setObject:nowDate forKey:@"nowDate"];
+  
+//  UIApplication* app = [UIApplication sharedApplication];
+//  LOG(@"%@",app.debugDescription);
+//  LOG(@"%@",app.description);
   
   UILocalNotification *notification = [[UILocalNotification alloc] init];
   
@@ -96,9 +101,8 @@
   notification.alertBody = msg;
   
   //バッジを表示する事も可能です。この場合、１が表示されます
-//  notification.applicationIconBadgeNumber = 1;
+  notification.applicationIconBadgeNumber = 1;
 //  [UIApplication sharedApplication].applicationIconBadgeNumber = 99999;//1~99999まで表示可
-  
   
   //タイムゾーンの設定
   notification.timeZone = [NSTimeZone localTimeZone];
@@ -117,13 +121,29 @@
   LOG(@"%s",__func__);
   
   //バッチをクリア
-//  [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+  [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
   
   //通知をスケジュールをキャンセル
   [[UIApplication sharedApplication] cancelAllLocalNotifications];
   
-//  self.globalMin = 0;
-//  self.globalSec = 0;
+  
+  // 経過時間の計算
+  NSDate* oldDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"nowDate"];
+  LOG(@"%@",[oldDate description]);
+
+  //現在時を保存
+  NSDate* nowDate = [NSDate date];
+  float tmp= [nowDate timeIntervalSinceDate:oldDate];
+  int hh = (int)(tmp / 3600);
+  int mm = (int)((tmp-hh) / 60);
+  float ss = tmp - (float)(hh*3600+mm*60);
+  
+//  NSLog(@"%02d:%02d:%05.2f", hh, mm, ss);
+  NSLog(@"%02d:%02d:%03f", hh, mm, ss);
+
+  
+  //  self.globalMin = 0;
+  //  self.globalSec = 0;
   
 }
 

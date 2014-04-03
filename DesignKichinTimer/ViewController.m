@@ -302,7 +302,7 @@
 }
 
 /*
- * タイマー用タイマー開始関数
+ * タイマー用タイマー開始定義
  */
 - (void)startTimerTimer {
   timerTm = [NSTimer scheduledTimerWithTimeInterval:1.f //タイマーを発生させる間隔（1.0秒毎）
@@ -310,8 +310,37 @@
                                            selector:@selector(timerTimer:) //呼び出すメソッド
                                            userInfo:nil //メソッドに渡すパラメータ
                                             repeats:YES]; //繰り返し
-//  [[NSRunLoop mainRunLoop] addTimer:timerTm forMode:NSRunLoopCommonModes];// 画面が消えても起動しつづける
 }
+
+/*
+ * タイマー用タイマー実行処理
+ */
+- (void)timerTimer:(NSTimer *)timer
+{
+  int sec = [APP_DELEGATE globalSec];
+  int min = [APP_DELEGATE globalMin];
+  
+//  LOG(@"min=%d sec=%d",min,sec);
+  
+  if (sec == 0 && min == 0) {
+    cntUpFlag = YES;
+  }
+  
+  if (cntUpFlag) {
+    [self cntUpTimer];
+  }else{
+    [self cntDnTimer];
+  }
+  
+  // 画面が消えても起動しつづける？
+//  [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+  // 1秒間だけ、外部からのメソッド実行要求を受け付ける
+//  [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:1]];
+}
+
+
+
+
 /*
  * タイマー用タイマー停止(リセット)関数
  */
@@ -357,24 +386,6 @@
   }
 //  cntLabel.text = @""; // 表示テキストもクリア
 }
-
-
-/*
- * 「タイマー設定」「現在時表示」切り替え ボタン内文字列用 影の定義関数
- */
-- (NSAttributedString*)myColorShadowAttr:(UIColor*)clr btnTitle:(NSString*)lb
-{
-  NSShadow *shadow = [[NSShadow alloc] init];
-  shadow.shadowOffset = CGSizeMake(1.0f, 1.0f);
-  shadow.shadowColor = clr;
-  shadow.shadowBlurRadius = 5.0f;
-  NSDictionary *attr = @{NSShadowAttributeName:shadow,NSForegroundColorAttributeName:clr};
-  
-  NSAttributedString *attrTitle = [[NSAttributedString alloc] initWithString:lb attributes:attr];
-
-  return attrTitle;
-}
-
 
 - (void)btnDisabledAll
 {
@@ -985,23 +996,6 @@
 
 
 
-// タイマー表示用関数
-- (void)timerTimer:(NSTimer *)timer
-{
-  int sec = [APP_DELEGATE globalSec];
-  int min = [APP_DELEGATE globalMin];
-  
-  if (sec == 0 && min == 0) {
-    cntUpFlag = YES;
-  }
-  
-  if (cntUpFlag) {
-    [self cntUpTimer];
-  }else{
-    [self cntDnTimer];
-  }
-  
-}
 
 // カウントアップ用関数
 - (void)cntUpTimer
