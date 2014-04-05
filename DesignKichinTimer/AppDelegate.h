@@ -19,4 +19,5 @@
 @property (assign, nonatomic) int globalMin;
 @property (assign, nonatomic) int globalSec;
 @property (assign, nonatomic) BOOL cntUpFlag;
+@property (assign, nonatomic) BOOL inWorkFlag;
 @end

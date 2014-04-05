@@ -78,10 +78,7 @@
   NSDate* nowDate = [NSDate date];
   [[NSUserDefaults standardUserDefaults] setObject:nowDate forKey:@"nowDate"];
   
-//  UIApplication* app = [UIApplication sharedApplication];
-//  LOG(@"%@",app.debugDescription);
-//  LOG(@"%@",app.description);
-  
+  //通知イベントの作成
   UILocalNotification *notification = [[UILocalNotification alloc] init];
   
   //残りの秒数を取得
@@ -91,9 +88,6 @@
   
   //n秒後にメッセージが表示されます
   notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:remnantSec];
-
-  //履歴からセットした分秒を取得
-  //
   
   //メッセージ内容
 //  NSString* msg = [NSString stringWithFormat:@"%d秒経過しました",5];
@@ -110,8 +104,12 @@
   //メッセージ表示時の効果音を設定
   notification.soundName = UILocalNotificationDefaultSoundName;
   
-  //ローカル通知の登録
-//  [app scheduleLocalNotification:notification];
+
+  //ローカル通知イベントの登録
+//  UIApplication* app = [UIApplication sharedApplication];
+  //  LOG(@"%@",app.debugDescription);
+  //  LOG(@"%@",app.description);
+  [[UIApplication sharedApplication] scheduleLocalNotification:notification];
 }
 
 
@@ -127,10 +125,9 @@
   [[UIApplication sharedApplication] cancelAllLocalNotifications];
   
   // 000'00"
-  if (self.globalSec == 0 && self.globalMin == 0) {
-    return;
+  if (self.globalSec <= 0 || self.globalMin <= 0) {
+    self.cntUpFlag = YES;
   }
-  
   
   // 経過時間の計算
   NSDate* oldDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"nowDate"];

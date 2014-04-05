@@ -23,13 +23,13 @@
 {
   [super viewDidLoad];
   
-  
-  //NSUserDefaults 初期化
-  ud = [NSUserDefaults standardUserDefaults];
+  [APP_DELEGATE setCntUpFlag:NO];
+  [APP_DELEGATE setInWorkFlag:NO];
+
   
   //UserDefaults 初期値
-  [ud setInteger:0 forKey:@"globalMinData"]; // M
-  [ud setInteger:0 forKey:@"globalSecData"]; // S
+  [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"globalMinData"]; // M
+  [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"globalSecData"]; // S
   
   // リセットボタン 拡大中フラグ
   [ResetBtnScaleOnFlag setValue:NO];
@@ -63,8 +63,6 @@
   [APP_DELEGATE setGlobalMin:0];
   [APP_DELEGATE setGlobalSec:0];
   
-  
-  [APP_DELEGATE setCntUpFlag:NO];
 //  cntUpFlag = NO;
   timeUpOk = NO;
   
@@ -102,7 +100,10 @@
   // History Label
   hisLabel = [[HistLabel alloc] init];// x y w h
   [hisLabel setEnable:YES];
-  if ((int)[ud integerForKey:@"historySecData1"] + (int)[ud integerForKey:@"historyMinData1"] < 1) {
+  if (
+        (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historySecData1"]
+      + (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historyMinData1"] < 1)
+  {
     [hisLabel setEnable:NO];
   }
   [self.view addSubview:hisLabel];
@@ -145,21 +146,21 @@
 
   setBtnHis1 = [HistNnBtn buttonWithType:UIButtonTypeCustom];[setBtnHis1 setNum:1];
   [setBtnHis1 addTarget:self action:@selector(btnHis1Touch:) forControlEvents:UIControlEventTouchUpInside];
-  if ((int)[ud integerForKey:@"historySecData1"] + (int)[ud integerForKey:@"historyMinData1"] == 0) {
+  if ((int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historySecData1"] + (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historyMinData1"] == 0) {
     [setBtnHis1 setEnabled:NO];
   }
   [self.view addSubview:setBtnHis1];
   
   setBtnHis2 = [HistNnBtn buttonWithType:UIButtonTypeCustom];[setBtnHis2 setNum:2];
   [setBtnHis2 addTarget:self action:@selector(btnHis2Touch:) forControlEvents:UIControlEventTouchUpInside];
-  if ((int)[ud integerForKey:@"historySecData2"] + (int)[ud integerForKey:@"historyMinData2"] == 0) {
+  if ((int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historySecData2"] + (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historyMinData2"] == 0) {
     [setBtnHis2 setEnabled:NO];
   }
   [self.view addSubview:setBtnHis2];
   
   setBtnHis3 = [HistNnBtn buttonWithType:UIButtonTypeCustom];[setBtnHis3 setNum:3];
   [setBtnHis3 addTarget:self action:@selector(btnHis3Touch:) forControlEvents:UIControlEventTouchUpInside];
-  if ((int)[ud integerForKey:@"historySecData3"] + (int)[ud integerForKey:@"historyMinData3"] == 0) {
+  if ((int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historySecData3"] + (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historyMinData3"] == 0) {
     [setBtnHis3 setEnabled:NO];
   }
   [self.view addSubview:setBtnHis3];
@@ -318,13 +319,7 @@
  */
 - (void)timerTimer:(NSTimer *)timer
 {
-  int sec = [APP_DELEGATE globalSec];
-  int min = [APP_DELEGATE globalMin];
-  
-//  LOG(@"min=%d sec=%d",min,sec);
-  
-  if (sec == 0 && min == 0) {
-//    cntUpFlag = YES;
+  if ([APP_DELEGATE globalSec] == 0 && [APP_DELEGATE globalMin] == 0) {
     [APP_DELEGATE setCntUpFlag:YES];
   }
   
@@ -413,16 +408,16 @@
   [setBtnStart setEnabled:YES];
   [setBtnReset setEnabled:YES];
   
-  if ((int)[ud integerForKey:@"historySecData1"] + (int)[ud integerForKey:@"historyMinData1"] >= 1) {
+  if ((int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historySecData1"] + (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historyMinData1"] >= 1) {
     [hisLabel setEnable:YES];
   }
-  if ((int)[ud integerForKey:@"historySecData1"] + (int)[ud integerForKey:@"historyMinData1"] >= 1) {
+  if ((int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historySecData1"] + (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historyMinData1"] >= 1) {
     [setBtnHis1 setEnabled:YES];
   }
-  if ((int)[ud integerForKey:@"historySecData2"] + (int)[ud integerForKey:@"historyMinData2"] >= 1) {
+  if ((int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historySecData2"] + (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historyMinData2"] >= 1) {
     [setBtnHis2 setEnabled:YES];
   }
-  if ((int)[ud integerForKey:@"historySecData3"] + (int)[ud integerForKey:@"historyMinData3"] >= 1) {
+  if ((int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historySecData3"] + (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historyMinData3"] >= 1) {
     [setBtnHis3 setEnabled:YES];
   }
   
@@ -467,6 +462,8 @@
 
 - (void)cntPlusChk
 {
+  [APP_DELEGATE setCntUpFlag:NO];
+  
   if ([APP_DELEGATE globalSec] >= 60) {
 //    globalMin++;
     [APP_DELEGATE setGlobalMin:[APP_DELEGATE globalMin]+1];
@@ -537,8 +534,7 @@
 
   // リセットボタンの文言を「リセット」にする。
   [setBtnReset setReset:YES];
-  [APP_DELEGATE setCntUpFlag:NO];
-  
+//  [APP_DELEGATE setCntUpFlag:NO];
   
   if ([timerTm isValid]) {
     // タイマーが動いている場合は、一時停止
@@ -546,14 +542,18 @@
     [self btnEnableOnlyStartReset];
 
     if (timeUpOk) {
-      [APP_DELEGATE setGlobalMin:(int)[ud integerForKey:@"globalMinData"]];
-      [APP_DELEGATE setGlobalSec:(int)[ud integerForKey:@"globalSecData"]];
+      [APP_DELEGATE setGlobalMin:(int)[[NSUserDefaults standardUserDefaults] integerForKey:@"globalMinData"]];
+      [APP_DELEGATE setGlobalSec:(int)[[NSUserDefaults standardUserDefaults] integerForKey:@"globalSecData"]];
 //      globalMin = (int)[ud integerForKey:@"globalMinData"];
 //      globalSec = (int)[ud integerForKey:@"globalSecData"];
       [self chkDisp];
       [self btnEnabledAll];
       
       timeUpOk = NO;
+      [APP_DELEGATE setCntUpFlag:NO];
+//      LOG(@"koko1");
+//    }else{
+//      LOG(@"koko2");
     }
     
   } else {
@@ -572,14 +572,14 @@
 
   
   //Set Data Memory
-  [ud setInteger:[APP_DELEGATE globalMin] forKey:@"globalMinData"];  // M
-  [ud setInteger:[APP_DELEGATE globalSec] forKey:@"globalSecData"];  // S
+  [[NSUserDefaults standardUserDefaults] setInteger:[APP_DELEGATE globalMin] forKey:@"globalMinData"];  // M
+  [[NSUserDefaults standardUserDefaults] setInteger:[APP_DELEGATE globalSec] forKey:@"globalSecData"];  // S
 
 
   BOOL addHistoryFlag = YES;
   if (
-      [APP_DELEGATE globalMin] == (int)[ud integerForKey:@"historyMinData1"] &&
-      [APP_DELEGATE globalSec] == (int)[ud integerForKey:@"historySecData1"]
+      [APP_DELEGATE globalMin] == (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historyMinData1"] &&
+      [APP_DELEGATE globalSec] == (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historySecData1"]
       ) {
     addHistoryFlag = NO;
     
@@ -590,22 +590,19 @@
   if ([APP_DELEGATE globalMin] + [APP_DELEGATE globalSec] > 0 && addHistoryFlag) {
     
     // 履歴２を履歴３へ移す
-    [ud setInteger:(int)[ud integerForKey:@"historyMinData2"] forKey:@"historyMinData3"];  // M
-    [ud setInteger:(int)[ud integerForKey:@"historySecData2"] forKey:@"historySecData3"];  // S
+    [[NSUserDefaults standardUserDefaults] setInteger:(int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historyMinData2"] forKey:@"historyMinData3"];  // M
+    [[NSUserDefaults standardUserDefaults] setInteger:(int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historySecData2"] forKey:@"historySecData3"];  // S
     
     // 履歴１を履歴２へ移す
-    [ud setInteger:(int)[ud integerForKey:@"historyMinData1"] forKey:@"historyMinData2"];  // M
-    [ud setInteger:(int)[ud integerForKey:@"historySecData1"] forKey:@"historySecData2"];  // S
+    [[NSUserDefaults standardUserDefaults] setInteger:(int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historyMinData1"] forKey:@"historyMinData2"];  // M
+    [[NSUserDefaults standardUserDefaults] setInteger:(int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historySecData1"] forKey:@"historySecData2"];  // S
     
     // セットを履歴１へ残す
-    [ud setInteger:[APP_DELEGATE globalMin] forKey:@"historyMinData1"];  // M
-    [ud setInteger:[APP_DELEGATE globalSec] forKey:@"historySecData1"];  // S
+    [[NSUserDefaults standardUserDefaults] setInteger:[APP_DELEGATE globalMin] forKey:@"historyMinData1"];  // M
+    [[NSUserDefaults standardUserDefaults] setInteger:[APP_DELEGATE globalSec] forKey:@"historySecData1"];  // S
   }
   
-  
-  
-  
-  [ud synchronize];
+  [[NSUserDefaults standardUserDefaults] synchronize];
 
   
   
@@ -620,22 +617,22 @@
   [self btnSndChkPlay];//効果音再生
 //  globalMin = (int)[ud integerForKey:@"historyMinData1"];
 //  globalSec = (int)[ud integerForKey:@"historySecData1"];
-  [APP_DELEGATE setGlobalMin:(int)[ud integerForKey:@"historyMinData1"]];
-  [APP_DELEGATE setGlobalSec:(int)[ud integerForKey:@"historySecData1"]];
+  [APP_DELEGATE setGlobalMin:(int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historyMinData1"]];
+  [APP_DELEGATE setGlobalSec:(int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historySecData1"]];
   [self cntPlusChk];
 }
 - (void)btnHis2Touch:(id)sender
 {
   [self btnSndChkPlay];//効果音再生
-  [APP_DELEGATE setGlobalMin:(int)[ud integerForKey:@"historyMinData2"]];
-  [APP_DELEGATE setGlobalSec:(int)[ud integerForKey:@"historySecData2"]];
+  [APP_DELEGATE setGlobalMin:(int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historyMinData2"]];
+  [APP_DELEGATE setGlobalSec:(int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historySecData2"]];
   [self cntPlusChk];
 }
 - (void)btnHis3Touch:(id)sender
 {
   [self btnSndChkPlay];//効果音再生
-  [APP_DELEGATE setGlobalMin:(int)[ud integerForKey:@"historyMinData3"]];
-  [APP_DELEGATE setGlobalSec:(int)[ud integerForKey:@"historySecData3"]];
+  [APP_DELEGATE setGlobalMin:(int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historyMinData3"]];
+  [APP_DELEGATE setGlobalSec:(int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historySecData3"]];
   [self cntPlusChk];
 }
 
@@ -948,17 +945,17 @@
     ret = ( w - componentW ) / 2;
 
     // use next value is unknown case.
-    [ud setFloat:ret forKey:@"beforeArignCenter"];
+    [[NSUserDefaults standardUserDefaults] setFloat:ret forKey:@"beforeArignCenter"];
 
   }else if(o == UIInterfaceOrientationLandscapeLeft || o == UIInterfaceOrientationLandscapeRight){
     //Yoko
     ret = ( h - componentW ) / 2;
 
     // use next value is unknown case.
-    [ud setFloat:ret forKey:@"beforeArignCenter"];
+    [[NSUserDefaults standardUserDefaults] setFloat:ret forKey:@"beforeArignCenter"];
 
   }else{
-    ret = [ud floatForKey:@"beforeArignCenter"]; // 一つ前の状態を取得
+    ret = [[NSUserDefaults standardUserDefaults] floatForKey:@"beforeArignCenter"]; // 一つ前の状態を取得
   }
   
   return ret;
@@ -998,7 +995,7 @@
 
 
 
-// カウントアップ用関数
+// カウントアップ時の処理
 - (void)cntUpTimer
 {
   [APP_DELEGATE cntUp:1];
@@ -1009,7 +1006,7 @@
   [self chkDisp];
 }
 
-// カウントダウン用関数
+// カウントダウン時の処理
 - (void)cntDnTimer
 {
   [APP_DELEGATE cntDn:1];

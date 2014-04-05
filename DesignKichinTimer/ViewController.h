@@ -27,7 +27,7 @@
 @interface ViewController : UIViewController {
   
   //NSUserDefaults領域を使用
-  NSUserDefaults *ud;
+//  NSUserDefaults *ud;
 
   //Sound
   AVAudioPlayer *pressBtnSnd;
@@ -47,7 +47,7 @@
   int historyMin3;
   int historySec3;
 
-  BOOL cntUpFlag; // YES:up NO:down
+//  BOOL cntUpFlag; // YES:up NO:down
   BOOL cntMode;   // YES:キッチンタイマー NO:現在時表示
 
   // カウンター表示View定義
