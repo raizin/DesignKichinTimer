@@ -15,6 +15,7 @@
 		5E0BFAA018EC282D00CFB7F9 /* HunUnitLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0BFA9F18EC282D00CFB7F9 /* HunUnitLabel.m */; };
 		5E0BFAA418ED5A2200CFB7F9 /* IconInfoTouch25.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0BFAA218ED5A2200CFB7F9 /* IconInfoTouch25.png */; };
 		5E0BFAA618ED5A7E00CFB7F9 /* IconInfo25.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0BFAA518ED5A7E00CFB7F9 /* IconInfo25.png */; };
+		5E0BFAA818F0119400CFB7F9 /* piLong.caf in Resources */ = {isa = PBXBuildFile; fileRef = 5E0BFAA718F0119400CFB7F9 /* piLong.caf */; };
 		5E1E11D71834F81500307C8F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1E11D61834F81500307C8F /* MessageUI.framework */; };
 		5E1E11D91834F82600307C8F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1E11D81834F82600307C8F /* SystemConfiguration.framework */; };
 		5E1E11DB18350D0500307C8F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1E11DA18350D0500307C8F /* CoreLocation.framework */; };
@@ -107,6 +108,7 @@
 		5E0BFA9F18EC282D00CFB7F9 /* HunUnitLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HunUnitLabel.m; sourceTree = "<group>"; };
 		5E0BFAA218ED5A2200CFB7F9 /* IconInfoTouch25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconInfoTouch25.png; sourceTree = "<group>"; };
 		5E0BFAA518ED5A7E00CFB7F9 /* IconInfo25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconInfo25.png; sourceTree = "<group>"; };
+		5E0BFAA718F0119400CFB7F9 /* piLong.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = piLong.caf; sourceTree = "<group>"; };
 		5E1E11D61834F81500307C8F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		5E1E11D81834F82600307C8F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5E1E11DA18350D0500307C8F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -357,6 +359,7 @@
 		5E30A82918D71579001D468A /* ImageAndSound */ = {
 			isa = PBXGroup;
 			children = (
+				5E0BFAA718F0119400CFB7F9 /* piLong.caf */,
 				5E0BFAA518ED5A7E00CFB7F9 /* IconInfo25.png */,
 				5E0BFAA218ED5A2200CFB7F9 /* IconInfoTouch25.png */,
 				5E0BFA8F18EAD52D00CFB7F9 /* IconInfo40.png */,
@@ -616,6 +619,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E2480701856F5D80032AF77 /* IconVibTouch.png in Resources */,
+				5E0BFAA818F0119400CFB7F9 /* piLong.caf in Resources */,
 				5E2480751856FE6B0032AF77 /* IconSndOff.png in Resources */,
 				5E2809E318DADD1400A28373 /* Icon76@2x_pro.png in Resources */,
 				5E0BFA8E18EACEA100CFB7F9 /* IconInfoTouch40.png in Resources */,

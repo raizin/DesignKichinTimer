@@ -106,7 +106,12 @@
   notification.timeZone = [NSTimeZone localTimeZone];
   
   //メッセージ表示時の効果音を設定
-  notification.soundName = UILocalNotificationDefaultSoundName;
+//  NSURL *alerm = [[NSBundle mainBundle] URLForResource:@"piLong" withExtension:@"mp3"];
+//  AVAudioPlayer* alermSound = [[AVAudioPlayer alloc] initWithContentsOfURL:alerm error:NULL];
+
+//  notification.soundName = UILocalNotificationDefaultSoundName;
+//  notification.soundName = @"piLong.mp3"; //@"sound/notify.caf";;
+  notification.soundName = @"DesignKichinTimer/piLong.caf"; //@"sound/notify.caf";;
   
 
   //ローカル通知イベントの登録
@@ -119,9 +124,6 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-  if (self.inWorkFlag == NO) {
-    return;//作動中でなければ何もしない。
-  }
   
   //アプリがバックグラウンドからフォアグラウンドになる直前
   LOG(@"%s",__func__);
@@ -132,9 +134,23 @@
   //通知をスケジュールをキャンセル
   [[UIApplication sharedApplication] cancelAllLocalNotifications];
   
+  
+  if (self.inWorkFlag == NO) {
+    return;//作動中でなければ何もしない。
+  }
+  
+  
   // 000'00"
   if (self.globalSec <= 0 || self.globalMin <= 0) {
+    LOG();
     self.cntUpFlag = YES;
+
+    if (self.globalSec == 0 && self.globalMin == 0) {
+      LOG();
+      return;
+    }
+    
+    //[self cntDn:remindNum];
   }
   
   // 経過時間の計算
