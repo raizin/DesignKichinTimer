@@ -105,4 +105,5 @@
   // リセットボタン 拡大フラグ
   BOOL resetBtnScaleFlag;  
 }
+@property (assign, nonatomic) BOOL addHistoryFlag;//履歴追加フラグ
 @end

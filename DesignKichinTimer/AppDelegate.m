@@ -71,6 +71,10 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
+  if (self.inWorkFlag == NO) {
+    return;//作動中でなければ何もしない。
+  }
+  
   //アプリがバックグラウンドになった時
   LOG(@"%s",__func__);
   
@@ -115,6 +119,10 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
+  if (self.inWorkFlag == NO) {
+    return;//作動中でなければ何もしない。
+  }
+  
   //アプリがバックグラウンドからフォアグラウンドになる直前
   LOG(@"%s",__func__);
   

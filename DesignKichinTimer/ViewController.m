@@ -23,8 +23,8 @@
 {
   [super viewDidLoad];
   
-  [APP_DELEGATE setCntUpFlag:NO];
-  [APP_DELEGATE setInWorkFlag:NO];
+  [APP_DELEGATE setCntUpFlag:NO];  // カウントアップフラグ 初期状態
+  [APP_DELEGATE setInWorkFlag:NO]; // 動作中フラグ 初期状態
 
   
   //UserDefaults 初期値
@@ -319,6 +319,8 @@
  */
 - (void)timerTimer:(NSTimer *)timer
 {
+  [APP_DELEGATE setInWorkFlag:YES];
+  
   if ([APP_DELEGATE globalSec] == 0 && [APP_DELEGATE globalMin] == 0) {
     [APP_DELEGATE setCntUpFlag:YES];
   }
@@ -342,6 +344,8 @@
  * タイマー用タイマー停止(リセット)関数
  */
 - (void)resetTimerTimer {
+  [APP_DELEGATE setInWorkFlag:NO];
+  
   if ([timerTm isValid]) {
     [timerTm invalidate];
   }
@@ -359,6 +363,7 @@
  * タイマー用タイマーStop(一時停止)関数
  */
 - (void)pauseTimerTimer {
+  [APP_DELEGATE setInWorkFlag:NO];
   [timerTm invalidate];
 }
 
@@ -462,7 +467,8 @@
 
 - (void)cntPlusChk
 {
-  [APP_DELEGATE setCntUpFlag:NO];
+  [APP_DELEGATE setCntUpFlag:NO]; // タイマー設定後は必ずカウントダウン
+  [self setAddHistoryFlag:YES];    // タイマー設定後の値のみ、履歴追加可能
   
   if ([APP_DELEGATE globalSec] >= 60) {
 //    globalMin++;
@@ -569,41 +575,41 @@
 
   // リセットボタンの文言を「ストップ」にする。
   [setBtnReset setReset:NO];
+  
+  //UserDefaults このメソッド内のみで定義
+  NSUserDefaults* ud = [NSUserDefaults standardUserDefaults];
+
+  //Set Data Memory
+  [ud setInteger:[APP_DELEGATE globalMin] forKey:@"globalMinData"];  // M
+  [ud setInteger:[APP_DELEGATE globalSec] forKey:@"globalSecData"];  // S
 
   
-  //Set Data Memory
-  [[NSUserDefaults standardUserDefaults] setInteger:[APP_DELEGATE globalMin] forKey:@"globalMinData"];  // M
-  [[NSUserDefaults standardUserDefaults] setInteger:[APP_DELEGATE globalSec] forKey:@"globalSecData"];  // S
-
-
-  BOOL addHistoryFlag = YES;
   if (
-      [APP_DELEGATE globalMin] == (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historyMinData1"] &&
-      [APP_DELEGATE globalSec] == (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historySecData1"]
+      [APP_DELEGATE globalMin] == (int)[ud integerForKey:@"historyMinData1"] &&
+      [APP_DELEGATE globalSec] == (int)[ud integerForKey:@"historySecData1"]
       ) {
-    addHistoryFlag = NO;
+    [self setAddHistoryFlag:NO];
     
     // 履歴１と同じ内容であれば追加しない。
   }
   
 
-  if ([APP_DELEGATE globalMin] + [APP_DELEGATE globalSec] > 0 && addHistoryFlag) {
+  if ([APP_DELEGATE globalMin] + [APP_DELEGATE globalSec] > 0 && [self addHistoryFlag]) {
     
     // 履歴２を履歴３へ移す
-    [[NSUserDefaults standardUserDefaults] setInteger:(int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historyMinData2"] forKey:@"historyMinData3"];  // M
-    [[NSUserDefaults standardUserDefaults] setInteger:(int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historySecData2"] forKey:@"historySecData3"];  // S
+    [ud setInteger:(int)[ud integerForKey:@"historyMinData2"] forKey:@"historyMinData3"];  // M
+    [ud setInteger:(int)[ud integerForKey:@"historySecData2"] forKey:@"historySecData3"];  // S
     
     // 履歴１を履歴２へ移す
-    [[NSUserDefaults standardUserDefaults] setInteger:(int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historyMinData1"] forKey:@"historyMinData2"];  // M
-    [[NSUserDefaults standardUserDefaults] setInteger:(int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historySecData1"] forKey:@"historySecData2"];  // S
+    [ud setInteger:(int)[ud integerForKey:@"historyMinData1"] forKey:@"historyMinData2"];  // M
+    [ud setInteger:(int)[ud integerForKey:@"historySecData1"] forKey:@"historySecData2"];  // S
     
     // セットを履歴１へ残す
-    [[NSUserDefaults standardUserDefaults] setInteger:[APP_DELEGATE globalMin] forKey:@"historyMinData1"];  // M
-    [[NSUserDefaults standardUserDefaults] setInteger:[APP_DELEGATE globalSec] forKey:@"historySecData1"];  // S
+    [ud setInteger:[APP_DELEGATE globalMin] forKey:@"historyMinData1"];  // M
+    [ud setInteger:[APP_DELEGATE globalSec] forKey:@"historySecData1"];  // S
   }
   
-  [[NSUserDefaults standardUserDefaults] synchronize];
-
+  [ud synchronize];
   
   
   [self startTimerTimer];
