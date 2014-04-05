@@ -13,7 +13,10 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 @property (strong, nonatomic) UIWindow *window;
 - (int)getAppLauchedCount;
+- (void)cntUp:(int)i;
+- (void)cntDn:(int)i;
 //@property (retain, nonatomic) ViewController *viewController;
 @property (assign, nonatomic) int globalMin;
 @property (assign, nonatomic) int globalSec;
+@property (assign, nonatomic) BOOL cntUpFlag;
 @end

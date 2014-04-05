@@ -126,6 +126,11 @@
   //通知をスケジュールをキャンセル
   [[UIApplication sharedApplication] cancelAllLocalNotifications];
   
+  // 000'00"
+  if (self.globalSec == 0 && self.globalMin == 0) {
+    return;
+  }
+  
   
   // 経過時間の計算
   NSDate* oldDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"nowDate"];
@@ -139,13 +144,61 @@
   float ss = tmp - (float)(hh*3600+mm*60);
   
 //  NSLog(@"%02d:%02d:%05.2f", hh, mm, ss);
-  NSLog(@"%02d:%02d:%03f", hh, mm, ss);
+  NSLog(@"%02d:%02d:%02.0f  tmp=%d", hh, mm, ss, (int)tmp);
 
+  if (self.cntUpFlag) {
+    self.globalMin += mm;
+//    self.globalSec += (int)ss;
+    [self cntUp:(int)ss];
+  }else{
+    self.globalMin -= mm;
+//    self.globalSec -= (int)ss;
+    [self cntDn:(int)ss];
+  }
   
-  //  self.globalMin = 0;
-  //  self.globalSec = 0;
   
 }
+
+
+// カウントアップ関数
+- (void)cntUp:(int)i
+{
+  self.globalSec += i;
+  
+  if (self.globalSec > 59) {
+    
+    self.globalMin += self.globalSec /60;
+    self.globalSec = self.globalSec %60;
+    
+    if (self.globalMin > 999) {
+      self.globalMin = 999;
+      self.globalSec = 59;
+    }
+  }
+}
+
+// カウントダウン関数
+- (void)cntDn:(int)i
+{
+  self.globalSec -= i;
+
+  if (self.globalSec == 0 && self.globalMin == 0) {
+    self.globalMin = 0;
+    self.globalSec = 0;
+    return;
+  }
+  if (self.globalSec < 0) {
+    self.globalMin--;
+    
+    self.globalMin -= self.globalSec /60;
+    self.globalSec = 60 + (self.globalSec %60);
+
+    LOG(@"m=%d s=%d",self.globalMin,self.globalSec);
+  }
+  
+//  LOG(@"m=%d s=%d",self.globalMin,self.globalSec);
+}
+
 
 
 

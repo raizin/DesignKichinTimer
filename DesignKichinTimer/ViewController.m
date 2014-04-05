@@ -64,7 +64,8 @@
   [APP_DELEGATE setGlobalSec:0];
   
   
-  cntUpFlag = NO;
+  [APP_DELEGATE setCntUpFlag:NO];
+//  cntUpFlag = NO;
   timeUpOk = NO;
   
   
@@ -323,10 +324,11 @@
 //  LOG(@"min=%d sec=%d",min,sec);
   
   if (sec == 0 && min == 0) {
-    cntUpFlag = YES;
+//    cntUpFlag = YES;
+    [APP_DELEGATE setCntUpFlag:YES];
   }
   
-  if (cntUpFlag) {
+  if ([APP_DELEGATE cntUpFlag]) {
     [self cntUpTimer];
   }else{
     [self cntDnTimer];
@@ -535,6 +537,7 @@
 
   // リセットボタンの文言を「リセット」にする。
   [setBtnReset setReset:YES];
+  [APP_DELEGATE setCntUpFlag:NO];
   
   
   if ([timerTm isValid]) {
@@ -550,7 +553,6 @@
       [self chkDisp];
       [self btnEnabledAll];
       
-      cntUpFlag = NO;
       timeUpOk = NO;
     }
     
@@ -558,7 +560,6 @@
 
     [self resetTimerTimer];
     [self btnEnabledAll];
-    cntUpFlag = NO;
   }
 }
 
@@ -1000,53 +1001,30 @@
 // カウントアップ用関数
 - (void)cntUpTimer
 {
-  int sec = [APP_DELEGATE globalSec];
-  int min = [APP_DELEGATE globalMin];
+  [APP_DELEGATE cntUp:1];
   
-  sec++;
-    
-  if (sec > 59) {
-    sec = 0;
-    min++;
-    
-    if (min > 999) {
+  if ([APP_DELEGATE globalSec] > 59 && [APP_DELEGATE globalMin] > 999) {
       [self pauseTimerTimer];
-      min = 999;
-      sec = 59;
-    }
   }
-  [APP_DELEGATE setGlobalSec:sec];
-  [APP_DELEGATE setGlobalMin:min];
   [self chkDisp];
 }
 
 // カウントダウン用関数
 - (void)cntDnTimer
 {
-  int sec = [APP_DELEGATE globalSec];
-  int min = [APP_DELEGATE globalMin];
-
-  if (sec == 0) {
-    min--;
-    sec = 59;
-  }else{
-    sec--;
-  }
+  [APP_DELEGATE cntDn:1];
   
-  if (sec == 0 && min == 0) {
+  if ([APP_DELEGATE globalSec] == 0 && [APP_DELEGATE globalMin] == 0) {
    
     // Vibrate
     [self vibrateRoop];
     [self almSndChkPlay];
     
     timeUpOk = YES;
-    cntUpFlag = YES;
+    [APP_DELEGATE setCntUpFlag:YES];
   }
   
-  [APP_DELEGATE setGlobalSec:sec];
-  [APP_DELEGATE setGlobalMin:min];
   [self chkDisp];
-  
 }
 
 
@@ -1080,8 +1058,6 @@ int vibCount;
 
 
 
-
-
 // 表示反映関数
 - (void)chkDisp
 {
@@ -1092,34 +1068,20 @@ int vibCount;
 }
 
 
-/*** 表示切り替え(ボタン)配置 関数 ***/
+/*** ボタン類 配置 関数 ***/
 - (void)btnLinkSelect
 {
-  // ====== 「現在時表示」ボタン（リンクテキスト風）ここから ======
+  //「現在時表示」ボタン（リンクテキスト風）
   clockSelectBtn = [ModeClockBtn buttonWithType:UIButtonTypeCustom];
   [clockSelectBtn setEnabled:YES]; // default
   [clockSelectBtn addTarget:self action:@selector(clockSelectBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
-  [self.view addSubview:clockSelectBtn]; //iPhone
+  [self.view addSubview:clockSelectBtn];
   
-//  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-//    [self.view addSubview:clockSelectBtn]; //iPhone
-//  }else{
-//    [cntView addSubview:clockSelectBtn];   //iPad
-//  }
-  // ====== 「現在時表示」ボタン（リンクテキスト風）ここまで ======
-  
-  // ====== 「タイマー設定」ボタン（リンクテキスト風）ここから ======
+  //「タイマー設定」ボタン（リンクテキスト風）
   timerSelectBtn = [ModeTimerBtn buttonWithType:UIButtonTypeCustom];
   [timerSelectBtn setEnabled:NO]; // not default
   [timerSelectBtn addTarget:self action:@selector(timerSelectBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
-  [self.view addSubview:timerSelectBtn]; //iPhone
-  
-//  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
-//    [self.view addSubview:timerSelectBtn]; //iPhone
-//  }else{
-//    [cntView addSubview:timerSelectBtn];   //iPad
-//  }
-  // ====== 「タイマー設定」ボタン（リンクテキスト風）ここまで ======
+  [self.view addSubview:timerSelectBtn];
   
   
   // ====== 「Sound & Vibrator & ButtonZoom ON/OFF」Button From here ======
@@ -1166,6 +1128,8 @@ int vibCount;
   }
   // ====== 「Sound & Vibrator & ButtonZoom ON/OFF」Button To here ======
 }
+
+
 
 /*
  * ボタン拡大アニメ(横)
