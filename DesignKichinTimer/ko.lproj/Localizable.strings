@@ -3,6 +3,7 @@
 "byo"="초";// Button:s
 
 "history"="역사";
+"FinMsg"="시간이 왔습니다!";
 
 "btnStart"="스타트";
 "btnStop" ="정지";

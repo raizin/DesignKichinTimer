@@ -4,6 +4,7 @@
 "byo"="秒";// Button:s
 
 "history"=" セット履歴";
+"FinMsg"="セットした時間に達しました！";//時間が来ました
 
 "btnStart"="スタート";
 "btnStop" ="ストップ";

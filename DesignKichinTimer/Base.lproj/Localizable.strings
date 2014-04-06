@@ -4,6 +4,8 @@
 "byo"="s";
 
 "history"="History";
+//"FinMsg"="It is now time that you set";
+"FinMsg"="Time is up!";
 
 "btnStart"="Start";
 "btnStop" ="Stop";
