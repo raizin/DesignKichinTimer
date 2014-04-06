@@ -18,6 +18,7 @@
 //@property (retain, nonatomic) ViewController *viewController;
 @property (assign, nonatomic) int globalMin;
 @property (assign, nonatomic) int globalSec;
+@property (assign, nonatomic) int remnantSec;//Backgroundに入る時点の残り秒数(分数も秒数に換算) 
 @property (assign, nonatomic) BOOL cntUpFlag;
 @property (assign, nonatomic) BOOL inWorkFlag;
 @end

@@ -15,7 +15,6 @@
 		5E0BFAA018EC282D00CFB7F9 /* HunUnitLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0BFA9F18EC282D00CFB7F9 /* HunUnitLabel.m */; };
 		5E0BFAA418ED5A2200CFB7F9 /* IconInfoTouch25.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0BFAA218ED5A2200CFB7F9 /* IconInfoTouch25.png */; };
 		5E0BFAA618ED5A7E00CFB7F9 /* IconInfo25.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0BFAA518ED5A7E00CFB7F9 /* IconInfo25.png */; };
-		5E0BFAA818F0119400CFB7F9 /* piLong.caf in Resources */ = {isa = PBXBuildFile; fileRef = 5E0BFAA718F0119400CFB7F9 /* piLong.caf */; };
 		5E1E11D71834F81500307C8F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1E11D61834F81500307C8F /* MessageUI.framework */; };
 		5E1E11D91834F82600307C8F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1E11D81834F82600307C8F /* SystemConfiguration.framework */; };
 		5E1E11DB18350D0500307C8F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E1E11DA18350D0500307C8F /* CoreLocation.framework */; };
@@ -75,7 +74,6 @@
 		5EA2C0A01811865E00B0FC3D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5EA2C09F1811865E00B0FC3D /* .gitignore */; };
 		5EC2DCC6182C77B1003E1D5C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC2DCC5182C77B1003E1D5C /* AudioToolbox.framework */; };
 		5EC2DCCA182FCEB8003E1D5C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC2DCC9182FCEB8003E1D5C /* AVFoundation.framework */; };
-		5EC2DCD21830A52A003E1D5C /* pi_old.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5EC2DCD11830A52A003E1D5C /* pi_old.mp3 */; };
 		5ECB0D271832038400103C18 /* piLong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5ECB0D261832038400103C18 /* piLong.mp3 */; };
 		5ECB0D371832173700103C18 /* pi_mono.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5ECB0D361832173700103C18 /* pi_mono.mp3 */; };
 		5EDE0907185CBF8F00660FF9 /* ResetBtnScaleOnFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDE0906185CBF8F00660FF9 /* ResetBtnScaleOnFlag.m */; };
@@ -108,7 +106,6 @@
 		5E0BFA9F18EC282D00CFB7F9 /* HunUnitLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HunUnitLabel.m; sourceTree = "<group>"; };
 		5E0BFAA218ED5A2200CFB7F9 /* IconInfoTouch25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconInfoTouch25.png; sourceTree = "<group>"; };
 		5E0BFAA518ED5A7E00CFB7F9 /* IconInfo25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconInfo25.png; sourceTree = "<group>"; };
-		5E0BFAA718F0119400CFB7F9 /* piLong.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = piLong.caf; sourceTree = "<group>"; };
 		5E1E11D61834F81500307C8F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		5E1E11D81834F82600307C8F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5E1E11DA18350D0500307C8F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -192,7 +189,6 @@
 		5EA2C09F1811865E00B0FC3D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = DesignKichinTimer/.gitignore; sourceTree = "<group>"; };
 		5EC2DCC5182C77B1003E1D5C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5EC2DCC9182FCEB8003E1D5C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		5EC2DCD11830A52A003E1D5C /* pi_old.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pi_old.mp3; sourceTree = "<group>"; };
 		5ECB0D261832038400103C18 /* piLong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = piLong.mp3; sourceTree = "<group>"; };
 		5ECB0D361832173700103C18 /* pi_mono.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pi_mono.mp3; sourceTree = "<group>"; };
 		5EDE0905185CBF8F00660FF9 /* ResetBtnScaleOnFlag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetBtnScaleOnFlag.h; sourceTree = "<group>"; };
@@ -359,7 +355,6 @@
 		5E30A82918D71579001D468A /* ImageAndSound */ = {
 			isa = PBXGroup;
 			children = (
-				5E0BFAA718F0119400CFB7F9 /* piLong.caf */,
 				5E0BFAA518ED5A7E00CFB7F9 /* IconInfo25.png */,
 				5E0BFAA218ED5A2200CFB7F9 /* IconInfoTouch25.png */,
 				5E0BFA8F18EAD52D00CFB7F9 /* IconInfo40.png */,
@@ -376,7 +371,6 @@
 				5E2480661856ED3E0032AF77 /* IconVibOff.png */,
 				5ECB0D361832173700103C18 /* pi_mono.mp3 */,
 				5ECB0D261832038400103C18 /* piLong.mp3 */,
-				5EC2DCD11830A52A003E1D5C /* pi_old.mp3 */,
 			);
 			name = ImageAndSound;
 			sourceTree = "<group>";
@@ -619,7 +613,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E2480701856F5D80032AF77 /* IconVibTouch.png in Resources */,
-				5E0BFAA818F0119400CFB7F9 /* piLong.caf in Resources */,
 				5E2480751856FE6B0032AF77 /* IconSndOff.png in Resources */,
 				5E2809E318DADD1400A28373 /* Icon76@2x_pro.png in Resources */,
 				5E0BFA8E18EACEA100CFB7F9 /* IconInfoTouch40.png in Resources */,
@@ -634,7 +627,6 @@
 				5E30A82B18D722E7001D468A /* batten33.png in Resources */,
 				5EF21EC91839260C00C079F0 /* Icon76@2x.png in Resources */,
 				5E2480721856FD4D0032AF77 /* IconSndOn.png in Resources */,
-				5EC2DCD21830A52A003E1D5C /* pi_old.mp3 in Resources */,
 				5E2809E218DADD1400A28373 /* Icon76_pro.png in Resources */,
 				5E8BC372185DF84600C2802E /* IconBigOff.png in Resources */,
 				5E6F4B4118117F7600312CCD /* Main_iPad.storyboard in Resources */,

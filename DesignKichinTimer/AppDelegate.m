@@ -69,29 +69,35 @@
 }
 
 
+/*
+ * アプリがバックグラウンドになった時に呼ばれる関数 定義済み関数
+ */
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
   if (self.inWorkFlag == NO) {
+    LOG();
     return;//作動中でなければ何もしない。
   }
   
-  //アプリがバックグラウンドになった時
-  LOG(@"%s",__func__);
-  
-  //現在時を保存
+  //現在時をUD領域に保存
   NSDate* nowDate = [NSDate date];
   [[NSUserDefaults standardUserDefaults] setObject:nowDate forKey:@"nowDate"];
+
+  if ([self cntUpFlag]) {
+    LOG();
+    return;//カウントアップ中の場合 ここまで（現在時取得のみ）
+  }
+  
   
   //通知イベントの作成
   UILocalNotification *notification = [[UILocalNotification alloc] init];
   
-  //残りの秒数を取得
-  int remnantSec = [self getRemnamt];
-
-  LOG(@"remnantSec=%d",remnantSec);
+  //残りの秒数を取得してセット
+  [self setRemnantSec:[self getRemnamt]];
+//  LOG(@"remnantSec=%d",[self remnantSec]);//In Background Sec
   
   //n秒後にメッセージが表示されます
-  notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:remnantSec];
+  notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:[self remnantSec]];
   
   //メッセージ内容
 //  NSString* msg = [NSString stringWithFormat:@"%d秒経過しました",5];
@@ -106,79 +112,61 @@
   notification.timeZone = [NSTimeZone localTimeZone];
   
   //メッセージ表示時の効果音を設定
-//  NSURL *alerm = [[NSBundle mainBundle] URLForResource:@"piLong" withExtension:@"mp3"];
-//  AVAudioPlayer* alermSound = [[AVAudioPlayer alloc] initWithContentsOfURL:alerm error:NULL];
-
-//  notification.soundName = UILocalNotificationDefaultSoundName;
-//  notification.soundName = @"piLong.mp3"; //@"sound/notify.caf";;
-  notification.soundName = @"DesignKichinTimer/piLong.caf"; //@"sound/notify.caf";;
+  notification.soundName = UILocalNotificationDefaultSoundName;
+//  notification.soundName = @"piLong30.caf";//30sec within
   
-
   //ローカル通知イベントの登録
-//  UIApplication* app = [UIApplication sharedApplication];
-  //  LOG(@"%@",app.debugDescription);
-  //  LOG(@"%@",app.description);
   [[UIApplication sharedApplication] scheduleLocalNotification:notification];
 }
 
-
+/**
+ * アプリがバックグラウンドからフォアグラウンドになる直前に呼ばれる関数
+ */
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-  
-  //アプリがバックグラウンドからフォアグラウンドになる直前
-  LOG(@"%s",__func__);
-  
   //バッチをクリア
   [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
   
   //通知をスケジュールをキャンセル
   [[UIApplication sharedApplication] cancelAllLocalNotifications];
   
-  
   if (self.inWorkFlag == NO) {
     return;//作動中でなければ何もしない。
   }
   
-  
-  // 000'00"
-  if (self.globalSec <= 0 || self.globalMin <= 0) {
-    LOG();
-    self.cntUpFlag = YES;
-
-    if (self.globalSec == 0 && self.globalMin == 0) {
-      LOG();
-      return;
-    }
-    
-    //[self cntDn:remindNum];
-  }
-  
-  // 経過時間の計算
+  // バックグラウンドに入った時刻取得
   NSDate* oldDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"nowDate"];
-  LOG(@"%@",[oldDate description]);
+//  LOG(@"%@",[oldDate description]);
 
-  //現在時を保存
+  //現在時を取得
   NSDate* nowDate = [NSDate date];
-  float tmp= [nowDate timeIntervalSinceDate:oldDate];
-  int hh = (int)(tmp / 3600);
-  int mm = (int)((tmp-hh) / 60);
-  float ss = tmp - (float)(hh*3600+mm*60);
+//  LOG(@"%@",[nowDate description]);
   
-//  NSLog(@"%02d:%02d:%05.2f", hh, mm, ss);
-  NSLog(@"%02d:%02d:%02.0f  tmp=%d", hh, mm, ss, (int)tmp);
-
-  if (self.cntUpFlag) {
-    self.globalMin += mm;
-//    self.globalSec += (int)ss;
-    [self cntUp:(int)ss];
-  }else{
-    self.globalMin -= mm;
-//    self.globalSec -= (int)ss;
-    [self cntDn:(int)ss];
+  // 経過時間の差分秒 を取得
+  int diffSec = [nowDate timeIntervalSinceDate:oldDate];
+//  LOG(@"%d",(int)diffSec);
+  
+  
+  // バックグラウンド前の残秒数 - 経過秒数 がマイナスなら その分をカウントアップ
+  if ([self remnantSec] < diffSec) {
+    
+    [self setCntUpFlag:YES];
+    
+    diffSec -= [self remnantSec];
+    [self setGlobalMin:0];
+    [self setGlobalSec:0];
+    LOG();
   }
+
+//  LOG(@"diffSec=%d",diffSec);
   
-  
+  if ([self cntUpFlag]) {
+    [self cntUp:(int)diffSec];
+  }else{
+    [self cntDn:(int)diffSec];
+  }
 }
+
 
 
 // カウントアップ関数
@@ -198,30 +186,23 @@
   }
 }
 
-// カウントダウン関数
+
+// カウントダウン関数Old
 - (void)cntDn:(int)i
 {
+  //バックグラウンド前の分・秒
+//  LOG(@"m=%d s=%d",[self globalMin],[self globalSec]);
+  
   self.globalSec -= i;
-
-  if (self.globalSec == 0 && self.globalMin == 0) {
-    self.globalMin = 0;
-    self.globalSec = 0;
-    return;
-  }
+  
   if (self.globalSec < 0) {
     self.globalMin--;
     
     self.globalMin -= self.globalSec /60;
+    //    self.globalSec = 60 + (self.globalSec %60);
     self.globalSec = 60 + (self.globalSec %60);
-
-    LOG(@"m=%d s=%d",self.globalMin,self.globalSec);
   }
-  
-//  LOG(@"m=%d s=%d",self.globalMin,self.globalSec);
 }
-
-
-
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
