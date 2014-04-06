@@ -3,9 +3,6 @@
 "hun"="分";// Button:min
 "byo"="秒";// Button:s
 
-"hunn"="分";// Label:M
-"byoo"="秒";// Label:S
-
 "history"="历史";
 
 "btnStart"="开始";

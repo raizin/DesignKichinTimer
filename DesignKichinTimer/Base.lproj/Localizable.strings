@@ -1,11 +1,7 @@
-
 // Localizable.strings
 
 "hun"="min";
 "byo"="s";
-
-"hunn"="M";
-"byoo"="S";
 
 "history"="History";
 
@@ -20,7 +16,7 @@
 "SndMsgOn" ="On";
 "SndMsgOff"="Off";
 
-"VibTtl" ="[vibration]";
+"VibTtl" ="[Vibration]";
 "VibMsgOn" ="On";
 "VibMsgOff"="Off";
 
@@ -33,5 +29,6 @@
 
 "ToReview"="To Review";
 "ToApview"="Developer APP";
-"LabelVer"="Number starts";
+"LabelVer"="APP Version : ";
+"LabelNum"="  Number of starts : ";
 "Label3ks"=".  ~ Thanks a lot! ~";

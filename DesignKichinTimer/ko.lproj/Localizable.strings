@@ -2,9 +2,6 @@
 "hun"="분";// Button:min
 "byo"="초";// Button:s
 
-"hunn"="분";// Label:M
-"byoo"="초";// Label:S
-
 "history"="역사";
 
 "btnStart"="스타트";
