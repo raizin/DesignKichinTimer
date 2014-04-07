@@ -7,8 +7,7 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
-//#import <QuartzCore/CoreAnimation.h>
-//#import <iAd/iAd.h>
+#import <iAd/iAd.h>
 #import "ModeTimerBtn.h"
 #import "ModeClockBtn.h"
 #import "MyCntLabel.h"
@@ -25,9 +24,11 @@
 #import "HunUnitLabel.h"
 
 @interface ViewController : UIViewController {
-  
-  //NSUserDefaults領域を使用
-//  NSUserDefaults *ud;
+
+  /// Banner広告用定義 ここから ///
+  ADBannerView* iAdView; // iAd用View
+  BOOL bannerIsVisible;
+  /// Banner広告用定義 ここまで ///
 
   //Sound
   AVAudioPlayer *pressBtnSnd;

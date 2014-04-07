@@ -183,27 +183,16 @@
   }
 }
 
-
-
 // 画面が表示される直前に呼び出される *定義済み関数
 - (void)viewWillAppear:(BOOL)animated
 {
 }
 
-
-
--(void)bannerInit
-{
-  LOG(@"%s",__func__);
-//  int w = [UIScreen mainScreen].bounds.size.width;
-//  int h = [UIScreen mainScreen].bounds.size.height;
-}
-
-
 // デバイスが回転した際に、呼び出されるメソッド(※自作)
 - (void) didRotate:(NSNotification *)notification {
 //  UIDeviceOrientation o = [[notification object] orientation];
   UIDeviceOrientation o = [[UIDevice currentDevice] orientation];
+  
   
   // iphone かつ Home button top の場合のみ 動作がおかしいので止める
   if (o == UIDeviceOrientationPortraitUpsideDown && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
@@ -214,9 +203,18 @@
       || o == UIDeviceOrientationLandscapeRight
       || o == UIDeviceOrientationPortrait
       || o == UIDeviceOrientationPortraitUpsideDown) {
+
+    // Free版とPro版の分岐用フラグ取得
+    NSString* freeFlagStr  = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"FreeVersionFlag"];
+    BOOL freeFlag = [freeFlagStr boolValue];
+
     
     //X軸の中心を取得
     int centerPoint = [self arignCenter:0];
+
+    // self.viewから取得すると回転時に変化(逆になったりならなかったり)するため以下のように縦横サイズを取得する
+    CGFloat baseW = [UIScreen mainScreen].bounds.size.width;
+    CGFloat baseH = [UIScreen mainScreen].bounds.size.height;
     
     // 端末毎に配置調整
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
@@ -244,7 +242,7 @@
       [setBtnHis1 setCenter:CGPointMake(centerPoint +190,  75)];
       [setBtnHis2 setCenter:CGPointMake(centerPoint +190, 105)];
       [setBtnHis3 setCenter:CGPointMake(centerPoint +190, 135)];
-     
+ 
       // 横向き時の調整
       if (o == UIDeviceOrientationLandscapeLeft || o == UIDeviceOrientationLandscapeRight) {
         [infBtn setCenter:CGPointMake(self.view.frame.size.width +126, 17)];
@@ -252,9 +250,18 @@
         if ([ResetBtnScaleOnFlag val]) {
           [self btnScaleUpYoko:setBtnReset];
         }
+
+        if (freeFlag) {
+          //フリー版はバナー広告配置調整
+          [self RotatedAdView:baseH baseHigh:baseW];
+        }
       }else{
         if ([ResetBtnScaleOnFlag val]) {
           [self btnScaleUpTate:setBtnReset];
+        }
+        if (freeFlag) {
+          //フリー版はバナー広告配置調整
+          [self RotatedAdView:baseW baseHigh:baseH];
         }
       }
       
@@ -292,9 +299,17 @@
         if ([ResetBtnScaleOnFlag val]) {
           [self btnScaleUpYoko:setBtnReset];
         }
+        if (freeFlag) {
+          //フリー版はバナー広告配置調整
+          [self RotatedAdView:baseH baseHigh:baseW];
+        }
       }else{
         if ([ResetBtnScaleOnFlag val]) {
           [self btnScaleUpTate:setBtnReset];
+        }
+        if (freeFlag) {
+          //フリー版はバナー広告配置調整
+          [self RotatedAdView:baseW baseHigh:baseH];
         }
       }
       
@@ -1144,10 +1159,20 @@ int vibCount;
   [UIView beginAnimations:nil context:nil];
   [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
   [UIView setAnimationDuration:1.f];
+  
+  
+  int iAdBannerHeight = 0;
+  
+  NSString* freeFlagStr  = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"FreeVersionFlag"];
+  BOOL freeFlag = [freeFlagStr boolValue];
+  if (freeFlag) {
+    //フリー版はバナー広告分 小さくする
+    iAdBannerHeight = iAdView.frame.size.height;
+  }
   btn.frame = CGRectMake(3, // x
                          cntView.frame.size.height + cntView.frame.origin.y +3, // y
                          self.view.frame.size.height -6, // w
-                         self.view.frame.size.width - (cntView.frame.size.height + cntView.frame.origin.y) -6 ); // h
+                         self.view.frame.size.width - (cntView.frame.size.height + cntView.frame.origin.y) -6 -iAdBannerHeight ); // h
   [UIView commitAnimations];
   [self.view.layer removeAllAnimations];
 }
@@ -1161,10 +1186,21 @@ int vibCount;
   [UIView beginAnimations:nil context:nil];
   [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
   [UIView setAnimationDuration:1.f];
+  
+  int iAdBannerHeight = 0;
+  
+  NSString* freeFlagStr  = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"FreeVersionFlag"];
+  BOOL freeFlag = [freeFlagStr boolValue];
+  if (freeFlag) {
+    //フリー版はバナー広告分 小さくする
+    iAdBannerHeight = iAdView.frame.size.height;
+  }
+  
+  
   btn.frame = CGRectMake(3, // x
                          cntView.frame.size.height + cntView.frame.origin.y +3, // y
                          self.view.frame.size.width -6, // w
-                         self.view.frame.size.height - (cntView.frame.size.height + cntView.frame.origin.y) -6 ); // h
+                         self.view.frame.size.height - (cntView.frame.size.height + cntView.frame.origin.y) -6 -iAdBannerHeight ); // h
   [UIView commitAnimations];
   [self.view.layer removeAllAnimations];
 }
@@ -1233,6 +1269,99 @@ int vibCount;
   // InfoViewを表示
   [self presentViewController: ivCtl animated:YES completion:nil];
 }
+
+
+
+
+-(void)bannerInit
+{
+  int w = [UIScreen mainScreen].bounds.size.width;
+  int h = [UIScreen mainScreen].bounds.size.height;
+  
+  // iAd View Create
+  iAdView = [[ADBannerView alloc] initWithFrame:CGRectZero];
+  iAdView.delegate = (id<ADBannerViewDelegate>)self;
+  iAdView.autoresizesSubviews = YES;
+  iAdView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
+  iAdView.alpha = 0.1;
+  
+  // 現在の画面の回転状態を取得
+  UIInterfaceOrientation o = [[UIApplication sharedApplication] statusBarOrientation];
+  if(o == UIInterfaceOrientationLandscapeLeft || o == UIInterfaceOrientationLandscapeRight){
+    //Yoko
+    [self RotatedAdView:h baseHigh:w];
+  }else{
+    //Tate
+    [self RotatedAdView:w baseHigh:h];
+  }
+  
+  [self.view addSubview:iAdView];
+  bannerIsVisible = NO;
+}
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+  //  NSLog(@"%d: iAd Get Success!!",__LINE__);
+  
+  if (!bannerIsVisible) {
+    [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
+    [UIView setAnimationDuration:0.6];//0.6 Second
+    
+    banner.alpha = 0.8;
+    banner.hidden = NO;
+    
+    [UIView commitAnimations];
+    
+    bannerIsVisible = YES;
+    [self.view addSubview:iAdView];
+  }
+}
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+  NSLog(@"iAd get NG %@",error.description);
+  [self iAdDisable:NO];
+}
+// iAdを停止する adDel＝ YES:xボタンで一定時間隠す NO:iAd失敗時隠す
+-(void)iAdDisable:(BOOL)adDel
+{
+  
+  if (adDel) {
+    [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
+    [UIView setAnimationDuration:3.0];//3.0 Secound
+    
+    iAdView.alpha = 0.1;
+    
+    [UIView commitAnimations];
+
+  }else{
+    
+    if (bannerIsVisible) {
+      [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
+      [UIView setAnimationDuration:3.0];//3.0 Secound
+      
+      iAdView.alpha = 0.1;
+      
+      [UIView commitAnimations];
+      
+      bannerIsVisible = NO;
+    }
+    
+  }
+  
+}
+
+//デバイスの向きを考慮した上で引数を渡し、配置を調整
+-(void)RotatedAdView:(int)baseSize baseHigh:(int)h
+{
+  int xCenter = baseSize/2;
+  if (iAdView) {
+    iAdView.frame = CGRectMake(0, 0, baseSize, iAdView.frame.size.height);//w,h
+    iAdView.center = CGPointMake(xCenter, h - (iAdView.frame.size.height / 2));//x,y
+  }
+}
+
+
+
+
 
 
 - (void)didReceiveMemoryWarning
