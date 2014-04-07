@@ -18,10 +18,12 @@
 	<string>jp.mydns.seiryu.designkichintimer</string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>Icon60.png</string>
-		<string>Icon60@2x.png</string>
-		<string>Icon76.png</string>
-		<string>Icon76@2x.png</string>
+		<string>Icon060.png</string>
+		<string>Icon120.png</string>
+		<string>Icon076.png</string>
+		<string>Icon152.png</string>
+		<string>Icon057.png</string>
+		<string>Icon072.png</string>
 	</array>
 	<key>FreeVersionFlag</key>
 	<string>true</string>

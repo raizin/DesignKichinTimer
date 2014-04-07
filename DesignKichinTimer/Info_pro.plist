@@ -14,12 +14,12 @@
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>Icon60pro.png</string>
-		<string>Icon60pro@2x.png</string>
-		<string>Icon76pro.png</string>
-		<string>Icon76pro@2x.png</string>
-		<string>Icon57pro.png</string>
-		<string>Icon72pro.png</string>
+		<string>Icon060pro.png</string>
+		<string>Icon120pro.png</string>
+		<string>Icon076pro.png</string>
+		<string>Icon152pro.png</string>
+		<string>Icon057pro.png</string>
+		<string>Icon072pro.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
 	<string>jp.mydns.seiryu.designkichintimer.pro</string>
