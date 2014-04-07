@@ -2,16 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>ArtistURL</key>
-	<string>itms-apps://itunes.apple.com/artist/makoto-amano/id687643943</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>Base</string>
 	<key>CFBundleDisplayName</key>
 	<string>KitchenTimer</string>
 	<key>CFBundleDisplayName~ipad</key>
 	<string>JPNKitchenTimer</string>
+	<key>CFBundleName</key>
+	<string>Kitchen Timer</string>
+	<key>CFBundleName~ipad</key>
+	<string>Japan Kitchen Timer</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIdentifier</key>
+	<string>jp.mydns.seiryu.designkichintimer.pro</string>
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>Icon060pro.png</string>
@@ -21,14 +25,10 @@
 		<string>Icon057pro.png</string>
 		<string>Icon072pro.png</string>
 	</array>
-	<key>CFBundleIdentifier</key>
-	<string>jp.mydns.seiryu.designkichintimer.pro</string>
+	<key>FreeVersionFlag</key>
+	<string>false</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
-	<key>CFBundleName</key>
-	<string>Kitchen Timer</string>
-	<key>CFBundleName~ipad</key>
-	<string>Japan Kitchen Timer</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -37,12 +37,8 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1.5</string>
-	<key>FreeVersionFlag</key>
-	<string>false</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>ReviewURL</key>
-	<string>itms-apps://itunes.apple.com/app/id776800295</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main_iPhone</string>
 	<key>UIMainStoryboardFile~ipad</key>
@@ -69,5 +65,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>ReviewURL</key>
+	<string>itms-apps://itunes.apple.com/app/id776800295</string>
+	<key>ArtistURL</key>
+	<string>itms-apps://itunes.apple.com/artist/makoto-amano/id687643943</string>
 </dict>
 </plist>

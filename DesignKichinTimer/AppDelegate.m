@@ -100,23 +100,22 @@
   notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:[self remnantSec]];
   
   //設定した分・秒の取得
-  int rMin = (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historyMinData1"];
-  int rSec = (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historySecData1"];
+//  int rMin = (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historyMinData1"];
+//  int rSec = (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"historySecData1"];
   
   
   //メッセージ内容作成
-  NSString* msg;
+//  NSString* msg;
 //  NSString* msg = [NSString stringWithFormat:@"%d秒経過しました",5]; //セットした時間に達しました
-  if (rMin > 0) {
-    msg = [NSString stringWithFormat:@"%d分%d秒に達しました！",rMin,rSec];
-  }else{
-    msg = [NSString stringWithFormat:@"%d秒に達しました！",rSec];
-  }
-  msg = [NSString stringWithFormat:@"%@",NSLocalizedString(@"FinMsg", nil)];
-
-  notification.alertBody = msg;
+//  if (rMin > 0) {
+//    msg = [NSString stringWithFormat:@"%d分%d秒に達しました！",rMin,rSec];
+//  }else{
+//    msg = [NSString stringWithFormat:@"%d秒に達しました！",rSec];
+//  }
+//  msg = [NSString stringWithFormat:@"%@",NSLocalizedString(@"FinMsg", nil)];
+  notification.alertBody = [NSString stringWithFormat:@"%@",NSLocalizedString(@"FinMsg", nil)];
   
-  //バッジを表示する事も可能です。この場合、１が表示されます
+  //バッジを表示 １が表示されます
   notification.applicationIconBadgeNumber = 1;
 //  [UIApplication sharedApplication].applicationIconBadgeNumber = 99999;//1~99999まで表示可
   
@@ -158,24 +157,24 @@
   int diffSec = [nowDate timeIntervalSinceDate:oldDate];
 //  LOG(@"%d",(int)diffSec);
   
-  
-  // バックグラウンド前の残秒数 - 経過秒数 がマイナスなら その分をカウントアップ
-  if ([self remnantSec] < diffSec) {
-    
-    [self setCntUpFlag:YES];
-    
-    diffSec -= [self remnantSec];
-    [self setGlobalMin:0];
-    [self setGlobalSec:0];
-    LOG();
-  }
-
-//  LOG(@"diffSec=%d",diffSec);
-  
   if ([self cntUpFlag]) {
     [self cntUp:(int)diffSec];
+ 
   }else{
-    [self cntDn:(int)diffSec];
+    
+    // バックグラウンド前の残秒数 - 経過秒数 がマイナスなら その分をカウントアップ
+    if ([self remnantSec] < diffSec) {
+      
+      [self setCntUpFlag:YES];
+      
+      diffSec -= [self remnantSec];
+      [self setGlobalMin:0];
+      [self setGlobalSec:0];
+      
+      [self cntUp:(int)diffSec];
+    }else{
+      [self cntDn:(int)diffSec];
+    }
   }
 }
 
