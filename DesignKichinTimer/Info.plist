@@ -2,20 +2,47 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>Base</string>
-	<key>CFBundleDisplayName</key>
-	<string>KitchenTimer</string>
-	<key>CFBundleDisplayName~ipad</key>
-	<string>JPNKitchenTimer</string>
 	<key>CFBundleName</key>
 	<string>Kitchen Timer</string>
+	<key>FreeVersionFlag</key>
+	<string>true</string>
 	<key>CFBundleName~ipad</key>
 	<string>Japan Kitchen Timer</string>
+	<key>UIMainStoryboardFile~ipad</key>
+	<string>Main_iPad</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>Base</string>
+	<key>CFBundleVersion</key>
+	<string>1.5</string>
+	<key>UIStatusBarHidden</key>
+	<true/>
+	<key>CFBundleShortVersionString</key>
+	<string>1.5</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main_iPhone</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleDisplayName~ipad</key>
+	<string>JPNKitchenTimer</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
 	<key>CFBundleIdentifier</key>
 	<string>jp.mydns.seiryu.designkichintimer</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>Icon060.png</string>
@@ -25,30 +52,12 @@
 		<string>Icon057.png</string>
 		<string>Icon072.png</string>
 	</array>
-	<key>FreeVersionFlag</key>
-	<string>true</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundlePackageType</key>
-	<string>APPL</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1.5</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.5</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>UIMainStoryboardFile</key>
-	<string>Main_iPhone</string>
-	<key>UIMainStoryboardFile~ipad</key>
-	<string>Main_iPad</string>
-	<key>UIRequiredDeviceCapabilities</key>
-	<array>
-		<string>armv7</string>
-	</array>
-	<key>UIStatusBarHidden</key>
-	<true/>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleDisplayName</key>
+	<string>KitchenTimer</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -56,22 +65,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UISupportedInterfaceOrientations~ipad</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
 	<key>ReviewURL</key>
 	<string>itms-apps://itunes.apple.com/app/id756181891</string>
 	<key>ArtistURL</key>
 	<string>itms-apps://itunes.apple.com/artist/makoto-amano/id687643943</string>
-  <!---
-	<key>AdMobUnitId</key>
-	<string>ca-app-pub-8799115520187072/6215156947</string>
-  --->
 </dict>
 </plist>
