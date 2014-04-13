@@ -13,11 +13,11 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>Base</string>
 	<key>CFBundleVersion</key>
-	<string>1.5</string>
+	<string>1.6</string>
 	<key>UIStatusBarHidden</key>
 	<true/>
 	<key>CFBundleShortVersionString</key>
-	<string>1.5</string>
+	<string>1.6</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main_iPhone</string>
 	<key>CFBundlePackageType</key>
