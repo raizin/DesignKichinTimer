@@ -116,28 +116,34 @@
   
   
   /*** カウンタ数値セットボタンUI定義 ここから ***/
-  setBtn10 = [PlusNnBtn buttonWithType:UIButtonTypeCustom];[setBtn10 setNum:10];
-  [setBtn10 addTarget:self action:@selector(btn10Touch:) forControlEvents:UIControlEventTouchUpInside];
+
+  setBtn10 = [PlusNnBtn buttonWithType:UIButtonTypeCustom];[setBtn10 setNum:10];[setBtn10 setTag:10];
+  [setBtn10 addTarget:self action:@selector(btn10Touch) forControlEvents:UIControlEventTouchUpInside];
+  [setBtn10 addGestureRecognizer:[[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(lPress:)]];
   [self.view addSubview:setBtn10];
- 
-  setBtn05 = [PlusNnBtn buttonWithType:UIButtonTypeCustom];[setBtn05 setNum:5];
-  [setBtn05 addTarget:self action:@selector(btn05Touch:) forControlEvents:UIControlEventTouchUpInside];
+  
+  setBtn05 = [PlusNnBtn buttonWithType:UIButtonTypeCustom];[setBtn05 setNum:5];[setBtn05 setTag:5];
+  [setBtn05 addTarget:self action:@selector(btn05Touch) forControlEvents:UIControlEventTouchUpInside];
+  [setBtn05 addGestureRecognizer:[[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(lPress:)]];
   [self.view addSubview:setBtn05];
   
-  setBtn03 = [PlusNnBtn buttonWithType:UIButtonTypeCustom];[setBtn03 setNum:3];
-  [setBtn03 addTarget:self action:@selector(btn03Touch:) forControlEvents:UIControlEventTouchUpInside];
+  setBtn03 = [PlusNnBtn buttonWithType:UIButtonTypeCustom];[setBtn03 setNum:3];[setBtn03 setTag:3];
+  [setBtn03 addTarget:self action:@selector(btn03Touch) forControlEvents:UIControlEventTouchUpInside];
+  [setBtn03 addGestureRecognizer:[[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(lPress:)]];
   [self.view addSubview:setBtn03];
   
-  setBtn01 = [PlusNnBtn buttonWithType:UIButtonTypeCustom];[setBtn01 setNum:1];
-  [setBtn01 addTarget:self action:@selector(btn01Touch:) forControlEvents:UIControlEventTouchUpInside];
+  setBtn01 = [PlusNnBtn buttonWithType:UIButtonTypeCustom];[setBtn01 setNum:1];[setBtn01 setTag:1];
+  [setBtn01 addTarget:self action:@selector(btn01Touch) forControlEvents:UIControlEventTouchUpInside];
+  [setBtn01 addGestureRecognizer:[[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(lPress:)]];
   [self.view addSubview:setBtn01];
 
   setBtnReset = [ResetBtn buttonWithType:UIButtonTypeCustom];
   [setBtnReset addTarget:self action:@selector(resetBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:setBtnReset];
   
-  setBtn001 = [PlusNnBtn buttonWithType:UIButtonTypeCustom];[setBtn001 setNumByo:10];
-  [setBtn001 addTarget:self action:@selector(btn001Touch:) forControlEvents:UIControlEventTouchUpInside];
+  setBtn001 = [PlusNnBtn buttonWithType:UIButtonTypeCustom];[setBtn001 setNumByo:10];[setBtn001 setTag:100];
+  [setBtn001 addTarget:self action:@selector(btn001Touch) forControlEvents:UIControlEventTouchUpInside];
+  [setBtn001 addGestureRecognizer:[[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(lPress:)]];
   [self.view addSubview:setBtn001];
 
   setBtnStart = [StartBtn buttonWithType:UIButtonTypeCustom];
@@ -505,47 +511,113 @@
   [self chkDisp];
 }
 
-- (void)btn001Touch:(id)sender
+
+- (void)btn001Touch
 {
   [self btnSndChkPlay];//効果音再生
-  
-//  globalSec += 10;
   [APP_DELEGATE setGlobalSec:[APP_DELEGATE globalSec]+10];
   [self cntPlusChk];
 }
-
-- (void)btn01Touch:(id)sender
+- (void)btn01Touch
 {
-  [self btnSndChkPlay];//効果音再生
-  
-//  globalMin += 1;
+  [self btnSndChkPlay];
   [APP_DELEGATE setGlobalMin:[APP_DELEGATE globalMin]+1];
   [self cntPlusChk];
 }
-- (void)btn03Touch:(id)sender
+- (void)btn03Touch
 {
-  [self btnSndChkPlay];//効果音再生
-  
-//  globalMin += 3;
+  [self btnSndChkPlay];
   [APP_DELEGATE setGlobalMin:[APP_DELEGATE globalMin]+3];
   [self cntPlusChk];
 }
-- (void)btn05Touch:(id)sender
+- (void)btn05Touch
 {
-  [self btnSndChkPlay];//効果音再生
-  
-//  globalMin += 5;
+  [self btnSndChkPlay];
   [APP_DELEGATE setGlobalMin:[APP_DELEGATE globalMin]+5];
   [self cntPlusChk];
 }
-- (void)btn10Touch:(id)sender
+- (void)btn10Touch
 {
-  [self btnSndChkPlay];//効果音再生
-  
-//  globalMin += 10;
+  [self btnSndChkPlay];
   [APP_DELEGATE setGlobalMin:[APP_DELEGATE globalMin]+10];
   [self cntPlusChk];
 }
+
+
+//長押し時のタイマー
+- (void)lpTimer:(NSTimer *)timer
+{
+//  LOG(@"tmp.tag=%d",[(NSNumber*)timer.userInfo intValue]);
+  
+  switch ([(NSNumber*)timer.userInfo intValue]) {
+    case 100:
+      [self btn001Touch];
+      break;
+    case 10:
+      [self btn10Touch];
+      break;
+    case 5:
+      [self btn05Touch];
+      break;
+    case 3:
+      [self btn03Touch];
+      break;
+    case 1:
+      [self btn01Touch];
+      break;
+      
+    default:
+      break;
+  }
+}
+
+//長押し対応メソッド
+-(void)lPress:(UILongPressGestureRecognizer *)gRecognizer
+{
+//  LOG(@"tag=%d",gRecognizer.view.tag);
+  
+//  NSNumber tmp = gRecognizer.view.tag;
+  [NSNumber numberWithInt:gRecognizer.view.tag];
+  
+  switch (gRecognizer.state) {
+    case UIGestureRecognizerStateBegan:
+      //長押しを検知開始
+      if (!lPTimer) {
+        lPTimer = [NSTimer scheduledTimerWithTimeInterval:0.25f //タイマーを発生させる間隔（0.3秒毎）
+                                                 target:self //メソッドがあるオブジェクト
+                                               selector:@selector(lpTimer:) //呼び出すメソッド
+                                               userInfo:[NSNumber numberWithInt:gRecognizer.view.tag]//パラメータ引数
+                                                repeats:YES]; //繰り返し
+      }
+      break;
+    case UIGestureRecognizerStateEnded:
+      //長押し終了時
+      if ([lPTimer isValid]) {
+        [lPTimer invalidate];
+        lPTimer = nil;//破棄
+      }
+      
+      if (gRecognizer.view.tag == 100) {
+        [setBtn001 btnTouchUp];
+      } else
+      if (gRecognizer.view.tag == 10) {
+        [setBtn10 btnTouchUp];
+      } else
+      if (gRecognizer.view.tag == 5) {
+        [setBtn05 btnTouchUp];
+      } else
+      if (gRecognizer.view.tag == 3) {
+        [setBtn03 btnTouchUp];
+      } else
+      if (gRecognizer.view.tag == 1) {
+        [setBtn01 btnTouchUp];
+      }
+      break;
+    default:
+      break;
+  }
+}
+
 
 
 - (void)resetBtnTouch:(id)sender

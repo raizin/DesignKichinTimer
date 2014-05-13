@@ -130,7 +130,7 @@
 		5E2480711856FD4D0032AF77 /* IconSndOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconSndOn.png; sourceTree = "<group>"; };
 		5E2480731856FE6B0032AF77 /* IconSndOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconSndOff.png; sourceTree = "<group>"; };
 		5E2480741856FE6B0032AF77 /* IconSndTouch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconSndTouch.png; sourceTree = "<group>"; };
-		5E2809E518DB05CC00A28373 /* Info_pro.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info_pro.plist; sourceTree = "<group>"; };
+		5E2809E518DB05CC00A28373 /* Info_pro.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Info_pro.xml; sourceTree = "<group>"; };
 		5E2809E818DC596200A28373 /* CntView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CntView.h; sourceTree = "<group>"; };
 		5E2809E918DC596200A28373 /* CntView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CntView.m; sourceTree = "<group>"; };
 		5E30A82A18D722E7001D468A /* batten33.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batten33.png; sourceTree = "<group>"; };
@@ -167,7 +167,7 @@
 		5E6F4B2A18117F7600312CCD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5E6F4B2C18117F7600312CCD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5E6F4B2E18117F7600312CCD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		5E6F4B3218117F7600312CCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E6F4B3218117F7600312CCD /* Info.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Info.xml; sourceTree = "<group>"; };
 		5E6F4B3618117F7600312CCD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5E6F4B3818117F7600312CCD /* DesignTimer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DesignTimer-Prefix.pch"; sourceTree = "<group>"; };
 		5E6F4B3918117F7600312CCD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -490,8 +490,8 @@
 			children = (
 				5E220DD21842630700D2ACB0 /* IconPng */,
 				5E30A82918D71579001D468A /* ImageAndSound */,
-				5E6F4B3218117F7600312CCD /* Info.plist */,
-				5E2809E518DB05CC00A28373 /* Info_pro.plist */,
+				5E6F4B3218117F7600312CCD /* Info.xml */,
+				5E2809E518DB05CC00A28373 /* Info_pro.xml */,
 				5E6F4B3318117F7600312CCD /* InfoPlist.strings */,
 				5E6F4B3618117F7600312CCD /* main.m */,
 				5E6F4B3818117F7600312CCD /* DesignTimer-Prefix.pch */,
@@ -912,7 +912,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DesignKichinTimer/DesignTimer-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = DesignKichinTimer/Info.plist;
+				INFOPLIST_FILE = DesignKichinTimer/Info_pro.xml;
 				INFOPLIST_PREFIX_HEADER = "";
 				INFOPLIST_PREPROCESS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
@@ -933,7 +933,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DesignKichinTimer/DesignTimer-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = DesignKichinTimer/Info.plist;
+				INFOPLIST_FILE = DesignKichinTimer/Info_pro.xml;
 				INFOPLIST_PREFIX_HEADER = "";
 				INFOPLIST_PREPROCESS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;

@@ -75,7 +75,7 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
   if (self.inWorkFlag == NO) {
-    LOG();
+//    LOG();
     return;//作動中でなければ何もしない。
   }
   
@@ -84,7 +84,7 @@
   [[NSUserDefaults standardUserDefaults] setObject:nowDate forKey:@"nowDate"];
 
   if ([self cntUpFlag]) {
-    LOG();
+//    LOG();
     return;//カウントアップ中の場合 ここまで（現在時取得のみ）
   }
   

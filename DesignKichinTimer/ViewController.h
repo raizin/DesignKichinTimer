@@ -31,22 +31,19 @@
   /// Banner広告用定義 ここまで ///
 
   //Sound
-  AVAudioPlayer *pressBtnSnd;
-  AVAudioPlayer *alermSound;
+  AVAudioPlayer *pressBtnSnd, *alermSound;
   
   // タイマー定義
-  NSTimer *clockTm;
-  NSTimer *timerTm;
+  NSTimer *clockTm, *timerTm, *lPTimer;
+  
+
 
 //  int globalMin;// 00~999
 //  int globalSec;// 00~59
   
-  int historyMin1;
-  int historySec1;
-  int historyMin2;
-  int historySec2;
-  int historyMin3;
-  int historySec3;
+  int historyMin1, historySec1;
+  int historyMin2, historySec2;
+  int historyMin3, historySec3;
 
 //  BOOL cntUpFlag; // YES:up NO:down
   BOOL cntMode;   // YES:キッチンタイマー NO:現在時表示
@@ -77,17 +74,12 @@
   ModeTimerBtn* timerSelectBtn; //「タイマー設定」切替ボタン
   ModeClockBtn* clockSelectBtn; //「現在時表示」切替ボタン
   
-  PlusNnBtn* setBtn10;//10 min
-  PlusNnBtn* setBtn05;//5 min
-  PlusNnBtn* setBtn03;//3 min
-  PlusNnBtn* setBtn01;//1 min
-  PlusNnBtn* setBtn001;//10 s
-  StartBtn* setBtnStart;
-  ResetBtn* setBtnReset;//Reset & Stop
+  // 10min 5min 3min 1min 10sec
+  PlusNnBtn *setBtn10, *setBtn05, *setBtn03, *setBtn01, *setBtn001;
+  StartBtn *setBtnStart;
+  ResetBtn *setBtnReset;//Reset & Stop
   
-  HistNnBtn* setBtnHis1;//History1
-  HistNnBtn* setBtnHis2;//History2
-  HistNnBtn* setBtnHis3;//History3
+  HistNnBtn *setBtnHis1, *setBtnHis2, *setBtnHis3;//History Button
   
   
   // フェードインを一回だけ成功させるフラグ YES:実行 NO:実行しない
