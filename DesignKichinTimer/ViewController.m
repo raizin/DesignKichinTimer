@@ -117,22 +117,22 @@
   
   /*** カウンタ数値セットボタンUI定義 ここから ***/
 
-  setBtn10 = [PlusNnBtn buttonWithType:UIButtonTypeCustom];[setBtn10 setNum:10];[setBtn10 setTag:10];
+  setBtn10 = [PlusNnBtn buttonWithType:UIButtonTypeCustom];[setBtn10 setTag:10];
   [setBtn10 addTarget:self action:@selector(btn10Touch) forControlEvents:UIControlEventTouchUpInside];
   [setBtn10 addGestureRecognizer:[[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(lPress:)]];
   [self.view addSubview:setBtn10];
   
-  setBtn05 = [PlusNnBtn buttonWithType:UIButtonTypeCustom];[setBtn05 setNum:5];[setBtn05 setTag:5];
+  setBtn05 = [PlusNnBtn buttonWithType:UIButtonTypeCustom];[setBtn05 setTag:5];
   [setBtn05 addTarget:self action:@selector(btn05Touch) forControlEvents:UIControlEventTouchUpInside];
   [setBtn05 addGestureRecognizer:[[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(lPress:)]];
   [self.view addSubview:setBtn05];
   
-  setBtn03 = [PlusNnBtn buttonWithType:UIButtonTypeCustom];[setBtn03 setNum:3];[setBtn03 setTag:3];
+  setBtn03 = [PlusNnBtn buttonWithType:UIButtonTypeCustom];[setBtn03 setTag:3];
   [setBtn03 addTarget:self action:@selector(btn03Touch) forControlEvents:UIControlEventTouchUpInside];
   [setBtn03 addGestureRecognizer:[[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(lPress:)]];
   [self.view addSubview:setBtn03];
   
-  setBtn01 = [PlusNnBtn buttonWithType:UIButtonTypeCustom];[setBtn01 setNum:1];[setBtn01 setTag:1];
+  setBtn01 = [PlusNnBtn buttonWithType:UIButtonTypeCustom];[setBtn01 setTag:1];
   [setBtn01 addTarget:self action:@selector(btn01Touch) forControlEvents:UIControlEventTouchUpInside];
   [setBtn01 addGestureRecognizer:[[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(lPress:)]];
   [self.view addSubview:setBtn01];
@@ -141,7 +141,7 @@
   [setBtnReset addTarget:self action:@selector(resetBtnTouch:) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:setBtnReset];
   
-  setBtn001 = [PlusNnBtn buttonWithType:UIButtonTypeCustom];[setBtn001 setNumByo:10];[setBtn001 setTag:100];
+  setBtn001 = [PlusNnBtn buttonWithType:UIButtonTypeCustom];[setBtn001 setTag:100];
   [setBtn001 addTarget:self action:@selector(btn001Touch) forControlEvents:UIControlEventTouchUpInside];
   [setBtn001 addGestureRecognizer:[[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(lPress:)]];
   [self.view addSubview:setBtn001];

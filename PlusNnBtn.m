@@ -25,16 +25,19 @@
   }
 }
 
-- (void)setNum:(int)nn
+// setTag Method Extension
+- (void)setTag:(NSInteger)tag
 {
+  [super setTag:tag];
+
+  int nn = tag;
   NSString* unit = [NSString stringWithFormat:@"%@",NSLocalizedString(@"hun", nil)];
-  [self setAttributedTitle:[self myBtnColorCtl:[UIColor blueColor ] num:nn unit:unit] forState:UIControlStateNormal];
-  [self setAttributedTitle:[self myBtnColorCtl:[UIColor whiteColor] num:nn unit:unit] forState:UIControlStateHighlighted];
-  [self setAttributedTitle:[self myBtnColorCtl:[UIColor grayColor ] num:nn unit:unit] forState:UIControlStateDisabled];
-}
-- (void)setNumByo:(int)nn
-{
-  NSString* unit = [NSString stringWithFormat:@"%@",NSLocalizedString(@"byo", nil)];
+  
+  if (tag >= 100 ) {
+    nn = self.tag/10;
+    unit = [NSString stringWithFormat:@"%@",NSLocalizedString(@"byo", nil)];
+  }
+  
   [self setAttributedTitle:[self myBtnColorCtl:[UIColor blueColor ] num:nn unit:unit] forState:UIControlStateNormal];
   [self setAttributedTitle:[self myBtnColorCtl:[UIColor whiteColor] num:nn unit:unit] forState:UIControlStateHighlighted];
   [self setAttributedTitle:[self myBtnColorCtl:[UIColor grayColor ] num:nn unit:unit] forState:UIControlStateDisabled];

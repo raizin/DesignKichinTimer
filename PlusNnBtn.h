@@ -9,7 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface PlusNnBtn : UIButton
-- (void)setNum:(int)nn;
-- (void)setNumByo:(int)nn;
 - (void)btnTouchUp;
 @end
