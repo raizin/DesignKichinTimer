@@ -583,7 +583,7 @@
     case UIGestureRecognizerStateBegan:
       //長押しを検知開始
       if (!lPTimer) {
-        lPTimer = [NSTimer scheduledTimerWithTimeInterval:0.25f //タイマーを発生させる間隔（0.3秒毎）
+        lPTimer = [NSTimer scheduledTimerWithTimeInterval:0.15f //タイマーを発生させる間隔（0.3秒毎）
                                                  target:self //メソッドがあるオブジェクト
                                                selector:@selector(lpTimer:) //呼び出すメソッド
                                                userInfo:[NSNumber numberWithInt:gRecognizer.view.tag]//パラメータ引数
