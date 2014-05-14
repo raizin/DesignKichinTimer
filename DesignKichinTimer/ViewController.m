@@ -577,7 +577,7 @@
 //  LOG(@"tag=%d",gRecognizer.view.tag);
   
 //  NSNumber tmp = gRecognizer.view.tag;
-  [NSNumber numberWithInt:gRecognizer.view.tag];
+  [NSNumber numberWithInt:(int)gRecognizer.view.tag];
   
   switch (gRecognizer.state) {
     case UIGestureRecognizerStateBegan:
@@ -586,7 +586,7 @@
         lPTimer = [NSTimer scheduledTimerWithTimeInterval:0.15f //タイマーを発生させる間隔（0.3秒毎）
                                                  target:self //メソッドがあるオブジェクト
                                                selector:@selector(lpTimer:) //呼び出すメソッド
-                                               userInfo:[NSNumber numberWithInt:gRecognizer.view.tag]//パラメータ引数
+                                               userInfo:[NSNumber numberWithInt:(int)gRecognizer.view.tag]//パラメータ引数
                                                 repeats:YES]; //繰り返し
       }
       break;

@@ -30,11 +30,11 @@
 {
   [super setTag:tag];
 
-  int nn = tag;
+  int nn = (int)tag;
   NSString* unit = [NSString stringWithFormat:@"%@",NSLocalizedString(@"hun", nil)];
   
   if (tag >= 100 ) {
-    nn = self.tag/10;
+    nn = (int)self.tag/10;
     unit = [NSString stringWithFormat:@"%@",NSLocalizedString(@"byo", nil)];
   }
   
