@@ -3,4 +3,4 @@
 "CFBundleName"            = "Kitchen Timer";
 "CFBundleName~ipad"       = "Japan Kitchen Timer";
 "CFBundleDisplayName"     = "KitchenTimer"; // iphone ipod
-"CFBundleDisplayName~ipad"= "JPNKitchenTimer"; // ipad ipadmini
+"CFBundleDisplayName~ipad"= "Kitchen Timer"; // ipad ipadmini
