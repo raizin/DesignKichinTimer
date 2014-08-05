@@ -80,6 +80,7 @@
 		5EC2DCCA182FCEB8003E1D5C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC2DCC9182FCEB8003E1D5C /* AVFoundation.framework */; };
 		5ECB0D271832038400103C18 /* piLong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5ECB0D261832038400103C18 /* piLong.mp3 */; };
 		5ECB0D371832173700103C18 /* pi_mono.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5ECB0D361832173700103C18 /* pi_mono.mp3 */; };
+		5ED772B819916C730043E955 /* iTuneConnect.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5ED772B719916C730043E955 /* iTuneConnect.txt */; };
 		5EDE0907185CBF8F00660FF9 /* ResetBtnScaleOnFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDE0906185CBF8F00660FF9 /* ResetBtnScaleOnFlag.m */; };
 		5EE2F7C518FA280300195D63 /* pi_old.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5EE2F7C418FA280300195D63 /* pi_old.mp3 */; };
 		5EF21EC81839260C00C079F0 /* Icon076.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EF21EC41839260C00C079F0 /* Icon076.png */; };
@@ -200,6 +201,7 @@
 		5EC2DCC9182FCEB8003E1D5C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5ECB0D261832038400103C18 /* piLong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = piLong.mp3; sourceTree = "<group>"; };
 		5ECB0D361832173700103C18 /* pi_mono.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pi_mono.mp3; sourceTree = "<group>"; };
+		5ED772B719916C730043E955 /* iTuneConnect.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = iTuneConnect.txt; sourceTree = "<group>"; };
 		5EDE0905185CBF8F00660FF9 /* ResetBtnScaleOnFlag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetBtnScaleOnFlag.h; sourceTree = "<group>"; };
 		5EDE0906185CBF8F00660FF9 /* ResetBtnScaleOnFlag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetBtnScaleOnFlag.m; sourceTree = "<group>"; };
 		5EE2F7C418FA280300195D63 /* pi_old.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pi_old.mp3; sourceTree = "<group>"; };
@@ -505,6 +507,7 @@
 			children = (
 				5E6F4B5818117F7700312CCD /* DesignKichinTimerTests.m */,
 				5E6F4B5318117F7700312CCD /* Supporting Files */,
+				5ED772B719916C730043E955 /* iTuneConnect.txt */,
 			);
 			path = DesignKichinTimerTests;
 			sourceTree = "<group>";
@@ -565,6 +568,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = FoceSystemSolution;
 				TargetAttributes = {
+					5E6F4B2618117F7600312CCD = {
+						DevelopmentTeam = GWL53QY8D7;
+					};
 					5E6F4B4A18117F7600312CCD = {
 						TestTargetID = 5E6F4B2618117F7600312CCD;
 					};
@@ -670,6 +676,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ED772B819916C730043E955 /* iTuneConnect.txt in Resources */,
 				5E6F4B5718117F7700312CCD /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -909,10 +916,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DesignKichinTimer/DesignTimer-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = DesignKichinTimer/Info_pro.xml;
+				INFOPLIST_FILE = DesignKichinTimer/Info.xml;
 				INFOPLIST_PREFIX_HEADER = "";
 				INFOPLIST_PREPROCESS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
@@ -930,10 +939,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DesignKichinTimer/DesignTimer-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = DesignKichinTimer/Info_pro.xml;
+				INFOPLIST_FILE = DesignKichinTimer/Info.xml;
 				INFOPLIST_PREFIX_HEADER = "";
 				INFOPLIST_PREPROCESS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
