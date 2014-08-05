@@ -131,7 +131,7 @@
 		5E2480711856FD4D0032AF77 /* IconSndOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconSndOn.png; sourceTree = "<group>"; };
 		5E2480731856FE6B0032AF77 /* IconSndOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconSndOff.png; sourceTree = "<group>"; };
 		5E2480741856FE6B0032AF77 /* IconSndTouch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconSndTouch.png; sourceTree = "<group>"; };
-		5E2809E518DB05CC00A28373 /* Info_pro.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Info_pro.xml; sourceTree = "<group>"; };
+		5E2809E518DB05CC00A28373 /* InfoP.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = InfoP.xml; sourceTree = "<group>"; };
 		5E2809E818DC596200A28373 /* CntView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CntView.h; sourceTree = "<group>"; };
 		5E2809E918DC596200A28373 /* CntView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CntView.m; sourceTree = "<group>"; };
 		5E30A82A18D722E7001D468A /* batten33.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batten33.png; sourceTree = "<group>"; };
@@ -493,7 +493,7 @@
 				5E220DD21842630700D2ACB0 /* IconPng */,
 				5E30A82918D71579001D468A /* ImageAndSound */,
 				5E6F4B3218117F7600312CCD /* Info.xml */,
-				5E2809E518DB05CC00A28373 /* Info_pro.xml */,
+				5E2809E518DB05CC00A28373 /* InfoP.xml */,
 				5E6F4B3318117F7600312CCD /* InfoPlist.strings */,
 				5E6F4B3618117F7600312CCD /* main.m */,
 				5E6F4B3818117F7600312CCD /* DesignTimer-Prefix.pch */,
@@ -921,7 +921,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DesignKichinTimer/DesignTimer-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = DesignKichinTimer/Info.xml;
+				INFOPLIST_FILE = DesignKichinTimer/InfoP.xml;
 				INFOPLIST_PREFIX_HEADER = "";
 				INFOPLIST_PREPROCESS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
@@ -944,7 +944,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DesignKichinTimer/DesignTimer-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = DesignKichinTimer/Info.xml;
+				INFOPLIST_FILE = DesignKichinTimer/InfoP.xml;
 				INFOPLIST_PREFIX_HEADER = "";
 				INFOPLIST_PREPROCESS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
