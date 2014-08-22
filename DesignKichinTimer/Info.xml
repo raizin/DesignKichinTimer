@@ -12,10 +12,10 @@
 	<string>Main_iPad</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>Base</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1.8.0</string>
 	<key>CFBundleVersion</key>
-	<string>1.8.0</string>
+	<string>1.8.1</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.8.1</string>
 	<key>UIStatusBarHidden</key>
 	<true/>
 	<key>UIMainStoryboardFile</key>
@@ -65,9 +65,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>ArtistURL</key>
+	<string>itms-apps://itunes.apple.com/artist/id687643943</string>
 	<key>ReviewURL</key>
 	<string>itms-apps://itunes.apple.com/app/id756181891</string>
-	<key>ArtistURL</key>
-	<string>itms-apps://itunes.apple.com/artist/makoto-amano/id687643943</string>
 </dict>
 </plist>

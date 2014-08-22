@@ -2,46 +2,7 @@
 App Name : Japanese Design Kitchen Timer Stopwatch Pro/(Free)
 Keywords : Timer,Kitchen,KitchenTimer,DesignKitchenTimer,JapanTimer,japan,japanese,Stopwatch
 Support URL : http://supp-app.com/timer-free/  or http://supp-app.com/timer/
-           -> http://anz.chew.jp/blog/p8      and http://anz.chew.jp/blog/p87
-
-Description : 4000 characters within
-＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-This is The Japan Kitchen Timer very easy to use.
-
-You can then also be used for anything. 
-
-For example, cooking, health care, sports, business, learning, yoga, and meditation, etc ... 
-
-*** characteristic *** 
-
-Emphasis on design and usability. 
-
-This also can be used as a rough stopwatch. 
-
-This is can set up to 999 minutes 59 seconds. 
-
-Landscape Display Support, and Portrait Display Support. 
-
-Without having to stop the timer,you can confirm the clock in the "clock mode". 
-
-As for the sound, an On or Mute change is possible.) 
-
-Display it with the size that fitted each in iPhone and iPad. 
-
-You can set the time from history only in the case of Landscape Display. 
-
-Implementation of the vibration function Only iPhone. 
-
-Implementation of the zooming animation function to 'Stop Button'. 
-
-The processing continues even if you close the app And will be notified to you. 
-
-Long Press a button, It added the ability to count up continuously. 
-
-
-*Ads will appear in the (bottom) footer free version. 
-*The ad does not appear in the paid version. 
-https://itunes.apple.com/app/designkichintimerpro/id776800295 
+           -> http://anz.chew.jp/blog/p416      and http://anz.chew.jp/blog/p509
 
 
 ＝＝＝＝＝＝ 日本語版ここから ＝＝＝＝＝＝
@@ -50,8 +11,17 @@ Keywords : タイマー,Timer,便利タイマー,KitchenTimer,キッチンタイ
 Support URL : http://supp-app.com/timer-free/  or http://supp-app.com/timer/
            -> http://anz.chew.jp/blog/p8      and http://anz.chew.jp/blog/p87
 
+
+
 Description : 4000文字以内
 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+->En Pro http://anz.chew.jp/blog/p509
+->En Fre http://anz.chew.jp/blog/p416
+->Jp Pro http://anz.chew.jp/blog/p87
+->Jp Fre http://anz.chew.jp/blog/p8
+
+
+
 さまざまな状況で、洗練されたUI(ユーザーインターフェイス)で、とても使いやすいキッチンタイマーです。
 (This is a kitchen timer very easy to use.)
 
@@ -94,13 +64,13 @@ Description : 4000文字以内
 　・バイブレーション機能の実装しました。 ※iPhoneのみ
 　　(Implementation of the vibration function Only iPhone.)
 
-　・ストップ・リセットボタンの拡大・縮小機能を実装しました。Ver1.3
+　・ストップ・リセットボタンの拡大・縮小機能を実装しました。
 　　(Implementation of the zooming animation function to 'Stop Button'.)  
 
-　・アプリを閉じてもバックグラウンドで計測を継続し、時間が来たら通知されます。Ver1.5
+　・アプリを閉じてもバックグラウンドで計測を継続し、時間が来たら通知されます。
 　　(The processing continues even if you close the app And will be notified to you.)
 
-　・数値設定のボタン長押しで、連続的にカウントアップする機能を追加しました。
+　・数値設定のボタン長押しで、連続的にカウントアップします。
 　　(Long Press a button, It added the ability to count up continuously.)
 
 　・無料版と違って、広告が表示されません。
@@ -111,3 +81,42 @@ Description : 4000文字以内
 ※↓有料版は広告が表示されません。
 https://itunes.apple.com/jp/app/id776800295
 
+
+Description : 4000 characters within
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+This is The Japan Kitchen Timer very easy to use.
+
+You can then also be used for anything. 
+
+For example, cooking, health care, sports, business, learning, yoga, and meditation, etc ... 
+
+*** characteristic *** 
+
+ Emphasis on design and usability.
+
+ This also can be used as a rough stopwatch.
+
+ This is can set up to 999 minutes 59 seconds.
+
+ Landscape Display Support, and Portrait Display Support.
+
+ Without having to stop the timer,you can confirm the clock in the "clock mode".
+
+ As for the sound, an On or Mute change is possible.)
+
+ Display it with the size that fitted each in iPhone and iPad.
+
+ You can set the time from history only in the case of Landscape Display.
+
+ Implementation of the vibration function Only iPhone.
+
+ Implementation of the zooming animation function to 'Stop Button'.
+
+ The processing continues even if you close the app And will be notified to you.
+
+ Long Press a button, It added the ability to count up continuously.
+
+
+*Ads will appear in the (bottom) footer free version. 
+*The ad does not appear in the paid version. 
+https://itunes.apple.com/app/designkichintimerpro/id776800295 
