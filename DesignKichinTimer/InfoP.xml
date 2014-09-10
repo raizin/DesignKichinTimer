@@ -2,12 +2,25 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>Base</string>
+	<key>CFBundleVersion</key>
+	<string>1.8.1</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.8.1</string>
+  
 	<key>CFBundleDisplayName</key>
-	<string>KitchenTimer</string>
+	<string>DTimerPro</string>
 	<key>CFBundleDisplayName~ipad</key>
 	<string>JPNKitchenTimer</string>
+	<key>CFBundleName</key>
+	<string>Kitchen Timer</string>
+	<key>CFBundleName~ipad</key>
+	<string>Japan Kitchen Timer</string>
+
+  <key>FreeVersionFlag</key>
+  <string>false</string>
+
+	<key>CFBundleDevelopmentRegion</key>
+	<string>Base</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
@@ -23,20 +36,10 @@
 	<string>jp.mydns.seiryu.designkichintimer.pro</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
-	<key>CFBundleName</key>
-	<string>Kitchen Timer</string>
-	<key>CFBundleName~ipad</key>
-	<string>Japan Kitchen Timer</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
-	<key>CFBundleVersion</key>
-	<string>1.8.1</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1.8.1</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
-	<key>FreeVersionFlag</key>
-	<string>false</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIMainStoryboardFile</key>

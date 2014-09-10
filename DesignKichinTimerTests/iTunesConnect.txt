@@ -1,24 +1,17 @@
-＝＝＝＝＝＝ English Version Form Here ＝＝＝＝＝＝
+====== English Version Form Here ======
 App Name : Japanese Design Kitchen Timer Stopwatch Pro/(Free)
 Keywords : Timer,Kitchen,KitchenTimer,DesignKitchenTimer,JapanTimer,japan,japanese,Stopwatch
-Support URL : http://supp-app.com/timer-free/  or http://supp-app.com/timer/
-           -> http://anz.chew.jp/blog/p416      and http://anz.chew.jp/blog/p509
 
-
-＝＝＝＝＝＝ 日本語版ここから ＝＝＝＝＝＝
+====== Japanese Version Form Here ======
 App Name : 簡単便利なキッチンタイマー Pro/(無料版) 〜秒単位のストップウォッチとしても使用できます。〜
 Keywords : タイマー,Timer,便利タイマー,KitchenTimer,キッチンタイマー,料理タイマー,デザイン料理タイマー,デザイン,計測,目覚まし時計
-Support URL : http://supp-app.com/timer-free/  or http://supp-app.com/timer/
-           -> http://anz.chew.jp/blog/p8      and http://anz.chew.jp/blog/p87
 
-
-
-Description : 4000文字以内
-＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-->En Pro http://anz.chew.jp/blog/p509
-->En Fre http://anz.chew.jp/blog/p416
-->Jp Pro http://anz.chew.jp/blog/p87
-->Jp Fre http://anz.chew.jp/blog/p8
+Description & Support URL
+====== ====== ====== ====== ====== ======
+->En Pro http://itunes.apple.com/en/app/id776800295 http://anz.chew.jp/blog/p509
+->En Fre http://itunes.apple.com/en/app/id756181891 http://anz.chew.jp/blog/p416
+->Jp Pro http://itunes.apple.com/jp/app/id776800295 http://anz.chew.jp/blog/p87
+->Jp Fre http://itunes.apple.com/jp/app/id756181891 http://anz.chew.jp/blog/p8
 
 
 
